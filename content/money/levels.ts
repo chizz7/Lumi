@@ -23,36 +23,32 @@ export const LEVELS: Level[] = [
       '3-4': {
         audioTemplate: `A small {hero} sat in {setting}. Three coins lay in the sand.
 
-One was tiny. One was big. One was in between.
+One was small. One was big. One was in between.
 
-"They are all coins," said the {hero}, "but they look different."
+"They are all coins," said the {hero}. "But they are not the same."
 
-{companion_name} smiled. "Yes. Each one has its own name. Look at the size. Look at the colour. Look at the picture on the face."
+"Each one has its own name," said {companion_name}. "Look. Look closely."
 
-The {hero} looked closely. The tiny one. The big one. The in-between one.
+The {hero} looked. The small one. The big one. The in-between one.
 
-"I see," said the {hero}. "They are not the same."
+"I see!" said the {hero}. "Not the same. Not the same at all."
 
-"You noticed," said {companion_name}. "That is how it starts."
-
-The {hero} held the three coins as the stars came out.
+"You looked. You saw," said {companion_name}. "That is how it starts."
 
 {refrain}.`,
         scriptTemplate: `{child_name} the {hero} sat in {setting}. Three coins lay in the sand.
 
-One was tiny. One was big. One was in between.
+One was small. One was big. One was in between.
 
-"They are all coins," said {child_name}, "but they look different."
+"They are all coins," said {child_name}. "But they are not the same."
 
-{companion_name} smiled. "Yes, {child_name}. Each one has its own name. Look at the size. Look at the colour. Look at the picture on the face."
+"Each one has its own name," said {companion_name}. "Look. Look closely."
 
-{child_name} looked closely. The tiny one. The big one. The in-between one.
+{child_name} looked. The small one. The big one. The in-between one.
 
-"I see," said {child_name}. "They are not the same."
+"I see!" said {child_name}. "Not the same. Not the same at all."
 
-"You noticed," said {companion_name}. "That is how it starts."
-
-{child_name} held the three coins as the stars came out.
+"You looked. You saw," said {companion_name}. "That is how it starts."
 
 {refrain}.`,
       },
@@ -106,36 +102,32 @@ Just then, {companion_name} appeared, peering over {child_name}'s shoulder with 
       '3-4': {
         audioTemplate: `A small {hero} found two {object_motif}s in {setting}. One big. One small.
 
-"The big one must be worth more," said the {hero}.
+"The big one must be worth more," said the {hero}. "Big means more!"
 
-"Let us see," said {companion_name}.
+"Let's see. Let's see," said {companion_name}.
 
-They went to the market. The small coin bought two berries. The big coin bought one.
+They went to the market. The small coin bought two berries. The big coin bought just one.
 
 "But it was bigger!" said the {hero}.
 
 "A coin's worth comes from what it is, not how large it looks," said {companion_name}.
 
-The {hero} thought about that. Big did not always mean more.
-
-They walked home through {setting}.
+The {hero} thought. Big is not more. Big is not more.
 
 {refrain}.`,
         scriptTemplate: `{child_name} the {hero} found two {object_motif}s in {setting}. One big. One small.
 
-"The big one must be worth more," said {child_name}.
+"The big one must be worth more," said {child_name}. "Big means more!"
 
-"Let us see," said {companion_name}.
+"Let's see. Let's see," said {companion_name}.
 
-They went to the market. The small coin bought two berries. The big coin bought one.
+They went to the market. The small coin bought two berries. The big coin bought just one.
 
 "But it was bigger!" said {child_name}.
 
 "A coin's worth comes from what it is, not how large it looks," said {companion_name}.
 
-{child_name} thought about that. Big did not always mean more.
-
-They walked home through {setting}.
+{child_name} thought. Big is not more. Big is not more.
 
 {refrain}.`,
       },
@@ -188,34 +180,30 @@ They walked home together through {setting}, and {child_name} held both coins an
 
 "It costs three," said the shopkeeper.
 
-The {hero} gave all five.
+The {hero} gave all five. All five!
 
-The shopkeeper put two back in the {hero}'s hand.
+The shopkeeper gave two back. "These are yours."
 
-"Those are mine?" said the {hero}.
+"Mine?" said the {hero}. "Mine?"
 
-"That is called change," said {companion_name}. "You gave more than it cost. So some comes back."
+"That is called change," said {companion_name}. "You gave too much. So some comes back. Some comes back to you."
 
-The {hero} held the shell and the two coins. Now they understood.
-
-"Change comes back to me," said the {hero}.
+The {hero} smiled. "Change comes back to me. Change comes back to me!"
 
 {refrain}.`,
         scriptTemplate: `In {setting}, {child_name} the {hero} had five {object_motif}s. They wanted the spotted shell.
 
 "It costs three," said the shopkeeper.
 
-{child_name} gave all five.
+{child_name} gave all five. All five!
 
-The shopkeeper put two back in {child_name}'s hand.
+The shopkeeper gave two back. "These are yours."
 
-"Those are mine?" said {child_name}.
+"Mine?" said {child_name}. "Mine?"
 
-"That is called change," said {companion_name}. "You gave more than it cost. So some comes back."
+"That is called change," said {companion_name}. "You gave too much. So some comes back. Some comes back to you."
 
-{child_name} held the shell and the two coins. Now they understood.
-
-"Change comes back to me," said {child_name}.
+{child_name} smiled. "Change comes back to me. Change comes back to me!"
 
 {refrain}.`,
       },
@@ -268,34 +256,30 @@ The {hero} smiled. They were getting good at this.
     learningBeat: 'Saving is just choosing tomorrow over today',
     ageVariants: {
       '3-4': {
-        audioTemplate: `In {setting}, a small {hero} had one {object_motif}. They wanted the silver lantern. It cost ten.
+        audioTemplate: `In {setting}, a small {hero} wanted the silver lantern. It cost ten coins. Ten!
 
-The {hero} counted. One. "Not enough yet," said {companion_name}. "But it is a start."
+The {hero} had just one. "Not enough," said {companion_name}. "Not yet."
 
-Each night, the {hero} saved one more. {companion_name} counted along.
-
-Six. Then nine.
+So every night, the {hero} saved one more. One more. One more.
 
 "Saving is just choosing tomorrow over today," said {companion_name}.
 
-On the eighth night — ten!
+Six coins. Then nine. Then — ten!
 
-The lantern was theirs. It lit {setting} with a warm glow.
+The lantern was theirs. It lit up {setting}, warm and bright.
 
 {refrain}.`,
-        scriptTemplate: `In {setting}, {child_name} the {hero} had one {object_motif}. They wanted the silver lantern. It cost ten.
+        scriptTemplate: `In {setting}, {child_name} the {hero} wanted the silver lantern. It cost ten coins. Ten!
 
-{child_name} counted. One. "Not enough yet," said {companion_name}. "But it is a start."
+{child_name} had just one. "Not enough," said {companion_name}. "Not yet."
 
-Each night, {child_name} saved one more. {companion_name} counted along.
-
-Six. Then nine.
+So every night, {child_name} saved one more. One more. One more.
 
 "Saving is just choosing tomorrow over today," said {companion_name}.
 
-On the eighth night — ten!
+Six coins. Then nine. Then — ten!
 
-The lantern was theirs. It lit {setting} with a warm glow.
+The lantern was theirs. It lit up {setting}, warm and bright.
 
 {refrain}.`,
       },
@@ -350,36 +334,32 @@ That night it lit {setting} with a warm and steady glow — the glow of somethin
       '3-4': {
         audioTemplate: `In {setting}, a small {hero} had ten {object_motif}s. Just enough for one thing.
 
-A sparkly toy. Or a warm meal for the cold night.
+A shiny toy! Or a warm meal for the cold night.
 
-"I want the toy," said the {hero}.
+"I want the toy," said the {hero}. "I want it. I want it!"
 
-"Wanting things is not wrong," said {companion_name}. "But do you need the toy, or do you want it?"
+"Wanting things is not wrong," said {companion_name}. "But do you need the toy? Or do you just want it?"
 
 The {hero} thought. The night was cold. Home was far.
 
-"I need the meal more tonight," said the {hero}.
+"I need the meal," said the {hero}. "I want the toy. But I need the meal more."
 
-"That is very wise," said {companion_name}.
-
-The toy could wait.
+"That is very wise," said {companion_name}. "Very wise."
 
 {refrain}.`,
         scriptTemplate: `In {setting}, {child_name} the {hero} had ten {object_motif}s. Just enough for one thing.
 
-A sparkly toy. Or a warm meal for the cold night.
+A shiny toy! Or a warm meal for the cold night.
 
-"I want the toy," said {child_name}.
+"I want the toy," said {child_name}. "I want it. I want it!"
 
-"Wanting things is not wrong," said {companion_name}. "But do you need the toy, or do you want it?"
+"Wanting things is not wrong," said {companion_name}. "But do you need the toy? Or do you just want it?"
 
 {child_name} thought. The night was cold. Home was far.
 
-"I need the meal more tonight," said {child_name}.
+"I need the meal," said {child_name}. "I want the toy. But I need the meal more."
 
-"That is very wise," said {companion_name}.
-
-The toy could wait.
+"That is very wise," said {companion_name}. "Very wise."
 
 {refrain}.`,
       },

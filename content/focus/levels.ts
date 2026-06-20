@@ -22,36 +22,36 @@ export const LEVELS: Level[] = [
       '3-4': {
         audioTemplate: `In {setting}, a small {hero} sat by a glowing {object_motif}.
 
-There was so much to do! The {hero} started one thing. Then jumped to another. Then a third. Nothing got done.
+So much to do! So much to do!
 
-"Choose just one," said {companion_name} softly. "Let the rest wait."
+The {hero} started one thing. Then jumped to another. Then a third. Nothing got done. Nothing!
 
-The {hero} took a breath. Just one thing. Only that.
+"Choose just one," said {companion_name} softly. "Just one. Let the rest wait."
+
+The {hero} took a slow breath. Just one thing. Only that one.
 
 And it got done! Then the next. Then the next.
 
-"I did more by doing less," said the {hero}.
+"I did more by doing less!" said the {hero}.
 
 "One thing, then the next," said {companion_name}. "That is the secret."
-
-The {object_motif} dimmed to a soft, steady light.
 
 {refrain}.`,
         scriptTemplate: `In {setting}, {child_name} the {hero} sat by a glowing {object_motif}.
 
-There was so much to do! {child_name} started one thing. Then jumped to another. Then a third. Nothing got done.
+So much to do! So much to do!
 
-"Choose just one, {child_name}," said {companion_name} softly. "Let the rest wait."
+{child_name} started one thing. Then jumped to another. Then a third. Nothing got done. Nothing!
 
-{child_name} took a breath. Just one thing. Only that.
+"Choose just one, {child_name}," said {companion_name} softly. "Just one. Let the rest wait."
+
+{child_name} took a slow breath. Just one thing. Only that one.
 
 And it got done! Then the next. Then the next.
 
-"I did more by doing less," said {child_name}.
+"I did more by doing less!" said {child_name}.
 
 "One thing, then the next," said {companion_name}. "That is the secret."
-
-The {object_motif} dimmed to a soft, steady light.
 
 {refrain}.`,
       },
@@ -100,32 +100,32 @@ And something surprising happened. With one thing at a time, {child_name} finish
     learningBeat: 'you can do the first small step',
     ageVariants: {
       '3-4': {
-        audioTemplate: `The {object_motif} glowed in {setting}. A small {hero} looked at something big.
+        audioTemplate: `The {object_motif} glowed in {setting}. A small {hero} looked at something big. Too big!
 
 "I cannot do all of that," said the {hero}, and sat down.
 
-"Not all at once," said {companion_name}. "But you can do the first small step. Then the next."
+"Not all at once," said {companion_name}. "But you can do the first small step. Then the next. Then the next."
 
-They laid the steps in a row, like stones across a stream. First this. Then this. Then this.
+So they made a path of little steps, like stones across a stream. One step. One step. One step.
 
 The {hero} took the first step. Only that one. Then the next.
 
-Soon the big thing was done — one small step at a time.
+And soon — all done! One small step at a time.
 
 "The path was here all along," said {companion_name}.
 
 {refrain}.`,
-        scriptTemplate: `The {object_motif} glowed in {setting}. {child_name} the {hero} looked at something big.
+        scriptTemplate: `The {object_motif} glowed in {setting}. {child_name} the {hero} looked at something big. Too big!
 
 "I cannot do all of that," said {child_name}, and sat down.
 
-"Not all at once," said {companion_name}. "But you can do the first small step. Then the next."
+"Not all at once," said {companion_name}. "But you can do the first small step. Then the next. Then the next."
 
-They laid the steps in a row, like stones across a stream. First this. Then this. Then this.
+So they made a path of little steps, like stones across a stream. One step. One step. One step.
 
 {child_name} took the first step. Only that one. Then the next.
 
-Soon the big thing was done — one small step at a time.
+And soon — all done! One small step at a time.
 
 "The path was here all along," said {companion_name}.
 
@@ -178,34 +178,34 @@ Before long, the thing that felt too big was simply… done, one calm step after
       '3-4': {
         audioTemplate: `A small {hero} sat in {setting} by the glowing {object_motif}. Just one thing to do.
 
-But a sound floated by — and the {hero}'s mind floated after it.
+But a sound went by. And the {hero}'s mind went too. Away, away it went.
 
-"My mind keeps wandering," said the {hero}.
+"My mind keeps running off," said the {hero}.
 
-{companion_name} smiled. "Everyone's mind wanders. The skill is noticing, and coming back. Gently."
+{companion_name} smiled. "All minds run off. Mine too! The trick is noticing, and coming back. Come back. Come back."
 
-So the {hero} noticed. "Ah — wandering," they said, and came back. Drifted. Noticed. Came back.
+So the {hero} noticed. "Oh — off I went!" And came back. Off again. Noticed. Came back.
 
-Each time was easier.
+Each time was easier. Each time.
 
-"I do not have to be perfect," said the {hero}. "I just come back."
+"I do not have to be perfect," said the {hero}. "I just come back. I just come back."
 
 "That is the whole of it," said {companion_name}.
 
 {refrain}.`,
         scriptTemplate: `{child_name} the {hero} sat in {setting} by the glowing {object_motif}. Just one thing to do.
 
-But a sound floated by — and {child_name}'s mind floated after it.
+But a sound went by. And {child_name}'s mind went too. Away, away it went.
 
-"My mind keeps wandering," said {child_name}.
+"My mind keeps running off," said {child_name}.
 
-{companion_name} smiled. "Everyone's mind wanders. The skill is noticing, and coming back. Gently."
+{companion_name} smiled. "All minds run off. Mine too! The trick is noticing, and coming back. Come back. Come back."
 
-So {child_name} noticed. "Ah — wandering," they said, and came back. Drifted. Noticed. Came back.
+So {child_name} noticed. "Oh — off I went!" And came back. Off again. Noticed. Came back.
 
-Each time was easier.
+Each time was easier. Each time.
 
-"I do not have to be perfect," said {child_name}. "I just come back."
+"I do not have to be perfect," said {child_name}. "I just come back. I just come back."
 
 "That is the whole of it," said {companion_name}.
 
@@ -256,34 +256,42 @@ Each time was easier, like a path worn smooth. The {object_motif} held its stead
     learningBeat: 'Finishing has its own kind of joy',
     ageVariants: {
       '3-4': {
-        audioTemplate: `Most of the work was done. In {setting}, under the {object_motif}, the {hero} looked at the little bit left.
+        audioTemplate: `In {setting}, the {hero} was almost done. Just a little bit left.
 
-"The fun part is over," said the {hero}. "Can I stop?"
+"The fun part is over," said the {hero}. "Can I stop now?"
 
-"Only the last few stones remain," said {companion_name}. "Shall we feel how finishing feels?"
+"Just a few steps left," said {companion_name}. "Let's finish. Let's finish together."
 
-The {hero} was tired, but tried. One more step. Then one more.
+The {hero} was tired. But the {hero} tried.
 
-And then — no stones left. It was done. All the way done.
+One more step. One more step. One more.
 
-A warm feeling filled the {hero}. "I finished it!"
+And then — all done! Done, done, done.
+
+"I did it!" said the {hero}. "I finished it!"
 
 "Finishing has its own kind of joy," said {companion_name}.
+
+The {hero} felt warm and happy inside. All the way happy.
 
 {refrain}.`,
-        scriptTemplate: `Most of the work was done. In {setting}, under the {object_motif}, {child_name} the {hero} looked at the little bit left.
+        scriptTemplate: `In {setting}, {child_name} the {hero} was almost done. Just a little bit left.
 
-"The fun part is over," said {child_name}. "Can I stop?"
+"The fun part is over," said {child_name}. "Can I stop now?"
 
-"Only the last few stones remain," said {companion_name}. "Shall we feel how finishing feels?"
+"Just a few steps left," said {companion_name}. "Let's finish. Let's finish together."
 
-{child_name} was tired, but tried. One more step. Then one more.
+{child_name} was tired. But {child_name} tried.
 
-And then — no stones left. It was done. All the way done.
+One more step. One more step. One more.
 
-A warm feeling filled {child_name}. "I finished it!"
+And then — all done! Done, done, done.
+
+"I did it!" said {child_name}. "I finished it!"
 
 "Finishing has its own kind of joy," said {companion_name}.
+
+{child_name} felt warm and happy inside. All the way happy.
 
 {refrain}.`,
       },
@@ -332,34 +340,34 @@ A warm, quiet feeling filled {child_name}, better than they expected. "I finishe
     learningBeat: 'mine to choose',
     ageVariants: {
       '3-4': {
-        audioTemplate: `Under the {object_motif}, in quiet {setting}, a small {hero} thought of something they really wanted to do. A goal all their own.
+        audioTemplate: `In quiet {setting}, under the {object_motif}, a small {hero} thought of something they really wanted to do. A goal of their own.
 
-"It is mine to choose," said the {hero}, "and mine to reach."
+"It is mine to choose," said the {hero}. "Mine to choose. Mine to do."
 
 "You already know how," said {companion_name}. "Tell me the way."
 
-"One thing at a time," said the {hero}. "A plan, like stones. When I wander, I come back. And I finish — all the way."
+"One thing at a time," said the {hero}. "A little path of steps. When I run off, I come back. And I finish. I finish all the way."
 
-So that is what the {hero} did, night by night.
+So that is what the {hero} did. Night by night. Step by step.
 
-And the goal? They reached it. By their own steady light.
+And the goal? The {hero} did it! All by their own steady light.
 
-"You did that," said {companion_name}.
+"You did that," said {companion_name}. "You did."
 
 {refrain}.`,
-        scriptTemplate: `Under the {object_motif}, in quiet {setting}, {child_name} the {hero} thought of something they really wanted to do. A goal all their own.
+        scriptTemplate: `In quiet {setting}, under the {object_motif}, {child_name} the {hero} thought of something they really wanted to do. A goal of their own.
 
-"It is mine to choose," said {child_name}, "and mine to reach."
+"It is mine to choose," said {child_name}. "Mine to choose. Mine to do."
 
 "You already know how," said {companion_name}. "Tell me the way."
 
-"One thing at a time," said {child_name}. "A plan, like stones. When I wander, I come back. And I finish — all the way."
+"One thing at a time," said {child_name}. "A little path of steps. When I run off, I come back. And I finish. I finish all the way."
 
-So that is what {child_name} did, night by night.
+So that is what {child_name} did. Night by night. Step by step.
 
-And the goal? {child_name} reached it. By their own steady light.
+And the goal? {child_name} did it! All by their own steady light.
 
-"You did that," said {companion_name}.
+"You did that," said {companion_name}. "You did."
 
 {refrain}.`,
       },
