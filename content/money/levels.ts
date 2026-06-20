@@ -19,6 +19,44 @@ export const LEVELS: Level[] = [
     summary: 'A small animal discovers three different coins lying in the sand and notices for the first time that they look nothing like each other. With the help of a wise companion, they learn each coin has its own name and its own set of clues — size, colour, and the picture on its face — that tell you exactly what it is.',
     teachingNote: 'The skill of noticing small differences is the foundation everything else in this path builds on.',
     learningBeat: 'Each one has its own name',
+    ageVariants: {
+      '3-4': {
+        audioTemplate: `A small {hero} sat in {setting}. Three coins lay in the sand.
+
+One was tiny. One was big. One was in between.
+
+"They are all coins," said the {hero}, "but they look different."
+
+{companion_name} smiled. "Yes. Each one has its own name. Look at the size. Look at the colour. Look at the picture on the face."
+
+The {hero} looked closely. The tiny one. The big one. The in-between one.
+
+"I see," said the {hero}. "They are not the same."
+
+"You noticed," said {companion_name}. "That is how it starts."
+
+The {hero} held the three coins as the stars came out.
+
+{refrain}.`,
+        scriptTemplate: `{child_name} the {hero} sat in {setting}. Three coins lay in the sand.
+
+One was tiny. One was big. One was in between.
+
+"They are all coins," said {child_name}, "but they look different."
+
+{companion_name} smiled. "Yes, {child_name}. Each one has its own name. Look at the size. Look at the colour. Look at the picture on the face."
+
+{child_name} looked closely. The tiny one. The big one. The in-between one.
+
+"I see," said {child_name}. "They are not the same."
+
+"You noticed," said {companion_name}. "That is how it starts."
+
+{child_name} held the three coins as the stars came out.
+
+{refrain}.`,
+      },
+    },
     audioTemplate: `The night was warm and the stars were out, and a small {hero} was exploring {setting} when something small caught the light.
 
 Three things lay in the sand. Each one was round, but they were not the same — one was tiny and brown, one was bigger and silver, one was somewhere in between.
@@ -63,6 +101,45 @@ Just then, {companion_name} appeared, peering over {child_name}'s shoulder with 
     concept: "A coin's value and its size are different things",
     summary: "The hero finds two coins — one much bigger than the other — and assumes the bigger one must be worth more. A trip to the market proves them wrong: the smaller coin buys twice as much. Their companion explains that a coin's value comes from what it is, not how large it looks.",
     teachingNote: "Children naturally assume bigger means more valuable — this story builds the habit of asking 'what is it worth?' instead of 'how big is it?'.",
+    learningBeat: "A coin's worth comes from what it is, not how large it looks",
+    ageVariants: {
+      '3-4': {
+        audioTemplate: `A small {hero} found two {object_motif}s in {setting}. One big. One small.
+
+"The big one must be worth more," said the {hero}.
+
+"Let us see," said {companion_name}.
+
+They went to the market. The small coin bought two berries. The big coin bought one.
+
+"But it was bigger!" said the {hero}.
+
+"A coin's worth comes from what it is, not how large it looks," said {companion_name}.
+
+The {hero} thought about that. Big did not always mean more.
+
+They walked home through {setting}.
+
+{refrain}.`,
+        scriptTemplate: `{child_name} the {hero} found two {object_motif}s in {setting}. One big. One small.
+
+"The big one must be worth more," said {child_name}.
+
+"Let us see," said {companion_name}.
+
+They went to the market. The small coin bought two berries. The big coin bought one.
+
+"But it was bigger!" said {child_name}.
+
+"A coin's worth comes from what it is, not how large it looks," said {companion_name}.
+
+{child_name} thought about that. Big did not always mean more.
+
+They walked home through {setting}.
+
+{refrain}.`,
+      },
+    },
     callback: 'Coins have different names and appearances (Level 1)', ageFloor: 3,
     audioTemplate: `One calm evening, a small {hero} found two {object_motif}s in {setting} — one large and flat, one small and thin.
 
@@ -104,6 +181,45 @@ They walked home together through {setting}, and {child_name} held both coins an
     concept: 'When you pay more than something costs, you get change back',
     summary: 'After saving five coins, the hero tries to buy a shell that costs only three. The shopkeeper hands back two coins — and the hero is surprised to learn this is called change. Their companion connects the moment to something already learned: one of those returned coins is worth more than it looks.',
     teachingNote: 'Understanding change turns a transaction from a confusing exchange into a logical, predictable conversation — a skill that removes anxiety at shop counters.',
+    learningBeat: 'That is called change',
+    ageVariants: {
+      '3-4': {
+        audioTemplate: `In {setting}, a small {hero} had five {object_motif}s. They wanted the spotted shell.
+
+"It costs three," said the shopkeeper.
+
+The {hero} gave all five.
+
+The shopkeeper put two back in the {hero}'s hand.
+
+"Those are mine?" said the {hero}.
+
+"That is called change," said {companion_name}. "You gave more than it cost. So some comes back."
+
+The {hero} held the shell and the two coins. Now they understood.
+
+"Change comes back to me," said the {hero}.
+
+{refrain}.`,
+        scriptTemplate: `In {setting}, {child_name} the {hero} had five {object_motif}s. They wanted the spotted shell.
+
+"It costs three," said the shopkeeper.
+
+{child_name} gave all five.
+
+The shopkeeper put two back in {child_name}'s hand.
+
+"Those are mine?" said {child_name}.
+
+"That is called change," said {companion_name}. "You gave more than it cost. So some comes back."
+
+{child_name} held the shell and the two coins. Now they understood.
+
+"Change comes back to me," said {child_name}.
+
+{refrain}.`,
+      },
+    },
     callback: 'Some coins are worth more than they look (Level 2)', ageFloor: 4,
     audioTemplate: `A small {hero} had been collecting {object_motif}s for three whole nights. There were five now, and there was one thing they wanted: the spotted shell at the market stall.
 
@@ -149,6 +265,41 @@ The {hero} smiled. They were getting good at this.
     concept: 'Saving small amounts over time leads to something bigger',
     summary: 'The hero wants a silver lantern that costs ten coins but only has one. Night after night they search and save — and their companion counts alongside without helping find the coins. By the eighth night they have ten, and the lantern is finally theirs. The story draws a direct line back to coin values learned in Level 2.',
     teachingNote: 'Delayed gratification is hardest to teach directly — this story makes a child feel the satisfaction of waiting, which is the whole lesson.',
+    learningBeat: 'Saving is just choosing tomorrow over today',
+    ageVariants: {
+      '3-4': {
+        audioTemplate: `In {setting}, a small {hero} had one {object_motif}. They wanted the silver lantern. It cost ten.
+
+The {hero} counted. One. "Not enough yet," said {companion_name}. "But it is a start."
+
+Each night, the {hero} saved one more. {companion_name} counted along.
+
+Six. Then nine.
+
+"Saving is just choosing tomorrow over today," said {companion_name}.
+
+On the eighth night — ten!
+
+The lantern was theirs. It lit {setting} with a warm glow.
+
+{refrain}.`,
+        scriptTemplate: `In {setting}, {child_name} the {hero} had one {object_motif}. They wanted the silver lantern. It cost ten.
+
+{child_name} counted. One. "Not enough yet," said {companion_name}. "But it is a start."
+
+Each night, {child_name} saved one more. {companion_name} counted along.
+
+Six. Then nine.
+
+"Saving is just choosing tomorrow over today," said {companion_name}.
+
+On the eighth night — ten!
+
+The lantern was theirs. It lit {setting} with a warm glow.
+
+{refrain}.`,
+      },
+    },
     callback: "A coin's value and its size are different things (Level 2)", ageFloor: 4,
     audioTemplate: `A small {hero} had found one {object_motif} in {setting}, and there was something they wanted very much: the silver lantern at the far end of the market. It would light up the whole corner of the room.
 
@@ -194,6 +345,45 @@ That night it lit {setting} with a warm and steady glow — the glow of somethin
     concept: 'Some things we need; some we want. Knowing the difference is a skill.',
     summary: "With exactly enough coins for either a sparkly toy or a warm meal, the hero must choose. Their companion doesn't tell them what to pick — they ask one quiet question: is this a want, or a need? The hero thinks it through and decides. The story calls back directly to the saving journey in Level 4.",
     teachingNote: 'This level is the capstone: a child who can distinguish wants from needs has every concept from the path — identification, value, exchange, saving — working together in a real decision.',
+    learningBeat: 'Wanting things is not wrong',
+    ageVariants: {
+      '3-4': {
+        audioTemplate: `In {setting}, a small {hero} had ten {object_motif}s. Just enough for one thing.
+
+A sparkly toy. Or a warm meal for the cold night.
+
+"I want the toy," said the {hero}.
+
+"Wanting things is not wrong," said {companion_name}. "But do you need the toy, or do you want it?"
+
+The {hero} thought. The night was cold. Home was far.
+
+"I need the meal more tonight," said the {hero}.
+
+"That is very wise," said {companion_name}.
+
+The toy could wait.
+
+{refrain}.`,
+        scriptTemplate: `In {setting}, {child_name} the {hero} had ten {object_motif}s. Just enough for one thing.
+
+A sparkly toy. Or a warm meal for the cold night.
+
+"I want the toy," said {child_name}.
+
+"Wanting things is not wrong," said {companion_name}. "But do you need the toy, or do you want it?"
+
+{child_name} thought. The night was cold. Home was far.
+
+"I need the meal more tonight," said {child_name}.
+
+"That is very wise," said {companion_name}.
+
+The toy could wait.
+
+{refrain}.`,
+      },
+    },
     callback: 'Saving for a goal (Level 4)', ageFloor: 5,
     audioTemplate: `A small {hero} had ten {object_motif}s — exactly enough for either thing.
 

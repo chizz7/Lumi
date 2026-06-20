@@ -17,6 +17,7 @@ import { parseArgs } from 'util'
 import { getAllSubjectSlugs, getAllLevels, getAllSkins, assembleAudio } from '@/content'
 import { getOrRenderAudio, audioCacheKey, getVoicesForLang }          from '@/lib/tts'
 import { adminClient, BUCKETS }                                        from '@/lib/supabase'
+import type { AgeBand }                                                from '@/content/types'
 
 const { values: args } = parseArgs({
   options: {
@@ -58,18 +59,21 @@ function buildJobs(): RenderJob[] {
 
       for (const skin of skins) {
         for (const voice of voices) {
-          // Full story render
-          try {
-            const { audioText } = assembleAudio(subjectSlug, level.ordinal, skin.slug)
-            jobs.push({
-              subjectSlug, levelOrdinal: level.ordinal, levelTitle: level.title,
-              skinSlug: skin.slug, voiceId: voice.id,
-              cacheKey: audioCacheKey(subjectSlug, level.ordinal, skin.slug, voice.id, LANG, false),
-              audioText,
-              isPreview: false,
-            })
-          } catch (err) {
-            console.warn(`  ⚠ skip ${subjectSlug} L${level.ordinal} ${skin.slug}: ${(err as Error).message}`)
+          // Full story render — the default plus any age-tuned variants.
+          const ageBands: (AgeBand | undefined)[] = [undefined, ...(Object.keys(level.ageVariants ?? {}) as AgeBand[])]
+          for (const ageBand of ageBands) {
+            try {
+              const { audioText, ageTag } = assembleAudio(subjectSlug, level.ordinal, skin.slug, ageBand)
+              jobs.push({
+                subjectSlug, levelOrdinal: level.ordinal, levelTitle: level.title,
+                skinSlug: skin.slug, voiceId: voice.id,
+                cacheKey: audioCacheKey(subjectSlug, level.ordinal, skin.slug, voice.id, LANG, false, ageTag),
+                audioText,
+                isPreview: false,
+              })
+            } catch (err) {
+              console.warn(`  ⚠ skip ${subjectSlug} L${level.ordinal} ${skin.slug} ${ageBand ?? 'all'}: ${(err as Error).message}`)
+            }
           }
 
           // Preview clip for level 1 only (used on landing page)
