@@ -21,7 +21,7 @@ const PATHS = [
     why: 'Executive function — the ability to plan, focus, and follow through — is a stronger predictor of outcomes than IQ. The window to build it is early childhood. These stories give children language for their own attention.' },
   { slug:'resilience', emoji:'💪', name:'Resilience',           available: true,
     why: 'Children who understand that effort changes ability outperform those who believe in fixed talent. Level 1 normalises struggle; without that foundation, Level 4 (learning from mistakes) lands empty.' },
-  { slug:'kindness',   emoji:'❤️', name:'Kindness & Empathy',   available: false,
+  { slug:'kindness',   emoji:'❤️', name:'Kindness & Empathy',   available: true,
     why: 'Empathy is a skill, not a trait. It is built through repeated, low-stakes practice. Bedtime stories are one of the best contexts: calm, connected, and emotionally open.' },
   { slug:'problem',    emoji:'🧠', name:'Problem Solving',       available: false,
     why: 'Problem solving is a disposition, not a subject. These stories build the habit of pausing before reacting, considering options, and trying systematically.' },

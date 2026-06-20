@@ -8,14 +8,18 @@ import { LEVELS as FOCUS_LEVELS } from '@/content/focus/levels'
 import { SKINS  as FOCUS_SKINS }  from '@/content/focus/skins'
 import { LEVELS as RESILIENCE_LEVELS } from '@/content/resilience/levels'
 import { SKINS  as RESILIENCE_SKINS }  from '@/content/resilience/skins'
+import { LEVELS as KINDNESS_LEVELS } from '@/content/kindness/levels'
+import { SKINS  as KINDNESS_SKINS }  from '@/content/kindness/skins'
 import type { Level, Skin, AudioSlotValues, ScriptSlotValues } from '@/content/types'
 
 // ── Subject registry ──────────────────────────────────────────────────────────
 const SUBJECT_LEVELS: Record<string, Level[]> = {
   money: MONEY_LEVELS, focus: FOCUS_LEVELS, resilience: RESILIENCE_LEVELS,
+  kindness: KINDNESS_LEVELS,
 }
 const SUBJECT_SKINS:  Record<string, Record<string, Skin>> = {
   money: MONEY_SKINS, focus: FOCUS_SKINS, resilience: RESILIENCE_SKINS,
+  kindness: KINDNESS_SKINS,
 }
 
 // ── Accessors ─────────────────────────────────────────────────────────────────

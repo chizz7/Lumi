@@ -177,7 +177,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
       why:'Children who understand that effort changes ability outperform those who believe in fixed talent. Level 1 normalises struggle; without that, Level 4 lands empty.',
     },
     {
-      id:'kindness', emoji:'❤️', name:'Kindness & Empathy', available:false,
+      id:'kindness', emoji:'❤️', name:'Kindness & Empathy', available:true,
       why:'Empathy is a skill, not a trait — built through repeated, low-stakes practice. Bedtime stories are one of the best contexts for it.',
     },
     {
@@ -717,7 +717,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                     { slug:'money', emoji:'🪙', name:'Money & saving', desc:'Coins, value, saving for goals', live:true },
                     { slug:'focus', emoji:'🎯', name:'Focus & goals', desc:'Attention, planning, finishing', live:true },
                     { slug:'resilience', emoji:'💪', name:'Resilience', desc:'Growth mindset, bouncing back', live:true },
-                    { slug:'kindness', emoji:'❤️', name:'Kindness & empathy', desc:'Sharing, caring', live:false },
+                    { slug:'kindness', emoji:'❤️', name:'Kindness & empathy', desc:'Noticing, caring, sharing', live:true },
                   ].map(s => {
                     const selected = subjectSlug === s.slug
                     return (
