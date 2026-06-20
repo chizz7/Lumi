@@ -10,7 +10,8 @@
     "db:types":      "supabase gen types typescript --project-id $SUPABASE_PROJECT_ID > lib/database.types.ts",
     "author:draft":  "tsx scripts/author/draft-level.ts",
     "prerender":     "tsx scripts/prerender.ts",
-    "prerender:dry": "tsx scripts/prerender.ts --dry"
+    "prerender:dry": "tsx scripts/prerender.ts --dry",
+    "setup:storage": "tsx scripts/setup-storage.ts"
   },
   "dependencies": {
     "next":                  "^15.0.0",
