@@ -10,9 +10,7 @@
 import { NextRequest, NextResponse }  from 'next/server'
 import { constructWebhookEvent, createBillingPortalUrl } from '@/lib/stripe'
 import { adminClient }                from '@/lib/supabase'
-import { assembleStory }              from '@/content'
-import { getOrRenderAudio, audioCacheKey, type VoiceId } from '@/lib/tts'
-import { sendStoryEmail }             from '@/lib/email'
+import { deliverNextStory }           from '@/lib/deliver'
 import { track }                      from '@/lib/analytics'
 import type { Draft }                 from '@/lib/draft'
 import type Stripe                    from 'stripe'
@@ -148,32 +146,8 @@ async function handleNewSubscriber(session: Stripe.Checkout.Session) {
 
   if (!profile) { console.error('[webhook] profile insert failed'); return }
 
-  // Assemble, render, deliver
-  const { audioText, script, level } = assembleStory(draft.subjectSlug, 1, draft.skinSlug, draft.childName)
-  const cacheKey = audioCacheKey(draft.subjectSlug, 1, draft.skinSlug, draft.voiceId)
-
-  let audioUrl = ''
-  try {
-    audioUrl = await getOrRenderAudio(audioText, draft.voiceId as VoiceId, cacheKey)
-  } catch (err) {
-    console.error('[webhook] TTS failed (non-fatal):', err)
-  }
-
-  try {
-    await sendStoryEmail({ to: email, childName: draft.childName, levelTitle: level.title, audioUrl, script })
-  } catch (err) {
-    console.error('[webhook] email failed (non-fatal):', err)
-  }
-
-  await adminClient.from('story_instances').insert({
-    profile_id:    profile.id,
-    subject_slug:  draft.subjectSlug,
-    level_ordinal: 1,
-    skin_slug:     draft.skinSlug,
-    voice_id:      draft.voiceId,
-    audio_key:     cacheKey,
-    script_text:   script,
-  })
+  // Deliver the first story (Level 1) via the shared, idempotent pipeline.
+  await deliverNextStory(profile, email, userId)
 
   track('subscription_started', { subjectSlug: draft.subjectSlug, skinSlug: draft.skinSlug }, userId)
   console.log(`[webhook] delivered level 1 to ${email}`)

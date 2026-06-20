@@ -1,11 +1,17 @@
 {
   "framework": "nextjs",
+  "crons": [
+    { "path": "/api/cron/deliver", "schedule": "0 16 * * *" }
+  ],
   "functions": {
     "app/api/webhooks/stripe/route.ts": {
       "maxDuration": 30
     },
     "app/api/story/next/route.ts": {
       "maxDuration": 30
+    },
+    "app/api/cron/deliver/route.ts": {
+      "maxDuration": 300
     },
     "app/api/preview/route.ts": {
       "maxDuration": 15

@@ -1,12 +1,11 @@
 // app/api/story/next/route.ts
-// POST /api/story/next — assemble and deliver the next level for this profile.
-// Same logic as the webhook handler, just triggered by the parent, not Stripe.
+// POST /api/story/next — parent-triggered delivery of the next level.
+// Delivery itself lives in lib/deliver.ts (shared with the cron); this route
+// only handles auth, the plan check, and the cadence gate.
 
 import { NextRequest, NextResponse } from 'next/server'
-import { serverClient, adminClient, BUCKETS } from '@/lib/supabase'
-import { assembleStory, getLevelCount }        from '@/content'
-import { getOrRenderAudio, audioCacheKey, type VoiceId } from '@/lib/tts'
-import { sendStoryEmail }                      from '@/lib/email'
+import { serverClient }              from '@/lib/supabase'
+import { deliverNextStory }          from '@/lib/deliver'
 import { canRequestStory, nextStoryAvailableAt, STORY_INTERVAL_DAYS } from '@/lib/cadence'
 
 export async function POST(req: NextRequest) {
@@ -34,8 +33,7 @@ export async function POST(req: NextRequest) {
 
   if (!profile) return NextResponse.json({ error: 'No profile found' }, { status: 400 })
 
-  // Cadence gate: one story every STORY_INTERVAL_DAYS. Also prevents duplicate
-  // deliveries from rapid double-taps (there's no queue/idempotency otherwise).
+  // Cadence gate: one story every STORY_INTERVAL_DAYS.
   const { data: lastStory } = await supabase
     .from('story_instances')
     .select('delivered_at')
@@ -53,45 +51,14 @@ export async function POST(req: NextRequest) {
     }, { status: 429 })
   }
 
-  const totalLevels = getLevelCount(profile.subject_slug)
-  if (profile.current_level > totalLevels) {
-    return NextResponse.json({ error: 'You\'ve completed all available levels! More coming soon.' }, { status: 400 })
+  const result = await deliverNextStory(profile, account.email, user.id)
+  if (!result.delivered) {
+    if (result.reason === 'completed') {
+      return NextResponse.json({ error: 'You\'ve completed all available levels! More coming soon.' }, { status: 400 })
+    }
+    // already_delivered — treat as success so the UI just refreshes.
+    return NextResponse.json({ ok: true, alreadyDelivered: true })
   }
 
-  const levelOrdinal = profile.current_level
-
-  // Assemble
-  const { audioText, script, level } = assembleStory(
-    profile.subject_slug, levelOrdinal, profile.skin_slug, profile.name
-  )
-
-  // Render audio
-  const cacheKey = audioCacheKey(profile.subject_slug, levelOrdinal, profile.skin_slug, profile.voice_id)
-  let audioUrl = ''
-  try {
-    audioUrl = await getOrRenderAudio(audioText, profile.voice_id as VoiceId, cacheKey)
-  } catch (err) {
-    console.error('[story/next] TTS failed:', err)
-  }
-
-  // Email
-  try {
-    await sendStoryEmail({ to: account.email, childName: profile.name, levelTitle: level.title, audioUrl, script })
-  } catch (err) {
-    console.error('[story/next] email failed:', err)
-  }
-
-  // Write instance
-  await adminClient.from('story_instances').insert({
-    profile_id: profile.id, subject_slug: profile.subject_slug,
-    level_ordinal: levelOrdinal, skin_slug: profile.skin_slug,
-    voice_id: profile.voice_id, audio_key: cacheKey, script_text: script,
-  })
-
-  // Advance level
-  await adminClient.from('child_profiles')
-    .update({ current_level: levelOrdinal + 1 })
-    .eq('id', profile.id)
-
-  return NextResponse.json({ ok: true, levelTitle: level.title, audioUrl })
+  return NextResponse.json({ ok: true, levelTitle: result.levelTitle, audioUrl: result.audioUrl })
 }
