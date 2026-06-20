@@ -1,11 +1,21 @@
 'use client'
 // app/(app)/account/page.tsx
 import { useState, useEffect } from 'react'
+import { getVoicesForLang } from '@/lib/voices'
 
 interface AccountData {
   account: { email: string; plan: string; created_at: string }
   profile: { name: string; age_band: string; skin_slug: string; subject_slug: string; voice_id: string; current_level: number } | null
 }
+
+const VOICES = getVoicesForLang('en')
+const AGE_BANDS = [{ value:'3-4', label:'3–4' }, { value:'5-6', label:'5–6' }, { value:'7-8', label:'7–8' }]
+const WORLDS = [
+  { slug:'sea', emoji:'🐬', name:'Under the Sea' },
+  { slug:'space', emoji:'🚀', name:'Space Station' },
+  { slug:'forest', emoji:'🦊', name:'Whisper Forest' },
+  { slug:'castle', emoji:'🐉', name:'Cloud Castle' },
+]
 
 export default function AccountPage() {
   const [data,        setData]        = useState<AccountData | null>(null)
@@ -13,7 +23,45 @@ export default function AccountPage() {
   const [deleting,    setDeleting]    = useState(false)
   const [portalBusy,  setPortalBusy]  = useState(false)
 
+  // Edit-profile modal state
+  const [editing, setEditing] = useState(false)
+  const [savingEdit, setSavingEdit] = useState(false)
+  const [form, setForm] = useState({ name:'', ageBand:'5-6', skinSlug:'sea', voiceId:'af_heart' })
+
   useEffect(() => { fetch('/api/account').then(r => r.json()).then(setData) }, [])
+
+  const openEdit = () => {
+    if (!data?.profile) return
+    setForm({
+      name:     data.profile.name,
+      ageBand:  data.profile.age_band,
+      skinSlug: data.profile.skin_slug,
+      voiceId:  data.profile.voice_id,
+    })
+    setEditing(true)
+  }
+
+  const saveEdit = async () => {
+    setSavingEdit(true)
+    try {
+      const res  = await fetch('/api/account', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      })
+      const body = await res.json()
+      if (body.ok && body.profile) {
+        setData(d => d ? { ...d, profile: body.profile } : d)
+        setEditing(false)
+      } else {
+        alert(body.error ?? 'Could not save changes.')
+      }
+    } catch {
+      alert('Could not save changes.')
+    } finally {
+      setSavingEdit(false)
+    }
+  }
 
   const openPortal = async () => {
     setPortalBusy(true)
@@ -76,8 +124,18 @@ export default function AccountPage() {
         {/* Profile */}
         {data.profile && (
           <section aria-labelledby="profile-heading" style={{ background:'#fff', border:'1px solid #ece0c8', borderRadius:'16px', padding:'18px', marginBottom:'22px' }}>
-            <h2 id="profile-heading" style={{ fontFamily:'var(--font-fraunces)', fontSize:'16px', marginBottom:'12px' }}>Child profile</h2>
-            {([['Name', data.profile.name || '—'],['Age band', data.profile.age_band],['World', data.profile.skin_slug],['Subject', data.profile.subject_slug],['Current level', String(data.profile.current_level)]] as [string,string][]).map(([k,v]) => (
+            <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:'12px' }}>
+              <h2 id="profile-heading" style={{ fontFamily:'var(--font-fraunces)', fontSize:'16px' }}>Child profile</h2>
+              <button onClick={openEdit} style={{ fontSize:'13px', fontWeight:700, color:'#E0852A', background:'none', border:'none', cursor:'pointer' }}>Edit</button>
+            </div>
+            {([
+              ['Name', data.profile.name || '—'],
+              ['Age band', data.profile.age_band],
+              ['World', WORLDS.find(w => w.slug === data.profile!.skin_slug)?.name ?? data.profile.skin_slug],
+              ['Voice', VOICES.find(v => v.id === data.profile!.voice_id)?.name ?? data.profile.voice_id],
+              ['Subject', data.profile.subject_slug],
+              ['Current level', String(data.profile.current_level)],
+            ] as [string,string][]).map(([k,v]) => (
               <div key={k} style={{ display:'flex', justifyContent:'space-between', padding:'8px 0', borderBottom:'1px solid #f4e9d4', fontSize:'14px' }}>
                 <span style={{ color:'#5d5278' }}>{k}</span>
                 <span style={{ fontWeight:700, textTransform:'capitalize' }}>{v}</span>
@@ -114,6 +172,59 @@ export default function AccountPage() {
           <a href="/library" style={{ color:'#5d5278' }}>← Back to library</a>
         </p>
       </div>
+
+      {/* Edit profile modal */}
+      {editing && (
+        <div role="dialog" aria-modal="true" aria-label="Edit child profile"
+          onClick={e => { if (e.target === e.currentTarget) setEditing(false) }}
+          style={{ position:'fixed', inset:0, zIndex:300, background:'rgba(12,8,32,.7)', display:'flex', alignItems:'center', justifyContent:'center', padding:'20px' }}>
+          <div style={{ background:'#FBF4E6', borderRadius:'22px', width:'100%', maxWidth:'440px', maxHeight:'90vh', overflowY:'auto', padding:'22px' }}>
+            <h2 style={{ fontFamily:'var(--font-fraunces)', fontSize:'19px', marginBottom:'4px' }}>Edit profile</h2>
+            <p style={{ fontSize:'13px', color:'#5d5278', marginBottom:'18px' }}>Changes apply to future stories. Stories already in your library don't change.</p>
+
+            <label style={{ fontSize:'13px', fontWeight:700, display:'block', marginBottom:'7px' }}>Child's first name</label>
+            <input value={form.name} onChange={e => setForm(f => ({ ...f, name: e.target.value }))} placeholder="e.g. Maya"
+              style={{ width:'100%', padding:'13px', border:'1.5px solid #e0d2b7', borderRadius:'12px', fontSize:'16px', fontFamily:'inherit', background:'#fff', marginBottom:'16px' }} />
+
+            <label style={{ fontSize:'13px', fontWeight:700, display:'block', marginBottom:'7px' }}>Age band</label>
+            <div style={{ display:'flex', gap:'8px', marginBottom:'16px' }}>
+              {AGE_BANDS.map(b => (
+                <button key={b.value} onClick={() => setForm(f => ({ ...f, ageBand: b.value }))}
+                  style={{ padding:'9px 15px', border:`1.5px solid ${form.ageBand===b.value?'#211a3a':'#e0d2b7'}`, background: form.ageBand===b.value?'#211a3a':'#fff', color: form.ageBand===b.value?'#fff':'#211a3a', borderRadius:'99px', cursor:'pointer', fontSize:'13.5px', fontWeight:600 }}>
+                  {b.label} yrs
+                </button>
+              ))}
+            </div>
+
+            <label style={{ fontSize:'13px', fontWeight:700, display:'block', marginBottom:'7px' }}>World</label>
+            <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'8px', marginBottom:'16px' }}>
+              {WORLDS.map(w => (
+                <button key={w.slug} onClick={() => setForm(f => ({ ...f, skinSlug: w.slug }))} aria-pressed={form.skinSlug===w.slug}
+                  style={{ display:'flex', gap:'8px', alignItems:'center', border:`2px solid ${form.skinSlug===w.slug?'#F4A93C':'#e0d2b7'}`, background: form.skinSlug===w.slug?'#fff7ea':'#fff', borderRadius:'13px', padding:'11px', cursor:'pointer', fontSize:'13px', fontWeight:700, color:'#211a3a' }}>
+                  <span style={{ fontSize:'20px' }}>{w.emoji}</span> {w.name}
+                </button>
+              ))}
+            </div>
+
+            <label style={{ fontSize:'13px', fontWeight:700, display:'block', marginBottom:'7px' }}>Voice</label>
+            <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'8px', marginBottom:'20px' }}>
+              {VOICES.map(v => (
+                <button key={v.id} onClick={() => setForm(f => ({ ...f, voiceId: v.id }))} aria-pressed={form.voiceId===v.id}
+                  style={{ textAlign:'left', border:`1.5px solid ${form.voiceId===v.id?'#F4A93C':'#e6d8bd'}`, background: form.voiceId===v.id?'#fff7ea':'#fff', borderRadius:'13px', padding:'11px', cursor:'pointer' }}>
+                  <div style={{ fontWeight:800, fontSize:'14px' }}>{v.name}</div>
+                  <div style={{ fontSize:'12px', color:'#5d5278' }}>{v.tone}</div>
+                </button>
+              ))}
+            </div>
+
+            <button onClick={saveEdit} disabled={savingEdit || !form.name.trim()}
+              style={{ width:'100%', padding:'14px', background:'linear-gradient(135deg,#FFD27A,#E0852A)', color:'#3a230a', fontWeight:700, border:'none', borderRadius:'14px', cursor: savingEdit||!form.name.trim() ? 'not-allowed' : 'pointer', fontSize:'15px', opacity: savingEdit||!form.name.trim() ? .6 : 1 }}>
+              {savingEdit ? 'Saving…' : 'Save changes'}
+            </button>
+            <button onClick={() => setEditing(false)} style={{ width:'100%', padding:'11px', background:'none', color:'#5d5278', fontWeight:600, border:'none', cursor:'pointer', fontSize:'14px', marginTop:'4px' }}>Cancel</button>
+          </div>
+        </div>
+      )}
 
       <nav style={{ position:'fixed', bottom:0, left:0, right:0, background:'#FBF4E6', borderTop:'1px solid #ece0c8', display:'flex', justifyContent:'space-around', padding:'8px 0 12px' }} aria-label="App navigation">
         <a href="/library" style={{ display:'flex', flexDirection:'column', alignItems:'center', gap:'3px', fontSize:'11px', fontWeight:700, color:'#5d5278', textDecoration:'none' }}><span style={{ fontSize:'22px' }}>📚</span>Library</a>

@@ -2,13 +2,15 @@
 // All content access goes through here.
 // Adding a subject: add its levels.ts + skins.ts, import below.
 
-import { LEVELS } from '@/content/money/levels'
-import { SKINS }  from '@/content/money/skins'
+import { LEVELS as MONEY_LEVELS } from '@/content/money/levels'
+import { SKINS  as MONEY_SKINS }  from '@/content/money/skins'
+import { LEVELS as FOCUS_LEVELS } from '@/content/focus/levels'
+import { SKINS  as FOCUS_SKINS }  from '@/content/focus/skins'
 import type { Level, Skin, AudioSlotValues, ScriptSlotValues } from '@/content/types'
 
 // ── Subject registry ──────────────────────────────────────────────────────────
-const SUBJECT_LEVELS: Record<string, Level[]> = { money: LEVELS }
-const SUBJECT_SKINS:  Record<string, Record<string, Skin>> = { money: SKINS }
+const SUBJECT_LEVELS: Record<string, Level[]> = { money: MONEY_LEVELS, focus: FOCUS_LEVELS }
+const SUBJECT_SKINS:  Record<string, Record<string, Skin>> = { money: MONEY_SKINS, focus: FOCUS_SKINS }
 
 // ── Accessors ─────────────────────────────────────────────────────────────────
 

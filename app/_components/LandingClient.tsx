@@ -168,7 +168,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
       why:'Children who understand value, exchange, and saving before age 8 develop habits that compound for life. This path starts with the simplest question — why do coins look different? — and builds to the hardest: wants vs. needs.',
     },
     {
-      id:'focus', emoji:'🎯', name:'Focus & Goals', available:false,
+      id:'focus', emoji:'🎯', name:'Focus & Goals', available:true,
       why:'Executive function — the ability to plan, focus, and follow through — is a stronger predictor of outcomes than IQ. The window to build it is early childhood.',
     },
     {
@@ -189,11 +189,10 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
     },
   ]
 
-  // Money levels — the real, single source of truth (content/money/levels.ts)
-  const moneyLevels = getAllLevels('money')
-
   const [expandedLevel, setExpandedLevel] = useState<number | null>(null)
   const ap = paths.find(p => p.id === activePath) ?? paths[0]!
+  // Levels for the active path — real content (content/<subject>/levels.ts).
+  const activeLevels = getAllLevels(ap.id)
 
   return (
     <div style={{ fontFamily: "var(--font-figtree, 'Figtree', sans-serif)", color: '#211a3a', background: '#FBF4E6' }}>
@@ -374,11 +373,11 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
               {/* Level-by-level breakdown */}
               <div>
                 <h3 style={{ fontFamily:'var(--font-fraunces)', fontSize:'18px', marginBottom:'18px', color:'rgba(255,255,255,.7)', fontWeight:500 }}>
-                  {ap.emoji} {ap.name} — 5 levels
+                  {ap.emoji} {ap.name} — {activeLevels.length} levels
                 </h3>
                 {ap.available ? (
                   <div style={{ display:'flex', flexDirection:'column', gap:'10px' }}>
-                    {moneyLevels.map((lv, i) => (
+                    {activeLevels.map((lv, i) => (
                       <div key={lv.ordinal}>
                         <button
                           onClick={() => setExpandedLevel(expandedLevel === lv.ordinal ? null : lv.ordinal)}
@@ -715,7 +714,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                   <p style={{ fontSize:'13.5px', color:'#5d5278', marginBottom:'18px' }}>Money is ready to try now. The other paths are being expert-written — tap one to follow along.</p>
                   {[
                     { slug:'money', emoji:'🪙', name:'Money & saving', desc:'Coins, value, saving for goals', live:true },
-                    { slug:'focus', emoji:'🎯', name:'Focus & goals', desc:'Planning, patience', live:false },
+                    { slug:'focus', emoji:'🎯', name:'Focus & goals', desc:'Attention, planning, finishing', live:true },
                     { slug:'resilience', emoji:'💪', name:'Resilience', desc:'Trying again', live:false },
                     { slug:'kindness', emoji:'❤️', name:'Kindness & empathy', desc:'Sharing, caring', live:false },
                   ].map(s => {
