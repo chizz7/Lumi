@@ -6,8 +6,10 @@
 // we exchange it for a session → redirect to /library (or / if it fails).
 
 import { NextRequest, NextResponse }   from 'next/server'
-import { createServerClient }          from '@supabase/ssr'
+import { createServerClient, type CookieOptions } from '@supabase/ssr'
 import { cookies }                     from 'next/headers'
+
+type CookieToSet = { name: string; value: string; options?: CookieOptions }
 
 export async function GET(req: NextRequest) {
   const { searchParams, origin } = req.nextUrl
@@ -30,8 +32,8 @@ export async function GET(req: NextRequest) {
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
     {
       cookies: {
-        getAll: ()    => jar.getAll(),
-        setAll: (all) => all.forEach(({ name, value, options }) => jar.set(name, value, options)),
+        getAll: ()                  => jar.getAll(),
+        setAll: (all: CookieToSet[]) => all.forEach(({ name, value, options }) => jar.set(name, value, options)),
       },
     }
   )

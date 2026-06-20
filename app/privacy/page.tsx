@@ -101,7 +101,7 @@ We never sell your data. We never use your data for advertising.`,
             body: `Questions? ${CONTACT_EMAIL}`,
           },
         ].map(({ heading, body }) => (
-          <section key={heading} style={{ marginBottom:'32px' }}>
+          <section key={heading} id={heading.includes('COPPA') ? 'coppa' : undefined} style={{ marginBottom:'32px', scrollMarginTop:'80px' }}>
             <h2 style={{ fontFamily:'var(--font-fraunces)', fontSize:'19px', marginBottom:'10px', color:'#211a3a' }}>{heading}</h2>
             <div style={{ fontSize:'15px', color:'#5d5278', lineHeight:1.7, whiteSpace:'pre-line' }}>{body}</div>
           </section>

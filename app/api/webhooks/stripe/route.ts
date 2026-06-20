@@ -8,7 +8,7 @@
 //   invoice.payment_succeeded       → (optional) log renewal
 
 import { NextRequest, NextResponse }  from 'next/server'
-import { constructWebhookEvent }      from '@/lib/stripe'
+import { constructWebhookEvent, createBillingPortalUrl } from '@/lib/stripe'
 import { adminClient }                from '@/lib/supabase'
 import { assembleStory }              from '@/content'
 import { getOrRenderAudio, audioCacheKey, type VoiceId } from '@/lib/tts'
@@ -67,12 +67,13 @@ export async function POST(req: NextRequest) {
         .eq('stripe_customer_id', customerId)
         .single()
       if (account?.email) {
+        const portalUrl = await createBillingPortalUrl(customerId)
         await resend.emails.send({
           from:    FROM,
           to:      account.email,
           subject: 'Action needed — your Lumi payment didn\'t go through',
           html: `<p>Hi there — we couldn't charge your card for your Lumi Story Club subscription.</p>
-                 <p>Please <a href="https://billing.stripe.com/p/login/test_XXXXX">update your payment method</a> to keep your stories coming.</p>`,
+                 <p>Please <a href="${portalUrl}">update your payment method</a> to keep your stories coming.</p>`,
         })
         track('payment_failed', { customerId }, undefined)
       }

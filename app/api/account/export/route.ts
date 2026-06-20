@@ -8,11 +8,15 @@ export async function GET(req: NextRequest) {
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
 
-  const [{ data: account }, { data: profile }, { data: stories }] = await Promise.all([
+  // account + profile can be fetched together; stories depend on the profile id.
+  const [{ data: account }, { data: profile }] = await Promise.all([
     supabase.from('accounts').select('email, plan, created_at').eq('id', user.id).single(),
-    supabase.from('child_profiles').select('name, age_band, skin_slug, subject_slug, voice_id, current_level').eq('account_id', user.id).single(),
-    supabase.from('story_instances').select('level_ordinal, subject_slug, skin_slug, delivered_at').eq('profile_id', profile?.id ?? ''),
+    supabase.from('child_profiles').select('id, name, age_band, skin_slug, subject_slug, voice_id, current_level').eq('account_id', user.id).single(),
   ])
+
+  const { data: stories } = profile
+    ? await supabase.from('story_instances').select('level_ordinal, subject_slug, skin_slug, delivered_at').eq('profile_id', profile.id)
+    : { data: [] }
 
   const bundle = {
     exportedAt: new Date().toISOString(),

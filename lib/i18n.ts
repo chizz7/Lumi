@@ -40,7 +40,7 @@ async function loadTranslations(lang: Lang): Promise<Record<string, string>> {
   } catch {
     // Fall back to English
     const mod = await import('@/locales/en')
-    return mod.default ?? mod.strings ?? {}
+    return mod.default ?? {}
   }
 }
 

@@ -8,8 +8,9 @@
 //   - Language banner dismiss
 //   - Waitlist form submission
 
-import { useState, useRef, useCallback } from 'react'
+import { useState, useRef } from 'react'
 import type { VoiceConfig }              from '@/lib/voices'
+import { getAllLevels }                  from '@/content'
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -31,7 +32,12 @@ const SKINS = [
   { slug:'forest', emoji:'🦊', name:'Whisper Forest',  desc:'Juno the fox' },
   { slug:'castle', emoji:'🐉', name:'Cloud Castle',    desc:'Bram the dragon' },
 ]
-const AGE_BANDS = ['3–4', '5–6', '7–8']
+// value = canonical hyphen form stored in the DB; label = prettier en-dash for display
+const AGE_BANDS = [
+  { value: '3-4', label: '3–4' },
+  { value: '5-6', label: '5–6' },
+  { value: '7-8', label: '7–8' },
+]
 
 // ─── Main component ───────────────────────────────────────────────────────────
 
@@ -46,7 +52,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
   const [overlayOpen, setOverlayOpen]     = useState(false)
   const [builderStep, setBuilderStep]     = useState(1)
   const [childName,   setChildName]       = useState('')
-  const [ageBand,     setAgeBand]         = useState('5–6')
+  const [ageBand,     setAgeBand]         = useState('5-6')
   const [skinSlug,    setSkinSlug]        = useState('sea')
   const [voiceId,     setVoiceId]         = useState(voices[0]?.id ?? 'af_heart')
   const [activePath,  setActivePath]      = useState<string>('money')
@@ -56,6 +62,52 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
   const [waitlistDone,  setWaitlistDone]  = useState(false)
   const [waitlistLoading, setWaitlistLoading] = useState(false)
   const [faqOpen,     setFaqOpen]         = useState<number | null>(null)
+
+  // ── Audio sampler (hero + voice switcher) ───────────────────────────────────
+  const sampleAudioRef = useRef<HTMLAudioElement>(null)
+  const [sampleLoading, setSampleLoading] = useState<number | null>(null)
+
+  // Play the pre-rendered Level-1 sample for a given voice index. Cache-first, ≈$0.
+  const playSample = async (voiceIdx: number) => {
+    setActiveVoice(voiceIdx)
+    const v = voices[voiceIdx]
+    if (!v) return
+    setSampleLoading(voiceIdx)
+    try {
+      const res  = await fetch(`/api/preview/sample?skin=${skinSlug}&voice=${encodeURIComponent(v.id)}`)
+      const data = await res.json()
+      if (res.ok && data.audioUrl && sampleAudioRef.current) {
+        sampleAudioRef.current.src = data.audioUrl
+        await sampleAudioRef.current.play().catch(() => {})
+      }
+    } catch { /* non-fatal — sample just won't play */ }
+    finally { setSampleLoading(null) }
+  }
+
+  // ── Builder preview (personalised, before paywall) ──────────────────────────
+  const previewAudioRef = useRef<HTMLAudioElement>(null)
+  const [preview, setPreview] = useState<
+    { loading: boolean; script?: string; audioUrl?: string | null; error?: string } | null
+  >(null)
+
+  const saveDraft = () => fetch('/api/draft', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ childName, ageBand, skinSlug, subjectSlug: 'money', voiceId }),
+  })
+
+  const generatePreview = async () => {
+    setPreview({ loading: true })
+    try {
+      await saveDraft()
+      const res  = await fetch('/api/preview')
+      const data = await res.json()
+      if (!res.ok) throw new Error(data.error || 'preview failed')
+      setPreview({ loading: false, script: data.script, audioUrl: data.audioUrl })
+    } catch {
+      setPreview({ loading: false, error: "We couldn't build the preview just now. Please try again." })
+    }
+  }
 
   // ── Waitlist submit ────────────────────────────────────────────────────────
   const submitWaitlist = async (source: string) => {
@@ -74,13 +126,9 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
   }
 
   // ── Builder submit ─────────────────────────────────────────────────────────
-  const openBuilder = () => { setOverlayOpen(true); setBuilderStep(1) }
+  const openBuilder = () => { setOverlayOpen(true); setBuilderStep(1); setPreview(null) }
   const startCheckout = async () => {
-    await fetch('/api/draft', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ childName, ageBand, skinSlug, subjectSlug: 'money', voiceId }),
-    })
+    await saveDraft()
     const res  = await fetch('/api/checkout', { method: 'POST' })
     const data = await res.json()
     if (data.url) window.location.href = data.url
@@ -119,24 +167,8 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
     },
   ]
 
-  // Money levels — loaded from content (summary + teachingNote)
-  const moneyLevels = [
-    { ordinal:1, title:'Coins Look Different',    concept:'Coin identification', callback:null,
-      summary:"A small animal discovers three different coins and realises for the first time that they look nothing like each other. With a wise companion's help, they learn each coin has its own name and clues — size, colour, the picture on its face.",
-      teachingNote:'The skill of noticing small differences is the foundation everything else in this path builds on.' },
-    { ordinal:2, title:'Some Are Worth More',      concept:'Coin value', callback:'Coin identification (L1)',
-      summary:"The hero assumes the bigger coin is worth more — a trip to the market proves them wrong. Their companion explains that a coin's worth comes from what it is, not how large it looks.",
-      teachingNote:"Children naturally assume bigger means more valuable — this story builds the habit of asking 'what is it worth?' instead of 'how big is it?'" },
-    { ordinal:3, title:'Trading & Giving Change',  concept:'Exchange & change', callback:'Coin value (L2)',
-      summary:"After saving five coins, the hero tries to buy a shell that costs three. The shopkeeper hands back two coins — and the hero learns this is called change. Their companion links it back to what they already know.",
-      teachingNote:'Understanding change turns a transaction from a confusing exchange into a logical, predictable conversation.' },
-    { ordinal:4, title:'Saving for the Big Thing', concept:'Delayed gratification', callback:'Coin value (L2)',
-      summary:"The hero wants a silver lantern costing ten coins but only has one. Night by night they save — and by the eighth night, they have enough. The story draws a direct line back to coin values from Level 2.",
-      teachingNote:'Delayed gratification is hardest to teach directly — this story makes a child feel the satisfaction of waiting, which is the whole lesson.' },
-    { ordinal:5, title:'Wants vs. Needs',          concept:'Prioritisation', callback:'Saving for a goal (L4)',
-      summary:"With exactly enough coins for either a sparkly toy or a warm meal, the hero must choose. Their companion asks one quiet question: is this a want, or a need? The story calls back to the saving journey in Level 4.",
-      teachingNote:'A child who can distinguish wants from needs has every concept from the path working together in a real decision.' },
-  ]
+  // Money levels — the real, single source of truth (content/money/levels.ts)
+  const moneyLevels = getAllLevels('money')
 
   const [expandedLevel, setExpandedLevel] = useState<number | null>(null)
   const ap = paths.find(p => p.id === activePath) ?? paths[0]!
@@ -220,9 +252,11 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                 <button onClick={openBuilder} style={{ padding:'15px 24px', background:'linear-gradient(135deg,#FFD27A,#E0852A)', color:'#3a230a', fontWeight:700, border:'none', borderRadius:'15px', cursor:'pointer', fontSize:'15px', boxShadow:'0 12px 26px -10px rgba(244,169,60,.75)' }}>
                   {t('hero.cta.primary')}
                 </button>
-                <button style={{ padding:'15px 24px', background:'rgba(255,255,255,.12)', color:'#fff', fontWeight:700, border:'1px solid rgba(255,255,255,.28)', borderRadius:'15px', cursor:'pointer', fontSize:'15px' }}>
-                  {t('hero.cta.secondary')}
+                <button onClick={() => playSample(activeVoice)} style={{ padding:'15px 24px', background:'rgba(255,255,255,.12)', color:'#fff', fontWeight:700, border:'1px solid rgba(255,255,255,.28)', borderRadius:'15px', cursor:'pointer', fontSize:'15px' }}>
+                  {sampleLoading === activeVoice ? '♪ Loading…' : `▶ ${t('hero.cta.secondary')}`}
                 </button>
+                {/* Hidden element that plays the cache-first sample MP3 */}
+                <audio ref={sampleAudioRef} preload="none" />
               </div>
               <div style={{ display:'flex', gap:'18px', flexWrap:'wrap', fontSize:'13.5px', color:'#cfc3ea' }}>
                 <span>⭐ {t('hero.trust.rating')}</span>
@@ -247,11 +281,11 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
               {/* Voice switcher */}
               <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'8px' }}>
                 {voices.map((v, i) => (
-                  <button key={v.id} onClick={() => setActiveVoice(i)}
+                  <button key={v.id} onClick={() => playSample(i)} aria-pressed={i === activeVoice}
                     style={{ padding:'10px 12px', borderRadius:'12px', border:`1.5px solid ${i === activeVoice ? '#F4A93C' : '#e6d8bd'}`, background: i === activeVoice ? '#fff7ea' : '#fff', cursor:'pointer', textAlign:'left', display:'flex', gap:'8px', alignItems:'center' }}>
                     <span style={{ width:'10px', height:'10px', borderRadius:'50%', background: i === activeVoice ? '#F4A93C' : '#ccc', flexShrink:0 }} />
                     <div>
-                      <div style={{ fontWeight:800, fontSize:'13px' }}>{v.name}</div>
+                      <div style={{ fontWeight:800, fontSize:'13px' }}>{sampleLoading === i ? '♪ …' : v.name}</div>
                       <div style={{ fontSize:'11px', color:'#5d5278' }}>{v.tone}</div>
                     </div>
                   </button>
@@ -392,9 +426,9 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
             <p style={{ fontSize:'16px', color:'#5d5278', marginBottom:'28px', maxWidth:'560px', margin:'0 auto 28px' }}>{t('voices.sub')}</p>
             <div style={{ display:'grid', gridTemplateColumns:'repeat(2,1fr)', gap:'12px', maxWidth:'520px', margin:'0 auto 14px' }}>
               {voices.map((v, i) => (
-                <button key={v.id} onClick={() => setActiveVoice(i)}
+                <button key={v.id} onClick={() => playSample(i)} aria-pressed={i===activeVoice}
                   style={{ display:'flex', gap:'11px', alignItems:'center', background: i===activeVoice?'#fff7ea':'#fff', border:`1.5px solid ${i===activeVoice?'#F4A93C':'#e6d8bd'}`, borderRadius:'15px', padding:'14px', cursor:'pointer', boxShadow: i===activeVoice?'0 8px 18px -10px rgba(244,169,60,.7)':'none' }}>
-                  <span style={{ width:'40px', height:'40px', borderRadius:'50%', background: i===activeVoice?'#F4A93C':'#e7dac0', flexShrink:0 }} />
+                  <span style={{ width:'40px', height:'40px', borderRadius:'50%', background: i===activeVoice?'#F4A93C':'#e7dac0', flexShrink:0, display:'grid', placeItems:'center', fontSize:'16px' }}>{sampleLoading===i ? '♪' : '▶'}</span>
                   <div style={{ textAlign:'left' }}>
                     <div style={{ fontWeight:800, fontSize:'15px' }}>{v.name}</div>
                     <div style={{ fontSize:'13px', color:'#5d5278' }}>{v.tone}</div>
@@ -559,7 +593,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
             </div>
             {[
               { head:'product',  links:[['#how','How it works'],['#curriculum','Curriculum overview'],['#voices','Voices'],['#pricing','Pricing'],['/curriculum','Full curriculum detail']] },
-              { head:'company',  links:[['#','About'],['/contact','Contact us'],['/curriculum','Curriculum']] },
+              { head:'company',  links:[['/#how','About'],['/contact','Contact us'],['/curriculum','Curriculum']] },
               { head:'legal',    links:[['/privacy','Privacy policy'],['/terms','Terms of service'],['/privacy#coppa',"Children's privacy (COPPA)"],['/account','Delete my data']] },
             ].map(col => (
               <div key={col.head}>
@@ -589,10 +623,11 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
       {overlayOpen && (
         <div style={{ position:'fixed', inset:0, zIndex:500, background:'rgba(12,8,32,.75)', backdropFilter:'blur(4px)', display:'flex', alignItems:'center', justifyContent:'center', padding:'20px' }}
              onClick={e => { if (e.target === e.currentTarget) setOverlayOpen(false) }}>
-          <div style={{ background:'#FBF4E6', borderRadius:'28px', width:'100%', maxWidth:'430px', overflow:'hidden', boxShadow:'0 24px 60px -22px rgba(8,4,28,.7)', position:'relative', maxHeight:'90vh', overflowY:'auto' }}>
+          <div role="dialog" aria-modal="true" aria-label="Story builder" style={{ background:'#FBF4E6', borderRadius:'28px', width:'100%', maxWidth:'430px', overflow:'hidden', boxShadow:'0 24px 60px -22px rgba(8,4,28,.7)', position:'relative', maxHeight:'90vh', overflowY:'auto' }}>
             <button onClick={() => setOverlayOpen(false)} style={{ position:'absolute', top:'14px', right:'14px', zIndex:90, width:'34px', height:'34px', borderRadius:'50%', border:'none', background:'rgba(0,0,0,.18)', color:'#fff', cursor:'pointer', fontSize:'16px' }} aria-label="Close builder">✕</button>
 
-            {/* Progress */}
+            {/* Progress (hidden on the preview screen) */}
+            {!preview && (
             <div style={{ display:'flex', alignItems:'center', gap:'10px', padding:'18px 18px 12px' }}>
               <button onClick={() => builderStep > 1 ? setBuilderStep(s => s-1) : setOverlayOpen(false)} style={{ background:'none', border:'none', cursor:'pointer', fontSize:'18px', color:'#211a3a', width:'34px', height:'34px', borderRadius:'10px' }} aria-label="Back">←</button>
               <div style={{ flex:1, height:'8px', background:'#e7dac0', borderRadius:'99px', overflow:'hidden' }}>
@@ -600,7 +635,9 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
               </div>
               <span style={{ fontSize:'12px', color:'#5d5278', fontWeight:700 }}>{builderStep} / 4</span>
             </div>
+            )}
 
+            {!preview && (
             <div style={{ padding:'6px 22px 22px' }}>
               {/* Step indicator */}
               <div style={{ display:'flex', gap:'8px', alignItems:'center', background:'#fff7ea', border:'1px solid #f1ddb6', borderRadius:'12px', padding:'10px 12px', fontSize:'12.5px', color:'#8a6a1f', marginBottom:'16px' }}>
@@ -621,9 +658,9 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                     <label style={{ fontSize:'13px', fontWeight:700, display:'block', marginBottom:'7px' }}>Age band</label>
                     <div style={{ display:'flex', gap:'8px', flexWrap:'wrap' }}>
                       {AGE_BANDS.map(b => (
-                        <button key={b} onClick={() => setAgeBand(b)}
-                          style={{ padding:'10px 16px', border:`1.5px solid ${ageBand===b?'#211a3a':'#e0d2b7'}`, background: ageBand===b?'#211a3a':'#fff', color: ageBand===b?'#fff':'#211a3a', borderRadius:'99px', cursor:'pointer', fontSize:'13.5px', fontWeight:600 }}>
-                          {b} yrs
+                        <button key={b.value} onClick={() => setAgeBand(b.value)}
+                          style={{ padding:'10px 16px', border:`1.5px solid ${ageBand===b.value?'#211a3a':'#e0d2b7'}`, background: ageBand===b.value?'#211a3a':'#fff', color: ageBand===b.value?'#fff':'#211a3a', borderRadius:'99px', cursor:'pointer', fontSize:'13.5px', fontWeight:600 }}>
+                          {b.label} yrs
                         </button>
                       ))}
                     </div>
@@ -674,10 +711,10 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                   <h2 style={{ fontFamily:'var(--font-fraunces)', fontSize:'22px', margin:'6px 0 4px' }}>Choose the voice.</h2>
                   <p style={{ fontSize:'13.5px', color:'#5d5278', marginBottom:'18px' }}>Tap to hear the difference. Switch anytime.</p>
                   <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'10px' }}>
-                    {voices.map(v => (
-                      <button key={v.id} onClick={() => setVoiceId(v.id)}
+                    {voices.map((v, i) => (
+                      <button key={v.id} onClick={() => { setVoiceId(v.id); playSample(i) }} aria-pressed={voiceId===v.id}
                         style={{ display:'flex', gap:'10px', alignItems:'center', background: voiceId===v.id?'#fff7ea':'#fff', border:`1.5px solid ${voiceId===v.id?'#F4A93C':'#e6d8bd'}`, borderRadius:'15px', padding:'12px', cursor:'pointer' }}>
-                        <span style={{ width:'36px', height:'36px', borderRadius:'50%', background:'#e7dac0', flexShrink:0 }} />
+                        <span style={{ width:'36px', height:'36px', borderRadius:'50%', background:'#e7dac0', flexShrink:0, display:'grid', placeItems:'center', fontSize:'15px' }}>{sampleLoading===i ? '♪' : '▶'}</span>
                         <div><div style={{ fontWeight:800, fontSize:'14px' }}>{v.name}</div><div style={{ fontSize:'12px', color:'#5d5278' }}>{v.tone}</div></div>
                       </button>
                     ))}
@@ -690,14 +727,68 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                 </div>
               )}
             </div>
+            )}
+
+            {/* ── PREVIEW SCREEN — the personalised "moment of value" before paywall ── */}
+            {preview && (
+              <div style={{ padding:'22px' }}>
+                <div style={{ display:'flex', gap:'8px', alignItems:'center', background:'#fff7ea', border:'1px solid #f1ddb6', borderRadius:'12px', padding:'10px 12px', fontSize:'12.5px', color:'#8a6a1f', marginBottom:'16px' }}>
+                  ✨ {childName ? `${childName}'s` : 'Your'} story — the opening
+                </div>
+
+                {preview.loading && (
+                  <div style={{ textAlign:'center', padding:'30px 10px' }}>
+                    <div style={{ fontSize:'30px', marginBottom:'12px' }}>🌙</div>
+                    <p style={{ fontSize:'14px', color:'#5d5278' }}>Building {childName ? `${childName}'s` : 'your'} preview…</p>
+                  </div>
+                )}
+
+                {preview.error && (
+                  <div style={{ textAlign:'center', padding:'24px 10px' }}>
+                    <p style={{ fontSize:'14px', color:'#c0392b', marginBottom:'14px' }}>{preview.error}</p>
+                    <button onClick={generatePreview} style={{ padding:'12px 20px', background:'#F4E9D4', color:'#211a3a', fontWeight:700, border:'none', borderRadius:'12px', cursor:'pointer' }}>Try again</button>
+                  </div>
+                )}
+
+                {!preview.loading && !preview.error && (
+                  <>
+                    <blockquote style={{ background:'#fff', border:'1px solid #ece0c8', borderRadius:'16px', padding:'18px 20px', fontSize:'15.5px', lineHeight:1.65, fontFamily:'var(--font-fraunces)', fontStyle:'italic', color:'#211a3a', margin:'0 0 14px' }}>
+                      "{preview.script}"
+                    </blockquote>
+                    {preview.audioUrl ? (
+                      <audio ref={previewAudioRef} src={preview.audioUrl} controls autoPlay style={{ width:'100%' }} />
+                    ) : (
+                      <p style={{ fontSize:'12.5px', color:'#8a6a1f', textAlign:'center', margin:'8px 0' }}>Audio is being prepared — you'll get the full narration by email.</p>
+                    )}
+                    <p style={{ fontSize:'12px', color:'#5d5278', textAlign:'center', margin:'12px 0 0' }}>
+                      Level 1 of 5 · {voices.find(v => v.id === voiceId)?.name ?? 'Willow'}'s voice
+                    </p>
+                  </>
+                )}
+              </div>
+            )}
 
             <div style={{ padding:'14px 22px 22px', borderTop:'1px solid #ece0c8' }}>
-              <button
-                onClick={() => builderStep < 4 ? setBuilderStep(s => s+1) : startCheckout()}
-                disabled={builderStep === 1 && !childName.trim()}
-                style={{ width:'100%', padding:'15px', background:'linear-gradient(135deg,#FFD27A,#E0852A)', color:'#3a230a', fontWeight:700, border:'none', borderRadius:'15px', cursor: builderStep===1 && !childName.trim() ? 'not-allowed' : 'pointer', fontSize:'15px', opacity: builderStep===1 && !childName.trim() ? .6 : 1 }}>
-                {builderStep < 4 ? 'Continue →' : 'Hear their story →'}
-              </button>
+              {!preview ? (
+                <button
+                  onClick={() => builderStep < 4 ? setBuilderStep(s => s+1) : generatePreview()}
+                  disabled={builderStep === 1 && !childName.trim()}
+                  style={{ width:'100%', padding:'15px', background:'linear-gradient(135deg,#FFD27A,#E0852A)', color:'#3a230a', fontWeight:700, border:'none', borderRadius:'15px', cursor: builderStep===1 && !childName.trim() ? 'not-allowed' : 'pointer', fontSize:'15px', opacity: builderStep===1 && !childName.trim() ? .6 : 1 }}>
+                  {builderStep < 4 ? 'Continue →' : 'Hear their story →'}
+                </button>
+              ) : (
+                <>
+                  <button
+                    onClick={startCheckout}
+                    disabled={preview.loading}
+                    style={{ width:'100%', padding:'15px', background:'linear-gradient(135deg,#FFD27A,#E0852A)', color:'#3a230a', fontWeight:700, border:'none', borderRadius:'15px', cursor: preview.loading ? 'wait' : 'pointer', fontSize:'15px', opacity: preview.loading ? .6 : 1 }}>
+                    Unlock the full story — first one free →
+                  </button>
+                  <button onClick={() => setPreview(null)} style={{ width:'100%', padding:'10px', background:'none', color:'#5d5278', fontWeight:600, border:'none', cursor:'pointer', fontSize:'13px', marginTop:'6px' }}>
+                    ← Change something
+                  </button>
+                </>
+              )}
             </div>
           </div>
         </div>

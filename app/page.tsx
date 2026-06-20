@@ -38,8 +38,24 @@ export default async function LandingPage({
   const contentAvailable: Lang[] = ['en'] // expand as you add translated content
   const showLangBanner = !contentAvailable.includes(lang)
 
+  // FAQ structured data — eligible for Google rich results. Built from the same
+  // localized strings the on-page FAQ renders, so they never drift apart.
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [1, 2, 3, 4, 5].map(n => ({
+      '@type': 'Question',
+      name: t(`faq.${n}.q`),
+      acceptedAnswer: { '@type': 'Answer', text: t(`faq.${n}.a`) },
+    })),
+  }
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       {/* Skip-to-content for screen readers */}
       <a href="#main-content" className="skip-link">Skip to content</a>
 

@@ -8,8 +8,8 @@
 //   npm run prerender -- --level 1       # just one level (useful after editing a template)
 //   npm run prerender -- --dry           # print what would be rendered, no API calls
 //
-// Cost estimate: 80 files × avg 1800 chars × $0.80/M chars ≈ $0.12
-// Time estimate: 80 files × ~3s each ÷ 4 concurrent = ~60 seconds
+// Cost estimate: 96 files (80 full + 16 L1 previews) × avg 1800 chars × $0.80/M chars ≈ $0.14
+// Time estimate: 96 files × ~3s each ÷ 4 concurrent = ~72 seconds
 //
 // Safe to re-run — already-cached files are skipped automatically.
 

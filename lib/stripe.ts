@@ -68,6 +68,25 @@ export async function issueCredit(
   })
 }
 
+// Create a one-time Billing Portal link so a customer can update their card.
+// Used in the payment_failed email — replaces the old hardcoded test URL.
+// Falls back to the account page if the portal isn't configured yet.
+export async function createBillingPortalUrl(
+  stripeCustomerId: string
+): Promise<string> {
+  const returnUrl = `${process.env.NEXT_PUBLIC_APP_URL ?? ''}/account`
+  try {
+    const session = await stripe.billingPortal.sessions.create({
+      customer:   stripeCustomerId,
+      return_url: returnUrl,
+    })
+    return session.url
+  } catch (err) {
+    console.error('[stripe] billing portal error (non-fatal):', err)
+    return returnUrl
+  }
+}
+
 // Cancel a subscription (called from account deletion)
 export async function cancelSubscription(
   stripeCustomerId: string

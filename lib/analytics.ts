@@ -18,6 +18,9 @@ export type AnalyticsEvent =
   | 'story_played'
   | 'next_story_requested'
   | 'story_reported'
+  | 'subscription_cancelled'  // Stripe subscription deleted
+  | 'payment_failed'          // Stripe invoice.payment_failed
+  | 'subscription_renewed'    // Stripe invoice.payment_succeeded (renewal)
   | 'waitlist_joined'
   | 'account_deleted'
 

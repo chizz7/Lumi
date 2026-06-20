@@ -1,6 +1,8 @@
 // middleware.ts
-import { createServerClient } from '@supabase/ssr'
+import { createServerClient, type CookieOptions } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
+
+type CookieToSet = { name: string; value: string; options?: CookieOptions }
 
 const PROTECTED = ['/library', '/account', '/welcome']
 
@@ -12,8 +14,8 @@ export async function middleware(request: NextRequest) {
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
     {
       cookies: {
-        getAll: ()    => request.cookies.getAll(),
-        setAll: (all) => {
+        getAll: ()                  => request.cookies.getAll(),
+        setAll: (all: CookieToSet[]) => {
           all.forEach(({ name, value }) => request.cookies.set(name, value))
           response = NextResponse.next({ request })
           all.forEach(({ name, value, options }) => response.cookies.set(name, value, options))

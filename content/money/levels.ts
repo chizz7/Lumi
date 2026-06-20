@@ -60,8 +60,8 @@ Just then, {companion_name} appeared, peering over {child_name}'s shoulder with 
   {
     ordinal: 2, title: 'Some Are Worth More',
     concept: "A coin's value and its size are different things",
-    summary: 'The hero finds two coins — one much bigger than the other — and assumes the bigger one must be worth more. A trip to the market proves them wrong: the smaller coin buys twice as much. Their companion explains that a coin's value comes from what it is, not how large it looks.',
-    teachingNote: 'Children naturally assume bigger means more valuable — this story builds the habit of asking 'what is it worth?' instead of 'how big is it?'.',
+    summary: "The hero finds two coins — one much bigger than the other — and assumes the bigger one must be worth more. A trip to the market proves them wrong: the smaller coin buys twice as much. Their companion explains that a coin's value comes from what it is, not how large it looks.",
+    teachingNote: "Children naturally assume bigger means more valuable — this story builds the habit of asking 'what is it worth?' instead of 'how big is it?'.",
     callback: 'Coins have different names and appearances (Level 1)', ageFloor: 3,
     audioTemplate: `One calm evening, a small {hero} found two {object_motif}s in {setting} — one large and flat, one small and thin.
 
@@ -191,7 +191,7 @@ That night it lit {setting} with a warm and steady glow — the glow of somethin
   {
     ordinal: 5, title: 'Wants and Needs',
     concept: 'Some things we need; some we want. Knowing the difference is a skill.',
-    summary: 'With exactly enough coins for either a sparkly toy or a warm meal, the hero must choose. Their companion doesn't tell them what to pick — they ask one quiet question: is this a want, or a need? The hero thinks it through and decides. The story calls back directly to the saving journey in Level 4.',
+    summary: "With exactly enough coins for either a sparkly toy or a warm meal, the hero must choose. Their companion doesn't tell them what to pick — they ask one quiet question: is this a want, or a need? The hero thinks it through and decides. The story calls back directly to the saving journey in Level 4.",
     teachingNote: 'This level is the capstone: a child who can distinguish wants from needs has every concept from the path — identification, value, exchange, saving — working together in a real decision.',
     callback: 'Saving for a goal (Level 4)', ageFloor: 5,
     audioTemplate: `A small {hero} had ten {object_motif}s — exactly enough for either thing.
