@@ -181,11 +181,11 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
       why:'Empathy is a skill, not a trait — built through repeated, low-stakes practice. Bedtime stories are one of the best contexts for it.',
     },
     {
-      id:'problem', emoji:'🧠', name:'Problem Solving', available:false,
+      id:'problem', emoji:'🧠', name:'Problem Solving', available:true,
       why:'Problem solving is a disposition, not a subject. These stories build the habit of pausing before reacting and trying systematically.',
     },
     {
-      id:'confidence', emoji:'🌱', name:'Confidence', available:false,
+      id:'confidence', emoji:'🌱', name:'Confidence', available:true,
       why:"Confidence is the quiet belief that you're capable of trying. Level 1 normalises incompleteness — removing the shame that stops children from attempting hard things.",
     },
   ]
@@ -718,6 +718,8 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                     { slug:'focus', emoji:'🎯', name:'Focus & goals', desc:'Attention, planning, finishing', live:true },
                     { slug:'resilience', emoji:'💪', name:'Resilience', desc:'Growth mindset, bouncing back', live:true },
                     { slug:'kindness', emoji:'❤️', name:'Kindness & empathy', desc:'Noticing, caring, sharing', live:true },
+                    { slug:'problem', emoji:'🧠', name:'Problem solving', desc:'Pause, ideas, try and see', live:true },
+                    { slug:'confidence', emoji:'🌱', name:'Confidence', desc:'Trying before you feel ready', live:true },
                   ].map(s => {
                     const selected = subjectSlug === s.slug
                     return (

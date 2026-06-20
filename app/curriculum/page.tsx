@@ -23,9 +23,9 @@ const PATHS = [
     why: 'Children who understand that effort changes ability outperform those who believe in fixed talent. Level 1 normalises struggle; without that foundation, Level 4 (learning from mistakes) lands empty.' },
   { slug:'kindness',   emoji:'❤️', name:'Kindness & Empathy',   available: true,
     why: 'Empathy is a skill, not a trait. It is built through repeated, low-stakes practice. Bedtime stories are one of the best contexts: calm, connected, and emotionally open.' },
-  { slug:'problem',    emoji:'🧠', name:'Problem Solving',       available: false,
+  { slug:'problem',    emoji:'🧠', name:'Problem Solving',       available: true,
     why: 'Problem solving is a disposition, not a subject. These stories build the habit of pausing before reacting, considering options, and trying systematically.' },
-  { slug:'confidence', emoji:'🌱', name:'Confidence',            available: false,
+  { slug:'confidence', emoji:'🌱', name:'Confidence',            available: true,
     why: 'Confidence is the quiet belief that you are capable of trying. Level 1 starts by normalising incompleteness — removing the shame that stops children from attempting hard things.' },
 ]
 
