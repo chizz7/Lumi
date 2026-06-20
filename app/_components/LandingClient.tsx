@@ -100,6 +100,28 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
   const [preview, setPreview] = useState<
     { loading: boolean; script?: string; audioUrl?: string | null; error?: string } | null
   >(null)
+  // Email gate on the preview: capturing the parent's email both (a) unlocks the
+  // audio and (b) gives us a lead for abandoned-funnel recovery. Submitting it is
+  // also the user gesture that lets the audio .play() on mobile (iOS blocks
+  // autoplay without one), so one tap solves both.
+  const [leadEmail, setLeadEmail]     = useState('')
+  const [leadDone,  setLeadDone]      = useState(false)
+  const [leadError, setLeadError]     = useState(false)
+
+  const unlockStory = () => {
+    const email = leadEmail.trim().toLowerCase()
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { setLeadError(true); return }
+    setLeadError(false)
+    setLeadDone(true)
+    // Play inside the gesture so mobile browsers allow it.
+    previewAudioRef.current?.play().catch(() => {})
+    // Capture the lead (non-blocking — the story unlocks regardless).
+    fetch('/api/lead', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, lang, source: 'builder-preview' }),
+    }).catch(() => {})
+  }
 
   // Draft fields, with optional overrides so live preview switching never reads
   // stale state (setState is async; we pass the new value through directly).
@@ -158,7 +180,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
   }
 
   // ── Builder submit ─────────────────────────────────────────────────────────
-  const openBuilder = () => { setOverlayOpen(true); setBuilderStep(1); setPreview(null) }
+  const openBuilder = () => { setOverlayOpen(true); setBuilderStep(1); setPreview(null); setLeadDone(false); setLeadEmail(''); setLeadError(false) }
   const startCheckout = async () => {
     await saveDraft()
     const res  = await fetch('/api/checkout', { method: 'POST' })
@@ -721,7 +743,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
               {builderStep === 3 && (
                 <div>
                   <h2 style={{ fontFamily:'var(--font-fraunces)', fontSize:'22px', margin:'6px 0 4px' }}>What should it teach?</h2>
-                  <p style={{ fontSize:'13.5px', color:'#5d5278', marginBottom:'18px' }}>Money is ready to try now. The other paths are being expert-written — tap one to follow along.</p>
+                  <p style={{ fontSize:'13.5px', color:'#5d5278', marginBottom:'18px' }}>One concept per story, building level by level. Pick the skill you'd like to start with.</p>
                   {[
                     { slug:'money', emoji:'🪙', name:'Money & saving', desc:'Coins, value, saving for goals', live:true },
                     { slug:'focus', emoji:'🎯', name:'Focus & goals', desc:'Attention, planning, finishing', live:true },
@@ -809,20 +831,57 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                       {renderScript(preview.script ?? '')}
                     </blockquote>
 
-                    {preview.audioUrl ? (
-                      <audio ref={previewAudioRef} src={preview.audioUrl} controls autoPlay style={{ width:'100%' }} />
-                    ) : (
-                      <p style={{ fontSize:'12.5px', color:'#8a6a1f', textAlign:'center', margin:'8px 0' }}>Audio is being prepared — you'll get the full narration by email.</p>
+                    {/* Audio is always mounted so .play() works inside the unlock
+                        gesture; controls are revealed once the email is given. */}
+                    <audio
+                      ref={previewAudioRef}
+                      src={preview.audioUrl ?? undefined}
+                      controls={leadDone}
+                      preload="auto"
+                      style={{ width:'100%', display: leadDone ? 'block' : 'none' }}
+                    />
+
+                    {!leadDone && (
+                      <div style={{ background:'#fff', border:'1.5px solid #ece0c8', borderRadius:'16px', padding:'16px' }}>
+                        <p style={{ fontSize:'13.5px', fontWeight:700, color:'#211a3a', margin:'0 0 4px' }}>
+                          🎧 Hear {childName ? `${childName}'s` : 'your'} story — and we'll save it to your library
+                        </p>
+                        <p style={{ fontSize:'12px', color:'#5d5278', margin:'0 0 12px' }}>
+                          Enter your email and press play. Your first story is free — no card needed to listen.
+                        </p>
+                        <input
+                          type="email" inputMode="email" autoComplete="email"
+                          value={leadEmail}
+                          onChange={e => { setLeadEmail(e.target.value); if (leadError) setLeadError(false) }}
+                          onKeyDown={e => { if (e.key === 'Enter') unlockStory() }}
+                          placeholder="you@email.com"
+                          style={{ width:'100%', padding:'13px', border:`1.5px solid ${leadError ? '#c0392b' : '#e0d2b7'}`, borderRadius:'12px', fontSize:'16px', fontFamily:'inherit', background:'#fff', outline:'none', marginBottom:'10px' }}
+                        />
+                        {leadError && <p style={{ fontSize:'12px', color:'#c0392b', margin:'-4px 0 10px' }}>Please enter a valid email address.</p>}
+                        <button onClick={unlockStory}
+                          style={{ width:'100%', padding:'14px', background:'linear-gradient(135deg,#FFD27A,#E0852A)', color:'#3a230a', fontWeight:800, border:'none', borderRadius:'13px', cursor:'pointer', fontSize:'15px' }}>
+                          ▶ Play {childName ? `${childName}'s` : 'the'} story
+                        </button>
+                        <p style={{ fontSize:'10.5px', color:'#9a8fb5', textAlign:'center', margin:'9px 0 0' }}>
+                          No spam. We email your free story + reminders you can turn off anytime.
+                        </p>
+                      </div>
                     )}
 
-                    {/* Live demo: same lesson, re-skinned + re-voiced on the fly */}
+                    {leadDone && !preview.audioUrl && (
+                      <p style={{ fontSize:'12.5px', color:'#8a6a1f', textAlign:'center', margin:'8px 0' }}>Your narration is being prepared — we'll email it to you shortly.</p>
+                    )}
+
+                    {/* Live demo: same lesson, re-skinned + re-voiced on the fly.
+                        Shown once unlocked — it's about HEARING the change. */}
+                    {leadDone && (
                     <div style={{ marginTop:'16px', background:'#fff7ea', border:'1px solid #f1ddb6', borderRadius:'14px', padding:'14px' }}>
                       <p style={{ fontSize:'12px', fontWeight:800, color:'#8a6a1f', margin:'0 0 10px', letterSpacing:'.3px' }}>
                         ✨ Same lesson — switch the world or voice and hear it change
                       </p>
                       <div style={{ display:'flex', gap:'6px', flexWrap:'wrap', marginBottom:'10px' }}>
                         {SKINS.map(sk => (
-                          <button key={sk.slug} onClick={() => { setSkinSlug(sk.slug); generatePreview({ skinSlug: sk.slug }) }}
+                          <button key={sk.slug} onClick={async () => { setSkinSlug(sk.slug); await generatePreview({ skinSlug: sk.slug }); previewAudioRef.current?.play().catch(() => {}) }}
                             aria-pressed={skinSlug===sk.slug}
                             style={{ fontSize:'12.5px', fontWeight:700, border:`1.5px solid ${skinSlug===sk.slug?'#F4A93C':'#e6d8bd'}`, background: skinSlug===sk.slug?'#fff':'transparent', borderRadius:'10px', padding:'7px 10px', cursor:'pointer', color:'#211a3a' }}>
                             {sk.emoji} {sk.name.replace(/^(Under the |Whisper |Cloud |Space )/,'')}
@@ -831,7 +890,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                       </div>
                       <div style={{ display:'flex', gap:'6px', flexWrap:'wrap' }}>
                         {voices.map(v => (
-                          <button key={v.id} onClick={() => { setVoiceId(v.id); generatePreview({ voiceId: v.id }) }}
+                          <button key={v.id} onClick={async () => { setVoiceId(v.id); await generatePreview({ voiceId: v.id }); previewAudioRef.current?.play().catch(() => {}) }}
                             aria-pressed={voiceId===v.id}
                             style={{ fontSize:'12.5px', fontWeight:700, border:`1.5px solid ${voiceId===v.id?'#F4A93C':'#e6d8bd'}`, background: voiceId===v.id?'#fff':'transparent', borderRadius:'10px', padding:'7px 10px', cursor:'pointer', color:'#211a3a' }}>
                             🔊 {v.name}
@@ -839,6 +898,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                         ))}
                       </div>
                     </div>
+                    )}
 
                     <p style={{ fontSize:'12px', color:'#5d5278', textAlign:'center', margin:'14px 0 0' }}>
                       Level 1 of 5 · {SUBJECT_NAMES[subjectSlug] ?? 'Money'} path · {voices.find(v => v.id === voiceId)?.name ?? 'Willow'}'s voice
@@ -856,18 +916,35 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                   style={{ width:'100%', padding:'15px', background:'linear-gradient(135deg,#FFD27A,#E0852A)', color:'#3a230a', fontWeight:700, border:'none', borderRadius:'15px', cursor: builderStep===1 && !childName.trim() ? 'not-allowed' : 'pointer', fontSize:'15px', opacity: builderStep===1 && !childName.trim() ? .6 : 1 }}>
                   {builderStep < 4 ? 'Continue →' : 'Hear their story →'}
                 </button>
-              ) : (
+              ) : leadDone ? (
                 <>
+                  {/* Curriculum + trust mini-explainer: sells the program, not one
+                      story, and surfaces the COPPA / expert-written trust levers. */}
+                  <div style={{ display:'flex', gap:'6px', marginBottom:'11px' }}>
+                    {[['📚','Levels build on each other'],['✍️','Expert-written'],['🔒','No data on your child']].map(([icon,label]) => (
+                      <div key={label} style={{ flex:1, background:'#fff', border:'1px solid #ece0c8', borderRadius:'11px', padding:'9px 6px', textAlign:'center' }}>
+                        <div style={{ fontSize:'16px', lineHeight:1.2 }}>{icon}</div>
+                        <div style={{ fontSize:'10px', color:'#5d5278', fontWeight:600, lineHeight:1.25, marginTop:'2px' }}>{label}</div>
+                      </div>
+                    ))}
+                  </div>
                   <button
                     onClick={startCheckout}
                     disabled={preview.loading}
                     style={{ width:'100%', padding:'15px', background:'linear-gradient(135deg,#FFD27A,#E0852A)', color:'#3a230a', fontWeight:700, border:'none', borderRadius:'15px', cursor: preview.loading ? 'wait' : 'pointer', fontSize:'15px', opacity: preview.loading ? .6 : 1 }}>
-                    Unlock the full story — first one free →
+                    Start Story Club — first story free →
                   </button>
-                  <button onClick={() => setPreview(null)} style={{ width:'100%', padding:'10px', background:'none', color:'#5d5278', fontWeight:600, border:'none', cursor:'pointer', fontSize:'13px', marginTop:'6px' }}>
+                  <p style={{ fontSize:'11.5px', color:'#5d5278', textAlign:'center', margin:'9px 0 0', lineHeight:1.4 }}>
+                    Then <strong>$9.99/mo</strong> · a new story every 3 days · cancel anytime
+                  </p>
+                  <button onClick={() => setPreview(null)} style={{ width:'100%', padding:'10px', background:'none', color:'#5d5278', fontWeight:600, border:'none', cursor:'pointer', fontSize:'13px', marginTop:'4px' }}>
                     ← Change something
                   </button>
                 </>
+              ) : (
+                <button onClick={() => setPreview(null)} style={{ width:'100%', padding:'10px', background:'none', color:'#5d5278', fontWeight:600, border:'none', cursor:'pointer', fontSize:'13px' }}>
+                  ← Change something
+                </button>
               )}
             </div>
           </div>

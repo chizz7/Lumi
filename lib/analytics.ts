@@ -12,6 +12,7 @@ export type AnalyticsEvent =
   | 'builder_started'
   | 'builder_step_completed'
   | 'preview_played'
+  | 'preview_email_captured'   // email given at the preview gate (lead)
   | 'checkout_started'
   | 'subscription_started'  // after Stripe confirms
   | 'story_delivered'
