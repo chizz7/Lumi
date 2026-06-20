@@ -9,7 +9,7 @@ export const SKINS: Record<string, Skin> = {
     setting:       'the warm shallows',
     hero:          'dolphin',
     companionName: 'Pip the crab',
-    objectMotif:   'glowing tide-light',
+    objectMotif:   'soft tide-light',
     refrain:       'The tide keeps going, one calm wave at a time',
   },
   space: {

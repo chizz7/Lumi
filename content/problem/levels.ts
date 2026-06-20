@@ -63,7 +63,7 @@ And in looking, {child_name} saw things they had rushed right past — a shape h
 
 The {hero} began fixing the very first thing they saw. It did not help.
 
-{companion_name} hummed thoughtfully. "You are mending what you noticed first. But ask a deeper question: what is *really* the problem here?"
+{companion_name} hummed thoughtfully. "You are mending what you noticed first. But ask a deeper question: what is really the problem here?"
 
 The {hero} grew quiet and looked again, underneath the obvious. And there it was — the true trouble, hiding beneath the one that was easy to see.
 
@@ -78,7 +78,7 @@ The {hero} felt something settle. The puzzle was the same size as before — but
 
 {child_name} began fixing the very first thing they saw. It did not help.
 
-{companion_name} hummed thoughtfully. "You are mending what you noticed first. But ask a deeper question, {child_name}: what is *really* the problem here?"
+{companion_name} hummed thoughtfully. "You are mending what you noticed first. But ask a deeper question, {child_name}: what is really the problem here?"
 
 {child_name} grew quiet and looked again, underneath the obvious. And there it was — the true trouble, hiding beneath the one that was easy to see.
 

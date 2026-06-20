@@ -9,7 +9,7 @@ export const SKINS: Record<string, Skin> = {
     setting:       'the warm shallows',
     hero:          'dolphin',
     companionName: 'Pip the crab',
-    objectMotif:   'warm pearl-glow',
+    objectMotif:   'warm pearl-light',
     refrain:       'Warmth shared in the water reaches every shore',
   },
   space: {
@@ -25,7 +25,7 @@ export const SKINS: Record<string, Skin> = {
     setting:       'the heart of Whisper Forest',
     hero:          'fox',
     companionName: 'Old Owl',
-    objectMotif:   'warm firefly-glow',
+    objectMotif:   'warm firefly-light',
     refrain:       'Kindness, like light, is never used up by giving',
   },
   castle: {

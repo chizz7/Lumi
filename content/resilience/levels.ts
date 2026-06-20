@@ -20,13 +20,13 @@ export const LEVELS: Level[] = [
     teachingNote: 'Before a child can persist, they need permission to struggle — naming "hard is normal" removes the shame that makes them quit.',
     audioTemplate: `The night settled gently over {setting}, where a small {hero} was trying something new — and finding it hard.
 
-A {object_motif} sat nearby, small and new itself.
+A {object_motif} sat nearby, new and just beginning itself.
 
 The {hero} tried, and it did not work. Tried again, and it still did not work. "Maybe I am just not good at this," they said, ready to give up.
 
 {companion_name} came near. "May I tell you a secret?" they said softly. "Hard things are meant to feel hard at first. That feeling is not a sign to stop — it is a sign you are learning something real."
 
-The {hero} looked at the little {object_motif}. It was small now, but it was growing, slow and steady.
+The {hero} looked at the {object_motif}. It was new now, but it was growing, slow and steady.
 
 "It is okay to find it hard," said {companion_name}. "Everyone does, at the start."
 
@@ -37,13 +37,13 @@ They tried once more — not to be perfect, only to keep going — and it felt a
 {refrain}.`,
     scriptTemplate: `The night settled gently over {setting}, where {child_name} the {hero} was trying something new — and finding it hard.
 
-A {object_motif} sat nearby, small and new itself.
+A {object_motif} sat nearby, new and just beginning itself.
 
 {child_name} tried, and it did not work. Tried again, and it still did not work. "Maybe I am just not good at this," {child_name} said, ready to give up.
 
 {companion_name} came near. "May I tell you a secret, {child_name}?" they said softly. "Hard things are meant to feel hard at first. That feeling is not a sign to stop — it is a sign you are learning something real."
 
-{child_name} looked at the little {object_motif}. It was small now, but it was growing, slow and steady.
+{child_name} looked at the {object_motif}. It was new now, but it was growing, slow and steady.
 
 "It is okay to find it hard," said {companion_name}. "Everyone does, at the start."
 

@@ -26,9 +26,9 @@ export const LEVELS: Level[] = [
 
 "But what if I am not good enough yet?" asked the {hero}.
 
-"You do not have to be finished to begin," said {companion_name}. "You only have to be willing. The readiness comes *after* you start, never before."
+"You do not have to be finished to begin," said {companion_name}. "You only have to be willing. The readiness comes after you start, never before."
 
-The {hero} felt the little {object_motif} flicker — small, but already there, already theirs.
+The {hero} felt the {object_motif} flicker — faint, but already there, already theirs.
 
 So, still unsure, the {hero} took the first small step anyway. And the moment they did, the waiting fell away.
 
@@ -43,9 +43,9 @@ So, still unsure, the {hero} took the first small step anyway. And the moment th
 
 "But what if I am not good enough yet?" asked {child_name}.
 
-"You do not have to be finished to begin," said {companion_name}. "You only have to be willing. The readiness comes *after* you start, never before."
+"You do not have to be finished to begin," said {companion_name}. "You only have to be willing. The readiness comes after you start, never before."
 
-{child_name} felt the little {object_motif} flicker — small, but already there, already theirs.
+{child_name} felt the {object_motif} flicker — faint, but already there, already theirs.
 
 So, still unsure, {child_name} took the first small step anyway. And the moment they did, the waiting fell away.
 
@@ -110,7 +110,7 @@ And the world did not end. Someone listened. Someone nodded. The {object_motif} 
 
 "You did not see their hard parts," said {companion_name}. "Everyone has them. Compare yourself only to who you were yesterday — that is the only race that is yours."
 
-The {hero} thought about how far *they* had come, all on their own, and the {object_motif} brightened again, warm and steady.
+The {hero} thought about how far they had come, all on their own, and the {object_motif} brightened again, warm and steady.
 
 "My path is mine," they said.
 
@@ -149,7 +149,7 @@ The {hero} thought about how far *they* had come, all on their own, and the {obj
 
 The {hero} blinked. "So being scared… means I have a chance to be brave?"
 
-"Always," said {companion_name}. "Your shaky voice, long ago — that was brave *because* it shook."
+"Always," said {companion_name}. "Your shaky voice, long ago — that was brave because it shook."
 
 The {hero} felt the fear still there, fluttering — but beside it now stood something steadier. They did not wait for the fear to leave. They stepped forward with it.
 
@@ -166,7 +166,7 @@ And that step, taken while afraid, was the bravest thing they had ever done.
 
 {child_name} blinked. "So being scared… means I have a chance to be brave?"
 
-"Always," said {companion_name}. "Your shaky voice, long ago — that was brave *because* it shook."
+"Always," said {companion_name}. "Your shaky voice, long ago — that was brave because it shook."
 
 {child_name} felt the fear still there, fluttering — but beside it now stood something steadier. {child_name} did not wait for the fear to leave, and stepped forward with it.
 
