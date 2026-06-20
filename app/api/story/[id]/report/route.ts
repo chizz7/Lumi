@@ -4,7 +4,7 @@
 // Issues an account credit automatically — no support ticket needed.
 
 import { NextRequest, NextResponse } from 'next/server'
-import { serverClient, adminClient }  from '@/lib/supabase'
+import { serverClient }               from '@/lib/supabase'
 import { issueCredit }               from '@/lib/stripe'
 import { track }                     from '@/lib/analytics'
 
@@ -66,12 +66,8 @@ export async function POST(
     }
   }
 
-  // Log the report for our review queue
-  await adminClient.from('story_instances').update({
-    // Add a reported_at and report_reason column to track these
-    // For now log to console until we add the columns
-  }).eq('id', storyId)
-
+  // Audit log for the content-review queue. (A reported_at/report_reason column
+  // on story_instances is a planned follow-up; until then we log + track.)
   console.log(`[report] story=${storyId} reason=${reason} user=${user.id} credit=${creditIssued}`)
 
   track('story_reported', {

@@ -23,7 +23,7 @@ export async function GET(req: NextRequest) {
   // Get delivered stories
   const { data: instances } = await supabase
     .from('story_instances')
-    .select('id, level_ordinal, subject_slug, skin_slug, voice_id, audio_key, delivered_at')
+    .select('id, level_ordinal, subject_slug, skin_slug, voice_id, audio_key, script_text, delivered_at')
     .eq('profile_id', profile.id)
     .order('delivered_at', { ascending: false })
 
@@ -47,6 +47,7 @@ export async function GET(req: NextRequest) {
       skinSlug:     inst.skin_slug,
       voiceId:      inst.voice_id,
       deliveredAt:  inst.delivered_at,
+      script:       inst.script_text ?? '',
       audioUrl,
     }
   }))

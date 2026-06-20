@@ -11,8 +11,21 @@ export default function AccountPage() {
   const [data,        setData]        = useState<AccountData | null>(null)
   const [confirmText, setConfirmText] = useState('')
   const [deleting,    setDeleting]    = useState(false)
+  const [portalBusy,  setPortalBusy]  = useState(false)
 
   useEffect(() => { fetch('/api/account').then(r => r.json()).then(setData) }, [])
+
+  const openPortal = async () => {
+    setPortalBusy(true)
+    try {
+      const res  = await fetch('/api/account/portal', { method: 'POST' })
+      const body = await res.json()
+      if (body.url) window.location.href = body.url
+      else { alert(body.error ?? 'Could not open the subscription portal.'); setPortalBusy(false) }
+    } catch {
+      alert('Could not open the subscription portal.'); setPortalBusy(false)
+    }
+  }
 
   const exportData = async () => {
     const res  = await fetch('/api/account/export')
@@ -51,6 +64,14 @@ export default function AccountPage() {
           </div>
           <span style={{ background:'#F4A93C', color:'#3a230a', fontSize:'11px', fontWeight:800, padding:'4px 12px', borderRadius:'99px' }}>Active</span>
         </div>
+
+        {/* Manage subscription — opens the Stripe billing portal (cancel, update
+            card, view invoices) so we don't rebuild those screens ourselves. */}
+        <button onClick={openPortal} disabled={portalBusy}
+          style={{ width:'100%', padding:'13px 14px', background:'#fff', border:'1px solid #ece0c8', borderRadius:'12px', fontWeight:700, cursor: portalBusy ? 'wait' : 'pointer', fontSize:'14px', marginBottom:'22px', textAlign:'left', color:'#211a3a', display:'flex', justifyContent:'space-between', alignItems:'center' }}>
+          <span>💳 Manage subscription</span>
+          <span style={{ color:'#9d92c0', fontSize:'13px' }}>{portalBusy ? 'Opening…' : 'Cancel · update card · invoices →'}</span>
+        </button>
 
         {/* Profile */}
         {data.profile && (
