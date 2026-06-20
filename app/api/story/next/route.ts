@@ -27,7 +27,7 @@ export async function POST(req: NextRequest) {
   // Load profile
   const { data: profile } = await supabase
     .from('child_profiles')
-    .select('id, name, subject_slug, skin_slug, voice_id, current_level')
+    .select('id, name, subject_slug, skin_slug, voice_id, current_level, age_band')
     .eq('account_id', user.id)
     .single()
 

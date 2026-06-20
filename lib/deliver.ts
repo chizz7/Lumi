@@ -8,6 +8,7 @@ import { assembleStory, getLevelCount }         from '@/content'
 import { getOrRenderAudio, audioCacheKey, type VoiceId } from '@/lib/tts'
 import { sendStoryEmail }                       from '@/lib/email'
 import { track }                                from '@/lib/analytics'
+import type { AgeBand }                         from '@/content/types'
 
 export interface DeliverableProfile {
   id:            string
@@ -16,6 +17,7 @@ export interface DeliverableProfile {
   skin_slug:     string
   voice_id:      string
   current_level: number
+  age_band?:     string
 }
 
 export type DeliverResult =
@@ -61,11 +63,12 @@ export async function deliverNextStory(
     .maybeSingle()
   if (dup) return { delivered: false, reason: 'already_delivered' }
 
-  const { audioText, script, level } = assembleStory(
-    profile.subject_slug, levelOrdinal, profile.skin_slug, profile.name,
+  const ageBand = profile.age_band as AgeBand | undefined
+  const { audioText, script, level, ageTag } = assembleStory(
+    profile.subject_slug, levelOrdinal, profile.skin_slug, profile.name, ageBand,
   )
 
-  const cacheKey = audioCacheKey(profile.subject_slug, levelOrdinal, profile.skin_slug, profile.voice_id)
+  const cacheKey = audioCacheKey(profile.subject_slug, levelOrdinal, profile.skin_slug, profile.voice_id, 'en', false, ageTag)
   let audioUrl = ''
   try {
     audioUrl = await getOrRenderAudio(audioText, profile.voice_id as VoiceId, cacheKey)

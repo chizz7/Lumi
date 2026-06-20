@@ -27,7 +27,7 @@ export async function GET(req: NextRequest) {
   // All active subscribers with their child profile(s).
   const { data: accounts, error } = await adminClient
     .from('accounts')
-    .select('id, email, child_profiles(id, name, subject_slug, skin_slug, voice_id, current_level)')
+    .select('id, email, child_profiles(id, name, subject_slug, skin_slug, voice_id, current_level, age_band)')
     .eq('plan', 'club')
 
   if (error) {

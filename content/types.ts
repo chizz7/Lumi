@@ -1,5 +1,7 @@
 // content/types.ts
 
+export type AgeBand = '3-4' | '5-6' | '7-8'
+
 export interface Level {
   ordinal:   number
   title:     string
@@ -13,6 +15,15 @@ export interface Level {
   ageFloor:  number
   audioTemplate:   string
   scriptTemplate?: string
+
+  // The immutable learning beat — a slot-free phrase that MUST appear verbatim in
+  // every assembled variant (any skin, any age). The assembler asserts this, which
+  // enforces "fixed curriculum, cosmetic personalization" in code (PRD FR-9).
+  learningBeat?: string
+
+  // Optional age-tuned overrides. If a band is absent, the default templates are
+  // used. A variant must still contain `learningBeat` — the guard checks it.
+  ageVariants?: Partial<Record<AgeBand, { audioTemplate: string; scriptTemplate?: string }>>
 }
 
 export interface Skin {

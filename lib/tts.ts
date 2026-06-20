@@ -65,7 +65,9 @@ export async function getOrRenderAudio(
   return signed.signedUrl
 }
 
-// Build the cache key — includes language so EN and ES renders are separate files
+// Build the cache key — includes language so EN and ES renders are separate files.
+// `ageTag` is appended only for age-tuned variants ('all' keeps the original key,
+// so previously rendered files stay valid).
 export function audioCacheKey(
   subjectSlug:  string,
   levelOrdinal: number,
@@ -73,7 +75,9 @@ export function audioCacheKey(
   voiceId:      string,
   lang      = 'en',
   preview   = false,
+  ageTag    = 'all',
 ): string {
   const prefix = preview ? 'preview' : 'full'
-  return `${prefix}-${subjectSlug}-level${levelOrdinal}-${skinSlug}-${voiceId}-${lang}.mp3`
+  const age    = ageTag && ageTag !== 'all' ? `-${ageTag}` : ''
+  return `${prefix}-${subjectSlug}-level${levelOrdinal}-${skinSlug}-${voiceId}-${lang}${age}.mp3`
 }

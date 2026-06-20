@@ -14,7 +14,7 @@ import { LEVELS as PROBLEM_LEVELS } from '@/content/problem/levels'
 import { SKINS  as PROBLEM_SKINS }  from '@/content/problem/skins'
 import { LEVELS as CONFIDENCE_LEVELS } from '@/content/confidence/levels'
 import { SKINS  as CONFIDENCE_SKINS }  from '@/content/confidence/skins'
-import type { Level, Skin, AudioSlotValues, ScriptSlotValues } from '@/content/types'
+import type { Level, Skin, AudioSlotValues, ScriptSlotValues, AgeBand } from '@/content/types'
 
 // ── Subject registry ──────────────────────────────────────────────────────────
 const SUBJECT_LEVELS: Record<string, Level[]> = {
@@ -76,22 +76,48 @@ function audioSlots(skin: Skin): AudioSlotValues {
   }
 }
 
+// Resolve which templates to use for an age band. Returns an `ageTag` for cache
+// keying: the band when an age variant exists, else 'all' (so bands that share the
+// default audio also share one cached MP3 — no needless cache fragmentation).
+function resolveTemplates(level: Level, ageBand?: AgeBand): {
+  audioTemplate: string; scriptTemplate?: string; ageTag: string
+} {
+  const v = ageBand ? level.ageVariants?.[ageBand] : undefined
+  if (v) return { audioTemplate: v.audioTemplate, scriptTemplate: v.scriptTemplate ?? level.scriptTemplate, ageTag: ageBand! }
+  return { audioTemplate: level.audioTemplate, scriptTemplate: level.scriptTemplate, ageTag: 'all' }
+}
+
+// FR-9 immutability guard: assembled text must contain no unfilled slot and must
+// preserve the level's learning beat verbatim. A violation means personalization
+// altered the lesson — that must fail loudly, never ship.
+function assertImmutable(level: Level, text: string, where: string): void {
+  const leftover = text.match(/\{[a-z_]+\}/)
+  if (leftover) throw new Error(`[assemble] unfilled slot ${leftover[0]} in ${where} (level ${level.ordinal})`)
+  if (level.learningBeat && !text.includes(level.learningBeat)) {
+    throw new Error(`[assemble] learning beat missing in ${where} (level ${level.ordinal}) — personalization must not change the lesson`)
+  }
+}
+
 // ── Public assembly functions ─────────────────────────────────────────────────
 
 /**
  * Assemble the AUDIO text for a story.
- * Uses audioTemplate — no child name — fully cacheable.
+ * Uses audioTemplate — no child name — fully cacheable. An optional age band
+ * selects an age-tuned variant when one exists; `ageTag` feeds the cache key.
  * This is what gets sent to Kokoro.
  */
 export function assembleAudio(
   subjectSlug:  string,
   levelOrdinal: number,
   skinSlug:     string,
-): { audioText: string; level: Level; skin: Skin } {
+  ageBand?:     AgeBand,
+): { audioText: string; level: Level; skin: Skin; ageTag: string } {
   const level = getLevel(subjectSlug, levelOrdinal)
   const skin  = getSkin(subjectSlug, skinSlug)
-  const audioText = fillTemplate(level.audioTemplate, audioSlots(skin))
-  return { audioText, level, skin }
+  const { audioTemplate, ageTag } = resolveTemplates(level, ageBand)
+  const audioText = fillTemplate(audioTemplate, audioSlots(skin))
+  assertImmutable(level, audioText, 'audio')
+  return { audioText, level, skin, ageTag }
 }
 
 /**
@@ -104,12 +130,16 @@ export function assembleScript(
   levelOrdinal: number,
   skinSlug:     string,
   childName:    string,
+  ageBand?:     AgeBand,
 ): string {
   const level   = getLevel(subjectSlug, levelOrdinal)
   const skin    = getSkin(subjectSlug, skinSlug)
-  const template = level.scriptTemplate ?? level.audioTemplate
+  const { audioTemplate, scriptTemplate } = resolveTemplates(level, ageBand)
+  const template = scriptTemplate ?? audioTemplate
   const slots: ScriptSlotValues = { ...audioSlots(skin), child_name: childName.trim() }
-  return fillTemplate(template, slots)
+  const text = fillTemplate(template, slots)
+  assertImmutable(level, text, 'script')
+  return text
 }
 
 /**
@@ -121,10 +151,11 @@ export function assembleStory(
   levelOrdinal: number,
   skinSlug:     string,
   childName:    string,
-): { audioText: string; script: string; level: Level; skin: Skin } {
-  const { audioText, level, skin } = assembleAudio(subjectSlug, levelOrdinal, skinSlug)
-  const script = assembleScript(subjectSlug, levelOrdinal, skinSlug, childName)
-  return { audioText, script, level, skin }
+  ageBand?:     AgeBand,
+): { audioText: string; script: string; level: Level; skin: Skin; ageTag: string } {
+  const { audioText, level, skin, ageTag } = assembleAudio(subjectSlug, levelOrdinal, skinSlug, ageBand)
+  const script = assembleScript(subjectSlug, levelOrdinal, skinSlug, childName, ageBand)
+  return { audioText, script, level, skin, ageTag }
 }
 
 /**

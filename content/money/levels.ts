@@ -18,6 +18,7 @@ export const LEVELS: Level[] = [
     concept: 'Coins have different names, sizes and colours', callback: null, ageFloor: 3,
     summary: 'A small animal discovers three different coins lying in the sand and notices for the first time that they look nothing like each other. With the help of a wise companion, they learn each coin has its own name and its own set of clues — size, colour, and the picture on its face — that tell you exactly what it is.',
     teachingNote: 'The skill of noticing small differences is the foundation everything else in this path builds on.',
+    learningBeat: 'Each one has its own name',
     audioTemplate: `The night was warm and the stars were out, and a small {hero} was exploring {setting} when something small caught the light.
 
 Three things lay in the sand. Each one was round, but they were not the same — one was tiny and brown, one was bigger and silver, one was somewhere in between.
