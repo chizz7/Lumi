@@ -19,7 +19,7 @@ const PATHS = [
     why: 'Financial literacy is one of the highest-impact skills to introduce early. Children who understand value, exchange, and saving before age 8 develop habits that compound for life. This path starts with the simplest question — why do coins look different? — and builds systematically to the hardest one: wants vs. needs.' },
   { slug:'focus',      emoji:'🎯', name:'Focus & Goals',        available: true,
     why: 'Executive function — the ability to plan, focus, and follow through — is a stronger predictor of outcomes than IQ. The window to build it is early childhood. These stories give children language for their own attention.' },
-  { slug:'resilience', emoji:'💪', name:'Resilience',           available: false,
+  { slug:'resilience', emoji:'💪', name:'Resilience',           available: true,
     why: 'Children who understand that effort changes ability outperform those who believe in fixed talent. Level 1 normalises struggle; without that foundation, Level 4 (learning from mistakes) lands empty.' },
   { slug:'kindness',   emoji:'❤️', name:'Kindness & Empathy',   available: false,
     why: 'Empathy is a skill, not a trait. It is built through repeated, low-stakes practice. Bedtime stories are one of the best contexts: calm, connected, and emotionally open.' },

@@ -33,7 +33,8 @@ const SKINS = [
   { slug:'castle', emoji:'🐉', name:'Cloud Castle',    desc:'Bram the dragon' },
 ]
 const SUBJECT_NAMES: Record<string, string> = {
-  money: 'Money', focus: 'Focus', resilience: 'Resilience', kindness: 'Kindness',
+  money: 'Money', focus: 'Focus', resilience: 'Resilience',
+  kindness: 'Kindness', problem: 'Problem Solving', confidence: 'Confidence',
 }
 // value = canonical hyphen form stored in the DB; label = prettier en-dash for display
 const AGE_BANDS = [
@@ -172,7 +173,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
       why:'Executive function — the ability to plan, focus, and follow through — is a stronger predictor of outcomes than IQ. The window to build it is early childhood.',
     },
     {
-      id:'resilience', emoji:'💪', name:'Resilience', available:false,
+      id:'resilience', emoji:'💪', name:'Resilience', available:true,
       why:'Children who understand that effort changes ability outperform those who believe in fixed talent. Level 1 normalises struggle; without that, Level 4 lands empty.',
     },
     {
@@ -715,7 +716,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                   {[
                     { slug:'money', emoji:'🪙', name:'Money & saving', desc:'Coins, value, saving for goals', live:true },
                     { slug:'focus', emoji:'🎯', name:'Focus & goals', desc:'Attention, planning, finishing', live:true },
-                    { slug:'resilience', emoji:'💪', name:'Resilience', desc:'Trying again', live:false },
+                    { slug:'resilience', emoji:'💪', name:'Resilience', desc:'Growth mindset, bouncing back', live:true },
                     { slug:'kindness', emoji:'❤️', name:'Kindness & empathy', desc:'Sharing, caring', live:false },
                   ].map(s => {
                     const selected = subjectSlug === s.slug
