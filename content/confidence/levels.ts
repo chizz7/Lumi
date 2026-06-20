@@ -18,6 +18,41 @@ export const LEVELS: Level[] = [
     concept: 'It is okay to begin before you feel ready', callback: null, ageFloor: 3,
     summary: 'A small hero waits to feel fully ready before trying — and the waiting never ends. Their companion shares that no one feels completely ready, and that beginning is allowed even while you still feel unsure.',
     teachingNote: 'Removing the belief that you must feel ready first frees a child to start — and starting is where confidence is built.',
+    learningBeat: 'You do not have to be finished to begin',
+    ageVariants: {
+      '3-4': {
+        audioTemplate: `In {setting}, a small {hero} stood at the edge of something new. And waited.
+
+"I will try when I feel ready," said the {hero}. But ready did not come. They waited. And waited. And waited.
+
+{companion_name} sat close. "Here is something true. No one feels all the way ready. Not me. Not anyone."
+
+"But what if I am not good enough yet?" said the {hero}.
+
+"You do not have to be finished to begin," said {companion_name}. "You just have to be willing. Ready comes after. Always after."
+
+So, still unsure, the {hero} took one small step. Just one.
+
+And the waiting fell away. "I did not feel ready," said the {hero}, "and I did it!"
+
+{refrain}.`,
+        scriptTemplate: `In {setting}, {child_name} the {hero} stood at the edge of something new. And waited.
+
+"I will try when I feel ready," said {child_name}. But ready did not come. {child_name} waited. And waited. And waited.
+
+{companion_name} sat close. "Here is something true. No one feels all the way ready. Not me. Not anyone."
+
+"But what if I am not good enough yet?" said {child_name}.
+
+"You do not have to be finished to begin," said {companion_name}. "You just have to be willing. Ready comes after. Always after."
+
+So, still unsure, {child_name} took one small step. Just one.
+
+And the waiting fell away. "I did not feel ready," said {child_name}, "and I did it!"
+
+{refrain}.`,
+      },
+    },
     audioTemplate: `The {object_motif} glowed softly within the {hero} as they stood at the edge of something new in {setting}, waiting.
 
 "I will try once I feel ready," the {hero} said. But ready did not come. They waited, and waited, and the feeling never quite arrived.
@@ -59,6 +94,45 @@ So, still unsure, {child_name} took the first small step anyway. And the moment 
     concept: 'Speaking up even when it feels scary', callback: "You don't have to be ready (Level 1)", ageFloor: 4,
     summary: 'The hero has something to say but feels too small to say it. Their companion helps them find their brave voice — quiet is fine, what matters is that it is theirs. It builds on Level 1: you can speak before you feel ready.',
     teachingNote: 'Using your voice — even quietly — is a daily act of confidence; a child who practises it learns their thoughts are worth sharing.',
+    learningBeat: 'That is your brave voice',
+    ageVariants: {
+      '3-4': {
+        audioTemplate: `In quiet {setting}, a small {hero} had something to say. But the words stayed stuck inside.
+
+"What if it sounds silly? What if my voice shakes?" said the {hero}.
+
+"Your voice can shake," said {companion_name}. "Brave is not loud. Brave is not perfect. Brave is saying it, even small."
+
+The {hero} remembered: you do not have to feel ready. So they took a breath. And let the words out. Wobbly, but out!
+
+And someone listened. Someone nodded.
+
+"It came out shaky," said the {hero}, "but I said it!"
+
+"And it was yours," said {companion_name}. "That is your brave voice. Use it. Use it more."
+
+The {hero} sat tall, the little light inside warm and bright.
+
+{refrain}.`,
+        scriptTemplate: `In quiet {setting}, {child_name} the {hero} had something to say. But the words stayed stuck inside.
+
+"What if it sounds silly? What if my voice shakes?" said {child_name}.
+
+"Your voice can shake," said {companion_name}. "Brave is not loud. Brave is not perfect. Brave is saying it, even small."
+
+{child_name} remembered: you do not have to feel ready. So {child_name} took a breath. And let the words out. Wobbly, but out!
+
+And someone listened. Someone nodded.
+
+"It came out shaky," said {child_name}, "but I said it!"
+
+"And it was yours," said {companion_name}. "That is your brave voice. Use it. Use it more."
+
+{child_name} sat tall, the little light inside warm and bright.
+
+{refrain}.`,
+      },
+    },
     audioTemplate: `In the hush of {setting}, the {hero} had something to say — but the words stayed stuck inside, behind a fluttering {object_motif}.
 
 "What if it sounds silly? What if my voice shakes?" they whispered.
@@ -100,6 +174,41 @@ And the world did not end. Someone listened. Someone nodded. The {object_motif} 
     concept: 'Measuring yourself by your own path, not others', callback: "You don't have to be ready (Level 1)", ageFloor: 4,
     summary: 'The hero watches others and feels small by comparison. Their companion shows them that comparing dims your own light, and that their journey is their own. It revisits Level 1: your starting point is allowed to be just where it is.',
     teachingNote: 'Comparison is the quiet thief of confidence; learning to measure by your own progress keeps a child\'s inner light their own.',
+    learningBeat: 'My path is mine',
+    ageVariants: {
+      '3-4': {
+        audioTemplate: `A small {hero} sat in {setting}, watching others. And their light went dim.
+
+"They are so much better than me," said the {hero}. "Why am I so far behind?"
+
+"You are looking at your inside and their outside," said {companion_name}. "That always looks smaller. But you are just at a different place. A different path."
+
+"But they make it look easy," said the {hero}.
+
+"You did not see their hard parts," said {companion_name}. "Everyone has hard parts. Everyone. Race only against who you were yesterday."
+
+The {hero} thought of how far they had come. All by themselves. And their light grew warm again.
+
+"My path is mine," said the {hero}. "Mine."
+
+{refrain}.`,
+        scriptTemplate: `{child_name} the {hero} sat in {setting}, watching others. And their light went dim.
+
+"They are so much better than me," said {child_name}. "Why am I so far behind?"
+
+"You are looking at your inside and their outside," said {companion_name}. "That always looks smaller. But you are just at a different place. A different path."
+
+"But they make it look easy," said {child_name}.
+
+"You did not see their hard parts," said {companion_name}. "Everyone has hard parts. Everyone. Race only against who you were yesterday."
+
+{child_name} thought of how far they had come. All by themselves. And their light grew warm again.
+
+"My path is mine," said {child_name}. "Mine."
+
+{refrain}.`,
+      },
+    },
     audioTemplate: `The {hero} sat in {setting} watching others do things easily, and felt their {object_motif} dim.
 
 "They are so much better than me," they said quietly. "Why am I so far behind?"
@@ -141,6 +250,41 @@ The {hero} thought about how far they had come, all on their own, and the {objec
     concept: 'Courage means feeling afraid and acting anyway', callback: 'Your brave voice (Level 2)', ageFloor: 5,
     summary: 'The hero believes brave means not being scared — so feeling afraid makes them think they are failing. Their companion redefines courage: brave is being scared and trying anyway. It builds on Level 2: the shaky voice was brave precisely because it was scared.',
     teachingNote: 'Reframing fear as a companion to courage — not its opposite — lets a child act bravely without waiting to feel fearless.',
+    learningBeat: 'Scared and trying',
+    ageVariants: {
+      '3-4': {
+        audioTemplate: `Something big stood before a small {hero} in {setting}. Their heart raced. Raced and raced.
+
+"I must not be brave," said the {hero}. "I am too scared."
+
+"Oh, that is backwards," said {companion_name}. "If you were not scared, it would not take any brave at all. Brave is being scared — and trying anyway."
+
+The {hero} blinked. "So being scared… means I can be brave?"
+
+"Always," said {companion_name}. "Your shaky voice, long ago — that was brave because it shook."
+
+The fear was still there. But the {hero} did not wait for it to go. They stepped forward with it. Right with it.
+
+"Scared and trying," said the {hero}. And that was the bravest thing of all.
+
+{refrain}.`,
+        scriptTemplate: `Something big stood before {child_name} the {hero} in {setting}. Their heart raced. Raced and raced.
+
+"I must not be brave," said {child_name}. "I am too scared."
+
+"Oh, that is backwards," said {companion_name}. "If you were not scared, it would not take any brave at all. Brave is being scared — and trying anyway."
+
+{child_name} blinked. "So being scared… means I can be brave?"
+
+"Always," said {companion_name}. "Your shaky voice, long ago — that was brave because it shook."
+
+The fear was still there. But {child_name} did not wait for it to go. {child_name} stepped forward with it. Right with it.
+
+"Scared and trying," said {child_name}. And that was the bravest thing of all.
+
+{refrain}.`,
+      },
+    },
     audioTemplate: `Something big stood before the {hero} in {setting}, and their heart raced. The {object_motif} trembled inside them.
 
 "I must not be brave," they said sadly, "because I am so scared."
@@ -182,6 +326,41 @@ And that step, taken while afraid, was the bravest thing {child_name} had ever d
     concept: 'The settled, quiet confidence to attempt anything', callback: 'Brave is scared and trying (Level 4)', ageFloor: 5,
     summary: 'The capstone: facing something new, the hero no longer needs to feel ready, fearless, or better than anyone. They simply trust their own small light and say the three words that hold all of it — I can try. The path gathers into a calm, durable confidence.',
     teachingNote: 'True confidence is not certainty of success but the settled willingness to try — the quiet ground from which every other skill grows.',
+    learningBeat: 'I can try',
+    ageVariants: {
+      '3-4': {
+        audioTemplate: `Under the wide night over {setting}, something new waited for a small {hero}. The light glowed steady inside.
+
+Once, the {hero} would have waited — to feel ready, or fearless, or as good as everyone. Not now. Not anymore.
+
+I do not have to feel ready. I have my brave voice. My path is mine. And scared is okay — brave is scared and trying.
+
+So the {hero} stood before the new thing. Not sure it would work. But calm.
+
+"I do not know if I will get it right," said the {hero}. "But I can try. I can try."
+
+Not loud. Not certain. Just enough.
+
+"That," said {companion_name}, "is confidence. Not knowing you will win. Knowing you will try."
+
+{refrain}.`,
+        scriptTemplate: `Under the wide night over {setting}, something new waited for {child_name} the {hero}. The light glowed steady inside.
+
+Once, {child_name} would have waited — to feel ready, or fearless, or as good as everyone. Not now. Not anymore.
+
+I do not have to feel ready. I have my brave voice. My path is mine. And scared is okay — brave is scared and trying.
+
+So {child_name} stood before the new thing. Not sure it would work. But calm.
+
+"I do not know if I will get it right," said {child_name}. "But I can try. I can try."
+
+Not loud. Not certain. Just enough.
+
+"That," said {companion_name}, "is confidence. Not knowing you will win. Knowing you will try."
+
+{refrain}.`,
+      },
+    },
     audioTemplate: `Under the wide night over {setting}, something new and uncertain waited for the {hero}. The {object_motif} glowed steadily within.
 
 Once, the {hero} would have waited to feel ready, or fearless, or as good as everyone else. But they knew better now.

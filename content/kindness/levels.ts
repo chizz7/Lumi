@@ -18,6 +18,41 @@ export const LEVELS: Level[] = [
     concept: 'Paying attention to the feelings of others', callback: null, ageFloor: 3,
     summary: 'A small hero learns that kindness begins before any action — with noticing. With their companion, they practise reading the quiet signs that tell you how someone else is feeling.',
     teachingNote: 'Empathy starts with attention: a child cannot be kind to a feeling they have not noticed.',
+    learningBeat: 'That is where kindness is born',
+    ageVariants: {
+      '3-4': {
+        audioTemplate: `Night came to {setting}. A small {hero} sat by a {object_motif} and watched the others.
+
+One friend sat alone. Very quiet. Shoulders low.
+
+The {hero} looked. Really looked. "Something feels different," said the {hero}.
+
+"That is the first kindness," said {companion_name}. "Noticing. Just noticing. You see how someone feels."
+
+The {hero} looked again. And saw it. The friend was sad.
+
+"Most people walk right past," said {companion_name}. "But you stopped. You saw. That is where kindness is born."
+
+The {object_motif} glowed warm. The {hero} watched the world with kind new eyes. So many feelings to notice. So many.
+
+{refrain}.`,
+        scriptTemplate: `Night came to {setting}. {child_name} the {hero} sat by a {object_motif} and watched the others.
+
+One friend sat alone. Very quiet. Shoulders low.
+
+{child_name} looked. Really looked. "Something feels different," said {child_name}.
+
+"That is the first kindness," said {companion_name}. "Noticing. Just noticing. You see how someone feels."
+
+{child_name} looked again. And saw it. The friend was sad.
+
+"Most people walk right past," said {companion_name}. "But you stopped. You saw. That is where kindness is born."
+
+The {object_motif} glowed warm. {child_name} watched the world with kind new eyes. So many feelings to notice. So many.
+
+{refrain}.`,
+      },
+    },
     audioTemplate: `Night drifted softly over {setting}, and a small {hero} sat beside a {object_motif}, watching the others nearby.
 
 One of them sat apart, very quiet, shoulders low.
@@ -59,6 +94,45 @@ The {object_motif} glowed a little warmer, as if noticing too.
     concept: 'Kindness does not have to be big to matter', callback: 'Noticing how others feel (Level 1)', ageFloor: 4,
     summary: 'Having noticed a friend in need, the hero worries they must do something grand. Their companion shows them that the smallest kindness — sitting close, a gentle word — is often the one that matters most. It builds on Level 1: noticing leads to acting.',
     teachingNote: 'Children often think kindness must be big; learning that small acts count makes kindness something they can always offer.',
+    learningBeat: 'A small kindness',
+    ageVariants: {
+      '3-4': {
+        audioTemplate: `In {setting}, the {object_motif} glowed. The {hero} thought of the sad friend.
+
+"I want to help," said the {hero}. "But I have nothing big to give."
+
+"Who says kindness must be big?" said {companion_name}. "Watch what small can do. Watch."
+
+So the {hero} went and sat by the friend. Said a soft hello. Stayed close, so they were not alone.
+
+And slowly — the friend smiled. A little smile.
+
+"That was not big!" said the {hero}.
+
+"It was just right," said {companion_name}. "A small kindness is the warmest thing there is. Small. But warm."
+
+The night felt warmer. The {hero} understood. Just be there. Just be there.
+
+{refrain}.`,
+        scriptTemplate: `In {setting}, the {object_motif} glowed. {child_name} the {hero} thought of the sad friend.
+
+"I want to help," said {child_name}. "But I have nothing big to give."
+
+"Who says kindness must be big?" said {companion_name}. "Watch what small can do. Watch."
+
+So {child_name} went and sat by the friend. Said a soft hello. Stayed close, so they were not alone.
+
+And slowly — the friend smiled. A little smile.
+
+"That was not big!" said {child_name}.
+
+"It was just right," said {companion_name}. "A small kindness is the warmest thing there is. Small. But warm."
+
+The night felt warmer. {child_name} understood. Just be there. Just be there.
+
+{refrain}.`,
+      },
+    },
     audioTemplate: `The {object_motif} glowed steadily in {setting}, and the {hero} remembered the quiet, sad friend from before.
 
 "I want to help," said the {hero}, "but I do not have anything big to give."
@@ -104,6 +178,45 @@ The {object_motif} brightened, and so did the night.
     concept: 'Imagining how another person feels', callback: 'Noticing how others feel (Level 1)', ageFloor: 4,
     summary: 'When the hero does not understand why a friend acted unkindly, their companion teaches them to imagine being that friend — to walk in their shoes. It revisits Level 1: noticing the outside, then imagining the inside.',
     teachingNote: 'Perspective-taking — imagining another\'s inner world — is the heart of empathy and the antidote to quick judgement.',
+    learningBeat: "walking in someone's shoes",
+    ageVariants: {
+      '3-4': {
+        audioTemplate: `Under the {object_motif} in {setting}, a small {hero} felt hurt. A friend had been unkind.
+
+"Why would they do that?" said the {hero}.
+
+"Let's try something," said {companion_name}. "Close your eyes. Imagine you are them. What was their day like?"
+
+The {hero} imagined. Maybe the friend was tired. Maybe something went wrong for them, before.
+
+And the hurt grew softer. Softer and softer.
+
+"They might be carrying something I cannot see," said the {hero}.
+
+"That is walking in someone's shoes," said {companion_name}. "You saw how they seemed. Then you felt how they felt."
+
+The {hero} chose to be gentle tomorrow. Because everyone carries something. Everyone.
+
+{refrain}.`,
+        scriptTemplate: `Under the {object_motif} in {setting}, {child_name} the {hero} felt hurt. A friend had been unkind.
+
+"Why would they do that?" said {child_name}.
+
+"Let's try something," said {companion_name}. "Close your eyes. Imagine you are them. What was their day like?"
+
+{child_name} imagined. Maybe the friend was tired. Maybe something went wrong for them, before.
+
+And the hurt grew softer. Softer and softer.
+
+"They might be carrying something I cannot see," said {child_name}.
+
+"That is walking in someone's shoes," said {companion_name}. "You saw how they seemed. Then you felt how they felt."
+
+{child_name} chose to be gentle tomorrow. Because everyone carries something. Everyone.
+
+{refrain}.`,
+      },
+    },
     audioTemplate: `Beneath the glow of the {object_motif} in {setting}, the {hero} felt hurt. A friend had been short with them, almost unkind.
 
 "Why would they do that?" the {hero} said.
@@ -149,6 +262,41 @@ The {object_motif} warmed between them.
     concept: 'Kindness spreads from one to the next', callback: 'A small kindness (Level 2)', ageFloor: 5,
     summary: 'The hero sees a small kindness travel — from them, to a friend, to a stranger, and gently back again. Their companion explains that kindness is not used up by giving; it spreads. It builds on Level 2: one small act can light many.',
     teachingNote: 'Seeing kindness ripple outward teaches a child that their small acts matter far beyond the moment they happen.',
+    learningBeat: 'Kindness is not used up',
+    ageVariants: {
+      '3-4': {
+        audioTemplate: `The {object_motif} glowed bright in {setting}. The {hero} saw something wonderful.
+
+The little kindness they gave had kept going! The friend was kind to someone. That someone was kind to another. On and on.
+
+"It kept going!" said the {hero}. "Like a light, hand to hand."
+
+"Kindness is not used up when you give it," said {companion_name}. "It spreads. One little light becomes many. Many, many."
+
+And just then — a kindness came back! A friend was gentle to the {hero}, too.
+
+"I only started with something small," said the {hero}.
+
+"Small is how big warmth begins," said {companion_name}. "Always small first."
+
+{refrain}.`,
+        scriptTemplate: `The {object_motif} glowed bright in {setting}. {child_name} the {hero} saw something wonderful.
+
+The little kindness they gave had kept going! The friend was kind to someone. That someone was kind to another. On and on.
+
+"It kept going!" said {child_name}. "Like a light, hand to hand."
+
+"Kindness is not used up when you give it," said {companion_name}. "It spreads. One little light becomes many. Many, many."
+
+And just then — a kindness came back! A friend was gentle to {child_name}, too.
+
+"I only started with something small," said {child_name}.
+
+"Small is how big warmth begins," said {companion_name}. "Always small first."
+
+{refrain}.`,
+      },
+    },
     audioTemplate: `The {object_motif} was glowing brightly now in {setting}, and the {hero} noticed something wonderful.
 
 The small kindness they had given days ago had not stopped with their friend. That friend had been kind to someone else. And that someone had been kind to another.
@@ -194,6 +342,49 @@ The {object_motif} shone its warmest yet, lighting the whole of {setting}.
     concept: 'Kindness includes how you treat yourself', callback: 'Kindness comes back (Level 4)', ageFloor: 5,
     summary: 'The capstone: the hero, so kind to everyone else, is hard on themselves after a mistake. Their companion gently reminds them that they belong on the list of people who deserve kindness. It draws the path together — the warmth you share must also reach you.',
     teachingNote: 'Self-compassion completes empathy: a child who can be kind to themselves can sustain kindness toward everyone else.',
+    learningBeat: 'deserve kindness',
+    ageVariants: {
+      '3-4': {
+        audioTemplate: `The {object_motif} glowed soft in {setting}. But tonight the {hero} was frowning — at themselves.
+
+"I made a mistake," said the {hero}. "I was not good enough."
+
+"You are so kind to everyone," said {companion_name}. "But you forgot one person. One."
+
+"Who?" asked the {hero}.
+
+"You," said {companion_name}. "You deserve kindness too. Especially from you."
+
+The {hero} went quiet. They were so gentle with a sad friend. But so hard on themselves.
+
+"I would never say that to someone I love," said the {hero}.
+
+"Then do not say it to you," said {companion_name}.
+
+So the {hero} breathed, and turned the warmth inward. Kind to others. Kind to you too.
+
+{refrain}.`,
+        scriptTemplate: `The {object_motif} glowed soft in {setting}. But tonight {child_name} the {hero} was frowning — at themselves.
+
+"I made a mistake," said {child_name}. "I was not good enough."
+
+"You are so kind to everyone," said {companion_name}. "But you forgot one person. One."
+
+"Who?" asked {child_name}.
+
+"You," said {companion_name}. "You deserve kindness too. Especially from you."
+
+{child_name} went quiet. They were so gentle with a sad friend. But so hard on themselves.
+
+"I would never say that to someone I love," said {child_name}.
+
+"Then do not say it to you," said {companion_name}.
+
+So {child_name} breathed, and turned the warmth inward. Kind to others. Kind to you too.
+
+{refrain}.`,
+      },
+    },
     audioTemplate: `The {object_motif} glowed softly in {setting}, but tonight the {hero} was frowning — at themselves.
 
 "I made a mistake today," they said. "I was not good enough."
