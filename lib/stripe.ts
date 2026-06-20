@@ -58,7 +58,7 @@ export async function createCheckoutSession(opts: {
 // Issue a credit to a customer's balance (used when a story is reported)
 export async function issueCredit(
   stripeCustomerId: string,
-  amountCents = 990,              // $9.90 — one month's subscription
+  amountCents = 999,              // $9.99 — one month's subscription
   reason = 'Story credit'
 ): Promise<void> {
   await stripe.customers.createBalanceTransaction(stripeCustomerId, {

@@ -58,7 +58,7 @@ export async function POST(
   let creditIssued = false
   if (account?.stripe_customer_id) {
     try {
-      await issueCredit(account.stripe_customer_id, 990, `Story report: ${reason}`)
+      await issueCredit(account.stripe_customer_id, 999, `Story report: ${reason}`)
       creditIssued = true
     } catch (err) {
       console.error('[report] credit issue failed:', err)

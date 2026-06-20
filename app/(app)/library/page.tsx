@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 
 interface Story   { id: string; levelOrdinal: number; levelTitle: string; concept: string; skinSlug: string; voiceId: string; deliveredAt: string; audioUrl: string | null }
 interface Profile { name: string; currentLevel: number; totalLevels: number; subjectSlug: string }
-interface LibData  { stories: Story[]; profile: Profile | null; nextLevel: number | null }
+interface LibData  { stories: Story[]; profile: Profile | null; nextLevel: number | null; nextAvailableAt: string | null; canRequestNext: boolean }
 
 export default function LibraryPage() {
   const [data,       setData]       = useState<LibData | null>(null)
@@ -23,6 +23,9 @@ export default function LibraryPage() {
     setRequesting(false)
   }
 
+  const fmtDate = (iso: string) =>
+    new Date(iso).toLocaleDateString(undefined, { weekday: 'long', month: 'short', day: 'numeric' })
+
   const SKIN_EMOJI: Record<string,string> = { sea:'🐬', space:'🤖', forest:'🦊', castle:'🐉' }
 
   if (loading) return (
@@ -31,7 +34,7 @@ export default function LibraryPage() {
     </div>
   )
 
-  const { profile, stories = [], nextLevel } = data ?? {}
+  const { profile, stories = [], nextLevel, nextAvailableAt, canRequestNext = true } = data ?? {}
 
   return (
     <main style={{ minHeight:'100vh', background:'#FBF4E6', paddingBottom:'80px' }}>
@@ -57,18 +60,31 @@ export default function LibraryPage() {
       </header>
 
       <div style={{ maxWidth:'720px', margin:'0 auto', padding:'24px' }}>
-        {/* Next story CTA */}
+        {/* Next story CTA — gated to one story every 3 days */}
         {nextLevel && (
           <div style={{ background:'linear-gradient(135deg,#241a52,#3a2470)', borderRadius:'18px', padding:'18px', marginBottom:'18px', display:'flex', alignItems:'center', gap:'14px', color:'#fff', flexWrap:'wrap' }}>
-            <span style={{ fontSize:'28px' }}>📖</span>
+            <span style={{ fontSize:'28px' }}>{canRequestNext ? '📖' : '🌙'}</span>
             <div style={{ flex:1, minWidth:0 }}>
               <div style={{ fontFamily:'var(--font-fraunces)', fontWeight:600, fontSize:'16px', marginBottom:'4px' }}>Level {nextLevel} ready next</div>
-              <div style={{ fontSize:'13px', color:'#cfc3ea' }}>Continue the learning path</div>
+              <div style={{ fontSize:'13px', color:'#cfc3ea' }}>
+                {canRequestNext
+                  ? 'Continue the learning path'
+                  : nextAvailableAt
+                    ? `Arrives ${fmtDate(nextAvailableAt)}`
+                    : 'A new story every 3 days'}
+              </div>
             </div>
-            <button onClick={requestNext} disabled={requesting} aria-label={`Request level ${nextLevel}`}
-              style={{ padding:'11px 18px', background:'linear-gradient(135deg,#FFD27A,#E0852A)', color:'#3a230a', fontWeight:700, border:'none', borderRadius:'12px', cursor: requesting ? 'not-allowed' : 'pointer', fontSize:'14px', opacity: requesting ? .7 : 1, flexShrink:0 }}>
-              {requesting ? '…' : 'Get next story →'}
-            </button>
+            {canRequestNext ? (
+              <button onClick={requestNext} disabled={requesting} aria-label={`Request level ${nextLevel}`}
+                style={{ padding:'11px 18px', background:'linear-gradient(135deg,#FFD27A,#E0852A)', color:'#3a230a', fontWeight:700, border:'none', borderRadius:'12px', cursor: requesting ? 'not-allowed' : 'pointer', fontSize:'14px', opacity: requesting ? .7 : 1, flexShrink:0 }}>
+                {requesting ? '…' : 'Get next story →'}
+              </button>
+            ) : (
+              <span aria-label="Next story scheduled"
+                style={{ padding:'11px 16px', background:'rgba(255,255,255,.12)', border:'1px solid rgba(255,255,255,.2)', color:'#dccffa', fontWeight:700, borderRadius:'12px', fontSize:'13px', flexShrink:0 }}>
+                🔒 Scheduled
+              </span>
+            )}
           </div>
         )}
 

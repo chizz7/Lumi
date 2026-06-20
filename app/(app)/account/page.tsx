@@ -47,7 +47,7 @@ export default function AccountPage() {
         <div style={{ background:'linear-gradient(135deg,#241a52,#3a2470)', borderRadius:'16px', padding:'16px 18px', marginBottom:'22px', display:'flex', alignItems:'center', justifyContent:'space-between', color:'#fff' }}>
           <div>
             <div style={{ fontFamily:'var(--font-fraunces)', fontSize:'17px' }}>Story Club</div>
-            <div style={{ fontSize:'12.5px', color:'#cfc3ea', marginTop:'2px' }}>New story every week · All voices</div>
+            <div style={{ fontSize:'12.5px', color:'#cfc3ea', marginTop:'2px' }}>New story every 3 days · All voices</div>
           </div>
           <span style={{ background:'#F4A93C', color:'#3a230a', fontSize:'11px', fontWeight:800, padding:'4px 12px', borderRadius:'99px' }}>Active</span>
         </div>

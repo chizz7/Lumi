@@ -67,10 +67,10 @@ const strings: Record<string, string> = {
   'pricing.free.amount':  'Free',
   'pricing.free.sub':     'Preview before you pay — no card needed',
   'pricing.club.label':   'Story Club',
-  'pricing.club.amount':  '$9',
+  'pricing.club.amount':  '$9.99',
   'pricing.club.period':  '/mo',
   'pricing.club.tag':     'Most loved',
-  'pricing.club.f1':      'A new leveled story every week',
+  'pricing.club.f1':      'A new leveled story every 3 days',
   'pricing.club.f2':      'All curated voices',
   'pricing.club.f3':      'Record your own voice',
   'pricing.club.f4':      'Full audio + script library',
@@ -125,7 +125,7 @@ const strings: Record<string, string> = {
   // Account
   'account.title':    'Account',
   'account.plan':     'Story Club',
-  'account.plan.sub': 'New story every week · All voices',
+  'account.plan.sub': 'New story every 3 days · All voices',
   'account.active':   'Active',
 
   // Auth

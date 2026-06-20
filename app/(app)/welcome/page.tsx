@@ -10,8 +10,11 @@ export default function WelcomePage() {
         <h1 style={{ fontFamily:'var(--font-fraunces)', fontSize:'28px', marginBottom:'10px' }}>
           You're all set!
         </h1>
-        <p style={{ fontSize:'16px', color:'#dccffa', lineHeight:1.6, marginBottom:'28px' }}>
+        <p style={{ fontSize:'16px', color:'#dccffa', lineHeight:1.6, marginBottom:'16px' }}>
           Your story is on its way. Check your email — we've sent a magic link to sign in and your first story.
+        </p>
+        <p style={{ fontSize:'14px', color:'#cfc3ea', lineHeight:1.6, marginBottom:'28px' }}>
+          After this one, a new leveled story unlocks in your library every 3 days.
         </p>
         <a href="/library" style={{ display:'inline-block', padding:'15px 32px', background:'linear-gradient(135deg,#FFD27A,#E0852A)', color:'#3a230a', fontWeight:700, borderRadius:'15px', textDecoration:'none', fontSize:'16px' }}>
           Go to your library →

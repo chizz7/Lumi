@@ -4,6 +4,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { serverClient, adminClient, BUCKETS } from '@/lib/supabase'
 import { getLevel, getLevelCount }             from '@/content'
+import { canRequestStory, nextStoryAvailableAt } from '@/lib/cadence'
 
 export async function GET(req: NextRequest) {
   const supabase = await serverClient()
@@ -53,6 +54,11 @@ export async function GET(req: NextRequest) {
   const totalLevels = getLevelCount(profile.subject_slug)
   const nextLevel   = profile.current_level <= totalLevels ? profile.current_level : null
 
+  // Cadence: most recent delivery drives when the next story unlocks.
+  const lastDeliveredAt = instances?.[0]?.delivered_at ?? null
+  const nextAvailableAt = nextStoryAvailableAt(lastDeliveredAt)?.toISOString() ?? null
+  const canRequestNext  = canRequestStory(lastDeliveredAt)
+
   return NextResponse.json({
     profile: {
       name:          profile.name,
@@ -61,6 +67,8 @@ export async function GET(req: NextRequest) {
       subjectSlug:   profile.subject_slug,
     },
     nextLevel,
+    nextAvailableAt,
+    canRequestNext,
     stories,
   })
 }

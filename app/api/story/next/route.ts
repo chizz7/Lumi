@@ -7,6 +7,7 @@ import { serverClient, adminClient, BUCKETS } from '@/lib/supabase'
 import { assembleStory, getLevelCount }        from '@/content'
 import { getOrRenderAudio, audioCacheKey, type VoiceId } from '@/lib/tts'
 import { sendStoryEmail }                      from '@/lib/email'
+import { canRequestStory, nextStoryAvailableAt, STORY_INTERVAL_DAYS } from '@/lib/cadence'
 
 export async function POST(req: NextRequest) {
   const supabase = await serverClient()
@@ -21,7 +22,7 @@ export async function POST(req: NextRequest) {
     .single()
 
   if (account?.plan !== 'club') {
-    return NextResponse.json({ error: 'Upgrade to Story Club to unlock weekly stories.', upgrade: true }, { status: 403 })
+    return NextResponse.json({ error: `Upgrade to Story Club to unlock a new story every ${STORY_INTERVAL_DAYS} days.`, upgrade: true }, { status: 403 })
   }
 
   // Load profile
@@ -32,6 +33,25 @@ export async function POST(req: NextRequest) {
     .single()
 
   if (!profile) return NextResponse.json({ error: 'No profile found' }, { status: 400 })
+
+  // Cadence gate: one story every STORY_INTERVAL_DAYS. Also prevents duplicate
+  // deliveries from rapid double-taps (there's no queue/idempotency otherwise).
+  const { data: lastStory } = await supabase
+    .from('story_instances')
+    .select('delivered_at')
+    .eq('profile_id', profile.id)
+    .order('delivered_at', { ascending: false })
+    .limit(1)
+    .maybeSingle()
+
+  if (!canRequestStory(lastStory?.delivered_at)) {
+    const nextAt = nextStoryAvailableAt(lastStory?.delivered_at)
+    return NextResponse.json({
+      error: `Your next story unlocks on ${nextAt?.toLocaleDateString()}. One new story arrives every ${STORY_INTERVAL_DAYS} days.`,
+      nextAvailableAt: nextAt?.toISOString() ?? null,
+      throttled: true,
+    }, { status: 429 })
+  }
 
   const totalLevels = getLevelCount(profile.subject_slug)
   if (profile.current_level > totalLevels) {
