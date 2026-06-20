@@ -32,6 +32,9 @@ const SKINS = [
   { slug:'forest', emoji:'🦊', name:'Whisper Forest',  desc:'Juno the fox' },
   { slug:'castle', emoji:'🐉', name:'Cloud Castle',    desc:'Bram the dragon' },
 ]
+const SUBJECT_NAMES: Record<string, string> = {
+  money: 'Money', focus: 'Focus', resilience: 'Resilience', kindness: 'Kindness',
+}
 // value = canonical hyphen form stored in the DB; label = prettier en-dash for display
 const AGE_BANDS = [
   { value: '3-4', label: '3–4' },
@@ -54,6 +57,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
   const [childName,   setChildName]       = useState('')
   const [ageBand,     setAgeBand]         = useState('5-6')
   const [skinSlug,    setSkinSlug]        = useState('sea')
+  const [subjectSlug, setSubjectSlug]     = useState('money')
   const [voiceId,     setVoiceId]         = useState(voices[0]?.id ?? 'af_heart')
   const [activePath,  setActivePath]      = useState<string>('money')
   const [activeVoice, setActiveVoice]     = useState(0)
@@ -90,16 +94,19 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
     { loading: boolean; script?: string; audioUrl?: string | null; error?: string } | null
   >(null)
 
-  const saveDraft = () => fetch('/api/draft', {
+  // Draft fields, with optional overrides so live preview switching never reads
+  // stale state (setState is async; we pass the new value through directly).
+  type DraftFields = { childName: string; ageBand: string; skinSlug: string; subjectSlug: string; voiceId: string }
+  const saveDraft = (overrides: Partial<DraftFields> = {}) => fetch('/api/draft', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ childName, ageBand, skinSlug, subjectSlug: 'money', voiceId }),
+    body: JSON.stringify({ childName, ageBand, skinSlug, subjectSlug, voiceId, ...overrides }),
   })
 
-  const generatePreview = async () => {
+  const generatePreview = async (overrides: Partial<DraftFields> = {}) => {
     setPreview({ loading: true })
     try {
-      await saveDraft()
+      await saveDraft(overrides)
       const res  = await fetch('/api/preview')
       const data = await res.json()
       if (!res.ok) throw new Error(data.error || 'preview failed')
@@ -107,6 +114,21 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
     } catch {
       setPreview({ loading: false, error: "We couldn't build the preview just now. Please try again." })
     }
+  }
+
+  // Render the preview script with the child's name highlighted — makes the
+  // slot-fill personalization visible ("this is built around your child").
+  const renderScript = (text: string) => {
+    if (!childName) return text
+    const parts = text.split(childName)
+    return parts.map((p, i) => (
+      <span key={i}>
+        {p}
+        {i < parts.length - 1 && (
+          <mark style={{ background:'rgba(244,169,60,.28)', borderBottom:'2px solid #F4A93C', borderRadius:'4px', padding:'0 3px', color:'#211a3a', fontStyle:'normal', fontWeight:700 }}>{childName}</mark>
+        )}
+      </span>
+    ))
   }
 
   // ── Waitlist submit ────────────────────────────────────────────────────────
@@ -690,18 +712,27 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
               {builderStep === 3 && (
                 <div>
                   <h2 style={{ fontFamily:'var(--font-fraunces)', fontSize:'22px', margin:'6px 0 4px' }}>What should it teach?</h2>
-                  <p style={{ fontSize:'13.5px', color:'#5d5278', marginBottom:'18px' }}>Start with money — more paths are on the way.</p>
+                  <p style={{ fontSize:'13.5px', color:'#5d5278', marginBottom:'18px' }}>Money is ready to try now. The other paths are being expert-written — tap one to follow along.</p>
                   {[
                     { slug:'money', emoji:'🪙', name:'Money & saving', desc:'Coins, value, saving for goals', live:true },
                     { slug:'focus', emoji:'🎯', name:'Focus & goals', desc:'Planning, patience', live:false },
                     { slug:'resilience', emoji:'💪', name:'Resilience', desc:'Trying again', live:false },
-                  ].map(s => (
-                    <div key={s.slug} style={{ display:'flex', alignItems:'center', gap:'12px', border:`2px solid ${s.live?'#F4A93C':'#e0d2b7'}`, borderRadius:'15px', padding:'13px', cursor: s.live?'pointer':'not-allowed', background: s.live?'#fff7ea':'#fff', opacity: s.live?1:.55, marginBottom:'10px' }}>
-                      <span style={{ fontSize:'24px' }}>{s.emoji}</span>
-                      <div><div style={{ fontWeight:700, fontSize:'14.5px' }}>{s.name}</div><div style={{ fontSize:'12px', color:'#5d5278' }}>{s.desc}</div></div>
-                      {!s.live && <span style={{ marginLeft:'auto', fontSize:'10px', background:'#e7dac0', color:'#5d5278', padding:'3px 9px', borderRadius:'99px', fontWeight:800 }}>Soon</span>}
-                    </div>
-                  ))}
+                    { slug:'kindness', emoji:'❤️', name:'Kindness & empathy', desc:'Sharing, caring', live:false },
+                  ].map(s => {
+                    const selected = subjectSlug === s.slug
+                    return (
+                      <button key={s.slug} type="button"
+                        onClick={() => s.live ? setSubjectSlug(s.slug) : setActivePath(s.slug)}
+                        aria-pressed={selected}
+                        style={{ width:'100%', textAlign:'left', display:'flex', alignItems:'center', gap:'12px', border:`2px solid ${selected ? '#F4A93C' : '#e0d2b7'}`, borderRadius:'15px', padding:'13px', cursor:'pointer', background: selected ? '#fff7ea' : '#fff', opacity: s.live ? 1 : .7, marginBottom:'10px', fontFamily:'inherit' }}>
+                        <span style={{ fontSize:'24px' }}>{s.emoji}</span>
+                        <div style={{ flex:1 }}><div style={{ fontWeight:700, fontSize:'14.5px' }}>{s.name}</div><div style={{ fontSize:'12px', color:'#5d5278' }}>{s.desc}</div></div>
+                        {s.live
+                          ? <span style={{ fontSize:'16px', color: selected ? '#E0852A' : '#cdbf9f' }}>{selected ? '✓' : '○'}</span>
+                          : <span style={{ fontSize:'10px', background:'#e7dac0', color:'#5d5278', padding:'3px 9px', borderRadius:'99px', fontWeight:800 }}>Soon</span>}
+                      </button>
+                    )
+                  })}
                 </div>
               )}
 
@@ -746,22 +777,60 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                 {preview.error && (
                   <div style={{ textAlign:'center', padding:'24px 10px' }}>
                     <p style={{ fontSize:'14px', color:'#c0392b', marginBottom:'14px' }}>{preview.error}</p>
-                    <button onClick={generatePreview} style={{ padding:'12px 20px', background:'#F4E9D4', color:'#211a3a', fontWeight:700, border:'none', borderRadius:'12px', cursor:'pointer' }}>Try again</button>
+                    <button onClick={() => generatePreview()} style={{ padding:'12px 20px', background:'#F4E9D4', color:'#211a3a', fontWeight:700, border:'none', borderRadius:'12px', cursor:'pointer' }}>Try again</button>
                   </div>
                 )}
 
                 {!preview.loading && !preview.error && (
                   <>
-                    <blockquote style={{ background:'#fff', border:'1px solid #ece0c8', borderRadius:'16px', padding:'18px 20px', fontSize:'15.5px', lineHeight:1.65, fontFamily:'var(--font-fraunces)', fontStyle:'italic', color:'#211a3a', margin:'0 0 14px' }}>
-                      "{preview.script}"
+                    {/* Personalisation badges — make the slot-fill explicit */}
+                    <div style={{ display:'flex', gap:'6px', flexWrap:'wrap', marginBottom:'12px' }}>
+                      {[
+                        childName ? `👶 ${childName}` : null,
+                        `${SKINS.find(s => s.slug === skinSlug)?.emoji ?? '🌍'} ${SKINS.find(s => s.slug === skinSlug)?.name ?? 'World'}`,
+                        `🔊 ${voices.find(v => v.id === voiceId)?.name ?? 'Voice'}`,
+                      ].filter(Boolean).map((b, i) => (
+                        <span key={i} style={{ fontSize:'11.5px', fontWeight:700, background:'#fff', border:'1px solid #ece0c8', borderRadius:'99px', padding:'5px 11px', color:'#5d5278' }}>{b}</span>
+                      ))}
+                    </div>
+
+                    <blockquote style={{ background:'#fff', border:'1px solid #ece0c8', borderRadius:'16px', padding:'18px 20px', fontSize:'15.5px', lineHeight:1.7, fontFamily:'var(--font-fraunces)', color:'#211a3a', margin:'0 0 14px' }}>
+                      {renderScript(preview.script ?? '')}
                     </blockquote>
+
                     {preview.audioUrl ? (
                       <audio ref={previewAudioRef} src={preview.audioUrl} controls autoPlay style={{ width:'100%' }} />
                     ) : (
                       <p style={{ fontSize:'12.5px', color:'#8a6a1f', textAlign:'center', margin:'8px 0' }}>Audio is being prepared — you'll get the full narration by email.</p>
                     )}
-                    <p style={{ fontSize:'12px', color:'#5d5278', textAlign:'center', margin:'12px 0 0' }}>
-                      Level 1 of 5 · {voices.find(v => v.id === voiceId)?.name ?? 'Willow'}'s voice
+
+                    {/* Live demo: same lesson, re-skinned + re-voiced on the fly */}
+                    <div style={{ marginTop:'16px', background:'#fff7ea', border:'1px solid #f1ddb6', borderRadius:'14px', padding:'14px' }}>
+                      <p style={{ fontSize:'12px', fontWeight:800, color:'#8a6a1f', margin:'0 0 10px', letterSpacing:'.3px' }}>
+                        ✨ Same lesson — switch the world or voice and hear it change
+                      </p>
+                      <div style={{ display:'flex', gap:'6px', flexWrap:'wrap', marginBottom:'10px' }}>
+                        {SKINS.map(sk => (
+                          <button key={sk.slug} onClick={() => { setSkinSlug(sk.slug); generatePreview({ skinSlug: sk.slug }) }}
+                            aria-pressed={skinSlug===sk.slug}
+                            style={{ fontSize:'12.5px', fontWeight:700, border:`1.5px solid ${skinSlug===sk.slug?'#F4A93C':'#e6d8bd'}`, background: skinSlug===sk.slug?'#fff':'transparent', borderRadius:'10px', padding:'7px 10px', cursor:'pointer', color:'#211a3a' }}>
+                            {sk.emoji} {sk.name.replace(/^(Under the |Whisper |Cloud |Space )/,'')}
+                          </button>
+                        ))}
+                      </div>
+                      <div style={{ display:'flex', gap:'6px', flexWrap:'wrap' }}>
+                        {voices.map(v => (
+                          <button key={v.id} onClick={() => { setVoiceId(v.id); generatePreview({ voiceId: v.id }) }}
+                            aria-pressed={voiceId===v.id}
+                            style={{ fontSize:'12.5px', fontWeight:700, border:`1.5px solid ${voiceId===v.id?'#F4A93C':'#e6d8bd'}`, background: voiceId===v.id?'#fff':'transparent', borderRadius:'10px', padding:'7px 10px', cursor:'pointer', color:'#211a3a' }}>
+                            🔊 {v.name}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+
+                    <p style={{ fontSize:'12px', color:'#5d5278', textAlign:'center', margin:'14px 0 0' }}>
+                      Level 1 of 5 · {SUBJECT_NAMES[subjectSlug] ?? 'Money'} path · {voices.find(v => v.id === voiceId)?.name ?? 'Willow'}'s voice
                     </p>
                   </>
                 )}
