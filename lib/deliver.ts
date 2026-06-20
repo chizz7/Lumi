@@ -20,7 +20,7 @@ export interface DeliverableProfile {
 
 export type DeliverResult =
   | { delivered: true;  levelTitle: string; audioUrl: string }
-  | { delivered: false; reason: 'completed' | 'already_delivered' }
+  | { delivered: false; reason: 'completed' | 'already_delivered' | 'not_approved' }
 
 // Assemble → render audio (cache-first) → email → record → advance level.
 // `accountId` is used only for analytics attribution.
@@ -35,6 +35,21 @@ export async function deliverNextStory(
   }
 
   const levelOrdinal = profile.current_level
+
+  // Content review gate (opt-in): only deliver levels marked 'approved' in the
+  // review console. Off by default so existing behaviour is unchanged.
+  if (process.env.ENFORCE_CONTENT_APPROVAL === 'true') {
+    const { data: approval } = await adminClient
+      .from('content_approvals')
+      .select('status')
+      .eq('subject_slug', profile.subject_slug)
+      .eq('level_ordinal', levelOrdinal)
+      .maybeSingle()
+    if (approval?.status !== 'approved') {
+      console.warn(`[deliver] blocked: ${profile.subject_slug} L${levelOrdinal} not approved`)
+      return { delivered: false, reason: 'not_approved' }
+    }
+  }
 
   // Idempotency: never deliver the same level twice (guards against a manual
   // request and the cron racing, since there's no queue).

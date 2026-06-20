@@ -56,6 +56,9 @@ export async function POST(req: NextRequest) {
     if (result.reason === 'completed') {
       return NextResponse.json({ error: 'You\'ve completed all available levels! More coming soon.' }, { status: 400 })
     }
+    if (result.reason === 'not_approved') {
+      return NextResponse.json({ error: 'This story is still being reviewed and will be ready soon.' }, { status: 409 })
+    }
     // already_delivered — treat as success so the UI just refreshes.
     return NextResponse.json({ ok: true, alreadyDelivered: true })
   }
