@@ -36,4 +36,20 @@ export const SKINS: Record<string, Skin> = {
     objectMotif:   'calm watch-candle',
     refrain:       'A calm mind builds the tallest tower',
   },
+  dino: {
+    slug:          'dino',
+    setting:       'the green fern valley',
+    hero:          'dinosaur',
+    companionName: 'Rex the little raptor',
+    objectMotif:   'steady valley-light',
+    refrain:       'One careful step crosses the widest valley',
+  },
+  jungle: {
+    slug:          'jungle',
+    setting:       'the deep green jungle',
+    hero:          'tiger cub',
+    companionName: 'Echo the parrot',
+    objectMotif:   'bright canopy-light',
+    refrain:       'Follow one vine and it leads you all the way home',
+  },
 }

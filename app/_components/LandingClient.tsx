@@ -11,6 +11,7 @@
 import { useState, useRef } from 'react'
 import type { VoiceConfig }              from '@/lib/voices'
 import { getAllLevels }                  from '@/content'
+import { interestForWorld }              from '@/content/interests'
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -26,11 +27,16 @@ interface Props {
 
 // ─── Builder state ────────────────────────────────────────────────────────────
 
+// Worlds the child can be the hero of. `loves` frames the choice as an interest
+// ("what does your child love?"); each maps to a cosmetic world that exists for
+// every subject.
 const SKINS = [
-  { slug:'sea',    emoji:'🐬', name:'Under the Sea',   desc:'Maya the dolphin' },
-  { slug:'space',  emoji:'🚀', name:'Space Station',   desc:'Pip the robot' },
-  { slug:'forest', emoji:'🦊', name:'Whisper Forest',  desc:'Juno the fox' },
-  { slug:'castle', emoji:'🐉', name:'Cloud Castle',    desc:'Bram the dragon' },
+  { slug:'sea',    emoji:'🐬', name:'Under the Sea',  loves:'animals & the ocean', desc:'a dolphin & Pip the crab' },
+  { slug:'space',  emoji:'🚀', name:'Space Station',  loves:'space & robots',      desc:'a robot & Circuit the cat' },
+  { slug:'forest', emoji:'🦊', name:'Whisper Forest', loves:'woodland animals',    desc:'a fox & Old Owl' },
+  { slug:'castle', emoji:'🐉', name:'Cloud Castle',   loves:'dragons & castles',   desc:'a dragon & Mira the bunny' },
+  { slug:'dino',   emoji:'🦕', name:'Fern Valley',    loves:'dinosaurs',           desc:'a dino & Rex the raptor' },
+  { slug:'jungle', emoji:'🐯', name:'Deep Jungle',    loves:'jungle animals',      desc:'a tiger cub & Echo the parrot' },
 ]
 const SUBJECT_NAMES: Record<string, string> = {
   money: 'Money', focus: 'Focus', resilience: 'Resilience',
@@ -98,11 +104,14 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
   // Draft fields, with optional overrides so live preview switching never reads
   // stale state (setState is async; we pass the new value through directly).
   type DraftFields = { childName: string; ageBand: string; skinSlug: string; subjectSlug: string; voiceId: string }
-  const saveDraft = (overrides: Partial<DraftFields> = {}) => fetch('/api/draft', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ childName, ageBand, skinSlug, subjectSlug, voiceId, ...overrides }),
-  })
+  const saveDraft = (overrides: Partial<DraftFields> = {}) => {
+    const merged = { childName, ageBand, skinSlug, subjectSlug, voiceId, ...overrides }
+    return fetch('/api/draft', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ...merged, interestSlug: interestForWorld(merged.skinSlug)?.slug }),
+    })
+  }
 
   const generatePreview = async (overrides: Partial<DraftFields> = {}) => {
     setPreview({ loading: true })
@@ -690,18 +699,18 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                 </div>
               )}
 
-              {/* Step 2: World */}
+              {/* Step 2: World (framed as the child's interest) */}
               {builderStep === 2 && (
                 <div>
-                  <h2 style={{ fontFamily:'var(--font-fraunces)', fontSize:'22px', margin:'6px 0 4px' }}>Pick their world.</h2>
-                  <p style={{ fontSize:'13.5px', color:'#5d5278', marginBottom:'18px' }}>Same lesson, different paint — choose what they'll love most.</p>
+                  <h2 style={{ fontFamily:'var(--font-fraunces)', fontSize:'22px', margin:'6px 0 4px' }}>What does your child love?</h2>
+                  <p style={{ fontSize:'13.5px', color:'#5d5278', marginBottom:'18px' }}>Same lesson, set in the world they'll adore — they become the hero.</p>
                   <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'11px' }}>
                     {SKINS.map(s => (
                       <button key={s.slug} onClick={() => setSkinSlug(s.slug)}
                         style={{ border:`2px solid ${skinSlug===s.slug?'#F4A93C':'#e0d2b7'}`, borderRadius:'17px', padding:'14px 10px', cursor:'pointer', textAlign:'center', background: skinSlug===s.slug?'#fff7ea':'#fff', transition:'.15s' }}>
-                        <div style={{ fontSize:'36px', marginBottom:'6px' }}>{s.emoji}</div>
-                        <div style={{ fontWeight:800, fontSize:'13.5px' }}>{s.name}</div>
-                        <div style={{ fontSize:'11px', color:'#5d5278' }}>{s.desc}</div>
+                        <div style={{ fontSize:'34px', marginBottom:'6px' }}>{s.emoji}</div>
+                        <div style={{ fontWeight:800, fontSize:'13px' }}>{s.loves}</div>
+                        <div style={{ fontSize:'11px', color:'#5d5278' }}>{s.name} · {s.desc}</div>
                       </button>
                     ))}
                   </div>

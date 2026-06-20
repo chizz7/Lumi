@@ -36,4 +36,20 @@ export const SKINS: Record<string, Skin> = {
     objectMotif:   'little inner-flame',
     refrain:       'Brave is not loud; brave is simply trying',
   },
+  dino: {
+    slug:          'dino',
+    setting:       'the green fern valley',
+    hero:          'dinosaur',
+    companionName: 'Rex the little raptor',
+    objectMotif:   'small inner-ember',
+    refrain:       'Even the smallest dinosaur has a mighty heart inside',
+  },
+  jungle: {
+    slug:          'jungle',
+    setting:       'the deep green jungle',
+    hero:          'tiger cub',
+    companionName: 'Echo the parrot',
+    objectMotif:   'bright inner-spark',
+    refrain:       'The quietest cub still has the bravest heart',
+  },
 }

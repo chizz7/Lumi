@@ -140,6 +140,7 @@ async function handleNewSubscriber(session: Stripe.Checkout.Session) {
       skin_slug:     draft.skinSlug,
       subject_slug:  draft.subjectSlug,
       voice_id:      draft.voiceId,
+      interest_slug: draft.interestSlug ?? null,
       current_level: 1,
     })
     .select().single()

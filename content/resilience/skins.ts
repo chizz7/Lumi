@@ -36,4 +36,20 @@ export const SKINS: Record<string, Skin> = {
     objectMotif:   'small climbing vine',
     refrain:       'A little vine can climb the tallest wall',
   },
+  dino: {
+    slug:          'dino',
+    setting:       'the green fern valley',
+    hero:          'dinosaur',
+    companionName: 'Rex the little raptor',
+    objectMotif:   'tiny fern-sprout',
+    refrain:       'Even ferns rise again after every storm',
+  },
+  jungle: {
+    slug:          'jungle',
+    setting:       'the deep green jungle',
+    hero:          'tiger cub',
+    companionName: 'Echo the parrot',
+    objectMotif:   'small jungle-seedling',
+    refrain:       'What bends in the storm does not break',
+  },
 }

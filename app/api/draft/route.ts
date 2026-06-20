@@ -19,11 +19,12 @@ export async function POST(req: NextRequest) {
   }
 
   const draft: Draft = {
-    childName:   (body.childName ?? '').trim().slice(0, 50),
-    ageBand:     body.ageBand   || '5-6',
-    skinSlug:    body.skinSlug,
-    subjectSlug: body.subjectSlug,
-    voiceId:     body.voiceId,
+    childName:    (body.childName ?? '').trim().slice(0, 50),
+    ageBand:      body.ageBand   || '5-6',
+    skinSlug:     body.skinSlug,
+    subjectSlug:  body.subjectSlug,
+    voiceId:      body.voiceId,
+    interestSlug: body.interestSlug,
   }
 
   const res = NextResponse.json({ ok: true })

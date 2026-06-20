@@ -34,4 +34,20 @@ export const SKINS: Record<string, Skin> = {
     objectMotif:   'sparkling sky-gem',
     refrain:       'The clouds remember every brave choice',
   },
+  dino: {
+    slug:          'dino',
+    setting:       'the green fern valley',
+    hero:          'dinosaur',
+    companionName: 'Rex the little raptor',
+    objectMotif:   'shiny amber-coin',
+    refrain:       'The valley keeps what is worth keeping',
+  },
+  jungle: {
+    slug:          'jungle',
+    setting:       'the deep green jungle',
+    hero:          'tiger cub',
+    companionName: 'Echo the parrot',
+    objectMotif:   'golden jungle-coin',
+    refrain:       'The jungle rewards the one who saves for the dry season',
+  },
 }

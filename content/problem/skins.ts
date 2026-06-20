@@ -36,4 +36,20 @@ export const SKINS: Record<string, Skin> = {
     objectMotif:   'small puzzle-lock',
     refrain:       'There is always a key, if you stop to find it',
   },
+  dino: {
+    slug:          'dino',
+    setting:       'the green fern valley',
+    hero:          'dinosaur',
+    companionName: 'Rex the little raptor',
+    objectMotif:   'curious fossil-puzzle',
+    refrain:       'Every fossil gives up its secret to patient eyes',
+  },
+  jungle: {
+    slug:          'jungle',
+    setting:       'the deep green jungle',
+    hero:          'tiger cub',
+    companionName: 'Echo the parrot',
+    objectMotif:   'knotted vine-puzzle',
+    refrain:       'Every tangle in the vines comes loose in time',
+  },
 }

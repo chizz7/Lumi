@@ -12,11 +12,12 @@ const COOKIE_NAME = 'lumi_draft'
 const COOKIE_MAX  = 60 * 60 * 24 * 7  // 7 days
 
 export interface Draft {
-  childName:   string
-  ageBand:     string   // '3-4' | '5-6' | '7-8'
-  skinSlug:    string   // 'sea' | 'space' | 'forest' | 'castle'
-  subjectSlug: string   // 'money'
-  voiceId:     string   // 'af_heart' etc.
+  childName:    string
+  ageBand:      string   // '3-4' | '5-6' | '7-8'
+  skinSlug:     string   // resolved world: 'sea' | 'space' | 'forest' | 'castle' | 'dino' | 'jungle'
+  subjectSlug:  string   // 'money' etc.
+  voiceId:      string   // 'af_heart' etc.
+  interestSlug?: string  // what the child loves; maps to skinSlug (content/interests.ts)
 }
 
 function sign(data: string): string {

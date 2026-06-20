@@ -15,6 +15,8 @@ const WORLDS = [
   { slug:'space', emoji:'🚀', name:'Space Station' },
   { slug:'forest', emoji:'🦊', name:'Whisper Forest' },
   { slug:'castle', emoji:'🐉', name:'Cloud Castle' },
+  { slug:'dino', emoji:'🦕', name:'Fern Valley' },
+  { slug:'jungle', emoji:'🐯', name:'Deep Jungle' },
 ]
 
 export default function AccountPage() {
