@@ -240,6 +240,38 @@ deliver_story(instanceId):
 ```
 Email links are presigned with long-ish TTL; the library always re-signs fresh.
 
+**Implementation note (shipped):** the delivery pipeline lives in `lib/deliver.ts`
+as `deliverNextStory(profile, email)` and is reused by three callers — the Stripe
+webhook (first story), `POST /api/story/next` (parent-triggered), and the
+automatic cron. It is **idempotent per `(profile, level)`**: it short-circuits if a
+`story_instances` row already exists for that level, so a manual request and the
+cron can never double-deliver (there is no queue/idempotency table at v1).
+
+### 4.4a Automatic delivery cadence (shipped)
+One story is delivered per child profile **every `STORY_INTERVAL_DAYS` (= 3) days**.
+The cadence policy is centralized in `lib/cadence.ts` (`canRequestStory`,
+`nextStoryAvailableAt`).
+
+- **Trigger:** a daily Vercel Cron (`vercel.json` → `0 16 * * *`) calls
+  `GET /api/cron/deliver`, authenticated with `CRON_SECRET` (sent by Vercel as a
+  Bearer token). The route scans `plan='club'` accounts and delivers to every
+  profile whose last `delivered_at` + 3 days has elapsed.
+- **Self-correcting:** because eligibility is computed from each profile's own last
+  delivery, the daily tick yields exactly one story per child per 3 days regardless
+  of cron frequency or missed runs. A due child is served on the next daily run.
+- **Surfaced to the parent:** `GET /api/library` returns `nextAvailableAt` +
+  `canRequestNext`; the library shows the unlock date and only exposes the manual
+  "Get next story" button when the window has elapsed.
+
+**Scaling note (future optimization, not needed at launch):** the cron currently
+issues one "most recent delivery" lookup per profile. That is fine for hundreds of
+subscribers. Past a few thousand, replace it with either (a) a single batched query
+that joins the latest delivery per profile, or (b) a denormalized
+`child_profiles.next_due_at` column (written on each delivery) with an index, so the
+cron can fetch due profiles in one indexed query: `where next_due_at <= now()`.
+Pair (b) with a partial index for the cheapest scan. Revisit when a single cron run
+approaches the function timeout or the per-profile query count becomes the bottleneck.
+
 ### 4.5 Progress & callbacks
 `POST /api/story/next` → `progress.current_level_ordinal + 1`; `next_callback_concept_id` is read from the level definition (authored, not computed at runtime). After delivery, append level to `completed_level_ids` and advance. No engagement tracking of the child — progress is "which lesson is next," nothing more.
 
