@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lumi — Full Screen Map</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,500&family=Figtree:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:#1e1736; --ink2:#6b5f8a; --cream:#FBF4E6; --cream2:#F4E9D4;
+    --night:#241a52; --amber:#F4A93C; --gold:#FFD27A; --peach:#F8CBA0;
+    --built:#22c08b; --missing:#EB8A8A; --partial:#F4A93C;
+    --teal:#54B6A6; --violet:#9B86E0; --sky:#7FC8E8; --rose:#EB8A8A;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Figtree', sans-serif;
+    background: #0e0c26;
+    color: #e9e0f7;
+    padding: 0 0 60px;
+    min-height: 100vh;
+  }
+
+  /* ── TOP BAR ── */
+  .topbar {
+    background: rgba(22,18,58,.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,.1);
+    padding: 16px 20px;
+    position: sticky; top: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+  }
+  .topbar h1 { font-family:'Fraunces',serif; font-weight:600; font-size:18px; color:#fff; }
+  .legend { display:flex; gap:14px; flex-wrap:wrap; }
+  .litem { display:flex; align-items:center; gap:6px; font-size:12px; }
+  .ldot { width:10px; height:10px; border-radius:50%; }
+
+  /* ── STAGE HEADER ── */
+  .stage {
+    margin: 0;
+    padding: 24px 20px 0;
+  }
+  .stage-label {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase;
+    padding: 6px 14px; border-radius: 99px; margin-bottom: 16px;
+  }
+  .stage-label.acquire { background: rgba(127,200,232,.15); color: var(--sky); border: 1px solid rgba(127,200,232,.3); }
+  .stage-label.onboard { background: rgba(244,169,60,.15); color: var(--gold); border: 1px solid rgba(244,169,60,.3); }
+  .stage-label.retain  { background: rgba(84,182,166,.15); color: var(--teal); border: 1px solid rgba(84,182,166,.3); }
+  .stage-label.account { background: rgba(155,134,224,.15); color: var(--violet); border: 1px solid rgba(155,134,224,.3); }
+
+  /* ── SCREEN GRID ── */
+  .screens {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 12px;
+    padding: 0 20px 8px;
+  }
+
+  /* ── SCREEN CARD ── */
+  .card {
+    background: rgba(255,255,255,.05);
+    border: 1.5px solid rgba(255,255,255,.1);
+    border-radius: 16px;
+    padding: 14px;
+    cursor: pointer;
+    transition: transform .15s, box-shadow .15s, border-color .15s;
+    position: relative;
+    overflow: hidden;
+  }
+  .card:hover { transform: translateY(-2px); box-shadow: 0 12px 30px -16px rgba(0,0,0,.6); }
+  .card.built   { border-color: rgba(34,192,139,.35); }
+  .card.partial { border-color: rgba(244,169,60,.35); }
+  .card.missing { border-color: rgba(235,138,138,.25); opacity: .75; }
+  .card.built:hover   { border-color: var(--built); }
+  .card.partial:hover { border-color: var(--partial); }
+  .card.missing:hover { border-color: var(--missing); opacity: 1; }
+
+  /* status pill */
+  .pill {
+    display: inline-flex; align-items: center; gap: 5px;
+    font-size: 10px; font-weight: 800; letter-spacing: .8px; text-transform: uppercase;
+    padding: 3px 8px; border-radius: 99px; margin-bottom: 10px;
+  }
+  .pill.built   { background: rgba(34,192,139,.18); color: var(--built); }
+  .pill.partial { background: rgba(244,169,60,.18); color: var(--gold); }
+  .pill.missing { background: rgba(235,138,138,.18); color: var(--missing); }
+  .pill::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+
+  .card-num {
+    position: absolute; top: 12px; right: 14px;
+    font-size: 11px; color: rgba(255,255,255,.25); font-weight: 700;
+  }
+  .card-icon { font-size: 22px; margin-bottom: 8px; display: block; }
+  .card h3 { font-size: 14px; font-weight: 700; line-height: 1.3; margin-bottom: 5px; color: #fff; }
+  .card p  { font-size: 12px; line-height: 1.45; color: rgba(255,255,255,.55); }
+  .card-route {
+    margin-top: 10px; font-size: 11px; font-family: monospace;
+    color: rgba(255,255,255,.3); background: rgba(0,0,0,.25);
+    padding: 3px 7px; border-radius: 6px; display: inline-block;
+  }
+  .card-file {
+    margin-top: 5px; font-size: 11px; font-family: monospace;
+    color: rgba(127,200,232,.5); display: block; word-break: break-all;
+  }
+
+  /* ── FLOW ARROWS ── */
+  .arrow-row {
+    display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+    padding: 8px 20px;
+    font-size: 12px; color: rgba(255,255,255,.35);
+  }
+  .arrow-row .from { color: rgba(255,255,255,.6); font-weight: 700; font-size: 12px; }
+  .arrow-row .via  { color: rgba(255,255,255,.3); font-size: 11px; }
+  .arr { color: rgba(255,255,255,.4); font-size: 16px; }
+
+  /* ── DECISION POINTS ── */
+  .decision {
+    margin: 0 20px 16px;
+    background: rgba(244,169,60,.1);
+    border: 1px solid rgba(244,169,60,.3);
+    border-radius: 14px;
+    padding: 12px 16px;
+    display: flex; gap: 12px; align-items: flex-start;
+  }
+  .decision .di { font-size: 18px; flex-shrink: 0; }
+  .decision h4 { font-size: 13px; font-weight: 700; color: var(--gold); margin-bottom: 3px; }
+  .decision p  { font-size: 12px; color: rgba(255,255,255,.5); line-height: 1.4; }
+
+  /* ── DIVIDER ── */
+  .divider {
+    margin: 28px 20px 0;
+    border: none;
+    border-top: 1px dashed rgba(255,255,255,.1);
+    padding-top: 4px;
+  }
+
+  /* ── MODAL OVERLAY ── */
+  .modal-bg {
+    display: none; position: fixed; inset: 0; z-index: 200;
+    background: rgba(0,0,0,.7); backdrop-filter: blur(4px);
+    align-items: center; justify-content: center; padding: 20px;
+  }
+  .modal-bg.open { display: flex; }
+  .modal {
+    background: #1a1540;
+    border: 1px solid rgba(255,255,255,.15);
+    border-radius: 20px;
+    padding: 24px;
+    max-width: 460px; width: 100%;
+    position: relative;
+    max-height: 90vh; overflow-y: auto;
+  }
+  .modal h2 { font-family:'Fraunces',serif; font-weight:600; font-size:22px; margin-bottom:6px; color:#fff; }
+  .modal .pill { margin-bottom: 12px; }
+  .modal p { font-size:14px; line-height:1.6; color:rgba(255,255,255,.65); margin-bottom:10px; }
+  .modal .close { position:absolute; top:14px; right:14px; background:rgba(255,255,255,.1); border:none; color:#fff; width:30px; height:30px; border-radius:50%; cursor:pointer; font-size:15px; }
+  .modal .detail-row { display:flex; gap:10px; align-items:flex-start; margin:8px 0; }
+  .modal .detail-row .label { font-size:11px; font-weight:800; letter-spacing:1px; text-transform:uppercase; color:rgba(255,255,255,.3); min-width:72px; margin-top:2px; }
+  .modal .detail-row .val { font-size:13px; color:rgba(255,255,255,.75); font-family:monospace; word-break:break-all; }
+  .modal .connects { margin-top:14px; }
+  .modal .connects h4 { font-size:12px; font-weight:800; letter-spacing:1px; text-transform:uppercase; color:rgba(255,255,255,.3); margin-bottom:8px; }
+  .modal .conn-chip { display:inline-block; margin:3px; font-size:12px; background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.12); padding:4px 10px; border-radius:99px; }
+
+  /* ── SUMMARY STATS ── */
+  .summary {
+    margin: 28px 20px 0;
+    display: grid; grid-template-columns: repeat(3,1fr); gap: 12px;
+  }
+  .scard {
+    background: rgba(255,255,255,.04);
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 14px;
+    padding: 16px;
+    text-align: center;
+  }
+  .scard .big { font-family:'Fraunces',serif; font-weight:600; font-size:36px; }
+  .scard .lbl { font-size:12px; color:rgba(255,255,255,.4); margin-top:4px; }
+  .scard.b .big { color: var(--built); }
+  .scard.p .big { color: var(--gold); }
+  .scard.m .big { color: var(--missing); }
+
+  @media(max-width:600px) {
+    .screens { grid-template-columns: 1fr 1fr; }
+    .summary { grid-template-columns: repeat(3,1fr); }
+    .scard .big { font-size:28px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <h1>Lumi — Full Screen Map</h1>
+  <div class="legend">
+    <div class="litem"><div class="ldot" style="background:var(--built)"></div> Built</div>
+    <div class="litem"><div class="ldot" style="background:var(--partial)"></div> Partial</div>
+    <div class="litem"><div class="ldot" style="background:var(--missing)"></div> Missing</div>
+  </div>
+</div>
+
+<!-- ─── SUMMARY ─────────────────────────────────────────────────────────────── -->
+<div class="summary">
+  <div class="scard b"><div class="big">9</div><div class="lbl">Built ✓</div></div>
+  <div class="scard p"><div class="big">2</div><div class="lbl">Partial</div></div>
+  <div class="scard m"><div class="big">8</div><div class="lbl">Missing</div></div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     STAGE 1 · ACQUIRE
+══════════════════════════════════════════════════════════ -->
+<div class="stage">
+  <div class="stage-label acquire">🌙 Stage 1 · Acquire — public, no login</div>
+</div>
+
+<div class="screens">
+  <div class="card built" onclick="openModal('landing')">
+    <span class="card-num">01</span>
+    <span class="card-icon">🌐</span>
+    <div class="pill built">Built</div>
+    <h3>Landing Page</h3>
+    <p>Hero, social proof, how it works, curriculum, voices, pricing, FAQ, footer.</p>
+    <span class="card-route">/</span>
+    <span class="card-file">landing.html</span>
+  </div>
+
+  <div class="card built" onclick="openModal('b1')">
+    <span class="card-num">02</span>
+    <span class="card-icon">👶</span>
+    <div class="pill built">Built</div>
+    <h3>Builder · Step 1</h3>
+    <p>Child's name + age band. No account yet.</p>
+    <span class="card-route">overlay step 1</span>
+  </div>
+
+  <div class="card built" onclick="openModal('b2')">
+    <span class="card-num">03</span>
+    <span class="card-icon">🌊</span>
+    <div class="pill built">Built</div>
+    <h3>Builder · Step 2</h3>
+    <p>Pick a world (skin): Sea, Space, Forest, Castle.</p>
+    <span class="card-route">overlay step 2</span>
+  </div>
+
+  <div class="card built" onclick="openModal('b3')">
+    <span class="card-num">04</span>
+    <span class="card-icon">📚</span>
+    <div class="pill built">Built</div>
+    <h3>Builder · Step 3</h3>
+    <p>What should it teach? Money live, others "soon".</p>
+    <span class="card-route">overlay step 3</span>
+  </div>
+
+  <div class="card built" onclick="openModal('b4')">
+    <span class="card-num">05</span>
+    <span class="card-icon">🎙️</span>
+    <div class="pill built">Built</div>
+    <h3>Builder · Step 4</h3>
+    <p>Choose a narration voice. Willow, Sage, River, Juniper.</p>
+    <span class="card-route">overlay step 4</span>
+  </div>
+
+  <div class="card built" onclick="openModal('preview')">
+    <span class="card-num">06</span>
+    <span class="card-icon">▶️</span>
+    <div class="pill built">Built</div>
+    <h3>Free Preview</h3>
+    <p>Play the opening 30–45s of their personalized story. Voice switcher live.</p>
+    <span class="card-route">overlay preview</span>
+  </div>
+
+  <div class="card built" onclick="openModal('checkout')">
+    <span class="card-num">07</span>
+    <span class="card-icon">💳</span>
+    <div class="pill built">Built</div>
+    <h3>Checkout / Paywall</h3>
+    <p>Value stack → Stripe. Free first story, $9/mo after. Identity collected here only.</p>
+    <span class="card-route">overlay pay</span>
+    <span class="card-file">api/checkout/route.ts</span>
+  </div>
+</div>
+
+<div class="decision">
+  <div class="di">🔀</div>
+  <div>
+    <h4>Decision: Stripe payment confirmed?</h4>
+    <p>YES → Stripe webhook fires → account created → first delivery enqueued → Welcome screen.<br>
+    NO / abandoned → draft cookie expires in 7 days, no data retained.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     STAGE 2 · ONBOARD
+══════════════════════════════════════════════════════════ -->
+<hr class="divider">
+<div class="stage">
+  <div class="stage-label onboard">✨ Stage 2 · Onboard — first session, post-payment</div>
+</div>
+
+<div class="screens">
+  <div class="card missing" onclick="openModal('welcome')">
+    <span class="card-num">08</span>
+    <span class="card-icon">🎉</span>
+    <div class="pill missing">Missing</div>
+    <h3>Welcome</h3>
+    <p>Account confirmed. Magic-link sent to email. Transition from Stripe back to app.</p>
+    <span class="card-route">/welcome</span>
+    <span class="card-file">app/(app)/welcome/page.tsx</span>
+  </div>
+
+  <div class="card partial" onclick="openModal('onboard')">
+    <span class="card-num">09</span>
+    <span class="card-icon">⚙️</span>
+    <div class="pill partial">Partial</div>
+    <h3>Onboarding Extras</h3>
+    <p>Nickname, exclusions. In the overlay; needs a real authenticated page.</p>
+    <span class="card-route">/welcome → extras</span>
+    <span class="card-file">app/(app)/welcome/page.tsx</span>
+  </div>
+
+  <div class="card partial" onclick="openModal('voicerec')">
+    <span class="card-num">10</span>
+    <span class="card-icon">🎙️</span>
+    <div class="pill partial">Partial</div>
+    <h3>Voice Recorder</h3>
+    <p>Record 20s sample with consent checkbox. In overlay; needs real API wiring + upload.</p>
+    <span class="card-route">/welcome → voice</span>
+    <span class="card-file">api/voice/consent · api/voice/sample</span>
+  </div>
+
+  <div class="card built" onclick="openModal('delivery')">
+    <span class="card-num">11</span>
+    <span class="card-icon">📬</span>
+    <div class="pill built">Built</div>
+    <h3>Delivery Confirmation</h3>
+    <p>Story sent! Email + library preview. "Next level" teaser shown.</p>
+    <span class="card-route">overlay done</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     STAGE 3 · RETAIN
+══════════════════════════════════════════════════════════ -->
+<hr class="divider">
+<div class="stage">
+  <div class="stage-label retain">🔄 Stage 3 · Retain — authenticated, returning parent</div>
+</div>
+
+<div class="screens">
+  <div class="card missing" onclick="openModal('library')">
+    <span class="card-num">12</span>
+    <span class="card-icon">📚</span>
+    <div class="pill missing">Missing</div>
+    <h3>Library / Home</h3>
+    <p>All delivered stories. Audio player, script download. "Get next story" CTA.</p>
+    <span class="card-route">/library</span>
+    <span class="card-file">app/(app)/library/page.tsx</span>
+  </div>
+
+  <div class="card missing" onclick="openModal('player')">
+    <span class="card-num">13</span>
+    <span class="card-icon">🌙</span>
+    <div class="pill missing">Missing</div>
+    <h3>Story Player</h3>
+    <p>Full-screen bedtime player. Artwork, audio controls, script toggle, report button.</p>
+    <span class="card-route">/library/[id]</span>
+    <span class="card-file">app/(app)/library/[id]/page.tsx</span>
+  </div>
+
+  <div class="card missing" onclick="openModal('nextstory')">
+    <span class="card-num">14</span>
+    <span class="card-icon">➡️</span>
+    <div class="pill missing">Missing</div>
+    <h3>Next Story Request</h3>
+    <p>One-tap "get next level" screen. Shows what the next story teaches. API exists.</p>
+    <span class="card-route">/library → next</span>
+    <span class="card-file">api/story/next/route.ts ✓</span>
+  </div>
+
+  <div class="card missing" onclick="openModal('report')">
+    <span class="card-num">15</span>
+    <span class="card-icon">🚩</span>
+    <div class="pill missing">Missing</div>
+    <h3>Report a Story</h3>
+    <p>Inline from the player. Reason, auto-credit confirmation. API exists.</p>
+    <span class="card-route">player → report sheet</span>
+    <span class="card-file">api/story/[id]/report/route.ts ✓</span>
+  </div>
+</div>
+
+<div class="decision">
+  <div class="di">🔀</div>
+  <div>
+    <h4>Decision: story delivered?</h4>
+    <p>Delivery job runs async. Library polls <code>status</code> field on StoryInstance.<br>
+    pending/rendered → "Your story is being made…" state.<br>
+    delivered → audio + script links appear.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     STAGE 4 · ACCOUNT & COMPLIANCE
+══════════════════════════════════════════════════════════ -->
+<hr class="divider">
+<div class="stage">
+  <div class="stage-label account">🔒 Stage 4 · Account & Compliance</div>
+</div>
+
+<div class="screens">
+  <div class="card missing" onclick="openModal('account')">
+    <span class="card-num">16</span>
+    <span class="card-icon">👤</span>
+    <div class="pill missing">Missing</div>
+    <h3>Account Settings</h3>
+    <p>Email, plan, child profile. Links to voice, export, delete.</p>
+    <span class="card-route">/account</span>
+    <span class="card-file">app/(app)/account/page.tsx</span>
+  </div>
+
+  <div class="card missing" onclick="openModal('voicemgmt')">
+    <span class="card-num">17</span>
+    <span class="card-icon">🎤</span>
+    <div class="pill missing">Missing</div>
+    <h3>Voice Management</h3>
+    <p>View consent, re-record, or revoke + delete voice sample.</p>
+    <span class="card-route">/account/voice</span>
+    <span class="card-file">api/voice/consent/route.ts</span>
+  </div>
+
+  <div class="card missing" onclick="openModal('export')">
+    <span class="card-num">18</span>
+    <span class="card-icon">📤</span>
+    <div class="pill missing">Missing</div>
+    <h3>Data Export</h3>
+    <p>Download JSON bundle of all stored data. COPPA/GDPR-K requirement.</p>
+    <span class="card-route">/account → export</span>
+    <span class="card-file">api/account/export/route.ts</span>
+  </div>
+
+  <div class="card missing" onclick="openModal('delete')">
+    <span class="card-num">19</span>
+    <span class="card-icon">🗑️</span>
+    <div class="pill missing">Missing</div>
+    <h3>Delete Account</h3>
+    <p>Confirm → cascade delete DB + Storage + Auth. One-click, no dark patterns.</p>
+    <span class="card-route">/account → delete</span>
+    <span class="card-file">modules/compliance/deleteAccount ✓</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     FLOW SUMMARY
+══════════════════════════════════════════════════════════ -->
+<hr class="divider">
+<div class="stage">
+  <div class="stage-label" style="background:rgba(255,255,255,.06);color:rgba(255,255,255,.4);border-color:rgba(255,255,255,.12)">Complete flow</div>
+</div>
+<div class="arrow-row">
+  <span class="from">Landing</span><span class="arr">→</span>
+  <span>Builder ×4</span><span class="arr">→</span>
+  <span>Preview</span><span class="arr">→</span>
+  <span>Checkout</span><span class="arr">→</span>
+  <span style="color:var(--gold)">Stripe webhook</span><span class="arr">→</span>
+  <span style="color:var(--missing)">Welcome</span><span class="arr">→</span>
+  <span style="color:var(--missing)">Library</span><span class="arr">→</span>
+  <span style="color:var(--missing)">Player</span><span class="arr">→</span>
+  <span style="color:var(--missing)">Next Story</span>
+</div>
+<div class="arrow-row" style="margin-top:4px">
+  <span class="via">⬑ any time: </span>
+  <span style="color:var(--missing)">Account</span><span class="arr">→</span>
+  <span style="color:var(--missing)">Voice</span><span class="arr">→</span>
+  <span style="color:var(--missing)">Export</span><span class="arr">→</span>
+  <span style="color:var(--missing)">Delete</span>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     MODAL
+══════════════════════════════════════════════════════════ -->
+<div class="modal-bg" id="modalBg" onclick="closeModal(event)">
+  <div class="modal" id="modal">
+    <button class="close" onclick="closeModal()">✕</button>
+    <span class="card-icon" id="mIcon"></span>
+    <div class="pill" id="mPill"></div>
+    <h2 id="mTitle"></h2>
+    <div id="mBody"></div>
+  </div>
+</div>
+
+<script>
+const DATA = {
+  landing: {
+    icon:'🌐', status:'built', title:'Landing Page',
+    desc:'The full marketing website. Contains the hero, proof bar, how-it-works, curriculum ladder, voice switcher, personalized sample demo, pricing, trust & safety, FAQ, and footer. The story builder launches as a modal overlay.',
+    route:'/', file:'landing.html (port to app/page.tsx)',
+    connects:['Builder Step 1','Checkout'],
+    notes:'All CTAs route into the builder overlay. The "hear a sample" button plays a pre-rendered MP3 from Supabase Storage.'
+  },
+  b1: {
+    icon:'👶', status:'built', title:'Builder · Step 1 — Name & Age',
+    desc:'First question. Collects the child\'s first name and age band (3–4, 5–6, 7–8). No account yet. "No account needed" reassures before any typing. Name is moderated before being stored in the draft token.',
+    route:'overlay step 1', file:'app/api/draft/route.ts',
+    connects:['Builder Step 2'],
+    notes:'Name validation: if empty, the Continue button focuses the field. Moderation runs server-side on POST /api/draft.'
+  },
+  b2: {
+    icon:'🌊', status:'built', title:'Builder · Step 2 — World',
+    desc:'Parent picks the story world (skin): Under the Sea, Space Station, Whisper Forest, Cloud Castle. Each has an SVG character illustration. Same lesson, different paint.',
+    route:'overlay step 2', file:'app/api/draft/route.ts',
+    connects:['Builder Step 3'],
+    notes:'World = skinSlug. Stored in the draft JWT. The slot map for the selected skin is resolved at assembly time, not here.'
+  },
+  b3: {
+    icon:'📚', status:'built', title:'Builder · Step 3 — Subject',
+    desc:'What should the story teach? Money is live. Focus/Goals and Resilience are shown as "Soon" — seeds the roadmap without overcommitting.',
+    route:'overlay step 3', file:'modules/content/index.ts',
+    connects:['Builder Step 4'],
+    notes:'subjectSlug stored in draft. The level ordinal is read from the child\'s progress record after account creation.'
+  },
+  b4: {
+    icon:'🎙️', status:'built', title:'Builder · Step 4 — Voice',
+    desc:'Four curated Kokoro voices: Willow (af_heart/warm), Sage (af_nova/calm), River (am_fenrir/playful), Juniper (bf_emma/gentle). Tappable. Voice cloning teaser shown here, gated behind sign-up.',
+    route:'overlay step 4', file:'modules/audio/index.ts — VOICE_DISPLAY',
+    connects:['Free Preview'],
+    notes:'voiceId stored in draft JWT. Content-hash audio key includes voiceId, so each voice variant is a separate cached MP3.'
+  },
+  preview: {
+    icon:'▶️', status:'built', title:'Free Preview',
+    desc:'Plays the opening ~38s of their personalized story. The child\'s name and chosen world are already in the script. Voice switcher is live here — every tap keeps the parent engaged and raises willingness to pay.',
+    route:'overlay preview', file:'app/api/preview (route TBD)',
+    connects:['Checkout / Paywall','Builder Step 1 (tweak)'],
+    notes:'Preview audio is pre-rendered at publish time (top-K names × skins × voices). The lock-fade + "unlock" CTA is the conversion moment.'
+  },
+  checkout: {
+    icon:'💳', status:'built', title:'Checkout / Paywall',
+    desc:'Value stack restates the payoff just before the price. Stripe Checkout. Free first story, $9/mo after. Identity (email) is collected here for the first time — never pre-payment.',
+    route:'overlay pay', file:'app/api/checkout/route.ts',
+    connects:['Stripe Webhook → Welcome'],
+    notes:'The draft JWT is passed as metadata to the Stripe session. After payment, the webhook reads it to reconstruct the ChildProfile without a server-side draft store.'
+  },
+  welcome: {
+    icon:'🎉', status:'missing', title:'Welcome Screen',
+    desc:'Post-Stripe success screen. Confirms account created, magic-link sent to email. Shows the story is being assembled. Transitions into onboarding extras.',
+    route:'/welcome?session_id=...', file:'app/(app)/welcome/page.tsx — TO BUILD',
+    connects:['Onboarding Extras','Library (skip onboarding)'],
+    notes:'The page polls GET /api/story/status/:instanceId until status=\'delivered\', then shows the "go to library" CTA.'
+  },
+  onboard: {
+    icon:'⚙️', status:'partial', title:'Onboarding Extras',
+    desc:'Post-payment optional fields: nickname, things to avoid. Currently in the overlay prototype but needs a real authenticated Next.js page with session-gated API calls.',
+    route:'/welcome → extras', file:'app/(app)/welcome/page.tsx — TO BUILD',
+    connects:['Voice Recorder','Delivery Confirmation'],
+    notes:'All fields optional and skippable. All free text goes through moderate() before being stored in ChildProfile.'
+  },
+  voicerec: {
+    icon:'🎙️', status:'partial', title:'Voice Recorder',
+    desc:'20-second voice sample recording with explicit consent checkbox. UI exists in the overlay but the real recording API (api/voice/sample) and Supabase Storage upload aren\'t wired yet.',
+    route:'/welcome → voice', file:'app/api/voice/ — TO BUILD',
+    connects:['Delivery Confirmation'],
+    notes:'Consent record must exist before the upload endpoint will accept audio. Voice samples go to the voice-samples bucket, keyed by accountId. Revocation deletes all files in that prefix.'
+  },
+  delivery: {
+    icon:'📬', status:'built', title:'Delivery Confirmation',
+    desc:'Story sent. Audio + script emailed, saved to library. Shows the story title, level, voice. Previews "next story" to seed the retention loop.',
+    route:'overlay done', file:'modules/deliver/index.ts + jobs/deliver-story.ts',
+    connects:['Library'],
+    notes:'The delivering email contains 30-day presigned links. The library always re-signs fresh on load.'
+  },
+  library: {
+    icon:'📚', status:'missing', title:'Library / Home',
+    desc:'The authenticated parent\'s home screen. Lists all delivered stories with level, world, and voice metadata. Audio player per card. "Get next story" button triggers the next-level request.',
+    route:'/library', file:'app/(app)/library/page.tsx — TO BUILD',
+    connects:['Story Player','Next Story Request'],
+    notes:'Calls GET /api/library which returns stories with fresh signed URLs (4h TTL). Each card shows the pending/rendering state while the job runs.'
+  },
+  player: {
+    icon:'🌙', status:'missing', title:'Story Player',
+    desc:'Full bedtime player. Dark background, illustrated character, large play button, progress bar. Script toggle below. Report button. This is the highest-value UI in the app — it\'s the product.',
+    route:'/library/[id]', file:'app/(app)/library/[id]/page.tsx — TO BUILD',
+    connects:['Report a Story','Library (back)'],
+    notes:'Audio streams directly from the presigned Supabase Storage URL — no proxying through Next.js. Script fades in below the player.'
+  },
+  nextstory: {
+    icon:'➡️', status:'missing', title:'Next Story Request',
+    desc:'One-tap screen (or modal from Library) showing what the next level teaches and which prior concept it calls back. Confirms the request and shows "being made" state.',
+    route:'/library → next', file:'app/api/story/next/route.ts ✓ (UI missing)',
+    connects:['Library','Delivery Confirmation'],
+    notes:'The API route exists and enqueues the delivery job. Only needs a simple UI confirmation sheet. Club plan required — shows upgrade prompt for free accounts.'
+  },
+  report: {
+    icon:'🚩', status:'missing', title:'Report a Story',
+    desc:'Bottom sheet from the player. Single-tap with optional reason field. Shows "credit has been added" on success. Feeds the content review queue.',
+    route:'player → report sheet', file:'app/api/story/[id]/report/route.ts ✓ (UI missing)',
+    connects:['Player (returns to)'],
+    notes:'API issues a Stripe balance credit automatically. event row logged for the content team to review. Idempotent — second tap returns 409.'
+  },
+  account: {
+    icon:'👤', status:'missing', title:'Account Settings',
+    desc:'Email, current plan, child profile summary. Edit nickname/exclusions. Navigation to voice management, data export, and delete account.',
+    route:'/account', file:'app/(app)/account/page.tsx — TO BUILD',
+    connects:['Voice Management','Data Export','Delete Account'],
+    notes:'Profile edits flow through PUT /api/account/profile (not yet built). All text fields moderated on save.'
+  },
+  voicemgmt: {
+    icon:'🎤', status:'missing', title:'Voice Management',
+    desc:'Shows current consent status, recording date, and a playback of the sample. Options: re-record, or revoke (deletes the sample from Storage and sets voiceRecording=false).',
+    route:'/account/voice', file:'modules/compliance/revokeVoiceConsent ✓ (UI missing)',
+    connects:['Voice Recorder','Account Settings'],
+    notes:'Revoking is immediate and irreversible. The compliance module purges the voice-samples bucket prefix for this accountId.'
+  },
+  export: {
+    icon:'📤', status:'missing', title:'Data Export',
+    desc:'One click generates a JSON bundle of all stored profile data — no identity fields beyond email, no behavioral tracking, because the schema simply doesn\'t collect them.',
+    route:'/account → export', file:'modules/compliance/exportAccount ✓ (route/UI missing)',
+    connects:['Account Settings'],
+    notes:'The export response is intentionally minimal because minimal data collection is the design. This is a COPPA/GDPR-K requirement.'
+  },
+  delete: {
+    icon:'🗑️', status:'missing', title:'Delete Account',
+    desc:'Confirmation step → full cascade: Postgres rows, Storage scripts, voice samples, Supabase Auth user. Audio files are NOT deleted (content-addressed, shared). No dark patterns, no waiting period.',
+    route:'/account → delete', file:'modules/compliance/deleteAccount ✓ (UI missing)',
+    connects:['Landing Page (post-delete)'],
+    notes:'Audio objects are shared by content hash — deleting them would affect other accounts. Script files ARE deleted since they are per-instance.'
+  }
+}
+
+const STATUS_LABELS = { built:'Built', partial:'Partial', missing:'Missing' }
+
+function openModal(key) {
+  const d = DATA[key]; if(!d) return
+  document.getElementById('mIcon').textContent  = d.icon
+  document.getElementById('mTitle').textContent = d.title
+  const pill = document.getElementById('mPill')
+  pill.className = 'pill ' + d.status
+  pill.textContent = STATUS_LABELS[d.status]
+
+  let html = `<p>${d.desc}</p>`
+  if(d.route) html += `<div class="detail-row"><span class="label">Route</span><span class="val">${d.route}</span></div>`
+  if(d.file)  html += `<div class="detail-row"><span class="label">File</span><span class="val">${d.file}</span></div>`
+  if(d.notes) html += `<div class="detail-row"><span class="label">Notes</span><span class="val" style="font-family:inherit;color:rgba(255,255,255,.55)">${d.notes}</span></div>`
+  if(d.connects && d.connects.length) {
+    html += `<div class="connects"><h4>Connects to</h4>`
+    d.connects.forEach(c => html += `<span class="conn-chip">${c}</span>`)
+    html += `</div>`
+  }
+  document.getElementById('mBody').innerHTML = html
+  document.getElementById('modalBg').classList.add('open')
+}
+
+function closeModal(e) {
+  if(e && e.target !== document.getElementById('modalBg') && !e.target.classList.contains('close')) return
+  document.getElementById('modalBg').classList.remove('open')
+}
+document.addEventListener('keydown', e => { if(e.key==='Escape') document.getElementById('modalBg').classList.remove('open') })
+</script>
+</body>
+</html>

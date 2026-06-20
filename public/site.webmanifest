@@ -1,0 +1,13 @@
+{
+  "name": "Lumi — Bedtime Stories That Teach",
+  "short_name": "Lumi",
+  "description": "Personalized bedtime stories that teach real skills.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FBF4E6",
+  "theme_color": "#241a52",
+  "icons": [
+    { "src": "/favicon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/favicon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

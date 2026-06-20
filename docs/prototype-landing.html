@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lumi — Bedtime Stories That Teach</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --n1:#16123a;--n2:#241a52;--n3:#3a2470;--cream:#FBF4E6;--cream2:#F4E9D4;
+    --ink:#211a3a;--ink2:#5d5278;--amber:#F4A93C;--amber2:#E0852A;--gold:#FFD27A;
+    --peach:#F8CBA0;--rose:#EB8A8A;--teal:#54B6A6;--sky:#7FC8E8;--violet:#9B86E0;
+    --sh:0 24px 60px -22px rgba(8,4,28,.5);--shs:0 12px 30px -16px rgba(8,4,28,.35);
+    --r:20px;--maxw:1140px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Figtree',sans-serif;color:var(--ink);background:var(--cream);overflow-x:hidden}
+  img,svg{display:block}
+  .container{max-width:var(--maxw);margin:0 auto;padding:0 24px;width:100%}
+  a{color:inherit;text-decoration:none}
+
+  .btn{border:none;cursor:pointer;font-family:'Figtree';font-weight:700;font-size:15px;padding:14px 24px;border-radius:14px;
+    transition:transform .15s,box-shadow .15s,filter .15s;display:inline-flex;align-items:center;gap:8px;justify-content:center;white-space:nowrap}
+  .btn:active{transform:scale(.97)}
+  .btn-primary{background:linear-gradient(135deg,var(--gold),var(--amber2));color:#3a230a;box-shadow:0 12px 26px -10px rgba(244,169,60,.7)}
+  .btn-primary:hover{filter:brightness(1.05)}
+  .btn-ghost{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.3)}
+  .btn-ghost:hover{background:rgba(255,255,255,.2)}
+  .btn-line{background:transparent;color:var(--ink);border:1.5px solid #d9c9a8}
+  .btn-soft{background:var(--cream2);color:var(--ink)}
+  .btn-block{width:100%}
+  .btn-sm{padding:11px 18px;font-size:14px}
+
+  /* ---------- HEADER ---------- */
+  header{position:fixed;top:0;left:0;right:0;z-index:200;transition:.3s}
+  header .bar{display:flex;align-items:center;justify-content:space-between;height:68px}
+  header.scrolled{background:rgba(22,18,58,.82);backdrop-filter:blur(12px);box-shadow:0 6px 24px -16px rgba(0,0,0,.6)}
+  .logo{display:flex;align-items:center;gap:9px;font-family:'Fraunces';font-weight:600;font-size:21px;color:#fff}
+  .logo .mark{width:30px;height:30px}
+  nav.links{display:flex;gap:26px;align-items:center}
+  nav.links a{color:#e9e0f7;font-size:14.5px;font-weight:600;opacity:.9;transition:.15s}
+  nav.links a:hover{opacity:1;color:#fff}
+  .header-cta{display:flex;align-items:center;gap:16px}
+  .header-cta .login{color:#e9e0f7;font-size:14.5px;font-weight:600}
+  .burger{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px}
+  .burger span{width:24px;height:2.5px;background:#fff;border-radius:2px}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;background:linear-gradient(180deg,#1a1342 0%,#2c1f5e 60%,#34246e 100%);color:#fff;overflow:hidden;padding:120px 0 90px}
+  .heroscene{position:absolute;inset:0;z-index:0}
+  .grain{position:absolute;inset:0;pointer-events:none;opacity:.06;mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+  .twinkle{position:absolute;border-radius:50%;background:#FFF6DD;animation:tw 3.4s ease-in-out infinite}
+  @keyframes tw{0%,100%{opacity:.25;transform:scale(.8)}50%{opacity:1;transform:scale(1.15)}}
+  .float{animation:fl 6s ease-in-out infinite}@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+  .float-s{animation:fl 5s ease-in-out infinite}.drift{animation:dr 9s ease-in-out infinite}
+  @keyframes dr{0%,100%{transform:translateX(0) rotate(0)}50%{transform:translateX(8px) rotate(6deg)}}
+  .hero-grid{position:relative;z-index:5;display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+  .eyebrow{font-size:12.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);font-weight:700}
+  h1.ht{font-family:'Fraunces',serif;font-weight:600;font-size:50px;line-height:1.08;margin:16px 0 18px}
+  h1.ht em{font-style:italic;color:var(--gold)}
+  .hsub{font-size:18px;line-height:1.55;color:#e3d8f5;max-width:46ch}
+  .hero-cta{display:flex;gap:13px;margin-top:28px;flex-wrap:wrap}
+  .hero-trust{display:flex;align-items:center;gap:18px;margin-top:22px;flex-wrap:wrap;font-size:13.5px;color:#cfc3ea}
+  .hero-trust .stars{color:var(--gold);letter-spacing:2px;font-size:15px}
+  .hero-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:24px;padding:18px;backdrop-filter:blur(6px);box-shadow:var(--sh)}
+  .hero-scene-box{height:210px;position:relative;border-radius:16px;overflow:hidden;background:linear-gradient(160deg,#3a6fa8,#27407a);margin-bottom:14px}
+  .player-top{display:flex;align-items:center;gap:12px}
+  .play-btn{width:48px;height:48px;min-width:48px;border-radius:50%;border:none;cursor:pointer;background:linear-gradient(135deg,var(--gold),var(--amber2));color:#3a230a;font-size:17px;display:grid;place-items:center}
+  .wave{flex:1;display:flex;align-items:center;gap:3px;height:38px}
+  .wave span{flex:1;background:var(--peach);border-radius:3px;height:30%;opacity:.5}
+  .wave.playing span{animation:bnc 1s ease-in-out infinite;opacity:.95}
+  .wave.playing span:nth-child(odd){animation-delay:.15s}.wave.playing span:nth-child(3n){animation-delay:.3s}
+  @keyframes bnc{0%,100%{height:22%}50%{height:96%}}
+  .player-meta{display:flex;justify-content:space-between;font-size:12px;color:#d9cdec;margin-top:10px;padding:0 4px}
+
+  /* ---------- LOGO / SOCIAL PROOF BAR ---------- */
+  .proofbar{background:var(--n1);color:#cfc3ea;padding:22px 0}
+  .proofbar .row{display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .proofbar .lbl{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:#8a7fb0;font-weight:700}
+  .proofbar .logos{display:flex;gap:30px;align-items:center;flex-wrap:wrap;opacity:.85}
+  .proofbar .logos span{font-family:'Fraunces';font-weight:600;font-size:17px;color:#d9cdec;opacity:.7}
+
+  /* ---------- SECTION SCAFFOLD ---------- */
+  section.block{padding:80px 0;position:relative}
+  section.block.alt{background:var(--cream2)}
+  section.dark{background:linear-gradient(170deg,var(--n2),var(--n3));color:#fff}
+  .sec-head{text-align:center;max-width:640px;margin:0 auto 18px}
+  .kicker{font-size:12.5px;letter-spacing:1.8px;text-transform:uppercase;color:var(--amber2);font-weight:800}
+  .dark .kicker{color:var(--gold)}
+  h2.bh{font-family:'Fraunces',serif;font-weight:600;font-size:36px;line-height:1.15;margin:10px 0 12px}
+  .lede{font-size:16.5px;line-height:1.6;color:var(--ink2)}
+  .dark .lede{color:#d9cdec}
+
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:46px}
+  .stat{text-align:center}
+  .stat .big{font-family:'Fraunces';font-weight:600;font-size:42px;color:var(--gold)}
+  .stat .lbl{font-size:13.5px;color:#cfc3ea;margin-top:4px}
+
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:50px}
+  .card{background:#fff;border:1px solid #ece0c8;border-radius:var(--r);padding:26px;box-shadow:var(--shs)}
+  .card .ic{width:54px;height:54px;margin-bottom:14px}
+  .card h4{font-family:'Fraunces';font-weight:600;font-size:20px;margin-bottom:7px}
+  .card p{font-size:14.5px;color:var(--ink2);line-height:1.5}
+
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-top:36px}
+  .ladder{background:#fff;border:1px solid #ece0c8;border-radius:var(--r);padding:28px;box-shadow:var(--shs)}
+  .dark .ladder{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14)}
+  .ladder h3{font-family:'Fraunces';font-weight:600;font-size:21px;margin-bottom:16px}
+  .rung{display:flex;align-items:center;gap:14px;padding:11px 0;font-size:15.5px;position:relative}
+  .rung .num{width:34px;height:34px;min-width:34px;border-radius:10px;background:var(--amber);color:#3a230a;display:grid;place-items:center;font-weight:800;font-family:'Fraunces'}
+  .dark .rung{color:#eee}
+  .rung.future{color:#a99fc6}.rung.future .num{background:#5b4f86;color:#cfc3ea}
+  .rung .ln{position:absolute;left:16px;top:45px;width:2px;height:11px;background:rgba(244,169,60,.4)}
+  .rung:last-child .ln{display:none}
+  .callout{margin-top:16px;font-size:13.5px;background:rgba(244,169,60,.16);border:1px dashed rgba(244,169,60,.5);padding:12px 14px;border-radius:13px;color:var(--amber2)}
+  .dark .callout{color:var(--peach)}
+
+  .voice-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:8px;max-width:520px}
+  .voice-chip{background:#fff;border:1.5px solid #e6d8bd;border-radius:15px;padding:14px;cursor:pointer;transition:.15s;display:flex;gap:11px;align-items:center}
+  .voice-chip.on{border-color:var(--amber);background:#fff7ea;box-shadow:0 8px 18px -10px rgba(244,169,60,.7)}
+  .voice-chip .av{width:40px;height:40px;min-width:40px;border-radius:50%}
+  .voice-chip .vn{font-weight:800;font-size:15px}.voice-chip .vt{font-size:13px;color:var(--ink2)}
+  .nowplaying{font-size:13.5px;color:var(--ink2);margin-top:14px}.nowplaying b{color:var(--amber2)}
+  .yourvoice{margin-top:20px;background:#fff;border:1.5px dashed var(--rose);border-radius:17px;padding:20px;max-width:520px}
+  .badge{display:inline-block;font-size:10.5px;letter-spacing:1px;text-transform:uppercase;font-weight:800;color:#fff;background:var(--rose);padding:3px 10px;border-radius:99px;margin-bottom:9px}
+  .yourvoice h4{font-family:'Fraunces';font-weight:600;font-size:19px}
+  .yourvoice p{font-size:14px;color:var(--ink2);margin:7px 0 13px;line-height:1.5}
+
+  .sampletale{background:#fff;border:1px solid #ece0c8;border-radius:18px;padding:26px;font-size:18px;line-height:1.7;box-shadow:var(--shs);font-family:'Fraunces';font-weight:400}
+  .nameslot{background:rgba(244,169,60,.24);border-bottom:2px solid var(--amber);padding:0 6px;border-radius:5px;font-weight:600}
+  .teach-tag{display:inline-flex;gap:8px;align-items:center;font-size:13px;color:#8a6a1f;background:#fff7ea;border:1px solid #f1ddb6;border-radius:99px;padding:7px 14px;margin-top:16px}
+
+  /* testimonials */
+  .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:50px}
+  .quote{background:#fff;border:1px solid #ece0c8;border-radius:var(--r);padding:24px;box-shadow:var(--shs)}
+  .quote .stars{color:var(--amber);letter-spacing:2px;font-size:15px}
+  .quote p{font-size:15px;line-height:1.6;color:var(--ink);margin:12px 0}
+  .quote .who{display:flex;align-items:center;gap:11px}
+  .quote .who .av{width:40px;height:40px;border-radius:50%}
+  .quote .who b{font-size:14px;display:block}.quote .who span{font-size:12.5px;color:var(--ink2)}
+
+  .trust{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:50px}
+  .tcard{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:var(--r);padding:26px}
+  .tcard .ti{width:48px;height:48px;margin-bottom:14px}
+  .tcard b{font-size:17px;display:block;margin-bottom:6px;font-family:'Fraunces';font-weight:600}
+  .tcard span{font-size:14px;color:#cfc3ea;line-height:1.5}
+
+  /* pricing */
+  .prices{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:760px;margin:50px auto 0}
+  .pc{background:#fff;border:1px solid #ece0c8;border-radius:var(--r);padding:32px;text-align:center;box-shadow:var(--shs)}
+  .pc.feat{border:2px solid var(--amber);position:relative}
+  .pc .tag{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--amber);color:#3a230a;font-size:11.5px;font-weight:800;padding:4px 15px;border-radius:99px}
+  .pc .name{font-size:14px;color:var(--ink2);font-weight:700}
+  .pc .amt{font-family:'Fraunces';font-weight:600;font-size:46px;margin:8px 0}.pc .amt span{font-size:18px}
+  .pc ul{list-style:none;text-align:left;margin:18px 0;font-size:14.5px;display:flex;flex-direction:column;gap:10px}
+  .pc li{display:flex;gap:9px;align-items:flex-start}.pc li svg{min-width:17px;margin-top:2px}
+  .reverse{text-align:center;color:var(--ink2);margin-top:22px;font-size:14px;line-height:1.6}
+
+  .faq{max-width:760px;margin:40px auto 0}
+  .faq details{background:#fff;border:1px solid #ece0c8;border-radius:14px;padding:18px 22px;margin-top:12px}
+  .faq summary{font-weight:700;font-size:16px;cursor:pointer;list-style:none;display:flex;justify-content:space-between}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";color:var(--amber2);font-size:22px;font-weight:400}
+  .faq details[open] summary::after{content:"–"}
+  .faq p{font-size:14.5px;color:var(--ink2);margin-top:11px;line-height:1.6}
+
+  .finalcta{position:relative;text-align:center;overflow:hidden}
+  .finalcta h2{font-size:40px;position:relative;z-index:5}
+  .finalcta p{font-size:17px;color:#dccffa;margin:12px 0 26px;position:relative;z-index:5}
+
+  /* footer */
+  footer{background:var(--n1);color:#b9adda;padding:60px 0 30px}
+  .foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:36px}
+  .foot-brand .logo{margin-bottom:12px}
+  .foot-brand p{font-size:14px;line-height:1.6;max-width:30ch;color:#9d92c0}
+  .fcol h5{font-size:13px;letter-spacing:1px;text-transform:uppercase;color:#fff;margin-bottom:14px;font-weight:800}
+  .fcol a{display:block;font-size:14px;margin-bottom:10px;color:#b9adda;transition:.15s}
+  .fcol a:hover{color:#fff}
+  .foot-bot{border-top:1px solid rgba(255,255,255,.1);margin-top:40px;padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13px;color:#8a7fb0}
+  .socials{display:flex;gap:14px}.socials a{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.08);display:grid;place-items:center}
+
+  /* sticky mobile cta */
+  .mcta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:150;background:rgba(22,18,58,.95);backdrop-filter:blur(10px);padding:12px 16px;border-top:1px solid rgba(255,255,255,.12)}
+
+  /* ---------- APP OVERLAY ---------- */
+  .app-overlay{display:none;position:fixed;inset:0;z-index:500;background:rgba(12,8,32,.7);backdrop-filter:blur(4px);overflow-y:auto;padding:24px 12px}
+  .app-overlay.open{display:block}
+  .app{max-width:430px;margin:0 auto;background:var(--cream);border-radius:28px;overflow:hidden;box-shadow:var(--sh);position:relative}
+  .app-close{position:absolute;top:14px;right:14px;z-index:90;width:34px;height:34px;border-radius:50%;border:none;background:rgba(0,0,0,.18);color:#fff;cursor:pointer;font-size:16px}
+  .screen{display:none;flex-direction:column}.screen.active{display:flex}
+  .topbar{display:flex;align-items:center;gap:11px;padding:18px}
+  .back{background:none;border:none;cursor:pointer;font-size:18px;width:34px;height:34px;border-radius:10px}.back:hover{background:#0001}
+  .progress{flex:1;height:8px;background:#e7dac0;border-radius:99px;overflow:hidden}.progress .fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--amber2));transition:.45s}
+  .stepcount{font-size:12px;color:var(--ink2);font-weight:700}
+  .abody{padding:6px 22px 22px}
+  .microvalue{display:flex;gap:9px;align-items:center;background:#fff7ea;border:1px solid #f1ddb6;border-radius:12px;padding:10px 12px;font-size:12.5px;color:#8a6a1f;margin-bottom:16px}
+  .qh{font-family:'Fraunces';font-weight:600;font-size:23px;margin:6px 0 4px}
+  .qsub{font-size:13.5px;color:var(--ink2);margin-bottom:18px}
+  .field{margin-bottom:16px}.field label{font-size:13px;font-weight:700;display:block;margin-bottom:7px}
+  .input{width:100%;padding:15px;border:1.5px solid #e0d2b7;border-radius:13px;font-size:16px;font-family:'Figtree';background:#fff}
+  .input:focus{outline:none;border-color:var(--amber)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{padding:10px 15px;border:1.5px solid #e0d2b7;background:#fff;border-radius:99px;font-size:13.5px;cursor:pointer}.chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .worlds{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+  .world{border:2px solid #e0d2b7;border-radius:17px;padding:14px 10px;cursor:pointer;text-align:center;background:#fff}.world.on{border-color:var(--amber);background:#fff7ea}
+  .world .wc{width:60px;height:60px;margin:0 auto}.world .wn{font-weight:800;font-size:13.5px;margin-top:4px}.world .wd{font-size:11px;color:var(--ink2)}
+  .subj{display:flex;flex-direction:column;gap:10px}
+  .subj .s{display:flex;align-items:center;gap:12px;border:2px solid #e0d2b7;border-radius:15px;padding:13px;cursor:pointer;background:#fff}.subj .s.on{border-color:var(--amber);background:#fff7ea}.subj .s.lock{opacity:.55}
+  .subj .se{width:40px;height:40px;min-width:40px}.subj .s b{font-size:14.5px}.subj .s p{font-size:12px;color:var(--ink2)}
+  .soon{margin-left:auto;font-size:10px;background:#e7dac0;color:var(--ink2);padding:3px 9px;border-radius:99px;font-weight:800}
+  .afoot{padding:14px 22px 22px;border-top:1px solid #ece0c8}
+  .pv-hero{position:relative;color:#fff;padding:24px 22px;background:linear-gradient(170deg,var(--n2),var(--n3))}
+  .pv-title{font-family:'Fraunces';font-weight:600;font-size:23px;margin:6px 0}
+  .pv-scene{height:120px;margin:4px 0}
+  .pv-meta{display:flex;gap:7px;flex-wrap:wrap;margin-top:8px}
+  .pv-meta .m{font-size:11.5px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.2);padding:5px 10px;border-radius:99px}
+  .teaches{display:flex;gap:10px;align-items:center;background:#fff7ea;border:1px solid #f1ddb6;border-radius:13px;padding:12px;margin-bottom:14px;font-size:13px;color:#8a6a1f}
+  .pv-script{background:#fff;border:1px solid #ece0c8;border-radius:16px;padding:18px;font-size:14.5px;line-height:1.7}
+  .lock-fade{position:relative;max-height:110px;overflow:hidden}.lock-fade::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent,#fff)}
+  .valuestack{background:#fff;border:1px solid #ece0c8;border-radius:16px;padding:16px;margin-bottom:14px}
+  .valuestack li{list-style:none;display:flex;gap:9px;font-size:13.5px;padding:5px 0}.valuestack li svg{min-width:16px;margin-top:2px}
+  .pay-card{background:#fff;border:1px solid #ece0c8;border-radius:16px;padding:18px;margin-bottom:14px}
+  .pay-line{display:flex;justify-content:space-between;font-size:14px;padding:7px 0}.pay-line.total{border-top:1px dashed #ddd0b6;margin-top:6px;padding-top:11px;font-weight:800;font-size:16px}
+  .fake-field{background:#f6efe0;border:1.5px solid #e0d2b7;border-radius:11px;padding:13px 14px;font-size:13px;color:var(--ink2);margin-bottom:10px}
+  .secure{font-size:11.5px;color:var(--ink2);text-align:center;margin-top:6px}
+  .rec-card{background:#fff;border:2px solid #f0d9c6;border-radius:18px;padding:20px;text-align:center}
+  .mic{width:72px;height:72px;border-radius:50%;border:none;cursor:pointer;margin:8px auto 10px;background:linear-gradient(135deg,var(--rose),#d96c6c);color:#fff;font-size:26px;display:grid;place-items:center;box-shadow:0 12px 26px -10px rgba(217,108,108,.7)}
+  .mic.rec{animation:pulse 1.2s ease-in-out infinite}@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(217,108,108,.5)}50%{box-shadow:0 0 0 15px rgba(217,108,108,0)}}
+  .consent{display:flex;gap:10px;align-items:flex-start;font-size:12.5px;color:var(--ink2);text-align:left;background:#f9f3e8;border:1px solid #ece0c8;border-radius:12px;padding:12px;margin-top:14px}
+  .skip{display:block;text-align:center;margin-top:14px;color:var(--ink2);font-size:13px;text-decoration:underline;cursor:pointer}
+  .done{padding:40px 24px;background:linear-gradient(170deg,var(--n2),var(--n3));color:#fff;text-align:center}
+  .check{width:72px;height:72px;border-radius:50%;background:var(--teal);display:grid;place-items:center;font-size:32px;margin:0 auto 18px}
+  .done h2{font-family:'Fraunces';font-weight:600;font-size:24px;margin-bottom:8px}.done p{font-size:14px;color:#dccffa;margin-bottom:20px;line-height:1.5}
+  .libcard{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:16px;padding:16px;text-align:left}
+  .libcard h4{font-family:'Fraunces';font-weight:600;font-size:16px;margin-bottom:8px}
+  .libitem{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:13.5px}.libitem:last-child{border:none}
+  .libitem .lp{width:36px;height:36px;min-width:36px;border-radius:10px;background:var(--amber);color:#3a230a;display:grid;place-items:center}
+
+  /* CRO */
+  .cro-toggle{position:fixed;bottom:18px;right:18px;z-index:400;background:var(--ink);color:var(--gold);border:1px solid #4a3a6e;padding:11px 18px;border-radius:99px;font-weight:700;font-size:13px;cursor:pointer;box-shadow:var(--shs)}
+  .cro-note{display:none;font-size:12px;line-height:1.45;background:#1d1640;color:#f0e6ff;border-left:3px solid var(--gold);padding:10px 13px;border-radius:0 11px 11px 0;margin:14px auto 0;max-width:760px}
+  body.cro .cro-note{display:block}.cro-note b{color:var(--gold)}
+
+  /* ---------- PATH SWITCHER ---------- */
+  .path-tabs{display:flex;gap:10px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none;margin-bottom:32px}
+  .path-tabs::-webkit-scrollbar{display:none}
+  .ptab{flex-shrink:0;display:flex;align-items:center;gap:9px;padding:11px 18px;border-radius:14px;cursor:pointer;
+    border:1.5px solid rgba(255,255,255,.14);background:rgba(255,255,255,.06);color:#dccffa;transition:.2s;font-weight:700;font-size:14px}
+  .ptab:hover{background:rgba(255,255,255,.12)}
+  .ptab.active{border-color:var(--gold);background:rgba(255,210,122,.15);color:#fff}
+  .ptab .pt-emoji{font-size:18px}
+  .ptab .pt-soon{font-size:10px;background:rgba(255,255,255,.15);padding:2px 7px;border-radius:99px;color:rgba(255,255,255,.6);font-weight:700;margin-left:2px}
+  .path-panel{display:none}.path-panel.active{display:block}
+  .path-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+  .path-card-sm{background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.12);border-radius:18px;padding:18px;cursor:pointer;transition:.2s}
+  .path-card-sm:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.25)}
+  .path-card-sm .pc-emoji{font-size:26px;margin-bottom:8px}
+  .path-card-sm h4{font-family:'Fraunces';font-weight:600;font-size:15px;margin-bottom:4px;color:#fff}
+  .path-card-sm p{font-size:12px;color:#cfc3ea;line-height:1.4}
+  .path-card-sm .pc-badge{display:inline-block;margin-top:8px;font-size:10px;padding:3px 8px;border-radius:99px;font-weight:800}
+  .pc-badge.live{background:rgba(34,192,139,.2);color:#22c08b}
+  .pc-badge.soon{background:rgba(255,255,255,.12);color:rgba(255,255,255,.5)}
+  .path-why{margin-top:24px;padding:20px;background:rgba(255,255,255,.05);border-radius:16px;border:1px solid rgba(255,255,255,.1)}
+  .path-why h4{font-family:'Fraunces';font-weight:600;font-size:17px;color:#fff;margin-bottom:8px}
+  .path-why p{font-size:14px;color:#cfc3ea;line-height:1.6}
+
+  /* ── STORY SAMPLER ───────────────────────────────────────────────────────── */
+  .sampler{
+    background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);
+    border-radius:24px;overflow:hidden;backdrop-filter:blur(6px);box-shadow:var(--sh);
+  }
+  .sampler-clips{display:flex;gap:8px;padding:14px 16px 0;overflow-x:auto;scrollbar-width:none}
+  .sampler-clips::-webkit-scrollbar{display:none}
+  .sclip{
+    flex-shrink:0;display:flex;align-items:center;gap:7px;
+    padding:7px 12px;border-radius:99px;border:1.5px solid rgba(255,255,255,.15);
+    cursor:pointer;font-size:12.5px;font-weight:700;color:rgba(255,255,255,.55);
+    transition:.2s;background:transparent;font-family:'Figtree';white-space:nowrap;
+  }
+  .sclip:hover{color:#fff;border-color:rgba(255,255,255,.35)}
+  .sclip.on{border-color:var(--gold);background:rgba(255,210,122,.14);color:#fff}
+  .sclip .sc-dot{width:7px;height:7px;border-radius:50%;background:currentColor;opacity:.8}
+  .sampler-art{height:120px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;margin:12px 14px 0;border-radius:16px}
+  .sampler-art svg{width:100%;height:100%}
+  .sampler-info{padding:12px 18px 0}
+  .s-badge{
+    display:inline-flex;align-items:center;gap:6px;
+    font-size:11px;font-weight:800;letter-spacing:.6px;
+    padding:4px 11px;border-radius:99px;margin-bottom:9px;
+  }
+  .s-title{font-family:'Fraunces',serif;font-weight:600;font-size:19px;line-height:1.2;color:#fff;margin-bottom:5px}
+  .s-voice{font-size:12px;color:rgba(255,255,255,.45);margin-bottom:14px;display:flex;align-items:center;gap:5px}
+  /* word-by-word karaoke effect */
+  .s-excerpt{
+    font-family:'Fraunces',serif;font-size:14.5px;line-height:1.68;
+    padding:13px 18px 14px;border-top:1px solid rgba(255,255,255,.08);
+    height:110px;overflow:hidden;
+  }
+  .sw{opacity:.22;transition:opacity .14s;display:inline}
+  .sw.lit{opacity:1}
+  .sw.done{opacity:.55}
+  /* controls */
+  .sampler-foot{padding:12px 16px 14px;border-top:1px solid rgba(255,255,255,.08);display:flex;align-items:center;gap:12px}
+  .s-play{
+    width:46px;height:46px;min-width:46px;border-radius:50%;border:none;cursor:pointer;
+    background:linear-gradient(135deg,var(--gold),var(--amber2));color:#3a230a;
+    font-size:16px;display:grid;place-items:center;flex-shrink:0;
+    box-shadow:0 8px 22px -8px rgba(244,169,60,.75);transition:.15s;
+  }
+  .s-play:active{transform:scale(.95)}
+  .s-wave{flex:1;display:flex;align-items:center;gap:2.5px;height:34px}
+  .s-wave span{flex:1;border-radius:3px;height:28%;opacity:.45;transition:background .3s}
+  .s-wave.playing span{animation:bnc 1s ease-in-out infinite;opacity:.9}
+  .s-wave.playing span:nth-child(odd){animation-delay:.14s}
+  .s-wave.playing span:nth-child(3n){animation-delay:.28s}
+  .s-time{font-size:12px;color:rgba(255,255,255,.35);font-feature-settings:'tnum';min-width:36px;text-align:right}
+  .s-next{
+    background:none;border:none;cursor:pointer;
+    color:rgba(255,255,255,.4);font-size:18px;padding:4px 2px;
+    transition:.15s;font-family:'Figtree';
+  }
+  .s-next:hover{color:#fff}
+
+  /* ── RESPONSIVE ── */
+  @media(max-width:880px){
+    nav.links,.header-cta .login{display:none}
+    .burger{display:flex}
+    .hero{padding:104px 0 64px}
+    .hero-grid{grid-template-columns:1fr;gap:34px}
+    h1.ht{font-size:38px}.hsub{font-size:16.5px}
+    .grid3,.quotes,.trust{grid-template-columns:1fr}
+    .split,.prices{grid-template-columns:1fr;gap:28px}
+    .stats{gap:14px}.stat .big{font-size:32px}
+    h2.bh{font-size:30px}.finalcta h2{font-size:30px}
+    section.block{padding:60px 0}
+    .foot-grid{grid-template-columns:1fr 1fr;gap:28px}
+    .mcta{display:block}
+    body{padding-bottom:74px}
+    .proofbar .row{justify-content:center;text-align:center}
+  }
+  @media(max-width:480px){
+    h1.ht{font-size:32px}.foot-grid{grid-template-columns:1fr}
+    .voice-grid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header id="hdr">
+  <div class="container bar">
+    <a class="logo" href="#top"><svg class="mark" viewBox="0 0 30 30"><circle cx="15" cy="15" r="14" fill="url(#lg)"/><path d="M21 16 a8 8 0 1 1 -7-11 a6.5 6.5 0 0 0 7 11 Z" fill="#3a2470"/><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFD27A"/><stop offset="1" stop-color="#F4A93C"/></linearGradient></defs></svg>Lumi</a>
+    <nav class="links">
+      <a href="#how">How it works</a>
+      <a href="#why">Curriculum</a>
+      <a href="#voices">Voices</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="header-cta">
+      <a class="login" href="#">Log in</a>
+      <button class="btn btn-primary btn-sm" onclick="openApp()">Make their story</button>
+      <button class="burger" onclick="openApp()"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<span id="top"></span>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <svg class="heroscene" viewBox="0 0 1440 620" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <defs>
+      <radialGradient id="moonG" cx="40%" cy="35%"><stop offset="0%" stop-color="#FFF6DD"/><stop offset="100%" stop-color="#F4B860"/></radialGradient>
+      <radialGradient id="glow"><stop offset="0%" stop-color="rgba(255,210,122,.45)"/><stop offset="100%" stop-color="rgba(255,210,122,0)"/></radialGradient>
+    </defs>
+    <circle cx="1180" cy="150" r="220" fill="url(#glow)"/>
+    <circle cx="1180" cy="150" r="64" fill="url(#moonG)"/>
+    <circle cx="1160" cy="132" r="13" fill="#E7C77A" opacity=".5"/><circle cx="1202" cy="168" r="9" fill="#E7C77A" opacity=".45"/>
+    <path d="M0 470 Q180 430 360 470 T720 470 T1080 470 T1440 470 V620 H0 Z" fill="#2c4a86" opacity=".55"/>
+    <path d="M0 520 Q200 485 400 520 T800 520 T1200 520 T1600 520 V620 H0 Z" fill="#243d75" opacity=".6"/>
+  </svg>
+  <div class="grain"></div>
+  <i class="twinkle" style="width:5px;height:5px;top:120px;left:8%"></i>
+  <i class="twinkle" style="width:3px;height:3px;top:180px;left:20%;animation-delay:.6s"></i>
+  <i class="twinkle" style="width:4px;height:4px;top:140px;left:38%;animation-delay:1.1s"></i>
+  <i class="twinkle" style="width:3px;height:3px;top:220px;left:54%;animation-delay:1.5s"></i>
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <div class="eyebrow">Bedtime, reimagined</div>
+        <h1 class="ht">Bedtime stories that <em>teach your child</em> — in a voice they'll love.</h1>
+        <p class="hsub">Original adventures, personalized to your child, that build real skills like saving money — level by level, in the calm minutes before sleep when lessons stick.</p>
+        <div class="hero-cta">
+          <button class="btn btn-primary" onclick="openApp()">Make their story — free →</button>
+          <button class="btn btn-ghost" onclick="samplerToggle()">▶ Play a story</button>
+        </div>
+        <div class="hero-trust">
+          <span><span class="stars">★★★★★</span> 4.9 / 5</span>
+          <span>Loved by 2,000+ families</span>
+          <span>No card needed</span>
+        </div>
+      </div>
+      <div class="sampler" id="storySampler">
+        <!-- clip pills -->
+        <div class="sampler-clips" id="samplerClips"></div>
+        <!-- art strip -->
+        <div class="sampler-art" id="samplerArt"></div>
+        <!-- story info -->
+        <div class="sampler-info">
+          <div class="s-badge" id="samplerBadge"></div>
+          <div class="s-title" id="samplerTitle"></div>
+          <div class="s-voice" id="samplerVoice"></div>
+        </div>
+        <!-- excerpt with karaoke highlight -->
+        <div class="s-excerpt" id="samplerExcerpt" aria-live="polite"></div>
+        <!-- controls -->
+        <div class="sampler-foot">
+          <button class="s-play" id="samplerPlayBtn" onclick="samplerToggle()">▶</button>
+          <div class="s-wave" id="samplerWave">
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <span class="s-time" id="samplerTime">0:00</span>
+          <button class="s-next" onclick="samplerNextClip()" title="Next story">›</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROOF BAR ================= -->
+<div class="proofbar">
+  <div class="container row">
+    <span class="lbl">Featured in</span>
+    <div class="logos"><span>Parents Weekly</span><span>KidLit</span><span>The Nestful</span><span>Montessori&nbsp;Today</span><span>FamTech</span></div>
+  </div>
+  <div class="cro-note" style="margin-top:14px"><b>Social-proof / logo bar</b> (placeholder names). Press logos + a star rating above the fold are standard trust validation — swap for real outlets once you have them.</div>
+</div>
+
+<!-- ================= HOW IT WORKS ================= -->
+<section class="block" id="how">
+  <div class="container">
+    <div class="sec-head"><div class="kicker">How it works</div><h2 class="bh">Three taps to a story made for your child.</h2><p class="lede">No account needed to try it — personalize, preview, and only pay when you love it.</p></div>
+    <div class="grid3">
+      <div class="card"><svg class="ic" viewBox="0 0 54 54"><rect x="3" y="3" width="48" height="48" rx="15" fill="#fff7ea"/><circle cx="27" cy="22" r="6.5" stroke="#E0852A" stroke-width="3" fill="none"/><path d="M17 37 a10 10 0 0 1 20 0" stroke="#E0852A" stroke-width="3" fill="none"/></svg><h4>1 · Personalize</h4><p>Their name, what they love, and the world the story lives in.</p></div>
+      <div class="card"><svg class="ic" viewBox="0 0 54 54"><rect x="3" y="3" width="48" height="48" rx="15" fill="#fff7ea"/><path d="M22 19 v16 l14 -8 Z" fill="#E0852A"/></svg><h4>2 · Preview free</h4><p>Hear the opening of <i>their</i> story before you decide anything.</p></div>
+      <div class="card"><svg class="ic" viewBox="0 0 54 54"><rect x="3" y="3" width="48" height="48" rx="15" fill="#fff7ea"/><rect x="16" y="19" width="22" height="16" rx="3" stroke="#E0852A" stroke-width="3" fill="none"/><path d="M16 21 l11 8 l11 -8" stroke="#E0852A" stroke-width="3" fill="none" stroke-linecap="round"/></svg><h4>3 · It arrives</h4><p>Full audio + a readable script, emailed and saved to your library.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CURRICULUM — ALL PATHS ================= -->
+<section class="block dark" id="why">
+  <div class="container">
+    <div class="sec-head">
+      <div class="kicker">The curriculum</div>
+      <h2 class="bh">6 learning paths. 30 stories. One bedtime at a time.</h2>
+      <p class="lede">You'll share around <b style="color:var(--gold)">1,800 bedtimes</b> before your child turns eight. A normal story is forgotten by morning — these teach one real concept per night and quietly call back the last, so lessons stack the way real learning does.</p>
+    </div>
+
+    <!-- PATH TABS -->
+    <div class="path-tabs" id="pathTabs">
+      <div class="ptab active" onclick="switchPath('money',this)"><span class="pt-emoji">💰</span> Money <span class="pc-badge live" style="margin-left:4px">Live</span></div>
+      <div class="ptab" onclick="switchPath('focus',this)"><span class="pt-emoji">🎯</span> Focus <span class="pt-soon">Soon</span></div>
+      <div class="ptab" onclick="switchPath('resilience',this)"><span class="pt-emoji">💪</span> Resilience <span class="pt-soon">Soon</span></div>
+      <div class="ptab" onclick="switchPath('kindness',this)"><span class="pt-emoji">❤️</span> Kindness <span class="pt-soon">Soon</span></div>
+      <div class="ptab" onclick="switchPath('problem',this)"><span class="pt-emoji">🧠</span> Problem Solving <span class="pt-soon">Soon</span></div>
+      <div class="ptab" onclick="switchPath('confidence',this)"><span class="pt-emoji">🌱</span> Confidence <span class="pt-soon">Soon</span></div>
+    </div>
+
+    <!-- PATH PANELS -->
+    <div class="path-panel active" id="pp-money">
+      <div class="split">
+        <div class="ladder">
+          <h3>💰 Money &amp; Saving</h3>
+          <div class="rung"><span class="num">1</span> Coins look different<span class="ln"></span></div>
+          <div class="rung"><span class="num">2</span> Some are worth more<span class="ln"></span></div>
+          <div class="rung"><span class="num">3</span> Trading &amp; giving change<span class="ln"></span></div>
+          <div class="rung"><span class="num">4</span> Saving for the big thing<span class="ln"></span></div>
+          <div class="rung future"><span class="num">5</span> Wants vs. needs</div>
+          <div class="callout">✦ Level 4 quietly reminds your child what they learned in Level 2 — the story does the revision for you.</div>
+        </div>
+        <div>
+          <h3 style="font-family:'Fraunces';font-weight:600;font-size:22px;margin-bottom:12px;color:#fff">Why these concepts, in this order</h3>
+          <p class="lede" style="margin-bottom:12px">Children can't grasp "saving for a goal" until they understand that coins have different values. Each level builds the scaffold the next one stands on.</p>
+          <p class="lede">The spaced callbacks mean your child hears the Level 2 concept again in Level 4 — not as a repeat, but woven into a new adventure. Revision that doesn't feel like revision.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="path-panel" id="pp-focus">
+      <div class="split">
+        <div class="ladder">
+          <h3>🎯 Focus &amp; Goals</h3>
+          <div class="rung"><span class="num">1</span> What is a goal?<span class="ln"></span></div>
+          <div class="rung"><span class="num">2</span> Breaking it into steps<span class="ln"></span></div>
+          <div class="rung"><span class="num">3</span> When things take longer<span class="ln"></span></div>
+          <div class="rung"><span class="num">4</span> Distractions &amp; refocusing<span class="ln"></span></div>
+          <div class="rung future"><span class="num">5</span> Celebrating the small wins</div>
+          <div class="callout">✦ Level 4 brings back the step-plan from Level 2 — now as a tool your child already knows how to use.</div>
+        </div>
+        <div>
+          <h3 style="font-family:'Fraunces';font-weight:600;font-size:22px;margin-bottom:12px;color:#fff">Why this matters at age 5–8</h3>
+          <p class="lede" style="margin-bottom:12px">Executive function — the ability to plan, focus, and follow through — is one of the strongest predictors of outcomes in school and beyond. The window to build it is early childhood.</p>
+          <p class="lede">These stories give children a vocabulary for their own attention: noticing when they've drifted, and knowing how to come back.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="path-panel" id="pp-resilience">
+      <div class="split">
+        <div class="ladder">
+          <h3>💪 Resilience</h3>
+          <div class="rung"><span class="num">1</span> It's OK to find things hard<span class="ln"></span></div>
+          <div class="rung"><span class="num">2</span> Trying again after stopping<span class="ln"></span></div>
+          <div class="rung"><span class="num">3</span> Asking for help is brave<span class="ln"></span></div>
+          <div class="rung"><span class="num">4</span> Learning from mistakes<span class="ln"></span></div>
+          <div class="rung future"><span class="num">5</span> Growing stronger each time</div>
+          <div class="callout">✦ Level 5 revisits the brave ask from Level 3 — your child recognises the concept like an old friend.</div>
+        </div>
+        <div>
+          <h3 style="font-family:'Fraunces';font-weight:600;font-size:22px;margin-bottom:12px;color:#fff">The growth mindset, told through story</h3>
+          <p class="lede" style="margin-bottom:12px">Research on resilience is clear: children who understand that effort changes ability outperform those who believe in fixed talent. These stories make that abstract idea concrete and warm.</p>
+          <p class="lede">Level 1 normalises struggle — without that foundation, Level 4 (learning from mistakes) lands empty.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="path-panel" id="pp-kindness">
+      <div class="split">
+        <div class="ladder">
+          <h3>❤️ Kindness &amp; Empathy</h3>
+          <div class="rung"><span class="num">1</span> Noticing how others feel<span class="ln"></span></div>
+          <div class="rung"><span class="num">2</span> Sharing when it's hard<span class="ln"></span></div>
+          <div class="rung"><span class="num">3</span> Standing up for a friend<span class="ln"></span></div>
+          <div class="rung"><span class="num">4</span> Being kind to yourself too<span class="ln"></span></div>
+          <div class="rung future"><span class="num">5</span> Small kindnesses add up</div>
+          <div class="callout">✦ Level 4 echoes the feelings-noticing work from Level 1 — now turned inward, building self-compassion.</div>
+        </div>
+        <div>
+          <h3 style="font-family:'Fraunces';font-weight:600;font-size:22px;margin-bottom:12px;color:#fff">Social-emotional learning that sticks</h3>
+          <p class="lede" style="margin-bottom:12px">Empathy is a skill, not a trait — it's built through repeated, low-stakes practice. Bedtime stories are one of the best contexts: calm, connected, and emotionally open.</p>
+          <p class="lede">Level 4 is the most important: a child who can't extend kindness to themselves will always struggle to extend it to others.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="path-panel" id="pp-problem">
+      <div class="split">
+        <div class="ladder">
+          <h3>🧠 Problem Solving</h3>
+          <div class="rung"><span class="num">1</span> What even is a problem?<span class="ln"></span></div>
+          <div class="rung"><span class="num">2</span> Looking at it differently<span class="ln"></span></div>
+          <div class="rung"><span class="num">3</span> Trying one thing at a time<span class="ln"></span></div>
+          <div class="rung"><span class="num">4</span> When your first idea doesn't work<span class="ln"></span></div>
+          <div class="rung future"><span class="num">5</span> Solving together is faster</div>
+          <div class="callout">✦ Level 4 calls back the "try one thing" strategy from Level 3 — now as the tool your child reaches for first.</div>
+        </div>
+        <div>
+          <h3 style="font-family:'Fraunces';font-weight:600;font-size:22px;margin-bottom:12px;color:#fff">Critical thinking starts early</h3>
+          <p class="lede" style="margin-bottom:12px">Problem solving isn't a subject — it's a disposition. These stories build the habit of pausing before reacting, considering options, and trying systematically.</p>
+          <p class="lede">Level 2 (perspective-shifting) is the conceptual leap that unlocks every subsequent level — taught through story before it needs to be applied under pressure.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="path-panel" id="pp-confidence">
+      <div class="split">
+        <div class="ladder">
+          <h3>🌱 Confidence</h3>
+          <div class="rung"><span class="num">1</span> Everyone is still learning<span class="ln"></span></div>
+          <div class="rung"><span class="num">2</span> Your voice matters<span class="ln"></span></div>
+          <div class="rung"><span class="num">3</span> Trying something new<span class="ln"></span></div>
+          <div class="rung"><span class="num">4</span> Being proud without showing off<span class="ln"></span></div>
+          <div class="rung future"><span class="num">5</span> Building others up builds you too</div>
+          <div class="callout">✦ Level 5 revisits "your voice matters" from Level 2 — now in service of someone else, completing the arc.</div>
+        </div>
+        <div>
+          <h3 style="font-family:'Fraunces';font-weight:600;font-size:22px;margin-bottom:12px;color:#fff">The foundation everything else rests on</h3>
+          <p class="lede" style="margin-bottom:12px">Confidence isn't bravado — it's the quiet belief that you're capable of trying. Level 1 starts with normalising incompleteness, removing the shame that stops children from attempting hard things.</p>
+          <p class="lede">This path pairs naturally with Resilience: one teaches "it's OK to struggle," the other teaches "I am someone who can try anyway."</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PATH OVERVIEW GRID (always visible) -->
+    <div style="margin-top:36px">
+      <p style="font-size:14px;color:#cfc3ea;margin-bottom:18px;text-align:center">Start with Money, or choose any path that fits your child right now.</p>
+      <div class="path-grid">
+        <div class="path-card-sm" onclick="switchPath('money',null);document.getElementById('why').scrollIntoView({behavior:'smooth'})">
+          <div class="pc-emoji">💰</div><h4>Money &amp; Saving</h4><p>Coins, value, trading, saving, wants vs needs</p><span class="pc-badge live">Available now</span>
+        </div>
+        <div class="path-card-sm" onclick="switchPath('focus',null);document.getElementById('why').scrollIntoView({behavior:'smooth'})">
+          <div class="pc-emoji">🎯</div><h4>Focus &amp; Goals</h4><p>Planning, attention, following through</p><span class="pc-badge soon">Coming soon</span>
+        </div>
+        <div class="path-card-sm" onclick="switchPath('resilience',null);document.getElementById('why').scrollIntoView({behavior:'smooth'})">
+          <div class="pc-emoji">💪</div><h4>Resilience</h4><p>Trying again, bouncing back, growth mindset</p><span class="pc-badge soon">Coming soon</span>
+        </div>
+        <div class="path-card-sm" onclick="switchPath('kindness',null);document.getElementById('why').scrollIntoView({behavior:'smooth'})">
+          <div class="pc-emoji">❤️</div><h4>Kindness &amp; Empathy</h4><p>Noticing feelings, sharing, self-compassion</p><span class="pc-badge soon">Coming soon</span>
+        </div>
+        <div class="path-card-sm" onclick="switchPath('problem',null);document.getElementById('why').scrollIntoView({behavior:'smooth'})">
+          <div class="pc-emoji">🧠</div><h4>Problem Solving</h4><p>Perspective, trying options, critical thinking</p><span class="pc-badge soon">Coming soon</span>
+        </div>
+        <div class="path-card-sm" onclick="switchPath('confidence',null);document.getElementById('why').scrollIntoView({behavior:'smooth'})">
+          <div class="pc-emoji">🌱</div><h4>Confidence</h4><p>Self-belief, voice, trying new things</p><span class="pc-badge soon">Coming soon</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cro-note"><b>All 6 paths visible:</b> showing the full curriculum scope justifies the subscription and gives parents a reason to stay long after the first path is complete — 30 stories of runway visible from the landing page.</div>
+  </div>
+</section>
+
+<!-- ================= VOICES ================= -->
+<section class="block" id="voices">
+  <div class="container">
+    <div class="sec-head"><div class="kicker">Choose the voice</div><h2 class="bh">A voice that fits your bedtime.</h2><p class="lede">Warm, calm, playful, or gentle — tap to switch. Every story can be told in any of them.</p></div>
+    <div style="display:flex;flex-direction:column;align-items:center">
+      <div class="voice-grid" id="landingVoices"></div>
+      <div class="nowplaying">Now previewing in <b id="lvNow">Willow — warm &amp; soft</b></div>
+      <div class="yourvoice">
+        <span class="badge">Coming soon</span>
+        <h4>…or your <i>own</i> voice.</h4>
+        <p>Imagine your child hearing their story in <b>your</b> voice, even when you can't be there. You'll record it after you create your account.</p>
+        <button class="btn btn-soft" onclick="openApp()">See how it works →</button>
+      </div>
+    </div>
+    <div class="cro-note"><b>Voice switching is live</b> (pre-rendered, cheap, proves quality). <b>Voice cloning is a teaser only</b> — recording is biometric data and belongs after sign-up + consent, not on the public page.</div>
+  </div>
+</section>
+
+<!-- ================= PERSONALIZED SAMPLE ================= -->
+<section class="block alt">
+  <div class="container">
+    <div class="split" style="align-items:center">
+      <div>
+        <div class="kicker">See it personalized</div>
+        <h2 class="bh" style="text-align:left">Watch their name appear.</h2>
+        <p class="lede">The story, the world, and the voice all adapt to your child — but the lesson stays expert-written and the same for every kid.</p>
+        <button class="btn btn-primary" style="margin-top:20px" onclick="openApp()">Make one for your child →</button>
+      </div>
+      <div>
+        <div class="sampletale">"Deep in the warm shallows, a small dolphin named <span class="nameslot">[your child]</span> found three shiny coins in the sand. <i>'Which one buys the biggest sea-berry?'</i> they wondered…"</div>
+        <span class="teach-tag">🎯 Teaches: saving &amp; the value of coins</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TESTIMONIALS ================= -->
+<section class="block">
+  <div class="container">
+    <div class="sec-head"><div class="kicker">Loved by parents</div><h2 class="bh">Bedtime they look forward to.</h2></div>
+    <div class="quotes">
+      <div class="quote"><div class="stars">★★★★★</div><p>"My 5-year-old now talks about 'saving for the big thing.' From a bedtime story. I'm not sure school did that."</p><div class="who"><svg class="av" viewBox="0 0 40 40"><circle cx="20" cy="20" r="20" fill="#F8CBA0"/><circle cx="20" cy="16" r="6.5" fill="#fff"/><path d="M7 32 a13 10 0 0 1 26 0 Z" fill="#fff"/></svg><div><b>Dana R.</b><span>mom of two</span></div></div></div>
+      <div class="quote"><div class="stars">★★★★★</div><p>"Same five minutes I was spending anyway — now it's actually teaching her something. And she begs for 'the next level.'"</p><div class="who"><svg class="av" viewBox="0 0 40 40"><circle cx="20" cy="20" r="20" fill="#B8E6F6"/><circle cx="20" cy="16" r="6.5" fill="#fff"/><path d="M7 32 a13 10 0 0 1 26 0 Z" fill="#fff"/></svg><div><b>Marcus T.</b><span>dad</span></div></div></div>
+      <div class="quote"><div class="stars">★★★★★</div><p>"The voices are lovely and the stories are genuinely calming. It's the only screen-free thing my son asks for at night."</p><div class="who"><svg class="av" viewBox="0 0 40 40"><circle cx="20" cy="20" r="20" fill="#C9BBF0"/><circle cx="20" cy="16" r="6.5" fill="#fff"/><path d="M7 32 a13 10 0 0 1 26 0 Z" fill="#fff"/></svg><div><b>Priya N.</b><span>mom</span></div></div></div>
+    </div>
+    <div class="cro-note"><b>Dedicated social-proof section</b> with ratings + named parents (placeholder). Placed after the value is established so it confirms the promise. Swap for real reviews at launch.</div>
+  </div>
+</section>
+
+<!-- ================= TRUST ================= -->
+<section class="block dark">
+  <div class="container">
+    <div class="sec-head"><div class="kicker">Made safe, on purpose</div><h2 class="bh">Built for parents who don't hand their kids to AI lightly.</h2></div>
+    <div class="trust">
+      <div class="tcard"><svg class="ti" viewBox="0 0 48 48"><path d="M24 5 l15 6 v11 c0 11-7 17-15 20 c-8-3-15-9-15-20 V11 Z" fill="rgba(84,182,166,.2)" stroke="#54B6A6" stroke-width="2.4"/><path d="M16 24 l5 5 l11-12" stroke="#54B6A6" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Every story is reviewed</b><span>Safety- and teacher-checked before any child ever hears it.</span></div>
+      <div class="tcard"><svg class="ti" viewBox="0 0 48 48"><rect x="11" y="22" width="26" height="18" rx="4" fill="rgba(127,200,232,.2)" stroke="#7FC8E8" stroke-width="2.4"/><path d="M16 22 v-5 a8 8 0 0 1 16 0 v5" stroke="#7FC8E8" stroke-width="2.4" fill="none"/></svg><b>We collect almost nothing</b><span>No birthdate, no photos, no location. Interests only — export or delete anytime.</span></div>
+      <div class="tcard"><svg class="ti" viewBox="0 0 48 48"><path d="M34 28 a13 13 0 1 1 -14-19 a10 10 0 0 0 14 19 Z" fill="rgba(244,169,60,.2)" stroke="#F4A93C" stroke-width="2.4"/></svg><b>Bedtime-safe by design</b><span>No fear or peril — every story winds down to calm.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PRICING ================= -->
+<section class="block alt" id="pricing">
+  <div class="container">
+    <div class="sec-head"><div class="kicker">Simple pricing</div><h2 class="bh">Try one free. Keep the ones you love.</h2></div>
+    <div class="prices">
+      <div class="pc"><div class="name">First story</div><div class="amt">Free</div><div class="name" style="font-weight:400;color:var(--ink2)">Preview before you pay — no card needed</div><button class="btn btn-line btn-block" style="margin-top:18px" onclick="openApp()">Start free</button></div>
+      <div class="pc feat"><div class="tag">Most loved</div><div class="name">Story Club</div><div class="amt">$9<span>/mo</span></div><ul id="priceList"></ul><button class="btn btn-primary btn-block" onclick="openApp()">Start free →</button></div>
+    </div>
+    <p class="reverse">🛟 Don't love a story? Tap "report" and it's on us — automatic credit, no questions.<br>Less than a single bedtime book a month. Cancel anytime.</p>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="block" id="faq">
+  <div class="container">
+    <div class="sec-head"><div class="kicker">Questions</div><h2 class="bh">Good to know</h2></div>
+    <div class="faq">
+      <details><summary>Isn't a bedtime story just for winding down?</summary><p>Winding down and learning aren't a trade-off — the calm, attentive minutes before sleep are exactly when gentle teaching lands best. You get the cozy ritual <i>and</i> a lasting lesson.</p></details>
+      <details><summary>Is the AI making up stories about my child?</summary><p>No. Stories are written and expert-reviewed in advance. Personalization only adds your child's name, chosen world, and a recurring character — never the lesson.</p></details>
+      <details><summary>What ages is this for?</summary><p>Leveled by age band (roughly 3–8). You pick the band; we match the language and difficulty.</p></details>
+      <details><summary>Can I really use my own voice?</summary><p>Yes — after you create an account and give consent, you can record your voice for narration. It's deletable anytime and never used for anything else.</p></details>
+      <details><summary>What about my data?</summary><p>We collect interest tags, not identity. You can export or delete everything in one tap.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FINAL CTA ================= -->
+<section class="block dark finalcta">
+  <div class="grain"></div>
+  <i class="twinkle" style="width:5px;height:5px;top:30px;left:20%"></i>
+  <i class="twinkle" style="width:3px;height:3px;top:50px;left:70%;animation-delay:.7s"></i>
+  <div class="container">
+    <h2>Tonight's story is happening anyway.</h2>
+    <p>Make it one that teaches. Free to try — under a minute to start.</p>
+    <button class="btn btn-primary" onclick="openApp()">Make their story →</button>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="logo" href="#top"><svg class="mark" viewBox="0 0 30 30"><circle cx="15" cy="15" r="14" fill="url(#lg)"/><path d="M21 16 a8 8 0 1 1 -7-11 a6.5 6.5 0 0 0 7 11 Z" fill="#3a2470"/></svg>Lumi</a>
+        <p>Personalized bedtime stories that teach real skills, one calm night at a time.</p>
+      </div>
+      <div class="fcol"><h5>Product</h5><a href="#how">How it works</a><a href="#why">Curriculum</a><a href="#voices">Voices</a><a href="#pricing">Pricing</a></div>
+      <div class="fcol"><h5>Company</h5><a href="#">About</a><a href="#">Our safety promise</a><a href="#">Careers</a><a href="#">Contact</a></div>
+      <div class="fcol"><h5>Legal</h5><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Children's privacy (COPPA)</a><a href="#">Delete my data</a></div>
+    </div>
+    <div class="foot-bot">
+      <span>© 2026 Lumi. A prototype — placeholder content.</span>
+      <div class="socials"><a href="#">f</a><a href="#">in</a><a href="#">ig</a></div>
+    </div>
+  </div>
+</footer>
+
+<!-- sticky mobile cta -->
+<div class="mcta"><button class="btn btn-primary btn-block" onclick="openApp()">Make their story — free →</button></div>
+
+<!-- ================= APP OVERLAY (the builder flow) ================= -->
+<div class="app-overlay" id="appOverlay">
+  <div class="app">
+    <button class="app-close" onclick="closeApp()">✕</button>
+
+    <div class="screen active" id="s-builder">
+      <div class="topbar"><button class="back" onclick="builderBack()">←</button><div class="progress"><div class="fill" id="bfill" style="width:25%"></div></div><div class="stepcount" id="bcount">1 / 4</div></div>
+      <div class="abody">
+        <div class="microvalue" id="microValue">🌙 Tonight's lesson: <b style="margin-left:4px">saving for a goal</b></div>
+        <div class="bstep" data-step="1">
+          <div class="qh">Who's this story for?</div><div class="qsub">Only used to personalize the story. No account needed yet.</div>
+          <div class="field"><label>Your child's first name</label><input class="input" id="childName" placeholder="e.g. Maya" oninput="syncName()"></div>
+          <div class="field"><label>Age band</label><div class="chips" id="ageChips"></div></div>
+        </div>
+        <div class="bstep" data-step="2" style="display:none"><div class="qh">Pick their world.</div><div class="qsub">Same lesson, different paint.</div><div class="worlds" id="worldGrid"></div></div>
+        <div class="bstep" data-step="3" style="display:none"><div class="qh">What should it teach?</div><div class="qsub">Start with money — more paths are on the way.</div><div class="subj" id="subjList"></div></div>
+        <div class="bstep" data-step="4" style="display:none"><div class="qh">Choose the voice.</div><div class="qsub">Tap to hear the difference. Switch anytime.</div><div class="voice-grid" id="builderVoices" style="max-width:none"></div><div class="nowplaying">Selected: <b id="bvNow">Willow — warm &amp; soft</b></div><div class="yourvoice" style="margin-top:16px;max-width:none"><span class="badge">After sign-up</span><h4>Want it in your voice?</h4><p>Record your own narration once your account's set up — with consent.</p></div></div>
+      </div>
+      <div class="afoot"><button class="btn btn-primary btn-block" id="bnext" onclick="builderNext()">Continue →</button></div>
+    </div>
+
+    <div class="screen" id="s-preview">
+      <div class="pv-hero"><div class="pv-badge" style="font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:var(--gold);font-weight:800">Your free preview</div><div class="pv-title" id="pvTitle">Maya &amp; the Tide-Pool Coins</div><div class="pv-scene" id="pvScene"></div><div class="pv-meta" id="pvMeta"></div>
+        <div class="player-top" style="margin-top:14px"><button class="play-btn" id="pvBtn" onclick="togglePreview()">▶</button><div class="wave" id="pvWave"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div>
+        <div class="player-meta"><span>Opening · 0:38 preview</span><span id="pvTime">0:00 / 0:38</span></div></div>
+      <div class="abody">
+        <div class="teaches">🎯 <span>Teaches: <b>saving &amp; delayed gratification</b> — revisits Level 2 (coin values).</span></div>
+        <div style="margin-bottom:14px"><div style="font-size:13px;font-weight:700;margin-bottom:8px">Try a different voice:</div><div class="voice-grid" id="previewVoices" style="max-width:none"></div></div>
+        <div class="pv-script" id="pvScript"></div>
+        <div class="lock-fade pv-script" style="margin-top:12px">…and so <span class="nameslot">[child]</span> learned that saving just one coin each day meant soon there'd be enough for the thing they wanted most…</div>
+        <div style="text-align:center;margin-top:14px;font-size:13px;color:var(--ink2)">🔒 Unlock the full story + have it emailed to you</div>
+        <button class="btn btn-primary btn-block" style="margin-top:14px" onclick="go('pay')">Unlock the full story →</button>
+        <button class="btn btn-line btn-block" style="margin-top:10px" onclick="go('builder')">← Tweak the story</button>
+      </div>
+    </div>
+
+    <div class="screen" id="s-pay">
+      <div class="topbar"><button class="back" onclick="go('preview')">←</button><div class="progress"><div class="fill" style="width:82%"></div></div><div class="stepcount">Checkout</div></div>
+      <div class="abody">
+        <div class="qh">Unlock <span id="payName">Maya</span>'s story</div><div class="qsub">Start free, then $9/mo. Cancel anytime.</div>
+        <div class="valuestack"><div style="font-weight:800;font-size:13px;margin-bottom:6px">What you're unlocking:</div><ul style="margin:0;padding:0">
+          <li><svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8 l3 3 l7-8" stroke="#E0852A" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Full personalized story — audio + script</li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8 l3 3 l7-8" stroke="#E0852A" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> A new leveled story each week</li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8 l3 3 l7-8" stroke="#E0852A" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Every voice + record your own</li>
+        </ul></div>
+        <div class="pay-card"><div class="pay-line"><span>First story</span><span>Free</span></div><div class="pay-line"><span>Story Club (after trial)</span><span>$9/mo</span></div><div class="pay-line total"><span>Due today</span><span>$0.00</span></div></div>
+        <div class="pay-card"><div class="fake-field">📧 parent@email.com</div><div class="fake-field">💳 Card · MM/YY · CVC</div><button class="btn btn-primary btn-block" onclick="go('onboard')">Unlock &amp; send my story →</button><div class="secure">🔒 Secured by Stripe · adult account holder only</div></div>
+      </div>
+    </div>
+
+    <div class="screen" id="s-onboard">
+      <div class="topbar"><div class="progress"><div class="fill" style="width:92%"></div></div><div class="stepcount">Almost there</div></div>
+      <div class="abody">
+        <div class="qh">A few optional touches</div><div class="qsub">Skip any of it and we'll send your story right away.</div>
+        <div class="field"><label>A nickname? <span style="color:var(--ink2);font-weight:400">(optional)</span></label><input class="input" placeholder="e.g. Little M"></div>
+        <div class="rec-card"><span class="badge" style="background:var(--rose)">New</span><h4 style="font-family:'Fraunces';font-weight:600;font-size:18px">Record your own voice</h4><p style="font-size:13px;color:var(--ink2);margin:6px 0">Read one short paragraph and we'll narrate in your voice.</p><button class="mic" id="micBtn" onclick="toggleRec(this)">🎙️</button><div id="recStatus" style="font-size:13px;color:var(--ink2);min-height:18px">Tap to start a 20-second sample</div><div class="consent"><input type="checkbox" id="voiceConsent"><label for="voiceConsent">I consent to my voice narrating my account's stories. Deletable anytime; never used for anything else.</label></div></div>
+        <button class="btn btn-primary btn-block" style="margin-top:16px" onclick="go('done')">Send my story →</button>
+        <span class="skip" onclick="go('done')">Skip — just send it</span>
+      </div>
+    </div>
+
+    <div class="screen" id="s-done">
+      <div class="done"><div class="check">✓</div><h2 id="doneTitle">It's on its way — Maya's story is ready.</h2><p>Emailed as audio + script and saved to your library. The path continues tomorrow. 🌙</p>
+        <div class="libcard"><h4>Your library</h4><div class="libitem"><span class="lp">▶</span><div><b id="libStory">Maya &amp; the Tide-Pool Coins</b><div style="font-size:12px;color:#bcaee0" id="libMeta">Level 4 · Saving · Willow's voice</div></div></div><div class="libitem" style="opacity:.65"><span class="lp" style="background:#5b4f86;color:#fff">5</span><div><b>Wants vs. Needs</b><div style="font-size:12px;color:#bcaee0">Next · continues the path</div></div></div></div>
+        <button class="btn btn-ghost btn-block" style="margin-top:18px" onclick="closeApp()">← Back to site</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<button class="cro-toggle" onclick="document.body.classList.toggle('cro'); this.textContent = document.body.classList.contains('cro') ? '✕ Hide CRO notes' : '◎ CRO notes'">◎ CRO notes</button>
+
+<script>
+  const VOICES=[{id:'willow',n:'Willow',t:'warm & soft',c:'#F4A93C'},{id:'sage',n:'Sage',t:'calm & low',c:'#54B6A6'},{id:'river',n:'River',t:'bright & playful',c:'#EB8A8A'},{id:'juniper',n:'Juniper',t:'gentle storyteller',c:'#9B86E0'}];
+  function dolphin(){return `<svg viewBox="0 0 120 90"><path d="M14 60 C0 40 20 12 52 9 C80 7 100 19 100 19 C93 27 100 37 100 37 C100 37 80 35 72 40 C80 53 47 80 20 73 C27 69 24 64 14 60 Z" fill="#5BA3D8"/><circle cx="40" cy="27" r="3.2" fill="#1f3a5c"/><path d="M30 35 Q37 41 46 36" stroke="#1f3a5c" stroke-width="2" fill="none" stroke-linecap="round"/></svg>`;}
+  function robot(){return `<svg viewBox="0 0 120 90"><line x1="60" y1="14" x2="60" y2="26" stroke="#9B86E0" stroke-width="3"/><circle cx="60" cy="12" r="4" fill="#F4A93C"/><rect x="34" y="26" width="52" height="42" rx="12" fill="#9B86E0"/><circle cx="48" cy="46" r="6" fill="#fff"/><circle cx="72" cy="46" r="6" fill="#fff"/><circle cx="48" cy="46" r="2.6" fill="#241a52"/><circle cx="72" cy="46" r="2.6" fill="#241a52"/></svg>`;}
+  function fox(){return `<svg viewBox="0 0 120 90"><path d="M38 18 L48 38 L30 36 Z" fill="#E08A3C"/><path d="M82 18 L72 38 L90 36 Z" fill="#E08A3C"/><path d="M60 30 C82 30 84 56 60 72 C36 56 38 30 60 30 Z" fill="#F0A35A"/><path d="M60 50 C70 50 72 62 60 72 C48 62 50 50 60 50 Z" fill="#fff"/><circle cx="50" cy="48" r="3" fill="#3a2410"/><circle cx="70" cy="48" r="3" fill="#3a2410"/></svg>`;}
+  function dragon(){return `<svg viewBox="0 0 120 90"><path d="M30 24 L40 36 L26 40 Z" fill="#6FBF8E"/><path d="M90 24 L80 36 L94 40 Z" fill="#6FBF8E"/><path d="M60 28 C82 28 86 56 60 74 C34 56 38 28 60 28 Z" fill="#7FCF9E"/><circle cx="50" cy="48" r="4" fill="#fff"/><circle cx="70" cy="48" r="4" fill="#fff"/><circle cx="50" cy="48" r="2" fill="#234a32"/><circle cx="70" cy="48" r="2" fill="#234a32"/><path d="M52 60 Q60 66 68 60" stroke="#234a32" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg>`;}
+  const WORLDS=[{id:'sea',art:dolphin,n:'Under the Sea',d:'Maya the dolphin'},{id:'space',art:robot,n:'Space Station',d:'Pip the robot'},{id:'forest',art:fox,n:'Whisper Forest',d:'Juno the fox'},{id:'castle',art:dragon,n:'Cloud Castle',d:'Bram the dragon'}];
+  const AGES=['3–4','5–6','7–8'];
+  const state={name:'',age:'5–6',world:'sea',voice:'willow',step:1};
+
+  function voiceCard(v){const on=state.voice===v.id?'on':'';return `<div class="voice-chip ${on}" onclick="pickVoice('${v.id}')"><span class="av" style="background:${v.c}"></span><div><div class="vn">${v.n}</div><div class="vt">${v.t}</div></div></div>`;}
+  function renderVoices(){['landingVoices','builderVoices','previewVoices'].forEach(id=>{const el=document.getElementById(id);if(el)el.innerHTML=VOICES.map(voiceCard).join('');});const v=VOICES.find(x=>x.id===state.voice);const l=v.n+' — '+v.t;['lvNow','bvNow'].forEach(id=>{const e=document.getElementById(id);if(e)e.textContent=l;});}
+  function pickVoice(id){state.voice=id;renderVoices();syncName();}
+  function renderWorlds(){document.getElementById('worldGrid').innerHTML=WORLDS.map(w=>`<div class="world ${state.world===w.id?'on':''}" onclick="state.world='${w.id}';renderWorlds()"><div class="wc">${w.art()}</div><div class="wn">${w.n}</div><div class="wd">${w.d}</div></div>`).join('');}
+  function renderAges(){document.getElementById('ageChips').innerHTML=AGES.map(a=>`<div class="chip ${state.age===a?'on':''}" onclick="state.age='${a}';renderAges()">${a} yrs</div>`).join('');}
+  function renderSubjects(){document.getElementById('subjList').innerHTML=`
+    <div class="s on"><svg class="se" viewBox="0 0 40 40"><circle cx="20" cy="20" r="14" fill="#FFD27A" stroke="#E0852A" stroke-width="2.4"/><text x="20" y="26" font-size="16" text-anchor="middle" fill="#9a5d12" font-family="Fraunces">$</text></svg><div><b>Money &amp; saving</b><p>Coins, value, saving for goals</p></div></div>
+    <div class="s lock"><svg class="se" viewBox="0 0 40 40"><circle cx="20" cy="20" r="13" fill="#cdeee6" stroke="#54B6A6" stroke-width="2.4"/><circle cx="20" cy="20" r="4" fill="#54B6A6"/></svg><div><b>Focus &amp; goals</b><p>Planning, patience</p></div><span class="soon">Soon</span></div>
+    <div class="s lock"><svg class="se" viewBox="0 0 40 40"><path d="M20 30 C8 22 11 11 18 13 C20 13.4 20 16 20 16 C20 16 20 13.4 22 13 C29 11 32 22 20 30 Z" fill="#f5cccc" stroke="#EB8A8A" stroke-width="2"/></svg><div><b>Resilience</b><p>Trying again</p></div><span class="soon">Soon</span></div>`;}
+  function renderPrice(){document.getElementById('priceList').innerHTML=['A new leveled story every week','All curated voices','Record your own voice','Full audio + script library'].map(t=>`<li><svg width="17" height="17" viewBox="0 0 16 16"><path d="M3 8 l3 3 l7-8" stroke="#E0852A" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>${t}</li>`).join('');}
+
+  function pvSceneSvg(){const w=WORLDS.find(x=>x.id===state.world);return `<svg viewBox="0 0 386 120" width="100%" height="120"><circle cx="330" cy="36" r="54" fill="rgba(255,210,122,.18)"/><circle cx="330" cy="36" r="20" fill="#FFE7B0"/><g class="float" transform="translate(150,16)">${w.art()}</g><g class="float-s"><circle cx="68" cy="36" r="11" fill="#FFD27A" stroke="#E0852A" stroke-width="2"/><text x="68" y="41" font-size="11" text-anchor="middle" fill="#9a5d12" font-family="Fraunces">$</text></g></svg>`;}
+  function syncName(){const raw=(document.getElementById('childName')?.value||'').trim();state.name=raw;const disp=raw||'[your child]';const w=WORLDS.find(x=>x.id===state.world);const v=VOICES.find(x=>x.id===state.voice);
+    const t=document.getElementById('pvTitle');if(t)t.textContent=(raw||'Your child')+' & the Tide-Pool Coins';
+    const sc=document.getElementById('pvScene');if(sc)sc.innerHTML=pvSceneSvg();
+    const m=document.getElementById('pvMeta');if(m)m.innerHTML=`<span class="m">${w.n}</span><span class="m">Lvl 4 · Saving</span><span class="m">🔊 ${v.n}</span>`;
+    const ps=document.getElementById('pvScript');if(ps)ps.innerHTML=`Deep in the warm shallows, a small ${w.id==='sea'?'dolphin':'friend'} named <span class="nameslot">${disp}</span> found three shiny coins resting in the sand. <i>"Which one buys the biggest sea-berry?"</i> ${disp} wondered. Just then, a wise old crab named Pip clicked over to help…`;
+    const pn=document.getElementById('payName');if(pn)pn.textContent=raw||'your child';
+    const dt=document.getElementById('doneTitle');if(dt)dt.textContent=`It's on its way — ${raw||'your child'}'s story is ready.`;
+    const ls=document.getElementById('libStory');if(ls)ls.textContent=`${raw||'Your child'} & the Tide-Pool Coins`;
+    const lm=document.getElementById('libMeta');if(lm)lm.textContent=`Level 4 · Saving · ${v.n}'s voice`;}
+
+  function openApp(){document.getElementById('appOverlay').classList.add('open');document.body.style.overflow='hidden';go('builder');showStep(1);}
+  function closeApp(){document.getElementById('appOverlay').classList.remove('open');document.body.style.overflow='';stopAllAudio();}
+  function go(name){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById('s-'+name).classList.add('active');document.getElementById('appOverlay').scrollTop=0;stopAllAudio();if(name==='preview')syncName();}
+
+  function showStep(n){state.step=n;document.querySelectorAll('.bstep').forEach(s=>s.style.display=(+s.dataset.step===n?'block':'none'));document.getElementById('bfill').style.width=(n*25)+'%';document.getElementById('bcount').textContent=n+' / 4';document.getElementById('bnext').textContent=n===4?'Hear their story →':'Continue →';
+    const msgs={1:'🌙 Tonight&rsquo;s lesson: <b style="margin-left:4px">saving for a goal</b>',2:'✨ Same lesson — <b style="margin-left:4px">their favorite world</b>',3:'📚 Building <b style="margin-left:4px">level by level</b>',4:'🔊 The right voice makes it <b style="margin-left:4px">theirs</b>'};document.getElementById('microValue').innerHTML=msgs[n];}
+  function builderNext(){if(state.step===1&&!state.name){const c=document.getElementById('childName');c.focus();c.style.borderColor='var(--rose)';return;}if(state.step<4)showStep(state.step+1);else go('preview');}
+  function builderBack(){if(state.step>1)showStep(state.step-1);else closeApp();}
+
+  // ── STORY SAMPLER ENGINE ──────────────────────────────────────────────────
+  const CLIPS = [
+    {
+      id:    'money',
+      pill:  '💰 Money',
+      color: '#F4A93C',
+      bg:    'linear-gradient(160deg,#2d5f96,#1e3d72)',
+      badge: { text:'💰 Level 4 · Saving', bg:'rgba(244,169,60,.25)', color:'#FFD27A' },
+      title: 'Maya &amp; the Tide-Pool Coins',
+      voice: '🔊 Narrated by Willow — warm &amp; soft',
+      art: `<svg viewBox="0 0 400 120" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+        <circle cx="340" cy="34" r="54" fill="rgba(255,210,122,.18)"/><circle cx="340" cy="34" r="20" fill="#FFE7B0"/>
+        <g class="float" transform="translate(110,8) scale(1.05)">
+          <path d="M20 72C0 50 24 16 60 12c34-4 60 12 60 12-8 10 0 22 0 22s-24-3-34 4c10 18-28 54-50 44 8-6 6-14-16-22z" fill="#5BA3D8"/>
+          <path d="M36 74C26 60 38 42 64 38c24-3 40 7 42 9-10 8-30 8-42 16-10 12-22 16-28 12z" fill="#BFE6F5"/>
+          <circle cx="42" cy="30" r="4" fill="#1f3a5c"/><circle cx="43.5" cy="28.5" r="1.5" fill="#fff"/>
+          <path d="M32 38 Q40 44 50 39" stroke="#1f3a5c" stroke-width="2" fill="none" stroke-linecap="round"/>
+        </g>
+        <g class="float-s"><circle cx="62" cy="66" r="13" fill="#FFD27A" stroke="#E0852A" stroke-width="2"/><text x="62" y="72" font-size="13" text-anchor="middle" fill="#9a5d12" font-family="Fraunces">$</text></g>
+        <g class="drift"><circle cx="306" cy="88" r="10" fill="#FFD27A" stroke="#E0852A" stroke-width="2"/><text x="306" y="93" font-size="10" text-anchor="middle" fill="#9a5d12" font-family="Fraunces">$</text></g>
+      </svg>`,
+      words: "Deep in the warm shallows, a small dolphin named Maya found three shiny coins resting in the sand. She picked up the biggest one first. 'This must be worth the most,' she thought. But Pip the crab clicked his claws and smiled warmly. 'Shall I show you something surprising?' he said. And Maya leaned in to listen.".split(' ')
+    },
+    {
+      id:    'resilience',
+      pill:  '💪 Resilience',
+      color: '#EB8A8A',
+      bg:    'linear-gradient(160deg,#3d6645,#264430)',
+      badge: { text:'💪 Level 3 · Trying again', bg:'rgba(235,138,138,.22)', color:'#F8CBA0' },
+      title: 'Juno\'s Wobbly Tower',
+      voice: '🔊 Narrated by River — bright &amp; playful',
+      art: `<svg viewBox="0 0 400 120" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+        <ellipse cx="200" cy="108" rx="140" ry="14" fill="rgba(0,0,0,.15)"/>
+        <g class="float" transform="translate(138,4)">
+          <path d="M44 20L52 38 36 36z" fill="#E08A3C"/>
+          <path d="M80 20L72 38 88 36z" fill="#E08A3C"/>
+          <path d="M62 28C82 28 84 52 62 66 40 52 42 28 62 28z" fill="#F0A35A"/>
+          <path d="M62 48C70 48 72 58 62 66 52 58 54 48 62 48z" fill="#fff"/>
+          <circle cx="52" cy="46" r="3" fill="#3a2410"/><circle cx="72" cy="46" r="3" fill="#3a2410"/>
+          <path d="M52 54 Q62 60 72 54" stroke="#3a2410" stroke-width="2" fill="none" stroke-linecap="round"/>
+        </g>
+        <rect x="170" y="70" width="9" height="34" rx="3" fill="#a0734e" transform="rotate(-8,174,87)"/>
+        <rect x="188" y="56" width="9" height="48" rx="3" fill="#b8864e" transform="rotate(4,192,80)"/>
+        <rect x="207" y="62" width="9" height="42" rx="3" fill="#a0734e" transform="rotate(-3,211,83)"/>
+        <rect x="225" y="50" width="9" height="54" rx="3" fill="#c29660" transform="rotate(6,229,77)"/>
+        <rect x="244" y="68" width="9" height="36" rx="3" fill="#b8864e" transform="rotate(-5,248,86)"/>
+      </svg>`,
+      words: "Juno the fox had been building her tower of sticks all afternoon — it was almost as tall as she was. Then it fell. Every single stick. She sat very still for a long moment, just looking at the pile. 'That,' said Old Owl, landing quietly beside her, 'is exactly where the building starts.' Juno looked up. And then she reached for the first stick.".split(' ')
+    },
+    {
+      id:    'kindness',
+      pill:  '❤️ Kindness',
+      color: '#F8CBA0',
+      bg:    'linear-gradient(160deg,#5a3d7a,#3a2460)',
+      badge: { text:'❤️ Level 1 · Noticing', bg:'rgba(248,203,160,.2)', color:'#F8CBA0' },
+      title: 'Bram Keeps Watch',
+      voice: '🔊 Narrated by Juniper — gentle storyteller',
+      art: `<svg viewBox="0 0 400 120" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+        <circle cx="300" cy="36" r="50" fill="rgba(255,255,255,.07)"/><circle cx="300" cy="36" r="18" fill="rgba(255,255,255,.15)"/>
+        <ellipse cx="120" cy="96" rx="30" ry="12" fill="rgba(255,255,255,.08)"/>
+        <g class="float" transform="translate(102,8) scale(.95)">
+          <path d="M32 26L40 38 26 40z" fill="#6FBF8E"/>
+          <path d="M88 26L80 38 94 40z" fill="#6FBF8E"/>
+          <path d="M62 30C82 30 86 54 62 70 38 54 42 30 62 30z" fill="#7FCF9E"/>
+          <circle cx="52" cy="48" r="4" fill="#fff"/><circle cx="72" cy="48" r="4" fill="#fff"/>
+          <circle cx="52" cy="48" r="2" fill="#234a32"/><circle cx="72" cy="48" r="2" fill="#234a32"/>
+          <path d="M54 60 Q62 66 70 60" stroke="#234a32" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <ellipse cx="80" cy="80" rx="14" ry="8" fill="rgba(255,255,255,.8)"/>
+          <circle cx="80" cy="78" r="5" fill="#fff"/>
+          <circle cx="80" cy="78" r="2.5" fill="#7aa"/>
+        </g>
+      </svg>`,
+      words: "Bram the dragon had noticed something that morning: the little cloud-bunny who always laughed the loudest had been very quiet all day. Nobody else seemed to see it. Bram thought about saying something. Then thought maybe he shouldn't. Then thought — what if nobody does? He took a breath, flew over slowly, and sat down beside her without saying a word.".split(' ')
+    },
+    {
+      id:    'focus',
+      pill:  '🎯 Focus',
+      color: '#7FC8E8',
+      bg:    'linear-gradient(160deg,#2a2558,#18163c)',
+      badge: { text:'🎯 Level 2 · One step at a time', bg:'rgba(127,200,232,.2)', color:'#B8E6F6' },
+      title: 'Pip\'s Unfinished Map',
+      voice: '🔊 Narrated by Sage — calm &amp; low',
+      art: `<svg viewBox="0 0 400 120" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+        <circle cx="320" cy="24" r="8" fill="#FFD27A" opacity=".9"/><circle cx="280" cy="16" r="5" fill="#B8E6F6" opacity=".7"/><circle cx="350" cy="58" r="6" fill="#fff" opacity=".4"/>
+        <circle cx="80" cy="40" r="4" fill="#fff" opacity=".35"/><circle cx="140" cy="18" r="3.5" fill="#FFD27A" opacity=".5"/>
+        <g class="float-s" transform="translate(148,10)">
+          <line x1="48" y1="14" x2="48" y2="24" stroke="#9B86E0" stroke-width="3"/>
+          <circle cx="48" cy="12" r="4" fill="#F4A93C"/>
+          <rect x="26" y="24" width="44" height="36" rx="10" fill="#9B86E0"/>
+          <circle cx="38" cy="42" r="5" fill="#fff"/><circle cx="58" cy="42" r="5" fill="#fff"/>
+          <circle cx="38" cy="42" r="2.2" fill="#241a52"/><circle cx="58" cy="42" r="2.2" fill="#241a52"/>
+          <path d="M36 52 H60" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/>
+        </g>
+        <g class="drift" transform="translate(260,52)">
+          <rect x="0" y="0" width="52" height="40" rx="6" fill="#fff" opacity=".12" stroke="rgba(255,255,255,.3)" stroke-width="1.5"/>
+          <line x1="8" y1="10" x2="30" y2="10" stroke="rgba(255,255,255,.5)" stroke-width="2" stroke-linecap="round"/>
+          <line x1="8" y1="18" x2="44" y2="18" stroke="rgba(255,255,255,.3)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="8" y1="26" x2="36" y2="26" stroke="rgba(255,255,255,.3)" stroke-width="1.5" stroke-linecap="round"/>
+        </g>
+      </svg>`,
+      words: "High above the turning world, a small robot named Pip had one very important job: finish the star map before morning. But the blinking lights were so interesting. And the floating pencil was so fun to chase. The half-drawn map waited, patient as the stars. 'One thing at a time,' hummed the old computer in the corner. Pip looked at the map. Then at the pencil. Then at the map.".split(' ')
+    },
+  ]
+
+  let samplerIdx = 0, samplerPlaying = false
+  let samplerWordIdx = 0, samplerInterval = null, samplerSecInterval = null, samplerSec = 0
+
+  function samplerRender(idx, keepPlaying) {
+    const c = CLIPS[idx]
+    // pills
+    document.getElementById('samplerClips').innerHTML = CLIPS.map((cl,i) =>
+      `<button class="sclip ${i===idx?'on':''}" onclick="samplerGoTo(${i})" style="${i===idx?'border-color:'+cl.color:''}">`+
+      `<span class="sc-dot" style="${i===idx?'background:'+cl.color:''}"></span>${cl.pill}</button>`
+    ).join('')
+    // art
+    const art = document.getElementById('samplerArt')
+    art.style.background = c.bg
+    art.innerHTML = c.art
+    // wave color
+    document.querySelectorAll('#samplerWave span').forEach(s => s.style.background = c.color)
+    // badge
+    const b = document.getElementById('samplerBadge')
+    b.textContent = ''; b.innerHTML = ''
+    b.style.background = c.badge.bg; b.style.color = c.badge.color
+    b.textContent = c.badge.text
+    // title / voice
+    document.getElementById('samplerTitle').innerHTML = c.title
+    document.getElementById('samplerVoice').innerHTML = c.voice
+    // excerpt — wrap each word in a span
+    document.getElementById('samplerExcerpt').innerHTML =
+      c.words.map((w,i) => `<span class="sw" id="sw-${i}">${w} </span>`).join('')
+    // reset word idx
+    samplerWordIdx = 0
+    if(!keepPlaying) { samplerSec = 0; document.getElementById('samplerTime').textContent = '0:00' }
+  }
+
+  function samplerGoTo(idx) {
+    samplerStop()
+    samplerIdx = idx
+    samplerRender(idx, false)
+  }
+
+  function samplerNextClip() {
+    samplerGoTo((samplerIdx + 1) % CLIPS.length)
+  }
+
+  function samplerStop() {
+    samplerPlaying = false
+    clearInterval(samplerInterval); clearInterval(samplerSecInterval)
+    samplerInterval = null; samplerSecInterval = null
+    document.getElementById('samplerPlayBtn').textContent = '▶'
+    document.getElementById('samplerWave').classList.remove('playing')
+  }
+
+  function samplerToggle() {
+    if(samplerPlaying) { samplerStop(); return }
+    samplerPlaying = true
+    document.getElementById('samplerPlayBtn').textContent = '❚❚'
+    document.getElementById('samplerWave').classList.add('playing')
+    // word advance — ~2.6 words/second gives natural narration pace
+    samplerInterval = setInterval(() => {
+      const c = CLIPS[samplerIdx]
+      const prev = document.getElementById('sw-' + (samplerWordIdx - 1))
+      const cur  = document.getElementById('sw-' + samplerWordIdx)
+      if(prev) { prev.classList.remove('lit'); prev.classList.add('done') }
+      if(cur)  { cur.classList.add('lit') }
+      samplerWordIdx++
+      // auto-advance to next clip after last word + 1s pause
+      if(samplerWordIdx > c.words.length) {
+        samplerStop()
+        setTimeout(() => { samplerGoTo((samplerIdx + 1) % CLIPS.length) }, 900)
+      }
+    }, 390)
+    // second counter
+    samplerSecInterval = setInterval(() => {
+      samplerSec++
+      const m = Math.floor(samplerSec / 60), s = String(samplerSec % 60).padStart(2,'0')
+      document.getElementById('samplerTime').textContent = `${m}:${s}`
+    }, 1000)
+  }
+
+  // init on load
+  function initSampler() { samplerRender(0, false) }
+  initSampler()
+
+  let recTimer;
+  function toggleRec(btn){var saved='✓ Sample saved — we will narrate in your voice.';const s=document.getElementById('recStatus');if(btn.classList.contains('rec')){btn.classList.remove('rec');clearInterval(recTimer);s.textContent=saved;document.getElementById('voiceConsent').checked=true;return;}btn.classList.add('rec');let t=20;s.textContent='● Recording… read aloud (20s)';recTimer=setInterval(()=>{t--;s.textContent='● Recording… '+t+'s left';if(t<=0){btn.classList.remove('rec');clearInterval(recTimer);s.textContent=saved;document.getElementById('voiceConsent').checked=true;}},1000);}
+
+  // header scroll state
+  window.addEventListener('scroll',()=>{document.getElementById('hdr').classList.toggle('scrolled',window.scrollY>30);});
+
+  // overlay preview player (separate from the hero sampler)
+  let pvTimer = null, pvSec = 0, pvPlaying = false
+  function togglePreview() {
+    if(pvPlaying) {
+      pvPlaying = false; clearInterval(pvTimer)
+      document.getElementById('pvBtn').textContent = '▶'
+      document.getElementById('pvWave').classList.remove('playing')
+    } else {
+      pvPlaying = true
+      document.getElementById('pvBtn').textContent = '❚❚'
+      document.getElementById('pvWave').classList.add('playing')
+      pvTimer = setInterval(() => {
+        pvSec++; if(pvSec >= 38) { pvPlaying = false; clearInterval(pvTimer); document.getElementById('pvBtn').textContent = '▶'; document.getElementById('pvWave').classList.remove('playing'); return }
+        document.getElementById('pvTime').textContent = `0:${String(pvSec).padStart(2,'0')} / 0:38`
+      }, 1000)
+    }
+  }
+  function switchPath(name, clickedTab) {
+    // hide all panels
+    document.querySelectorAll('.path-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.ptab').forEach(t => t.classList.remove('active'));
+    document.getElementById('pp-'+name).classList.add('active');
+    // activate the tab — find by data or by the clicked element
+    if(clickedTab) {
+      clickedTab.classList.add('active');
+    } else {
+      // activate by order
+      const order = ['money','focus','resilience','kindness','problem','confidence'];
+      const tabs = document.querySelectorAll('.ptab');
+      const idx = order.indexOf(name);
+      if(tabs[idx]) tabs[idx].classList.add('active');
+    }
+  }
+
+  function renderAll(){renderVoices();renderWorlds();renderAges();renderSubjects();renderPrice();syncName();}
+  renderAll();showStep(1);
+</script>
+</body>
+</html>
