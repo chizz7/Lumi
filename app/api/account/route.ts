@@ -49,7 +49,11 @@ export async function POST(req: NextRequest) {
   const { count } = await supabase.from('child_profiles').select('id', { count: 'exact', head: true }).eq('account_id', user.id)
   if ((count ?? 0) >= MAX_CHILDREN) return NextResponse.json({ error: `You can add up to ${MAX_CHILDREN} children.` }, { status: 422 })
 
-  const { data: profile, error } = await supabase
+  // Insert via the service-role client: the child_profiles RLS policy is
+  // self-referential (it looks the row up by id) so it can't satisfy an INSERT
+  // check on a not-yet-existing row. We've already authenticated the session and
+  // pin account_id to this user, so this stays scoped to the owner.
+  const { data: profile, error } = await adminClient
     .from('child_profiles')
     .insert({
       account_id:   user.id,
