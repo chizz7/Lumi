@@ -3,9 +3,10 @@
 import { useState, useEffect } from 'react'
 import { getVoicesForLang } from '@/lib/voices'
 
+interface Child { id: string; name: string; age_band: string; skin_slug: string; subject_slug: string; voice_id: string; current_level: number }
 interface AccountData {
   account: { email: string; plan: string; created_at: string }
-  profile: { name: string; age_band: string; skin_slug: string; subject_slug: string; voice_id: string; current_level: number } | null
+  profiles: Child[]
 }
 
 const VOICES = getVoicesForLang('en')
@@ -18,6 +19,14 @@ const WORLDS = [
   { slug:'dino', emoji:'🦕', name:'Fern Valley' },
   { slug:'jungle', emoji:'🐯', name:'Deep Jungle' },
 ]
+const SUBJECTS = [
+  { slug:'money', emoji:'🪙', name:'Money & saving' },
+  { slug:'focus', emoji:'🎯', name:'Focus & goals' },
+  { slug:'resilience', emoji:'💪', name:'Resilience' },
+  { slug:'kindness', emoji:'❤️', name:'Kindness' },
+  { slug:'problem', emoji:'🧠', name:'Problem solving' },
+  { slug:'confidence', emoji:'🌱', name:'Confidence' },
+]
 
 export default function AccountPage() {
   const [data,        setData]        = useState<AccountData | null>(null)
@@ -25,21 +34,23 @@ export default function AccountPage() {
   const [deleting,    setDeleting]    = useState(false)
   const [portalBusy,  setPortalBusy]  = useState(false)
 
-  // Edit-profile modal state
+  // Add/edit child modal state
   const [editing, setEditing] = useState(false)
+  const [mode, setMode] = useState<'edit' | 'add'>('edit')
   const [savingEdit, setSavingEdit] = useState(false)
-  const [form, setForm] = useState({ name:'', ageBand:'5-6', skinSlug:'sea', voiceId:'af_heart' })
+  const [form, setForm] = useState({ childId:'', name:'', ageBand:'5-6', skinSlug:'sea', subjectSlug:'money', voiceId:'af_heart' })
 
   useEffect(() => { fetch('/api/account').then(r => r.json()).then(setData) }, [])
 
-  const openEdit = () => {
-    if (!data?.profile) return
-    setForm({
-      name:     data.profile.name,
-      ageBand:  data.profile.age_band,
-      skinSlug: data.profile.skin_slug,
-      voiceId:  data.profile.voice_id,
-    })
+  const openEdit = (c: Child) => {
+    setMode('edit')
+    setForm({ childId:c.id, name:c.name, ageBand:c.age_band, skinSlug:c.skin_slug, subjectSlug:c.subject_slug, voiceId:c.voice_id })
+    setEditing(true)
+  }
+
+  const openAdd = () => {
+    setMode('add')
+    setForm({ childId:'', name:'', ageBand:'5-6', skinSlug:'sea', subjectSlug:'money', voiceId: VOICES[0]?.id ?? 'af_heart' })
     setEditing(true)
   }
 
@@ -47,13 +58,21 @@ export default function AccountPage() {
     setSavingEdit(true)
     try {
       const res  = await fetch('/api/account', {
-        method: 'PATCH',
+        method: mode === 'add' ? 'POST' : 'PATCH',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+        body: JSON.stringify(mode === 'add'
+          ? { name:form.name, ageBand:form.ageBand, skinSlug:form.skinSlug, subjectSlug:form.subjectSlug, voiceId:form.voiceId }
+          : { childId:form.childId, name:form.name, ageBand:form.ageBand, skinSlug:form.skinSlug, voiceId:form.voiceId }),
       })
       const body = await res.json()
       if (body.ok && body.profile) {
-        setData(d => d ? { ...d, profile: body.profile } : d)
+        setData(d => {
+          if (!d) return d
+          const profiles = mode === 'add'
+            ? [...d.profiles, body.profile]
+            : d.profiles.map(p => p.id === body.profile.id ? body.profile : p)
+          return { ...d, profiles }
+        })
         setEditing(false)
       } else {
         alert(body.error ?? 'Could not save changes.')
@@ -123,28 +142,41 @@ export default function AccountPage() {
           <span style={{ color:'#9d92c0', fontSize:'13px' }}>{portalBusy ? 'Opening…' : 'Cancel · update card · invoices →'}</span>
         </button>
 
-        {/* Profile */}
-        {data.profile && (
-          <section aria-labelledby="profile-heading" style={{ background:'#fff', border:'1px solid #ece0c8', borderRadius:'16px', padding:'18px', marginBottom:'22px' }}>
-            <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:'12px' }}>
-              <h2 id="profile-heading" style={{ fontFamily:'var(--font-fraunces)', fontSize:'16px' }}>Child profile</h2>
-              <button onClick={openEdit} style={{ fontSize:'13px', fontWeight:700, color:'#E0852A', background:'none', border:'none', cursor:'pointer' }}>Edit</button>
-            </div>
-            {([
-              ['Name', data.profile.name || '—'],
-              ['Age band', data.profile.age_band],
-              ['World', WORLDS.find(w => w.slug === data.profile!.skin_slug)?.name ?? data.profile.skin_slug],
-              ['Voice', VOICES.find(v => v.id === data.profile!.voice_id)?.name ?? data.profile.voice_id],
-              ['Subject', data.profile.subject_slug],
-              ['Current level', String(data.profile.current_level)],
-            ] as [string,string][]).map(([k,v]) => (
-              <div key={k} style={{ display:'flex', justifyContent:'space-between', padding:'8px 0', borderBottom:'1px solid #f4e9d4', fontSize:'14px' }}>
-                <span style={{ color:'#5d5278' }}>{k}</span>
-                <span style={{ fontWeight:700, textTransform:'capitalize' }}>{v}</span>
+        {/* Children — one subscription covers all of them */}
+        <section aria-labelledby="children-heading" style={{ marginBottom:'22px' }}>
+          <div style={{ display:'flex', justifyContent:'space-between', alignItems:'baseline', marginBottom:'12px' }}>
+            <h2 id="children-heading" style={{ fontFamily:'var(--font-fraunces)', fontSize:'16px' }}>Children</h2>
+            <span style={{ fontSize:'12px', color:'#5d5278' }}>One subscription, all your kids</span>
+          </div>
+
+          {data.profiles.map(p => (
+            <div key={p.id} style={{ background:'#fff', border:'1px solid #ece0c8', borderRadius:'16px', padding:'18px', marginBottom:'12px' }}>
+              <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:'10px' }}>
+                <h3 style={{ fontFamily:'var(--font-fraunces)', fontSize:'15px' }}>{p.name || 'Child'}</h3>
+                <button onClick={() => openEdit(p)} style={{ fontSize:'13px', fontWeight:700, color:'#E0852A', background:'none', border:'none', cursor:'pointer' }}>Edit</button>
               </div>
-            ))}
-          </section>
-        )}
+              {([
+                ['Age band', p.age_band],
+                ['World', WORLDS.find(w => w.slug === p.skin_slug)?.name ?? p.skin_slug],
+                ['Voice', VOICES.find(v => v.id === p.voice_id)?.name ?? p.voice_id],
+                ['Subject', SUBJECTS.find(s => s.slug === p.subject_slug)?.name ?? p.subject_slug],
+                ['Current level', String(p.current_level)],
+              ] as [string,string][]).map(([k,v]) => (
+                <div key={k} style={{ display:'flex', justifyContent:'space-between', padding:'7px 0', borderBottom:'1px solid #f4e9d4', fontSize:'13.5px' }}>
+                  <span style={{ color:'#5d5278' }}>{k}</span>
+                  <span style={{ fontWeight:700, textTransform:'capitalize' }}>{v}</span>
+                </div>
+              ))}
+            </div>
+          ))}
+
+          {data.profiles.length < 6 && (
+            <button onClick={openAdd}
+              style={{ width:'100%', padding:'14px', background:'#fff', border:'1.5px dashed #cdbf9f', borderRadius:'14px', fontWeight:700, cursor:'pointer', fontSize:'14px', color:'#211a3a' }}>
+              ＋ Add a child
+            </button>
+          )}
+        </section>
 
         {/* Privacy & data */}
         <section aria-labelledby="privacy-heading" style={{ background:'#fff', border:'1px solid #ece0c8', borderRadius:'16px', padding:'18px', marginBottom:'22px' }}>
@@ -181,12 +213,26 @@ export default function AccountPage() {
           onClick={e => { if (e.target === e.currentTarget) setEditing(false) }}
           style={{ position:'fixed', inset:0, zIndex:300, background:'rgba(12,8,32,.7)', display:'flex', alignItems:'center', justifyContent:'center', padding:'20px' }}>
           <div style={{ background:'#FBF4E6', borderRadius:'22px', width:'100%', maxWidth:'440px', maxHeight:'90vh', overflowY:'auto', padding:'22px' }}>
-            <h2 style={{ fontFamily:'var(--font-fraunces)', fontSize:'19px', marginBottom:'4px' }}>Edit profile</h2>
-            <p style={{ fontSize:'13px', color:'#5d5278', marginBottom:'18px' }}>Changes apply to future stories. Stories already in your library don't change.</p>
+            <h2 style={{ fontFamily:'var(--font-fraunces)', fontSize:'19px', marginBottom:'4px' }}>{mode === 'add' ? 'Add a child' : 'Edit profile'}</h2>
+            <p style={{ fontSize:'13px', color:'#5d5278', marginBottom:'18px' }}>{mode === 'add' ? 'They get their own story stream — same subscription, no extra cost.' : "Changes apply to future stories. Stories already in your library don't change."}</p>
 
             <label style={{ fontSize:'13px', fontWeight:700, display:'block', marginBottom:'7px' }}>Child's first name</label>
             <input value={form.name} onChange={e => setForm(f => ({ ...f, name: e.target.value }))} placeholder="e.g. Maya"
               style={{ width:'100%', padding:'13px', border:'1.5px solid #e0d2b7', borderRadius:'12px', fontSize:'16px', fontFamily:'inherit', background:'#fff', marginBottom:'16px' }} />
+
+            {mode === 'add' && (
+              <>
+                <label style={{ fontSize:'13px', fontWeight:700, display:'block', marginBottom:'7px' }}>Subject</label>
+                <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'8px', marginBottom:'16px' }}>
+                  {SUBJECTS.map(s => (
+                    <button key={s.slug} onClick={() => setForm(f => ({ ...f, subjectSlug: s.slug }))} aria-pressed={form.subjectSlug===s.slug}
+                      style={{ display:'flex', gap:'8px', alignItems:'center', border:`2px solid ${form.subjectSlug===s.slug?'#F4A93C':'#e0d2b7'}`, background: form.subjectSlug===s.slug?'#fff7ea':'#fff', borderRadius:'13px', padding:'11px', cursor:'pointer', fontSize:'12.5px', fontWeight:700, color:'#211a3a' }}>
+                      <span style={{ fontSize:'18px' }}>{s.emoji}</span> {s.name}
+                    </button>
+                  ))}
+                </div>
+              </>
+            )}
 
             <label style={{ fontSize:'13px', fontWeight:700, display:'block', marginBottom:'7px' }}>Age band</label>
             <div style={{ display:'flex', gap:'8px', marginBottom:'16px' }}>
@@ -221,7 +267,7 @@ export default function AccountPage() {
 
             <button onClick={saveEdit} disabled={savingEdit || !form.name.trim()}
               style={{ width:'100%', padding:'14px', background:'linear-gradient(135deg,#FFD27A,#E0852A)', color:'#3a230a', fontWeight:700, border:'none', borderRadius:'14px', cursor: savingEdit||!form.name.trim() ? 'not-allowed' : 'pointer', fontSize:'15px', opacity: savingEdit||!form.name.trim() ? .6 : 1 }}>
-              {savingEdit ? 'Saving…' : 'Save changes'}
+              {savingEdit ? 'Saving…' : mode === 'add' ? 'Add child' : 'Save changes'}
             </button>
             <button onClick={() => setEditing(false)} style={{ width:'100%', padding:'11px', background:'none', color:'#5d5278', fontWeight:600, border:'none', cursor:'pointer', fontSize:'14px', marginTop:'4px' }}>Cancel</button>
           </div>

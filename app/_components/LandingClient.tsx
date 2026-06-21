@@ -960,6 +960,9 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                   <p style={{ fontSize:'11.5px', color:'#5d5278', textAlign:'center', margin:'9px 0 0', lineHeight:1.4 }}>
                     Then <strong>$9.99/mo</strong> · a new story every 3 days · cancel anytime
                   </p>
+                  <p style={{ fontSize:'11px', color:'#8a6a1f', textAlign:'center', margin:'5px 0 0' }}>
+                    👨‍👩‍👧‍👦 One subscription covers all your kids — add siblings anytime
+                  </p>
                   <button onClick={() => setPreview(null)} style={{ width:'100%', padding:'10px', background:'none', color:'#5d5278', fontWeight:600, border:'none', cursor:'pointer', fontSize:'13px', marginTop:'4px' }}>
                     ← Change something
                   </button>

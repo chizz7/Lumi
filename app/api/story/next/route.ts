@@ -24,12 +24,17 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: `Upgrade to Story Club to unlock a new story every ${STORY_INTERVAL_DAYS} days.`, upgrade: true }, { status: 403 })
   }
 
-  // Load profile
-  const { data: profile } = await supabase
+  // Which child? Body may name one; otherwise default to the oldest profile.
+  let childId: string | undefined
+  try { childId = (await req.json())?.childId } catch { /* no body — use default */ }
+
+  const sel = supabase
     .from('child_profiles')
     .select('id, name, subject_slug, skin_slug, voice_id, current_level, age_band')
     .eq('account_id', user.id)
-    .single()
+  const { data: profile } = childId
+    ? await sel.eq('id', childId).single()
+    : await sel.order('created_at', { ascending: true }).limit(1).maybeSingle()
 
   if (!profile) return NextResponse.json({ error: 'No profile found' }, { status: 400 })
 

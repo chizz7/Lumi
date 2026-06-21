@@ -2,9 +2,9 @@
 // app/(app)/library/page.tsx
 import { useState, useEffect } from 'react'
 
-interface Story   { id: string; levelOrdinal: number; levelTitle: string; concept: string; skinSlug: string; voiceId: string; deliveredAt: string; script: string; audioUrl: string | null }
-interface Profile { name: string; currentLevel: number; totalLevels: number; subjectSlug: string }
-interface LibData  { stories: Story[]; profile: Profile | null; nextLevel: number | null; nextAvailableAt: string | null; canRequestNext: boolean }
+interface Story  { id: string; levelOrdinal: number; levelTitle: string; concept: string; skinSlug: string; voiceId: string; deliveredAt: string; script: string; audioUrl: string | null }
+interface Child  { id: string; name: string; currentLevel: number; totalLevels: number; subjectSlug: string; nextLevel: number | null; nextAvailableAt: string | null; canRequestNext: boolean; stories: Story[] }
+interface LibData { children: Child[] }
 
 const REPORT_REASONS: { value: string; label: string }[] = [
   { value: 'content_inappropriate', label: 'Not age-appropriate' },
@@ -17,6 +17,7 @@ const REPORT_REASONS: { value: string; label: string }[] = [
 export default function LibraryPage() {
   const [data,       setData]       = useState<LibData | null>(null)
   const [loading,    setLoading]    = useState(true)
+  const [selectedId, setSelectedId] = useState<string | null>(null)   // which child is shown
   const [requesting, setRequesting] = useState(false)
   const [openScript, setOpenScript] = useState<string | null>(null)   // story id whose script is shown
   const [playing,    setPlaying]    = useState<string | null>(null)   // story id whose player is shown
@@ -24,12 +25,19 @@ export default function LibraryPage() {
   const [reportBusy, setReportBusy] = useState(false)
   const [reportMsg,  setReportMsg]  = useState<string | null>(null)
 
-  const load = () => fetch('/api/library').then(r => r.json()).then(setData).finally(() => setLoading(false))
+  const load = () => fetch('/api/library').then(r => r.json()).then((d: LibData) => {
+    setData(d)
+    setSelectedId(prev => prev && d.children?.some(c => c.id === prev) ? prev : (d.children?.[0]?.id ?? null))
+  }).finally(() => setLoading(false))
   useEffect(() => { load() }, [])
 
-  const requestNext = async () => {
+  const requestNext = async (childId: string) => {
     setRequesting(true)
-    const res  = await fetch('/api/story/next', { method: 'POST' })
+    const res  = await fetch('/api/story/next', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ childId }),
+    })
     const body = await res.json()
     if (body.ok) load()
     else alert(body.error ?? 'Something went wrong')
@@ -59,7 +67,7 @@ export default function LibraryPage() {
   const fmtDate = (iso: string) =>
     new Date(iso).toLocaleDateString(undefined, { weekday: 'long', month: 'short', day: 'numeric' })
 
-  const SKIN_EMOJI: Record<string,string> = { sea:'🐬', space:'🤖', forest:'🦊', castle:'🐉' }
+  const SKIN_EMOJI: Record<string,string> = { sea:'🐬', space:'🤖', forest:'🦊', castle:'🐉', dino:'🦕', jungle:'🐯' }
 
   if (loading) return (
     <div style={{ minHeight:'100vh', display:'grid', placeItems:'center', background:'#FBF4E6', color:'#5d5278', fontSize:'16px' }}>
@@ -67,7 +75,12 @@ export default function LibraryPage() {
     </div>
   )
 
-  const { profile, stories = [], nextLevel, nextAvailableAt, canRequestNext = true } = data ?? {}
+  const children = data?.children ?? []
+  const child    = children.find(c => c.id === selectedId) ?? children[0] ?? null
+  const stories         = child?.stories ?? []
+  const nextLevel       = child?.nextLevel ?? null
+  const nextAvailableAt = child?.nextAvailableAt ?? null
+  const canRequestNext  = child?.canRequestNext ?? true
 
   const actionBtn = {
     display:'inline-flex', alignItems:'center', gap:'5px', background:'#F4E9D4', border:'none',
@@ -83,11 +96,11 @@ export default function LibraryPage() {
           <div>
             <p style={{ fontSize:'12px', letterSpacing:'1.5px', textTransform:'uppercase', color:'#FFD27A', fontWeight:800, marginBottom:'4px' }}>Good evening 🌙</p>
             <h1 style={{ fontFamily:'var(--font-fraunces)', fontSize:'26px' }}>
-              {profile?.name ? `${profile.name}'s Library` : 'Your Library'}
+              {child?.name ? `${child.name}'s Library` : 'Your Library'}
             </h1>
-            {profile && (
+            {child && (
               <p style={{ color:'#dccffa', marginTop:'4px', fontSize:'14px' }}>
-                Level {profile.currentLevel} of {profile.totalLevels} · {profile.subjectSlug} path
+                Level {child.currentLevel} of {child.totalLevels} · {child.subjectSlug} path
               </p>
             )}
           </div>
@@ -99,6 +112,19 @@ export default function LibraryPage() {
       </header>
 
       <div style={{ maxWidth:'720px', margin:'0 auto', padding:'24px' }}>
+        {/* Child switcher — one subscription, all your kids */}
+        {children.length > 1 && (
+          <div style={{ display:'flex', gap:'8px', flexWrap:'wrap', marginBottom:'18px' }}>
+            {children.map(c => (
+              <button key={c.id} onClick={() => setSelectedId(c.id)} aria-pressed={c.id === child?.id}
+                style={{ padding:'8px 14px', borderRadius:'99px', border:`1.5px solid ${c.id===child?.id?'#F4A93C':'#e0d2b7'}`, background: c.id===child?.id?'#fff7ea':'#fff', cursor:'pointer', fontSize:'13.5px', fontWeight:700, color:'#211a3a' }}>
+                {c.name || 'Child'}{c.nextLevel && c.canRequestNext ? ' ●' : ''}
+              </button>
+            ))}
+            <a href="/account" style={{ padding:'8px 14px', borderRadius:'99px', border:'1.5px dashed #cdbf9f', background:'transparent', fontSize:'13.5px', fontWeight:700, color:'#5d5278', textDecoration:'none' }}>＋ Add child</a>
+          </div>
+        )}
+
         {/* Next story CTA — gated to one story every 3 days */}
         {nextLevel && (
           <div style={{ background:'linear-gradient(135deg,#241a52,#3a2470)', borderRadius:'18px', padding:'18px', marginBottom:'18px', display:'flex', alignItems:'center', gap:'14px', color:'#fff', flexWrap:'wrap' }}>
@@ -114,7 +140,7 @@ export default function LibraryPage() {
               </div>
             </div>
             {canRequestNext ? (
-              <button onClick={requestNext} disabled={requesting} aria-label={`Request level ${nextLevel}`}
+              <button onClick={() => child && requestNext(child.id)} disabled={requesting} aria-label={`Request level ${nextLevel}`}
                 style={{ padding:'11px 18px', background:'linear-gradient(135deg,#FFD27A,#E0852A)', color:'#3a230a', fontWeight:700, border:'none', borderRadius:'12px', cursor: requesting ? 'not-allowed' : 'pointer', fontSize:'14px', opacity: requesting ? .7 : 1, flexShrink:0 }}>
                 {requesting ? '…' : 'Get next story →'}
               </button>

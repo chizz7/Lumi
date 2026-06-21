@@ -1,16 +1,20 @@
 // app/api/account/route.ts
-// GET    /api/account  — return the parent's account + profile
-// PATCH  /api/account  — update the child profile (name, age band, world, voice)
+// GET    /api/account  — return the parent's account + all child profiles
+// POST   /api/account  — add another child (one subscription covers the family)
+// PATCH  /api/account  — update a child profile by childId (name, age, world, voice)
 // DELETE /api/account  — delete everything (requires X-Confirm-Delete: DELETE header)
 
 import { NextRequest, NextResponse } from 'next/server'
 import { serverClient, adminClient } from '@/lib/supabase'
 import { cancelSubscription }        from '@/lib/stripe'
 import { track }                     from '@/lib/analytics'
-import { getAllSkins }               from '@/content'
+import { getAllSkins, getAllSubjectSlugs } from '@/content'
 import { getVoicesForLang }          from '@/lib/voices'
 
 const AGE_BANDS = ['3-4', '5-6', '7-8']
+const MAX_CHILDREN = 6   // one subscription covers the whole family; cap to prevent abuse
+
+const PROFILE_COLS = 'id, name, age_band, skin_slug, subject_slug, voice_id, current_level'
 
 export async function GET(req: NextRequest) {
   const supabase = await serverClient()
@@ -18,9 +22,53 @@ export async function GET(req: NextRequest) {
   if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
 
   const { data: account } = await supabase.from('accounts').select('email, plan, created_at').eq('id', user.id).single()
-  const { data: profile } = await supabase.from('child_profiles').select('name, age_band, skin_slug, subject_slug, voice_id, current_level').eq('account_id', user.id).single()
+  const { data: profiles } = await supabase
+    .from('child_profiles').select(PROFILE_COLS)
+    .eq('account_id', user.id)
+    .order('created_at', { ascending: true })
 
-  return NextResponse.json({ account, profile })
+  return NextResponse.json({ account, profiles: profiles ?? [] })
+}
+
+// POST — add another child (one subscription covers all of them).
+export async function POST(req: NextRequest) {
+  const supabase = await serverClient()
+  const { data: { user } } = await supabase.auth.getUser()
+  if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+
+  let body: { name?: string; ageBand?: string; skinSlug?: string; subjectSlug?: string; voiceId?: string; interestSlug?: string }
+  try { body = await req.json() } catch { return NextResponse.json({ error: 'Invalid JSON' }, { status: 400 }) }
+
+  const name = (body.name ?? '').trim().slice(0, 50)
+  if (!name)                                              return NextResponse.json({ error: 'Name is required' }, { status: 422 })
+  if (!body.ageBand || !AGE_BANDS.includes(body.ageBand)) return NextResponse.json({ error: 'Invalid age band' }, { status: 422 })
+  if (!body.subjectSlug || !getAllSubjectSlugs().includes(body.subjectSlug)) return NextResponse.json({ error: 'Unknown subject' }, { status: 422 })
+  if (!body.skinSlug || !getAllSkins(body.subjectSlug).some(s => s.slug === body.skinSlug)) return NextResponse.json({ error: 'Unknown world' }, { status: 422 })
+  if (!body.voiceId || !getVoicesForLang('en').some(v => v.id === body.voiceId)) return NextResponse.json({ error: 'Unknown voice' }, { status: 422 })
+
+  const { count } = await supabase.from('child_profiles').select('id', { count: 'exact', head: true }).eq('account_id', user.id)
+  if ((count ?? 0) >= MAX_CHILDREN) return NextResponse.json({ error: `You can add up to ${MAX_CHILDREN} children.` }, { status: 422 })
+
+  const { data: profile, error } = await supabase
+    .from('child_profiles')
+    .insert({
+      account_id:   user.id,
+      name,
+      age_band:     body.ageBand,
+      skin_slug:    body.skinSlug,
+      subject_slug: body.subjectSlug,
+      voice_id:     body.voiceId,
+      interest_slug: body.interestSlug ?? null,
+      current_level: 1,
+    })
+    .select(PROFILE_COLS)
+    .single()
+
+  if (error) {
+    console.error('[account.post] create child failed:', error.message)
+    return NextResponse.json({ error: 'Could not add child' }, { status: 500 })
+  }
+  return NextResponse.json({ ok: true, profile })
 }
 
 export async function PATCH(req: NextRequest) {
@@ -28,13 +76,16 @@ export async function PATCH(req: NextRequest) {
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
 
-  let body: { name?: string; ageBand?: string; skinSlug?: string; voiceId?: string }
+  let body: { childId?: string; name?: string; ageBand?: string; skinSlug?: string; voiceId?: string }
   try { body = await req.json() } catch { return NextResponse.json({ error: 'Invalid JSON' }, { status: 400 }) }
 
-  // Need the profile's subject to validate the chosen world.
+  if (!body.childId) return NextResponse.json({ error: 'childId is required' }, { status: 400 })
+
+  // Fetch the target child, scoped to this account (also gives us the subject to
+  // validate the chosen world).
   const { data: current } = await supabase
-    .from('child_profiles').select('subject_slug').eq('account_id', user.id).single()
-  if (!current) return NextResponse.json({ error: 'No profile found' }, { status: 404 })
+    .from('child_profiles').select('subject_slug').eq('id', body.childId).eq('account_id', user.id).single()
+  if (!current) return NextResponse.json({ error: 'No such child' }, { status: 404 })
 
   const updates: Record<string, string> = {}
 
@@ -65,8 +116,9 @@ export async function PATCH(req: NextRequest) {
   const { data: profile, error } = await supabase
     .from('child_profiles')
     .update(updates)
+    .eq('id', body.childId)
     .eq('account_id', user.id)
-    .select('name, age_band, skin_slug, subject_slug, voice_id, current_level')
+    .select(PROFILE_COLS)
     .single()
 
   if (error) {

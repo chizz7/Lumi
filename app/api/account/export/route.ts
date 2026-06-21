@@ -8,21 +8,22 @@ export async function GET(req: NextRequest) {
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
 
-  // account + profile can be fetched together; stories depend on the profile id.
-  const [{ data: account }, { data: profile }] = await Promise.all([
+  // account + all children; stories depend on each child's id.
+  const [{ data: account }, { data: profiles }] = await Promise.all([
     supabase.from('accounts').select('email, plan, created_at').eq('id', user.id).single(),
-    supabase.from('child_profiles').select('id, name, age_band, skin_slug, subject_slug, voice_id, current_level').eq('account_id', user.id).single(),
+    supabase.from('child_profiles').select('id, name, age_band, skin_slug, subject_slug, voice_id, current_level, interest_slug').eq('account_id', user.id),
   ])
 
-  const { data: stories } = profile
-    ? await supabase.from('story_instances').select('level_ordinal, subject_slug, skin_slug, delivered_at').eq('profile_id', profile.id)
-    : { data: [] }
+  const childProfiles = await Promise.all((profiles ?? []).map(async profile => {
+    const { data: stories } = await supabase
+      .from('story_instances').select('level_ordinal, subject_slug, skin_slug, delivered_at').eq('profile_id', profile.id)
+    return { ...profile, storiesDelivered: stories ?? [] }
+  }))
 
   const bundle = {
     exportedAt: new Date().toISOString(),
     account:    { email: account?.email, plan: account?.plan, createdAt: account?.created_at },
-    childProfile: profile,
-    storiesDelivered: stories ?? [],
+    childProfiles,
     note: "This is all data Lumi holds about you. No behavioural tracking, no location, no birthdate.",
   }
 
