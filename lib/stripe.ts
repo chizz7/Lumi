@@ -31,12 +31,15 @@ export function constructWebhookEvent(
 // Create a Checkout Session for Story Club.
 // Draft state is embedded in metadata so the webhook can reconstruct it
 // without a server-side session store.
+// Embedded Checkout: returns a client_secret the browser mounts in-page, so the
+// parent never leaves the funnel. Stripe redirects to return_url only AFTER the
+// payment succeeds (the /welcome confirmation).
 export async function createCheckoutSession(opts: {
   draftJson:  string   // JSON.stringify(draft)
-  successUrl: string
-  cancelUrl:  string
-}): Promise<string> {
+  returnUrl:  string   // hit after a successful payment; include {CHECKOUT_SESSION_ID}
+}): Promise<string> {  // returns the session client_secret
   const session = await stripe.checkout.sessions.create({
+    ui_mode:              'embedded',
     mode:                 'subscription',
     payment_method_types: ['card'],
     line_items: [{ price: process.env.STRIPE_PRICE_ID!, quantity: 1 }],
@@ -45,14 +48,13 @@ export async function createCheckoutSession(opts: {
       metadata: { draft: opts.draftJson },
     },
     metadata:    { draft: opts.draftJson },     // also on the session for webhook
-    success_url: opts.successUrl,
-    cancel_url:  opts.cancelUrl,
+    return_url:  opts.returnUrl,
     // Ask Stripe to collect email so it's available in the webhook
     billing_address_collection: 'auto',
   })
 
-  if (!session.url) throw new Error('Stripe did not return a checkout URL')
-  return session.url
+  if (!session.client_secret) throw new Error('Stripe did not return a client secret')
+  return session.client_secret
 }
 
 // Issue a credit to a customer's balance (used when a story is reported)

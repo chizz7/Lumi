@@ -9,7 +9,13 @@
 //   - Waitlist form submission
 
 import { useState, useRef } from 'react'
+import { loadStripe }                    from '@stripe/stripe-js'
+import { EmbeddedCheckoutProvider, EmbeddedCheckout } from '@stripe/react-stripe-js'
 import type { VoiceConfig }              from '@/lib/voices'
+
+// Embedded Checkout keeps payment inside the funnel. Created once at module load.
+const STRIPE_PK = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
+const stripePromise = STRIPE_PK ? loadStripe(STRIPE_PK) : null
 import { getAllLevels }                  from '@/content'
 import { interestForWorld }              from '@/content/interests'
 
@@ -107,6 +113,9 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
   const [leadEmail, setLeadEmail]     = useState('')
   const [leadDone,  setLeadDone]      = useState(false)
   const [leadError, setLeadError]     = useState(false)
+  // Embedded Stripe checkout (mounts in-modal; null until "Start Story Club").
+  const [checkoutSecret,  setCheckoutSecret]  = useState<string | null>(null)
+  const [checkoutLoading, setCheckoutLoading] = useState(false)
 
   const unlockStory = () => {
     const email = leadEmail.trim().toLowerCase()
@@ -180,12 +189,19 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
   }
 
   // ── Builder submit ─────────────────────────────────────────────────────────
-  const openBuilder = () => { setOverlayOpen(true); setBuilderStep(1); setPreview(null); setLeadDone(false); setLeadEmail(''); setLeadError(false) }
+  const openBuilder = () => { setOverlayOpen(true); setBuilderStep(1); setPreview(null); setLeadDone(false); setLeadEmail(''); setLeadError(false); setCheckoutSecret(null) }
+  // Fetch a client_secret and mount Embedded Checkout in the modal — no redirect.
   const startCheckout = async () => {
-    await saveDraft()
-    const res  = await fetch('/api/checkout', { method: 'POST' })
-    const data = await res.json()
-    if (data.url) window.location.href = data.url
+    if (checkoutLoading) return
+    setCheckoutLoading(true)
+    try {
+      await saveDraft()
+      const res  = await fetch('/api/checkout', { method: 'POST' })
+      const data = await res.json()
+      if (data.clientSecret) setCheckoutSecret(data.clientSecret)
+    } finally {
+      setCheckoutLoading(false)
+    }
   }
 
   // ── FAQ items ──────────────────────────────────────────────────────────────
@@ -679,7 +695,24 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
           <div role="dialog" aria-modal="true" aria-label="Story builder" style={{ background:'#FBF4E6', borderRadius:'28px', width:'100%', maxWidth:'430px', overflow:'hidden', boxShadow:'0 24px 60px -22px rgba(8,4,28,.7)', position:'relative', maxHeight:'90vh', overflowY:'auto' }}>
             <button onClick={() => setOverlayOpen(false)} style={{ position:'absolute', top:'14px', right:'14px', zIndex:90, width:'34px', height:'34px', borderRadius:'50%', border:'none', background:'rgba(0,0,0,.18)', color:'#fff', cursor:'pointer', fontSize:'16px' }} aria-label="Close builder">✕</button>
 
-            {/* Progress (hidden on the preview screen) */}
+            {/* ── Embedded Stripe Checkout — payment happens in-funnel ── */}
+            {checkoutSecret && (
+              <div style={{ padding:'18px' }}>
+                <button onClick={() => setCheckoutSecret(null)} style={{ background:'none', border:'none', cursor:'pointer', fontSize:'13px', color:'#5d5278', fontWeight:700, marginBottom:'10px' }}>← Back</button>
+                <div style={{ background:'#fff7ea', border:'1px solid #f1ddb6', borderRadius:'12px', padding:'10px 12px', fontSize:'12.5px', color:'#8a6a1f', marginBottom:'14px' }}>
+                  🌙 {childName ? `${childName}'s` : 'Your'} first story is free · then $9.99/mo · cancel anytime
+                </div>
+                {stripePromise ? (
+                  <EmbeddedCheckoutProvider key={checkoutSecret} stripe={stripePromise} options={{ clientSecret: checkoutSecret }}>
+                    <EmbeddedCheckout />
+                  </EmbeddedCheckoutProvider>
+                ) : (
+                  <p style={{ fontSize:'13px', color:'#c0392b', textAlign:'center', padding:'20px' }}>Payment isn't configured yet (missing Stripe publishable key).</p>
+                )}
+              </div>
+            )}
+
+            {/* Progress (hidden on the preview + checkout screens) */}
             {!preview && (
             <div style={{ display:'flex', alignItems:'center', gap:'10px', padding:'18px 18px 12px' }}>
               <button onClick={() => builderStep > 1 ? setBuilderStep(s => s-1) : setOverlayOpen(false)} style={{ background:'none', border:'none', cursor:'pointer', fontSize:'18px', color:'#211a3a', width:'34px', height:'34px', borderRadius:'10px' }} aria-label="Back">←</button>
@@ -794,7 +827,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
             )}
 
             {/* ── PREVIEW SCREEN — the personalised "moment of value" before paywall ── */}
-            {preview && (
+            {preview && !checkoutSecret && (
               <div style={{ padding:'22px' }}>
                 <div style={{ display:'flex', gap:'8px', alignItems:'center', background:'#fff7ea', border:'1px solid #f1ddb6', borderRadius:'12px', padding:'10px 12px', fontSize:'12.5px', color:'#8a6a1f', marginBottom:'16px' }}>
                   ✨ {childName ? `${childName}'s` : 'Your'} story — the opening
@@ -908,6 +941,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
               </div>
             )}
 
+            {!checkoutSecret && (
             <div style={{ padding:'14px 22px 22px', borderTop:'1px solid #ece0c8' }}>
               {!preview ? (
                 <button
@@ -930,9 +964,9 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                   </div>
                   <button
                     onClick={startCheckout}
-                    disabled={preview.loading}
+                    disabled={preview.loading || checkoutLoading}
                     style={{ width:'100%', padding:'15px', background:'linear-gradient(135deg,#FFD27A,#E0852A)', color:'#3a230a', fontWeight:700, border:'none', borderRadius:'15px', cursor: preview.loading ? 'wait' : 'pointer', fontSize:'15px', opacity: preview.loading ? .6 : 1 }}>
-                    Start Story Club — first story free →
+                    {checkoutLoading ? 'Starting…' : 'Start Story Club — first story free →'}
                   </button>
                   <p style={{ fontSize:'11.5px', color:'#5d5278', textAlign:'center', margin:'9px 0 0', lineHeight:1.4 }}>
                     Then <strong>$9.99/mo</strong> · a new story every 3 days · cancel anytime
@@ -947,6 +981,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                 </button>
               )}
             </div>
+            )}
           </div>
         </div>
       )}

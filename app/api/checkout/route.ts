@@ -13,10 +13,9 @@ export async function POST(req: NextRequest) {
       { status: 400 }
     )
   }
-  const url = await createCheckoutSession({
+  const clientSecret = await createCheckoutSession({
     draftJson:  JSON.stringify(draft),
-    successUrl: `${APP_URL}/welcome?session_id={CHECKOUT_SESSION_ID}`,
-    cancelUrl:  `${APP_URL}/?cancelled=1`,
+    returnUrl:  `${APP_URL}/welcome?session_id={CHECKOUT_SESSION_ID}`,
   })
-  return NextResponse.json({ url })
+  return NextResponse.json({ clientSecret })
 }
