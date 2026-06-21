@@ -55,6 +55,14 @@ const AGE_BANDS = [
   { value: '7-8', label: '7–8' },
 ]
 
+// Social proof. ⚠ PLACEHOLDERS — replace with real, attributable parent quotes
+// before launch (and keep them honest; fabricated reviews are a legal risk).
+const TESTIMONIALS = [
+  { quote: "My 5-year-old now talks about 'saving for the big thing.' From a bedtime story. I'm not sure school did that.", author: 'Dana R.', role: 'mom of two' },
+  { quote: "Same five minutes I was spending anyway — now it's actually teaching her something. And she begs for 'the next level.'", author: 'Marcus T.', role: 'dad' },
+  { quote: "The voices are lovely and the stories are genuinely calming. It's the only screen-free thing my son asks for at night.", author: 'Priya N.', role: 'mom' },
+]
+
 // ─── Main component ───────────────────────────────────────────────────────────
 
 export default function LandingClient({ lang, strings, voices, showLangBanner, langName, cancelled, authError }: Props) {
@@ -546,11 +554,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
             <p style={{ fontSize:'12.5px', letterSpacing:'1.8px', textTransform:'uppercase', color:'#E0852A', fontWeight:800 }}>{t('testimonials.kicker')}</p>
             <h2 id="testimonials-heading" style={{ fontFamily:'var(--font-fraunces)', fontSize:'clamp(26px,3vw,36px)', marginBottom:'40px' }}>{t('testimonials.title')}</h2>
             <div style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:'22px' }}>
-              {[
-                { quote:"My 5-year-old now talks about 'saving for the big thing.' From a bedtime story. I'm not sure school did that.", author:'Dana R.', role:'mom of two' },
-                { quote:"Same five minutes I was spending anyway — now it's actually teaching her something. And she begs for 'the next level.'", author:'Marcus T.', role:'dad' },
-                { quote:"The voices are lovely and the stories are genuinely calming. It's the only screen-free thing my son asks for at night.", author:'Priya N.', role:'mom' },
-              ].map((t2, i) => (
+              {TESTIMONIALS.map((t2, i) => (
                 <div key={i} style={{ background:'#fff', border:'1px solid #ece0c8', borderRadius:'20px', padding:'24px', boxShadow:'0 10px 30px -14px rgba(8,4,28,.35)' }}>
                   <div style={{ color:'#F4A93C', letterSpacing:'2px', fontSize:'15px', marginBottom:'12px' }}>★★★★★</div>
                   <p style={{ fontSize:'15px', lineHeight:1.6, color:'#211a3a', marginBottom:'16px' }}>"{t2.quote}"</p>
@@ -717,9 +721,9 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
             <div style={{ display:'flex', alignItems:'center', gap:'10px', padding:'18px 18px 12px' }}>
               <button onClick={() => builderStep > 1 ? setBuilderStep(s => s-1) : setOverlayOpen(false)} style={{ background:'none', border:'none', cursor:'pointer', fontSize:'18px', color:'#211a3a', width:'34px', height:'34px', borderRadius:'10px' }} aria-label="Back">←</button>
               <div style={{ flex:1, height:'8px', background:'#e7dac0', borderRadius:'99px', overflow:'hidden' }}>
-                <div style={{ height:'100%', width:`${builderStep * 25}%`, background:'linear-gradient(90deg,#FFD27A,#E0852A)', borderRadius:'99px', transition:'width .45s' }} />
+                <div style={{ height:'100%', width:`${builderStep * 33.34}%`, background:'linear-gradient(90deg,#FFD27A,#E0852A)', borderRadius:'99px', transition:'width .45s' }} />
               </div>
-              <span style={{ fontSize:'12px', color:'#5d5278', fontWeight:700 }}>{builderStep} / 4</span>
+              <span style={{ fontSize:'12px', color:'#5d5278', fontWeight:700 }}>{builderStep} / 3</span>
             </div>
             )}
 
@@ -727,7 +731,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
             <div style={{ padding:'6px 22px 22px' }}>
               {/* Step indicator */}
               <div style={{ display:'flex', gap:'8px', alignItems:'center', background:'#fff7ea', border:'1px solid #f1ddb6', borderRadius:'12px', padding:'10px 12px', fontSize:'12.5px', color:'#8a6a1f', marginBottom:'16px' }}>
-                {['🌙 Tonight\'s lesson: saving for a goal','✨ Same lesson — their favourite world','📚 Building level by level','🔊 The right voice makes it theirs'][builderStep-1]}
+                {['🌙 Tonight\'s lesson, made for them','✨ Same lesson — their favourite world','📚 One skill per story, level by level'][builderStep-1]}
               </div>
 
               {/* Step 1: Name + Age */}
@@ -799,28 +803,6 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                       </button>
                     )
                   })}
-                </div>
-              )}
-
-              {/* Step 4: Voice */}
-              {builderStep === 4 && (
-                <div>
-                  <h2 style={{ fontFamily:'var(--font-fraunces)', fontSize:'22px', margin:'6px 0 4px' }}>Choose the voice.</h2>
-                  <p style={{ fontSize:'13.5px', color:'#5d5278', marginBottom:'18px' }}>Tap to hear the difference. Switch anytime.</p>
-                  <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'10px' }}>
-                    {voices.map((v, i) => (
-                      <button key={v.id} onClick={() => { setVoiceId(v.id); playSample(i) }} aria-pressed={voiceId===v.id}
-                        style={{ display:'flex', gap:'10px', alignItems:'center', background: voiceId===v.id?'#fff7ea':'#fff', border:`1.5px solid ${voiceId===v.id?'#F4A93C':'#e6d8bd'}`, borderRadius:'15px', padding:'12px', cursor:'pointer' }}>
-                        <span style={{ width:'36px', height:'36px', borderRadius:'50%', background:'#e7dac0', flexShrink:0, display:'grid', placeItems:'center', fontSize:'15px' }}>{sampleLoading===i ? '♪' : '▶'}</span>
-                        <div><div style={{ fontWeight:800, fontSize:'14px' }}>{v.name}</div><div style={{ fontSize:'12px', color:'#5d5278' }}>{v.tone}</div></div>
-                      </button>
-                    ))}
-                  </div>
-                  <div style={{ marginTop:'16px', background:'#fff', border:'1.5px dashed #EB8A8A', borderRadius:'17px', padding:'18px', textAlign:'center' }}>
-                    <span style={{ display:'inline-block', fontSize:'10.5px', letterSpacing:'1px', textTransform:'uppercase', fontWeight:800, color:'#fff', background:'#EB8A8A', padding:'3px 10px', borderRadius:'99px', marginBottom:'8px' }}>After sign-up</span>
-                    <h4 style={{ fontFamily:'var(--font-fraunces)', fontSize:'17px' }}>Want it in your voice?</h4>
-                    <p style={{ fontSize:'13px', color:'#5d5278', margin:'6px 0 0', lineHeight:1.45 }}>Record your own narration once your account's set up.</p>
-                  </div>
                 </div>
               )}
             </div>
@@ -945,13 +927,20 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
             <div style={{ padding:'14px 22px 22px', borderTop:'1px solid #ece0c8' }}>
               {!preview ? (
                 <button
-                  onClick={() => builderStep < 4 ? setBuilderStep(s => s+1) : generatePreview()}
+                  onClick={() => builderStep < 3 ? setBuilderStep(s => s+1) : generatePreview()}
                   disabled={builderStep === 1 && !childName.trim()}
                   style={{ width:'100%', padding:'15px', background:'linear-gradient(135deg,#FFD27A,#E0852A)', color:'#3a230a', fontWeight:700, border:'none', borderRadius:'15px', cursor: builderStep===1 && !childName.trim() ? 'not-allowed' : 'pointer', fontSize:'15px', opacity: builderStep===1 && !childName.trim() ? .6 : 1 }}>
-                  {builderStep < 4 ? 'Continue →' : 'Hear their story →'}
+                  {builderStep < 3 ? 'Continue →' : 'Hear their story →'}
                 </button>
               ) : leadDone ? (
                 <>
+                  {/* Social proof at the decision point (placeholder quote). */}
+                  <div style={{ background:'#fff', border:'1px solid #ece0c8', borderRadius:'13px', padding:'11px 13px', marginBottom:'11px' }}>
+                    <div style={{ color:'#F4A93C', letterSpacing:'2px', fontSize:'12px', marginBottom:'4px' }}>★★★★★</div>
+                    <p style={{ fontSize:'12.5px', lineHeight:1.5, color:'#211a3a', margin:0 }}>
+                      "{TESTIMONIALS[0].quote}" <span style={{ color:'#5d5278', fontWeight:600 }}>— {TESTIMONIALS[0].author}, {TESTIMONIALS[0].role}</span>
+                    </p>
+                  </div>
                   {/* Curriculum + trust mini-explainer: sells the program, not one
                       story, and surfaces the COPPA / expert-written trust levers. */}
                   <div style={{ display:'flex', gap:'6px', marginBottom:'11px' }}>
