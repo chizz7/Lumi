@@ -1,21 +1,25 @@
-# Public assets needed before launch
+# Public brand assets
 
-Add these files to this `/public` directory:
+These are **generated** from brand-accurate SVGs by `scripts/gen-brand-assets.mjs`
+(gold crescent moon on the night-sky gradient, "Lumi" serif wordmark + tagline).
 
-| File | Size | Used by |
-|------|------|---------|
-| `og-image.png` | 1200×630px | Open Graph, Twitter card |
-| `favicon.ico` | 32×32px | Browser tab |
-| `apple-touch-icon.png` | 180×180px | iOS home screen |
-| `favicon-192.png` | 192×192px | Android, web manifest |
-| `favicon-512.png` | 512×512px | PWA splash screen |
+| File | Size | Used by | Status |
+|------|------|---------|--------|
+| `og-image.png` | 1200×630 | Open Graph, Twitter card | ✅ generated |
+| `favicon.ico` | 32×32 | Browser tab | ✅ generated |
+| `apple-touch-icon.png` | 180×180 | iOS home screen | ✅ generated |
+| `favicon-192.png` | 192×192 | Android, web manifest | ✅ generated |
+| `favicon-512.png` | 512×512 | PWA splash screen | ✅ generated |
 
-## Quick start: generate from a single logo
-If you have your logo as an SVG or PNG:
-- Use https://realfavicongenerator.net (free, generates all sizes)
-- For og-image: use Figma or Canva with the 1200×630 template
-  - Background: deep purple #241a52
-  - Logo centred, tagline below: "Bedtime stories that teach."
-  - A simple illustration (the 🌙 moon + dolphin character works)
+All are referenced in `app/layout.tsx` metadata and `public/site.webmanifest`.
 
-These are all referenced in `app/layout.tsx` metadata already.
+## Regenerating
+
+```bash
+node scripts/gen-brand-assets.mjs
+```
+
+Edit the palette / motif / wordmark in that script and re-run. The wordmark uses
+DejaVu Serif as a stand-in for the Fraunces brand serif; swap in the real
+Fraunces (or a hand-designed logo) here when one is available, then regenerate.
+Palette is the brand night/gold/amber/cream from `app/globals.css`.
