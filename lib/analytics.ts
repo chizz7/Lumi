@@ -4,8 +4,13 @@
 //
 // Client-side tracking lives in app/_components/Analytics.tsx (page views).
 
-const POSTHOG_KEY = process.env.POSTHOG_KEY
-const POSTHOG_URL = process.env.POSTHOG_HOST ?? 'https://app.posthog.com'
+// PostHog uses the same project API key (phc_...) for client and server capture,
+// so fall back to the public vars. This means setting NEXT_PUBLIC_POSTHOG_KEY
+// alone is enough to light up server-side events — no separate var required,
+// while POSTHOG_KEY/POSTHOG_HOST still override if you want a distinct project.
+const POSTHOG_KEY = process.env.POSTHOG_KEY ?? process.env.NEXT_PUBLIC_POSTHOG_KEY
+const POSTHOG_URL =
+  process.env.POSTHOG_HOST ?? process.env.NEXT_PUBLIC_POSTHOG_HOST ?? 'https://app.posthog.com'
 
 export type AnalyticsEvent =
   | 'sample_played'
