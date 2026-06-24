@@ -89,7 +89,7 @@ Stories split into TWO templates per level:
 
 **Audio cache key format:** `full-money-level1-sea-af_heart-en.mp3`
 
-This means 5 levels × 4 skins × 4 voices = **80 pre-renderable files**. Run `npm run prerender` before launch.
+All 6 paths are now authored, each with 5 levels × 6 skins (sea, space, forest, castle, dino, jungle) × 4 EN voices, plus a `3-4` age variant per level and a Level-1 preview clip per skin/voice. That works out to **1,584 pre-renderable files** (1,440 full + 144 previews), ≈ **$0.97** of TTS. Run `npm run prerender` before launch (idempotent — safe to re-run). Verified via the assembler across all 720 story combinations: zero unfilled slots, no `{child_name}` in any audio template.
 
 **Assembly functions** (see `content/index.ts`):
 ```typescript
@@ -102,8 +102,8 @@ assembleStory(subjectSlug, levelOrdinal, skinSlug, childName)   // → both
 
 ## Key Files to Understand First
 
-1. `content/money/levels.ts` — The 5 story templates with `audioTemplate`, `scriptTemplate`, `summary`, `teachingNote`
-2. `content/money/skins.ts` — 4 worlds (sea, space, forest, castle) with slot values
+1. `content/money/levels.ts` — The 5 story templates with `audioTemplate`, `scriptTemplate`, `summary`, `teachingNote` (the gold-standard path; the other 5 follow the same shape)
+2. `content/money/skins.ts` — 6 worlds (sea, space, forest, castle, dino, jungle) with slot values
 3. `lib/tts.ts` — `getOrRenderAudio()` cache-first TTS pipeline
 4. `lib/stripe.ts` — Stripe singleton + `createCheckoutSession()`, `issueCredit()`, `cancelSubscription()`
 5. `app/api/webhooks/stripe/route.ts` — The most important route: creates account + delivers first story
@@ -174,7 +174,7 @@ These fields are absent by design. Any PR adding them should be rejected.
 npm run dev                  # Start dev server
 npm run db:types             # Generate TypeScript types from Supabase schema
 npm run prerender:dry        # Preview what audio files would be rendered
-npm run prerender            # Render all 96 audio files (~$0.69, ~10 min)
+npm run prerender            # Render all 1,584 audio files (~$0.97, ~20 min)
 npm run author:draft -- --subject money --level 3 --skin sea  # Draft a new level with AI
 stripe listen --forward-to localhost:3000/api/webhooks/stripe  # Local Stripe testing
 ```
@@ -184,30 +184,35 @@ stripe listen --forward-to localhost:3000/api/webhooks/stripe  # Local Stripe te
 ## Current Status
 
 ### ✅ Complete and production-ready
-- All 5 Money path levels (audioTemplate + scriptTemplate + summary + teachingNote)
-- 4 skins (sea, space, forest, castle) 
+- **All 6 paths** (Money, Focus, Resilience, Kindness, Problem Solving, Confidence) — 5 levels each, audioTemplate + scriptTemplate + summary + teachingNote. All marked `live: true` in the builder. Content-reviewed: passes slot-coverage + learning-beat-immutability checks across all 720 combinations.
+- 6 skins (sea, space, forest, castle, dino, jungle), each with a `3-4` age variant
+- Multilingual voice registry (`lib/voices.ts`) — 4 EN voices live; es/fr/pt/de/ja/zh/ko scaffolded
 - Full landing page with curriculum detail, voice switcher, story builder
-- All API routes (draft, preview, checkout, webhook, library, story/next, account, etc.)
+- All API routes (draft, preview, checkout, webhook, library, story/next, account, admin/approvals, cron/deliver, etc.)
 - Stripe full lifecycle webhook handling (new sub, cancel, payment_failed, renewal)
-- Supabase Auth + RLS policies
+- Supabase Auth + RLS policies + content-approval gating (`/admin/review`)
 - PostHog provider + server-side analytics
 - Privacy/Terms/Contact/COPPA pages
-- Pre-render script for all 96 audio files
+- Pre-render script for all 1,584 audio files
+- Brand assets generated (`scripts/gen-brand-assets.mjs` → og-image, favicons, apple-touch-icon)
 - LLM authoring script for drafting new levels
 - Sitemap + robots + SEO metadata
 
 ### ❌ Needs doing before launch
-- **Public assets**: `og-image.png` (1200×630), `favicon.ico`, `apple-touch-icon.png` — see `public/ASSETS_NEEDED.md`
+- **Webhook hardening (CRITICAL)**: `app/api/webhooks/stripe/route.ts` swallows handler failures and always returns 200, so Stripe never retries a half-failed *paid* signup, and the email-based idempotency guard then blocks manual retry. Wrap handlers in try/catch + return 5xx on unexpected errors; add an `event.id` idempotency ledger so a retry *completes* a partial signup. (See security review.)
+- **Story-report credit guard (MEDIUM)**: `app/api/story/[id]/report` has no one-credit-per-story guard — a user can re-report their own story to mint unlimited account credits. Add a `credited_at` column + ownership check.
+- **`child_profiles` RLS (MEDIUM)**: policy is self-referential with no `WITH CHECK`, so it can't gate INSERT (the app compensates with the admin client). Rewrite to `auth.uid() = account_id` with `WITH CHECK`.
 - **Legal review**: Privacy policy (COPPA requirement for children's product)
-- **Fill .env.example** with real credentials
-- **Run `npm run prerender`** to generate the 96 audio files
+- **Fill production env** (Vercel) with real credentials — incl. `CRON_SECRET` (the cron auth no-ops if unset) and the correct `NEXT_PUBLIC_APP_URL`
+- **Run `npm run prerender`** to generate the 1,584 audio files
 - **End-to-end test** with Stripe test card `4242 4242 4242 4242`
 
 ### 🔜 Post-launch (deferred)
-- Paths 2–6 (Focus, Resilience, Kindness, Problem Solving, Confidence) — use `npm run author:draft`
+- ~~Paths 2–6~~ — **done** (all 6 paths authored and live)
 - Voice cloning feature
 - Tiered subscriptions (Silver/Gold/Platinum) — schema changes documented above
-- Multiple languages (architecture already supports — add `content/money/levels.es.ts`)
+- Multiple languages — voice registry already scaffolds es/fr/pt/de/ja/zh/ko; still need translated `content/<subject>/levels.<lang>.ts` templates
+- Rate limiting on public `/api/waitlist` + `/api/lead`; constant-time HMAC compare in `lib/draft.ts` (low-severity hardening from security review)
 
 ---
 
