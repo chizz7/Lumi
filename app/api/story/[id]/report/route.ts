@@ -4,7 +4,7 @@
 // Issues an account credit automatically — no support ticket needed.
 
 import { NextRequest, NextResponse } from 'next/server'
-import { serverClient }               from '@/lib/supabase'
+import { serverClient, adminClient }  from '@/lib/supabase'
 import { issueCredit }               from '@/lib/stripe'
 import { track }                     from '@/lib/analytics'
 
@@ -36,16 +36,24 @@ export async function POST(
     return NextResponse.json({ error: 'Invalid reason' }, { status: 422 })
   }
 
-  // Verify this story belongs to this user
+  // Verify this story belongs to this user. The RLS SELECT policy on
+  // story_instances scopes this to the user's own stories, so a foreign id
+  // simply returns nothing. Also read credited_at for the one-credit guard.
   const { data: story } = await supabase
     .from('story_instances')
-    .select('id, profile_id, subject_slug, level_ordinal')
+    .select('id, profile_id, subject_slug, level_ordinal, credited_at')
     .eq('id', storyId)
     .single()
 
   if (!story) {
     return NextResponse.json({ error: 'Story not found' }, { status: 404 })
   }
+
+  // Record the report for the content-review queue (audit trail).
+  await adminClient
+    .from('story_instances')
+    .update({ reported_at: new Date().toISOString(), report_reason: reason })
+    .eq('id', story.id)
 
   // Get account for Stripe customer ID
   const { data: account } = await supabase
@@ -54,20 +62,34 @@ export async function POST(
     .eq('id', user.id)
     .single()
 
-  // Issue credit if they have a Stripe customer ID
+  // Issue AT MOST ONE credit per story, ever. Claim credited_at atomically
+  // (only-if-null) via the service-role client so re-reporting the same story —
+  // or concurrent duplicate requests — can't mint multiple $9.99 credits.
+  // Roll the claim back if Stripe rejects it, so a real failure can be retried.
   let creditIssued = false
-  if (account?.stripe_customer_id) {
-    try {
-      await issueCredit(account.stripe_customer_id, 999, `Story report: ${reason}`)
-      creditIssued = true
-    } catch (err) {
-      console.error('[report] credit issue failed:', err)
-      // Non-fatal — still acknowledge the report
+  if (account?.stripe_customer_id && !story.credited_at) {
+    const { data: claimed } = await adminClient
+      .from('story_instances')
+      .update({ credited_at: new Date().toISOString() })
+      .eq('id', story.id)
+      .is('credited_at', null)
+      .select('id')
+      .maybeSingle()
+
+    if (claimed) {
+      try {
+        await issueCredit(account.stripe_customer_id, 999, `Story report: ${reason}`)
+        creditIssued = true
+      } catch (err) {
+        console.error('[report] credit issue failed, rolling back claim:', err)
+        await adminClient
+          .from('story_instances')
+          .update({ credited_at: null })
+          .eq('id', story.id)
+      }
     }
   }
 
-  // Audit log for the content-review queue. (A reported_at/report_reason column
-  // on story_instances is a planned follow-up; until then we log + track.)
   console.log(`[report] story=${storyId} reason=${reason} user=${user.id} credit=${creditIssued}`)
 
   track('story_reported', {

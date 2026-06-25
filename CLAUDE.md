@@ -197,11 +197,9 @@ stripe listen --forward-to localhost:3000/api/webhooks/stripe  # Local Stripe te
 - Brand assets generated (`scripts/gen-brand-assets.mjs` → og-image, favicons, apple-touch-icon)
 - LLM authoring script for drafting new levels
 - Sitemap + robots + SEO metadata
+- **Security hardening (migration `005`)**: Stripe webhook now has an `event.id` idempotency ledger (`processed_webhook_events`) + try/catch returning 5xx so Stripe retries a half-failed paid signup, and `handleNewSubscriber` is resumable so the retry *completes* it. Story-report mints at most one credit per story (`story_instances.credited_at`, claimed atomically). `child_profiles` RLS rewritten to `auth.uid() = account_id` WITH CHECK.
 
 ### ❌ Needs doing before launch
-- **Webhook hardening (CRITICAL)**: `app/api/webhooks/stripe/route.ts` swallows handler failures and always returns 200, so Stripe never retries a half-failed *paid* signup, and the email-based idempotency guard then blocks manual retry. Wrap handlers in try/catch + return 5xx on unexpected errors; add an `event.id` idempotency ledger so a retry *completes* a partial signup. (See security review.)
-- **Story-report credit guard (MEDIUM)**: `app/api/story/[id]/report` has no one-credit-per-story guard — a user can re-report their own story to mint unlimited account credits. Add a `credited_at` column + ownership check.
-- **`child_profiles` RLS (MEDIUM)**: policy is self-referential with no `WITH CHECK`, so it can't gate INSERT (the app compensates with the admin client). Rewrite to `auth.uid() = account_id` with `WITH CHECK`.
 - **Legal review**: Privacy policy (COPPA requirement for children's product)
 - **Fill production env** (Vercel) with real credentials — incl. `CRON_SECRET` (the cron auth no-ops if unset) and the correct `NEXT_PUBLIC_APP_URL`
 - **Run `npm run prerender`** to generate the 1,584 audio files

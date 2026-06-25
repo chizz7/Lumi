@@ -30,7 +30,19 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Invalid signature' }, { status: 400 })
   }
 
-  switch (event.type) {
+  // Idempotency ledger: if we've already fully processed this event, ack and stop.
+  // (Stripe may legitimately deliver the same event more than once.)
+  const { data: alreadyProcessed } = await adminClient
+    .from('processed_webhook_events')
+    .select('event_id')
+    .eq('event_id', event.id)
+    .maybeSingle()
+  if (alreadyProcessed) {
+    return NextResponse.json({ received: true, idempotent: true })
+  }
+
+  try {
+    switch (event.type) {
 
     // ── 1. New subscriber ────────────────────────────────────────────────────
     case 'checkout.session.completed': {
@@ -86,70 +98,115 @@ export async function POST(req: NextRequest) {
       }
       break
     }
+    }
+  } catch (err) {
+    // Unexpected failure mid-handler. Return 5xx so Stripe RETRIES — we must never
+    // silently drop a paid signup. The event is NOT recorded as processed, and
+    // every handler is idempotent, so the retry resumes/completes the work.
+    console.error(`[webhook] ${event.type} (${event.id}) failed:`, (err as Error).message)
+    return NextResponse.json({ error: 'Handler failed' }, { status: 500 })
   }
+
+  // Mark processed only after the handler succeeded.
+  const { error: ledgerErr } = await adminClient
+    .from('processed_webhook_events')
+    .insert({ event_id: event.id, type: event.type })
+  if (ledgerErr) console.warn('[webhook] ledger insert failed (non-fatal):', ledgerErr.message)
 
   return NextResponse.json({ received: true })
 }
 
 // ─── New subscriber handler ────────────────────────────────────────────────────
 
+// Idempotent + resumable: each step checks for / reuses what a prior (possibly
+// failed) attempt created, so a Stripe retry COMPLETES a half-done signup rather
+// than being blocked. Any unexpected failure throws → caller returns 5xx → retry.
 async function handleNewSubscriber(session: Stripe.Checkout.Session) {
   const email    = session.customer_email ?? session.customer_details?.email
   const draftStr = session.metadata?.draft
 
   if (!email || !draftStr) {
+    // Unrecoverable bad input — retrying won't help. Ack so Stripe stops.
     console.error('[webhook] missing email or draft', session.id)
     return
   }
 
   const draft = JSON.parse(draftStr) as Draft
 
-  // Idempotency guard
-  const { data: existing } = await adminClient
+  // 1. Find-or-create the auth user + account.
+  let userId: string
+  const { data: existingAccount } = await adminClient
     .from('accounts').select('id').eq('email', email).maybeSingle()
-  if (existing) {
-    console.log('[webhook] account already exists, skipping:', email)
-    return
-  }
 
-  // Create Supabase Auth user
-  const { data: authData, error: authErr } = await adminClient.auth.admin.createUser({
-    email,
-    email_confirm: true,
-  })
-  if (authErr || !authData.user) {
-    console.error('[webhook] auth user creation failed:', authErr?.message)
-    return
-  }
-  const userId = authData.user.id
-
-  // Persist account + profile
-  await adminClient.from('accounts').insert({
-    id:                 userId,
-    email,
-    stripe_customer_id: session.customer as string,
-    plan:               'club',
-  })
-
-  const { data: profile } = await adminClient
-    .from('child_profiles')
-    .insert({
-      account_id:    userId,
-      name:          draft.childName,
-      age_band:      draft.ageBand,
-      skin_slug:     draft.skinSlug,
-      subject_slug:  draft.subjectSlug,
-      voice_id:      draft.voiceId,
-      interest_slug: draft.interestSlug ?? null,
-      current_level: 1,
+  if (existingAccount) {
+    userId = existingAccount.id
+  } else {
+    const { data: authData, error: authErr } = await adminClient.auth.admin.createUser({
+      email,
+      email_confirm: true,
     })
-    .select().single()
+    if (authData?.user) {
+      userId = authData.user.id
+    } else {
+      // The user may have been created on a prior partial attempt (account
+      // insert then failed). Recover the id instead of looping on a 5xx.
+      const recoveredId = await findAuthUserIdByEmail(email)
+      if (!recoveredId) throw new Error(`auth user creation failed: ${authErr?.message ?? 'unknown'}`)
+      userId = recoveredId
+    }
+    const { error: accErr } = await adminClient.from('accounts').upsert({
+      id:                 userId,
+      email,
+      stripe_customer_id: session.customer as string,
+      plan:               'club',
+    }, { onConflict: 'id' })
+    if (accErr) throw new Error(`account upsert failed: ${accErr.message}`)
+  }
 
-  if (!profile) { console.error('[webhook] profile insert failed'); return }
+  // 2. Ensure the child profile exists (first profile for this account).
+  const { data: existingProfiles } = await adminClient
+    .from('child_profiles').select('*')
+    .eq('account_id', userId)
+    .order('created_at', { ascending: true })
+    .limit(1)
+  let profile = existingProfiles?.[0]
 
-  // Deliver the first story (Level 1) via the shared, idempotent pipeline.
+  if (!profile) {
+    const { data: inserted, error: profErr } = await adminClient
+      .from('child_profiles')
+      .insert({
+        account_id:    userId,
+        name:          draft.childName,
+        age_band:      draft.ageBand,
+        skin_slug:     draft.skinSlug,
+        subject_slug:  draft.subjectSlug,
+        voice_id:      draft.voiceId,
+        interest_slug: draft.interestSlug ?? null,
+        current_level: 1,
+      })
+      .select().single()
+    if (profErr || !inserted) throw new Error(`profile insert failed: ${profErr?.message ?? 'unknown'}`)
+    profile = inserted
+  }
+
+  // 3. Deliver the first story via the shared, idempotent pipeline (safe to
+  //    re-run — it no-ops if this level was already delivered).
   await deliverNextStory(profile, email, userId)
 
   track('subscription_started', { subjectSlug: draft.subjectSlug, skinSlug: draft.skinSlug }, userId)
-  console.log(`[webhook] delivered level 1 to ${email}`)
+  console.log(`[webhook] level 1 ensured for ${email}`)
+}
+
+// supabase-js admin has no get-by-email; page through (bounded) to recover a
+// user created on a prior partial webhook attempt. Fine at pre-launch scale.
+async function findAuthUserIdByEmail(email: string): Promise<string | null> {
+  const target = email.toLowerCase()
+  for (let page = 1; page <= 10; page++) {
+    const { data, error } = await adminClient.auth.admin.listUsers({ page, perPage: 1000 })
+    if (error || !data?.users?.length) break
+    const match = data.users.find(u => u.email?.toLowerCase() === target)
+    if (match) return match.id
+    if (data.users.length < 1000) break
+  }
+  return null
 }
