@@ -78,15 +78,16 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
   const [childName,   setChildName]       = useState('')
   const [ageBand,     setAgeBand]         = useState('5-6')
   const [skinSlug,    setSkinSlug]        = useState('sea')
-  const [subjectSlug, setSubjectSlug]     = useState('money')
+  const [subjectSlug, setSubjectSlug]     = useState('kindness')
   const [voiceId,     setVoiceId]         = useState(voices[0]?.id ?? 'af_heart')
-  const [activePath,  setActivePath]      = useState<string>('money')
+  const [activePath,  setActivePath]      = useState<string>('kindness')
   const [activeVoice, setActiveVoice]     = useState(0)
   const [langBanner,  setLangBanner]      = useState(showLangBanner)
   const [waitlistEmail, setWaitlistEmail] = useState('')
   const [waitlistDone,  setWaitlistDone]  = useState(false)
   const [waitlistLoading, setWaitlistLoading] = useState(false)
   const [faqOpen,     setFaqOpen]         = useState<number | null>(null)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   // ── Audio sampler (hero + voice switcher) ───────────────────────────────────
   const sampleAudioRef = useRef<HTMLAudioElement>(null)
@@ -295,34 +296,53 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
 
       {/* ─────────────── HEADER ─────────────── */}
       <header id="top" style={{ position:'sticky', top:0, zIndex:100, background:'rgba(22,18,58,.9)', backdropFilter:'blur(12px)', borderBottom:'1px solid rgba(255,255,255,.1)' }}>
-        <div style={{ maxWidth:'1140px', margin:'0 auto', padding:'0 24px', height:'68px', display:'flex', alignItems:'center', justifyContent:'space-between', gap:'16px' }}>
-          <a href="/" aria-label="Lumi home" style={{ display:'flex', alignItems:'center', gap:'8px', fontFamily:'var(--font-fraunces)', fontWeight:600, fontSize:'20px', color:'#fff', textDecoration:'none' }}>
+        <div className="mx-auto max-w-[1140px] px-6 h-[68px] flex items-center justify-between gap-4">
+          <a href="/" aria-label="Lumi home" className="flex items-center gap-2 text-white no-underline" style={{ fontFamily:'var(--font-fraunces)', fontWeight:600, fontSize:'20px' }}>
             <span style={{ fontSize:'22px' }}>🌙</span> Lumi
           </a>
-          <nav aria-label="Main navigation" style={{ display:'flex', gap:'24px', alignItems:'center' }}>
+          {/* Desktop nav — hidden on mobile */}
+          <nav aria-label="Main navigation" className="hidden md:flex gap-6 items-center">
             {['how','curriculum','voices','pricing'].map(k => (
-              <a key={k} href={`#${k}`} style={{ color:'#e9e0f7', fontSize:'14.5px', fontWeight:600, textDecoration:'none', opacity:.9 }}>{t(`nav.${k}`)}</a>
+              <a key={k} href={`#${k}`} className="no-underline font-semibold opacity-90" style={{ color:'#e9e0f7', fontSize:'14.5px' }}>{t(`nav.${k}`)}</a>
             ))}
           </nav>
-          <div style={{ display:'flex', alignItems:'center', gap:'16px' }}>
-            <a href="/login" style={{ color:'#e9e0f7', fontSize:'14.5px', fontWeight:600, textDecoration:'none' }}>{t('nav.login')}</a>
-            <button onClick={openBuilder} style={{ padding:'11px 20px', background:'linear-gradient(135deg,#FFD27A,#E0852A)', color:'#3a230a', fontWeight:700, border:'none', borderRadius:'13px', cursor:'pointer', fontSize:'14px', boxShadow:'0 10px 22px -8px rgba(244,169,60,.7)' }}>
+          <div className="hidden md:flex items-center gap-4">
+            <a href="/login" className="no-underline font-semibold" style={{ color:'#e9e0f7', fontSize:'14.5px' }}>{t('nav.login')}</a>
+            <button onClick={openBuilder} className="cursor-pointer font-bold border-0 rounded-[13px]" style={{ padding:'11px 20px', background:'linear-gradient(135deg,#FFD27A,#E0852A)', color:'#3a230a', fontSize:'14px', boxShadow:'0 10px 22px -8px rgba(244,169,60,.7)' }}>
               {t('nav.cta')}
             </button>
           </div>
+          {/* Mobile hamburger — hidden on desktop */}
+          <button onClick={() => setMobileMenuOpen(o => !o)} aria-label="Menu" aria-expanded={mobileMenuOpen}
+            className="md:hidden flex items-center justify-center cursor-pointer border-0 rounded-[10px]"
+            style={{ width:'40px', height:'40px', background:'rgba(255,255,255,.12)', color:'#fff', fontSize:'18px' }}>
+            {mobileMenuOpen ? '✕' : '☰'}
+          </button>
         </div>
+        {/* Mobile menu panel */}
+        {mobileMenuOpen && (
+          <nav aria-label="Mobile navigation" className="md:hidden flex flex-col px-6 pb-4" style={{ borderTop:'1px solid rgba(255,255,255,.1)' }}>
+            {['how','curriculum','voices','pricing'].map(k => (
+              <a key={k} href={`#${k}`} onClick={() => setMobileMenuOpen(false)} className="no-underline font-semibold py-3" style={{ color:'#e9e0f7', fontSize:'15px', borderBottom:'1px solid rgba(255,255,255,.07)' }}>{t(`nav.${k}`)}</a>
+            ))}
+            <a href="/login" onClick={() => setMobileMenuOpen(false)} className="no-underline font-semibold py-3" style={{ color:'#e9e0f7', fontSize:'15px' }}>{t('nav.login')}</a>
+            <button onClick={() => { setMobileMenuOpen(false); openBuilder() }} className="cursor-pointer font-bold border-0 rounded-[13px] mt-2 py-3" style={{ background:'linear-gradient(135deg,#FFD27A,#E0852A)', color:'#3a230a', fontSize:'15px' }}>
+              {t('nav.cta')}
+            </button>
+          </nav>
+        )}
       </header>
 
       <main id="main-content">
 
         {/* ─────────────── HERO ─────────────── */}
-        <section aria-labelledby="hero-heading" style={{ position:'relative', background:'linear-gradient(180deg,#1a1342,#2c1f5e 60%,#34246e)', color:'#fff', padding:'120px 0 90px', overflow:'hidden' }}>
-          <div style={{ maxWidth:'1140px', margin:'0 auto', padding:'0 24px', display:'grid', gridTemplateColumns:'1fr 1fr', gap:'48px', alignItems:'center' }}>
+        <section aria-labelledby="hero-heading" className="pt-20 pb-14 md:pt-[120px] md:pb-[90px]" style={{ position:'relative', background:'linear-gradient(180deg,#1a1342,#2c1f5e 60%,#34246e)', color:'#fff', overflow:'hidden' }}>
+          <div className="grid grid-cols-1 md:grid-cols-2" style={{ maxWidth:'1140px', margin:'0 auto', padding:'0 24px', gap:'48px', alignItems:'center' }}>
             {/* Copy */}
             <div>
               <p style={{ fontSize:'12px', letterSpacing:'2.5px', textTransform:'uppercase', color:'#FFD27A', fontWeight:700, marginBottom:'14px' }}>{t('hero.eyebrow')}</p>
               <h1 id="hero-heading" style={{ fontFamily:'var(--font-fraunces)', fontWeight:600, fontSize:'clamp(32px,4vw,50px)', lineHeight:1.08, marginBottom:'18px' }}>
-                Bedtime stories that <em style={{ fontStyle:'italic', color:'#FFD27A' }}>{t('hero.title.em')}</em> — in a voice they'll love.
+                Screen-free bedtime stories that quietly raise a <em style={{ fontStyle:'italic', color:'#FFD27A' }}>{t('hero.title.em')}</em>.
               </h1>
               <p style={{ fontSize:'18px', lineHeight:1.55, color:'#e3d8f5', marginBottom:'28px', maxWidth:'46ch' }}>{t('hero.sub')}</p>
               <div style={{ display:'flex', gap:'13px', flexWrap:'wrap', marginBottom:'22px' }}>
@@ -356,7 +376,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                 "Deep in the warm shallows, a small dolphin named <span style={{ color:'#FFD27A', fontWeight:700 }}>Maya</span> found three shiny coins resting in the sand…"
               </div>
               {/* Voice switcher */}
-              <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'8px' }}>
+              <div className="grid grid-cols-2" style={{ gap:'8px' }}>
                 {voices.map((v, i) => (
                   <button key={v.id} onClick={() => playSample(i)} aria-pressed={i === activeVoice}
                     style={{ padding:'10px 12px', borderRadius:'12px', border:`1.5px solid ${i === activeVoice ? '#F4A93C' : '#e6d8bd'}`, background: i === activeVoice ? '#fff7ea' : '#fff', cursor:'pointer', textAlign:'left', display:'flex', gap:'8px', alignItems:'center' }}>
@@ -390,7 +410,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
             <p style={{ fontSize:'12.5px', letterSpacing:'1.8px', textTransform:'uppercase', color:'#E0852A', fontWeight:800 }}>{t('how.kicker')}</p>
             <h2 id="how-heading" style={{ fontFamily:'var(--font-fraunces)', fontSize:'clamp(26px,3vw,36px)', marginBottom:'12px' }}>{t('how.title')}</h2>
             <p style={{ fontSize:'16.5px', color:'#5d5278', marginBottom:'50px', maxWidth:'640px', margin:'0 auto 50px' }}>{t('how.sub')}</p>
-            <div style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:'22px' }}>
+            <div className="grid grid-cols-1 md:grid-cols-3" style={{ gap:'22px' }}>
               {[1,2,3].map(n => (
                 <div key={n} style={{ background:'#fff', border:'1px solid #ece0c8', borderRadius:'20px', padding:'26px', boxShadow:'0 10px 30px -14px rgba(8,4,28,.35)' }}>
                   <div style={{ width:'54px', height:'54px', background:'#fff7ea', borderRadius:'15px', display:'grid', placeItems:'center', fontSize:'26px', marginBottom:'16px' }}>
@@ -425,7 +445,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
               ))}
             </div>
             {/* Active path detail */}
-            <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'40px', alignItems:'start' }}>
+            <div className="grid grid-cols-1 md:grid-cols-2" style={{ gap:'40px', alignItems:'start' }}>
               {/* Level-by-level breakdown */}
               <div>
                 <h3 style={{ fontFamily:'var(--font-fraunces)', fontSize:'18px', marginBottom:'18px', color:'rgba(255,255,255,.7)', fontWeight:500 }}>
@@ -501,7 +521,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
             <p style={{ fontSize:'12.5px', letterSpacing:'1.8px', textTransform:'uppercase', color:'#E0852A', fontWeight:800 }}>{t('voices.kicker')}</p>
             <h2 id="voices-heading" style={{ fontFamily:'var(--font-fraunces)', fontSize:'clamp(26px,3vw,36px)', marginBottom:'10px' }}>{t('voices.title')}</h2>
             <p style={{ fontSize:'16px', color:'#5d5278', marginBottom:'28px', maxWidth:'560px', margin:'0 auto 28px' }}>{t('voices.sub')}</p>
-            <div style={{ display:'grid', gridTemplateColumns:'repeat(2,1fr)', gap:'12px', maxWidth:'520px', margin:'0 auto 14px' }}>
+            <div className="grid grid-cols-2" style={{ gap:'12px', maxWidth:'520px', margin:'0 auto 14px' }}>
               {voices.map((v, i) => (
                 <button key={v.id} onClick={() => playSample(i)} aria-pressed={i===activeVoice}
                   style={{ display:'flex', gap:'11px', alignItems:'center', background: i===activeVoice?'#fff7ea':'#fff', border:`1.5px solid ${i===activeVoice?'#F4A93C':'#e6d8bd'}`, borderRadius:'15px', padding:'14px', cursor:'pointer', boxShadow: i===activeVoice?'0 8px 18px -10px rgba(244,169,60,.7)':'none' }}>
@@ -528,7 +548,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
 
         {/* ─────────────── PERSONALIZED SAMPLE ─────────────── */}
         <section aria-labelledby="sample-heading" style={{ padding:'80px 0', background:'#F4E9D4' }}>
-          <div style={{ maxWidth:'1140px', margin:'0 auto', padding:'0 24px', display:'grid', gridTemplateColumns:'1fr 1fr', gap:'48px', alignItems:'center' }}>
+          <div className="grid grid-cols-1 md:grid-cols-2" style={{ maxWidth:'1140px', margin:'0 auto', padding:'0 24px', gap:'48px', alignItems:'center' }}>
             <div>
               <p style={{ fontSize:'12.5px', letterSpacing:'1.8px', textTransform:'uppercase', color:'#E0852A', fontWeight:800 }}>{t('sample.kicker')}</p>
               <h2 id="sample-heading" style={{ fontFamily:'var(--font-fraunces)', fontSize:'clamp(26px,3vw,36px)', marginBottom:'14px' }}>{t('sample.title')}</h2>
@@ -553,7 +573,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
           <div style={{ maxWidth:'1140px', margin:'0 auto', padding:'0 24px', textAlign:'center' }}>
             <p style={{ fontSize:'12.5px', letterSpacing:'1.8px', textTransform:'uppercase', color:'#E0852A', fontWeight:800 }}>{t('testimonials.kicker')}</p>
             <h2 id="testimonials-heading" style={{ fontFamily:'var(--font-fraunces)', fontSize:'clamp(26px,3vw,36px)', marginBottom:'40px' }}>{t('testimonials.title')}</h2>
-            <div style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:'22px' }}>
+            <div className="grid grid-cols-1 md:grid-cols-3" style={{ gap:'22px' }}>
               {TESTIMONIALS.map((t2, i) => (
                 <div key={i} style={{ background:'#fff', border:'1px solid #ece0c8', borderRadius:'20px', padding:'24px', boxShadow:'0 10px 30px -14px rgba(8,4,28,.35)' }}>
                   <div style={{ color:'#F4A93C', letterSpacing:'2px', fontSize:'15px', marginBottom:'12px' }}>★★★★★</div>
@@ -573,7 +593,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
           <div style={{ maxWidth:'1140px', margin:'0 auto', padding:'0 24px', textAlign:'center' }}>
             <p style={{ fontSize:'12.5px', letterSpacing:'1.8px', textTransform:'uppercase', color:'#E0852A', fontWeight:800 }}>{t('pricing.kicker')}</p>
             <h2 id="pricing-heading" style={{ fontFamily:'var(--font-fraunces)', fontSize:'clamp(26px,3vw,36px)', marginBottom:'40px' }}>{t('pricing.title')}</h2>
-            <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'24px', maxWidth:'760px', margin:'0 auto 22px' }}>
+            <div className="grid grid-cols-1 md:grid-cols-2" style={{ gap:'24px', maxWidth:'760px', margin:'0 auto 22px' }}>
               {/* Free */}
               <div style={{ background:'#fff', border:'1px solid #ece0c8', borderRadius:'20px', padding:'32px', textAlign:'center' }}>
                 <div style={{ fontSize:'14px', color:'#5d5278', fontWeight:700, marginBottom:'8px' }}>{t('pricing.free.label')}</div>
@@ -608,7 +628,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
           <div style={{ maxWidth:'1140px', margin:'0 auto', padding:'0 24px', textAlign:'center' }}>
             <p style={{ fontSize:'12.5px', letterSpacing:'1.8px', textTransform:'uppercase', color:'#FFD27A', fontWeight:800 }}>{t('trust.kicker')}</p>
             <h2 id="trust-heading" style={{ fontFamily:'var(--font-fraunces)', fontSize:'clamp(26px,3vw,36px)', marginBottom:'40px' }}>{t('trust.title')}</h2>
-            <div style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:'22px' }}>
+            <div className="grid grid-cols-1 md:grid-cols-3" style={{ gap:'22px' }}>
               {[1,2,3].map(n => (
                 <div key={n} style={{ background:'rgba(255,255,255,.06)', border:'1px solid rgba(255,255,255,.14)', borderRadius:'20px', padding:'26px' }}>
                   <div style={{ fontSize:'36px', marginBottom:'14px' }}>{['🛡️','🔒','🌙'][n-1]}</div>
@@ -657,7 +677,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
       {/* ─────────────── FOOTER ─────────────── */}
       <footer style={{ background:'#16123a', color:'#b9adda', padding:'60px 0 30px' }}>
         <div style={{ maxWidth:'1140px', margin:'0 auto', padding:'0 24px' }}>
-          <div style={{ display:'grid', gridTemplateColumns:'1.6fr 1fr 1fr 1fr', gap:'36px', marginBottom:'40px' }}>
+          <div className="grid grid-cols-2 md:grid-cols-[1.6fr_1fr_1fr_1fr]" style={{ gap:'36px', marginBottom:'40px' }}>
             <div>
               <a href="/" style={{ display:'flex', alignItems:'center', gap:'8px', fontFamily:'var(--font-fraunces)', fontWeight:600, fontSize:'20px', color:'#fff', textDecoration:'none', marginBottom:'12px' }}>
                 🌙 Lumi
@@ -684,13 +704,14 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
         </div>
       </footer>
 
-      {/* ─────────────── MOBILE STICKY CTA ─────────────── */}
-      <div style={{ display:'none', position:'fixed', bottom:0, left:0, right:0, zIndex:150, background:'rgba(22,18,58,.95)', backdropFilter:'blur(10px)', padding:'12px 16px', borderTop:'1px solid rgba(255,255,255,.12)' }}
-           className="mobile-cta">
-        <button onClick={openBuilder} style={{ width:'100%', padding:'15px', background:'linear-gradient(135deg,#FFD27A,#E0852A)', color:'#3a230a', fontWeight:700, border:'none', borderRadius:'14px', cursor:'pointer', fontSize:'15px' }}>
-          {t('hero.cta.primary')}
-        </button>
-      </div>
+      {/* ─────────────── MOBILE STICKY CTA — only on mobile, hidden while the builder is open ─────────────── */}
+      {!overlayOpen && (
+        <div className="md:hidden" style={{ position:'fixed', bottom:0, left:0, right:0, zIndex:150, background:'rgba(22,18,58,.95)', backdropFilter:'blur(10px)', padding:'12px 16px', borderTop:'1px solid rgba(255,255,255,.12)' }}>
+          <button onClick={openBuilder} style={{ width:'100%', padding:'15px', background:'linear-gradient(135deg,#FFD27A,#E0852A)', color:'#3a230a', fontWeight:700, border:'none', borderRadius:'14px', cursor:'pointer', fontSize:'15px' }}>
+            {t('hero.cta.primary')}
+          </button>
+        </div>
+      )}
 
       {/* ─────────────── BUILDER OVERLAY ─────────────── */}
       {overlayOpen && (
@@ -763,7 +784,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                 <div>
                   <h2 style={{ fontFamily:'var(--font-fraunces)', fontSize:'22px', margin:'6px 0 4px' }}>What does your child love?</h2>
                   <p style={{ fontSize:'13.5px', color:'#5d5278', marginBottom:'18px' }}>Same lesson, set in the world they'll adore — they become the hero.</p>
-                  <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'11px' }}>
+                  <div className="grid grid-cols-2" style={{ gap:'11px' }}>
                     {SKINS.map(s => (
                       <button key={s.slug} onClick={() => setSkinSlug(s.slug)}
                         style={{ border:`2px solid ${skinSlug===s.slug?'#F4A93C':'#e0d2b7'}`, borderRadius:'17px', padding:'14px 10px', cursor:'pointer', textAlign:'center', background: skinSlug===s.slug?'#fff7ea':'#fff', transition:'.15s' }}>

@@ -9,14 +9,14 @@ const strings: Record<string, string> = {
   'nav.cta':       'Make their story',
 
   // Hero
-  'hero.eyebrow':  'Bedtime, reimagined',
-  'hero.title':    "Bedtime stories that teach your child — in a voice they'll love.",
-  'hero.title.em': 'teach your child',
-  'hero.sub':      'Original adventures, personalized to your child, that build real skills like saving money — level by level, in the calm minutes before sleep when lessons stick.',
+  'hero.eyebrow':  'Screen-free bedtime, made for them',
+  'hero.title':    'Screen-free bedtime stories that quietly raise a kinder, more capable kid.',
+  'hero.title.em': 'kinder, more capable kid',
+  'hero.sub':      'A story made for your child — their name, their world, a voice you choose — arrives every few days and teaches one real-life skill at a time: kindness, focus, confidence, resilience and more. No screens, no prep. First story free.',
   'hero.cta.primary':   'Make their story — free →',
-  'hero.cta.secondary': '▶ Play a story',
-  'hero.trust.rating':  '4.9 / 5',
-  'hero.trust.families':'Loved by 2,000+ families',
+  'hero.cta.secondary': '▶ Hear a sample',
+  'hero.trust.rating':  'Calm by design',
+  'hero.trust.families':'New story every few days',
   'hero.trust.card':    'No card needed',
 
   // Proof bar
@@ -54,7 +54,7 @@ const strings: Record<string, string> = {
   'sample.title':      'Watch their name appear.',
   'sample.sub':        "The story, the world, and the voice all adapt to your child — but the lesson stays expert-written.",
   'sample.cta':        'Make one for your child →',
-  'sample.teaches':    'Teaches: saving & the value of coins',
+  'sample.teaches':    'Teaches: one real-life skill — expert-written, age-leveled',
 
   // Testimonials
   'testimonials.kicker': 'Loved by parents',
