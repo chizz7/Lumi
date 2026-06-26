@@ -18,6 +18,7 @@ const STRIPE_PK = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
 const stripePromise = STRIPE_PK ? loadStripe(STRIPE_PK) : null
 import { getAllLevels }                  from '@/content'
 import { interestForWorld }              from '@/content/interests'
+import StoryStudio                       from './StoryStudio'
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -361,34 +362,14 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                 <span>{t('hero.trust.card')}</span>
               </div>
             </div>
-            {/* Story sampler card */}
-            <div style={{ background:'rgba(255,255,255,.07)', border:'1px solid rgba(255,255,255,.16)', borderRadius:'24px', padding:'20px', backdropFilter:'blur(6px)' }}>
-              <div style={{ height:'160px', background:'linear-gradient(160deg,#2d5f96,#1e3d72)', borderRadius:'16px', marginBottom:'14px', display:'flex', alignItems:'center', justifyContent:'center', fontSize:'48px' }}>
-                🐬
-              </div>
-              <div style={{ fontSize:'11px', letterSpacing:'1.5px', textTransform:'uppercase', color:'#FFD27A', fontWeight:800, marginBottom:'6px' }}>
-                💰 Level 4 · Saving · {voices[activeVoice]?.name ?? 'Willow'}
-              </div>
-              <div style={{ fontFamily:'var(--font-fraunces)', fontSize:'18px', color:'#fff', marginBottom:'6px' }}>
-                Maya & the Tide-Pool Coins
-              </div>
-              <div style={{ fontSize:'14px', lineHeight:1.7, color:'rgba(255,255,255,.75)', fontFamily:'var(--font-fraunces)', fontStyle:'italic', marginBottom:'14px', borderTop:'1px solid rgba(255,255,255,.1)', paddingTop:'12px' }}>
-                "Deep in the warm shallows, a small dolphin named <span style={{ color:'#FFD27A', fontWeight:700 }}>Maya</span> found three shiny coins resting in the sand…"
-              </div>
-              {/* Voice switcher */}
-              <div className="grid grid-cols-2" style={{ gap:'8px' }}>
-                {voices.map((v, i) => (
-                  <button key={v.id} onClick={() => playSample(i)} aria-pressed={i === activeVoice}
-                    style={{ padding:'10px 12px', borderRadius:'12px', border:`1.5px solid ${i === activeVoice ? '#F4A93C' : '#e6d8bd'}`, background: i === activeVoice ? '#fff7ea' : '#fff', cursor:'pointer', textAlign:'left', display:'flex', gap:'8px', alignItems:'center' }}>
-                    <span style={{ width:'10px', height:'10px', borderRadius:'50%', background: i === activeVoice ? '#F4A93C' : '#ccc', flexShrink:0 }} />
-                    <div>
-                      <div style={{ fontWeight:800, fontSize:'13px' }}>{sampleLoading === i ? '♪ …' : v.name}</div>
-                      <div style={{ fontSize:'11px', color:'#5d5278' }}>{v.tone}</div>
-                    </div>
-                  </button>
-                ))}
-              </div>
-            </div>
+            {/* Story Studio — the inline builder is the hero focal point */}
+            <StoryStudio
+              name={childName} ageBand={ageBand} skinSlug={skinSlug} subjectSlug={subjectSlug} voiceId={voiceId}
+              setName={setChildName} setAge={setAgeBand} setWorld={setSkinSlug} setSubject={setSubjectSlug} setVoiceId={setVoiceId}
+              skins={SKINS} ageBands={AGE_BANDS} voices={voices} paths={paths}
+              playSample={playSample} sampleLoading={sampleLoading}
+              onBuild={() => { setOverlayOpen(true); generatePreview() }}
+            />
           </div>
         </section>
 
