@@ -112,7 +112,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
   // ── Builder preview (personalised, before paywall) ──────────────────────────
   const previewAudioRef = useRef<HTMLAudioElement>(null)
   const [preview, setPreview] = useState<
-    { loading: boolean; script?: string; audioUrl?: string | null; error?: string } | null
+    { loading: boolean; script?: string; audioUrl?: string | null; audioError?: string | null; error?: string } | null
   >(null)
   // Email gate on the preview: capturing the parent's email both (a) unlocks the
   // audio and (b) gives us a lead for abandoned-funnel recovery. Submitting it is
@@ -159,7 +159,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
       const res  = await fetch('/api/preview')
       const data = await res.json()
       if (!res.ok) throw new Error(data.error || 'preview failed')
-      setPreview({ loading: false, script: data.script, audioUrl: data.audioUrl })
+      setPreview({ loading: false, script: data.script, audioUrl: data.audioUrl, audioError: data.audioError })
     } catch {
       setPreview({ loading: false, error: "We couldn't build the preview just now. Please try again." })
     }
@@ -853,7 +853,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                       src={preview.audioUrl ?? undefined}
                       controls={leadDone}
                       preload="auto"
-                      style={{ width:'100%', display: leadDone ? 'block' : 'none' }}
+                      style={{ width:'100%', display: leadDone && preview.audioUrl ? 'block' : 'none' }}
                     />
 
                     {!leadDone && (
@@ -884,7 +884,17 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                     )}
 
                     {leadDone && !preview.audioUrl && (
-                      <p style={{ fontSize:'12.5px', color:'#8a6a1f', textAlign:'center', margin:'8px 0' }}>Your narration is being prepared — we'll email it to you shortly.</p>
+                      <div style={{ background:'#fff', border:'1.5px solid #f1ddb6', borderRadius:'16px', padding:'16px', textAlign:'center' }}>
+                        <p style={{ fontSize:'13px', color:'#8a6a1f', margin:'0 0 12px', lineHeight:1.5 }}>
+                          {preview.audioError ?? 'The narration didn’t finish generating just now.'} {childName ? `${childName}'s` : 'Your'} story is saved — tap retry, or we’ll email the recording shortly.
+                        </p>
+                        <button
+                          onClick={() => generatePreview()}
+                          disabled={preview.loading}
+                          style={{ padding:'12px 22px', background:'linear-gradient(135deg,#FFD27A,#E0852A)', color:'#3a230a', fontWeight:800, border:'none', borderRadius:'13px', cursor:'pointer', fontSize:'14px' }}>
+                          ↻ Retry audio
+                        </button>
+                      </div>
                     )}
 
                     {/* Live demo: same lesson, re-skinned + re-voiced on the fly.

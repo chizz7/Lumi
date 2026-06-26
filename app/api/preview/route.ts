@@ -30,17 +30,23 @@ export async function GET(req: NextRequest) {
   const excerpt = previewText(script)
 
   // Preview audio from the cacheable audioText (not the script)
-  let audioUrl: string | null = null
+  let audioUrl:   string | null = null
+  let audioError: string | null = null
   try {
     const cacheKey = audioCacheKey(draft.subjectSlug, 1, draft.skinSlug, draft.voiceId, 'en', true, ageTag)
     audioUrl = await getOrRenderAudio(audioText, draft.voiceId, cacheKey)
   } catch (err) {
+    // Non-fatal: the script still renders. Surface a friendly reason so the UI
+    // can show a Retry button instead of a dead native player. The detailed
+    // error (e.g. the upstream TTS status) stays in the server logs only.
     console.error('[preview] audio error (non-fatal):', err)
+    audioError = 'The narration didn’t finish generating just now.'
   }
 
   return NextResponse.json({
     script:     excerpt,
     audioUrl,
+    audioError,
     levelTitle: level.title,
     concept:    level.concept,
     skinSlug:   skin.slug,
