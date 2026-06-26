@@ -11,23 +11,23 @@ const figtree  = Figtree({  subsets:['latin'], variable:'--font-figtree',  displ
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL ?? 'https://lumi.app'),
-  title: { default:'Lumi — Bedtime Stories That Teach', template:'%s · Lumi' },
-  description: "Personalized bedtime stories that teach your child real skills — money, focus, kindness — level by level, in a voice they'll love.",
-  keywords: ['bedtime stories','educational stories for kids','personalized children stories','kids learning app','financial literacy for kids','SEL stories'],
+  title: { default:'Lumi — Screen-Free Bedtime Stories That Teach', template:'%s · Lumi' },
+  description: "Personalized, screen-free audio bedtime stories that teach your child real-life skills — kindness, focus, confidence and more — one calm night at a time.",
+  keywords: ['screen-free bedtime stories','audio bedtime stories for kids','bedtime stories that teach','social-emotional skills for kids','personalized children stories','kids audio stories ages 3-8'],
   authors: [{ name:'Lumi' }],
   openGraph: {
     type:'website', siteName:'Lumi',
-    title:'Lumi — Bedtime Stories That Teach',
-    description:"Personalized bedtime stories that teach real skills — money, focus, kindness — in a voice your child loves.",
-    images: [{ url:'/og-image.png', width:1200, height:630, alt:'Lumi — Bedtime Stories That Teach' }],
+    title:'Lumi — Screen-Free Bedtime Stories That Teach',
+    description:"Personalized, screen-free audio bedtime stories that teach real-life skills — kindness, focus, confidence and more — in a voice your child loves.",
+    images: [{ url:'/og-image.png', width:1200, height:630, alt:'Lumi — Screen-Free Bedtime Stories That Teach' }],
   },
-  twitter: { card:'summary_large_image', title:'Lumi — Bedtime Stories That Teach', description:"Bedtime stories that teach your child real skills.", images:['/og-image.png'] },
+  twitter: { card:'summary_large_image', title:'Lumi — Screen-Free Bedtime Stories That Teach', description:"Screen-free audio bedtime stories that teach your child real-life skills.", images:['/og-image.png'] },
   robots: { index:true, follow:true },
   icons: { icon:'/favicon.ico', apple:'/apple-touch-icon.png' },
   manifest: '/site.webmanifest',
 }
 
-export const viewport: Viewport = { themeColor:'#241a52', width:'device-width', initialScale:1, maximumScale:5 }
+export const viewport: Viewport = { themeColor:'#241a52', width:'device-width', initialScale:1 }
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const { lang } = await getI18n()
@@ -37,12 +37,25 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-          '@context':'https://schema.org','@type':'WebApplication',
-          name:'Lumi', description:'Personalized bedtime stories that teach children real skills.',
-          url: process.env.NEXT_PUBLIC_APP_URL,
-          applicationCategory:'EducationalApplication', operatingSystem:'Web',
-          offers:{'@type':'Offer', price:'0', priceCurrency:'USD'},
-          audience:{'@type':'PeopleAudience', suggestedMinAge:3, suggestedMaxAge:8},
+          '@context':'https://schema.org',
+          '@graph':[
+            {
+              '@type':'Organization', '@id':`${process.env.NEXT_PUBLIC_APP_URL}/#org`,
+              name:'Lumi', url: process.env.NEXT_PUBLIC_APP_URL,
+              logo:`${process.env.NEXT_PUBLIC_APP_URL}/favicon-512.png`,
+              description:'Screen-free, personalized audio bedtime stories that teach children real-life skills.',
+            },
+            {
+              '@type':'WebApplication',
+              name:'Lumi', url: process.env.NEXT_PUBLIC_APP_URL,
+              description:'Screen-free, personalized audio bedtime stories that teach children real-life skills — kindness, focus, confidence and more.',
+              applicationCategory:'EducationalApplication', operatingSystem:'Web',
+              publisher:{'@id':`${process.env.NEXT_PUBLIC_APP_URL}/#org`},
+              // First story free, then a $9.99/mo Story Club subscription.
+              offers:{'@type':'Offer', price:'9.99', priceCurrency:'USD', description:'Story Club — first story free, then $9.99/month, cancel anytime.'},
+              audience:{'@type':'PeopleAudience', suggestedMinAge:3, suggestedMaxAge:8},
+            },
+          ],
         })}} />
       </head>
       <body className="antialiased">

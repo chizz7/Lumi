@@ -8,7 +8,7 @@
 //   - Language banner dismiss
 //   - Waitlist form submission
 
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { loadStripe }                    from '@stripe/stripe-js'
 import { EmbeddedCheckoutProvider, EmbeddedCheckout } from '@stripe/react-stripe-js'
 import type { VoiceConfig }              from '@/lib/voices'
@@ -110,6 +110,31 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
     } catch { /* non-fatal — sample just won't play */ }
     finally { setSampleLoading(null) }
   }
+
+  // ── Builder overlay focus management (a11y: trap + Escape + restore) ─────────
+  const dialogRef = useRef<HTMLDivElement>(null)
+  useEffect(() => {
+    if (!overlayOpen) return
+    const prev = document.activeElement as HTMLElement | null
+    const focusables = () => Array.from(
+      dialogRef.current?.querySelectorAll<HTMLElement>(
+        'a[href],button:not([disabled]),input:not([disabled]),select,textarea,[tabindex]:not([tabindex="-1"])'
+      ) ?? []
+    ).filter(el => el.offsetParent !== null)
+    // Move focus into the dialog on open.
+    setTimeout(() => focusables()[0]?.focus(), 0)
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') { setOverlayOpen(false); return }
+      if (e.key !== 'Tab') return
+      const f = focusables()
+      if (f.length === 0) return
+      const first = f[0]!, last = f[f.length - 1]!
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus() }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus() }
+    }
+    document.addEventListener('keydown', onKey)
+    return () => { document.removeEventListener('keydown', onKey); prev?.focus?.() }
+  }, [overlayOpen])
 
   // ── Builder preview (personalised, before paywall) ──────────────────────────
   const previewAudioRef = useRef<HTMLAudioElement>(null)
@@ -696,8 +721,8 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
       {overlayOpen && (
         <div style={{ position:'fixed', inset:0, zIndex:500, background:'rgba(12,8,32,.75)', backdropFilter:'blur(4px)', display:'flex', alignItems:'center', justifyContent:'center', padding:'20px' }}
              onClick={e => { if (e.target === e.currentTarget) setOverlayOpen(false) }}>
-          <div role="dialog" aria-modal="true" aria-label="Story builder" style={{ background:'#FBF4E6', borderRadius:'28px', width:'100%', maxWidth:'430px', overflow:'hidden', boxShadow:'0 24px 60px -22px rgba(8,4,28,.7)', position:'relative', maxHeight:'90vh', overflowY:'auto' }}>
-            <button onClick={() => setOverlayOpen(false)} style={{ position:'absolute', top:'14px', right:'14px', zIndex:90, width:'34px', height:'34px', borderRadius:'50%', border:'none', background:'rgba(0,0,0,.18)', color:'#fff', cursor:'pointer', fontSize:'16px' }} aria-label="Close builder">✕</button>
+          <div ref={dialogRef} role="dialog" aria-modal="true" aria-label="Story builder" style={{ background:'#FBF4E6', borderRadius:'28px', width:'100%', maxWidth:'430px', overflow:'hidden', boxShadow:'0 24px 60px -22px rgba(8,4,28,.7)', position:'relative', maxHeight:'90vh', overflowY:'auto' }}>
+            <button onClick={() => setOverlayOpen(false)} style={{ position:'absolute', top:'12px', right:'12px', zIndex:90, width:'44px', height:'44px', borderRadius:'50%', border:'none', background:'rgba(0,0,0,.18)', color:'#fff', cursor:'pointer', fontSize:'18px' }} aria-label="Close builder">✕</button>
 
             {/* ── Embedded Stripe Checkout — payment happens in-funnel ── */}
             {checkoutSecret && (

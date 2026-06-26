@@ -12,6 +12,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/privacy`,    lastModified: now, changeFrequency: 'yearly',  priority: 0.4 },
     { url: `${base}/terms`,      lastModified: now, changeFrequency: 'yearly',  priority: 0.4 },
     { url: `${base}/contact`,    lastModified: now, changeFrequency: 'yearly',  priority: 0.3 },
-    { url: `${base}/login`,      lastModified: now, changeFrequency: 'yearly',  priority: 0.3 },
+    // /login is a thin magic-link page — intentionally excluded from the sitemap.
   ]
 }
