@@ -1,8 +1,22 @@
 // lib/email.ts
 import { Resend } from 'resend'
 
-const resend = new Resend(process.env.RESEND_API_KEY!)
-const FROM   = process.env.EMAIL_FROM ?? 'stories@lumi.app'
+// Lazily construct the Resend client. Building it at module load would crash
+// at import time when RESEND_API_KEY is absent — which is exactly what happens
+// during Next.js "page data collection" at build time. Construct on first send
+// instead, so the key is only required at runtime when we actually email.
+let _resend: Resend | null = null
+export function getResend(): Resend {
+  if (!_resend) {
+    const key = process.env.RESEND_API_KEY
+    if (!key) throw new Error('RESEND_API_KEY is not set')
+    _resend = new Resend(key)
+  }
+  return _resend
+}
+
+export const EMAIL_FROM = process.env.EMAIL_FROM ?? 'stories@lumi.app'
+const FROM = EMAIL_FROM
 
 export async function sendStoryEmail(opts: {
   to:         string
@@ -14,7 +28,7 @@ export async function sendStoryEmail(opts: {
   const { to, childName, levelTitle, audioUrl, script } = opts
   const name = childName || 'your child'
 
-  await resend.emails.send({
+  await getResend().emails.send({
     from:    FROM,
     to,
     subject: `🌙 ${name}'s story is ready — ${levelTitle}`,

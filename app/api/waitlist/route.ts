@@ -5,10 +5,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { adminClient }               from '@/lib/supabase'
 import { track }                     from '@/lib/analytics'
-import { Resend }                    from 'resend'
-
-const resend = new Resend(process.env.RESEND_API_KEY!)
-const FROM   = process.env.EMAIL_FROM ?? 'stories@lumi.app'
+import { getResend, EMAIL_FROM }     from '@/lib/email'
 
 export async function POST(req: NextRequest) {
   let body: { email?: string; lang?: string; source?: string }
@@ -35,8 +32,8 @@ export async function POST(req: NextRequest) {
 
   // Send confirmation email
   try {
-    await resend.emails.send({
-      from:    FROM,
+    await getResend().emails.send({
+      from:    EMAIL_FROM,
       to:      email,
       subject: "You're on the Lumi waitlist 🌙",
       html: `

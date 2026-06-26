@@ -15,10 +15,7 @@ import { track }                      from '@/lib/analytics'
 import { ensureReferralCode, normaliseRefCode, REFERRAL_REWARD_CENTS } from '@/lib/referral'
 import type { Draft }                 from '@/lib/draft'
 import type Stripe                    from 'stripe'
-import { Resend }                     from 'resend'
-
-const resend = new Resend(process.env.RESEND_API_KEY!)
-const FROM   = process.env.EMAIL_FROM ?? 'stories@lumi.app'
+import { getResend, EMAIL_FROM }      from '@/lib/email'
 
 export async function POST(req: NextRequest) {
   const sig  = req.headers.get('stripe-signature') ?? ''
@@ -79,8 +76,8 @@ export async function POST(req: NextRequest) {
         .single()
       if (account?.email) {
         const portalUrl = await createBillingPortalUrl(customerId)
-        await resend.emails.send({
-          from:    FROM,
+        await getResend().emails.send({
+          from:    EMAIL_FROM,
           to:      account.email,
           subject: 'Action needed — your Lumi payment didn\'t go through',
           html: `<p>Hi there — we couldn't charge your card for your Lumi Story Club subscription.</p>
