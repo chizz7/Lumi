@@ -8,10 +8,11 @@
 //   invoice.payment_succeeded       → (optional) log renewal
 
 import { NextRequest, NextResponse }  from 'next/server'
-import { constructWebhookEvent, createBillingPortalUrl } from '@/lib/stripe'
+import { constructWebhookEvent, createBillingPortalUrl, issueCredit } from '@/lib/stripe'
 import { adminClient }                from '@/lib/supabase'
 import { deliverNextStory }           from '@/lib/deliver'
 import { track }                      from '@/lib/analytics'
+import { ensureReferralCode, normaliseRefCode, REFERRAL_REWARD_CENTS } from '@/lib/referral'
 import type { Draft }                 from '@/lib/draft'
 import type Stripe                    from 'stripe'
 import { Resend }                     from 'resend'
@@ -189,12 +190,111 @@ async function handleNewSubscriber(session: Stripe.Checkout.Session) {
     profile = inserted
   }
 
-  // 3. Deliver the first story via the shared, idempotent pipeline (safe to
+  // 3. Give this new account its own referral code (idempotent).
+  await ensureReferralCode(userId)
+
+  // 4. Deliver the first story via the shared, idempotent pipeline (safe to
   //    re-run — it no-ops if this level was already delivered).
   await deliverNextStory(profile, email, userId)
 
   track('subscription_started', { subjectSlug: draft.subjectSlug, skinSlug: draft.skinSlug }, userId)
+
+  // 5. Reward the referrer, if this signup came through a referral link.
+  //    Best-effort: a referral hiccup must never fail/retry a completed paid
+  //    signup. The referrals row is durable, so a 'pending' one can be settled
+  //    later from the admin console.
+  if (draft.ref) {
+    try {
+      await processReferral(draft.ref, userId, email)
+    } catch (err) {
+      console.error('[webhook] referral processing failed (non-fatal):', (err as Error).message)
+    }
+  }
+
   console.log(`[webhook] level 1 ensured for ${email}`)
+}
+
+// ─── Referral reward ────────────────────────────────────────────────────────
+// Confirms a "paid referral" and credits the referrer one free month. Idempotent
+// (one credit per referred account) and race-safe (credited_at is claimed
+// atomically before the Stripe credit, and rolled back if Stripe rejects it).
+async function processReferral(rawCode: string, newUserId: string, newEmail: string) {
+  const code = normaliseRefCode(rawCode)
+  if (!code) return
+
+  const { data: referrer } = await adminClient
+    .from('accounts')
+    .select('id, email, stripe_customer_id')
+    .eq('referral_code', code)
+    .maybeSingle()
+
+  if (!referrer) { track('referral_skipped', { reason: 'unknown_code' }, newUserId); return }
+
+  // Block self-referral (same account or same email).
+  if (referrer.id === newUserId || referrer.email?.toLowerCase() === newEmail.toLowerCase()) {
+    track('referral_skipped', { reason: 'self_referral' }, newUserId)
+    return
+  }
+
+  // Record the referral (unique on referred_account_id → at most one ever).
+  let referralId: string | undefined
+  const { data: existing } = await adminClient
+    .from('referrals').select('id, credited_at').eq('referred_account_id', newUserId).maybeSingle()
+
+  if (existing) {
+    if (existing.credited_at) return            // already rewarded — nothing to do
+    referralId = existing.id
+  } else {
+    const { data: inserted, error } = await adminClient
+      .from('referrals')
+      .insert({
+        referrer_account_id: referrer.id,
+        referred_account_id: newUserId,
+        referred_email:      newEmail,
+        reward_cents:        REFERRAL_REWARD_CENTS,
+        status:              'pending',
+      })
+      .select('id').single()
+    if (error || !inserted) {
+      // Lost an insert race — re-read the winner's row.
+      const { data: row } = await adminClient
+        .from('referrals').select('id, credited_at').eq('referred_account_id', newUserId).maybeSingle()
+      if (!row || row.credited_at) return
+      referralId = row.id
+    } else {
+      referralId = inserted.id
+    }
+  }
+
+  // The referrer needs a Stripe customer to receive a balance credit. If they
+  // somehow don't have one, leave the row 'pending' for manual settlement.
+  if (!referrer.stripe_customer_id) {
+    track('referral_skipped', { reason: 'no_stripe_customer' }, referrer.id)
+    return
+  }
+
+  // Atomically claim the credit so concurrent runs / retries can't double-pay.
+  const { data: claimed } = await adminClient
+    .from('referrals')
+    .update({ status: 'credited', credited_at: new Date().toISOString() })
+    .eq('id', referralId)
+    .is('credited_at', null)
+    .select('id')
+    .maybeSingle()
+  if (!claimed) return   // someone else already credited it
+
+  try {
+    await issueCredit(referrer.stripe_customer_id, REFERRAL_REWARD_CENTS, `Referral reward — ${newEmail} subscribed`)
+    track('referral_credited', { rewardCents: REFERRAL_REWARD_CENTS }, referrer.id)
+    console.log(`[webhook] referral credit issued to ${referrer.email} for ${newEmail}`)
+  } catch (err) {
+    // Roll the claim back so it can be retried later.
+    await adminClient
+      .from('referrals')
+      .update({ status: 'pending', credited_at: null })
+      .eq('id', referralId)
+    throw err
+  }
 }
 
 // supabase-js admin has no get-by-email; page through (bounded) to recover a

@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from 'next'
 import { Fraunces, Figtree }        from 'next/font/google'
 import { getI18n }                  from '@/lib/i18n'
 import PostHogProvider              from './_components/PostHogProvider'
+import RefCapture                   from './_components/RefCapture'
 import './globals.css'
 
 const fraunces = Fraunces({ subsets:['latin'], variable:'--font-fraunces', axes:['opsz'], display:'swap' })
@@ -46,6 +47,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       </head>
       <body className="antialiased">
         <PostHogProvider>
+          <RefCapture />
           {children}
         </PostHogProvider>
       </body>

@@ -61,5 +61,13 @@ export async function GET(req: NextRequest) {
   }
 
   console.log(`[cron/deliver] scanned=${scanned} delivered=${delivered} skipped=${skipped}`)
+
+  // Persist the run so the admin events view can show delivery health without
+  // depending on Vercel log retention. Non-fatal.
+  const { error: logErr } = await adminClient
+    .from('cron_runs')
+    .insert({ job: 'deliver', scanned, delivered, skipped })
+  if (logErr) console.warn('[cron/deliver] run log insert failed (non-fatal):', logErr.message)
+
   return NextResponse.json({ ok: true, scanned, delivered, skipped })
 }

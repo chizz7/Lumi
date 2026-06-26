@@ -18,6 +18,7 @@ export interface Draft {
   subjectSlug:  string   // 'money' etc.
   voiceId:      string   // 'af_heart' etc.
   interestSlug?: string  // what the child loves; maps to skinSlug (content/interests.ts)
+  ref?:         string   // referral code (from ?ref=…); credits the referrer on paid signup
 }
 
 function sign(data: string): string {

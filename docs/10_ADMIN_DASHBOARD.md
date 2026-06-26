@@ -140,8 +140,8 @@ All under `/api/admin/**`, all behind `requireAdmin()`, all read via `adminClien
 
 ## 6. Build order
 
-- **Phase 1 — see everything (read-only, highest value, lowest risk):**
-  Overview + Lifecycle Monitor (§3.2) + Event/Ops Health (§3.3). Answers all three of your original asks. No new schema except `cron_runs` (and it's optional — can start from Vercel logs).
+- **Phase 1 — see everything (read-only, highest value, lowest risk):** ✅ **BUILT**
+  Overview (`/admin`) + Lifecycle Monitor (`/admin/lifecycle`, §3.2) + Event/Ops Health (`/admin/events`, §3.3), backed by `GET /api/admin/lifecycle` and `GET /api/admin/events` (shared `requireAdmin()` in `lib/admin.ts`). Cron now persists each run to `cron_runs` (migration 006). Answers all three original asks; read-only, no destructive actions yet.
 - **Phase 2 — close the loops:** Report Queue (§3.4) + Billing Health (§3.5). Adds `report_resolved_at`, `admin_actions` audit table, the audited actions (redeliver, comp, reset).
 - **Phase 3 — content & ops polish:** extend Review Hub (§3.1 enforcement banner + notes + drift reset), Audio Cache (§3.6), Funnel (§3.7), Analytics deep-links.
 

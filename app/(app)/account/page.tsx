@@ -2,6 +2,7 @@
 // app/(app)/account/page.tsx
 import { useState, useEffect } from 'react'
 import { getVoicesForLang } from '@/lib/voices'
+import ReferralCard from '@/app/_components/ReferralCard'
 
 interface Child { id: string; name: string; age_band: string; skin_slug: string; subject_slug: string; voice_id: string; current_level: number }
 interface AccountData {
@@ -141,6 +142,9 @@ export default function AccountPage() {
           <span>💳 Manage subscription</span>
           <span style={{ color:'#9d92c0', fontSize:'13px' }}>{portalBusy ? 'Opening…' : 'Cancel · update card · invoices →'}</span>
         </button>
+
+        {/* Refer friends — a free month for every paid referral */}
+        <ReferralCard />
 
         {/* Children — one subscription covers all of them */}
         <section aria-labelledby="children-heading" style={{ marginBottom:'22px' }}>

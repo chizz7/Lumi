@@ -4,6 +4,7 @@
 
 import { NextRequest, NextResponse } from 'next/server'
 import { setDraft, type Draft } from '@/lib/draft'
+import { normaliseRefCode }     from '@/lib/referral'
 
 export async function POST(req: NextRequest) {
   let body: Draft
@@ -18,6 +19,11 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Missing required fields' }, { status: 422 })
   }
 
+  // Referral attribution: prefer an explicit ref in the body, else fall back to
+  // the lumi_ref cookie dropped by <RefCapture> when the visitor first landed
+  // with ?ref=…. Either way it's normalised before it enters the signed draft.
+  const ref = normaliseRefCode(body.ref ?? req.cookies.get('lumi_ref')?.value)
+
   const draft: Draft = {
     childName:    (body.childName ?? '').trim().slice(0, 50),
     ageBand:      body.ageBand   || '5-6',
@@ -25,6 +31,7 @@ export async function POST(req: NextRequest) {
     subjectSlug:  body.subjectSlug,
     voiceId:      body.voiceId,
     interestSlug: body.interestSlug,
+    ...(ref ? { ref } : {}),
   }
 
   const res = NextResponse.json({ ok: true })
