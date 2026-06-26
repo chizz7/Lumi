@@ -126,6 +126,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
   // Embedded Stripe checkout (mounts in-modal; null until "Start Story Club").
   const [checkoutSecret,  setCheckoutSecret]  = useState<string | null>(null)
   const [checkoutLoading, setCheckoutLoading] = useState(false)
+  const [checkoutError,   setCheckoutError]   = useState<string | null>(null)
 
   const unlockStory = () => {
     const email = leadEmail.trim().toLowerCase()
@@ -203,12 +204,15 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
   // Fetch a client_secret and mount Embedded Checkout in the modal — no redirect.
   const startCheckout = async () => {
     if (checkoutLoading) return
-    setCheckoutLoading(true)
+    setCheckoutLoading(true); setCheckoutError(null)
     try {
       await saveDraft()
       const res  = await fetch('/api/checkout', { method: 'POST' })
       const data = await res.json()
       if (data.clientSecret) setCheckoutSecret(data.clientSecret)
+      else setCheckoutError(data.error || "We couldn't start checkout. Please try again.")
+    } catch {
+      setCheckoutError("We couldn't start checkout. Please try again.")
     } finally {
       setCheckoutLoading(false)
     }
@@ -368,7 +372,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
               setName={setChildName} setAge={setAgeBand} setWorld={setSkinSlug} setSubject={setSubjectSlug} setVoiceId={setVoiceId}
               skins={SKINS} ageBands={AGE_BANDS} voices={voices} paths={paths}
               playSample={playSample} sampleLoading={sampleLoading}
-              onBuild={() => { setOverlayOpen(true); generatePreview() }}
+              onBuild={() => { setOverlayOpen(true); setLeadDone(false); setLeadEmail(''); setLeadError(false); setCheckoutSecret(null); generatePreview() }}
             />
           </div>
         </section>
@@ -623,7 +627,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
             <div style={{ maxWidth:'760px', margin:'0 auto' }}>
               {faqs.map((f, i) => (
                 <div key={i} style={{ background:'#fff', border:'1px solid #ece0c8', borderRadius:'14px', padding:'18px 22px', marginBottom:'10px', textAlign:'left' }}>
-                  <button onClick={() => setFaqOpen(faqOpen === i ? null : i)}
+                  <button onClick={() => setFaqOpen(faqOpen === i ? null : i)} aria-expanded={faqOpen === i}
                     style={{ width:'100%', display:'flex', justifyContent:'space-between', alignItems:'center', background:'none', border:'none', cursor:'pointer', fontWeight:700, fontSize:'15px', color:'#211a3a' }}>
                     <span>{f.q}</span>
                     <span style={{ fontSize:'22px', color:'#E0852A', fontWeight:400, flexShrink:0 }}>{faqOpen === i ? '–' : '+'}</span>
@@ -717,7 +721,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
             <div style={{ display:'flex', alignItems:'center', gap:'10px', padding:'18px 18px 12px' }}>
               <button onClick={() => builderStep > 1 ? setBuilderStep(s => s-1) : setOverlayOpen(false)} style={{ background:'none', border:'none', cursor:'pointer', fontSize:'18px', color:'#211a3a', width:'34px', height:'34px', borderRadius:'10px' }} aria-label="Back">←</button>
               <div style={{ flex:1, height:'8px', background:'#e7dac0', borderRadius:'99px', overflow:'hidden' }}>
-                <div style={{ height:'100%', width:`${builderStep * 33.34}%`, background:'linear-gradient(90deg,#FFD27A,#E0852A)', borderRadius:'99px', transition:'width .45s' }} />
+                <div style={{ height:'100%', width:`${(builderStep / 3) * 100}%`, background:'linear-gradient(90deg,#FFD27A,#E0852A)', borderRadius:'99px', transition:'width .45s' }} />
               </div>
               <span style={{ fontSize:'12px', color:'#4a4063', fontWeight:700 }}>{builderStep} / 3</span>
             </div>
@@ -962,6 +966,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                     style={{ width:'100%', padding:'15px', background:'linear-gradient(135deg,#FFD27A,#E0852A)', color:'#3a230a', fontWeight:700, border:'none', borderRadius:'15px', cursor: preview.loading ? 'wait' : 'pointer', fontSize:'15px', opacity: preview.loading ? .6 : 1 }}>
                     {checkoutLoading ? 'Starting…' : 'Start Story Club — first story free →'}
                   </button>
+                  {checkoutError && <p style={{ fontSize:'12px', color:'#c0392b', textAlign:'center', margin:'8px 0 0' }}>{checkoutError}</p>}
                   <p style={{ fontSize:'11.5px', color:'#4a4063', textAlign:'center', margin:'9px 0 0', lineHeight:1.4 }}>
                     Then <strong>$9.99/mo</strong> · a new story every 3 days · cancel anytime
                   </p>
