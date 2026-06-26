@@ -57,15 +57,29 @@ export async function createCheckoutSession(opts: {
   return session.client_secret
 }
 
-// Issue a credit to a customer's balance (used when a story is reported)
+// The currency we fall back to when a customer has no settlement currency
+// yet (e.g. credited before their first invoice). Matches our default price.
+const DEFAULT_CREDIT_CURRENCY = 'cad'
+
+// Issue a credit to a customer's balance (used when a story is reported or a
+// referral reward is earned). Stripe requires the balance-transaction currency
+// to MATCH the customer's settlement currency, so we read it off the customer
+// and only fall back to the default when it isn't set yet. This keeps credits
+// working regardless of which currency the subscription was billed in.
 export async function issueCredit(
   stripeCustomerId: string,
-  amountCents = 999,              // $9.99 — one month's subscription
+  amountCents = 999,              // one month's subscription, in minor units
   reason = 'Story credit'
 ): Promise<void> {
+  const customer = await stripe.customers.retrieve(stripeCustomerId)
+
+  // A deleted customer has no `currency`; guard the union before reading it.
+  const currency =
+    ('deleted' in customer ? null : customer.currency) || DEFAULT_CREDIT_CURRENCY
+
   await stripe.customers.createBalanceTransaction(stripeCustomerId, {
     amount:      -amountCents,   // negative = credit
-    currency:    'usd',
+    currency,
     description: reason,
   })
 }
