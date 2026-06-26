@@ -5,22 +5,19 @@
 // SEO: full metadata, JSON-LD, i18n lang attribute set in layout.tsx.
 
 import type { Metadata }       from 'next'
-import { getI18n, LANG_NAMES, SUPPORTED_LANGS, type Lang } from '@/lib/i18n'
+import { getI18n, LANG_NAMES, type Lang } from '@/lib/i18n'
 import { getVoicesForLang }    from '@/lib/voices'
 import LandingClient           from './_components/LandingClient'
 
-// Dynamic metadata based on detected language
+// Dedicated, length-tuned homepage metadata (≤60 char title, ≤160 char
+// description). hreflang alternates were removed: only EN content exists, and
+// the ?lang= URLs don't actually serve different languages, so they were
+// duplicate-content. Re-add hreflang once real per-language URLs exist.
 export async function generateMetadata(): Promise<Metadata> {
-  const { t, lang } = await getI18n()
   return {
-    title:       t('hero.title'),
-    description: t('hero.sub'),
-    alternates: {
-      canonical: '/',
-      languages: Object.fromEntries(
-        SUPPORTED_LANGS.map(l => [l, `/?lang=${l}`])
-      ),
-    },
+    title:       'Screen-Free Bedtime Stories That Teach',
+    description: 'Personalized, screen-free audio bedtime stories that teach your child real-life skills — kindness, focus, confidence and more. First story free, no card.',
+    alternates: { canonical: '/' },
   }
 }
 

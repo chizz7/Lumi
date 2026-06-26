@@ -6,16 +6,16 @@ const strings: Record<string, string> = {
   'nav.voices':    'Voices',
   'nav.pricing':   'Pricing',
   'nav.login':     'Log in',
-  'nav.cta':       'Make their story',
+  'nav.cta':       'Build their free story',
 
   // Hero
   'hero.eyebrow':  'Screen-free bedtime, made for them',
   'hero.title':    'Screen-free bedtime stories that quietly raise a kinder, more capable kid.',
   'hero.title.em': 'kinder, more capable kid',
   'hero.sub':      'A story made for your child — their name, their world, a voice you choose — arrives every few days and teaches one real-life skill at a time: kindness, focus, confidence, resilience and more. No screens, no prep. First story free.',
-  'hero.cta.primary':   'Make their story — free →',
+  'hero.cta.primary':   'Build their free story →',
   'hero.cta.secondary': '▶ Hear a sample',
-  'hero.trust.rating':  'Calm by design',
+  'hero.trust.rating':  'Cancel anytime',
   'hero.trust.families':'New story every few days',
   'hero.trust.card':    'No card needed',
 
@@ -53,12 +53,12 @@ const strings: Record<string, string> = {
   'sample.kicker':     'See it personalized',
   'sample.title':      'Watch their name appear.',
   'sample.sub':        "The story, the world, and the voice all adapt to your child — but the lesson stays expert-written.",
-  'sample.cta':        'Make one for your child →',
+  'sample.cta':        'Build their free story →',
   'sample.teaches':    'Teaches: one real-life skill — expert-written, age-leveled',
 
   // Testimonials
-  'testimonials.kicker': 'Loved by parents',
-  'testimonials.title':  'Bedtime they look forward to.',
+  'testimonials.kicker': 'Why parents trust it',
+  'testimonials.title':  'Made carefully, on purpose.',
 
   // Pricing
   'pricing.kicker':       'Simple pricing',
@@ -105,7 +105,7 @@ const strings: Record<string, string> = {
   // Final CTA
   'final.title': "Tonight's story is happening anyway.",
   'final.sub':   'Make it one that teaches. Free to try — under a minute to start.',
-  'final.cta':   'Make their story →',
+  'final.cta':   'Build their free story →',
 
   // Email capture
   'waitlist.title':       'Be first when we launch in your language',

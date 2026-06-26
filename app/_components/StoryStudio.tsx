@@ -71,9 +71,9 @@ export default function StoryStudio(p: Props) {
   const card  = { background: '#fff', border: '1px solid #efe6d6', borderRadius: 16, marginBottom: 10 }
   const head  = { display: 'flex', alignItems: 'center', gap: 12, padding: '13px 15px', cursor: 'pointer' } as const
   const lab   = { fontSize: 13.5, fontWeight: 800, color: '#211a3a' } as const
-  const val   = { fontSize: 12.5, color: '#5d5278', marginTop: 1 } as const
+  const val   = { fontSize: 12.5, color: '#4a4063', marginTop: 1 } as const
   const sec   = { fontSize: 11.5, color: '#8a7fb0', fontWeight: 700, margin: '2px 0 10px' } as const
-  const instruct = { fontSize: 12.5, color: '#5d5278', lineHeight: 1.5, marginBottom: 11 } as const
+  const instruct = { fontSize: 12.5, color: '#4a4063', lineHeight: 1.5, marginBottom: 11 } as const
   const benefit  = { fontSize: 12, color: '#8a5a12', background: '#fff7e6', border: '1px solid #f3e2bd', borderRadius: 10, padding: '8px 10px', marginTop: 11, lineHeight: 1.45 } as const
   const disc     = { fontSize: 10.5, color: '#9a8fb0', marginTop: 8, lineHeight: 1.45, display: 'flex', gap: 6 } as const
   const ricon = (a: boolean) => ({ width: 34, height: 34, borderRadius: 10, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 17, flexShrink: 0, background: a ? 'linear-gradient(135deg,#FFD27A,#F4A93C)' : '#fff7ea' })
@@ -111,7 +111,7 @@ export default function StoryStudio(p: Props) {
           ))}
         </div>
       </div>
-      <div style={{ padding: '8px 20px 4px', fontSize: 12.5, color: '#5d5278', lineHeight: 1.5 }}>
+      <div style={{ padding: '8px 20px 4px', fontSize: 12.5, color: '#4a4063', lineHeight: 1.5 }}>
         Make four choices and we'll assemble a <b style={{ color: '#211a3a' }}>personalized, skill-teaching bedtime story</b> — preview it free, no account needed.
       </div>
 
@@ -125,10 +125,12 @@ export default function StoryStudio(p: Props) {
           {world.emoji}
         </div>
         <div style={{ background: '#fff', padding: '14px 17px 15px' }}>
-          <div style={{ fontSize: 11, letterSpacing: 1.3, textTransform: 'uppercase', color: '#E0852A', fontWeight: 800, marginBottom: 6 }}>{skill.emoji} {skill.name} · Level 1 · {vName}</div>
-          <div style={{ fontFamily: 'var(--font-fraunces)', fontSize: 18, marginBottom: 7 }}>{nm} {cl.title}</div>
-          <div style={{ fontFamily: 'var(--font-fraunces)', fontStyle: 'italic', fontSize: 13.5, lineHeight: 1.65, color: '#4a4063', borderTop: '1px solid #f0e7d6', paddingTop: 10 }}>
-            &ldquo;In the {wt.place}, a {wt.hero} named <mark style={{ background: 'rgba(244,169,60,.24)', color: '#9c5a12', fontStyle: 'normal', fontWeight: 700, borderRadius: 4, padding: '0 4px' }}>{nm}</mark> {cl.action}…&rdquo;
+          <div key={`${p.skinSlug}-${p.subjectSlug}-${p.voiceId}`} className="sds-fadein">
+            <div style={{ fontSize: 11, letterSpacing: 1.3, textTransform: 'uppercase', color: '#E0852A', fontWeight: 800, marginBottom: 6 }}>{skill.emoji} {skill.name} · Level 1 · {vName}</div>
+            <div style={{ fontFamily: 'var(--font-fraunces)', fontSize: 18, marginBottom: 7 }}>{nm} {cl.title}</div>
+            <div style={{ fontFamily: 'var(--font-fraunces)', fontStyle: 'italic', fontSize: 13.5, lineHeight: 1.65, color: '#4a4063', borderTop: '1px solid #f0e7d6', paddingTop: 10 }}>
+              &ldquo;In the {wt.place}, a {wt.hero} named <mark key={nm} className="sds-pop" style={{ background: 'rgba(244,169,60,.24)', color: '#9c5a12', fontStyle: 'normal', fontWeight: 700, borderRadius: 4, padding: '0 4px' }}>{nm}</mark> {cl.action}…&rdquo;
+            </div>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: 12 }}>
             <button onClick={() => p.playSample(vIdx)} style={{ display: 'inline-flex', alignItems: 'center', gap: 9, background: 'linear-gradient(135deg,#fff3dd,#ffe6bd)', border: `1.5px solid ${AMBER}`, color: '#8a4d0a', borderRadius: 11, padding: '9px 14px', fontWeight: 800, fontSize: 13, cursor: 'pointer' }}>
@@ -193,7 +195,7 @@ export default function StoryStudio(p: Props) {
                   <span style={{ width: 30, height: 30, borderRadius: '50%', background: '#fff3dd', border: `1.5px solid ${AMBER}`, color: '#8a4d0a', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 11, flexShrink: 0 }}>{p.sampleLoading === i ? '♪' : '▶'}</span>
                   <span style={{ flex: 1 }}>
                     <span style={{ display: 'block', fontSize: 13.5, fontWeight: 800, color: '#211a3a' }}>{v.name}</span>
-                    <span style={{ display: 'block', fontSize: 11.5, color: '#5d5278' }}>{v.tone}</span>
+                    <span style={{ display: 'block', fontSize: 11.5, color: '#4a4063' }}>{v.tone}</span>
                   </span>
                 </button>
               )
@@ -214,7 +216,7 @@ export default function StoryStudio(p: Props) {
                     <span style={{ fontSize: 18 }}>{s.emoji}</span>
                     <span>
                       <span style={{ display: 'block', fontSize: 12.5, fontWeight: 800, color: '#211a3a' }}>{s.name.replace(/ &.*| Solving| Station/, '')}</span>
-                      <span style={{ display: 'block', fontSize: 10.5, color: '#5d5278' }}>{CLAUSE[s.id]?.hint}</span>
+                      <span style={{ display: 'block', fontSize: 10.5, color: '#4a4063' }}>{CLAUSE[s.id]?.hint}</span>
                     </span>
                   </button>
                 )
@@ -237,7 +239,7 @@ export default function StoryStudio(p: Props) {
         <button onClick={p.onBuild} style={{ width: '100%', padding: 16, fontSize: 16, borderRadius: 15, marginTop: 14, border: 0, cursor: 'pointer', fontWeight: 800, color: '#3a230a', background: 'linear-gradient(135deg,#FFD27A,#E0852A)', boxShadow: '0 12px 24px -8px rgba(244,169,60,.7)' }}>
           Build {p.name.trim() ? `${p.name.trim()}'s` : 'their'} free story →
         </button>
-        <div style={{ textAlign: 'center', fontSize: 12, color: '#5d5278', marginTop: 10 }}>First story free · no card to listen · cancel anytime</div>
+        <div style={{ textAlign: 'center', fontSize: 12, color: '#4a4063', marginTop: 10 }}>First story free · no card to listen · cancel anytime</div>
         <div style={{ display: 'flex', justifyContent: 'center', gap: 15, flexWrap: 'wrap', marginTop: 13, paddingTop: 13, borderTop: '1px solid #efe6d6' }}>
           {['📚 Levels build', '✍️ Expert-written', '🔒 No data on your child'].map(x => (
             <span key={x} style={{ fontSize: 11, color: '#8a7fb0', fontWeight: 700 }}>{x}</span>

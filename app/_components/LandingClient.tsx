@@ -56,12 +56,12 @@ const AGE_BANDS = [
   { value: '7-8', label: '7–8' },
 ]
 
-// Social proof. ⚠ PLACEHOLDERS — replace with real, attributable parent quotes
-// before launch (and keep them honest; fabricated reviews are a legal risk).
-const TESTIMONIALS = [
-  { quote: "My 5-year-old now talks about 'saving for the big thing.' From a bedtime story. I'm not sure school did that.", author: 'Dana R.', role: 'mom of two' },
-  { quote: "Same five minutes I was spending anyway — now it's actually teaching her something. And she begs for 'the next level.'", author: 'Marcus T.', role: 'dad' },
-  { quote: "The voices are lovely and the stories are genuinely calming. It's the only screen-free thing my son asks for at night.", author: 'Priya N.', role: 'mom' },
+// Honest, verifiable proof — no fabricated reviews/ratings (a legal risk for a
+// children's product). Replace with real attributable quotes once you have them.
+const PROOF = [
+  { icon: '✍️', title: 'Written, then reviewed', body: 'Every story is authored and safety- and teacher-checked before any child hears it — never generated on the fly.' },
+  { icon: '📚', title: 'A real curriculum', body: '30 leveled stories across 6 skills — each teaches one concept and quietly builds on the last.' },
+  { icon: '🔒', title: 'COPPA-safe by design', body: 'No birthdate, photos, or location — ever. Just a first name and age band you can export or delete anytime.' },
 ]
 
 // ─── Main component ───────────────────────────────────────────────────────────
@@ -222,28 +222,28 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
 
   const paths = [
     {
-      id:'money', emoji:'💰', name:'Money & Saving', available:true,
-      why:'Children who understand value, exchange, and saving before age 8 develop habits that compound for life. This path starts with the simplest question — why do coins look different? — and builds to the hardest: wants vs. needs.',
+      id:'kindness', emoji:'❤️', name:'Kindness & Empathy', available:true,
+      why:'Empathy is a skill, not a trait — built through repeated, low-stakes practice. Bedtime stories are one of the best contexts for it.',
     },
     {
-      id:'focus', emoji:'🎯', name:'Focus & Goals', available:true,
-      why:'Executive function — the ability to plan, focus, and follow through — is a stronger predictor of outcomes than IQ. The window to build it is early childhood.',
+      id:'confidence', emoji:'🌱', name:'Confidence', available:true,
+      why:"Confidence is the quiet belief that you're capable of trying. Level 1 normalises incompleteness — removing the shame that stops children from attempting hard things.",
     },
     {
       id:'resilience', emoji:'💪', name:'Resilience', available:true,
       why:'Children who understand that effort changes ability outperform those who believe in fixed talent. Level 1 normalises struggle; without that, Level 4 lands empty.',
     },
     {
-      id:'kindness', emoji:'❤️', name:'Kindness & Empathy', available:true,
-      why:'Empathy is a skill, not a trait — built through repeated, low-stakes practice. Bedtime stories are one of the best contexts for it.',
+      id:'focus', emoji:'🎯', name:'Focus & Goals', available:true,
+      why:'Executive function — the ability to plan, focus, and follow through — is a stronger predictor of outcomes than IQ. The window to build it is early childhood.',
     },
     {
       id:'problem', emoji:'🧠', name:'Problem Solving', available:true,
       why:'Problem solving is a disposition, not a subject. These stories build the habit of pausing before reacting and trying systematically.',
     },
     {
-      id:'confidence', emoji:'🌱', name:'Confidence', available:true,
-      why:"Confidence is the quiet belief that you're capable of trying. Level 1 normalises incompleteness — removing the shame that stops children from attempting hard things.",
+      id:'money', emoji:'💰', name:'Money & Saving', available:true,
+      why:'Children who understand value, exchange, and saving before age 8 develop habits that compound for life. This path starts with the simplest question — why do coins look different? — and builds to the hardest: wants vs. needs.',
     },
   ]
 
@@ -357,7 +357,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                 <audio ref={sampleAudioRef} preload="none" />
               </div>
               <div style={{ display:'flex', gap:'18px', flexWrap:'wrap', fontSize:'13.5px', color:'#cfc3ea' }}>
-                <span>⭐ {t('hero.trust.rating')}</span>
+                <span>✓ {t('hero.trust.rating')}</span>
                 <span>{t('hero.trust.families')}</span>
                 <span>{t('hero.trust.card')}</span>
               </div>
@@ -373,15 +373,12 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
           </div>
         </section>
 
-        {/* ─────────────── PROOF BAR ─────────────── */}
-        <div style={{ background:'#16123a', color:'#cfc3ea', padding:'22px 0' }}>
-          <div style={{ maxWidth:'1140px', margin:'0 auto', padding:'0 24px', display:'flex', alignItems:'center', justifyContent:'space-between', gap:'24px', flexWrap:'wrap' }}>
-            <span style={{ fontSize:'12px', letterSpacing:'1.5px', textTransform:'uppercase', color:'#8a7fb0', fontWeight:700 }}>{t('proof.label')}</span>
-            <div style={{ display:'flex', gap:'28px', flexWrap:'wrap', opacity:.75 }}>
-              {['Parents Weekly','KidLit','The Nestful','Montessori Today','FamTech'].map(name => (
-                <span key={name} style={{ fontFamily:'var(--font-fraunces)', fontWeight:600, fontSize:'16px' }}>{name}</span>
-              ))}
-            </div>
+        {/* ─────────────── PROOF BAR — honest product facts (no fabricated press) ─────────────── */}
+        <div style={{ background:'#16123a', color:'#cfc3ea', padding:'20px 0' }}>
+          <div style={{ maxWidth:'1140px', margin:'0 auto', padding:'0 24px', display:'flex', alignItems:'center', justifyContent:'center', gap:'12px 30px', flexWrap:'wrap' }}>
+            {['6 skill paths','30 leveled stories','6 worlds','4 calm voices','100% screen-free','Expert-reviewed'].map(name => (
+              <span key={name} style={{ fontFamily:'var(--font-fraunces)', fontWeight:600, fontSize:'15px', opacity:.85 }}>{name}</span>
+            ))}
           </div>
         </div>
 
@@ -390,7 +387,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
           <div style={{ maxWidth:'1140px', margin:'0 auto', padding:'0 24px', textAlign:'center' }}>
             <p style={{ fontSize:'12.5px', letterSpacing:'1.8px', textTransform:'uppercase', color:'#E0852A', fontWeight:800 }}>{t('how.kicker')}</p>
             <h2 id="how-heading" style={{ fontFamily:'var(--font-fraunces)', fontSize:'clamp(26px,3vw,36px)', marginBottom:'12px' }}>{t('how.title')}</h2>
-            <p style={{ fontSize:'16.5px', color:'#5d5278', marginBottom:'50px', maxWidth:'640px', margin:'0 auto 50px' }}>{t('how.sub')}</p>
+            <p style={{ fontSize:'16.5px', color:'#4a4063', marginBottom:'50px', maxWidth:'640px', margin:'0 auto 50px' }}>{t('how.sub')}</p>
             <div className="grid grid-cols-1 md:grid-cols-3" style={{ gap:'22px' }}>
               {[1,2,3].map(n => (
                 <div key={n} style={{ background:'#fff', border:'1px solid #ece0c8', borderRadius:'20px', padding:'26px', boxShadow:'0 10px 30px -14px rgba(8,4,28,.35)' }}>
@@ -398,7 +395,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                     {['👶','▶️','📬'][n-1]}
                   </div>
                   <h3 style={{ fontFamily:'var(--font-fraunces)', fontSize:'20px', marginBottom:'8px' }}>{n}. {t(`how.step${n}.title`)}</h3>
-                  <p style={{ fontSize:'14.5px', color:'#5d5278', lineHeight:1.5 }}>{t(`how.step${n}.desc`)}</p>
+                  <p style={{ fontSize:'14.5px', color:'#4a4063', lineHeight:1.5 }}>{t(`how.step${n}.desc`)}</p>
                 </div>
               ))}
             </div>
@@ -501,7 +498,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
           <div style={{ maxWidth:'1140px', margin:'0 auto', padding:'0 24px', textAlign:'center' }}>
             <p style={{ fontSize:'12.5px', letterSpacing:'1.8px', textTransform:'uppercase', color:'#E0852A', fontWeight:800 }}>{t('voices.kicker')}</p>
             <h2 id="voices-heading" style={{ fontFamily:'var(--font-fraunces)', fontSize:'clamp(26px,3vw,36px)', marginBottom:'10px' }}>{t('voices.title')}</h2>
-            <p style={{ fontSize:'16px', color:'#5d5278', marginBottom:'28px', maxWidth:'560px', margin:'0 auto 28px' }}>{t('voices.sub')}</p>
+            <p style={{ fontSize:'16px', color:'#4a4063', marginBottom:'28px', maxWidth:'560px', margin:'0 auto 28px' }}>{t('voices.sub')}</p>
             <div className="grid grid-cols-2" style={{ gap:'12px', maxWidth:'520px', margin:'0 auto 14px' }}>
               {voices.map((v, i) => (
                 <button key={v.id} onClick={() => playSample(i)} aria-pressed={i===activeVoice}
@@ -509,17 +506,17 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                   <span style={{ width:'40px', height:'40px', borderRadius:'50%', background: i===activeVoice?'#F4A93C':'#e7dac0', flexShrink:0, display:'grid', placeItems:'center', fontSize:'16px' }}>{sampleLoading===i ? '♪' : '▶'}</span>
                   <div style={{ textAlign:'left' }}>
                     <div style={{ fontWeight:800, fontSize:'15px' }}>{v.name}</div>
-                    <div style={{ fontSize:'13px', color:'#5d5278' }}>{v.tone}</div>
+                    <div style={{ fontSize:'13px', color:'#4a4063' }}>{v.tone}</div>
                   </div>
                 </button>
               ))}
             </div>
-            <p style={{ fontSize:'13.5px', color:'#5d5278', margin:'14px auto' }}>{t('voices.now')} <strong>{voices[activeVoice]?.name}</strong></p>
+            <p style={{ fontSize:'13.5px', color:'#4a4063', margin:'14px auto' }}>{t('voices.now')} <strong>{voices[activeVoice]?.name}</strong></p>
             {/* Your own voice teaser */}
             <div style={{ maxWidth:'520px', margin:'20px auto 0', background:'#fff', border:'1.5px dashed #EB8A8A', borderRadius:'17px', padding:'20px', textAlign:'center' }}>
               <span style={{ display:'inline-block', fontSize:'10.5px', letterSpacing:'1px', textTransform:'uppercase', fontWeight:800, color:'#fff', background:'#EB8A8A', padding:'3px 10px', borderRadius:'99px', marginBottom:'9px' }}>{t('voices.own.badge')}</span>
               <h3 style={{ fontFamily:'var(--font-fraunces)', fontSize:'19px', marginBottom:'8px' }}>{t('voices.own.title')}</h3>
-              <p style={{ fontSize:'14px', color:'#5d5278', marginBottom:'14px', lineHeight:1.5 }}>{t('voices.own.sub')}</p>
+              <p style={{ fontSize:'14px', color:'#4a4063', marginBottom:'14px', lineHeight:1.5 }}>{t('voices.own.sub')}</p>
               <button onClick={openBuilder} style={{ padding:'12px 22px', background:'#F4E9D4', color:'#211a3a', fontWeight:700, border:'none', borderRadius:'13px', cursor:'pointer' }}>
                 {t('voices.own.cta')}
               </button>
@@ -533,14 +530,14 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
             <div>
               <p style={{ fontSize:'12.5px', letterSpacing:'1.8px', textTransform:'uppercase', color:'#E0852A', fontWeight:800 }}>{t('sample.kicker')}</p>
               <h2 id="sample-heading" style={{ fontFamily:'var(--font-fraunces)', fontSize:'clamp(26px,3vw,36px)', marginBottom:'14px' }}>{t('sample.title')}</h2>
-              <p style={{ fontSize:'16px', color:'#5d5278', lineHeight:1.6, marginBottom:'24px' }}>{t('sample.sub')}</p>
+              <p style={{ fontSize:'16px', color:'#4a4063', lineHeight:1.6, marginBottom:'24px' }}>{t('sample.sub')}</p>
               <button onClick={openBuilder} style={{ padding:'15px 24px', background:'linear-gradient(135deg,#FFD27A,#E0852A)', color:'#3a230a', fontWeight:700, border:'none', borderRadius:'15px', cursor:'pointer', fontSize:'15px' }}>
                 {t('sample.cta')}
               </button>
             </div>
             <div>
               <blockquote style={{ background:'#fff', border:'1px solid #ece0c8', borderRadius:'18px', padding:'26px', fontSize:'18px', lineHeight:1.7, fontFamily:'var(--font-fraunces)', boxShadow:'0 10px 30px -14px rgba(8,4,28,.35)', margin:0 }}>
-                "Deep in the warm shallows, a small dolphin named <span style={{ background:'rgba(244,169,60,.24)', borderBottom:'2px solid #F4A93C', padding:'0 5px', borderRadius:'5px', fontWeight:700 }}>[your child]</span> found three shiny coins in the sand…"
+                "Deep in the warm shallows, a small dolphin named <span style={{ background:'rgba(244,169,60,.24)', borderBottom:'2px solid #F4A93C', padding:'0 5px', borderRadius:'5px', fontWeight:700 }}>[your child]</span> noticed a tiny crab who&apos;d lost the way home…"
               </blockquote>
               <span style={{ display:'inline-flex', gap:'7px', alignItems:'center', fontSize:'13px', color:'#8a6a1f', background:'#fff7ea', border:'1px solid #f1ddb6', borderRadius:'99px', padding:'7px 14px', marginTop:'14px' }}>
                 🎯 {t('sample.teaches')}
@@ -555,14 +552,11 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
             <p style={{ fontSize:'12.5px', letterSpacing:'1.8px', textTransform:'uppercase', color:'#E0852A', fontWeight:800 }}>{t('testimonials.kicker')}</p>
             <h2 id="testimonials-heading" style={{ fontFamily:'var(--font-fraunces)', fontSize:'clamp(26px,3vw,36px)', marginBottom:'40px' }}>{t('testimonials.title')}</h2>
             <div className="grid grid-cols-1 md:grid-cols-3" style={{ gap:'22px' }}>
-              {TESTIMONIALS.map((t2, i) => (
-                <div key={i} style={{ background:'#fff', border:'1px solid #ece0c8', borderRadius:'20px', padding:'24px', boxShadow:'0 10px 30px -14px rgba(8,4,28,.35)' }}>
-                  <div style={{ color:'#F4A93C', letterSpacing:'2px', fontSize:'15px', marginBottom:'12px' }}>★★★★★</div>
-                  <p style={{ fontSize:'15px', lineHeight:1.6, color:'#211a3a', marginBottom:'16px' }}>"{t2.quote}"</p>
-                  <div style={{ display:'flex', alignItems:'center', gap:'10px' }}>
-                    <div style={{ width:'40px', height:'40px', borderRadius:'50%', background: ['#F8CBA0','#B8E6F6','#C9BBF0'][i], display:'grid', placeItems:'center', fontSize:'18px' }}>👤</div>
-                    <div><div style={{ fontWeight:700, fontSize:'14px' }}>{t2.author}</div><div style={{ fontSize:'12.5px', color:'#5d5278' }}>{t2.role}</div></div>
-                  </div>
+              {PROOF.map((pf, i) => (
+                <div key={i} style={{ background:'#fff', border:'1px solid #ece0c8', borderRadius:'20px', padding:'26px', boxShadow:'0 10px 30px -14px rgba(8,4,28,.35)', textAlign:'left' }}>
+                  <div style={{ fontSize:'28px', marginBottom:'12px' }}>{pf.icon}</div>
+                  <h3 style={{ fontFamily:'var(--font-fraunces)', fontSize:'18px', marginBottom:'8px' }}>{pf.title}</h3>
+                  <p style={{ fontSize:'14.5px', lineHeight:1.6, color:'#4a4063' }}>{pf.body}</p>
                 </div>
               ))}
             </div>
@@ -577,15 +571,15 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
             <div className="grid grid-cols-1 md:grid-cols-2" style={{ gap:'24px', maxWidth:'760px', margin:'0 auto 22px' }}>
               {/* Free */}
               <div style={{ background:'#fff', border:'1px solid #ece0c8', borderRadius:'20px', padding:'32px', textAlign:'center' }}>
-                <div style={{ fontSize:'14px', color:'#5d5278', fontWeight:700, marginBottom:'8px' }}>{t('pricing.free.label')}</div>
+                <div style={{ fontSize:'14px', color:'#4a4063', fontWeight:700, marginBottom:'8px' }}>{t('pricing.free.label')}</div>
                 <div style={{ fontFamily:'var(--font-fraunces)', fontSize:'46px', marginBottom:'8px' }}>{t('pricing.free.amount')}</div>
-                <div style={{ fontSize:'13px', color:'#5d5278', marginBottom:'24px' }}>{t('pricing.free.sub')}</div>
+                <div style={{ fontSize:'13px', color:'#4a4063', marginBottom:'24px' }}>{t('pricing.free.sub')}</div>
                 <button onClick={openBuilder} style={{ width:'100%', padding:'14px', background:'transparent', border:'1.5px solid #d9c9a8', borderRadius:'14px', fontWeight:700, cursor:'pointer', fontSize:'14px' }}>Start free</button>
               </div>
               {/* Club */}
               <div style={{ background:'#fff', border:'2px solid #F4A93C', borderRadius:'20px', padding:'32px', textAlign:'center', position:'relative' }}>
                 <div style={{ position:'absolute', top:'-12px', left:'50%', transform:'translateX(-50%)', background:'#F4A93C', color:'#3a230a', fontSize:'11.5px', fontWeight:800, padding:'4px 14px', borderRadius:'99px' }}>{t('pricing.club.tag')}</div>
-                <div style={{ fontSize:'14px', color:'#5d5278', fontWeight:700, marginBottom:'8px' }}>{t('pricing.club.label')}</div>
+                <div style={{ fontSize:'14px', color:'#4a4063', fontWeight:700, marginBottom:'8px' }}>{t('pricing.club.label')}</div>
                 <div style={{ fontFamily:'var(--font-fraunces)', fontSize:'46px', marginBottom:'4px' }}>{t('pricing.club.amount')}<span style={{ fontSize:'18px' }}>{t('pricing.club.period')}</span></div>
                 <ul style={{ listStyle:'none', textAlign:'left', margin:'18px 0', fontSize:'14.5px', display:'flex', flexDirection:'column', gap:'10px' }}>
                   {[1,2,3,4].map(n => (
@@ -600,7 +594,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                 </button>
               </div>
             </div>
-            <p style={{ fontSize:'14px', color:'#5d5278', lineHeight:1.6 }}>{t('pricing.guarantee')}<br/>{t('pricing.value')}</p>
+            <p style={{ fontSize:'14px', color:'#4a4063', lineHeight:1.6 }}>{t('pricing.guarantee')}<br/>{t('pricing.value')}</p>
           </div>
         </section>
 
@@ -634,7 +628,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                     <span>{f.q}</span>
                     <span style={{ fontSize:'22px', color:'#E0852A', fontWeight:400, flexShrink:0 }}>{faqOpen === i ? '–' : '+'}</span>
                   </button>
-                  {faqOpen === i && <p style={{ fontSize:'14.5px', color:'#5d5278', marginTop:'10px', lineHeight:1.6 }}>{f.a}</p>}
+                  {faqOpen === i && <p style={{ fontSize:'14.5px', color:'#4a4063', marginTop:'10px', lineHeight:1.6 }}>{f.a}</p>}
                 </div>
               ))}
             </div>
@@ -704,7 +698,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
             {/* ── Embedded Stripe Checkout — payment happens in-funnel ── */}
             {checkoutSecret && (
               <div style={{ padding:'18px' }}>
-                <button onClick={() => setCheckoutSecret(null)} style={{ background:'none', border:'none', cursor:'pointer', fontSize:'13px', color:'#5d5278', fontWeight:700, marginBottom:'10px' }}>← Back</button>
+                <button onClick={() => setCheckoutSecret(null)} style={{ background:'none', border:'none', cursor:'pointer', fontSize:'13px', color:'#4a4063', fontWeight:700, marginBottom:'10px' }}>← Back</button>
                 <div style={{ background:'#fff7ea', border:'1px solid #f1ddb6', borderRadius:'12px', padding:'10px 12px', fontSize:'12.5px', color:'#8a6a1f', marginBottom:'14px' }}>
                   🌙 {childName ? `${childName}'s` : 'Your'} first story is free · then $9.99/mo · cancel anytime
                 </div>
@@ -725,7 +719,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
               <div style={{ flex:1, height:'8px', background:'#e7dac0', borderRadius:'99px', overflow:'hidden' }}>
                 <div style={{ height:'100%', width:`${builderStep * 33.34}%`, background:'linear-gradient(90deg,#FFD27A,#E0852A)', borderRadius:'99px', transition:'width .45s' }} />
               </div>
-              <span style={{ fontSize:'12px', color:'#5d5278', fontWeight:700 }}>{builderStep} / 3</span>
+              <span style={{ fontSize:'12px', color:'#4a4063', fontWeight:700 }}>{builderStep} / 3</span>
             </div>
             )}
 
@@ -740,7 +734,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
               {builderStep === 1 && (
                 <div>
                   <h2 style={{ fontFamily:'var(--font-fraunces)', fontSize:'22px', margin:'6px 0 4px' }}>Who's this story for?</h2>
-                  <p style={{ fontSize:'13.5px', color:'#5d5278', marginBottom:'18px' }}>Only used to personalise the story. No account needed yet.</p>
+                  <p style={{ fontSize:'13.5px', color:'#4a4063', marginBottom:'18px' }}>Only used to personalise the story. No account needed yet.</p>
                   <div style={{ marginBottom:'16px' }}>
                     <label style={{ fontSize:'13px', fontWeight:700, display:'block', marginBottom:'7px' }}>Your child's first name</label>
                     <input value={childName} onChange={e => setChildName(e.target.value)} placeholder="e.g. Maya"
@@ -764,14 +758,14 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
               {builderStep === 2 && (
                 <div>
                   <h2 style={{ fontFamily:'var(--font-fraunces)', fontSize:'22px', margin:'6px 0 4px' }}>What does your child love?</h2>
-                  <p style={{ fontSize:'13.5px', color:'#5d5278', marginBottom:'18px' }}>Same lesson, set in the world they'll adore — they become the hero.</p>
+                  <p style={{ fontSize:'13.5px', color:'#4a4063', marginBottom:'18px' }}>Same lesson, set in the world they'll adore — they become the hero.</p>
                   <div className="grid grid-cols-2" style={{ gap:'11px' }}>
                     {SKINS.map(s => (
                       <button key={s.slug} onClick={() => setSkinSlug(s.slug)}
                         style={{ border:`2px solid ${skinSlug===s.slug?'#F4A93C':'#e0d2b7'}`, borderRadius:'17px', padding:'14px 10px', cursor:'pointer', textAlign:'center', background: skinSlug===s.slug?'#fff7ea':'#fff', transition:'.15s' }}>
                         <div style={{ fontSize:'34px', marginBottom:'6px' }}>{s.emoji}</div>
                         <div style={{ fontWeight:800, fontSize:'13px' }}>{s.loves}</div>
-                        <div style={{ fontSize:'11px', color:'#5d5278' }}>{s.name} · {s.desc}</div>
+                        <div style={{ fontSize:'11px', color:'#4a4063' }}>{s.name} · {s.desc}</div>
                       </button>
                     ))}
                   </div>
@@ -782,7 +776,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
               {builderStep === 3 && (
                 <div>
                   <h2 style={{ fontFamily:'var(--font-fraunces)', fontSize:'22px', margin:'6px 0 4px' }}>What should it teach?</h2>
-                  <p style={{ fontSize:'13.5px', color:'#5d5278', marginBottom:'18px' }}>One concept per story, building level by level. Pick the skill you'd like to start with.</p>
+                  <p style={{ fontSize:'13.5px', color:'#4a4063', marginBottom:'18px' }}>One concept per story, building level by level. Pick the skill you'd like to start with.</p>
                   {[
                     { slug:'money', emoji:'🪙', name:'Money & saving', desc:'Coins, value, saving for goals', live:true },
                     { slug:'focus', emoji:'🎯', name:'Focus & goals', desc:'Attention, planning, finishing', live:true },
@@ -798,10 +792,10 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                         aria-pressed={selected}
                         style={{ width:'100%', textAlign:'left', display:'flex', alignItems:'center', gap:'12px', border:`2px solid ${selected ? '#F4A93C' : '#e0d2b7'}`, borderRadius:'15px', padding:'13px', cursor:'pointer', background: selected ? '#fff7ea' : '#fff', opacity: s.live ? 1 : .7, marginBottom:'10px', fontFamily:'inherit' }}>
                         <span style={{ fontSize:'24px' }}>{s.emoji}</span>
-                        <div style={{ flex:1 }}><div style={{ fontWeight:700, fontSize:'14.5px' }}>{s.name}</div><div style={{ fontSize:'12px', color:'#5d5278' }}>{s.desc}</div></div>
+                        <div style={{ flex:1 }}><div style={{ fontWeight:700, fontSize:'14.5px' }}>{s.name}</div><div style={{ fontSize:'12px', color:'#4a4063' }}>{s.desc}</div></div>
                         {s.live
                           ? <span style={{ fontSize:'16px', color: selected ? '#E0852A' : '#cdbf9f' }}>{selected ? '✓' : '○'}</span>
-                          : <span style={{ fontSize:'10px', background:'#e7dac0', color:'#5d5278', padding:'3px 9px', borderRadius:'99px', fontWeight:800 }}>Soon</span>}
+                          : <span style={{ fontSize:'10px', background:'#e7dac0', color:'#4a4063', padding:'3px 9px', borderRadius:'99px', fontWeight:800 }}>Soon</span>}
                       </button>
                     )
                   })}
@@ -820,7 +814,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                 {preview.loading && (
                   <div style={{ textAlign:'center', padding:'30px 10px' }}>
                     <div style={{ fontSize:'30px', marginBottom:'12px' }}>🌙</div>
-                    <p style={{ fontSize:'14px', color:'#5d5278' }}>Building {childName ? `${childName}'s` : 'your'} preview…</p>
+                    <p style={{ fontSize:'14px', color:'#4a4063' }}>Building {childName ? `${childName}'s` : 'your'} preview…</p>
                   </div>
                 )}
 
@@ -840,7 +834,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                         `${SKINS.find(s => s.slug === skinSlug)?.emoji ?? '🌍'} ${SKINS.find(s => s.slug === skinSlug)?.name ?? 'World'}`,
                         `🔊 ${voices.find(v => v.id === voiceId)?.name ?? 'Voice'}`,
                       ].filter(Boolean).map((b, i) => (
-                        <span key={i} style={{ fontSize:'11.5px', fontWeight:700, background:'#fff', border:'1px solid #ece0c8', borderRadius:'99px', padding:'5px 11px', color:'#5d5278' }}>{b}</span>
+                        <span key={i} style={{ fontSize:'11.5px', fontWeight:700, background:'#fff', border:'1px solid #ece0c8', borderRadius:'99px', padding:'5px 11px', color:'#4a4063' }}>{b}</span>
                       ))}
                     </div>
 
@@ -863,7 +857,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                         <p style={{ fontSize:'13.5px', fontWeight:700, color:'#211a3a', margin:'0 0 4px' }}>
                           🎧 Hear {childName ? `${childName}'s` : 'your'} story — and we'll save it to your library
                         </p>
-                        <p style={{ fontSize:'12px', color:'#5d5278', margin:'0 0 12px' }}>
+                        <p style={{ fontSize:'12px', color:'#4a4063', margin:'0 0 12px' }}>
                           Enter your email and press play. Your first story is free — no card needed to listen.
                         </p>
                         <input
@@ -927,7 +921,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                     </div>
                     )}
 
-                    <p style={{ fontSize:'12px', color:'#5d5278', textAlign:'center', margin:'14px 0 0' }}>
+                    <p style={{ fontSize:'12px', color:'#4a4063', textAlign:'center', margin:'14px 0 0' }}>
                       Level 1 of 5 · {SUBJECT_NAMES[subjectSlug] ?? 'Money'} path · {voices.find(v => v.id === voiceId)?.name ?? 'Willow'}'s voice
                     </p>
                   </>
@@ -946,11 +940,10 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                 </button>
               ) : leadDone ? (
                 <>
-                  {/* Social proof at the decision point (placeholder quote). */}
-                  <div style={{ background:'#fff', border:'1px solid #ece0c8', borderRadius:'13px', padding:'11px 13px', marginBottom:'11px' }}>
-                    <div style={{ color:'#F4A93C', letterSpacing:'2px', fontSize:'12px', marginBottom:'4px' }}>★★★★★</div>
-                    <p style={{ fontSize:'12.5px', lineHeight:1.5, color:'#211a3a', margin:0 }}>
-                      "{TESTIMONIALS[0].quote}" <span style={{ color:'#5d5278', fontWeight:600 }}>— {TESTIMONIALS[0].author}, {TESTIMONIALS[0].role}</span>
+                  {/* Risk reversal at the decision point — the real credit guarantee. */}
+                  <div style={{ background:'#fff7ea', border:'1px solid #f1ddb6', borderRadius:'13px', padding:'11px 13px', marginBottom:'11px' }}>
+                    <p style={{ fontSize:'12.5px', lineHeight:1.5, color:'#8a6a1f', margin:0 }}>
+                      🛟 Don&apos;t love a story? Tap &ldquo;report&rdquo; and it&apos;s on us — automatic credit, no questions.
                     </p>
                   </div>
                   {/* Curriculum + trust mini-explainer: sells the program, not one
@@ -959,7 +952,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                     {[['📚','Levels build on each other'],['✍️','Expert-written'],['🔒','No data on your child']].map(([icon,label]) => (
                       <div key={label} style={{ flex:1, background:'#fff', border:'1px solid #ece0c8', borderRadius:'11px', padding:'9px 6px', textAlign:'center' }}>
                         <div style={{ fontSize:'16px', lineHeight:1.2 }}>{icon}</div>
-                        <div style={{ fontSize:'10px', color:'#5d5278', fontWeight:600, lineHeight:1.25, marginTop:'2px' }}>{label}</div>
+                        <div style={{ fontSize:'10px', color:'#4a4063', fontWeight:600, lineHeight:1.25, marginTop:'2px' }}>{label}</div>
                       </div>
                     ))}
                   </div>
@@ -969,18 +962,18 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                     style={{ width:'100%', padding:'15px', background:'linear-gradient(135deg,#FFD27A,#E0852A)', color:'#3a230a', fontWeight:700, border:'none', borderRadius:'15px', cursor: preview.loading ? 'wait' : 'pointer', fontSize:'15px', opacity: preview.loading ? .6 : 1 }}>
                     {checkoutLoading ? 'Starting…' : 'Start Story Club — first story free →'}
                   </button>
-                  <p style={{ fontSize:'11.5px', color:'#5d5278', textAlign:'center', margin:'9px 0 0', lineHeight:1.4 }}>
+                  <p style={{ fontSize:'11.5px', color:'#4a4063', textAlign:'center', margin:'9px 0 0', lineHeight:1.4 }}>
                     Then <strong>$9.99/mo</strong> · a new story every 3 days · cancel anytime
                   </p>
                   <p style={{ fontSize:'11px', color:'#8a6a1f', textAlign:'center', margin:'5px 0 0' }}>
                     👨‍👩‍👧‍👦 One subscription covers all your kids — add siblings anytime
                   </p>
-                  <button onClick={() => setPreview(null)} style={{ width:'100%', padding:'10px', background:'none', color:'#5d5278', fontWeight:600, border:'none', cursor:'pointer', fontSize:'13px', marginTop:'4px' }}>
+                  <button onClick={() => setPreview(null)} style={{ width:'100%', padding:'10px', background:'none', color:'#4a4063', fontWeight:600, border:'none', cursor:'pointer', fontSize:'13px', marginTop:'4px' }}>
                     ← Change something
                   </button>
                 </>
               ) : (
-                <button onClick={() => setPreview(null)} style={{ width:'100%', padding:'10px', background:'none', color:'#5d5278', fontWeight:600, border:'none', cursor:'pointer', fontSize:'13px' }}>
+                <button onClick={() => setPreview(null)} style={{ width:'100%', padding:'10px', background:'none', color:'#4a4063', fontWeight:600, border:'none', cursor:'pointer', fontSize:'13px' }}>
                   ← Change something
                 </button>
               )}
