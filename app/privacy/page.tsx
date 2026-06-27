@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 }
 
 const EFFECTIVE_DATE = 'June 2026'
-const CONTACT_EMAIL  = 'privacy@lumi.app'  // update to your real address
+const CONTACT_EMAIL  = 'privacy@mylumi.xyz'  // ⚠ must be a real, monitored mailbox
 
 export default function PrivacyPage() {
   return (
@@ -33,7 +33,7 @@ export default function PrivacyPage() {
         {[
           {
             heading: '1. Who we are',
-            body: `Lumi ("we", "us") provides personalised bedtime stories via lumi.app. Contact us at ${CONTACT_EMAIL}.`,
+            body: `Lumi ("we", "us") provides personalised bedtime stories via mylumi.xyz. Contact us at ${CONTACT_EMAIL}.`,
           },
           {
             heading: '2. What we collect — and what we deliberately do not',
@@ -73,8 +73,8 @@ Parents may at any time:
 We never sell your data. We never use your data for advertising.`,
           },
           {
-            heading: '5. Voice recordings',
-            body: `If you record your voice for narration (an optional feature), your recording is stored privately in our cloud storage (Supabase). It is used only to narrate your account's stories. It is never shared, sold, or used to train AI models. You can delete your recording at any time from Account → Voice settings.`,
+            heading: '5. Voice recordings (upcoming feature)',
+            body: `Recording your own narration voice is an optional feature we're rolling out; it is not yet available. If and when you choose to record your voice, the recording will be stored privately in our cloud storage (Supabase), used only to narrate your own account's stories, and never shared, sold, or used to train AI models. You will be able to delete it at any time from your account.`,
           },
           {
             heading: '6. Data retention',
@@ -84,9 +84,9 @@ We never sell your data. We never use your data for advertising.`,
             heading: '7. Third-party services',
             body: `• Supabase (database + auth) — EU/US data storage
 • Stripe (payments) — PCI-compliant, we never see card details
-• Resend (email delivery)
-• DeepInfra (text-to-speech processing)
-• PostHog (anonymised analytics — IPs masked, inputs masked)`,
+• Resend (email delivery — the parent's email receives the personalised story)
+• DeepInfra (text-to-speech) — receives only the narration text, which contains no child's name or personal data
+• PostHog (anonymised analytics — IPs masked, inputs masked, no child data)`,
           },
           {
             heading: '8. Your rights',
@@ -94,7 +94,7 @@ We never sell your data. We never use your data for advertising.`,
           },
           {
             heading: '9. Changes to this policy',
-            body: `We'll email you if we make material changes. The current version is always at lumi.app/privacy.`,
+            body: `We'll email you if we make material changes. The current version is always at mylumi.xyz/privacy.`,
           },
           {
             heading: '10. Contact',
