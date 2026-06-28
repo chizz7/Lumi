@@ -29,18 +29,28 @@ export async function GET(req: NextRequest) {
   const script  = assembleScript(draft.subjectSlug, 1, draft.skinSlug, draft.childName, ageBand)
   const excerpt = previewText(script)
 
-  // Preview audio from the cacheable audioText (not the script)
+  // Preview audio from the cacheable audioText (not the script). The script is
+  // the moment-of-value, so we NEVER let a slow/cold TTS render block (or worse,
+  // time the function out and hard-fail) the whole preview. Race the render
+  // against a budget well under the function's maxDuration: if audio wins, great;
+  // if it's slow, return the script now with a graceful retry state. The render
+  // keeps going and caches, so the retry is an instant cache hit.
+  const AUDIO_BUDGET_MS = 40_000
   let audioUrl:   string | null = null
   let audioError: string | null = null
   try {
     const cacheKey = audioCacheKey(draft.subjectSlug, 1, draft.skinSlug, draft.voiceId, 'en', true, ageTag)
-    audioUrl = await getOrRenderAudio(audioText, draft.voiceId, cacheKey)
+    audioUrl = await Promise.race([
+      getOrRenderAudio(audioText, draft.voiceId, cacheKey),
+      new Promise<string>((_, reject) =>
+        setTimeout(() => reject(new Error('audio render exceeded budget')), AUDIO_BUDGET_MS)),
+    ])
   } catch (err) {
     // Non-fatal: the script still renders. Surface a friendly reason so the UI
-    // can show a Retry button instead of a dead native player. The detailed
-    // error (e.g. the upstream TTS status) stays in the server logs only.
+    // shows a Retry button instead of a dead native player. Detailed error
+    // (TTS status, timeout) stays in the server logs only.
     console.error('[preview] audio error (non-fatal):', err)
-    audioError = 'The narration didn’t finish generating just now.'
+    audioError = 'The narration is taking a moment — tap retry, or we’ll email it.'
   }
 
   return NextResponse.json({

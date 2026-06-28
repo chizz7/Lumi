@@ -16,6 +16,12 @@ import type { VoiceConfig }              from '@/lib/voices'
 // Embedded Checkout keeps payment inside the funnel. Created once at module load.
 const STRIPE_PK = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
 const stripePromise = STRIPE_PK ? loadStripe(STRIPE_PK) : null
+
+// A tiny silent WAV used to "unlock" the sample <audio> element on the first
+// user gesture. Browsers block .play() that isn't inside a gesture (and our
+// sample plays AFTER an async fetch), but once an element has played within a
+// gesture it stays user-activated, so later programmatic plays are allowed.
+const SILENT_AUDIO = 'data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQAAAAA='
 import { getAllLevels }                  from '@/content'
 import { interestForWorld }              from '@/content/interests'
 import StoryStudio                       from './StoryStudio'
@@ -101,7 +107,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
     if (!v) return
     setSampleLoading(voiceIdx)
     try {
-      const res  = await fetch(`/api/preview/sample?skin=${skinSlug}&voice=${encodeURIComponent(v.id)}`)
+      const res  = await fetch(`/api/preview/sample?subject=${encodeURIComponent(subjectSlug)}&skin=${skinSlug}&voice=${encodeURIComponent(v.id)}`)
       const data = await res.json()
       if (res.ok && data.audioUrl && sampleAudioRef.current) {
         sampleAudioRef.current.src = data.audioUrl
@@ -110,6 +116,22 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
     } catch { /* non-fatal — sample just won't play */ }
     finally { setSampleLoading(null) }
   }
+
+  // Unlock the sample <audio> element on the first user gesture so a play()
+  // that happens AFTER an async fetch isn't blocked by the browser's autoplay
+  // policy (the #1 reason the voice snippet "doesn't play").
+  useEffect(() => {
+    const unlock = () => {
+      const a = sampleAudioRef.current
+      if (a) {
+        a.src = SILENT_AUDIO
+        a.play().then(() => { a.pause(); a.currentTime = 0 }).catch(() => {})
+      }
+      window.removeEventListener('pointerdown', unlock)
+    }
+    window.addEventListener('pointerdown', unlock, { once: true })
+    return () => window.removeEventListener('pointerdown', unlock)
+  }, [])
 
   // ── Builder overlay focus management (a11y: trap + Escape + restore) ─────────
   const dialogRef = useRef<HTMLDivElement>(null)

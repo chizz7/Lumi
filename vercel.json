@@ -14,7 +14,10 @@
       "maxDuration": 300
     },
     "app/api/preview/route.ts": {
-      "maxDuration": 15
+      "maxDuration": 60
+    },
+    "app/api/preview/sample/route.ts": {
+      "maxDuration": 60
     }
   },
   "headers": [

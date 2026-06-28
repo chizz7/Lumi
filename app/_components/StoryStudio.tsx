@@ -192,7 +192,11 @@ export default function StoryStudio(p: Props) {
               return (
                 <button key={v.id} onClick={() => { p.setVoiceId(v.id); p.playSample(i); lock() }} aria-pressed={on}
                   style={{ width: '100%', display: 'flex', alignItems: 'center', gap: 11, border: `1.5px solid ${on ? AMBER : '#e9ddc4'}`, background: on ? '#fff7ea' : '#fff', borderRadius: 12, padding: '10px 12px', marginBottom: 8, cursor: 'pointer', textAlign: 'left' }}>
-                  <span style={{ width: 30, height: 30, borderRadius: '50%', background: '#fff3dd', border: `1.5px solid ${AMBER}`, color: '#8a4d0a', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 11, flexShrink: 0 }}>{p.sampleLoading === i ? '♪' : '▶'}</span>
+                  <span style={{ width: 30, height: 30, borderRadius: '50%', background: '#fff3dd', border: `1.5px solid ${AMBER}`, color: '#8a4d0a', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 11, flexShrink: 0 }}>
+                    {p.sampleLoading === i
+                      ? <span className="sds-eq" style={{ display: 'inline-flex', gap: 2, alignItems: 'flex-end', height: 12 }}><i style={{ width: 2.5, height: 12, background: '#8a4d0a', borderRadius: 1 }} /><i style={{ width: 2.5, height: 12, background: '#8a4d0a', borderRadius: 1 }} /><i style={{ width: 2.5, height: 12, background: '#8a4d0a', borderRadius: 1 }} /></span>
+                      : '▶'}
+                  </span>
                   <span style={{ flex: 1 }}>
                     <span style={{ display: 'block', fontSize: 13.5, fontWeight: 800, color: '#211a3a' }}>{v.name}</span>
                     <span style={{ display: 'block', fontSize: 11.5, color: '#4a4063' }}>{v.tone}</span>
