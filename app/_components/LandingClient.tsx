@@ -99,39 +99,39 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
   // ── Audio sampler (hero + voice switcher) ───────────────────────────────────
   const sampleAudioRef = useRef<HTMLAudioElement>(null)
   const [sampleLoading, setSampleLoading] = useState<number | null>(null)
+  const [sampleError,   setSampleError]   = useState<string | null>(null)
 
   // Play the pre-rendered Level-1 sample for a given voice index. Cache-first, ≈$0.
+  // The file loads fine (HTTP 206) — the trick is the browser blocks .play() that
+  // runs after the async fetch (outside the click gesture). So we PRIME the element
+  // with a synchronous play() of its silent default source *inside* the click,
+  // which user-activates it; the post-fetch play() of the real URL is then allowed.
   const playSample = async (voiceIdx: number) => {
-    setActiveVoice(voiceIdx)
+    setActiveVoice(voiceIdx); setSampleError(null)
     const v = voices[voiceIdx]
     if (!v) return
+    const el = sampleAudioRef.current
+    el?.play().catch(() => {})   // ← prime within the gesture (silent src), before any await
     setSampleLoading(voiceIdx)
     try {
       const res  = await fetch(`/api/preview/sample?subject=${encodeURIComponent(subjectSlug)}&skin=${skinSlug}&voice=${encodeURIComponent(v.id)}`)
-      const data = await res.json()
-      if (res.ok && data.audioUrl && sampleAudioRef.current) {
-        sampleAudioRef.current.src = data.audioUrl
-        await sampleAudioRef.current.play().catch(() => {})
+      const data = await res.json().catch(() => ({}))
+      if (!res.ok || !data.audioUrl) {
+        setSampleError('Sample is still preparing — tap again in a moment.')
+        return
       }
-    } catch { /* non-fatal — sample just won't play */ }
-    finally { setSampleLoading(null) }
+      if (!el) return
+      el.src = data.audioUrl
+      el.load()
+      try {
+        await el.play()
+      } catch {
+        setSampleError('Tap ▶ once more to play.')
+      }
+    } catch {
+      setSampleError('Could not load the sample — please try again.')
+    } finally { setSampleLoading(null) }
   }
-
-  // Unlock the sample <audio> element on the first user gesture so a play()
-  // that happens AFTER an async fetch isn't blocked by the browser's autoplay
-  // policy (the #1 reason the voice snippet "doesn't play").
-  useEffect(() => {
-    const unlock = () => {
-      const a = sampleAudioRef.current
-      if (a) {
-        a.src = SILENT_AUDIO
-        a.play().then(() => { a.pause(); a.currentTime = 0 }).catch(() => {})
-      }
-      window.removeEventListener('pointerdown', unlock)
-    }
-    window.addEventListener('pointerdown', unlock, { once: true })
-    return () => window.removeEventListener('pointerdown', unlock)
-  }, [])
 
   // ── Builder overlay focus management (a11y: trap + Escape + restore) ─────────
   const dialogRef = useRef<HTMLDivElement>(null)
@@ -405,8 +405,9 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                   {sampleLoading === activeVoice ? '♪ Loading…' : `▶ ${t('hero.cta.secondary')}`}
                 </button>
                 {/* Hidden element that plays the cache-first sample MP3 */}
-                <audio ref={sampleAudioRef} preload="none" />
+                <audio ref={sampleAudioRef} src={SILENT_AUDIO} preload="auto" />
               </div>
+              {sampleError && <p style={{ fontSize:'13px', color:'#FFD27A', margin:'-12px 0 18px' }}>{sampleError}</p>}
               <div style={{ display:'flex', gap:'18px', flexWrap:'wrap', fontSize:'13.5px', color:'#cfc3ea' }}>
                 <span>✓ {t('hero.trust.rating')}</span>
                 <span>{t('hero.trust.families')}</span>
