@@ -20,7 +20,7 @@ import { getAllLevels }                  from '@/content'
 import { interestForWorld }              from '@/content/interests'
 import StoryStudio                       from './StoryStudio'
 import AudioPlayer                       from './AudioPlayer'
-import { playUrl }                        from '@/lib/howlerPlayer'
+import { playUrl, play as playAudio }     from '@/lib/howlerPlayer'
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -126,16 +126,23 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
     } finally { setSampleLoading(null) }
   }
 
-  // Pre-warm the active hero voice's sample (and quietly the others) so the very
-  // first tap of "Hear a sample" hits the synchronous, reliable play path.
+  // Pre-warm EVERY voice sample for the current world so any voice tap hits the
+  // synchronous play path. This matters on iOS: a play() that runs after an
+  // await (an uncached fetch) lands outside the tap gesture and gets blocked, so
+  // the URL must already be cached when the user taps. The active voice warms
+  // first; the rest follow shortly after.
   useEffect(() => {
     let cancelled = false
     const t = setTimeout(() => {
-      const v = voices[activeVoice]
-      if (v && !cancelled) warmSample(v.id).catch(() => {})
+      if (cancelled) return
+      const active = voices[activeVoice]
+      if (active) warmSample(active.id).catch(() => {})
+      voices.forEach((v, i) => {
+        if (i !== activeVoice) warmSample(v.id).catch(() => {})
+      })
     }, 600)
     return () => { cancelled = true; clearTimeout(t) }
-  }, [skinSlug, activeVoice]) // eslint-disable-line react-hooks/exhaustive-deps
+  }, [skinSlug, subjectSlug, activeVoice]) // eslint-disable-line react-hooks/exhaustive-deps
 
   // ── Builder overlay focus management (a11y: trap + Escape + restore) ─────────
   const dialogRef = useRef<HTMLDivElement>(null)
@@ -183,7 +190,11 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { setLeadError(true); return }
     setLeadError(false)
     setLeadDone(true)
-    // AudioPlayer autoPlays once it mounts on unlock; Howler handles the unlock.
+    // CRITICAL (iOS): start playback synchronously inside this tap handler. The
+    // preview URL is already fetched by the time the email gate shows, so we can
+    // play it right here in the gesture — iOS won't load/play audio started from
+    // an effect after the state change.
+    if (preview?.audioUrl) playAudio(preview.audioUrl)
     // Capture the lead (non-blocking — the story unlocks regardless).
     fetch('/api/lead', {
       method: 'POST',
@@ -894,11 +905,11 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                       {renderScript(preview.script ?? '')}
                     </blockquote>
 
-                    {/* Howler-backed player. Keyed on the URL so it remounts and
-                        loads FRESH when the preview changes; autoPlays on unlock.
-                        Howler manages the cross-browser audio unlock for us. */}
+                    {/* Howler-backed player bound to the shared store. Playback is
+                        started by the unlock tap (in-gesture, iOS-safe); this just
+                        renders the controls + scrubber. Retry re-renders the audio. */}
                     {leadDone && preview.audioUrl && (
-                      <AudioPlayer key={preview.audioUrl} url={preview.audioUrl} autoPlay />
+                      <AudioPlayer url={preview.audioUrl} onRetry={() => generatePreview()} />
                     )}
 
                     {!leadDone && (
