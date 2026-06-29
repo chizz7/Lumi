@@ -893,13 +893,18 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                       {renderScript(preview.script ?? '')}
                     </blockquote>
 
-                    {/* Audio is always mounted so .play() works inside the unlock
-                        gesture; controls are revealed once the email is given. */}
+                    {/* Keyed on the URL + unlock state so the element remounts and
+                        loads the source FRESH when it's revealed (a src set while the
+                        element was display:none can otherwise get stuck at 0:00).
+                        If the media fails to load, fall back to the retry state
+                        instead of leaving a dead native player. */}
                     <audio
+                      key={`${preview.audioUrl ?? 'none'}-${leadDone}`}
                       ref={previewAudioRef}
                       src={preview.audioUrl ?? undefined}
                       controls={leadDone}
                       preload="auto"
+                      onError={() => setPreview(p => (p && p.audioUrl) ? { ...p, audioUrl: null, audioError: 'The audio didn’t load — tap retry.' } : p)}
                       style={{ width:'100%', display: leadDone && preview.audioUrl ? 'block' : 'none' }}
                     />
 
