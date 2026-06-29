@@ -19,8 +19,7 @@ const stripePromise = STRIPE_PK ? loadStripe(STRIPE_PK) : null
 import { getAllLevels }                  from '@/content'
 import { interestForWorld }              from '@/content/interests'
 import StoryStudio                       from './StoryStudio'
-import AudioPlayer                       from './AudioPlayer'
-import { playUrl, play as playAudio }     from '@/lib/howlerPlayer'
+import { playUrl }                        from '@/lib/howlerPlayer'
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -180,6 +179,11 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
   const [leadEmail, setLeadEmail]     = useState('')
   const [leadDone,  setLeadDone]      = useState(false)
   const [leadError, setLeadError]     = useState(false)
+  // Native <audio> ref + the media error code it reports, so we can SEE why iOS
+  // refuses the file (2=network/range, 3=decode, 4=src/content-type) instead of
+  // guessing. Mounted before unlock so unlockStory can play() inside the gesture.
+  const previewAudioRef = useRef<HTMLAudioElement>(null)
+  const [audioErrCode, setAudioErrCode] = useState<number | null>(null)
   // Embedded Stripe checkout (mounts in-modal; null until "Start Story Club").
   const [checkoutSecret,  setCheckoutSecret]  = useState<string | null>(null)
   const [checkoutLoading, setCheckoutLoading] = useState(false)
@@ -190,11 +194,11 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { setLeadError(true); return }
     setLeadError(false)
     setLeadDone(true)
-    // CRITICAL (iOS): start playback synchronously inside this tap handler. The
-    // preview URL is already fetched by the time the email gate shows, so we can
-    // play it right here in the gesture — iOS won't load/play audio started from
-    // an effect after the state change.
-    if (preview?.audioUrl) playAudio(preview.audioUrl)
+    setAudioErrCode(null)
+    // CRITICAL (iOS): start playback synchronously inside this tap handler on the
+    // already-mounted native <audio> element. iOS won't load/play audio started
+    // from an effect after the state change — it must be in the gesture.
+    previewAudioRef.current?.play().catch(() => {})
     // Capture the lead (non-blocking — the story unlocks regardless).
     fetch('/api/lead', {
       method: 'POST',
@@ -905,11 +909,35 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                       {renderScript(preview.script ?? '')}
                     </blockquote>
 
-                    {/* Howler-backed player bound to the shared store. Playback is
-                        started by the unlock tap (in-gesture, iOS-safe); this just
-                        renders the controls + scrubber. Retry re-renders the audio. */}
-                    {leadDone && preview.audioUrl && (
-                      <AudioPlayer url={preview.audioUrl} onRetry={() => generatePreview()} />
+                    {/* Native <audio>, always mounted when a URL exists (hidden
+                        until unlock) so the unlock tap can play() it inside the
+                        gesture. playsInline + preload=metadata are iOS-friendly.
+                        onError records the media error code so we can see exactly
+                        why iOS rejects the file, and a direct link lets the user
+                        open the raw URL (bypassing React entirely) to isolate
+                        player-vs-file. */}
+                    {preview.audioUrl && (
+                      <>
+                        <audio
+                          ref={previewAudioRef}
+                          src={preview.audioUrl}
+                          controls={leadDone}
+                          playsInline
+                          preload="metadata"
+                          onError={() => setAudioErrCode(previewAudioRef.current?.error?.code ?? -1)}
+                          style={{ width:'100%', display: leadDone ? 'block' : 'none' }}
+                        />
+                        {leadDone && (
+                          <p style={{ fontSize:'11px', color:'#9a8fb5', textAlign:'center', margin:'8px 0 0' }}>
+                            {audioErrCode !== null && (
+                              <span style={{ color:'#c0392b', fontWeight:700 }}>Couldn’t play in-page (error {audioErrCode}). </span>
+                            )}
+                            <a href={preview.audioUrl} target="_blank" rel="noopener noreferrer" style={{ color:'#8a6a1f', textDecoration:'underline' }}>
+                              Trouble hearing it? Open the audio ↗
+                            </a>
+                          </p>
+                        )}
+                      </>
                     )}
 
                     {!leadDone && (
