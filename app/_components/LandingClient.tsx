@@ -98,40 +98,60 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
 
   // ── Audio sampler (hero + voice switcher) ───────────────────────────────────
   const sampleAudioRef = useRef<HTMLAudioElement>(null)
+  const sampleCache    = useRef<Record<string, string>>({})  // combo -> signed url
   const [sampleLoading, setSampleLoading] = useState<number | null>(null)
   const [sampleError,   setSampleError]   = useState<string | null>(null)
 
-  // Play the pre-rendered Level-1 sample for a given voice index. Cache-first, ≈$0.
-  // The file loads fine (HTTP 206) — the trick is the browser blocks .play() that
-  // runs after the async fetch (outside the click gesture). So we PRIME the element
-  // with a synchronous play() of its silent default source *inside* the click,
-  // which user-activates it; the post-fetch play() of the real URL is then allowed.
+  const sampleKey = (vid: string) => `${subjectSlug}|${skinSlug}|${vid}`
+
+  // Fetch (and cache) a sample's signed URL WITHOUT playing — used to pre-warm.
+  const warmSample = async (vid: string) => {
+    const key = sampleKey(vid)
+    if (sampleCache.current[key]) return sampleCache.current[key]
+    const res  = await fetch(`/api/preview/sample?subject=${encodeURIComponent(subjectSlug)}&skin=${skinSlug}&voice=${encodeURIComponent(vid)}`)
+    const data = await res.json().catch(() => ({} as { audioUrl?: string }))
+    if (res.ok && data.audioUrl) { sampleCache.current[key] = data.audioUrl; return data.audioUrl }
+    return null
+  }
+
+  // Play a voice sample. The file loads fine (HTTP 206) — the only hard part is
+  // the browser blocks .play() that runs AFTER an async fetch (outside the click
+  // gesture). So: if we already have the URL (pre-warmed or a prior tap), set it
+  // and play SYNCHRONOUSLY in this gesture (reliable). Otherwise fetch it, cache
+  // it, and prompt one more tap — which then hits the synchronous path.
   const playSample = async (voiceIdx: number) => {
     setActiveVoice(voiceIdx); setSampleError(null)
-    const v = voices[voiceIdx]
-    if (!v) return
-    const el = sampleAudioRef.current
-    el?.play().catch(() => {})   // ← prime within the gesture (silent src), before any await
+    const v = voices[voiceIdx]; if (!v) return
+    const el = sampleAudioRef.current; if (!el) return
+    const cached = sampleCache.current[sampleKey(v.id)]
+    if (cached) {
+      // URL known — play in-gesture, no await before play().
+      if (el.dataset.url !== cached) { el.src = cached; el.dataset.url = cached }
+      el.currentTime = 0
+      el.play().then(() => setSampleError(null)).catch(() => setSampleError('Tap ▶ once more to play.'))
+      return
+    }
     setSampleLoading(voiceIdx)
     try {
-      const res  = await fetch(`/api/preview/sample?subject=${encodeURIComponent(subjectSlug)}&skin=${skinSlug}&voice=${encodeURIComponent(v.id)}`)
-      const data = await res.json().catch(() => ({}))
-      if (!res.ok || !data.audioUrl) {
-        setSampleError('Sample is still preparing — tap again in a moment.')
-        return
-      }
-      if (!el) return
-      el.src = data.audioUrl
-      el.load()
-      try {
-        await el.play()
-      } catch {
-        setSampleError('Tap ▶ once more to play.')
-      }
+      const url = await warmSample(v.id)
+      if (!url) { setSampleError('Sample is still preparing — tap again in a moment.'); return }
+      el.src = url; el.dataset.url = url; el.currentTime = 0
+      try { await el.play() } catch { setSampleError('▶ Ready — tap once more to play.') }
     } catch {
       setSampleError('Could not load the sample — please try again.')
     } finally { setSampleLoading(null) }
   }
+
+  // Pre-warm the active hero voice's sample (and quietly the others) so the very
+  // first tap of "Hear a sample" hits the synchronous, reliable play path.
+  useEffect(() => {
+    let cancelled = false
+    const t = setTimeout(() => {
+      const v = voices[activeVoice]
+      if (v && !cancelled) warmSample(v.id).catch(() => {})
+    }, 600)
+    return () => { cancelled = true; clearTimeout(t) }
+  }, [skinSlug, activeVoice]) // eslint-disable-line react-hooks/exhaustive-deps
 
   // ── Builder overlay focus management (a11y: trap + Escape + restore) ─────────
   const dialogRef = useRef<HTMLDivElement>(null)
