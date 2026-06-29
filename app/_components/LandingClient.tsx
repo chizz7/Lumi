@@ -16,15 +16,11 @@ import type { VoiceConfig }              from '@/lib/voices'
 // Embedded Checkout keeps payment inside the funnel. Created once at module load.
 const STRIPE_PK = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
 const stripePromise = STRIPE_PK ? loadStripe(STRIPE_PK) : null
-
-// A tiny silent WAV used to "unlock" the sample <audio> element on the first
-// user gesture. Browsers block .play() that isn't inside a gesture (and our
-// sample plays AFTER an async fetch), but once an element has played within a
-// gesture it stays user-activated, so later programmatic plays are allowed.
-const SILENT_AUDIO = 'data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQAAAAA='
 import { getAllLevels }                  from '@/content'
 import { interestForWorld }              from '@/content/interests'
 import StoryStudio                       from './StoryStudio'
+import AudioPlayer                       from './AudioPlayer'
+import { playUrl }                        from '@/lib/howlerPlayer'
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -97,7 +93,6 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   // ── Audio sampler (hero + voice switcher) ───────────────────────────────────
-  const sampleAudioRef = useRef<HTMLAudioElement>(null)
   const sampleCache    = useRef<Record<string, string>>({})  // combo -> signed url
   const [sampleLoading, setSampleLoading] = useState<number | null>(null)
   const [sampleError,   setSampleError]   = useState<string | null>(null)
@@ -114,29 +109,18 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
     return null
   }
 
-  // Play a voice sample. The file loads fine (HTTP 206) — the only hard part is
-  // the browser blocks .play() that runs AFTER an async fetch (outside the click
-  // gesture). So: if we already have the URL (pre-warmed or a prior tap), set it
-  // and play SYNCHRONOUSLY in this gesture (reliable). Otherwise fetch it, cache
-  // it, and prompt one more tap — which then hits the synchronous path.
+  // Play a voice sample via Howler, which handles the cross-browser unlock so a
+  // play() after the fetch isn't blocked. URLs are cached/pre-warmed so it's instant.
   const playSample = async (voiceIdx: number) => {
     setActiveVoice(voiceIdx); setSampleError(null)
     const v = voices[voiceIdx]; if (!v) return
-    const el = sampleAudioRef.current; if (!el) return
     const cached = sampleCache.current[sampleKey(v.id)]
-    if (cached) {
-      // URL known — play in-gesture, no await before play().
-      if (el.dataset.url !== cached) { el.src = cached; el.dataset.url = cached }
-      el.currentTime = 0
-      el.play().then(() => setSampleError(null)).catch(() => setSampleError('Tap ▶ once more to play.'))
-      return
-    }
+    if (cached) { playUrl(cached); return }
     setSampleLoading(voiceIdx)
     try {
       const url = await warmSample(v.id)
       if (!url) { setSampleError('Sample is still preparing — tap again in a moment.'); return }
-      el.src = url; el.dataset.url = url; el.currentTime = 0
-      try { await el.play() } catch { setSampleError('▶ Ready — tap once more to play.') }
+      playUrl(url)
     } catch {
       setSampleError('Could not load the sample — please try again.')
     } finally { setSampleLoading(null) }
@@ -179,7 +163,6 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
   }, [overlayOpen])
 
   // ── Builder preview (personalised, before paywall) ──────────────────────────
-  const previewAudioRef = useRef<HTMLAudioElement>(null)
   const [preview, setPreview] = useState<
     { loading: boolean; script?: string; audioUrl?: string | null; audioError?: string | null; error?: string } | null
   >(null)
@@ -200,8 +183,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { setLeadError(true); return }
     setLeadError(false)
     setLeadDone(true)
-    // Play inside the gesture so mobile browsers allow it.
-    previewAudioRef.current?.play().catch(() => {})
+    // AudioPlayer autoPlays once it mounts on unlock; Howler handles the unlock.
     // Capture the lead (non-blocking — the story unlocks regardless).
     fetch('/api/lead', {
       method: 'POST',
@@ -424,8 +406,6 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                 <button onClick={() => playSample(activeVoice)} style={{ padding:'15px 24px', background:'rgba(255,255,255,.12)', color:'#fff', fontWeight:700, border:'1px solid rgba(255,255,255,.28)', borderRadius:'15px', cursor:'pointer', fontSize:'15px' }}>
                   {sampleLoading === activeVoice ? '♪ Loading…' : `▶ ${t('hero.cta.secondary')}`}
                 </button>
-                {/* Hidden element that plays the cache-first sample MP3 */}
-                <audio ref={sampleAudioRef} src={SILENT_AUDIO} preload="auto" />
               </div>
               {sampleError && <p style={{ fontSize:'13px', color:'#FFD27A', margin:'-12px 0 18px' }}>{sampleError}</p>}
               <div style={{ display:'flex', gap:'18px', flexWrap:'wrap', fontSize:'13.5px', color:'#cfc3ea' }}>
@@ -914,20 +894,12 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                       {renderScript(preview.script ?? '')}
                     </blockquote>
 
-                    {/* Keyed on the URL + unlock state so the element remounts and
-                        loads the source FRESH when it's revealed (a src set while the
-                        element was display:none can otherwise get stuck at 0:00).
-                        If the media fails to load, fall back to the retry state
-                        instead of leaving a dead native player. */}
-                    <audio
-                      key={`${preview.audioUrl ?? 'none'}-${leadDone}`}
-                      ref={previewAudioRef}
-                      src={preview.audioUrl ?? undefined}
-                      controls={leadDone}
-                      preload="auto"
-                      onError={() => setPreview(p => (p && p.audioUrl) ? { ...p, audioUrl: null, audioError: 'The audio didn’t load — tap retry.' } : p)}
-                      style={{ width:'100%', display: leadDone && preview.audioUrl ? 'block' : 'none' }}
-                    />
+                    {/* Howler-backed player. Keyed on the URL so it remounts and
+                        loads FRESH when the preview changes; autoPlays on unlock.
+                        Howler manages the cross-browser audio unlock for us. */}
+                    {leadDone && preview.audioUrl && (
+                      <AudioPlayer key={preview.audioUrl} url={preview.audioUrl} autoPlay />
+                    )}
 
                     {!leadDone && (
                       <div style={{ background:'#fff', border:'1.5px solid #ece0c8', borderRadius:'16px', padding:'16px' }}>
@@ -979,7 +951,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                       </p>
                       <div style={{ display:'flex', gap:'6px', flexWrap:'wrap', marginBottom:'10px' }}>
                         {SKINS.map(sk => (
-                          <button key={sk.slug} onClick={async () => { setSkinSlug(sk.slug); await generatePreview({ skinSlug: sk.slug }); previewAudioRef.current?.play().catch(() => {}) }}
+                          <button key={sk.slug} onClick={async () => { setSkinSlug(sk.slug); await generatePreview({ skinSlug: sk.slug }) }}
                             aria-pressed={skinSlug===sk.slug}
                             style={{ fontSize:'12.5px', fontWeight:700, border:`1.5px solid ${skinSlug===sk.slug?'#F4A93C':'#e6d8bd'}`, background: skinSlug===sk.slug?'#fff':'transparent', borderRadius:'10px', padding:'7px 10px', cursor:'pointer', color:'#211a3a' }}>
                             {sk.emoji} {sk.name.replace(/^(Under the |Whisper |Cloud |Space )/,'')}
@@ -988,7 +960,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                       </div>
                       <div style={{ display:'flex', gap:'6px', flexWrap:'wrap' }}>
                         {voices.map(v => (
-                          <button key={v.id} onClick={async () => { setVoiceId(v.id); await generatePreview({ voiceId: v.id }); previewAudioRef.current?.play().catch(() => {}) }}
+                          <button key={v.id} onClick={async () => { setVoiceId(v.id); await generatePreview({ voiceId: v.id }) }}
                             aria-pressed={voiceId===v.id}
                             style={{ fontSize:'12.5px', fontWeight:700, border:`1.5px solid ${voiceId===v.id?'#F4A93C':'#e6d8bd'}`, background: voiceId===v.id?'#fff':'transparent', borderRadius:'10px', padding:'7px 10px', cursor:'pointer', color:'#211a3a' }}>
                             🔊 {v.name}
