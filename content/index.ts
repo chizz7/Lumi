@@ -102,20 +102,34 @@ function assertImmutable(level: Level, text: string, where: string): void {
 
 /**
  * Assemble the AUDIO text for a story.
- * Uses audioTemplate — no child name — fully cacheable. An optional age band
- * selects an age-tuned variant when one exists; `ageTag` feeds the cache key.
- * This is what gets sent to Kokoro.
+ *
+ * Without a `childName`, uses the hero-based audioTemplate — no name, fully
+ * cacheable by (level × skin × voice) — for generic voice samples.
+ *
+ * With a `childName`, narrates the child's name using the same prose as the
+ * readable script (scriptTemplate already carries {child_name}). This is what
+ * makes the delivered story say "Nola" instead of "the tiger cub". Such renders
+ * are cached per name (the name is part of the cache key).
+ *
+ * An optional age band selects an age-tuned variant when one exists; `ageTag`
+ * feeds the cache key. This is what gets sent to Kokoro.
  */
 export function assembleAudio(
   subjectSlug:  string,
   levelOrdinal: number,
   skinSlug:     string,
   ageBand?:     AgeBand,
+  childName?:   string,
 ): { audioText: string; level: Level; skin: Skin; ageTag: string } {
   const level = getLevel(subjectSlug, levelOrdinal)
   const skin  = getSkin(subjectSlug, skinSlug)
-  const { audioTemplate, ageTag } = resolveTemplates(level, ageBand)
-  const audioText = fillTemplate(audioTemplate, audioSlots(skin))
+  const { audioTemplate, scriptTemplate, ageTag } = resolveTemplates(level, ageBand)
+  const name = childName?.trim()
+  const template = name ? (scriptTemplate ?? audioTemplate) : audioTemplate
+  const slots: Record<string, string> = name
+    ? { ...audioSlots(skin), child_name: name }
+    : audioSlots(skin)
+  const audioText = fillTemplate(template, slots)
   assertImmutable(level, audioText, 'audio')
   return { audioText, level, skin, ageTag }
 }
@@ -153,7 +167,7 @@ export function assembleStory(
   childName:    string,
   ageBand?:     AgeBand,
 ): { audioText: string; script: string; level: Level; skin: Skin; ageTag: string } {
-  const { audioText, level, skin, ageTag } = assembleAudio(subjectSlug, levelOrdinal, skinSlug, ageBand)
+  const { audioText, level, skin, ageTag } = assembleAudio(subjectSlug, levelOrdinal, skinSlug, ageBand, childName)
   const script = assembleScript(subjectSlug, levelOrdinal, skinSlug, childName, ageBand)
   return { audioText, script, level, skin, ageTag }
 }

@@ -82,9 +82,16 @@ export async function getOrRenderAudio(
 // DeepInfra JSON response, which iOS refused to decode).
 const AUDIO_CACHE_VERSION = 'v2'
 
+// Normalise a child's name into a safe, stable cache-key segment. Same name →
+// same file (so repeat names reuse the render); strips anything non-alphanumeric.
+function nameSlug(name: string): string {
+  return name.toLowerCase().replace(/[^a-z0-9]/g, '').slice(0, 24)
+}
+
 // Build the cache key — includes language so EN and ES renders are separate files.
 // `ageTag` is appended only for age-tuned variants ('all' keeps the original key,
-// so previously rendered files stay valid).
+// so previously rendered files stay valid). `nameTag` is appended for
+// personalised (name-in-audio) renders; omit it for generic/sample audio.
 export function audioCacheKey(
   subjectSlug:  string,
   levelOrdinal: number,
@@ -93,8 +100,11 @@ export function audioCacheKey(
   lang      = 'en',
   preview   = false,
   ageTag    = 'all',
+  nameTag   = '',
 ): string {
   const prefix = `${preview ? 'preview' : 'full'}-${AUDIO_CACHE_VERSION}`
   const age    = ageTag && ageTag !== 'all' ? `-${ageTag}` : ''
-  return `${prefix}-${subjectSlug}-level${levelOrdinal}-${skinSlug}-${voiceId}-${lang}${age}.mp3`
+  const slug   = nameTag.trim() ? nameSlug(nameTag) : ''
+  const name   = slug ? `-${slug}` : ''
+  return `${prefix}-${subjectSlug}-level${levelOrdinal}-${skinSlug}-${voiceId}-${lang}${age}${name}.mp3`
 }

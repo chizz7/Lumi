@@ -68,7 +68,7 @@ export async function deliverNextStory(
     profile.subject_slug, levelOrdinal, profile.skin_slug, profile.name, ageBand,
   )
 
-  const cacheKey = audioCacheKey(profile.subject_slug, levelOrdinal, profile.skin_slug, profile.voice_id, 'en', false, ageTag)
+  const cacheKey = audioCacheKey(profile.subject_slug, levelOrdinal, profile.skin_slug, profile.voice_id, 'en', false, ageTag, profile.name)
   let audioUrl = ''
   try {
     audioUrl = await getOrRenderAudio(audioText, profile.voice_id as VoiceId, cacheKey)

@@ -20,7 +20,7 @@ export async function GET(req: NextRequest) {
   const ageBand = draft.ageBand as import('@/content/types').AgeBand
   let audioText: string, level: import('@/content/types').Level, skin: import('@/content/types').Skin, ageTag: string
   try {
-    ;({ audioText, level, skin, ageTag } = assembleAudio(draft.subjectSlug, 1, draft.skinSlug, ageBand))
+    ;({ audioText, level, skin, ageTag } = assembleAudio(draft.subjectSlug, 1, draft.skinSlug, ageBand, draft.childName))
   } catch (err) {
     console.error('[preview] assemble error:', err)
     return NextResponse.json({ error: 'Could not build your story. Please try again.' }, { status: 500 })
@@ -39,7 +39,7 @@ export async function GET(req: NextRequest) {
   let audioUrl:   string | null = null
   let audioError: string | null = null
   try {
-    const cacheKey = audioCacheKey(draft.subjectSlug, 1, draft.skinSlug, draft.voiceId, 'en', true, ageTag)
+    const cacheKey = audioCacheKey(draft.subjectSlug, 1, draft.skinSlug, draft.voiceId, 'en', true, ageTag, draft.childName)
     audioUrl = await Promise.race([
       getOrRenderAudio(audioText, draft.voiceId, cacheKey),
       new Promise<string>((_, reject) =>
