@@ -46,12 +46,24 @@ export async function getOrRenderAudio(
 
   if (!res.ok) throw new Error(`Kokoro API error ${res.status}: ${await res.text()}`)
 
-  const buffer = Buffer.from(await res.arrayBuffer())
+  // DeepInfra's inference endpoint returns JSON, NOT raw audio bytes:
+  //   { audio: "data:audio/mp3;base64,<...>", output_format: "mp3", words: [...] }
+  // The `audio` field is a base64 data URI. We MUST decode it to real MP3 bytes —
+  // storing the raw response body produces a JSON file mislabelled audio/mpeg that
+  // iOS WebKit (correctly) refuses to decode.
+  const json = (await res.json()) as { audio?: string; output_format?: string }
+  if (!json.audio) {
+    throw new Error('Kokoro response missing "audio" field')
+  }
+  // Strip the optional `data:...;base64,` prefix, then decode.
+  const base64 = json.audio.includes(',') ? json.audio.slice(json.audio.indexOf(',') + 1) : json.audio
+  const buffer = Buffer.from(base64, 'base64')
 
   // ── Store ──────────────────────────────────────────────────────────────────
+  // upsert:true so a re-render cleanly overwrites any earlier (corrupt) object.
   const { error } = await adminClient.storage
     .from(BUCKETS.AUDIO)
-    .upload(cacheKey, buffer, { contentType: 'audio/mpeg', upsert: false })
+    .upload(cacheKey, buffer, { contentType: 'audio/mpeg', upsert: true })
 
   if (error && !error.message.includes('already exists')) {
     throw new Error(`Storage upload failed: ${error.message}`)
