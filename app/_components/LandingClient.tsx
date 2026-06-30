@@ -96,50 +96,53 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
   const [sampleLoading, setSampleLoading] = useState<number | null>(null)
   const [sampleError,   setSampleError]   = useState<string | null>(null)
 
-  const sampleKey = (vid: string) => `${subjectSlug}|${skinSlug}|${vid}`
+  const sampleKey = (skin: string, vid: string) => `${subjectSlug}|${skin}|${vid}`
 
   // Fetch (and cache) a sample's signed URL WITHOUT playing — used to pre-warm.
-  const warmSample = async (vid: string) => {
-    const key = sampleKey(vid)
+  const warmSample = async (vid: string, skin: string = skinSlug) => {
+    const key = sampleKey(skin, vid)
     if (sampleCache.current[key]) return sampleCache.current[key]
-    const res  = await fetch(`/api/preview/sample?subject=${encodeURIComponent(subjectSlug)}&skin=${skinSlug}&voice=${encodeURIComponent(vid)}`)
+    const res  = await fetch(`/api/preview/sample?subject=${encodeURIComponent(subjectSlug)}&skin=${skin}&voice=${encodeURIComponent(vid)}`)
     const data = await res.json().catch(() => ({} as { audioUrl?: string }))
     if (res.ok && data.audioUrl) { sampleCache.current[key] = data.audioUrl; return data.audioUrl }
     return null
   }
 
-  // Play a voice sample via Howler, which handles the cross-browser unlock so a
-  // play() after the fetch isn't blocked. URLs are cached/pre-warmed so it's instant.
-  const playSample = async (voiceIdx: number) => {
-    setActiveVoice(voiceIdx); setSampleError(null)
-    const v = voices[voiceIdx]; if (!v) return
-    const cached = sampleCache.current[sampleKey(v.id)]
-    if (cached) { playUrl(cached); return }
-    setSampleLoading(voiceIdx)
-    try {
-      const url = await warmSample(v.id)
-      if (!url) { setSampleError('Sample is still preparing — tap again in a moment.'); return }
-      playUrl(url)
-    } catch {
-      setSampleError('Could not load the sample — please try again.')
-    } finally { setSampleLoading(null) }
+  // Play a voice sample. When the URL is already cached (the common case — we
+  // pre-warm aggressively) playUrl runs synchronously in the tap handler, which
+  // is REQUIRED on iOS: a play() after an await lands outside the gesture and is
+  // blocked. The uncached path still warms+plays as a desktop fallback.
+  const playSampleFor = (skin: string, vid: string, voiceIdx?: number) => {
+    setSampleError(null)
+    if (voiceIdx != null) setActiveVoice(voiceIdx)
+    const cached = sampleCache.current[sampleKey(skin, vid)]
+    if (cached) { playUrl(cached); return }          // synchronous → iOS-safe
+    if (voiceIdx != null) setSampleLoading(voiceIdx)
+    warmSample(vid, skin)
+      .then(url => {
+        if (!url) { setSampleError('Sample is still preparing — tap again in a moment.'); return }
+        playUrl(url)
+      })
+      .catch(() => setSampleError('Could not load the sample — please try again.'))
+      .finally(() => setSampleLoading(null))
+  }
+
+  // Thin wrapper used by the hero / voices / studio voice rows.
+  const playSample = (voiceIdx: number) => {
+    const v = voices[voiceIdx]
+    if (v) playSampleFor(skinSlug, v.id, voiceIdx)
   }
 
   // Pre-warm EVERY voice sample for the current world so any voice tap hits the
-  // synchronous play path. This matters on iOS: a play() that runs after an
-  // await (an uncached fetch) lands outside the tap gesture and gets blocked, so
-  // the URL must already be cached when the user taps. The active voice warms
-  // first; the rest follow shortly after.
+  // synchronous (iOS-safe) play path. The active voice warms first.
   useEffect(() => {
     let cancelled = false
     const t = setTimeout(() => {
       if (cancelled) return
       const active = voices[activeVoice]
       if (active) warmSample(active.id).catch(() => {})
-      voices.forEach((v, i) => {
-        if (i !== activeVoice) warmSample(v.id).catch(() => {})
-      })
-    }, 600)
+      voices.forEach((v, i) => { if (i !== activeVoice) warmSample(v.id).catch(() => {}) })
+    }, 400)
     return () => { cancelled = true; clearTimeout(t) }
   }, [skinSlug, subjectSlug, activeVoice]) // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -179,6 +182,19 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
   const [leadEmail, setLeadEmail]     = useState('')
   const [leadDone,  setLeadDone]      = useState(false)
   const [leadError, setLeadError]     = useState(false)
+
+  // Once the preview is unlocked, the "switch the world or voice and hear it
+  // change" demo appears. Pre-warm the current voice across ALL worlds so those
+  // world-switch taps also play synchronously (in-gesture) on iOS.
+  useEffect(() => {
+    if (!leadDone) return
+    let cancelled = false
+    const t = setTimeout(() => {
+      if (cancelled) return
+      SKINS.forEach(sk => { if (sk.slug !== skinSlug) warmSample(voiceId, sk.slug).catch(() => {}) })
+    }, 800)
+    return () => { cancelled = true; clearTimeout(t) }
+  }, [leadDone, voiceId, subjectSlug, skinSlug]) // eslint-disable-line react-hooks/exhaustive-deps
   // Native <audio> ref + the media error code it reports, so we can SEE why iOS
   // refuses the file (2=network/range, 3=decode, 4=src/content-type) instead of
   // guessing. Mounted before unlock so unlockStory can play() inside the gesture.
@@ -990,7 +1006,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                       </p>
                       <div style={{ display:'flex', gap:'6px', flexWrap:'wrap', marginBottom:'10px' }}>
                         {SKINS.map(sk => (
-                          <button key={sk.slug} onClick={async () => { setSkinSlug(sk.slug); await generatePreview({ skinSlug: sk.slug }) }}
+                          <button key={sk.slug} onClick={() => { setSkinSlug(sk.slug); playSampleFor(sk.slug, voiceId); generatePreview({ skinSlug: sk.slug }) }}
                             aria-pressed={skinSlug===sk.slug}
                             style={{ fontSize:'12.5px', fontWeight:700, border:`1.5px solid ${skinSlug===sk.slug?'#F4A93C':'#e6d8bd'}`, background: skinSlug===sk.slug?'#fff':'transparent', borderRadius:'10px', padding:'7px 10px', cursor:'pointer', color:'#211a3a' }}>
                             {sk.emoji} {sk.name.replace(/^(Under the |Whisper |Cloud |Space )/,'')}
@@ -999,7 +1015,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                       </div>
                       <div style={{ display:'flex', gap:'6px', flexWrap:'wrap' }}>
                         {voices.map(v => (
-                          <button key={v.id} onClick={async () => { setVoiceId(v.id); await generatePreview({ voiceId: v.id }) }}
+                          <button key={v.id} onClick={() => { setVoiceId(v.id); playSampleFor(skinSlug, v.id); generatePreview({ voiceId: v.id }) }}
                             aria-pressed={voiceId===v.id}
                             style={{ fontSize:'12.5px', fontWeight:700, border:`1.5px solid ${voiceId===v.id?'#F4A93C':'#e6d8bd'}`, background: voiceId===v.id?'#fff':'transparent', borderRadius:'10px', padding:'7px 10px', cursor:'pointer', color:'#211a3a' }}>
                             🔊 {v.name}
