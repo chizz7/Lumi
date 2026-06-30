@@ -12,6 +12,7 @@ interface ApprovalRow { subject_slug: string; level_ordinal: number; status: Sta
 const SUBJECT_NAMES: Record<string, string> = {
   money: '💰 Money & Saving', focus: '🎯 Focus & Goals', resilience: '💪 Resilience',
   kindness: '❤️ Kindness & Empathy', problem: '🧠 Problem Solving', confidence: '🌱 Confidence',
+  voice: '🗣️ Speaking Up',
 }
 const STATUS_STYLE: Record<Status, { bg: string; fg: string; label: string }> = {
   approved: { bg:'#e7f6ee', fg:'#1c7a4a', label:'✓ Approved' },

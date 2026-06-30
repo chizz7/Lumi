@@ -49,12 +49,14 @@ const SKINS = [
 const SUBJECT_NAMES: Record<string, string> = {
   money: 'Money', focus: 'Focus', resilience: 'Resilience',
   kindness: 'Kindness', problem: 'Problem Solving', confidence: 'Confidence',
+  voice: 'Speaking Up',
 }
 // value = canonical hyphen form stored in the DB; label = prettier en-dash for display
 const AGE_BANDS = [
   { value: '3-4', label: '3–4' },
   { value: '5-6', label: '5–6' },
   { value: '7-8', label: '7–8' },
+  { value: '9-11', label: '9–11' },
 ]
 
 // Honest, verifiable proof — no fabricated reviews/ratings (a legal risk for a
@@ -328,6 +330,10 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
     {
       id:'money', emoji:'💰', name:'Money & Saving', available:true,
       why:'Children who understand value, exchange, and saving before age 8 develop habits that compound for life. This path starts with the simplest question — why do coins look different? — and builds to the hardest: wants vs. needs.',
+    },
+    {
+      id:'voice', emoji:'🗣️', name:'Speaking Up', available:true,
+      why:'Self-advocacy is a learnable skill: knowing your voice matters, asking clearly, setting boundaries, and being assertive without being unkind. This path builds from finding the courage to speak to using that voice for others.',
     },
   ]
 
@@ -867,6 +873,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                     { slug:'kindness', emoji:'❤️', name:'Kindness & empathy', desc:'Noticing, caring, sharing', live:true },
                     { slug:'problem', emoji:'🧠', name:'Problem solving', desc:'Pause, ideas, try and see', live:true },
                     { slug:'confidence', emoji:'🌱', name:'Confidence', desc:'Trying before you feel ready', live:true },
+                    { slug:'voice', emoji:'🗣️', name:'Speaking up', desc:'Find your voice, set boundaries', live:true },
                   ].map(s => {
                     const selected = subjectSlug === s.slug
                     return (

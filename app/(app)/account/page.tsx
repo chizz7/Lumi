@@ -11,7 +11,7 @@ interface AccountData {
 }
 
 const VOICES = getVoicesForLang('en')
-const AGE_BANDS = [{ value:'3-4', label:'3–4' }, { value:'5-6', label:'5–6' }, { value:'7-8', label:'7–8' }]
+const AGE_BANDS = [{ value:'3-4', label:'3–4' }, { value:'5-6', label:'5–6' }, { value:'7-8', label:'7–8' }, { value:'9-11', label:'9–11' }]
 const WORLDS = [
   { slug:'sea', emoji:'🐬', name:'Under the Sea' },
   { slug:'space', emoji:'🚀', name:'Space Station' },

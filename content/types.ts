@@ -1,6 +1,6 @@
 // content/types.ts
 
-export type AgeBand = '3-4' | '5-6' | '7-8'
+export type AgeBand = '3-4' | '5-6' | '7-8' | '9-11'
 
 export interface Level {
   ordinal:   number
