@@ -38,11 +38,21 @@ export async function createCheckoutSession(opts: {
   draftJson:  string   // JSON.stringify(draft)
   returnUrl:  string   // hit after a successful payment; include {CHECKOUT_SESSION_ID}
 }): Promise<string> {  // returns the session client_secret
+  // Guard the most common misconfiguration: a Product ID (prod_…) or an empty
+  // value where a Price ID (price_…) is required. Stripe's own error for this is
+  // opaque ("No such price"), so fail with an actionable message instead.
+  const priceId = process.env.STRIPE_PRICE_ID
+  if (!priceId || !priceId.startsWith('price_')) {
+    throw new Error(
+      `STRIPE_PRICE_ID is ${priceId ? `"${priceId}"` : 'not set'} — it must be a Price ID (starts with "price_"), not a Product ID (prod_…). Fix it in your environment variables.`
+    )
+  }
+
   const session = await stripe.checkout.sessions.create({
     ui_mode:              'embedded',
     mode:                 'subscription',
     payment_method_types: ['card'],
-    line_items: [{ price: process.env.STRIPE_PRICE_ID!, quantity: 1 }],
+    line_items: [{ price: priceId, quantity: 1 }],
     subscription_data: {
       trial_period_days: 1,                     // first story free
       metadata: { draft: opts.draftJson },
