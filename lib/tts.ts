@@ -77,6 +77,11 @@ export async function getOrRenderAudio(
   return signed.signedUrl
 }
 
+// Bump this when the render/encoding pipeline changes so stale cached files are
+// bypassed instead of served. v2 = real MP3 bytes (v1 mistakenly stored the raw
+// DeepInfra JSON response, which iOS refused to decode).
+const AUDIO_CACHE_VERSION = 'v2'
+
 // Build the cache key — includes language so EN and ES renders are separate files.
 // `ageTag` is appended only for age-tuned variants ('all' keeps the original key,
 // so previously rendered files stay valid).
@@ -89,7 +94,7 @@ export function audioCacheKey(
   preview   = false,
   ageTag    = 'all',
 ): string {
-  const prefix = preview ? 'preview' : 'full'
+  const prefix = `${preview ? 'preview' : 'full'}-${AUDIO_CACHE_VERSION}`
   const age    = ageTag && ageTag !== 'all' ? `-${ageTag}` : ''
   return `${prefix}-${subjectSlug}-level${levelOrdinal}-${skinSlug}-${voiceId}-${lang}${age}.mp3`
 }
