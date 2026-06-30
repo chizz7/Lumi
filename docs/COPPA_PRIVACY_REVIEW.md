@@ -29,7 +29,7 @@
 1. **Stale domain** — policy referenced `lumi.app` (now `mylumi.xyz`) in §1, §9, and the contact email. Corrected throughout.
 2. **Placeholder contact email** — was `privacy@lumi.app` → `privacy@mylumi.xyz` (see §3.2 — must be a *real, monitored* mailbox).
 3. **Voice-recording section described a non-shipped feature** as if live ("Account → Voice settings"). Voice cloning is post-launch. Reworded §5 to "upcoming feature… not yet available" so we don't assert data practices for a feature that doesn't exist (itself a misrepresentation risk).
-4. **Subprocessor accuracy** — §7 now states DeepInfra receives only name-free narration text, Resend delivers the personalised story to the parent's email, and PostHog carries no child data.
+4. **Subprocessor accuracy** — §7 states DeepInfra receives the story narration text (which may include the child's first name or nickname, so the audio can be personalised — parents may use a nickname; no other personal data is sent), Resend delivers the personalised story to the parent's email, and PostHog carries no child data. *(Updated when name-in-audio shipped — the narration is no longer name-free.)*
 
 ---
 

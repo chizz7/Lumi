@@ -819,8 +819,8 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                   <h2 style={{ fontFamily:'var(--font-fraunces)', fontSize:'22px', margin:'6px 0 4px' }}>Who's this story for?</h2>
                   <p style={{ fontSize:'13.5px', color:'#4a4063', marginBottom:'18px' }}>Only used to personalise the story. No account needed yet.</p>
                   <div style={{ marginBottom:'16px' }}>
-                    <label style={{ fontSize:'13px', fontWeight:700, display:'block', marginBottom:'7px' }}>Your child's first name</label>
-                    <input value={childName} onChange={e => setChildName(e.target.value)} placeholder="e.g. Maya"
+                    <label style={{ fontSize:'13px', fontWeight:700, display:'block', marginBottom:'7px' }}>Your child's first name (or nickname)</label>
+                    <input value={childName} onChange={e => setChildName(e.target.value)} placeholder="e.g. Maya — or a nickname"
                       style={{ width:'100%', padding:'15px', border:'1.5px solid #e0d2b7', borderRadius:'13px', fontSize:'16px', fontFamily:'inherit', background:'#fff', outline:'none' }} />
                   </div>
                   <div>

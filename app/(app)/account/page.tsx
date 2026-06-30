@@ -220,8 +220,8 @@ export default function AccountPage() {
             <h2 style={{ fontFamily:'var(--font-fraunces)', fontSize:'19px', marginBottom:'4px' }}>{mode === 'add' ? 'Add a child' : 'Edit profile'}</h2>
             <p style={{ fontSize:'13px', color:'#5d5278', marginBottom:'18px' }}>{mode === 'add' ? 'They get their own story stream — same subscription, no extra cost.' : "Changes apply to future stories. Stories already in your library don't change."}</p>
 
-            <label style={{ fontSize:'13px', fontWeight:700, display:'block', marginBottom:'7px' }}>Child's first name</label>
-            <input value={form.name} onChange={e => setForm(f => ({ ...f, name: e.target.value }))} placeholder="e.g. Maya"
+            <label style={{ fontSize:'13px', fontWeight:700, display:'block', marginBottom:'7px' }}>Child's first name (or nickname)</label>
+            <input value={form.name} onChange={e => setForm(f => ({ ...f, name: e.target.value }))} placeholder="e.g. Maya — or a nickname"
               style={{ width:'100%', padding:'13px', border:'1.5px solid #e0d2b7', borderRadius:'12px', fontSize:'16px', fontFamily:'inherit', background:'#fff', marginBottom:'16px' }} />
 
             {mode === 'add' && (

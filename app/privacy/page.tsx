@@ -85,7 +85,7 @@ We never sell your data. We never use your data for advertising.`,
             body: `• Supabase (database + auth) — EU/US data storage
 • Stripe (payments) — PCI-compliant, we never see card details
 • Resend (email delivery — the parent's email receives the personalised story)
-• DeepInfra (text-to-speech) — receives only the narration text, which contains no child's name or personal data
+• DeepInfra (text-to-speech) — receives the story narration text, which may include the child's first name or nickname so the audio can be personalised; no other personal data (no birthdate, photo, location, or email) is ever sent
 • PostHog (anonymised analytics — IPs masked, inputs masked, no child data)`,
           },
           {
