@@ -1,7 +1,7 @@
 // app/api/cron/deliver/route.ts
 // GET /api/cron/deliver — automatic story delivery.
 // Runs daily (Vercel Cron). Delivers the next level to every Story Club profile
-// whose 3-day cadence window has elapsed. The cadence gate + idempotent
+// whose cadence window has elapsed. The cadence gate + idempotent
 // deliverNextStory make this safe to run as often as we like.
 //
 // Auth: Vercel Cron sends `Authorization: Bearer ${CRON_SECRET}` when CRON_SECRET
@@ -43,7 +43,7 @@ export async function GET(req: NextRequest) {
       if (delivered >= MAX_PER_RUN) break
       scanned++
 
-      // Is this profile due? (last delivery + 3 days <= now)
+      // Is this profile due? (last delivery + interval <= now)
       const { data: last } = await adminClient
         .from('story_instances')
         .select('delivered_at')

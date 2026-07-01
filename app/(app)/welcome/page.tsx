@@ -14,7 +14,7 @@ export default function WelcomePage() {
           Your story is on its way. Check your email — we've sent a magic link to sign in and your first story.
         </p>
         <p style={{ fontSize:'14px', color:'#cfc3ea', lineHeight:1.6, marginBottom:'28px' }}>
-          After this one, a new leveled story unlocks in your library every 3 days.
+          After this one, a new leveled story unlocks in your library every other day.
         </p>
         <a href="/library" style={{ display:'inline-block', padding:'15px 32px', background:'linear-gradient(135deg,#FFD27A,#E0852A)', color:'#3a230a', fontWeight:700, borderRadius:'15px', textDecoration:'none', fontSize:'16px' }}>
           Go to your library →

@@ -21,7 +21,7 @@ export default function TermsPage() {
       <div style={{ maxWidth:'720px', margin:'0 auto', padding:'44px 24px' }}>
         {[
           { h:'1. The service', b:`Lumi provides personalised audio bedtime stories for children, delivered to a parent's email address and accessible in a private library. You must be 18 or older to create an account.` },
-          { h:'2. Story Club subscription', b:`Story Club is a $9.99/month subscription billed via Stripe, delivering one new story every 3 days. Your first story is free (trial). You can cancel at any time from your account. Cancellation takes effect at the end of the current billing period.` },
+          { h:'2. Story Club subscription', b:`Story Club is a $9.99/month subscription billed via Stripe, delivering one new story every other day. Your first story is free (trial). You can cancel at any time from your account. Cancellation takes effect at the end of the current billing period.` },
           { h:'3. Story credits', b:`If you report a story you're unhappy with, we'll issue a credit to your account automatically. Credits apply to your next billing cycle.` },
           { h:'4. Content', b:`Stories are created by human writers, expert-reviewed, and safety-checked before release. We make no guarantee that every story is appropriate for every child — you know your child best. If a story doesn't feel right, use the report feature.` },
           { h:'5. Acceptable use', b:`You may use Lumi for personal, family, non-commercial purposes. You may not redistribute, resell, or publicly broadcast story content.` },

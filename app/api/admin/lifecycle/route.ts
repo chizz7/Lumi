@@ -14,7 +14,7 @@ export const dynamic = 'force-dynamic'
 // An account with 0 stories older than this almost certainly had its signup
 // webhook fail before first delivery — the case migration 005 guards against.
 const STUCK_SIGNUP_MS = 10 * 60 * 1000
-// How far past the 3-day cadence window counts as "overdue" (cron should have
+// How far past the cadence window counts as "overdue" (cron should have
 // delivered by now).
 const OVERDUE_GRACE_MS = 24 * 60 * 60 * 1000
 

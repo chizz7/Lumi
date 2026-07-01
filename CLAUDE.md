@@ -11,7 +11,7 @@ Lumi delivers personalised, levelled audio bedtime stories to parents. Children 
 **The one rule that shapes every technical decision:**
 > Fixed curriculum, cosmetic personalisation. Stories are authored offline and never changed at runtime. Personalisation only swaps the "skin" (world, hero, companion, voice). The learning beat of every story is immutable.
 
-**Revenue:** $9.99/month "Story Club" subscription — one new story automatically delivered every 3 days (see `docs/06_BACKEND_ARCHITECTURE.md` §4.4a). First story free as a preview. (Tiered model — Silver $3.99 / Gold $7.99 / Platinum $14.99 — remains a deferred option, not the current product.)
+**Revenue:** $9.99/month "Story Club" subscription — one new story automatically delivered every other day (see `docs/06_BACKEND_ARCHITECTURE.md` §4.4a). First story free as a preview. (Tiered model — Silver $3.99 / Gold $7.99 / Platinum $14.99 — remains a deferred option, not the current product.)
 
 **Delivery:** Audio MP3 + readable script sent to the parent's email, saved to their library.
 

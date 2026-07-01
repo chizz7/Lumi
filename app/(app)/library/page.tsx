@@ -125,7 +125,7 @@ export default function LibraryPage() {
           </div>
         )}
 
-        {/* Next story CTA — gated to one story every 3 days */}
+        {/* Next story CTA — gated to one story every other day */}
         {nextLevel && (
           <div style={{ background:'linear-gradient(135deg,#241a52,#3a2470)', borderRadius:'18px', padding:'18px', marginBottom:'18px', display:'flex', alignItems:'center', gap:'14px', color:'#fff', flexWrap:'wrap' }}>
             <span style={{ fontSize:'28px' }}>{canRequestNext ? '📖' : '🌙'}</span>
@@ -136,7 +136,7 @@ export default function LibraryPage() {
                   ? 'Continue the learning path'
                   : nextAvailableAt
                     ? `Arrives ${fmtDate(nextAvailableAt)}`
-                    : 'A new story every 3 days'}
+                    : 'A new story every other day'}
               </div>
             </div>
             {canRequestNext ? (
@@ -158,7 +158,7 @@ export default function LibraryPage() {
           <div style={{ textAlign:'center', padding:'60px 24px', color:'#5d5278' }}>
             <div style={{ fontSize:'48px', marginBottom:'16px' }}>🌙</div>
             <h2 style={{ fontFamily:'var(--font-fraunces)', fontSize:'22px', marginBottom:'8px' }}>Your first story is on its way</h2>
-            <p style={{ fontSize:'15px', lineHeight:1.6 }}>Check your email — it'll arrive shortly. After that, a new story unlocks every 3 days.</p>
+            <p style={{ fontSize:'15px', lineHeight:1.6 }}>Check your email — it'll arrive shortly. After that, a new story unlocks every other day.</p>
           </div>
         ) : stories.map(s => (
           <article key={s.id} style={{ background:'#fff', border:'1px solid #ece0c8', borderRadius:'18px', marginBottom:'13px', overflow:'hidden', boxShadow:'0 10px 30px -14px rgba(8,4,28,.35)' }}>

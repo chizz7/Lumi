@@ -1075,7 +1075,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                   </button>
                   {checkoutError && <p style={{ fontSize:'12px', color:'#c0392b', textAlign:'center', margin:'8px 0 0' }}>{checkoutError}</p>}
                   <p style={{ fontSize:'11.5px', color:'#4a4063', textAlign:'center', margin:'9px 0 0', lineHeight:1.4 }}>
-                    Then <strong>$9.99/mo</strong> · a new story every 3 days · cancel anytime
+                    Then <strong>$9.99/mo</strong> · a new story every other day · cancel anytime
                   </p>
                   <p style={{ fontSize:'11px', color:'#8a6a1f', textAlign:'center', margin:'5px 0 0' }}>
                     👨‍👩‍👧‍👦 One subscription covers all your kids — add siblings anytime

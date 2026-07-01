@@ -70,7 +70,7 @@ const strings: Record<string, string> = {
   'pricing.club.amount':  '$9.99',
   'pricing.club.period':  '/mo',
   'pricing.club.tag':     'Most loved',
-  'pricing.club.f1':      'A new leveled story every 3 days',
+  'pricing.club.f1':      'A new leveled story every other day',
   'pricing.club.f2':      'All curated voices',
   'pricing.club.f3':      'Record your own voice',
   'pricing.club.f4':      'Full audio + script library',
@@ -125,7 +125,7 @@ const strings: Record<string, string> = {
   // Account
   'account.title':    'Account',
   'account.plan':     'Story Club',
-  'account.plan.sub': 'New story every 3 days · All voices',
+  'account.plan.sub': 'New story every other day · All voices',
   'account.active':   'Active',
 
   // Auth
