@@ -113,17 +113,21 @@ export async function createBillingPortalUrl(
   }
 }
 
-// Cancel a subscription (called from account deletion)
+// Cancel a customer's subscription(s) immediately. Catches trialing subs too
+// (a trial that hasn't converted is not 'active' yet), so it works for cancelling
+// during the free trial as well as for account deletion.
 export async function cancelSubscription(
   stripeCustomerId: string
 ): Promise<void> {
   const subs = await stripe.subscriptions.list({
     customer: stripeCustomerId,
-    status:   'active',
-    limit:    1,
+    status:   'all',
+    limit:    10,
   })
-  const sub = subs.data[0]
-  if (sub) {
+  const cancellable = subs.data.filter(
+    s => s.status === 'active' || s.status === 'trialing' || s.status === 'past_due'
+  )
+  for (const sub of cancellable) {
     await stripe.subscriptions.cancel(sub.id)
   }
 }

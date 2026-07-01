@@ -35,6 +35,7 @@ export default function AccountPage() {
   const [confirmText, setConfirmText] = useState('')
   const [deleting,    setDeleting]    = useState(false)
   const [portalBusy,  setPortalBusy]  = useState(false)
+  const [cancelBusy,  setCancelBusy]  = useState(false)
 
   // Add/edit child modal state
   const [editing, setEditing] = useState(false)
@@ -98,6 +99,21 @@ export default function AccountPage() {
     }
   }
 
+  const cancelSub = async () => {
+    if (!confirm('Cancel your Story Club subscription? This ends it immediately (including any free trial).')) return
+    setCancelBusy(true)
+    try {
+      const res  = await fetch('/api/account/cancel', { method: 'POST' })
+      const body = await res.json()
+      if (body.ok) alert('Subscription cancelled.')
+      else alert(body.error ?? 'Could not cancel the subscription.')
+    } catch {
+      alert('Could not cancel the subscription.')
+    } finally {
+      setCancelBusy(false)
+    }
+  }
+
   const exportData = async () => {
     const res  = await fetch('/api/account/export')
     const blob = await res.blob()
@@ -142,6 +158,13 @@ export default function AccountPage() {
           style={{ width:'100%', padding:'13px 14px', background:'#fff', border:'1px solid #ece0c8', borderRadius:'12px', fontWeight:700, cursor: portalBusy ? 'wait' : 'pointer', fontSize:'14px', marginBottom:'22px', textAlign:'left', color:'#211a3a', display:'flex', justifyContent:'space-between', alignItems:'center' }}>
           <span>💳 Manage subscription</span>
           <span style={{ color:'#9d92c0', fontSize:'13px' }}>{portalBusy ? 'Opening…' : 'Cancel · update card · invoices →'}</span>
+        </button>
+
+        {/* Direct cancel — ends the subscription (incl. trial) immediately. */}
+        <button onClick={cancelSub} disabled={cancelBusy}
+          style={{ width:'100%', padding:'12px 14px', background:'#fff', border:'1px solid #f1c9c2', borderRadius:'12px', fontWeight:700, cursor: cancelBusy ? 'wait' : 'pointer', fontSize:'14px', marginBottom:'22px', textAlign:'left', color:'#c0392b', display:'flex', justifyContent:'space-between', alignItems:'center' }}>
+          <span>✕ Cancel subscription</span>
+          <span style={{ color:'#d99', fontSize:'13px' }}>{cancelBusy ? 'Cancelling…' : 'Ends now, incl. trial →'}</span>
         </button>
 
         {/* Refer friends — a free month for every paid referral */}
