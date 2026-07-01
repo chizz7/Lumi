@@ -239,7 +239,7 @@ When the {hero} finished, there was a quiet pause. Then one of the others said, 
 
 That night, every one of them slept snug and warm, and it was all because the quiet one had finally spoken. The {hero} lay among them, glowing with a feeling the {hero} had never quite felt before, the feeling of having been truly heard.
 
-{companion_name} drifted close one last time before sleep. "You see?" {companion_name} murmured. "You carried that gift all along. You only had to be brave enough to share it." And from that night on, when the {hero} knew something true, the {hero} remembered that quiet and silent are not the same thing, and that a small voice can still say something that changes everything — and that your voice matters, the {hero} thought as it drifted off to sleep.
+{companion_name} drifted close one last time before sleep. "You see?" {companion_name} murmured. "You carried that gift all along. You only had to be brave enough to share it." And from that night on, when the {hero} knew something true, the {hero} remembered that quiet and silent are not the same thing, and that a small voice can still say something that changes everything — and that your voice matters, the {hero} thought as they drifted off to sleep.
 
 {refrain}.`,
     scriptTemplate: `In the heart of {setting}, there lived a {child_name} who was known, when {child_name} was known at all, as the quiet one. {child_name} was small, and {child_name} was shy, and while the others filled the days with games and chatter and big loud plans, {child_name} preferred to watch from the edges and keep their thoughts tucked safely inside.
@@ -295,7 +295,7 @@ But no one knew. No one came. Waiting did not work.
 
 The {hero} looked down. "I need help. But I did not say."
 
-{companion_name} smiled. "Friends cannot read your mind. asking is how people know."
+{companion_name} smiled. "Friends cannot read your mind. Asking is how people know."
 
 So the {hero} took a breath. "Please, will you help me reach the {object_motif}?"
 
@@ -320,7 +320,7 @@ But no one knew. No one came. Waiting did not work.
 
 {child_name} looked down. "I need help. But I did not say."
 
-{companion_name} smiled. "Friends cannot read your mind. asking is how people know."
+{companion_name} smiled. "Friends cannot read your mind. Asking is how people know."
 
 So {child_name} took a breath. "Please, will you help me reach the {object_motif}?"
 
@@ -347,7 +347,7 @@ Then {companion_name} came along and saw the {hero} standing there. "You look st
 
 The {hero} shook their head. "I thought someone would just see," the {hero} said quietly.
 
-{companion_name} sat down beside the {hero}. "Here is a secret," {companion_name} said. "No one can see what is inside your head. They cannot tell you are stuck unless you tell them. asking is how people know. When you ask, you give them the chance to help."
+{companion_name} sat down beside the {hero}. "Here is a secret," {companion_name} said. "No one can see what is inside your head. They cannot tell you are stuck unless you tell them. Asking is how people know. When you ask, you give them the chance to help."
 
 The {hero} thought about that. It was scary to ask. What if they said no? But waiting had not worked at all. So the {hero} took a big breath and turned to a friend passing by.
 
@@ -374,7 +374,7 @@ Then {companion_name} came along and saw {child_name} standing there. "You look 
 
 {child_name} shook their head. "I thought someone would just see," {child_name} said quietly.
 
-{companion_name} sat down beside {child_name}. "Here is a secret," {companion_name} said. "No one can see what is inside your head. They cannot tell you are stuck unless you tell them. asking is how people know. When you ask, you give them the chance to help."
+{companion_name} sat down beside {child_name}. "Here is a secret," {companion_name} said. "No one can see what is inside your head. They cannot tell you are stuck unless you tell them. Asking is how people know. When you ask, you give them the chance to help."
 
 {child_name} thought about that. It was scary to ask. What if they said no? But waiting had not worked at all. So {child_name} took a big breath and turned to a friend passing by.
 
@@ -411,7 +411,7 @@ The {hero} almost gave the easy answer — nothing, I'm fine. But something in t
 
 The {hero} had no answer.
 
-"Needing help isn't the weakness you think it is," {companion_name} went on. "The weakness is staying quiet and hoping. Hoping doesn't teach you the passage. Hoping doesn't move you one length closer. People aren't mind-readers — not even the ones who care about you most. asking is how people know. You've been waiting for someone to notice a thing you've worked very hard to hide. That was never going to happen."
+"Needing help isn't the weakness you think it is," {companion_name} went on. "The weakness is staying quiet and hoping. Hoping doesn't teach you the passage. Hoping doesn't move you one length closer. People aren't mind-readers — not even the ones who care about you most. Asking is how people know. You've been waiting for someone to notice a thing you've worked very hard to hide. That was never going to happen."
 
 The {hero} felt the truth of it land. All that effort spent looking fine, when the same effort spent asking might have solved everything weeks ago.
 
@@ -444,7 +444,7 @@ But no one offered, because no one knew. From the outside, {child_name} looked p
 
 {child_name} had no answer.
 
-"Needing help isn't the weakness you think it is," {companion_name} went on. "The weakness is staying quiet and hoping. Hoping doesn't teach you the passage. Hoping doesn't move you one length closer. People aren't mind-readers — not even the ones who care about you most. asking is how people know. You've been waiting for someone to notice a thing you've worked very hard to hide. That was never going to happen."
+"Needing help isn't the weakness you think it is," {companion_name} went on. "The weakness is staying quiet and hoping. Hoping doesn't teach you the passage. Hoping doesn't move you one length closer. People aren't mind-readers — not even the ones who care about you most. Asking is how people know. You've been waiting for someone to notice a thing you've worked very hard to hide. That was never going to happen."
 
 {child_name} felt the truth of it land. All that effort spent looking fine, when the same effort spent asking might have solved everything weeks ago.
 
@@ -477,7 +477,7 @@ The {hero} hesitated. It was right there, the truth, but saying it out loud felt
 
 "I suppose I hoped they'd just... see," the {hero} admitted.
 
-"Ah," said {companion_name} gently. "Here is the thing many people take far too long to learn. The others aren't ignoring you. They simply don't know. You've hidden it so well that there's nothing for them to see. People can't read minds, little one. They can't help with a problem they don't know you have. asking is how people know."
+"Ah," said {companion_name} gently. "Here is the thing many people take far too long to learn. The others aren't ignoring you. They simply don't know. You've hidden it so well that there's nothing for them to see. People can't read minds, little one. They can't help with a problem they don't know you have. Asking is how people know."
 
 The {hero} frowned. "But if I ask, they'll know I couldn't do it on my own."
 
@@ -516,7 +516,7 @@ On the third afternoon, {companion_name} found {child_name} sitting off to the s
 
 "I suppose I hoped they'd just... see," {child_name} admitted.
 
-"Ah," said {companion_name} gently. "Here is the thing many people take far too long to learn. The others aren't ignoring you. They simply don't know. You've hidden it so well that there's nothing for them to see. People can't read minds, little one. They can't help with a problem they don't know you have. asking is how people know."
+"Ah," said {companion_name} gently. "Here is the thing many people take far too long to learn. The others aren't ignoring you. They simply don't know. You've hidden it so well that there's nothing for them to see. People can't read minds, little one. They can't help with a problem they don't know you have. Asking is how people know."
 
 {child_name} frowned. "But if I ask, they'll know I couldn't do it on my own."
 
@@ -893,11 +893,11 @@ They built the tower together. They set the {object_motif} on top.
       '5-6': {
         audioTemplate: `In {setting}, the {hero} loved to make things. All week the {hero} had been making a picture of the {object_motif}, adding one careful colour each day.
 
-When the picture was nearly done, a friend named Pip grabbed it to show the others. "Look what I made!" Pip said proudly.
+When the picture was nearly done, a friend named Bree grabbed it to show the others. "Look what I made!" Bree said proudly.
 
-The {hero} felt a sting. That was not fair. Pip had not made it at all.
+The {hero} felt a sting. That was not fair. Bree had not made it at all.
 
-Two feelings pulled at the {hero}. One feeling said, "Yell at Pip! Call him a liar!" The other feeling said, "Stay quiet. Do not make a fuss."
+Two feelings pulled at the {hero}. One feeling said, "Yell at Bree! Call him a liar!" The other feeling said, "Stay quiet. Do not make a fuss."
 
 The {hero} did not know which to pick. So the {hero} went to find {companion_name}.
 
@@ -907,13 +907,13 @@ The {hero} did not know which to pick. So the {hero} went to find {companion_nam
 
 "Say what is true. Say how you feel. Ask for what is fair," said {companion_name}. "Strong words, kind voice."
 
-The {hero} took a deep breath and went back to Pip. It was hard. The {hero}'s heart was beating fast.
+The {hero} took a deep breath and went back to Bree. It was hard. The {hero}'s heart was beating fast.
 
-"Pip," the {hero} said, "I made that picture. It is not fair to say you made it. I worked on it all week. Please tell the others the truth."
+"Bree," the {hero} said, "I made that picture. It is not fair to say you made it. I worked on it all week. Please tell the others the truth."
 
-The {hero} did not shout. The {hero} did not call Pip names. But the {hero} did not stay quiet either.
+The {hero} did not shout. The {hero} did not call Bree names. But the {hero} did not stay quiet either.
 
-Pip looked down. "You are right," Pip said. "I am sorry. I should not have done that." Pip turned to the others. "The {hero} made it. It was the {hero}, not me."
+Bree looked down. "You are right," Bree said. "I am sorry. I should not have done that." Bree turned to the others. "The {hero} made it. It was the {hero}, not me."
 
 The {hero} felt something warm and steady inside. It felt better than shouting would have. It felt much better than staying silent.
 
@@ -926,11 +926,11 @@ And whenever something felt unfair after that, the {hero} remembered: you can be
 {refrain}.`,
         scriptTemplate: `In {setting}, {child_name} loved to make things. All week {child_name} had been making a picture of the {object_motif}, adding one careful colour each day.
 
-When the picture was nearly done, a friend named Pip grabbed it to show the others. "Look what I made!" Pip said proudly.
+When the picture was nearly done, a friend named Bree grabbed it to show the others. "Look what I made!" Bree said proudly.
 
-{child_name} felt a sting. That was not fair. Pip had not made it at all.
+{child_name} felt a sting. That was not fair. Bree had not made it at all.
 
-Two feelings pulled at {child_name}. One feeling said, "Yell at Pip! Call him a liar!" The other feeling said, "Stay quiet. Do not make a fuss."
+Two feelings pulled at {child_name}. One feeling said, "Yell at Bree! Call him a liar!" The other feeling said, "Stay quiet. Do not make a fuss."
 
 {child_name} did not know which to pick. So {child_name} went to find {companion_name}.
 
@@ -940,13 +940,13 @@ Two feelings pulled at {child_name}. One feeling said, "Yell at Pip! Call him a 
 
 "Say what is true. Say how you feel. Ask for what is fair," said {companion_name}. "Strong words, kind voice."
 
-{child_name} took a deep breath and went back to Pip. It was hard. {child_name}'s heart was beating fast.
+{child_name} took a deep breath and went back to Bree. It was hard. {child_name}'s heart was beating fast.
 
-"Pip," {child_name} said, "I made that picture. It is not fair to say you made it. I worked on it all week. Please tell the others the truth."
+"Bree," {child_name} said, "I made that picture. It is not fair to say you made it. I worked on it all week. Please tell the others the truth."
 
-{child_name} did not shout. {child_name} did not call Pip names. But {child_name} did not stay quiet either.
+{child_name} did not shout. {child_name} did not call Bree names. But {child_name} did not stay quiet either.
 
-Pip looked down. "You are right," Pip said. "I am sorry. I should not have done that." Pip turned to the others. "{child_name} made it. It was {child_name}, not me."
+Bree looked down. "You are right," Bree said. "I am sorry. I should not have done that." Bree turned to the others. "{child_name} made it. It was {child_name}, not me."
 
 {child_name} felt something warm and steady inside. It felt better than shouting would have. It felt much better than staying silent.
 

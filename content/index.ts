@@ -97,7 +97,10 @@ function resolveTemplates(level: Level, ageBand?: AgeBand): {
 function assertImmutable(level: Level, text: string, where: string): void {
   const leftover = text.match(/\{[a-z_]+\}/)
   if (leftover) throw new Error(`[assemble] unfilled slot ${leftover[0]} in ${where} (level ${level.ordinal})`)
-  if (level.learningBeat && !text.includes(level.learningBeat)) {
+  // Case-insensitive so the beat can be capitalised naturally at a sentence
+  // start or lower-cased mid-sentence without failing the guard — the LESSON
+  // must be present, but its casing shouldn't force typos into the prose.
+  if (level.learningBeat && !text.toLowerCase().includes(level.learningBeat.toLowerCase())) {
     throw new Error(`[assemble] learning beat missing in ${where} (level ${level.ordinal}) — personalization must not change the lesson`)
   }
 }

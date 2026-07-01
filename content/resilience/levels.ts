@@ -46,7 +46,7 @@ The {hero} smiled a big, sleepy smile. Above {setting}, the first stars blinked 
 
 Hard things can feel hard. That is okay. That is how we learn and grow.
 
-{refrain}`,
+{refrain}.`,
         scriptTemplate: `{child_name} wanted to learn something new. In {setting}, a line of smooth stones crossed a little stream. {child_name} wanted to hop from stone to stone, all the way across.
 
 {child_name} looked at the first stone. Hop. Wobble, wobble. Slip! One little foot splashed in the water. {child_name} tried again. Hop. Wobble. Slip! Both feet got wet this time.
@@ -75,7 +75,7 @@ Soft footsteps came close. It was {companion_name}, carrying a small, glowing {o
 
 Hard things can feel hard. That is okay. That is how we learn and grow.
 
-{refrain}`,
+{refrain}.`,
       },
       '5-6': {
         audioTemplate: `The {hero} had watched the others do it a hundred times. In {setting}, a path of smooth stepping stones crossed the wide stream, and everyone seemed to skip across without a thought. Today, the {hero} decided, was the day to learn.
@@ -114,7 +114,7 @@ The {hero} looked back at the line of stones, then at the water, then at {compan
 
 The stars were coming out over {setting}. The {hero} felt tired in a good way, the way you feel after something real. Warm, and proud, and ready to try again tomorrow.
 
-{refrain}`,
+{refrain}.`,
         scriptTemplate: `{child_name} had watched the others do it a hundred times. In {setting}, a path of smooth stepping stones crossed the wide stream, and everyone seemed to skip across without a thought. Today, {child_name} decided, was the day to learn.
 
 {child_name} stood at the water's edge and looked at the first stone. It seemed close enough. {child_name} hopped — and wobbled — and slipped, landing with a cold splash. {child_name} climbed out, shivered, and tried again. Hop. Wobble. Splash. A third time. Hop. Slip. Splash.
@@ -151,7 +151,7 @@ Hop. Hop. Hop. And then {child_name} was standing on the far bank, dry and amaze
 
 The stars were coming out over {setting}. {child_name} felt tired in a good way, the way you feel after something real. Warm, and proud, and ready to try again tomorrow.
 
-{refrain}`,
+{refrain}.`,
       },
       '7-8': {
         audioTemplate: `Every evening, the older ones crossed the stream on the stepping stones without even looking down. In {setting}, the smooth grey stones marched in a curving line from one bank to the other, and to the {hero} they looked like magic. Tonight, the {hero} had decided, would be the night to learn to cross them alone.
@@ -212,7 +212,7 @@ The stars were bright now over {setting}. The {hero} looked back at the line of 
 
 And warm, and tired, and proud, the {hero} sat down on the far bank to rest.
 
-{refrain}`,
+{refrain}.`,
         scriptTemplate: `Every evening, the older ones crossed the stream on the stepping stones without even looking down. In {setting}, the smooth grey stones marched in a curving line from one bank to the other, and to {child_name} they looked like magic. Tonight, {child_name} had decided, would be the night to learn to cross them alone.
 
 {child_name} stood at the edge of the water, heart thumping. The first stone was close. Easy, thought {child_name}. Just hop. So {child_name} hopped — and the moment both feet landed, the world tilted. Arms flew out, one foot skidded, and with a loud, cold splash {child_name} went straight into the stream.
@@ -271,7 +271,7 @@ The stars were bright now over {setting}. {child_name} looked back at the line o
 
 And warm, and tired, and proud, {child_name} sat down on the far bank to rest.
 
-{refrain}`,
+{refrain}.`,
       },
       '9-11': {
         audioTemplate: `There was a way across the ravine that only the older ones seemed to know. In {setting}, the stream ran deep and quick between two banks, and the only crossing was a scattered line of stepping stones — some flat, some tilted, some barely breaking the surface — that curved out into the current and back again like a half-drawn bridge. Every evening the {hero} watched the others read that line of stones the way you might read a familiar sentence, stepping quick and certain, never once looking as though they might fall. And every evening the {hero} stayed behind on the near bank, promising that tomorrow would be the day.
@@ -332,7 +332,7 @@ The {hero} did not cross gracefully. The {hero} crossed slowly, wobbling, arms o
 
 Above {setting}, the first stars had come out, sharp and clear over the darkening water. The {hero} sat down on the far bank, soaked and trembling and grinning, and understood, in a way that would not be forgotten, that the hard feeling had never once been an order to stop. It had been saying, the whole time, that the {hero} was learning.
 
-{refrain}`,
+{refrain}.`,
         scriptTemplate: `There was a way across the ravine that only the older ones seemed to know. In {setting}, the stream ran deep and quick between two banks, and the only crossing was a scattered line of stepping stones — some flat, some tilted, some barely breaking the surface — that curved out into the current and back again like a half-drawn bridge. Every evening {child_name} watched the others read that line of stones the way you might read a familiar sentence, stepping quick and certain, never once looking as though they might fall. And every evening {child_name} stayed behind on the near bank, promising that tomorrow would be the day.
 
 Tonight there was no more tomorrow to hide behind. The others had already crossed and gone ahead, and the light was thinning to a bruised gold over the water. To reach the far side before dark, {child_name} would have to cross alone.
@@ -391,7 +391,7 @@ Fourth stone. Fifth. The current hissed and pulled, and on the sixth stone a foo
 
 Above {setting}, the first stars had come out, sharp and clear over the darkening water. {child_name} sat down on the far bank, soaked and trembling and grinning, and understood, in a way that would not be forgotten, that the hard feeling had never once been an order to stop. It had been saying, the whole time, that {child_name} was learning.
 
-{refrain}`,
+{refrain}.`,
       },
     },
     audioTemplate: `The night settled gently over {setting}, where a small {hero} was trying something new — and finding it hard.
@@ -490,7 +490,7 @@ The {hero} was sleepy now. The stars came out over {setting}. The {hero} yawned.
 
 Goodnight, brave {hero}. Tomorrow there will be new hard things. And you will say the little word.
 
-{refrain}`,
+{refrain}.`,
         scriptTemplate: `In {setting}, {child_name} wanted to skip a stone across the water. {child_name} threw the stone. Plop. It sank.
 
 "I can't do it," said {child_name}. "I can't skip a stone. I want to give up."
@@ -541,7 +541,7 @@ Plop. It sank again.
 
 Goodnight, brave {child_name}. Tomorrow there will be new hard things. And you will say the little word.
 
-{refrain}`,
+{refrain}.`,
       },
       '5-6': {
         audioTemplate: `The sun was setting over {setting}, painting the sky in soft gold. The {hero} stood at the edge of the water with a whole pocket of flat stones, trying to skip just one across the surface.
@@ -614,7 +614,7 @@ The stars were waking up over {setting} now. The {hero} yawned a big, sleepy yaw
 
 "Sleep now, brave one," said {companion_name}. "The hard things will wait. And so will your next try."
 
-{refrain}`,
+{refrain}.`,
         scriptTemplate: `The sun was setting over {setting}, painting the sky in soft gold. {child_name} stood at the edge of the water with a whole pocket of flat stones, trying to skip just one across the surface.
 
 Throw. Plop. The stone sank.
@@ -685,7 +685,7 @@ The stars were waking up over {setting} now. {child_name} yawned a big, sleepy y
 
 "Sleep now, brave one," said {companion_name}. "The hard things will wait. And so will your next try."
 
-{refrain}`,
+{refrain}.`,
       },
       '7-8': {
         audioTemplate: `The lookout tree at the heart of {setting} had a rope that hung all the way down to the ground, and at the top was the best view in the whole world. You could see the rivers, the hills, and the place where the sky turned pink. Everyone the {hero} knew had climbed that rope. Everyone except the {hero}.
@@ -758,7 +758,7 @@ The {hero} curled up in the soft grass under the lookout tree, the {object_motif
 
 "Goodnight, tree," the {hero} whispered. "I'll be at your top. Just... not so far. Not yet."
 
-{refrain}`,
+{refrain}.`,
         scriptTemplate: `The lookout tree at the heart of {setting} had a rope that hung all the way down to the ground, and at the top was the best view in the whole world. You could see the rivers, the hills, and the place where the sky turned pink. Everyone {child_name} knew had climbed that rope. Everyone except {child_name}.
 
 Tonight {child_name} decided it was finally the night.
@@ -829,7 +829,7 @@ They climbed down together, and {child_name} yawned the enormous yawn of someone
 
 "Goodnight, tree," {child_name} whispered. "I'll be at your top. Just... not so far. Not yet."
 
-{refrain}`,
+{refrain}.`,
       },
       '9-11': {
         audioTemplate: `There was a flat grey rock at the edge of {setting} that the {hero} thought of as a private studio. Every evening, when the light went amber and soft, the {hero} would sit there with a stick of charcoal and a stack of pale bark-paper and try to draw the living things of the world: the birds, the leaping fish, the way the wind bent the grass.
@@ -904,7 +904,7 @@ The {hero} yawned, the long deep yawn of honest work. Tomorrow evening the flat 
 
 "Goodnight," the {hero} whispered to the darkening world. "I'll get you right. Just... not so far."
 
-{refrain}`,
+{refrain}.`,
         scriptTemplate: `There was a flat grey rock at the edge of {setting} that {child_name} thought of as a private studio. Every evening, when the light went amber and soft, {child_name} would sit there with a stick of charcoal and a stack of pale bark-paper and try to draw the living things of the world: the birds, the leaping fish, the way the wind bent the grass.
 
 And every evening, lately, {child_name} would end up crushing the paper into a ball.
@@ -977,7 +977,7 @@ The sky went deep blue. The first stars came out. {child_name} gathered the crum
 
 "Goodnight," {child_name} whispered to the darkening world. "I'll get you right. Just... not so far."
 
-{refrain}`,
+{refrain}.`,
       },
     },
     audioTemplate: `Under a wide and quiet sky in {setting}, the {hero} set down what they were trying and said the heaviest words they knew: "I can't do it."
@@ -1058,7 +1058,7 @@ The {hero} laughed. The hot, sad feeling was gone. Falling down had not made the
 
 That night in {setting}, the {hero} held the {object_motif} close and felt proud, not because nothing went wrong, but because something did, and the {hero} learned from it.
 
-{refrain}`,
+{refrain}.`,
         scriptTemplate: `In {setting}, {child_name} woke up happy. Today was building day. {companion_name} was coming to help, and {child_name} had a special plan.
 
 {child_name} wanted to build the tallest tower ever, all by themselves, before {companion_name} arrived. So {child_name} stacked and stacked, holding tight to a little {object_motif} for luck.
@@ -1091,7 +1091,7 @@ The tower grew. Taller than before. Taller than {child_name}! It did not wobble 
 
 That night in {setting}, {child_name} held the {object_motif} close and felt proud, not because nothing went wrong, but because something did, and {child_name} learned from it.
 
-{refrain}`,
+{refrain}.`,
       },
       '5-6': {
         audioTemplate: `In {setting}, the sun came up gold and quiet, and the {hero} was already awake. Today the whole town was having a sharing fair, and the {hero} had promised to bring something special: a boat, built by hand, that could really float.
@@ -1136,7 +1136,7 @@ The {hero} watched the little boat ride the ripples. The hot, ashamed feeling ha
 
 That night in {setting}, the {hero} set the {object_motif} on the windowsill and felt something warm and steady inside. Not because the day had been perfect, but because it hadn't, and the {hero} had grown anyway.
 
-{refrain}`,
+{refrain}.`,
         scriptTemplate: `In {setting}, the sun came up gold and quiet, and {child_name} was already awake. Today the whole town was having a sharing fair, and {child_name} had promised to bring something special: a boat, built by hand, that could really float.
 
 {child_name} had been dreaming about it for days. {companion_name} had offered to help, but {child_name} wanted to do it alone. "I want everyone to see I can do it myself," {child_name} said, holding tight to a small {object_motif} that always felt lucky.
@@ -1179,7 +1179,7 @@ When {child_name} set the second boat on the water, it floated. It bobbed and it
 
 That night in {setting}, {child_name} set the {object_motif} on the windowsill and felt something warm and steady inside. Not because the day had been perfect, but because it hadn't, and {child_name} had grown anyway.
 
-{refrain}`,
+{refrain}.`,
       },
       '7-8': {
         audioTemplate: `In {setting}, there was a fair coming — the biggest one of the whole year — and this time there was a contest. Whoever could build the finest bridge across the little stream would have it used by the whole town for the rest of the summer. The {hero} wanted to win more than anything.
@@ -1224,7 +1224,7 @@ The {hero} looked back at the little bridge, steady over the water, and felt the
 
 That night in {setting}, the {hero} set the {object_motif} beside the bed and thought, just before sleep, that maybe the best day wasn't the one where nothing went wrong. Maybe it was this one — the day something went very wrong, and the {hero} grew right through it.
 
-{refrain}`,
+{refrain}.`,
         scriptTemplate: `In {setting}, there was a fair coming — the biggest one of the whole year — and this time there was a contest. Whoever could build the finest bridge across the little stream would have it used by the whole town for the rest of the summer. {child_name} wanted to win more than anything.
 
 For a week, {child_name} planned in secret. {companion_name} kept offering to help, but every time, {child_name} shook their head. "I want to do this one myself," {child_name} said, turning a small {object_motif} over and over in their hands. "I want everyone to know I did it, all on my own." Deep down, {child_name} believed that if the bridge was good, it would prove, once and for all, that {child_name} was truly clever.
@@ -1267,7 +1267,7 @@ By the time the sun was low, the second bridge was finished. {child_name} took a
 
 That night in {setting}, {child_name} set the {object_motif} beside the bed and thought, just before sleep, that maybe the best day wasn't the one where nothing went wrong. Maybe it was this one — the day something went very wrong, and {child_name} grew right through it.
 
-{refrain}`,
+{refrain}.`,
       },
       '9-11': {
         audioTemplate: `In {setting}, the festival of lights came only once a year, and this year the {hero} had been given the greatest honor of all. Every family in the town would write a wish on a paper lantern, and someone had to build the raft that would carry all those wishes out across the water at dusk, glowing, for everyone to watch. The town had chosen the {hero}.
@@ -1314,7 +1314,7 @@ But the thing the {hero} would remember, long after, was not the cheer. It was t
 
 That night in {setting}, the {hero} set the {object_motif} on the windowsill and watched the last of the lantern light fade over the water, and was not afraid of being chosen anymore.
 
-{refrain}`,
+{refrain}.`,
         scriptTemplate: `In {setting}, the festival of lights came only once a year, and this year {child_name} had been given the greatest honor of all. Every family in the town would write a wish on a paper lantern, and someone had to build the raft that would carry all those wishes out across the water at dusk, glowing, for everyone to watch. The town had chosen {child_name}.
 
 {child_name} had never wanted anything so badly, or been so afraid of anything. To be chosen felt like being told, at last, that they mattered — that they were capable, that they were somebody the town could count on. And so, when {companion_name} gently offered to help with the raft, {child_name} said no. "They picked me," {child_name} said, turning a small {object_motif} over and over between their fingers, the way they always did when they were nervous. "If someone helps me, then it isn't really me they can count on, is it? I have to do this part alone."
@@ -1359,7 +1359,7 @@ But the thing {child_name} would remember, long after, was not the cheer. It was
 
 That night in {setting}, {child_name} set the {object_motif} on the windowsill and watched the last of the lantern light fade over the water, and was not afraid of being chosen anymore.
 
-{refrain}`,
+{refrain}.`,
       },
     },
     audioTemplate: `In the soft dark of {setting}, the {hero} made a mistake — a real one — and wished they could disappear.
@@ -1416,7 +1416,7 @@ The {hero} pushed again, the very same way, in the very same spot. Push, push, p
 
 Again and again the {hero} pushed, harder and harder. The door did not move, not even a little. The {hero} huffed and puffed and felt cross.
 
-Just then, {companion_name} came along. "You are working so hard," said {companion_name}. "But you keep pushing the same way, over and over. Maybe the door does not need a bigger push. Maybe it needs A different way."
+Just then, {companion_name} came along. "You are working so hard," said {companion_name}. "But you keep pushing the same way, over and over. Maybe the door does not need a bigger push. Maybe it needs a different way."
 
 "A different way?" said the {hero}.
 
@@ -1428,7 +1428,7 @@ The {hero} looked at the door again. Right beside it hung a shiny {object_motif}
 
 The {hero} took a slow, deep breath. Then, instead of pushing, the {hero} pulled. Cre-e-eak! The little round door swung wide open!
 
-Inside was a warm room full of tiny glowing stars. The {hero} gasped and clapped their hands. Pushing harder had never, ever worked. But trying A different way opened the door in one try.
+Inside was a warm room full of tiny glowing stars. The {hero} gasped and clapped their hands. Pushing harder had never, ever worked. But trying a different way opened the door in one try.
 
 "You did it!" cheered {companion_name}. "You did not give up. You just found a new way to try."
 
@@ -1436,9 +1436,9 @@ Inside was a warm room full of tiny glowing stars. The {hero} gasped and clapped
 
 "Not always," said {companion_name}. "But there is always another way to try. That is what makes you brave."
 
-The {hero} held the shiny {object_motif} close and smiled a big sleepy smile. Now the {hero} knew a wonderful little secret. Being stuck is not the end of the story. It only means it is time to try A different way.
+The {hero} held the shiny {object_motif} close and smiled a big sleepy smile. Now the {hero} knew a wonderful little secret. Being stuck is not the end of the story. It only means it is time to try a different way.
 
-{refrain}`,
+{refrain}.`,
         scriptTemplate: `Deep in {setting}, {child_name} found a little round door. Behind it, something wonderful was waiting. But the little door was stuck tight, and it would not open.
 
 So {child_name} pushed. Push, push, push! The door did not open.
@@ -1447,7 +1447,7 @@ So {child_name} pushed. Push, push, push! The door did not open.
 
 Again and again {child_name} pushed, harder and harder. The door did not move, not even a little. {child_name} huffed and puffed and felt cross.
 
-Just then, {companion_name} came along. "You are working so hard," said {companion_name}. "But you keep pushing the same way, over and over. Maybe the door does not need a bigger push. Maybe it needs A different way."
+Just then, {companion_name} came along. "You are working so hard," said {companion_name}. "But you keep pushing the same way, over and over. Maybe the door does not need a bigger push. Maybe it needs a different way."
 
 "A different way?" said {child_name}.
 
@@ -1459,7 +1459,7 @@ Just then, {companion_name} came along. "You are working so hard," said {compani
 
 {child_name} took a slow, deep breath. Then, instead of pushing, {child_name} pulled. Cre-e-eak! The little round door swung wide open!
 
-Inside was a warm room full of tiny glowing stars. {child_name} gasped and clapped their hands. Pushing harder had never, ever worked. But trying A different way opened the door in one try.
+Inside was a warm room full of tiny glowing stars. {child_name} gasped and clapped their hands. Pushing harder had never, ever worked. But trying a different way opened the door in one try.
 
 "You did it!" cheered {companion_name}. "You did not give up. You just found a new way to try."
 
@@ -1467,9 +1467,9 @@ Inside was a warm room full of tiny glowing stars. {child_name} gasped and clapp
 
 "Not always," said {companion_name}. "But there is always another way to try. That is what makes you brave."
 
-{child_name} held the shiny {object_motif} close and smiled a big sleepy smile. Now {child_name} knew a wonderful little secret. Being stuck is not the end of the story. It only means it is time to try A different way.
+{child_name} held the shiny {object_motif} close and smiled a big sleepy smile. Now {child_name} knew a wonderful little secret. Being stuck is not the end of the story. It only means it is time to try a different way.
 
-{refrain}`,
+{refrain}.`,
       },
       '5-6': {
         audioTemplate: `High in {setting}, the {hero} discovered an old round door set into the wall. Something wonderful glowed softly behind it, just out of reach. The {hero} wanted to see it more than anything. But the door was shut tight, and it would not budge.
@@ -1486,7 +1486,7 @@ Just then {companion_name} came near. "I have been watching you," said {companio
 
 "That is what trying hard means," said the {hero}.
 
-"It is one kind of trying," said {companion_name} with a kind smile. "But pushing harder on the same spot is not the only way to be strong. Sometimes real persistence is not doing the same thing louder. Sometimes it is being brave enough to try A different way."
+"It is one kind of trying," said {companion_name} with a kind smile. "But pushing harder on the same spot is not the only way to be strong. Sometimes real persistence is not doing the same thing louder. Sometimes it is being brave enough to try a different way."
 
 The {hero} thought about that. It felt strange. They had been so sure that pushing was right. "A different way," the {hero} whispered.
 
@@ -1506,13 +1506,13 @@ So the {hero} pulled a little to the side, and with a soft whoosh, the round doo
 
 The {hero} laughed out loud. All that pushing had never worked, not even once. But one calm, clever, different way had opened the door at last.
 
-"You did it," said {companion_name} proudly. "And do you know the best part? You did not give up. You just stopped repeating the one way that was stuck, and you tried A different way instead."
+"You did it," said {companion_name} proudly. "And do you know the best part? You did not give up. You just stopped repeating the one way that was stuck, and you tried a different way instead."
 
-The {hero} picked up the shiny {object_motif} and held it close, warm against their heart. They would remember this. When something will not work no matter how hard you push, that is not the moment to quit. It is the moment to stop, look around, and try A different way.
+The {hero} picked up the shiny {object_motif} and held it close, warm against their heart. They would remember this. When something will not work no matter how hard you push, that is not the moment to quit. It is the moment to stop, look around, and try a different way.
 
 And with the little stars glowing softly around them, the {hero} smiled a sleepy, happy smile.
 
-{refrain}`,
+{refrain}.`,
         scriptTemplate: `High in {setting}, {child_name} discovered an old round door set into the wall. Something wonderful glowed softly behind it, just out of reach. {child_name} wanted to see it more than anything. But the door was shut tight, and it would not budge.
 
 So {child_name} pushed. Push, push, push! Nothing happened.
@@ -1527,7 +1527,7 @@ Just then {companion_name} came near. "I have been watching you," said {companio
 
 "That is what trying hard means," said {child_name}.
 
-"It is one kind of trying," said {companion_name} with a kind smile. "But pushing harder on the same spot is not the only way to be strong. Sometimes real persistence is not doing the same thing louder. Sometimes it is being brave enough to try A different way."
+"It is one kind of trying," said {companion_name} with a kind smile. "But pushing harder on the same spot is not the only way to be strong. Sometimes real persistence is not doing the same thing louder. Sometimes it is being brave enough to try a different way."
 
 {child_name} thought about that. It felt strange. They had been so sure that pushing was right. "A different way," {child_name} whispered.
 
@@ -1547,13 +1547,13 @@ So {child_name} pulled a little to the side, and with a soft whoosh, the round d
 
 {child_name} laughed out loud. All that pushing had never worked, not even once. But one calm, clever, different way had opened the door at last.
 
-"You did it," said {companion_name} proudly. "And do you know the best part? You did not give up. You just stopped repeating the one way that was stuck, and you tried A different way instead."
+"You did it," said {companion_name} proudly. "And do you know the best part? You did not give up. You just stopped repeating the one way that was stuck, and you tried a different way instead."
 
-{child_name} picked up the shiny {object_motif} and held it close, warm against their heart. They would remember this. When something will not work no matter how hard you push, that is not the moment to quit. It is the moment to stop, look around, and try A different way.
+{child_name} picked up the shiny {object_motif} and held it close, warm against their heart. They would remember this. When something will not work no matter how hard you push, that is not the moment to quit. It is the moment to stop, look around, and try a different way.
 
 And with the little stars glowing softly around them, {child_name} smiled a sleepy, happy smile.
 
-{refrain}`,
+{refrain}.`,
       },
       '7-8': {
         audioTemplate: `At the far edge of {setting}, where the light turned soft and blue, the {hero} found a great round door built into an old stone wall. Behind it, something wonderful was glowing. The {hero} could see the warm light leaking around the edges. Whatever it was, they wanted to reach it more than anything in the world. There was only one problem. The door was shut, and it would not open.
@@ -1582,7 +1582,7 @@ That was when {companion_name} arrived, quiet as a drifting leaf. "I have been w
 
 The {hero} opened their mouth to argue, and then stopped. Because it was true. Every single try had been the same try, just louder. "Yes," they admitted, and their face went warm, this time not from pushing but from something like embarrassment. "I suppose it was."
 
-"Here is a secret that took me a long time to learn," said {companion_name}. "Trying hard is good. But doing the exact same thing again and again, only harder, is not really trying hard. It is being stuck in one idea. Real persistence, the strong kind, is being brave enough to try A different way."
+"Here is a secret that took me a long time to learn," said {companion_name}. "Trying hard is good. But doing the exact same thing again and again, only harder, is not really trying hard. It is being stuck in one idea. Real persistence, the strong kind, is being brave enough to try a different way."
 
 The {hero} frowned. Part of them did not want to hear it. Pushing had felt right. Pushing had felt like being determined. Changing now felt almost like admitting the first way had been wrong. "But I was so sure," they said quietly.
 
@@ -1602,17 +1602,17 @@ So the {hero} tried the new idea properly. They braced their feet, gripped the h
 
 Golden light poured out over them. Inside was a round room filled with slow-floating stars, drifting and glowing like a whole sky brought indoors. It was even more wonderful than the {hero} had imagined.
 
-For a moment they just stood there, breathing it in. Then they laughed, a big, surprised, happy laugh. "All that pushing," they said, shaking their head. "And the answer was A different way the whole time."
+For a moment they just stood there, breathing it in. Then they laughed, a big, surprised, happy laugh. "All that pushing," they said, shaking their head. "And the answer was a different way the whole time."
 
 "You found it yourself," said {companion_name} proudly. "I only reminded you to look."
 
 The {hero} reached up and lifted the shiny {object_motif} from its hook, holding it close. They wanted to remember this feeling. Not the sore arms, not the frustration, but the moment they stopped repeating themselves and dared to try something new.
 
-"Next time I get stuck," the {hero} said softly, "I will not just push harder. I will stop, and look, and try A different way."
+"Next time I get stuck," the {hero} said softly, "I will not just push harder. I will stop, and look, and try a different way."
 
 And there, wrapped in warm and floating starlight, the {hero} smiled a slow, sleepy, contented smile.
 
-{refrain}`,
+{refrain}.`,
         scriptTemplate: `At the far edge of {setting}, where the light turned soft and blue, {child_name} found a great round door built into an old stone wall. Behind it, something wonderful was glowing. {child_name} could see the warm light leaking around the edges. Whatever it was, they wanted to reach it more than anything in the world. There was only one problem. The door was shut, and it would not open.
 
 So {child_name} did the obvious thing. They pushed.
@@ -1639,7 +1639,7 @@ That was when {companion_name} arrived, quiet as a drifting leaf. "I have been w
 
 {child_name} opened their mouth to argue, and then stopped. Because it was true. Every single try had been the same try, just louder. "Yes," they admitted, and their face went warm, this time not from pushing but from something like embarrassment. "I suppose it was."
 
-"Here is a secret that took me a long time to learn," said {companion_name}. "Trying hard is good. But doing the exact same thing again and again, only harder, is not really trying hard. It is being stuck in one idea. Real persistence, the strong kind, is being brave enough to try A different way."
+"Here is a secret that took me a long time to learn," said {companion_name}. "Trying hard is good. But doing the exact same thing again and again, only harder, is not really trying hard. It is being stuck in one idea. Real persistence, the strong kind, is being brave enough to try a different way."
 
 {child_name} frowned. Part of them did not want to hear it. Pushing had felt right. Pushing had felt like being determined. Changing now felt almost like admitting the first way had been wrong. "But I was so sure," they said quietly.
 
@@ -1659,17 +1659,17 @@ So {child_name} tried the new idea properly. They braced their feet, gripped the
 
 Golden light poured out over them. Inside was a round room filled with slow-floating stars, drifting and glowing like a whole sky brought indoors. It was even more wonderful than {child_name} had imagined.
 
-For a moment they just stood there, breathing it in. Then they laughed, a big, surprised, happy laugh. "All that pushing," they said, shaking their head. "And the answer was A different way the whole time."
+For a moment they just stood there, breathing it in. Then they laughed, a big, surprised, happy laugh. "All that pushing," they said, shaking their head. "And the answer was a different way the whole time."
 
 "You found it yourself," said {companion_name} proudly. "I only reminded you to look."
 
 {child_name} reached up and lifted the shiny {object_motif} from its hook, holding it close. They wanted to remember this feeling. Not the sore arms, not the frustration, but the moment they stopped repeating themselves and dared to try something new.
 
-"Next time I get stuck," {child_name} said softly, "I will not just push harder. I will stop, and look, and try A different way."
+"Next time I get stuck," {child_name} said softly, "I will not just push harder. I will stop, and look, and try a different way."
 
 And there, wrapped in warm and floating starlight, {child_name} smiled a slow, sleepy, contented smile.
 
-{refrain}`,
+{refrain}.`,
       },
       '9-11': {
         audioTemplate: `On the last evening of a long journey, at the quiet edge of {setting}, the {hero} came to a wall of ancient stone, and set into that wall was a great round door.
@@ -1702,7 +1702,7 @@ The {hero} started to say a hundred, a thousand, and the number died in their th
 
 "Once," they admitted at last, very quietly. "I have tried one thing. Just louder each time."
 
-"That is the trap," said {companion_name}, and there was no unkindness in it. "It is the trap almost everyone falls into, because it wears the costume of courage. Pushing harder feels brave. Refusing to change feels loyal, somehow, loyal to the plan, to the version of you that was so certain. But listen carefully, because this is the part that matters. Real persistence is not doing the same thing harder and harder until it works or you break. Real persistence is refusing to quit on the goal while being completely willing to change the way you reach it. The strong move, the genuinely stubborn, unbeatable move, is to be brave enough to try A different way."
+"That is the trap," said {companion_name}, and there was no unkindness in it. "It is the trap almost everyone falls into, because it wears the costume of courage. Pushing harder feels brave. Refusing to change feels loyal, somehow, loyal to the plan, to the version of you that was so certain. But listen carefully, because this is the part that matters. Real persistence is not doing the same thing harder and harder until it works or you break. Real persistence is refusing to quit on the goal while being completely willing to change the way you reach it. The strong move, the genuinely stubborn, unbeatable move, is to be brave enough to try a different way."
 
 The {hero} sat with that, and it was not comfortable. A small, proud voice inside them wanted to argue, wanted to insist that one more push would have done it, that changing course now was a kind of surrender. But underneath the pride was something quieter and more honest, and that quieter part knew {companion_name} was right. Changing your approach was not the same as giving up. It only felt that way because it asked you to set down your certainty, and setting down your certainty was hard.
 
@@ -1730,13 +1730,13 @@ For a while they simply stood in the doorway and let the starlight move over the
 
 "I nearly gave up," the {hero} said at last, "not on the door, on the whole thing. Because I thought trying harder was my only tool."
 
-"Now you have a better one," said {companion_name}, floating in beside them. "When you meet a wall, you will remember. You do not have to be someone who never gets stuck. You only have to be someone who, when they get stuck, is willing to try A different way."
+"Now you have a better one," said {companion_name}, floating in beside them. "When you meet a wall, you will remember. You do not have to be someone who never gets stuck. You only have to be someone who, when they get stuck, is willing to try a different way."
 
 The {hero} reached up and lifted the shiny {object_motif} from its hook, closing their fingers around it, keeping it, not as a prize, but as a promise to their future self. They would forget this lesson, probably, the way people do. And this small, bright thing would be here to remind them.
 
 Then, with the freed stars turning slowly around them and the long journey finally, gently, at its end, the {hero} let out a deep and easy breath, and smiled.
 
-{refrain}`,
+{refrain}.`,
         scriptTemplate: `On the last evening of a long journey, at the quiet edge of {setting}, {child_name} came to a wall of ancient stone, and set into that wall was a great round door.
 
 Behind it, something glowed. Thin lines of warm light traced the door's outline and pooled on the ground at {child_name}'s feet, and though they could not yet see what made that light, they knew, the way you sometimes simply know a thing, that it was what they had come all this way to find. After the long road, after the cold nights and the wrong turnings, only this door stood between {child_name} and the end of the quest. There was just one difficulty. It was shut, and it did not want to open.
@@ -1767,7 +1767,7 @@ At last their legs gave out and they sank down against the base of the door, che
 
 "Once," they admitted at last, very quietly. "I have tried one thing. Just louder each time."
 
-"That is the trap," said {companion_name}, and there was no unkindness in it. "It is the trap almost everyone falls into, because it wears the costume of courage. Pushing harder feels brave. Refusing to change feels loyal, somehow, loyal to the plan, to the version of you that was so certain. But listen carefully, because this is the part that matters. Real persistence is not doing the same thing harder and harder until it works or you break. Real persistence is refusing to quit on the goal while being completely willing to change the way you reach it. The strong move, the genuinely stubborn, unbeatable move, is to be brave enough to try A different way."
+"That is the trap," said {companion_name}, and there was no unkindness in it. "It is the trap almost everyone falls into, because it wears the costume of courage. Pushing harder feels brave. Refusing to change feels loyal, somehow, loyal to the plan, to the version of you that was so certain. But listen carefully, because this is the part that matters. Real persistence is not doing the same thing harder and harder until it works or you break. Real persistence is refusing to quit on the goal while being completely willing to change the way you reach it. The strong move, the genuinely stubborn, unbeatable move, is to be brave enough to try a different way."
 
 {child_name} sat with that, and it was not comfortable. A small, proud voice inside them wanted to argue, wanted to insist that one more push would have done it, that changing course now was a kind of surrender. But underneath the pride was something quieter and more honest, and that quieter part knew {companion_name} was right. Changing your approach was not the same as giving up. It only felt that way because it asked you to set down your certainty, and setting down your certainty was hard.
 
@@ -1795,13 +1795,13 @@ For a while they simply stood in the doorway and let the starlight move over the
 
 "I nearly gave up," {child_name} said at last, "not on the door, on the whole thing. Because I thought trying harder was my only tool."
 
-"Now you have a better one," said {companion_name}, floating in beside them. "When you meet a wall, you will remember. You do not have to be someone who never gets stuck. You only have to be someone who, when they get stuck, is willing to try A different way."
+"Now you have a better one," said {companion_name}, floating in beside them. "When you meet a wall, you will remember. You do not have to be someone who never gets stuck. You only have to be someone who, when they get stuck, is willing to try a different way."
 
 {child_name} reached up and lifted the shiny {object_motif} from its hook, closing their fingers around it, keeping it, not as a prize, but as a promise to their future self. They would forget this lesson, probably, the way people do. And this small, bright thing would be here to remind them.
 
 Then, with the freed stars turning slowly around them and the long journey finally, gently, at its end, {child_name} let out a deep and easy breath, and smiled.
 
-{refrain}`,
+{refrain}.`,
       },
     },
     audioTemplate: `The {object_motif} had grown tall enough to reach the low branches of {setting}, but the {hero} was stuck — trying the same thing, the same way, over and over.
@@ -1886,7 +1886,7 @@ The {hero} did not feel like a big loud winner. The {hero} felt quiet and proud 
 
 And that is the bravest thing of all — not never falling, but always choosing to rise.
 
-{refrain}`,
+{refrain}.`,
         scriptTemplate: `Tonight, {child_name} wanted to do the biggest thing yet.
 
 In {setting}, there was a tall, tall hill. At the very top sat a shiny {object_motif}, waiting. {child_name} wanted to carry it all the way up.
@@ -1923,7 +1923,7 @@ And this time — {child_name} reached the top! The {object_motif} shone in the 
 
 And that is the bravest thing of all — not never falling, but always choosing to rise.
 
-{refrain}`,
+{refrain}.`,
       },
       '5-6': {
         audioTemplate: `Of everything the {hero} had ever tried, this was the biggest.
@@ -1968,7 +1968,7 @@ The first stars blinked awake over {setting}. The {hero} held the glowing {objec
 
 Because the secret was never about never falling down. The secret was always this:
 
-{refrain}`,
+{refrain}.`,
         scriptTemplate: `Of everything {child_name} had ever tried, this was the biggest.
 
 All across {setting}, everyone was talking about the Great Climb. At the top of the highest hill stood an old stone arch, and beneath it waited a shining {object_motif} — a prize for anyone brave enough to carry their own lantern all the way up before the sun went down.
@@ -2011,7 +2011,7 @@ The first stars blinked awake over {setting}. {child_name} held the glowing {obj
 
 Because the secret was never about never falling down. The secret was always this:
 
-{refrain}`,
+{refrain}.`,
       },
       '7-8': {
         audioTemplate: `This was the one the {hero} had been building toward all along — the biggest challenge of the entire journey.
@@ -2052,7 +2052,7 @@ But strangely, the ringing bell was not the biggest thing. The {hero} did not fe
 
 And the {hero} understood, at last, that the whole long journey had been leading here — not to a hilltop, not to a bell, but to this one quiet truth, held close like a warm and glowing light:
 
-{refrain}`,
+{refrain}.`,
         scriptTemplate: `This was the one {child_name} had been building toward all along — the biggest challenge of the entire journey.
 
 Every year in {setting}, when summer tipped toward autumn, there was the Lantern Climb. At the top of the tallest hill stood an ancient stone arch, weathered by a hundred storms, and whoever carried their own lit lantern all the way to it before the sun set could ring the old bell and leave a mark on the Climbers' Stone. {child_name} had wanted this for as long as could be remembered.
@@ -2091,7 +2091,7 @@ But strangely, the ringing bell was not the biggest thing. {child_name} did not 
 
 And {child_name} understood, at last, that the whole long journey had been leading here — not to a hilltop, not to a bell, but to this one quiet truth, held close like a warm and glowing light:
 
-{refrain}`,
+{refrain}.`,
       },
       '9-11': {
         audioTemplate: `There is a particular kind of silence that comes after you fail at the one thing you wanted most, and the {hero} was learning it now, at the bottom of the hill, in the last gold minutes of the longest day of the year.
@@ -2142,7 +2142,7 @@ The {hero} stood beneath the Arch and did not ring the silent bell. There was no
 
 And the {hero} understood then that the whole long journey — every scraped knee, every "yet," every mistake and every second try — had been leading not to a bell or a carved name, but to this one hard-won, unshakeable truth, carried home in the dark like a small and steady flame:
 
-{refrain}`,
+{refrain}.`,
         scriptTemplate: `There is a particular kind of silence that comes after you fail at the one thing you wanted most, and {child_name} was learning it now, at the bottom of the hill, in the last gold minutes of the longest day of the year.
 
 Everyone in {setting} knew about the Lantern Climb. Once a year, on midsummer's eve, the young climbers gathered at the foot of the tallest hill. At its summit stood the Old Arch, grey and patient, and above it hung the Climbers' Bell. The rule was simple and merciless: carry your own lit lantern to the top and ring the bell before the sun touched the horizon, and your name would be carved into the Climbers' Stone forever. Miss the sunset — even by a heartbeat — and the year was gone. You could not try again until the earth had gone all the way around the sun.
@@ -2191,7 +2191,7 @@ They climbed together, slowly, the {object_motif} lighting just enough of the pa
 
 And {child_name} understood then that the whole long journey — every scraped knee, every "yet," every mistake and every second try — had been leading not to a bell or a carved name, but to this one hard-won, unshakeable truth, carried home in the dark like a small and steady flame:
 
-{refrain}`,
+{refrain}.`,
       },
     },
     audioTemplate: `It had been a hard night in {setting}. The {hero} had fallen short of something that mattered, and sat very still beside the {object_motif}, which now stood tall and strong.
