@@ -8,7 +8,7 @@
 //   - Language banner dismiss
 //   - Waitlist form submission
 
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, useSyncExternalStore } from 'react'
 import { loadStripe }                    from '@stripe/stripe-js'
 import { EmbeddedCheckoutProvider, EmbeddedCheckout } from '@stripe/react-stripe-js'
 import type { VoiceConfig }              from '@/lib/voices'
@@ -19,7 +19,7 @@ const stripePromise = STRIPE_PK ? loadStripe(STRIPE_PK) : null
 import { getAllLevels }                  from '@/content'
 import { interestForWorld }              from '@/content/interests'
 import StoryStudio                       from './StoryStudio'
-import { playUrl }                        from '@/lib/howlerPlayer'
+import { playUrl, stopCurrent, subscribe as subscribePlayer, getState as getPlayerState } from '@/lib/howlerPlayer'
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -117,8 +117,17 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
   const playSampleFor = (skin: string, vid: string, voiceIdx?: number) => {
     setSampleError(null)
     if (voiceIdx != null) setActiveVoice(voiceIdx)
+    // Never let two audios play at once: pause the native preview player before
+    // starting a Howler sample.
+    previewAudioRef.current?.pause()
     const cached = sampleCache.current[sampleKey(skin, vid)]
-    if (cached) { playUrl(cached); return }          // synchronous → iOS-safe
+    if (cached) {
+      // Tap-to-stop: if this exact sample is already playing, stop it instead of
+      // restarting — gives the samples a working pause/stop control.
+      const s = getPlayerState()
+      if (s.url === cached && s.playing) { stopCurrent(); return }
+      playUrl(cached); return                         // synchronous → iOS-safe
+    }
     if (voiceIdx != null) setSampleLoading(voiceIdx)
     warmSample(vid, skin)
       .then(url => {
@@ -134,6 +143,13 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
     const v = voices[voiceIdx]
     if (v) playSampleFor(skinSlug, v.id, voiceIdx)
   }
+
+  // Live player state so sample buttons can show a pause/stop affordance and
+  // highlight which voice is currently playing (index for the current world).
+  const player = useSyncExternalStore(subscribePlayer, getPlayerState, getPlayerState)
+  const playingVoiceIdx = player.playing
+    ? voices.findIndex(v => sampleCache.current[sampleKey(skinSlug, v.id)] === player.url)
+    : -1
 
   // Pre-warm EVERY voice sample for the current world so any voice tap hits the
   // synchronous (iOS-safe) play path. The active voice warms first.
@@ -441,7 +457,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                   {t('hero.cta.primary')}
                 </button>
                 <button onClick={() => playSample(activeVoice)} style={{ padding:'15px 24px', background:'rgba(255,255,255,.12)', color:'#fff', fontWeight:700, border:'1px solid rgba(255,255,255,.28)', borderRadius:'15px', cursor:'pointer', fontSize:'15px' }}>
-                  {sampleLoading === activeVoice ? '♪ Loading…' : `▶ ${t('hero.cta.secondary')}`}
+                  {sampleLoading === activeVoice ? '♪ Loading…' : playingVoiceIdx === activeVoice ? '❚❚ Stop sample' : `▶ ${t('hero.cta.secondary')}`}
                 </button>
               </div>
               {sampleError && <p style={{ fontSize:'13px', color:'#FFD27A', margin:'-12px 0 18px' }}>{sampleError}</p>}
@@ -456,7 +472,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
               name={childName} ageBand={ageBand} skinSlug={skinSlug} subjectSlug={subjectSlug} voiceId={voiceId}
               setName={setChildName} setAge={setAgeBand} setWorld={setSkinSlug} setSubject={setSubjectSlug} setVoiceId={setVoiceId}
               skins={SKINS} ageBands={AGE_BANDS} voices={voices} paths={paths}
-              playSample={playSample} sampleLoading={sampleLoading}
+              playSample={playSample} sampleLoading={sampleLoading} playingVoiceIdx={playingVoiceIdx}
               onBuild={() => { setOverlayOpen(true); setLeadDone(false); setLeadEmail(''); setLeadError(false); setCheckoutSecret(null); generatePreview() }}
             />
           </div>
@@ -592,7 +608,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
               {voices.map((v, i) => (
                 <button key={v.id} onClick={() => playSample(i)} aria-pressed={i===activeVoice}
                   style={{ display:'flex', gap:'11px', alignItems:'center', background: i===activeVoice?'#fff7ea':'#fff', border:`1.5px solid ${i===activeVoice?'#F4A93C':'#e6d8bd'}`, borderRadius:'15px', padding:'14px', cursor:'pointer', boxShadow: i===activeVoice?'0 8px 18px -10px rgba(244,169,60,.7)':'none' }}>
-                  <span style={{ width:'40px', height:'40px', borderRadius:'50%', background: i===activeVoice?'#F4A93C':'#e7dac0', flexShrink:0, display:'grid', placeItems:'center', fontSize:'16px' }}>{sampleLoading===i ? '♪' : '▶'}</span>
+                  <span style={{ width:'40px', height:'40px', borderRadius:'50%', background: i===activeVoice?'#F4A93C':'#e7dac0', flexShrink:0, display:'grid', placeItems:'center', fontSize:'16px' }}>{sampleLoading===i ? '♪' : playingVoiceIdx===i ? '❚❚' : '▶'}</span>
                   <div style={{ textAlign:'left' }}>
                     <div style={{ fontWeight:800, fontSize:'15px' }}>{v.name}</div>
                     <div style={{ fontSize:'13px', color:'#4a4063' }}>{v.tone}</div>
@@ -804,7 +820,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
             {/* Progress (hidden on the preview + checkout screens) */}
             {!preview && (
             <div style={{ display:'flex', alignItems:'center', gap:'10px', padding:'18px 18px 12px' }}>
-              <button onClick={() => builderStep > 1 ? setBuilderStep(s => s-1) : setOverlayOpen(false)} style={{ background:'none', border:'none', cursor:'pointer', fontSize:'18px', color:'#211a3a', width:'34px', height:'34px', borderRadius:'10px' }} aria-label="Back">←</button>
+              <button onClick={() => builderStep > 1 ? setBuilderStep(s => s-1) : setOverlayOpen(false)} style={{ display:'inline-flex', alignItems:'center', gap:'4px', background:'#fff', border:'1px solid #e0d2b7', cursor:'pointer', fontSize:'13px', fontWeight:700, color:'#211a3a', padding:'7px 12px', borderRadius:'10px', flexShrink:0 }} aria-label={builderStep > 1 ? 'Back to previous step' : 'Close'}>← {builderStep > 1 ? 'Back' : 'Close'}</button>
               <div style={{ flex:1, height:'8px', background:'#e7dac0', borderRadius:'99px', overflow:'hidden' }}>
                 <div style={{ height:'100%', width:`${(builderStep / 3) * 100}%`, background:'linear-gradient(90deg,#FFD27A,#E0852A)', borderRadius:'99px', transition:'width .45s' }} />
               </div>
@@ -947,6 +963,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                           controls={leadDone}
                           playsInline
                           preload="metadata"
+                          onPlay={() => stopCurrent()}
                           onError={() => setAudioErrCode(previewAudioRef.current?.error?.code ?? -1)}
                           style={{ width:'100%', display: leadDone ? 'block' : 'none' }}
                         />

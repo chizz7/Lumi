@@ -41,6 +41,7 @@ type Props = {
   skins: Skin[]; ageBands: Age[]; voices: Voice[]; paths: Path[]
   playSample: (i: number) => void
   sampleLoading: number | null
+  playingVoiceIdx: number
   onBuild: () => void
 }
 
@@ -134,7 +135,7 @@ export default function StoryStudio(p: Props) {
           </div>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: 12 }}>
             <button onClick={() => p.playSample(vIdx)} style={{ display: 'inline-flex', alignItems: 'center', gap: 9, background: 'linear-gradient(135deg,#fff3dd,#ffe6bd)', border: `1.5px solid ${AMBER}`, color: '#8a4d0a', borderRadius: 11, padding: '9px 14px', fontWeight: 800, fontSize: 13, cursor: 'pointer' }}>
-              {p.sampleLoading === vIdx ? '♪ Loading…' : '▶ Play this opening'}
+              {p.sampleLoading === vIdx ? '♪ Loading…' : p.playingVoiceIdx === vIdx ? '❚❚ Stop' : '▶ Play this opening'}
             </button>
             <div style={{ display: 'flex', gap: 6, alignItems: 'center' }}>
               {[0, 1, 2, 3, 4].map(i => <span key={i} style={{ width: 8, height: 8, borderRadius: '50%', background: i === 0 ? AMBER : '#ecdcbe' }} />)}
@@ -195,7 +196,7 @@ export default function StoryStudio(p: Props) {
                   <span style={{ width: 30, height: 30, borderRadius: '50%', background: '#fff3dd', border: `1.5px solid ${AMBER}`, color: '#8a4d0a', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 11, flexShrink: 0 }}>
                     {p.sampleLoading === i
                       ? <span className="sds-eq" style={{ display: 'inline-flex', gap: 2, alignItems: 'flex-end', height: 12 }}><i style={{ width: 2.5, height: 12, background: '#8a4d0a', borderRadius: 1 }} /><i style={{ width: 2.5, height: 12, background: '#8a4d0a', borderRadius: 1 }} /><i style={{ width: 2.5, height: 12, background: '#8a4d0a', borderRadius: 1 }} /></span>
-                      : '▶'}
+                      : p.playingVoiceIdx === i ? '❚❚' : '▶'}
                   </span>
                   <span style={{ flex: 1 }}>
                     <span style={{ display: 'block', fontSize: 13.5, fontWeight: 800, color: '#211a3a' }}>{v.name}</span>
