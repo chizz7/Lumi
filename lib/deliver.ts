@@ -22,7 +22,7 @@ export interface DeliverableProfile {
 
 export type DeliverResult =
   | { delivered: true;  levelTitle: string; audioUrl: string }
-  | { delivered: false; reason: 'completed' | 'already_delivered' | 'not_approved' }
+  | { delivered: false; reason: 'completed' | 'already_delivered' | 'not_approved' | 'assembly_failed' }
 
 // Assemble → render audio (cache-first) → email → record → advance level.
 // `accountId` is used only for analytics attribution.
@@ -63,10 +63,19 @@ export async function deliverNextStory(
     .maybeSingle()
   if (dup) return { delivered: false, reason: 'already_delivered' }
 
+  // Assembly errors (unknown slug in older rows, content regression) must not
+  // THROW out of here: in the Stripe webhook a throw becomes a 5xx and Stripe
+  // retries a paid signup that can never complete. Fail as a result instead.
   const ageBand = profile.age_band as AgeBand | undefined
-  const { audioText, script, level, ageTag } = assembleStory(
-    profile.subject_slug, levelOrdinal, profile.skin_slug, profile.name, ageBand,
-  )
+  let audioText: string, script: string, level: ReturnType<typeof assembleStory>['level'], ageTag: string
+  try {
+    ;({ audioText, script, level, ageTag } = assembleStory(
+      profile.subject_slug, levelOrdinal, profile.skin_slug, profile.name, ageBand,
+    ))
+  } catch (err) {
+    console.error(`[deliver] assembly failed for profile ${profile.id} (${profile.subject_slug} L${levelOrdinal}):`, err)
+    return { delivered: false, reason: 'assembly_failed' }
+  }
 
   const cacheKey = audioCacheKey(profile.subject_slug, levelOrdinal, profile.skin_slug, profile.voice_id, 'en', false, ageTag, profile.name)
   let audioUrl = ''
@@ -82,7 +91,7 @@ export async function deliverNextStory(
     console.error('[deliver] email failed (non-fatal):', err)
   }
 
-  await adminClient.from('story_instances').insert({
+  const { error: insErr } = await adminClient.from('story_instances').insert({
     profile_id:    profile.id,
     subject_slug:  profile.subject_slug,
     level_ordinal: levelOrdinal,
@@ -91,6 +100,14 @@ export async function deliverNextStory(
     audio_key:     cacheKey,
     script_text:   script,
   })
+  if (insErr) {
+    // 23505 = unique violation on (profile_id, level_ordinal): a concurrent
+    // deliverer won the race after our read-check. It records + bumps; we stop.
+    if (insErr.code === '23505') return { delivered: false, reason: 'already_delivered' }
+    // Any other insert failure: the email already went out, so log loudly but
+    // still bump the level below — re-running would re-email the same story.
+    console.error('[deliver] story_instances insert failed:', insErr.message)
+  }
 
   await adminClient.from('child_profiles')
     .update({ current_level: levelOrdinal + 1 })

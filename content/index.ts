@@ -65,7 +65,10 @@ export function getAllSubjectSlugs(): string[] {
 function fillTemplate(template: string, slots: Record<string, string>): string {
   return template.replace(/\{([a-z_]+)\}/g, (_, key) => {
     if (!(key in slots)) throw new Error(`Missing slot value: {${key}}`)
-    return slots[key]!
+    // Strip braces from slot VALUES: a child named "{hero}" would otherwise be
+    // inserted literally and trip assertImmutable's leftover-slot check — which
+    // in the delivery path means a paid signup that fails on every retry.
+    return slots[key]!.replace(/[{}]/g, '')
   })
 }
 

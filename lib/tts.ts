@@ -3,6 +3,7 @@
 // Cache: check Supabase Storage before calling the API.
 // Cache key: {prefix}-{subjectSlug}-level{ordinal}-{skinSlug}-{voiceId}-{lang}.mp3
 
+import { createHash }           from 'crypto'
 import { adminClient, BUCKETS } from '@/lib/supabase'
 
 const DEEPINFRA_URL = 'https://api.deepinfra.com/v1/inference/hexgrad/Kokoro-82M'
@@ -84,8 +85,14 @@ const AUDIO_CACHE_VERSION = 'v2'
 
 // Normalise a child's name into a safe, stable cache-key segment. Same name →
 // same file (so repeat names reuse the render); strips anything non-alphanumeric.
+// Names with no [a-z0-9] at all (e.g. 小明, さくら, أحمد) would strip to '' and
+// silently collide with the GENERIC no-name cache key — every such child would
+// hear whichever audio rendered first. Fall back to a short hash so the key
+// stays unique per name and distinct from the generic key.
 function nameSlug(name: string): string {
-  return name.toLowerCase().replace(/[^a-z0-9]/g, '').slice(0, 24)
+  const slug = name.toLowerCase().replace(/[^a-z0-9]/g, '').slice(0, 24)
+  if (slug) return slug
+  return 'n' + createHash('sha256').update(name).digest('hex').slice(0, 12)
 }
 
 // Build the cache key — includes language so EN and ES renders are separate files.

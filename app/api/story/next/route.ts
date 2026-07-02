@@ -64,6 +64,9 @@ export async function POST(req: NextRequest) {
     if (result.reason === 'not_approved') {
       return NextResponse.json({ error: 'This story is still being reviewed and will be ready soon.' }, { status: 409 })
     }
+    if (result.reason === 'assembly_failed') {
+      return NextResponse.json({ error: 'We hit a snag building this story. We\'re on it — please try again later.' }, { status: 500 })
+    }
     // already_delivered — treat as success so the UI just refreshes.
     return NextResponse.json({ ok: true, alreadyDelivered: true })
   }

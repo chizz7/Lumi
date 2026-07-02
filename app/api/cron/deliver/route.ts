@@ -4,10 +4,13 @@
 // whose cadence window has elapsed. The cadence gate + idempotent
 // deliverNextStory make this safe to run as often as we like.
 //
-// Auth: Vercel Cron sends `Authorization: Bearer ${CRON_SECRET}` when CRON_SECRET
-// is configured. Requests without it are rejected.
+// Auth: Vercel Cron sends `Authorization: Bearer ${CRON_SECRET}`. FAILS CLOSED —
+// if CRON_SECRET is unset the endpoint refuses to run rather than running
+// unauthenticated (an open endpoint here means anyone can trigger mass
+// delivery: TTS spend, email sends, DB writes).
 
 import { NextRequest, NextResponse } from 'next/server'
+import { timingSafeEqual }           from 'crypto'
 import { adminClient }               from '@/lib/supabase'
 import { deliverNextStory, type DeliverableProfile } from '@/lib/deliver'
 import { canRequestStory }           from '@/lib/cadence'
@@ -18,9 +21,19 @@ export const dynamic = 'force-dynamic'
 // With a daily schedule and cache-first audio this is comfortably enough.
 const MAX_PER_RUN = 100
 
+// Constant-time comparison; safe on unequal lengths.
+function safeEqual(a: string, b: string): boolean {
+  const ab = Buffer.from(a), bb = Buffer.from(b)
+  return ab.length === bb.length && timingSafeEqual(ab, bb)
+}
+
 export async function GET(req: NextRequest) {
   const secret = process.env.CRON_SECRET
-  if (secret && req.headers.get('authorization') !== `Bearer ${secret}`) {
+  if (!secret) {
+    console.error('[cron/deliver] CRON_SECRET is not set — refusing to run unauthenticated')
+    return NextResponse.json({ error: 'Not configured' }, { status: 503 })
+  }
+  if (!safeEqual(req.headers.get('authorization') ?? '', `Bearer ${secret}`)) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
 

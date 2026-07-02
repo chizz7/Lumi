@@ -20,17 +20,24 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Please enter a valid email address.' }, { status: 422 })
   }
 
-  // Upsert — silently succeed if already on the list
-  const { error } = await adminClient
+  // Upsert — silently succeed if already on the list. `.select()` returns the
+  // inserted row only when a NEW row was created (ignoreDuplicates returns
+  // nothing on conflict), which gates the confirmation email below.
+  const { data: inserted, error } = await adminClient
     .from('waitlist')
     .upsert({ email, lang, source }, { onConflict: 'email', ignoreDuplicates: true })
+    .select('email')
 
   if (error) {
     console.error('[waitlist] insert error:', error.message)
     return NextResponse.json({ error: 'Something went wrong. Please try again.' }, { status: 500 })
   }
 
-  // Send confirmation email
+  // Already on the list → no repeat email. Without this gate the endpoint is an
+  // email-bombing primitive: anyone can spam a victim's inbox one POST at a time.
+  if (!inserted?.length) return NextResponse.json({ ok: true })
+
+  // Send confirmation email (first signup only)
   try {
     await getResend().emails.send({
       from:    EMAIL_FROM,
