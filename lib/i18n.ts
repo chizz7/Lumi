@@ -14,16 +14,16 @@ import type { NextRequest }  from 'next/server'
 
 export type Lang = 'en' | 'es' | 'fr' | 'pt' | 'de' | 'ja' | 'zh' | 'ko' | 'hi' | 'it'
 
-export const SUPPORTED_LANGS: Lang[]   = ['en','es','fr','pt','de','ja','zh','ko','hi','it']
+const SUPPORTED_LANGS: Lang[] = ['en','es','fr','pt','de','ja','zh','ko','hi','it']
 export const LANG_NAMES: Record<Lang, string> = {
   en: 'English', es: 'Español', fr: 'Français', pt: 'Português',
   de: 'Deutsch', ja: '日本語',   zh: '中文',      ko: '한국어',
   hi: 'हिन्दी',  it: 'Italiano',
 }
-export const LANG_COOKIE = 'lumi_lang'
+const LANG_COOKIE = 'lumi_lang'
 
 // Detect language from Accept-Language header
-export function detectLang(acceptLanguage: string | null): Lang {
+function detectLang(acceptLanguage: string | null): Lang {
   if (!acceptLanguage) return 'en'
   const preferred = acceptLanguage
     .split(',')

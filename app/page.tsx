@@ -13,12 +13,10 @@ import LandingClient           from './_components/LandingClient'
 // description). hreflang alternates were removed: only EN content exists, and
 // the ?lang= URLs don't actually serve different languages, so they were
 // duplicate-content. Re-add hreflang once real per-language URLs exist.
-export async function generateMetadata(): Promise<Metadata> {
-  return {
-    title:       'Screen-Free Bedtime Stories That Teach',
-    description: 'Personalized, screen-free audio bedtime stories that teach your child real-life skills — kindness, focus, confidence and more. First story free, no card.',
-    alternates: { canonical: '/' },
-  }
+export const metadata: Metadata = {
+  title:       'Screen-Free Bedtime Stories That Teach',
+  description: 'Personalized, screen-free audio bedtime stories that teach your child real-life skills — kindness, focus, confidence and more. First story free, no card.',
+  alternates: { canonical: '/' },
 }
 
 export default async function LandingPage({

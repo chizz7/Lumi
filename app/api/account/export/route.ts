@@ -1,12 +1,12 @@
 // app/api/account/export/route.ts
 // GET /api/account/export — returns a JSON download of everything we store.
 import { NextRequest, NextResponse } from 'next/server'
-import { serverClient, adminClient } from '@/lib/supabase'
+import { requireUser }               from '@/lib/supabase'
 
 export async function GET(req: NextRequest) {
-  const supabase = await serverClient()
-  const { data: { user } } = await supabase.auth.getUser()
-  if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+  const gate = await requireUser()
+  if (!gate.ok) return NextResponse.json({ error: gate.error }, { status: gate.status })
+  const { user, supabase } = gate
 
   // account + all children; stories depend on each child's id.
   const [{ data: account }, { data: profiles }] = await Promise.all([

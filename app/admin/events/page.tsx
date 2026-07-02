@@ -4,7 +4,7 @@
 // cron, delivery and referral activity that proves things are (or aren't) firing.
 
 import { useEffect, useState } from 'react'
-import { AdminShell, AdminLoading, AdminForbidden, adminFetch } from '../AdminShell'
+import { AdminShell, AdminLoading, AdminForbidden, adminFetch, timeAgo } from '../AdminShell'
 
 interface Health {
   webhooks24h: number; deliveries24h: number; referralsCredited: number
@@ -18,14 +18,8 @@ interface Data {
   referrals:  { status: string; reward_cents: number; created_at: string; credited_at: string | null }[]
 }
 
-function when(iso: string | null): string {
-  if (!iso) return '—'
-  const d = Date.now() - new Date(iso).getTime()
-  const days = Math.floor(d / 86400000), hrs = Math.floor(d / 3600000), mins = Math.floor(d / 60000)
-  if (days >= 1) return `${days}d ago`
-  if (hrs >= 1)  return `${hrs}h ago`
-  return `${Math.max(1, mins)}m ago`
-}
+// This page's timestamps show '—' when absent (rather than 'never').
+const when = (iso: string | null) => timeAgo(iso, '—')
 
 export default function EventsPage() {
   const [data, setData] = useState<Data | null>(null)
@@ -49,10 +43,10 @@ export default function EventsPage() {
 
       {/* Health strip */}
       <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(150px,1fr))', gap:'10px', marginBottom:'24px' }}>
-        <Tile label="Webhooks (24h)" value={h.webhooks24h} good={h.webhooks24h > 0} neutral />
-        <Tile label="Deliveries (24h)" value={h.deliveries24h} good={h.deliveries24h > 0} neutral />
-        <Tile label="Last cron run" value={when(h.lastCronAt)} good={!h.cronStale} bad={h.cronStale} />
-        <Tile label="Referral months" value={h.referralsCredited} good neutral sub={h.referralsPending ? `${h.referralsPending} pending` : undefined} />
+        <Tile label="Webhooks (24h)" value={h.webhooks24h} />
+        <Tile label="Deliveries (24h)" value={h.deliveries24h} />
+        <Tile label="Last cron run" value={when(h.lastCronAt)} tone={h.cronStale ? 'bad' : 'ok'} />
+        <Tile label="Referral months" value={h.referralsCredited} sub={h.referralsPending ? `${h.referralsPending} pending` : undefined} />
       </div>
 
       <Section title="Stripe webhooks">
@@ -82,9 +76,9 @@ export default function EventsPage() {
   )
 }
 
-function Tile({ label, value, good, bad, neutral, sub }: { label: string; value: string | number; good?: boolean; bad?: boolean; neutral?: boolean; sub?: string }) {
-  const fg = bad ? '#c0392b' : good && !neutral ? '#1c7a4a' : '#211a3a'
-  const bg = bad ? '#fdeaea' : '#fff'
+function Tile({ label, value, tone, sub }: { label: string; value: string | number; tone?: 'ok' | 'bad'; sub?: string }) {
+  const fg = tone === 'bad' ? '#c0392b' : tone === 'ok' ? '#1c7a4a' : '#211a3a'
+  const bg = tone === 'bad' ? '#fdeaea' : '#fff'
   return (
     <div style={{ background:bg, border:'1px solid #ece0c8', borderRadius:'13px', padding:'14px 16px' }}>
       <div style={{ fontSize:'11.5px', color:'#5d5278', fontWeight:700, textTransform:'uppercase', letterSpacing:'.04em' }}>{label}</div>

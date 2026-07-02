@@ -4,20 +4,11 @@
 // an admin can triage in ten seconds, then deep-link into the detail pages.
 
 import { useEffect, useState } from 'react'
-import { AdminShell, AdminLoading, AdminForbidden, adminFetch } from './AdminShell'
+import { AdminShell, AdminLoading, AdminForbidden, adminFetch, timeAgo } from './AdminShell'
 
 interface Lifecycle { counts: Record<string, number> }
 interface Events {
   health: { webhooks24h: number; deliveries24h: number; referralsCredited: number; referralsPending: number; lastCronAt: string | null; cronStale: boolean }
-}
-
-function when(iso: string | null): string {
-  if (!iso) return 'never'
-  const d = Date.now() - new Date(iso).getTime()
-  const days = Math.floor(d / 86400000), hrs = Math.floor(d / 3600000)
-  if (days >= 1) return `${days}d ago`
-  if (hrs >= 1)  return `${hrs}h ago`
-  return `${Math.max(1, Math.floor(d / 60000))}m ago`
 }
 
 export default function AdminOverview() {
@@ -84,7 +75,7 @@ export default function AdminOverview() {
       <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(120px,1fr))', gap:'10px', marginBottom:'10px' }}>
         <Stat label="Webhooks 24h" value={h?.webhooks24h ?? 0} />
         <Stat label="Deliveries 24h" value={h?.deliveries24h ?? 0} />
-        <Stat label="Last cron" value={when(h?.lastCronAt ?? null)} fg={h?.cronStale ? '#c0392b' : '#1c7a4a'} small />
+        <Stat label="Last cron" value={timeAgo(h?.lastCronAt)} fg={h?.cronStale ? '#c0392b' : '#1c7a4a'} small />
         <Stat label="Free months given" value={h?.referralsCredited ?? 0} />
       </div>
       <a href="/admin/events" style={{ fontSize:'13px', fontWeight:700, color:'#E0852A' }}>See all events →</a>

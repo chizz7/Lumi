@@ -50,6 +50,16 @@ export function AdminForbidden() {
   )
 }
 
+// Shared relative-time formatter for admin timestamps ("3d ago", "2h ago", "5m ago").
+export function timeAgo(iso: string | null | undefined, emptyLabel = 'never'): string {
+  if (!iso) return emptyLabel
+  const d = Date.now() - new Date(iso).getTime()
+  const days = Math.floor(d / 86400000), hrs = Math.floor(d / 3600000)
+  if (days >= 1) return `${days}d ago`
+  if (hrs >= 1)  return `${hrs}h ago`
+  return `${Math.max(1, Math.floor(d / 60000))}m ago`
+}
+
 // Shared fetch helper: resolves to 'forbidden' on 401/403, null on other errors.
 export async function adminFetch<T>(url: string): Promise<T | 'forbidden' | null> {
   try {

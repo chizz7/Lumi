@@ -4,6 +4,11 @@
 
 import Stripe from 'stripe'
 
+// One month of Story Club ($9.99) in minor units. The single source of truth for
+// every "one free month" credit (story reports, referral rewards). Mirrors
+// STRIPE_PRICE_ID — keep in sync.
+export const MONTH_CREDIT_CENTS = 999
+
 export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
   apiVersion: '2025-02-24.acacia',
   typescript:  true,
@@ -78,7 +83,7 @@ const DEFAULT_CREDIT_CURRENCY = 'cad'
 // working regardless of which currency the subscription was billed in.
 export async function issueCredit(
   stripeCustomerId: string,
-  amountCents = 999,              // one month's subscription, in minor units
+  amountCents = MONTH_CREDIT_CENTS,   // one month's subscription
   reason = 'Story credit'
 ): Promise<void> {
   const customer = await stripe.customers.retrieve(stripeCustomerId)

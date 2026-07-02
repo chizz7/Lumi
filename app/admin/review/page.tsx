@@ -5,15 +5,15 @@
 
 import { useState, useEffect } from 'react'
 import { getAllSubjectSlugs, getAllLevels, getAllSkins, assembleAudio } from '@/content'
+import { SUBJECT_META } from '@/content/meta'
+import { AdminShell, AdminLoading, AdminForbidden } from '../AdminShell'
 
 type Status = 'pending' | 'approved' | 'rejected'
 interface ApprovalRow { subject_slug: string; level_ordinal: number; status: Status; reviewer_email: string | null; updated_at: string }
 
-const SUBJECT_NAMES: Record<string, string> = {
-  money: '💰 Money & Saving', focus: '🎯 Focus & Goals', resilience: '💪 Resilience',
-  kindness: '❤️ Kindness & Empathy', problem: '🧠 Problem Solving', confidence: '🌱 Confidence',
-  voice: '🗣️ Speaking Up',
-}
+const SUBJECT_NAMES: Record<string, string> = Object.fromEntries(
+  SUBJECT_META.map(s => [s.slug, `${s.emoji} ${s.name}`])
+)
 const STATUS_STYLE: Record<Status, { bg: string; fg: string; label: string }> = {
   approved: { bg:'#e7f6ee', fg:'#1c7a4a', label:'✓ Approved' },
   rejected: { bg:'#fdeaea', fg:'#c0392b', label:'✗ Needs work' },
@@ -31,6 +31,8 @@ export default function ReviewPage() {
   const key = (s: string, o: number) => `${s}:${o}`
 
   useEffect(() => {
+    // Not adminFetch: it collapses 401/403 into 'forbidden', and this page
+    // additionally redirects unauthenticated (401) visitors to /login.
     fetch('/api/admin/approvals')
       .then(async r => {
         if (r.status === 401) { window.location.href = '/login'; return null }
@@ -65,20 +67,15 @@ export default function ReviewPage() {
     }
   }
 
-  if (loading) return <Shell><p style={{ color:'#5d5278' }}>Loading review console…</p></Shell>
-  if (forbidden) return (
-    <Shell>
-      <h1 style={{ fontFamily:'var(--font-fraunces)', fontSize:'22px', marginBottom:'8px' }}>Not authorised</h1>
-      <p style={{ color:'#5d5278', fontSize:'14px' }}>Your account isn't on the reviewer allowlist. Add your email to the <code>ADMIN_EMAILS</code> environment variable.</p>
-    </Shell>
-  )
+  if (loading) return <AdminLoading />
+  if (forbidden) return <AdminForbidden />
 
   // Progress summary
   const allLevels = subjects.flatMap(s => getAllLevels(s).map(l => key(s, l.ordinal)))
   const approvedCount = allLevels.filter(k => status[k] === 'approved').length
 
   return (
-    <Shell>
+    <AdminShell active="/admin/review">
       <div style={{ marginBottom:'20px' }}>
         <h1 style={{ fontFamily:'var(--font-fraunces)', fontSize:'26px' }}>Story review</h1>
         <p style={{ color:'#5d5278', fontSize:'14px', marginTop:'4px' }}>
@@ -148,14 +145,6 @@ export default function ReviewPage() {
           </section>
         )
       })}
-    </Shell>
-  )
-}
-
-function Shell({ children }: { children: React.ReactNode }) {
-  return (
-    <main style={{ minHeight:'100vh', background:'#FBF4E6', padding:'40px 20px' }}>
-      <div style={{ maxWidth:'720px', margin:'0 auto' }}>{children}</div>
-    </main>
+    </AdminShell>
   )
 }

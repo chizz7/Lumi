@@ -1,34 +1,24 @@
 // scripts/setup-storage.ts
 //
-// Idempotent: creates the private Storage buckets the app needs (audio MP3 cache
-// + script text). Safe to re-run — existing buckets are left as-is.
+// Idempotent: creates the private Storage bucket the app needs (audio MP3
+// cache). Safe to re-run — an existing bucket is left as-is.
 //
 //   npx tsx scripts/setup-storage.ts
 //
-// Requires NEXT_PUBLIC_SUPABASE_URL + SUPABASE_SERVICE_ROLE_KEY in the env.
+// Requires NEXT_PUBLIC_SUPABASE_URL + SUPABASE_SERVICE_ROLE_KEY in the env
+// (importing @/lib/supabase fails loudly without them).
 // No AWS CLI: Supabase Storage is managed entirely through the Supabase client.
 
-import { createClient } from '@supabase/supabase-js'
-import { BUCKETS } from '@/lib/supabase'
-
-const url = process.env.NEXT_PUBLIC_SUPABASE_URL
-const key = process.env.SUPABASE_SERVICE_ROLE_KEY
-if (!url || !key) {
-  console.error('Missing NEXT_PUBLIC_SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY')
-  process.exit(1)
-}
-
-const admin = createClient(url, key, { auth: { persistSession: false } })
+import { adminClient, BUCKETS } from '@/lib/supabase'
 
 // bucket id -> options. Private (no public reads); the app serves audio via
 // short-lived signed URLs created with the service role.
 const WANTED: Record<string, { fileSizeLimit: number; allowedMimeTypes: string[] }> = {
-  [BUCKETS.AUDIO]:   { fileSizeLimit: 25 * 1024 * 1024, allowedMimeTypes: ['audio/mpeg'] },
-  [BUCKETS.SCRIPTS]: { fileSizeLimit: 5 * 1024 * 1024,  allowedMimeTypes: ['text/plain'] },
+  [BUCKETS.AUDIO]: { fileSizeLimit: 25 * 1024 * 1024, allowedMimeTypes: ['audio/mpeg'] },
 }
 
 async function main() {
-  const { data: existing, error: listErr } = await admin.storage.listBuckets()
+  const { data: existing, error: listErr } = await adminClient.storage.listBuckets()
   if (listErr) throw listErr
   const have = new Set((existing ?? []).map(b => b.id))
 
@@ -37,7 +27,7 @@ async function main() {
       console.log(`✓ bucket '${id}' already exists — skipping`)
       continue
     }
-    const { error } = await admin.storage.createBucket(id, {
+    const { error } = await adminClient.storage.createBucket(id, {
       public: false,
       fileSizeLimit: opts.fileSizeLimit,
       allowedMimeTypes: opts.allowedMimeTypes,

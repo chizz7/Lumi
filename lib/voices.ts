@@ -85,8 +85,3 @@ export const VOICES_BY_LANG: Record<string, [VoiceConfig, VoiceConfig, VoiceConf
 export function getVoicesForLang(lang: string) {
   return VOICES_BY_LANG[lang] ?? VOICES_BY_LANG['en']!
 }
-
-// Default voice ID for a language (first = warmest/softest)
-export function defaultVoiceForLang(lang: string): string {
-  return getVoicesForLang(lang)[0].id
-}

@@ -1,6 +1,8 @@
 'use client'
 // app/(app)/library/page.tsx
 import { useState, useEffect } from 'react'
+import { WORLD_META } from '@/content/meta'
+import AppNav from '@/app/_components/AppNav'
 
 interface Story  { id: string; levelOrdinal: number; levelTitle: string; concept: string; skinSlug: string; voiceId: string; deliveredAt: string; script: string; audioUrl: string | null }
 interface Child  { id: string; name: string; currentLevel: number; totalLevels: number; subjectSlug: string; nextLevel: number | null; nextAvailableAt: string | null; canRequestNext: boolean; stories: Story[] }
@@ -13,6 +15,8 @@ const REPORT_REASONS: { value: string; label: string }[] = [
   { value: 'wrong_interests',       label: "Didn't fit my child" },
   { value: 'other',                 label: 'Something else' },
 ]
+
+const SKIN_EMOJI: Record<string, string> = Object.fromEntries(WORLD_META.map(w => [w.slug, w.emoji]))
 
 export default function LibraryPage() {
   const [data,       setData]       = useState<LibData | null>(null)
@@ -33,15 +37,20 @@ export default function LibraryPage() {
 
   const requestNext = async (childId: string) => {
     setRequesting(true)
-    const res  = await fetch('/api/story/next', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ childId }),
-    })
-    const body = await res.json()
-    if (body.ok) load()
-    else alert(body.error ?? 'Something went wrong')
-    setRequesting(false)
+    try {
+      const res  = await fetch('/api/story/next', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ childId }),
+      })
+      const body = await res.json()
+      if (body.ok) load()
+      else alert(body.error ?? 'Something went wrong')
+    } catch {
+      alert('Something went wrong')
+    } finally {
+      setRequesting(false)
+    }
   }
 
   const submitReport = async (reason: string) => {
@@ -66,8 +75,6 @@ export default function LibraryPage() {
 
   const fmtDate = (iso: string) =>
     new Date(iso).toLocaleDateString(undefined, { weekday: 'long', month: 'short', day: 'numeric' })
-
-  const SKIN_EMOJI: Record<string,string> = { sea:'🐬', space:'🤖', forest:'🦊', castle:'🐉', dino:'🦕', jungle:'🐯' }
 
   if (loading) return (
     <div style={{ minHeight:'100vh', display:'grid', placeItems:'center', background:'#FBF4E6', color:'#5d5278', fontSize:'16px' }}>
@@ -242,11 +249,7 @@ export default function LibraryPage() {
         </div>
       )}
 
-      {/* Bottom nav */}
-      <nav style={{ position:'fixed', bottom:0, left:0, right:0, background:'#FBF4E6', borderTop:'1px solid #ece0c8', display:'flex', justifyContent:'space-around', padding:'8px 0 12px' }} aria-label="App navigation">
-        <a href="/library" aria-current="page" style={{ display:'flex', flexDirection:'column', alignItems:'center', gap:'3px', fontSize:'11px', fontWeight:700, color:'#E0852A', textDecoration:'none' }}><span style={{ fontSize:'22px' }} aria-hidden="true">📚</span>Library</a>
-        <a href="/account" style={{ display:'flex', flexDirection:'column', alignItems:'center', gap:'3px', fontSize:'11px', fontWeight:700, color:'#5d5278', textDecoration:'none' }}><span style={{ fontSize:'22px' }} aria-hidden="true">👤</span>Account</a>
-      </nav>
+      <AppNav active="library" />
     </main>
   )
 }

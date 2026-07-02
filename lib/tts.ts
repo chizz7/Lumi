@@ -8,12 +8,6 @@ import { adminClient, BUCKETS } from '@/lib/supabase'
 
 const DEEPINFRA_URL = 'https://api.deepinfra.com/v1/inference/hexgrad/Kokoro-82M'
 
-// Re-export for convenience — importers only need lib/tts
-export type { VoiceConfig } from '@/lib/voices'
-export type VoiceId = string  // Kokoro voice IDs vary by language
-
-export { VOICES_BY_LANG, getVoicesForLang, defaultVoiceForLang } from '@/lib/voices'
-
 // Returns a short-lived signed URL to the audio file.
 export async function getOrRenderAudio(
   text:     string,

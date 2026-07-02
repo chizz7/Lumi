@@ -4,14 +4,14 @@
 // only handles auth, the plan check, and the cadence gate.
 
 import { NextRequest, NextResponse } from 'next/server'
-import { serverClient }              from '@/lib/supabase'
+import { requireUser }               from '@/lib/supabase'
 import { deliverNextStory }          from '@/lib/deliver'
 import { canRequestStory, nextStoryAvailableAt, STORY_INTERVAL_DAYS } from '@/lib/cadence'
 
 export async function POST(req: NextRequest) {
-  const supabase = await serverClient()
-  const { data: { user } } = await supabase.auth.getUser()
-  if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+  const gate = await requireUser()
+  if (!gate.ok) return NextResponse.json({ error: gate.error }, { status: gate.status })
+  const { user, supabase } = gate
 
   // Check plan
   const { data: account } = await supabase

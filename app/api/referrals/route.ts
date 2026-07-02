@@ -6,13 +6,13 @@
 // is NEVER returned to the referrer (privacy/COPPA) — only status + dates.
 
 import { NextResponse }                       from 'next/server'
-import { serverClient, adminClient }          from '@/lib/supabase'
+import { requireUser, adminClient }           from '@/lib/supabase'
 import { ensureReferralCode, referralLink, REFERRAL_REWARD_CENTS } from '@/lib/referral'
 
 export async function GET() {
-  const supabase = await serverClient()
-  const { data: { user } } = await supabase.auth.getUser()
-  if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+  const gate = await requireUser()
+  if (!gate.ok) return NextResponse.json({ error: gate.error }, { status: gate.status })
+  const { user } = gate
 
   // Every account has a code; mint one lazily for accounts that predate the
   // referral feature.

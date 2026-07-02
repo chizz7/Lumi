@@ -1,16 +1,11 @@
 'use client'
 // app/_components/CurriculumDetail.tsx
 // Shows a full level-by-level breakdown for a single learning path.
-// Used on the landing page (path-switcher context) and in the app
-// (before a parent requests the next level).
+// Used on the /curriculum page (one instance per path).
 //
 // Props:
-//   levels    — the levels to display (can be all 5, or just upcoming)
-//   current   — ordinal of the current/active level (highlighted)
-//   compact   — if true, shows a shorter version suitable for the app's
-//               "next story" card
-//   onRequest — if provided, shows a "Request this story" CTA on the
-//               current level card
+//   levels      — the levels to display
+//   subjectSlug — picks the path's accent colours
 
 import type { Level } from '@/content/types'
 
@@ -26,129 +21,79 @@ const PATH_COLORS: Record<string, { bg: string; text: string; border: string; li
 interface Props {
   levels:      Level[]
   subjectSlug: string
-  current?:    number   // ordinal of level in progress
-  compact?:    boolean  // shorter cards for the app
-  onRequest?:  (ordinal: number) => void
 }
 
-export default function CurriculumDetail({ levels, subjectSlug, current, compact, onRequest }: Props) {
+export default function CurriculumDetail({ levels, subjectSlug }: Props) {
   const colors = PATH_COLORS[subjectSlug] ?? PATH_COLORS['money']!
 
   return (
-    <div style={{ display:'flex', flexDirection:'column', gap: compact ? '10px' : '14px' }}>
-      {levels.map((level, i) => {
-        const isCurrent  = level.ordinal === current
-        const isDone     = current != null && level.ordinal < current
-        const isLocked   = current != null && level.ordinal > current
-        const isNext     = current != null && level.ordinal === current
+    <div style={{ display:'flex', flexDirection:'column', gap:'14px' }}>
+      {levels.map((level, i) => (
+        <div key={level.ordinal} style={{
+          background: '#fff',
+          border: '1.5px solid #ece0c8',
+          borderRadius: '18px',
+          padding: '20px 22px',
+          position: 'relative',
+        }}>
 
-        return (
-          <div key={level.ordinal} style={{
-            background: isCurrent ? colors.light : isDone ? '#f9f5f0' : '#fff',
-            border: `1.5px solid ${isCurrent ? colors.border : isDone ? '#e8dfd0' : '#ece0c8'}`,
-            borderRadius: '18px',
-            padding: compact ? '14px 16px' : '20px 22px',
-            position: 'relative',
-            opacity: isLocked ? .55 : 1,
-            transition: '.2s',
-          }}>
+          {/* Connector line between levels */}
+          {i < levels.length - 1 && (
+            <div style={{
+              position: 'absolute', bottom: '-14px', left: '30px',
+              width: '2px', height: '14px',
+              background: '#e0d2b7',
+            }} />
+          )}
 
-            {/* Connector line between levels */}
-            {i < levels.length - 1 && !compact && (
-              <div style={{
-                position: 'absolute', bottom: '-14px', left: compact ? '22px' : '30px',
-                width: '2px', height: '14px',
-                background: isDone ? colors.bg : '#e0d2b7',
-              }} />
-            )}
+          <div style={{ display:'flex', alignItems:'flex-start', gap:'13px' }}>
+            {/* Level badge */}
+            <div style={{
+              width: '38px', height: '38px', minWidth: '38px',
+              borderRadius: '11px',
+              background: '#e8dfd0', color: '#8a7a68',
+              display: 'grid', placeItems: 'center',
+              fontFamily: 'var(--font-fraunces)', fontWeight: 700,
+              fontSize: '17px',
+            }}>
+              {level.ordinal}
+            </div>
 
-            <div style={{ display:'flex', alignItems:'flex-start', gap:'13px' }}>
-              {/* Level badge */}
-              <div style={{
-                width: compact ? '32px' : '38px',
-                height: compact ? '32px' : '38px',
-                minWidth: compact ? '32px' : '38px',
-                borderRadius: '11px',
-                background: isDone ? colors.bg : isCurrent ? colors.bg : '#e8dfd0',
-                color: isDone || isCurrent ? colors.text : '#8a7a68',
-                display: 'grid', placeItems: 'center',
-                fontFamily: 'var(--font-fraunces)', fontWeight: 700,
-                fontSize: compact ? '15px' : '17px',
-              }}>
-                {isDone ? '✓' : level.ordinal}
+            <div style={{ flex: 1, minWidth: 0 }}>
+              <div style={{ display:'flex', alignItems:'center', gap:'8px', flexWrap:'wrap', marginBottom:'4px' }}>
+                <span style={{ fontWeight: 800, fontSize: '15px', color:'#211a3a' }}>
+                  {level.title}
+                </span>
               </div>
 
-              <div style={{ flex: 1, minWidth: 0 }}>
-                {/* Status + concept */}
-                <div style={{ display:'flex', alignItems:'center', gap:'8px', flexWrap:'wrap', marginBottom:'4px' }}>
-                  <span style={{ fontWeight: 800, fontSize: compact ? '14px' : '15px', color:'#211a3a' }}>
-                    {level.title}
-                  </span>
-                  {isCurrent && (
-                    <span style={{ fontSize:'10.5px', background: colors.bg, color: colors.text, padding:'2px 9px', borderRadius:'99px', fontWeight:800 }}>
-                      Current
-                    </span>
-                  )}
-                  {isDone && (
-                    <span style={{ fontSize:'10.5px', background:'#e8f5e9', color:'#2e7d32', padding:'2px 9px', borderRadius:'99px', fontWeight:800 }}>
-                      Completed
-                    </span>
-                  )}
-                  {isLocked && !compact && (
-                    <span style={{ fontSize:'10.5px', background:'#f0ece4', color:'#8a7a68', padding:'2px 9px', borderRadius:'99px', fontWeight:800 }}>
-                      🔒 Locked
-                    </span>
-                  )}
-                </div>
+              {/* Concept */}
+              <p style={{ fontSize: '13px', color: '#E0852A', fontWeight: 700, marginBottom: '8px' }}>
+                Teaches: {level.concept}
+              </p>
 
-                {/* Concept */}
-                <p style={{ fontSize: compact ? '12px' : '13px', color: '#E0852A', fontWeight: 700, marginBottom: compact ? '0' : '8px' }}>
-                  Teaches: {level.concept}
+              {/* Summary */}
+              <p style={{ fontSize:'14px', color:'#5d5278', lineHeight:1.6, marginBottom:'10px' }}>
+                {level.summary}
+              </p>
+
+              {/* Teaching note */}
+              <div style={{ display:'flex', gap:'7px', alignItems:'flex-start', background: colors.light, border:`1px dashed ${colors.border}`, borderRadius:'10px', padding:'9px 12px' }}>
+                <span style={{ fontSize:'14px', flexShrink:0 }}>💡</span>
+                <p style={{ fontSize:'12.5px', color:'#5d5278', lineHeight:1.5, margin:0, fontStyle:'italic' }}>
+                  {level.teachingNote}
                 </p>
-
-                {/* Summary — only in full mode */}
-                {!compact && (
-                  <p style={{ fontSize:'14px', color:'#5d5278', lineHeight:1.6, marginBottom:'10px' }}>
-                    {level.summary}
-                  </p>
-                )}
-
-                {/* Teaching note — only in full mode for non-locked levels */}
-                {!compact && !isLocked && (
-                  <div style={{ display:'flex', gap:'7px', alignItems:'flex-start', background: colors.light, border:`1px dashed ${colors.border}`, borderRadius:'10px', padding:'9px 12px' }}>
-                    <span style={{ fontSize:'14px', flexShrink:0 }}>💡</span>
-                    <p style={{ fontSize:'12.5px', color:'#5d5278', lineHeight:1.5, margin:0, fontStyle:'italic' }}>
-                      {level.teachingNote}
-                    </p>
-                  </div>
-                )}
-
-                {/* Callback badge */}
-                {level.callback && !compact && (
-                  <div style={{ display:'inline-flex', gap:'6px', alignItems:'center', background:'#f0ece4', border:'1px solid #e0d2b7', borderRadius:'99px', padding:'5px 12px', marginTop:'10px', fontSize:'12px', color:'#8a7a68' }}>
-                    <span>🔁</span> Revisits: {level.callback}
-                  </div>
-                )}
-
-                {/* Request CTA on current level */}
-                {isCurrent && onRequest && (
-                  <button
-                    onClick={() => onRequest(level.ordinal)}
-                    style={{
-                      marginTop:'14px', padding:'11px 20px',
-                      background:`linear-gradient(135deg,${colors.bg},#E0852A)`,
-                      color: colors.text, fontWeight:700, border:'none',
-                      borderRadius:'12px', cursor:'pointer', fontSize:'14px',
-                      display:'block', width:'100%',
-                    }}>
-                    Get Level {level.ordinal} — {level.title} →
-                  </button>
-                )}
               </div>
+
+              {/* Callback badge */}
+              {level.callback && (
+                <div style={{ display:'inline-flex', gap:'6px', alignItems:'center', background:'#f0ece4', border:'1px solid #e0d2b7', borderRadius:'99px', padding:'5px 12px', marginTop:'10px', fontSize:'12px', color:'#8a7a68' }}>
+                  <span>🔁</span> Revisits: {level.callback}
+                </div>
+              )}
             </div>
           </div>
-        )
-      })}
+        </div>
+      ))}
     </div>
   )
 }

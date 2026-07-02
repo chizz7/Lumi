@@ -4,8 +4,8 @@
 // Issues an account credit automatically — no support ticket needed.
 
 import { NextRequest, NextResponse } from 'next/server'
-import { serverClient, adminClient }  from '@/lib/supabase'
-import { issueCredit }               from '@/lib/stripe'
+import { requireUser, adminClient }  from '@/lib/supabase'
+import { issueCredit, MONTH_CREDIT_CENTS } from '@/lib/stripe'
 import { track }                     from '@/lib/analytics'
 
 const REASONS = [
@@ -22,9 +22,9 @@ export async function POST(
   req: NextRequest,
   { params }: { params: Promise<{ id: string }> }
 ) {
-  const supabase = await serverClient()
-  const { data: { user } } = await supabase.auth.getUser()
-  if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+  const gate = await requireUser()
+  if (!gate.ok) return NextResponse.json({ error: gate.error }, { status: gate.status })
+  const { user, supabase } = gate
 
   const { id: storyId } = await params
 
@@ -55,37 +55,39 @@ export async function POST(
     .update({ reported_at: new Date().toISOString(), report_reason: reason })
     .eq('id', story.id)
 
-  // Get account for Stripe customer ID
-  const { data: account } = await supabase
-    .from('accounts')
-    .select('stripe_customer_id')
-    .eq('id', user.id)
-    .single()
-
   // Issue AT MOST ONE credit per story, ever. Claim credited_at atomically
   // (only-if-null) via the service-role client so re-reporting the same story —
   // or concurrent duplicate requests — can't mint multiple $9.99 credits.
   // Roll the claim back if Stripe rejects it, so a real failure can be retried.
   let creditIssued = false
-  if (account?.stripe_customer_id && !story.credited_at) {
-    const { data: claimed } = await adminClient
-      .from('story_instances')
-      .update({ credited_at: new Date().toISOString() })
-      .eq('id', story.id)
-      .is('credited_at', null)
-      .select('id')
-      .maybeSingle()
+  if (!story.credited_at) {
+    // Get account for Stripe customer ID (only needed when a credit is in play)
+    const { data: account } = await supabase
+      .from('accounts')
+      .select('stripe_customer_id')
+      .eq('id', user.id)
+      .single()
 
-    if (claimed) {
-      try {
-        await issueCredit(account.stripe_customer_id, 999, `Story report: ${reason}`)
-        creditIssued = true
-      } catch (err) {
-        console.error('[report] credit issue failed, rolling back claim:', err)
-        await adminClient
-          .from('story_instances')
-          .update({ credited_at: null })
-          .eq('id', story.id)
+    if (account?.stripe_customer_id) {
+      const { data: claimed } = await adminClient
+        .from('story_instances')
+        .update({ credited_at: new Date().toISOString() })
+        .eq('id', story.id)
+        .is('credited_at', null)
+        .select('id')
+        .maybeSingle()
+
+      if (claimed) {
+        try {
+          await issueCredit(account.stripe_customer_id, MONTH_CREDIT_CENTS, `Story report: ${reason}`)
+          creditIssued = true
+        } catch (err) {
+          console.error('[report] credit issue failed, rolling back claim:', err)
+          await adminClient
+            .from('story_instances')
+            .update({ credited_at: null })
+            .eq('id', story.id)
+        }
       }
     }
   }

@@ -8,14 +8,16 @@
 //   npm run prerender -- --level 1       # just one level (useful after editing a template)
 //   npm run prerender -- --dry           # print what would be rendered, no API calls
 //
-// Cost estimate: 96 files (80 full + 16 L1 previews) × avg 1800 chars × $0.80/M chars ≈ $0.14
-// Time estimate: 96 files × ~3s each ÷ 4 concurrent = ~72 seconds
+// The inventory is derived from the content registries (subjects × levels ×
+// skins × voices × age variants, plus L1 previews), so it grows with the
+// content; the run prints a cost estimate ($0.80/M chars) before rendering.
 //
 // Safe to re-run — already-cached files are skipped automatically.
 
 import { parseArgs } from 'util'
-import { getAllSubjectSlugs, getAllLevels, getAllSkins, assembleAudio } from '@/content'
-import { getOrRenderAudio, audioCacheKey, getVoicesForLang }          from '@/lib/tts'
+import { getAllSubjectSlugs, getAllLevels, getAllSkins, assembleAudio, previewText } from '@/content'
+import { getOrRenderAudio, audioCacheKey }                             from '@/lib/tts'
+import { getVoicesForLang }                                            from '@/lib/voices'
 import { adminClient, BUCKETS }                                        from '@/lib/supabase'
 import type { AgeBand }                                                from '@/content/types'
 
@@ -80,12 +82,8 @@ function buildJobs(): RenderJob[] {
           if (level.ordinal === 1) {
             try {
               const { audioText } = assembleAudio(subjectSlug, 1, skin.slug)
-              // Preview = first 400 chars at a word boundary
-              const clip = (() => {
-                const s = audioText.slice(0, 400)
-                const i = s.lastIndexOf(' ')
-                return (i > 0 ? s.slice(0, i) : s) + '…'
-              })()
+              // Preview = first ~400 chars at a word boundary
+              const clip = previewText(audioText, 400)
               jobs.push({
                 subjectSlug, levelOrdinal: 1, levelTitle: `${level.title} (preview)`,
                 skinSlug: skin.slug, voiceId: voice.id,

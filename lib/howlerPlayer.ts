@@ -5,7 +5,7 @@
 // user gesture (a tap handler). Playing from a React effect — i.e. after a
 // state change or an await — lands outside the gesture, so iOS refuses to load
 // the media and Howler fires onloaderror ("audio didn't load"). This store is
-// therefore driven by play()/toggle() calls made DIRECTLY from onClick handlers,
+// therefore driven by playUrl() calls made DIRECTLY from onClick handlers,
 // never from effects. One audio plays at a time across the whole page.
 import { Howl } from 'howler'
 
@@ -44,8 +44,8 @@ function startTick() {
 function stopTick() { if (tick) { window.clearInterval(tick); tick = 0 } }
 
 // Begin playback of `url`. MUST be called inside a user-gesture handler on iOS.
-export function play(url: string): void {
-  stop()
+export function playUrl(url: string): void {
+  stopCurrent()
   set({ url, playing: false, loading: true, error: false, duration: 0, position: 0 })
   const h = new Howl({
     src: [url],
@@ -63,21 +63,7 @@ export function play(url: string): void {
   h.play()
 }
 
-// Pause/resume the current clip. Resume happens inside a gesture (button tap),
-// which keeps iOS happy.
-export function toggle(): void {
-  if (!howl) return
-  if (howl.playing()) howl.pause()
-  else howl.play()
-}
-
-export function seek(t: number): void {
-  if (!howl) return
-  howl.seek(t)
-  set({ position: t })
-}
-
-export function stop(): void {
+export function stopCurrent(): void {
   if (howl) {
     try { howl.stop(); howl.unload() } catch { /* noop */ }
     howl = null
@@ -85,7 +71,3 @@ export function stop(): void {
   stopTick()
   set({ playing: false, loading: false })
 }
-
-// Back-compat fire-and-forget helper for the voice snippets / demo switches.
-export function playUrl(url: string): void { play(url) }
-export function stopCurrent(): void { stop() }

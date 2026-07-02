@@ -2,40 +2,28 @@
 // POST /api/waitlist — capture email for waitlist or language availability notice.
 // Used in: landing page hero, language-not-available banner, pricing section.
 
-import { NextRequest, NextResponse } from 'next/server'
-import { adminClient }               from '@/lib/supabase'
-import { track }                     from '@/lib/analytics'
-import { getResend, EMAIL_FROM }     from '@/lib/email'
+import { NextRequest, NextResponse }       from 'next/server'
+import { parseSignupBody, upsertWaitlistRow } from '@/lib/signup'
+import { track }                           from '@/lib/analytics'
+import { getResend, EMAIL_FROM }           from '@/lib/email'
 
 export async function POST(req: NextRequest) {
-  let body: { email?: string; lang?: string; source?: string }
-  try { body = await req.json() } catch { return NextResponse.json({ error: 'Invalid JSON' }, { status: 400 }) }
+  const parsed = await parseSignupBody(req, 'landing')
+  if (!parsed.ok) return NextResponse.json({ error: parsed.error }, { status: parsed.status })
 
-  const email  = (body.email ?? '').trim().toLowerCase()
-  const lang   = (body.lang   ?? 'en').slice(0, 10)
-  const source = (body.source ?? 'landing').slice(0, 50)
+  const { email, lang, source } = parsed
 
-  // Basic email format check
-  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    return NextResponse.json({ error: 'Please enter a valid email address.' }, { status: 422 })
-  }
-
-  // Upsert — silently succeed if already on the list. `.select()` returns the
-  // inserted row only when a NEW row was created (ignoreDuplicates returns
-  // nothing on conflict), which gates the confirmation email below.
-  const { data: inserted, error } = await adminClient
-    .from('waitlist')
-    .upsert({ email, lang, source }, { onConflict: 'email', ignoreDuplicates: true })
-    .select('email')
+  // Upsert — silently succeed if already on the list.
+  const { error, inserted } = await upsertWaitlistRow({ email, lang, source })
 
   if (error) {
-    console.error('[waitlist] insert error:', error.message)
+    console.error('[waitlist] insert error:', error)
     return NextResponse.json({ error: 'Something went wrong. Please try again.' }, { status: 500 })
   }
 
   // Already on the list → no repeat email. Without this gate the endpoint is an
   // email-bombing primitive: anyone can spam a victim's inbox one POST at a time.
-  if (!inserted?.length) return NextResponse.json({ ok: true })
+  if (!inserted) return NextResponse.json({ ok: true })
 
   // Send confirmation email (first signup only)
   try {

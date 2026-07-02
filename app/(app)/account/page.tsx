@@ -2,7 +2,9 @@
 // app/(app)/account/page.tsx
 import { useState, useEffect } from 'react'
 import { getVoicesForLang } from '@/lib/voices'
+import { SUBJECT_META, WORLD_META, AGE_BANDS } from '@/content/meta'
 import ReferralCard from '@/app/_components/ReferralCard'
+import AppNav from '@/app/_components/AppNav'
 
 interface Child { id: string; name: string; age_band: string; skin_slug: string; subject_slug: string; voice_id: string; current_level: number }
 interface AccountData {
@@ -10,25 +12,9 @@ interface AccountData {
   profiles: Child[]
 }
 
-const VOICES = getVoicesForLang('en')
-const AGE_BANDS = [{ value:'3-4', label:'3–4' }, { value:'5-6', label:'5–6' }, { value:'7-8', label:'7–8' }, { value:'9-11', label:'9–11' }]
-const WORLDS = [
-  { slug:'sea', emoji:'🐬', name:'Under the Sea' },
-  { slug:'space', emoji:'🚀', name:'Space Station' },
-  { slug:'forest', emoji:'🦊', name:'Whisper Forest' },
-  { slug:'castle', emoji:'🐉', name:'Cloud Castle' },
-  { slug:'dino', emoji:'🦕', name:'Fern Valley' },
-  { slug:'jungle', emoji:'🐯', name:'Deep Jungle' },
-]
-const SUBJECTS = [
-  { slug:'money', emoji:'🪙', name:'Money & saving' },
-  { slug:'focus', emoji:'🎯', name:'Focus & goals' },
-  { slug:'resilience', emoji:'💪', name:'Resilience' },
-  { slug:'kindness', emoji:'❤️', name:'Kindness' },
-  { slug:'problem', emoji:'🧠', name:'Problem solving' },
-  { slug:'confidence', emoji:'🌱', name:'Confidence' },
-  { slug:'voice', emoji:'🗣️', name:'Speaking up' },
-]
+const VOICES   = getVoicesForLang('en')
+const WORLDS   = WORLD_META
+const SUBJECTS = SUBJECT_META
 
 export default function AccountPage() {
   const [data,        setData]        = useState<AccountData | null>(null)
@@ -302,10 +288,7 @@ export default function AccountPage() {
         </div>
       )}
 
-      <nav style={{ position:'fixed', bottom:0, left:0, right:0, background:'#FBF4E6', borderTop:'1px solid #ece0c8', display:'flex', justifyContent:'space-around', padding:'8px 0 12px' }} aria-label="App navigation">
-        <a href="/library" style={{ display:'flex', flexDirection:'column', alignItems:'center', gap:'3px', fontSize:'11px', fontWeight:700, color:'#5d5278', textDecoration:'none' }}><span style={{ fontSize:'22px' }}>📚</span>Library</a>
-        <a href="/account" aria-current="page" style={{ display:'flex', flexDirection:'column', alignItems:'center', gap:'3px', fontSize:'11px', fontWeight:700, color:'#E0852A', textDecoration:'none' }}><span style={{ fontSize:'22px' }}>👤</span>Account</a>
-      </nav>
+      <AppNav active="account" />
     </main>
   )
 }

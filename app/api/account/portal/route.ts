@@ -3,25 +3,17 @@
 // authenticated parent. The portal handles cancel, payment-method updates,
 // and invoice history natively, so we don't build those screens ourselves.
 
-import { NextRequest, NextResponse } from 'next/server'
-import { serverClient }              from '@/lib/supabase'
-import { createBillingPortalUrl }    from '@/lib/stripe'
+import { NextRequest, NextResponse }        from 'next/server'
+import { requireUser, requireStripeCustomer } from '@/lib/supabase'
+import { createBillingPortalUrl }           from '@/lib/stripe'
 
 export async function POST(req: NextRequest) {
-  const supabase = await serverClient()
-  const { data: { user } } = await supabase.auth.getUser()
-  if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+  const gate = await requireUser()
+  if (!gate.ok) return NextResponse.json({ error: gate.error }, { status: gate.status })
 
-  const { data: account } = await supabase
-    .from('accounts')
-    .select('stripe_customer_id')
-    .eq('id', user.id)
-    .single()
+  const customer = await requireStripeCustomer(gate.supabase, gate.user.id)
+  if (!customer.ok) return NextResponse.json({ error: customer.error }, { status: customer.status })
 
-  if (!account?.stripe_customer_id) {
-    return NextResponse.json({ error: 'No subscription found for this account.' }, { status: 400 })
-  }
-
-  const url = await createBillingPortalUrl(account.stripe_customer_id)
+  const url = await createBillingPortalUrl(customer.customerId)
   return NextResponse.json({ url })
 }

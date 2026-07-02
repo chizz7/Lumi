@@ -5,21 +5,22 @@
 // DELETE /api/account  — delete everything (requires X-Confirm-Delete: DELETE header)
 
 import { NextRequest, NextResponse } from 'next/server'
-import { serverClient, adminClient } from '@/lib/supabase'
+import { requireUser, adminClient }  from '@/lib/supabase'
 import { cancelSubscription }        from '@/lib/stripe'
 import { track }                     from '@/lib/analytics'
 import { getAllSkins, getAllSubjectSlugs } from '@/content'
 import { getVoicesForLang }          from '@/lib/voices'
+import { AGE_BANDS as SHARED_AGE_BANDS } from '@/content/meta'
 
-const AGE_BANDS = ['3-4', '5-6', '7-8']
+const AGE_BANDS = SHARED_AGE_BANDS.map(b => b.value)
 const MAX_CHILDREN = 6   // one subscription covers the whole family; cap to prevent abuse
 
 const PROFILE_COLS = 'id, name, age_band, skin_slug, subject_slug, voice_id, current_level'
 
 export async function GET(req: NextRequest) {
-  const supabase = await serverClient()
-  const { data: { user } } = await supabase.auth.getUser()
-  if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+  const gate = await requireUser()
+  if (!gate.ok) return NextResponse.json({ error: gate.error }, { status: gate.status })
+  const { user, supabase } = gate
 
   const { data: account } = await supabase.from('accounts').select('email, plan, created_at').eq('id', user.id).single()
   const { data: profiles } = await supabase
@@ -32,9 +33,9 @@ export async function GET(req: NextRequest) {
 
 // POST — add another child (one subscription covers all of them).
 export async function POST(req: NextRequest) {
-  const supabase = await serverClient()
-  const { data: { user } } = await supabase.auth.getUser()
-  if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+  const gate = await requireUser()
+  if (!gate.ok) return NextResponse.json({ error: gate.error }, { status: gate.status })
+  const { user, supabase } = gate
 
   let body: { name?: string; ageBand?: string; skinSlug?: string; subjectSlug?: string; voiceId?: string; interestSlug?: string }
   try { body = await req.json() } catch { return NextResponse.json({ error: 'Invalid JSON' }, { status: 400 }) }
@@ -76,14 +77,14 @@ export async function POST(req: NextRequest) {
 }
 
 export async function PATCH(req: NextRequest) {
-  const supabase = await serverClient()
-  const { data: { user } } = await supabase.auth.getUser()
-  if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+  const gate = await requireUser()
+  if (!gate.ok) return NextResponse.json({ error: gate.error }, { status: gate.status })
+  const { user, supabase } = gate
 
   let body: { childId?: string; name?: string; ageBand?: string; skinSlug?: string; voiceId?: string }
   try { body = await req.json() } catch { return NextResponse.json({ error: 'Invalid JSON' }, { status: 400 }) }
 
-  if (!body.childId) return NextResponse.json({ error: 'childId is required' }, { status: 400 })
+  if (!body.childId) return NextResponse.json({ error: 'childId is required' }, { status: 422 })
 
   // Fetch the target child, scoped to this account (also gives us the subject to
   // validate the chosen world).
@@ -134,9 +135,9 @@ export async function PATCH(req: NextRequest) {
 }
 
 export async function DELETE(req: NextRequest) {
-  const supabase = await serverClient()
-  const { data: { user } } = await supabase.auth.getUser()
-  if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+  const gate = await requireUser()
+  if (!gate.ok) return NextResponse.json({ error: gate.error }, { status: gate.status })
+  const { user } = gate
 
   if (req.headers.get('x-confirm-delete') !== 'DELETE') {
     return NextResponse.json({ error: 'Send X-Confirm-Delete: DELETE header to confirm.' }, { status: 400 })

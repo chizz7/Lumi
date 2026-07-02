@@ -5,7 +5,7 @@
 import { serverClient } from '@/lib/supabase'
 import type { User }    from '@supabase/supabase-js'
 
-export function adminEmails(): string[] {
+function adminEmails(): string[] {
   return (process.env.ADMIN_EMAILS ?? '')
     .split(',')
     .map(e => e.trim().toLowerCase())

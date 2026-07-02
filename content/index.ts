@@ -38,7 +38,7 @@ export function getLevel(subjectSlug: string, ordinal: number): Level {
   return level
 }
 
-export function getSkin(subjectSlug: string, skinSlug: string): Skin {
+function getSkin(subjectSlug: string, skinSlug: string): Skin {
   const skin = (SUBJECT_SKINS[subjectSlug] ?? {})[skinSlug]
   if (!skin) throw new Error(`Skin "${skinSlug}" not found in ${subjectSlug}`)
   return skin
@@ -177,9 +177,15 @@ export function assembleStory(
   childName:    string,
   ageBand?:     AgeBand,
 ): { audioText: string; script: string; level: Level; skin: Skin; ageTag: string } {
-  const { audioText, level, skin, ageTag } = assembleAudio(subjectSlug, levelOrdinal, skinSlug, ageBand, childName)
-  const script = assembleScript(subjectSlug, levelOrdinal, skinSlug, childName, ageBand)
-  return { audioText, script, level, skin, ageTag }
+  const assembled = assembleAudio(subjectSlug, levelOrdinal, skinSlug, ageBand, childName)
+  // With a name, assembleAudio already fills scriptTemplate with the exact same
+  // slots the script needs (and assertImmutable has checked that text) — reuse
+  // the one fill instead of assembling the identical text twice. Without a name,
+  // audio and script use different templates, so assemble the script separately.
+  const script = childName.trim()
+    ? assembled.audioText
+    : assembleScript(subjectSlug, levelOrdinal, skinSlug, childName, ageBand)
+  return { ...assembled, script }
 }
 
 /**

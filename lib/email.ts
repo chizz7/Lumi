@@ -16,7 +16,6 @@ export function getResend(): Resend {
 }
 
 export const EMAIL_FROM = process.env.EMAIL_FROM ?? 'stories@lumi.app'
-const FROM = EMAIL_FROM
 
 export async function sendStoryEmail(opts: {
   to:         string
@@ -29,7 +28,7 @@ export async function sendStoryEmail(opts: {
   const name = childName || 'your child'
 
   await getResend().emails.send({
-    from:    FROM,
+    from:    EMAIL_FROM,
     to,
     subject: `🌙 ${name}'s story is ready — ${levelTitle}`,
     html: `

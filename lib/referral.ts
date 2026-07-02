@@ -6,9 +6,10 @@
 
 import { randomBytes }  from 'crypto'
 import { adminClient }  from '@/lib/supabase'
+import { MONTH_CREDIT_CENTS } from '@/lib/stripe'
 
-// One month of Story Club. Mirrors STRIPE_PRICE_ID ($9.99) — keep in sync.
-export const REFERRAL_REWARD_CENTS = 999
+// One month of Story Club — the referral reward.
+export const REFERRAL_REWARD_CENTS = MONTH_CREDIT_CENTS
 
 // Unambiguous alphabet (no 0/O/1/I/L) so codes are easy to read aloud / type.
 const ALPHABET = 'ABCDEFGHJKMNPQRSTUVWXYZ23456789'
@@ -16,7 +17,7 @@ const ALPHABET = 'ABCDEFGHJKMNPQRSTUVWXYZ23456789'
 // 8-char code → ~30^8 space; collisions are astronomically unlikely, and the
 // caller still treats accounts.referral_code's UNIQUE constraint as the source
 // of truth (retry on the rare conflict).
-export function generateReferralCode(length = 8): string {
+function generateReferralCode(length = 8): string {
   const bytes = randomBytes(length)
   let out = ''
   for (let i = 0; i < length; i++) out += ALPHABET[bytes[i] % ALPHABET.length]

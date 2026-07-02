@@ -5,24 +5,16 @@
 // Admin = logged-in user whose email is in ADMIN_EMAILS.
 
 import { NextRequest, NextResponse } from 'next/server'
-import { serverClient, adminClient } from '@/lib/supabase'
-import { isAdmin }                    from '@/lib/admin'
+import { adminClient }               from '@/lib/supabase'
+import { requireAdmin }              from '@/lib/admin'
 import { getAllSubjectSlugs, getLevel } from '@/content'
 
 const STATUSES = ['pending', 'approved', 'rejected'] as const
 type Status = typeof STATUSES[number]
 
-async function requireAdmin() {
-  const supabase = await serverClient()
-  const { data: { user } } = await supabase.auth.getUser()
-  if (!user) return { error: 'Unauthorized', status: 401 as const, user: null }
-  if (!isAdmin(user.email)) return { error: 'Forbidden', status: 403 as const, user: null }
-  return { error: null, status: 200 as const, user }
-}
-
 export async function GET() {
   const gate = await requireAdmin()
-  if (gate.error) return NextResponse.json({ error: gate.error }, { status: gate.status })
+  if (!gate.ok) return NextResponse.json({ error: gate.error }, { status: gate.status })
 
   const { data: approvals } = await adminClient
     .from('content_approvals')
@@ -33,7 +25,7 @@ export async function GET() {
 
 export async function POST(req: NextRequest) {
   const gate = await requireAdmin()
-  if (gate.error) return NextResponse.json({ error: gate.error }, { status: gate.status })
+  if (!gate.ok) return NextResponse.json({ error: gate.error }, { status: gate.status })
 
   let body: { subjectSlug?: string; levelOrdinal?: number; status?: Status; notes?: string }
   try { body = await req.json() } catch { return NextResponse.json({ error: 'Invalid JSON' }, { status: 400 }) }
@@ -50,7 +42,7 @@ export async function POST(req: NextRequest) {
     subject_slug:   subjectSlug,
     level_ordinal:  levelOrdinal,
     status,
-    reviewer_email: gate.user!.email,
+    reviewer_email: gate.user.email,
     notes:          notes ?? null,
     updated_at:     new Date().toISOString(),
   }, { onConflict: 'subject_slug,level_ordinal' })

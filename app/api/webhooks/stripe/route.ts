@@ -162,8 +162,10 @@ async function handleNewSubscriber(session: Stripe.Checkout.Session) {
   }
 
   // 2. Ensure the child profile exists (first profile for this account).
+  //    Select exactly the DeliverableProfile columns deliverNextStory needs.
+  const PROFILE_COLS = 'id, name, subject_slug, skin_slug, voice_id, current_level, age_band'
   const { data: existingProfiles } = await adminClient
-    .from('child_profiles').select('*')
+    .from('child_profiles').select(PROFILE_COLS)
     .eq('account_id', userId)
     .order('created_at', { ascending: true })
     .limit(1)
@@ -182,7 +184,7 @@ async function handleNewSubscriber(session: Stripe.Checkout.Session) {
         interest_slug: draft.interestSlug ?? null,
         current_level: 1,
       })
-      .select().single()
+      .select(PROFILE_COLS).single()
     if (profErr || !inserted) throw new Error(`profile insert failed: ${profErr?.message ?? 'unknown'}`)
     profile = inserted
   }

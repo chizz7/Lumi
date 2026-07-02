@@ -5,7 +5,7 @@
 
 import { adminClient }                          from '@/lib/supabase'
 import { assembleStory, getLevelCount }         from '@/content'
-import { getOrRenderAudio, audioCacheKey, type VoiceId } from '@/lib/tts'
+import { getOrRenderAudio, audioCacheKey }      from '@/lib/tts'
 import { sendStoryEmail }                       from '@/lib/email'
 import { track }                                from '@/lib/analytics'
 import type { AgeBand }                         from '@/content/types'
@@ -80,7 +80,7 @@ export async function deliverNextStory(
   const cacheKey = audioCacheKey(profile.subject_slug, levelOrdinal, profile.skin_slug, profile.voice_id, 'en', false, ageTag, profile.name)
   let audioUrl = ''
   try {
-    audioUrl = await getOrRenderAudio(audioText, profile.voice_id as VoiceId, cacheKey)
+    audioUrl = await getOrRenderAudio(audioText, profile.voice_id, cacheKey)
   } catch (err) {
     console.error('[deliver] TTS failed (non-fatal):', err)
   }

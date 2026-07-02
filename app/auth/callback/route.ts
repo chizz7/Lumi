@@ -6,10 +6,7 @@
 // we exchange it for a session → redirect to /library (or / if it fails).
 
 import { NextRequest, NextResponse }   from 'next/server'
-import { createServerClient, type CookieOptions } from '@supabase/ssr'
-import { cookies }                     from 'next/headers'
-
-type CookieToSet = { name: string; value: string; options?: CookieOptions }
+import { serverClient }                from '@/lib/supabase'
 
 export async function GET(req: NextRequest) {
   const { searchParams, origin } = req.nextUrl
@@ -26,18 +23,7 @@ export async function GET(req: NextRequest) {
     return NextResponse.redirect(`${origin}/?auth=no-code`)
   }
 
-  const jar      = await cookies()
-  const supabase = createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-    {
-      cookies: {
-        getAll: ()                  => jar.getAll(),
-        setAll: (all: CookieToSet[]) => all.forEach(({ name, value, options }) => jar.set(name, value, options)),
-      },
-    }
-  )
-
+  const supabase = await serverClient()
   const { error: exchangeError } = await supabase.auth.exchangeCodeForSession(code)
 
   if (exchangeError) {

@@ -6,10 +6,10 @@
 // preview/checkout flow via onBuild().
 import { useEffect, useState, type ReactNode } from 'react'
 
-export type Skin  = { slug: string; emoji: string; name: string; loves: string; desc: string }
-export type Path  = { id: string; emoji: string; name: string; available: boolean; why: string }
-export type Voice = { id: string; name: string; tone: string }
-export type Age   = { value: string; label: string }
+type Skin  = { slug: string; emoji: string; name: string; loves: string; desc: string }
+type Path  = { id: string; emoji: string; name: string }
+type Voice = { id: string; name: string; tone: string }
+type Age   = { value: string; label: string }
 
 // Client-side teaser copy for the live preview (the real authored story arrives
 // after the email gate). One stem per world, one clause per skill, name-filled.

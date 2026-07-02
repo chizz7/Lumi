@@ -17,6 +17,7 @@ import type { VoiceConfig }              from '@/lib/voices'
 const STRIPE_PK = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
 const stripePromise = STRIPE_PK ? loadStripe(STRIPE_PK) : null
 import { getAllLevels }                  from '@/content'
+import { SUBJECT_META, WORLD_META, AGE_BANDS } from '@/content/meta'
 import { interestForWorld }              from '@/content/interests'
 import StoryStudio                       from './StoryStudio'
 import { playUrl, stopCurrent, subscribe as subscribePlayer, getState as getPlayerState } from '@/lib/howlerPlayer'
@@ -35,35 +36,23 @@ interface Props {
 
 // ─── Builder state ────────────────────────────────────────────────────────────
 
-// Worlds the child can be the hero of. `loves` frames the choice as an interest
-// ("what does your child love?"); each maps to a cosmetic world that exists for
-// every subject.
-const SKINS = [
-  { slug:'sea',    emoji:'🐬', name:'Under the Sea',  loves:'animals & the ocean', desc:'a dolphin & Pip the crab' },
-  { slug:'space',  emoji:'🚀', name:'Space Station',  loves:'space & robots',      desc:'a robot & Circuit the cat' },
-  { slug:'forest', emoji:'🦊', name:'Whisper Forest', loves:'woodland animals',    desc:'a fox & Old Owl' },
-  { slug:'castle', emoji:'🐉', name:'Cloud Castle',   loves:'dragons & castles',   desc:'a dragon & Mira the bunny' },
-  { slug:'dino',   emoji:'🦕', name:'Fern Valley',    loves:'dinosaurs',           desc:'a dino & Rex the raptor' },
-  { slug:'jungle', emoji:'🐯', name:'Deep Jungle',    loves:'jungle animals',      desc:'a tiger cub & Echo the parrot' },
-]
-const SUBJECT_NAMES: Record<string, string> = {
-  money: 'Money', focus: 'Focus', resilience: 'Resilience',
-  kindness: 'Kindness', problem: 'Problem Solving', confidence: 'Confidence',
-  voice: 'Speaking Up',
-}
-// value = canonical hyphen form stored in the DB; label = prettier en-dash for display
-const AGE_BANDS = [
-  { value: '3-4', label: '3–4' },
-  { value: '5-6', label: '5–6' },
-  { value: '7-8', label: '7–8' },
-  { value: '9-11', label: '9–11' },
-]
+// Shared subject/world/age metadata lives in content/meta.ts — derive the
+// landing-specific shapes from it here.
+const SKINS = WORLD_META
+
+// Short path names ("Money", "Focus") for the compact preview footer.
+const SUBJECT_NAMES: Record<string, string> = Object.fromEntries(
+  SUBJECT_META.map(s => [s.slug, s.name.split(' & ')[0]!])
+)
+
+// The learning paths as the landing page presents them (tabs, Story Studio grid).
+const paths = SUBJECT_META.map(s => ({ id: s.slug, emoji: s.emoji, name: s.name, why: s.why }))
 
 // Honest, verifiable proof — no fabricated reviews/ratings (a legal risk for a
 // children's product). Replace with real attributable quotes once you have them.
 const PROOF = [
   { icon: '✍️', title: 'Written, then reviewed', body: 'Every story is authored and safety- and teacher-checked before any child hears it — never generated on the fly.' },
-  { icon: '📚', title: 'A real curriculum', body: '30 leveled stories across 6 skills — each teaches one concept and quietly builds on the last.' },
+  { icon: '📚', title: 'A real curriculum', body: '35 leveled stories across 7 skills — each teaches one concept and quietly builds on the last.' },
   { icon: '🔒', title: 'COPPA-safe by design', body: 'No birthdate, photos, or location — ever. Just a first name and age band you can export or delete anytime.' },
 ]
 
@@ -322,37 +311,6 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
     a: t(`faq.${n}.a`),
   }))
 
-  const paths = [
-    {
-      id:'kindness', emoji:'❤️', name:'Kindness & Empathy', available:true,
-      why:'Empathy is a skill, not a trait — built through repeated, low-stakes practice. Bedtime stories are one of the best contexts for it.',
-    },
-    {
-      id:'confidence', emoji:'🌱', name:'Confidence', available:true,
-      why:"Confidence is the quiet belief that you're capable of trying. Level 1 normalises incompleteness — removing the shame that stops children from attempting hard things.",
-    },
-    {
-      id:'resilience', emoji:'💪', name:'Resilience', available:true,
-      why:'Children who understand that effort changes ability outperform those who believe in fixed talent. Level 1 normalises struggle; without that, Level 4 lands empty.',
-    },
-    {
-      id:'focus', emoji:'🎯', name:'Focus & Goals', available:true,
-      why:'Executive function — the ability to plan, focus, and follow through — is a stronger predictor of outcomes than IQ. The window to build it is early childhood.',
-    },
-    {
-      id:'problem', emoji:'🧠', name:'Problem Solving', available:true,
-      why:'Problem solving is a disposition, not a subject. These stories build the habit of pausing before reacting and trying systematically.',
-    },
-    {
-      id:'money', emoji:'💰', name:'Money & Saving', available:true,
-      why:'Children who understand value, exchange, and saving before age 8 develop habits that compound for life. This path starts with the simplest question — why do coins look different? — and builds to the hardest: wants vs. needs.',
-    },
-    {
-      id:'voice', emoji:'🗣️', name:'Speaking Up', available:true,
-      why:'Self-advocacy is a learnable skill: knowing your voice matters, asking clearly, setting boundaries, and being assertive without being unkind. This path builds from finding the courage to speak to using that voice for others.',
-    },
-  ]
-
   const [expandedLevel, setExpandedLevel] = useState<number | null>(null)
   const ap = paths.find(p => p.id === activePath) ?? paths[0]!
   // Levels for the active path — real content (content/<subject>/levels.ts).
@@ -481,7 +439,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
         {/* ─────────────── PROOF BAR — honest product facts (no fabricated press) ─────────────── */}
         <div style={{ background:'#16123a', color:'#cfc3ea', padding:'20px 0' }}>
           <div style={{ maxWidth:'1140px', margin:'0 auto', padding:'0 24px', display:'flex', alignItems:'center', justifyContent:'center', gap:'12px 30px', flexWrap:'wrap' }}>
-            {['6 skill paths','30 leveled stories','6 worlds','4 calm voices','100% screen-free','Expert-reviewed'].map(name => (
+            {['7 skill paths','35 leveled stories','6 worlds','4 calm voices','100% screen-free','Expert-reviewed'].map(name => (
               <span key={name} style={{ fontFamily:'var(--font-fraunces)', fontWeight:600, fontSize:'15px', opacity:.85 }}>{name}</span>
             ))}
           </div>
@@ -523,7 +481,6 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                 <button key={p.id} onClick={() => setActivePath(p.id)}
                   style={{ flexShrink:0, display:'flex', alignItems:'center', gap:'8px', padding:'10px 18px', borderRadius:'13px', border:`1.5px solid ${activePath===p.id?'#FFD27A':'rgba(255,255,255,.14)'}`, background: activePath===p.id?'rgba(255,210,122,.15)':'rgba(255,255,255,.06)', color: activePath===p.id?'#fff':'rgba(255,255,255,.6)', fontWeight:700, fontSize:'14px', cursor:'pointer', whiteSpace:'nowrap' }}>
                   <span>{p.emoji}</span> {p.name}
-                  {!p.available && <span style={{ fontSize:'10px', background:'rgba(255,255,255,.15)', padding:'2px 7px', borderRadius:'99px', color:'rgba(255,255,255,.5)', marginLeft:'2px' }}>Soon</span>}
                 </button>
               ))}
             </div>
@@ -534,8 +491,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                 <h3 style={{ fontFamily:'var(--font-fraunces)', fontSize:'18px', marginBottom:'18px', color:'rgba(255,255,255,.7)', fontWeight:500 }}>
                   {ap.emoji} {ap.name} — {activeLevels.length} levels
                 </h3>
-                {ap.available ? (
-                  <div style={{ display:'flex', flexDirection:'column', gap:'10px' }}>
+                <div style={{ display:'flex', flexDirection:'column', gap:'10px' }}>
                     {activeLevels.map((lv, i) => (
                       <div key={lv.ordinal}>
                         <button
@@ -569,16 +525,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                         See full curriculum detail →
                       </a>
                     </div>
-                  </div>
-                ) : (
-                  <div style={{ background:'rgba(255,255,255,.05)', border:'1px solid rgba(255,255,255,.1)', borderRadius:'16px', padding:'22px', textAlign:'center', color:'rgba(255,255,255,.5)', fontSize:'14px' }}>
-                    <div style={{ fontSize:'28px', marginBottom:'10px' }}>✍️</div>
-                    Being written and expert-reviewed.<br />
-                    <button onClick={openBuilder} style={{ background:'none', border:'none', color:'#FFD27A', fontWeight:700, cursor:'pointer', marginTop:'8px', fontSize:'13px' }}>
-                      Join waitlist for early access →
-                    </button>
-                  </div>
-                )}
+                </div>
               </div>
 
               {/* Why this path */}
@@ -882,26 +829,16 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                 <div>
                   <h2 style={{ fontFamily:'var(--font-fraunces)', fontSize:'22px', margin:'6px 0 4px' }}>What should it teach?</h2>
                   <p style={{ fontSize:'13.5px', color:'#4a4063', marginBottom:'18px' }}>One concept per story, building level by level. Pick the skill you'd like to start with.</p>
-                  {[
-                    { slug:'money', emoji:'🪙', name:'Money & saving', desc:'Coins, value, saving for goals', live:true },
-                    { slug:'focus', emoji:'🎯', name:'Focus & goals', desc:'Attention, planning, finishing', live:true },
-                    { slug:'resilience', emoji:'💪', name:'Resilience', desc:'Growth mindset, bouncing back', live:true },
-                    { slug:'kindness', emoji:'❤️', name:'Kindness & empathy', desc:'Noticing, caring, sharing', live:true },
-                    { slug:'problem', emoji:'🧠', name:'Problem solving', desc:'Pause, ideas, try and see', live:true },
-                    { slug:'confidence', emoji:'🌱', name:'Confidence', desc:'Trying before you feel ready', live:true },
-                    { slug:'voice', emoji:'🗣️', name:'Speaking up', desc:'Find your voice, set boundaries', live:true },
-                  ].map(s => {
+                  {SUBJECT_META.map(s => {
                     const selected = subjectSlug === s.slug
                     return (
                       <button key={s.slug} type="button"
-                        onClick={() => s.live ? setSubjectSlug(s.slug) : setActivePath(s.slug)}
+                        onClick={() => setSubjectSlug(s.slug)}
                         aria-pressed={selected}
-                        style={{ width:'100%', textAlign:'left', display:'flex', alignItems:'center', gap:'12px', border:`2px solid ${selected ? '#F4A93C' : '#e0d2b7'}`, borderRadius:'15px', padding:'13px', cursor:'pointer', background: selected ? '#fff7ea' : '#fff', opacity: s.live ? 1 : .7, marginBottom:'10px', fontFamily:'inherit' }}>
+                        style={{ width:'100%', textAlign:'left', display:'flex', alignItems:'center', gap:'12px', border:`2px solid ${selected ? '#F4A93C' : '#e0d2b7'}`, borderRadius:'15px', padding:'13px', cursor:'pointer', background: selected ? '#fff7ea' : '#fff', marginBottom:'10px', fontFamily:'inherit' }}>
                         <span style={{ fontSize:'24px' }}>{s.emoji}</span>
-                        <div style={{ flex:1 }}><div style={{ fontWeight:700, fontSize:'14.5px' }}>{s.name}</div><div style={{ fontSize:'12px', color:'#4a4063' }}>{s.desc}</div></div>
-                        {s.live
-                          ? <span style={{ fontSize:'16px', color: selected ? '#E0852A' : '#cdbf9f' }}>{selected ? '✓' : '○'}</span>
-                          : <span style={{ fontSize:'10px', background:'#e7dac0', color:'#4a4063', padding:'3px 9px', borderRadius:'99px', fontWeight:800 }}>Soon</span>}
+                        <div style={{ flex:1 }}><div style={{ fontWeight:700, fontSize:'14.5px' }}>{s.name}</div><div style={{ fontSize:'12px', color:'#4a4063' }}>{s.shortDesc}</div></div>
+                        <span style={{ fontSize:'16px', color: selected ? '#E0852A' : '#cdbf9f' }}>{selected ? '✓' : '○'}</span>
                       </button>
                     )
                   })}

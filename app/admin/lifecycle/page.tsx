@@ -4,7 +4,7 @@
 // (stuck signups + overdue at the top) so problems surface immediately.
 
 import { useEffect, useState } from 'react'
-import { AdminShell, AdminLoading, AdminForbidden, adminFetch } from '../AdminShell'
+import { AdminShell, AdminLoading, AdminForbidden, adminFetch, timeAgo } from '../AdminShell'
 
 type Stage = 'stuck_signup' | 'signed_up' | 'active' | 'overdue' | 'completed' | 'lapsed'
 interface Child { name: string; subject: string; currentLevel: number; levelCount: number; lastDeliveredAt: string | null }
@@ -24,15 +24,6 @@ const STAGE_STYLE: Record<Stage, { bg: string; fg: string; label: string }> = {
 }
 
 const STAGE_ORDER: Stage[] = ['stuck_signup','overdue','signed_up','active','completed','lapsed']
-
-function ago(iso: string | null): string {
-  if (!iso) return 'never'
-  const d = Date.now() - new Date(iso).getTime()
-  const days = Math.floor(d / 86400000), hrs = Math.floor(d / 3600000)
-  if (days >= 1) return `${days}d ago`
-  if (hrs >= 1)  return `${hrs}h ago`
-  return `${Math.max(1, Math.floor(d / 60000))}m ago`
-}
 
 export default function LifecyclePage() {
   const [data, setData] = useState<Data | null>(null)
@@ -72,11 +63,11 @@ export default function LifecyclePage() {
               <div style={{ flex:1, minWidth:'180px' }}>
                 <div style={{ fontWeight:700, fontSize:'14px' }}>{a.email}</div>
                 <div style={{ fontSize:'12px', color:'#5d5278' }}>
-                  {a.plan} · {a.childCount} {a.childCount === 1 ? 'child' : 'children'} · {a.totalStories} stories · joined {ago(a.createdAt)}
+                  {a.plan} · {a.childCount} {a.childCount === 1 ? 'child' : 'children'} · {a.totalStories} stories · joined {timeAgo(a.createdAt)}
                 </div>
               </div>
               <div style={{ fontSize:'12px', color:'#5d5278', textAlign:'right' }}>
-                last story<br/><strong style={{ color:'#211a3a' }}>{ago(a.lastDeliveredAt)}</strong>
+                last story<br/><strong style={{ color:'#211a3a' }}>{timeAgo(a.lastDeliveredAt)}</strong>
               </div>
             </div>
             {a.children.length > 0 && (

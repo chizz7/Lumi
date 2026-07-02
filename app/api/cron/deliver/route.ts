@@ -48,6 +48,24 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ error: 'Query failed' }, { status: 500 })
   }
 
+  // Last delivery per profile in ONE query (first seen per profile = latest,
+  // since rows are sorted newest-first) instead of one query per profile.
+  const profileIds = (accounts ?? []).flatMap(a =>
+    ((a.child_profiles ?? []) as DeliverableProfile[]).map(p => p.id))
+  const lastDeliveredByProfile = new Map<string, string>()
+  if (profileIds.length > 0) {
+    const { data: instances } = await adminClient
+      .from('story_instances')
+      .select('profile_id, delivered_at')
+      .in('profile_id', profileIds)
+      .order('delivered_at', { ascending: false })
+    for (const inst of instances ?? []) {
+      if (!lastDeliveredByProfile.has(inst.profile_id)) {
+        lastDeliveredByProfile.set(inst.profile_id, inst.delivered_at)
+      }
+    }
+  }
+
   let delivered = 0, skipped = 0, scanned = 0
 
   for (const account of accounts ?? []) {
@@ -57,15 +75,7 @@ export async function GET(req: NextRequest) {
       scanned++
 
       // Is this profile due? (last delivery + interval <= now)
-      const { data: last } = await adminClient
-        .from('story_instances')
-        .select('delivered_at')
-        .eq('profile_id', profile.id)
-        .order('delivered_at', { ascending: false })
-        .limit(1)
-        .maybeSingle()
-
-      if (!canRequestStory(last?.delivered_at)) { skipped++; continue }
+      if (!canRequestStory(lastDeliveredByProfile.get(profile.id))) { skipped++; continue }
 
       const result = await deliverNextStory(profile, account.email, account.id)
       if (result.delivered) delivered++
