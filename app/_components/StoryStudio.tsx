@@ -228,7 +228,7 @@ export default function StoryStudio(p: Props) {
               })}
             </div>
             <div style={benefit}>✨ One concept per night beats a dozen forgotten by morning.</div>
-            <div style={disc}><span>ⓘ</span><span>30 leveled stories across 6 skills. Money is one of six — never the headline.</span></div>
+            <div style={disc}><span>ⓘ</span><span>35 leveled stories across 7 skills. Money is one of seven — never the headline.</span></div>
           </>)}
 
         {/* what you'll get */}

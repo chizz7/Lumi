@@ -2,6 +2,7 @@
 // app/(app)/account/page.tsx
 import { useState, useEffect } from 'react'
 import { getVoicesForLang } from '@/lib/voices'
+import { getLevelCount } from '@/content'
 import { SUBJECT_META, WORLD_META, AGE_BANDS } from '@/content/meta'
 import ReferralCard from '@/app/_components/ReferralCard'
 import AppNav from '@/app/_components/AppNav'
@@ -18,8 +19,10 @@ const SUBJECTS = SUBJECT_META
 
 export default function AccountPage() {
   const [data,        setData]        = useState<AccountData | null>(null)
+  const [loadError,   setLoadError]   = useState<string | null>(null)
   const [confirmText, setConfirmText] = useState('')
   const [deleting,    setDeleting]    = useState(false)
+  const [deleteError, setDeleteError] = useState<string | null>(null)
   const [portalBusy,  setPortalBusy]  = useState(false)
   const [cancelBusy,  setCancelBusy]  = useState(false)
 
@@ -29,7 +32,20 @@ export default function AccountPage() {
   const [savingEdit, setSavingEdit] = useState(false)
   const [form, setForm] = useState({ childId:'', name:'', ageBand:'5-6', skinSlug:'sea', subjectSlug:'money', voiceId:'af_heart' })
 
-  useEffect(() => { fetch('/api/account').then(r => r.json()).then(setData) }, [])
+  const loadAccount = async () => {
+    setLoadError(null)
+    try {
+      const res  = await fetch('/api/account')
+      if (!res.ok) throw new Error(`HTTP ${res.status}`)
+      const body = await res.json()
+      // account can be null for a moment right after signup — treat as not-ready
+      if (!body?.account?.email) throw new Error('Account not ready')
+      setData(body)
+    } catch {
+      setLoadError("We couldn't load your account just now.")
+    }
+  }
+  useEffect(() => { loadAccount() }, [])
 
   const openEdit = (c: Child) => {
     setMode('edit')
@@ -91,8 +107,14 @@ export default function AccountPage() {
     try {
       const res  = await fetch('/api/account/cancel', { method: 'POST' })
       const body = await res.json()
-      if (body.ok) alert('Subscription cancelled.')
-      else alert(body.error ?? 'Could not cancel the subscription.')
+      if (res.ok && body.ok) {
+        // Reflect the cancellation immediately, then re-fetch the source of truth.
+        setData(d => d ? { ...d, account: { ...d.account, plan: 'cancelled' } } : d)
+        await loadAccount()
+        alert('Subscription cancelled.')
+      } else {
+        alert(body.error ?? 'Could not cancel the subscription.')
+      }
     } catch {
       alert('Could not cancel the subscription.')
     } finally {
@@ -112,11 +134,43 @@ export default function AccountPage() {
   const handleDelete = async () => {
     if (confirmText !== 'DELETE') return
     setDeleting(true)
-    await fetch('/api/account', { method: 'DELETE', headers: { 'x-confirm-delete': 'DELETE' } })
-    window.location.href = '/'
+    setDeleteError(null)
+    try {
+      const res = await fetch('/api/account', { method: 'DELETE', headers: { 'x-confirm-delete': 'DELETE' } })
+      if (!res.ok) {
+        let msg = "We couldn't delete your account. Please try again."
+        try {
+          const body = await res.json()
+          if (body?.error) msg = body.error
+        } catch { /* non-JSON error body */ }
+        setDeleteError(msg)
+        return
+      }
+      window.location.href = '/'
+    } catch {
+      setDeleteError("We couldn't delete your account. Please check your connection and try again.")
+    } finally {
+      setDeleting(false)
+    }
   }
 
-  if (!data) return <div style={{ minHeight:'100vh', display:'grid', placeItems:'center', background:'#FBF4E6' }}>Loading…</div>
+  if (!data) {
+    if (loadError) return (
+      <div style={{ minHeight:'100vh', display:'grid', placeItems:'center', background:'#FBF4E6', padding:'24px' }}>
+        <div style={{ textAlign:'center', color:'#5d5278', maxWidth:'360px' }}>
+          <div style={{ fontSize:'40px', marginBottom:'12px' }}>🌙</div>
+          <p style={{ fontSize:'15px', lineHeight:1.6, marginBottom:'16px' }}>{loadError}</p>
+          <button onClick={loadAccount}
+            style={{ padding:'12px 24px', background:'linear-gradient(135deg,#FFD27A,#E0852A)', color:'#3a230a', fontWeight:700, border:'none', borderRadius:'12px', cursor:'pointer', fontSize:'14px' }}>
+            Retry
+          </button>
+        </div>
+      </div>
+    )
+    return <div style={{ minHeight:'100vh', display:'grid', placeItems:'center', background:'#FBF4E6' }}>Loading…</div>
+  }
+
+  const isActive = data.account.plan === 'club'
 
   return (
     <main style={{ minHeight:'100vh', background:'#FBF4E6', paddingBottom:'80px' }}>
@@ -129,29 +183,39 @@ export default function AccountPage() {
       </header>
 
       <div style={{ maxWidth:'520px', margin:'0 auto', padding:'24px' }}>
-        {/* Plan card */}
+        {/* Plan card — badge reflects the real plan from the API */}
         <div style={{ background:'linear-gradient(135deg,#241a52,#3a2470)', borderRadius:'16px', padding:'16px 18px', marginBottom:'22px', display:'flex', alignItems:'center', justifyContent:'space-between', color:'#fff' }}>
           <div>
             <div style={{ fontFamily:'var(--font-fraunces)', fontSize:'17px' }}>Story Club</div>
-            <div style={{ fontSize:'12.5px', color:'#cfc3ea', marginTop:'2px' }}>New story every other day · All voices</div>
+            <div style={{ fontSize:'12.5px', color:'#cfc3ea', marginTop:'2px' }}>
+              {isActive ? 'New story every other day · All voices' : 'Your subscription has ended — stories in your library stay yours'}
+            </div>
           </div>
-          <span style={{ background:'#F4A93C', color:'#3a230a', fontSize:'11px', fontWeight:800, padding:'4px 12px', borderRadius:'99px' }}>Active</span>
+          {isActive ? (
+            <span style={{ background:'#F4A93C', color:'#3a230a', fontSize:'11px', fontWeight:800, padding:'4px 12px', borderRadius:'99px' }}>Active</span>
+          ) : (
+            <span style={{ background:'rgba(255,255,255,.15)', border:'1px solid rgba(255,255,255,.25)', color:'#dccffa', fontSize:'11px', fontWeight:800, padding:'4px 12px', borderRadius:'99px' }}>Cancelled / Free</span>
+          )}
         </div>
 
-        {/* Manage subscription — opens the Stripe billing portal (cancel, update
-            card, view invoices) so we don't rebuild those screens ourselves. */}
-        <button onClick={openPortal} disabled={portalBusy}
-          style={{ width:'100%', padding:'13px 14px', background:'#fff', border:'1px solid #ece0c8', borderRadius:'12px', fontWeight:700, cursor: portalBusy ? 'wait' : 'pointer', fontSize:'14px', marginBottom:'22px', textAlign:'left', color:'#211a3a', display:'flex', justifyContent:'space-between', alignItems:'center' }}>
-          <span>💳 Manage subscription</span>
-          <span style={{ color:'#9d92c0', fontSize:'13px' }}>{portalBusy ? 'Opening…' : 'Cancel · update card · invoices →'}</span>
-        </button>
+        {isActive && (
+          <>
+            {/* Manage subscription — opens the Stripe billing portal (cancel, update
+                card, view invoices) so we don't rebuild those screens ourselves. */}
+            <button onClick={openPortal} disabled={portalBusy}
+              style={{ width:'100%', padding:'13px 14px', background:'#fff', border:'1px solid #ece0c8', borderRadius:'12px', fontWeight:700, cursor: portalBusy ? 'wait' : 'pointer', fontSize:'14px', marginBottom:'22px', textAlign:'left', color:'#211a3a', display:'flex', justifyContent:'space-between', alignItems:'center' }}>
+              <span>💳 Manage subscription</span>
+              <span style={{ color:'#9d92c0', fontSize:'13px' }}>{portalBusy ? 'Opening…' : 'Cancel · update card · invoices →'}</span>
+            </button>
 
-        {/* Direct cancel — ends the subscription (incl. trial) immediately. */}
-        <button onClick={cancelSub} disabled={cancelBusy}
-          style={{ width:'100%', padding:'12px 14px', background:'#fff', border:'1px solid #f1c9c2', borderRadius:'12px', fontWeight:700, cursor: cancelBusy ? 'wait' : 'pointer', fontSize:'14px', marginBottom:'22px', textAlign:'left', color:'#c0392b', display:'flex', justifyContent:'space-between', alignItems:'center' }}>
-          <span>✕ Cancel subscription</span>
-          <span style={{ color:'#d99', fontSize:'13px' }}>{cancelBusy ? 'Cancelling…' : 'Ends now, incl. trial →'}</span>
-        </button>
+            {/* Direct cancel — ends the subscription (incl. trial) immediately. */}
+            <button onClick={cancelSub} disabled={cancelBusy}
+              style={{ width:'100%', padding:'12px 14px', background:'#fff', border:'1px solid #f1c9c2', borderRadius:'12px', fontWeight:700, cursor: cancelBusy ? 'wait' : 'pointer', fontSize:'14px', marginBottom:'22px', textAlign:'left', color:'#c0392b', display:'flex', justifyContent:'space-between', alignItems:'center' }}>
+              <span>✕ Cancel subscription</span>
+              <span style={{ color:'#d99', fontSize:'13px' }}>{cancelBusy ? 'Cancelling…' : 'Ends now, incl. trial →'}</span>
+            </button>
+          </>
+        )}
 
         {/* Refer friends — a free month for every paid referral */}
         <ReferralCard />
@@ -170,11 +234,11 @@ export default function AccountPage() {
                 <button onClick={() => openEdit(p)} style={{ fontSize:'13px', fontWeight:700, color:'#E0852A', background:'none', border:'none', cursor:'pointer' }}>Edit</button>
               </div>
               {([
-                ['Age band', p.age_band],
+                ['Age band', AGE_BANDS.find(b => b.value === p.age_band)?.label ?? p.age_band],
                 ['World', WORLDS.find(w => w.slug === p.skin_slug)?.name ?? p.skin_slug],
                 ['Voice', VOICES.find(v => v.id === p.voice_id)?.name ?? p.voice_id],
                 ['Subject', SUBJECTS.find(s => s.slug === p.subject_slug)?.name ?? p.subject_slug],
-                ['Current level', String(p.current_level)],
+                ['Current level', String(Math.min(p.current_level, getLevelCount(p.subject_slug) || p.current_level))],
               ] as [string,string][]).map(([k,v]) => (
                 <div key={k} style={{ display:'flex', justifyContent:'space-between', padding:'7px 0', borderBottom:'1px solid #f4e9d4', fontSize:'13.5px' }}>
                   <span style={{ color:'#5d5278' }}>{k}</span>
@@ -213,6 +277,9 @@ export default function AccountPage() {
               style={{ width:'100%', padding:'12px', background:'rgba(235,138,138,.15)', color:'#EB8A8A', border:'1.5px solid rgba(235,138,138,.3)', borderRadius:'12px', fontWeight:700, cursor: confirmText==='DELETE'&&!deleting ? 'pointer' : 'not-allowed', opacity: confirmText==='DELETE'&&!deleting ? 1 : .5, fontSize:'14px' }}>
               {deleting ? 'Deleting…' : 'Delete everything permanently'}
             </button>
+            {deleteError && (
+              <p role="alert" style={{ marginTop:'10px', fontSize:'13px', color:'#c0392b', lineHeight:1.5 }}>{deleteError}</p>
+            )}
           </div>
         </section>
 

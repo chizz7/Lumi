@@ -8,7 +8,7 @@ const strings: Record<string, string> = {
   'hero.title': 'Cuentos para dormir que enseñan a tu hijo — en una voz que adorará.',
   'hero.title.em': 'enseñan a tu hijo',
   'hero.sub': 'Aventuras originales, personalizadas para tu hijo, que desarrollan habilidades reales — nivel a nivel, en los minutos tranquilos antes de dormir.',
-  'hero.cta.primary': 'Crear su cuento — gratis →', 'hero.cta.secondary': '▶ Escuchar un cuento',
+  'hero.cta.primary': 'Crear su cuento — gratis →', 'hero.cta.secondary': 'Escuchar un cuento',
   'hero.trust.rating': '4.9 / 5', 'hero.trust.families': 'Amado por más de 2,000 familias', 'hero.trust.card': 'Sin tarjeta',
   'proof.label': 'Destacado en',
   'how.kicker': 'Cómo funciona', 'how.title': 'Tres pasos para un cuento hecho para tu hijo.',

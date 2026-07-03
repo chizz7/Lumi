@@ -4,7 +4,10 @@ import { NextResponse, type NextRequest } from 'next/server'
 
 type CookieToSet = { name: string; value: string; options?: CookieOptions }
 
-const PROTECTED = ['/library', '/account', '/welcome', '/admin']
+// NOTE: '/welcome' is deliberately NOT protected — Stripe redirects the
+// just-paid parent there before they've clicked their magic link, so they
+// have no session yet. The page renders no user data.
+const PROTECTED = ['/library', '/account', '/admin']
 
 export async function middleware(request: NextRequest) {
   let response = NextResponse.next({ request })

@@ -14,7 +14,7 @@ const strings: Record<string, string> = {
   'hero.title.em': 'kinder, more capable kid',
   'hero.sub':      'A story made for your child — their name, their world, a voice you choose — arrives every few days and teaches one real-life skill at a time: kindness, focus, confidence, resilience and more. No screens, no prep. First story free.',
   'hero.cta.primary':   'Build their free story →',
-  'hero.cta.secondary': '▶ Hear a sample',
+  'hero.cta.secondary': 'Hear a sample',
   'hero.trust.rating':  'Cancel anytime',
   'hero.trust.families':'New story every few days',
   'hero.trust.card':    'No card needed',

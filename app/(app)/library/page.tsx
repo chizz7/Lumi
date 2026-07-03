@@ -1,6 +1,7 @@
 'use client'
 // app/(app)/library/page.tsx
 import { useState, useEffect } from 'react'
+import Link from 'next/link'
 import { WORLD_META } from '@/content/meta'
 import AppNav from '@/app/_components/AppNav'
 
@@ -28,15 +29,29 @@ export default function LibraryPage() {
   const [reportFor,  setReportFor]  = useState<Story | null>(null)    // story being reported
   const [reportBusy, setReportBusy] = useState(false)
   const [reportMsg,  setReportMsg]  = useState<string | null>(null)
+  const [reportErr,  setReportErr]  = useState<string | null>(null)
+  const [loadErr,    setLoadErr]    = useState<string | null>(null)
+  const [nextNote,   setNextNote]   = useState<string | null>(null)   // inline note after requesting the next story
 
-  const load = () => fetch('/api/library').then(r => r.json()).then((d: LibData) => {
-    setData(d)
-    setSelectedId(prev => prev && d.children?.some(c => c.id === prev) ? prev : (d.children?.[0]?.id ?? null))
-  }).finally(() => setLoading(false))
+  const load = async () => {
+    setLoadErr(null)
+    try {
+      const res = await fetch('/api/library')
+      if (!res.ok) throw new Error(`HTTP ${res.status}`)
+      const d: LibData = await res.json()
+      setData(d)
+      setSelectedId(prev => prev && d.children?.some(c => c.id === prev) ? prev : (d.children?.[0]?.id ?? null))
+    } catch {
+      setLoadErr("We couldn't load your library just now.")
+    } finally {
+      setLoading(false)
+    }
+  }
   useEffect(() => { load() }, [])
 
   const requestNext = async (childId: string) => {
     setRequesting(true)
+    setNextNote(null)
     try {
       const res  = await fetch('/api/story/next', {
         method: 'POST',
@@ -44,8 +59,12 @@ export default function LibraryPage() {
         body: JSON.stringify({ childId }),
       })
       const body = await res.json()
-      if (body.ok) load()
-      else alert(body.error ?? 'Something went wrong')
+      if (res.ok && body.ok) {
+        await load()   // refresh before re-enabling the button so it reflects the new gate
+        setNextNote(body.levelTitle ? `✓ “${body.levelTitle}” has been added below — it's on its way to your email too.` : '✓ Your next story has been added below.')
+      } else {
+        alert(body.error ?? 'Something went wrong')
+      }
     } catch {
       alert('Something went wrong')
     } finally {
@@ -56,22 +75,27 @@ export default function LibraryPage() {
   const submitReport = async (reason: string) => {
     if (!reportFor) return
     setReportBusy(true)
+    setReportErr(null)
     try {
       const res  = await fetch(`/api/story/${reportFor.id}/report`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ reason }),
       })
-      const body = await res.json()
-      setReportMsg(body.message ?? 'Thanks for letting us know.')
+      const body = await res.json().catch(() => null)
+      if (res.ok && body && body.ok !== false && !body.error) {
+        setReportMsg(body.message ?? 'Thanks for letting us know.')
+      } else {
+        setReportErr(body?.error ?? "We couldn't send your report. Please tap a reason to try again.")
+      }
     } catch {
-      setReportMsg('Thanks for letting us know — we\'ll review this story.')
+      setReportErr("We couldn't send your report. Please check your connection and tap a reason to try again.")
     } finally {
       setReportBusy(false)
     }
   }
 
-  const closeReport = () => { setReportFor(null); setReportMsg(null) }
+  const closeReport = () => { setReportFor(null); setReportMsg(null); setReportErr(null) }
 
   const fmtDate = (iso: string) =>
     new Date(iso).toLocaleDateString(undefined, { weekday: 'long', month: 'short', day: 'numeric' })
@@ -79,6 +103,20 @@ export default function LibraryPage() {
   if (loading) return (
     <div style={{ minHeight:'100vh', display:'grid', placeItems:'center', background:'#FBF4E6', color:'#5d5278', fontSize:'16px' }}>
       Loading your library…
+    </div>
+  )
+
+  // Load failure is NOT the same as an empty library — show a retryable error.
+  if (loadErr && !data) return (
+    <div style={{ minHeight:'100vh', display:'grid', placeItems:'center', background:'#FBF4E6', padding:'24px' }}>
+      <div style={{ textAlign:'center', color:'#5d5278', maxWidth:'360px' }}>
+        <div style={{ fontSize:'40px', marginBottom:'12px' }}>🌙</div>
+        <p style={{ fontSize:'15px', lineHeight:1.6, marginBottom:'16px' }}>{loadErr}</p>
+        <button onClick={() => { setLoading(true); load() }}
+          style={{ padding:'12px 24px', background:'linear-gradient(135deg,#FFD27A,#E0852A)', color:'#3a230a', fontWeight:700, border:'none', borderRadius:'12px', cursor:'pointer', fontSize:'14px' }}>
+          Retry
+        </button>
+      </div>
     </div>
   )
 
@@ -107,14 +145,14 @@ export default function LibraryPage() {
             </h1>
             {child && (
               <p style={{ color:'#dccffa', marginTop:'4px', fontSize:'14px' }}>
-                Level {child.currentLevel} of {child.totalLevels} · {child.subjectSlug} path
+                Level {Math.min(child.currentLevel, child.totalLevels)} of {child.totalLevels} · {child.subjectSlug} path
               </p>
             )}
           </div>
-          <a href="/account" aria-label="Account settings"
+          <Link href="/account" aria-label="Account settings"
             style={{ width:'40px', height:'40px', borderRadius:'50%', background:'rgba(255,255,255,.12)', border:'1px solid rgba(255,255,255,.2)', display:'grid', placeItems:'center', textDecoration:'none', color:'#fff', fontSize:'18px' }}>
             👤
-          </a>
+          </Link>
         </div>
       </header>
 
@@ -123,12 +161,12 @@ export default function LibraryPage() {
         {children.length > 1 && (
           <div style={{ display:'flex', gap:'8px', flexWrap:'wrap', marginBottom:'18px' }}>
             {children.map(c => (
-              <button key={c.id} onClick={() => setSelectedId(c.id)} aria-pressed={c.id === child?.id}
+              <button key={c.id} onClick={() => { setSelectedId(c.id); setNextNote(null) }} aria-pressed={c.id === child?.id}
                 style={{ padding:'8px 14px', borderRadius:'99px', border:`1.5px solid ${c.id===child?.id?'#F4A93C':'#e0d2b7'}`, background: c.id===child?.id?'#fff7ea':'#fff', cursor:'pointer', fontSize:'13.5px', fontWeight:700, color:'#211a3a' }}>
                 {c.name || 'Child'}{c.nextLevel && c.canRequestNext ? ' ●' : ''}
               </button>
             ))}
-            <a href="/account" style={{ padding:'8px 14px', borderRadius:'99px', border:'1.5px dashed #cdbf9f', background:'transparent', fontSize:'13.5px', fontWeight:700, color:'#5d5278', textDecoration:'none' }}>＋ Add child</a>
+            <Link href="/account" style={{ padding:'8px 14px', borderRadius:'99px', border:'1.5px dashed #cdbf9f', background:'transparent', fontSize:'13.5px', fontWeight:700, color:'#5d5278', textDecoration:'none' }}>＋ Add child</Link>
           </div>
         )}
 
@@ -157,6 +195,26 @@ export default function LibraryPage() {
                 🔒 Scheduled
               </span>
             )}
+          </div>
+        )}
+
+        {/* Inline confirmation after requesting the next story */}
+        {nextNote && (
+          <p role="status" style={{ fontSize:'13.5px', color:'#3d7a4f', background:'rgba(84,182,166,.12)', border:'1px solid rgba(84,182,166,.35)', borderRadius:'12px', padding:'10px 14px', marginBottom:'18px', lineHeight:1.5 }}>
+            {nextNote}
+          </p>
+        )}
+
+        {/* Path complete — no next level left, but stories exist */}
+        {!nextLevel && stories.length > 0 && (
+          <div style={{ background:'#fff7ea', border:'1.5px solid #F4A93C', borderRadius:'18px', padding:'16px 18px', marginBottom:'18px', display:'flex', alignItems:'center', gap:'12px' }}>
+            <span style={{ fontSize:'26px' }} aria-hidden="true">🎉</span>
+            <div>
+              <div style={{ fontFamily:'var(--font-fraunces)', fontWeight:600, fontSize:'15px', color:'#211a3a' }}>Path complete!</div>
+              <div style={{ fontSize:'13px', color:'#5d5278', marginTop:'2px' }}>
+                {child?.name || 'Your child'} has finished every level of the {child?.subjectSlug} path. All the stories below are yours to keep.
+              </div>
+            </div>
           </div>
         )}
 
@@ -234,6 +292,11 @@ export default function LibraryPage() {
                 <p style={{ fontSize:'13.5px', color:'#5d5278', marginBottom:'16px' }}>
                   Tell us what went wrong with “{reportFor.levelTitle}”. We'll add a credit to your account automatically.
                 </p>
+                {reportErr && (
+                  <p role="alert" style={{ fontSize:'13px', color:'#c0392b', background:'rgba(235,138,138,.1)', border:'1px solid rgba(235,138,138,.35)', borderRadius:'10px', padding:'9px 12px', marginBottom:'12px', lineHeight:1.5 }}>
+                    {reportErr}
+                  </p>
+                )}
                 <div style={{ display:'flex', flexDirection:'column', gap:'8px' }}>
                   {REPORT_REASONS.map(r => (
                     <button key={r.value} onClick={() => submitReport(r.value)} disabled={reportBusy}
