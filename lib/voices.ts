@@ -21,8 +21,8 @@ export interface VoiceConfig {
 export const VOICES_BY_LANG: Record<string, [VoiceConfig, VoiceConfig, VoiceConfig, VoiceConfig]> = {
   en: [
     { id: 'af_heart',  name: 'Willow',   tone: 'warm & soft' },
-    { id: 'af_nova',   name: 'Sage',     tone: 'calm & low' },
-    { id: 'am_fenrir', name: 'River',    tone: 'bright & playful' },
+    { id: 'af_nicole', name: 'Sage',     tone: 'hushed & dreamy' },
+    { id: 'am_michael', name: 'River',   tone: 'calm & deep' },
     { id: 'bf_emma',   name: 'Juniper',  tone: 'gentle storyteller' },
   ],
   es: [

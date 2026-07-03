@@ -31,7 +31,8 @@ export async function getOrRenderAudio(
     },
     body: JSON.stringify({
       text,
-      voice:         voiceId,
+      preset_voice:  voiceId,
+      voice:         voiceId,  // legacy field name kept for compat
       speed:         0.95,
       output_format: 'mp3',
       // Kokoro uses the voice ID to infer language; pass lang as hint
@@ -73,9 +74,11 @@ export async function getOrRenderAudio(
 }
 
 // Bump this when the render/encoding pipeline changes so stale cached files are
-// bypassed instead of served. v2 = real MP3 bytes (v1 mistakenly stored the raw
-// DeepInfra JSON response, which iOS refused to decode).
-const AUDIO_CACHE_VERSION = 'v2'
+// bypassed instead of served. v1 stored raw DeepInfra JSON (iOS refused it).
+// v2 fixed the bytes but sent the voice as `voice` — a field Kokoro's DeepInfra
+// endpoint ignores (it reads `preset_voice`), so every v2 file was rendered in
+// the DEFAULT voice regardless of its key. v3 = correct per-voice renders.
+const AUDIO_CACHE_VERSION = 'v3'
 
 // Normalise a child's name into a safe, stable cache-key segment. Same name →
 // same file (so repeat names reuse the render); strips anything non-alphanumeric.

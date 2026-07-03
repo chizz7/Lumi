@@ -414,7 +414,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                 <button onClick={openBuilder} style={{ padding:'15px 24px', background:'linear-gradient(135deg,#FFD27A,#E0852A)', color:'#3a230a', fontWeight:700, border:'none', borderRadius:'15px', cursor:'pointer', fontSize:'15px', boxShadow:'0 12px 26px -10px rgba(244,169,60,.75)' }}>
                   {t('hero.cta.primary')}
                 </button>
-                <button onClick={() => playSample(activeVoice)} style={{ padding:'15px 24px', background:'rgba(255,255,255,.12)', color:'#fff', fontWeight:700, border:'1px solid rgba(255,255,255,.28)', borderRadius:'15px', cursor:'pointer', fontSize:'15px' }}>
+                <button onClick={() => playSample(activeVoice)} style={{ padding:'15px 24px', minWidth:'178px', textAlign:'center', background:'rgba(255,255,255,.12)', color:'#fff', fontWeight:700, border:'1px solid rgba(255,255,255,.28)', borderRadius:'15px', cursor:'pointer', fontSize:'15px' }}>
                   {sampleLoading === activeVoice ? '♪ Loading…' : playingVoiceIdx === activeVoice ? '❚❚ Stop sample' : `▶ ${t('hero.cta.secondary')}`}
                 </button>
               </div>

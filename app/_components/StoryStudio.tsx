@@ -134,7 +134,7 @@ export default function StoryStudio(p: Props) {
             </div>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: 12 }}>
-            <button onClick={() => p.playSample(vIdx)} style={{ display: 'inline-flex', alignItems: 'center', gap: 9, background: 'linear-gradient(135deg,#fff3dd,#ffe6bd)', border: `1.5px solid ${AMBER}`, color: '#8a4d0a', borderRadius: 11, padding: '9px 14px', fontWeight: 800, fontSize: 13, cursor: 'pointer' }}>
+            <button onClick={() => p.playSample(vIdx)} style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 9, minWidth: 158, background: 'linear-gradient(135deg,#fff3dd,#ffe6bd)', border: `1.5px solid ${AMBER}`, color: '#8a4d0a', borderRadius: 11, padding: '9px 14px', fontWeight: 800, fontSize: 13, cursor: 'pointer' }}>
               {p.sampleLoading === vIdx ? '♪ Loading…' : p.playingVoiceIdx === vIdx ? '❚❚ Stop' : '▶ Play this opening'}
             </button>
             <div style={{ display: 'flex', gap: 6, alignItems: 'center' }}>
@@ -152,10 +152,10 @@ export default function StoryStudio(p: Props) {
         {Section('details', '✍️', 'STEP 1', 'Their details', `${p.name.trim() || '—'} · age ${p.ageBands.find(a => a.value === p.ageBand)?.label ?? p.ageBand}`,
           <>
             <div style={instruct}>👉 Start with their first name — or a nickname, if you’d rather — and age; we level the language to fit.</div>
-            <div style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
+            <div style={{ display: 'flex', gap: 10, alignItems: 'center', flexWrap: 'wrap' }}>
               <input value={p.name} onChange={e => { p.setName(e.target.value); lock() }} placeholder="Their first name (or nickname)"
-                style={{ flex: 1, background: '#fff', border: '1.5px solid #e0d2b7', borderRadius: 11, padding: '11px 13px', fontSize: 16, color: '#211a3a', fontFamily: 'inherit' }} />
-              <div style={{ display: 'flex', gap: 7 }}>
+                style={{ flex: '1 1 170px', minWidth: 0, background: '#fff', border: '1.5px solid #e0d2b7', borderRadius: 11, padding: '11px 13px', fontSize: 16, color: '#211a3a', fontFamily: 'inherit' }} />
+              <div style={{ display: 'flex', gap: 7, flexWrap: 'wrap' }}>
                 {p.ageBands.map(a => (
                   <button key={a.value} onClick={() => { p.setAge(a.value); lock() }} aria-pressed={p.ageBand === a.value}
                     style={{ border: `1.5px solid ${p.ageBand === a.value ? AMBER : '#e0d2b7'}`, background: p.ageBand === a.value ? '#fff7ea' : '#fff', color: '#211a3a', borderRadius: 10, padding: '9px 12px', fontSize: 13, fontWeight: 700, cursor: 'pointer' }}>{a.label}</button>
