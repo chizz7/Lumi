@@ -78,6 +78,8 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
   const [langBanner,  setLangBanner]      = useState(showLangBanner)
   const [waitlistEmail, setWaitlistEmail] = useState('')
   const [waitlistDone,  setWaitlistDone]  = useState(false)
+  const [waitlistAlready, setWaitlistAlready] = useState(false)
+  const [waitlistError, setWaitlistError] = useState<string | null>(null)
   const [waitlistLoading, setWaitlistLoading] = useState(false)
   const [faqOpen,     setFaqOpen]         = useState<number | null>(null)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -272,15 +274,25 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
 
   // ── Waitlist submit ────────────────────────────────────────────────────────
   const submitWaitlist = async (source: string) => {
-    if (!waitlistEmail || waitlistLoading) return
+    if (waitlistLoading) return
+    const email = waitlistEmail.trim()
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setWaitlistError('Please enter a valid email address.'); return
+    }
+    setWaitlistError(null)
     setWaitlistLoading(true)
     try {
-      await fetch('/api/waitlist', {
+      const res  = await fetch('/api/waitlist', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: waitlistEmail, lang, source }),
+        body: JSON.stringify({ email, lang, source }),
       })
+      const data = await res.json().catch(() => ({}))
+      if (!res.ok) { setWaitlistError(data.error || 'Something went wrong — please try again.'); return }
+      setWaitlistAlready(Boolean(data.already))
       setWaitlistDone(true)
+    } catch {
+      setWaitlistError('Something went wrong — please try again.')
     } finally {
       setWaitlistLoading(false)
     }
@@ -339,19 +351,21 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
           </span>
           <div style={{ display:'flex', gap:'8px', alignItems:'center', flexWrap:'wrap' }}>
             {waitlistDone ? (
-              <span style={{ color:'#FFD27A', fontWeight:700, fontSize:'13px' }}>✓ {t('waitlist.success')}</span>
+              <span style={{ color:'#FFD27A', fontWeight:700, fontSize:'13px' }}>✓ {waitlistAlready ? "You're already on the list" : t('waitlist.success')}</span>
             ) : (
               <>
                 <input
                   type="email" placeholder={t('waitlist.placeholder')} value={waitlistEmail}
-                  onChange={e => setWaitlistEmail(e.target.value)}
+                  aria-invalid={Boolean(waitlistError)}
+                  onChange={e => { setWaitlistEmail(e.target.value); if (waitlistError) setWaitlistError(null) }}
                   onKeyDown={e => e.key === 'Enter' && submitWaitlist('language-banner')}
                   style={{ padding:'9px 14px', borderRadius:'10px', border:'1px solid rgba(255,255,255,.25)', background:'rgba(255,255,255,.1)', color:'#fff', fontSize:'14px', outline:'none', minWidth:'200px' }}
                 />
                 <button onClick={() => submitWaitlist('language-banner')} disabled={waitlistLoading}
-                  style={{ padding:'9px 16px', borderRadius:'10px', background:'#F4A93C', color:'#3a230a', fontWeight:700, border:'none', cursor:'pointer', fontSize:'14px' }}>
+                  style={{ padding:'9px 16px', borderRadius:'10px', background:'#F4A93C', color:'#3a230a', fontWeight:700, border:'none', cursor:'pointer', fontSize:'14px', minWidth:'86px' }}>
                   {waitlistLoading ? '…' : t('waitlist.cta')}
                 </button>
+                <span aria-live="polite" style={{ color:'#ffb4a8', fontSize:'12px', minHeight:'15px' }}>{waitlistError ?? '\u00A0'}</span>
               </>
             )}
             <button onClick={() => setLangBanner(false)} style={{ background:'none', border:'none', color:'rgba(255,255,255,.5)', cursor:'pointer', fontSize:'18px', padding:'4px' }} aria-label="Dismiss">×</button>
@@ -418,7 +432,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                   {sampleLoading === activeVoice ? '♪ Loading…' : playingVoiceIdx === activeVoice ? '❚❚ Stop sample' : `▶ ${t('hero.cta.secondary')}`}
                 </button>
               </div>
-              {sampleError && <p style={{ fontSize:'13px', color:'#FFD27A', margin:'-12px 0 18px' }}>{sampleError}</p>}
+              <p aria-live="polite" style={{ fontSize:'13px', color:'#FFD27A', margin:'-12px 0 18px', minHeight:'17px' }}>{sampleError ?? '\u00A0'}</p>
               <div style={{ display:'flex', gap:'18px', flexWrap:'wrap', fontSize:'13.5px', color:'#cfc3ea' }}>
                 <span>✓ {t('hero.trust.rating')}</span>
                 <span>{t('hero.trust.families')}</span>
@@ -933,7 +947,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                           placeholder="you@email.com"
                           style={{ width:'100%', padding:'13px', border:`1.5px solid ${leadError ? '#c0392b' : '#e0d2b7'}`, borderRadius:'12px', fontSize:'16px', fontFamily:'inherit', background:'#fff', outline:'none', marginBottom:'10px' }}
                         />
-                        {leadError && <p style={{ fontSize:'12px', color:'#c0392b', margin:'-4px 0 10px' }}>Please enter a valid email address.</p>}
+                        <p aria-live="polite" style={{ fontSize:'12px', color:'#c0392b', margin:'-4px 0 10px', minHeight:'15px' }}>{leadError ? 'Please enter a valid email address.' : '\u00A0'}</p>
                         <button onClick={unlockStory}
                           style={{ width:'100%', padding:'14px', background:'linear-gradient(135deg,#FFD27A,#E0852A)', color:'#3a230a', fontWeight:800, border:'none', borderRadius:'13px', cursor:'pointer', fontSize:'15px' }}>
                           ▶ Play {childName ? `${childName}'s` : 'the'} story
@@ -1027,7 +1041,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                     style={{ width:'100%', padding:'15px', background:'linear-gradient(135deg,#FFD27A,#E0852A)', color:'#3a230a', fontWeight:700, border:'none', borderRadius:'15px', cursor: preview.loading ? 'wait' : 'pointer', fontSize:'15px', opacity: preview.loading ? .6 : 1 }}>
                     {checkoutLoading ? 'Starting…' : 'Start Story Club — first story free →'}
                   </button>
-                  {checkoutError && <p style={{ fontSize:'12px', color:'#c0392b', textAlign:'center', margin:'8px 0 0' }}>{checkoutError}</p>}
+                  <p aria-live="polite" style={{ fontSize:'12px', color:'#c0392b', textAlign:'center', margin:'8px 0 0', minHeight:'15px' }}>{checkoutError ?? '\u00A0'}</p>
                   <p style={{ fontSize:'11.5px', color:'#4a4063', textAlign:'center', margin:'9px 0 0', lineHeight:1.4 }}>
                     Then <strong>$9.99/mo</strong> · a new story every other day · cancel anytime
                   </p>

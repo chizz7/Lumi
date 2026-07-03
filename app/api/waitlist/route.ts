@@ -23,7 +23,7 @@ export async function POST(req: NextRequest) {
 
   // Already on the list → no repeat email. Without this gate the endpoint is an
   // email-bombing primitive: anyone can spam a victim's inbox one POST at a time.
-  if (!inserted) return NextResponse.json({ ok: true })
+  if (!inserted) return NextResponse.json({ ok: true, already: true })
 
   // Send confirmation email (first signup only)
   try {
