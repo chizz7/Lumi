@@ -1,6 +1,6 @@
 'use client'
 // app/(app)/account/page.tsx
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { getVoicesForLang } from '@/lib/voices'
 import { getLevelCount } from '@/content'
 import { SUBJECT_META, WORLD_META, AGE_BANDS } from '@/content/meta'
@@ -32,6 +32,33 @@ export default function AccountPage() {
   const [savingEdit, setSavingEdit] = useState(false)
   const [form, setForm] = useState({ childId:'', name:'', ageBand:'5-6', skinSlug:'sea', subjectSlug:'money', voiceId:'af_heart' })
 
+  // Voice sample playback in the edit modal — parents pick a NEW voice for
+  // future stories here, but unlike the pre-purchase builder they had no way
+  // to actually hear it first. One shared <audio> element; tapping a voice
+  // both selects it and plays its sample, tap again to stop.
+  const sampleAudio = useRef<HTMLAudioElement | null>(null)
+  const [samplePlaying, setSamplePlaying] = useState<string | null>(null)
+  const [sampleLoading, setSampleLoading] = useState<string | null>(null)
+
+  const playVoiceSample = async (voiceId: string) => {
+    if (samplePlaying === voiceId) { sampleAudio.current?.pause(); setSamplePlaying(null); return }
+    setSampleLoading(voiceId)
+    try {
+      const res  = await fetch(`/api/preview/sample?subject=${encodeURIComponent(form.subjectSlug)}&skin=${encodeURIComponent(form.skinSlug)}&voice=${encodeURIComponent(voiceId)}`)
+      const data = await res.json()
+      if (!res.ok || !data.audioUrl) { alert(data.error ?? 'Could not load that sample.'); return }
+      if (!sampleAudio.current) sampleAudio.current = new Audio()
+      sampleAudio.current.src = data.audioUrl
+      sampleAudio.current.onended = () => setSamplePlaying(null)
+      await sampleAudio.current.play()
+      setSamplePlaying(voiceId)
+    } catch {
+      alert('Could not load that sample.')
+    } finally {
+      setSampleLoading(null)
+    }
+  }
+
   const loadAccount = async () => {
     setLoadError(null)
     try {
@@ -46,6 +73,12 @@ export default function AccountPage() {
     }
   }
   useEffect(() => { loadAccount() }, [])
+
+  const closeEdit = () => {
+    sampleAudio.current?.pause()
+    setSamplePlaying(null)
+    setEditing(false)
+  }
 
   const openEdit = (c: Child) => {
     setMode('edit')
@@ -78,7 +111,7 @@ export default function AccountPage() {
             : d.profiles.map(p => p.id === body.profile.id ? body.profile : p)
           return { ...d, profiles }
         })
-        setEditing(false)
+        closeEdit()
       } else {
         alert(body.error ?? 'Could not save changes.')
       }
@@ -291,7 +324,7 @@ export default function AccountPage() {
       {/* Edit profile modal */}
       {editing && (
         <div role="dialog" aria-modal="true" aria-label="Edit child profile"
-          onClick={e => { if (e.target === e.currentTarget) setEditing(false) }}
+          onClick={e => { if (e.target === e.currentTarget) closeEdit() }}
           style={{ position:'fixed', inset:0, zIndex:300, background:'rgba(12,8,32,.7)', display:'flex', alignItems:'center', justifyContent:'center', padding:'20px' }}>
           <div style={{ background:'#FBF4E6', borderRadius:'22px', width:'100%', maxWidth:'440px', maxHeight:'90vh', overflowY:'auto', padding:'22px' }}>
             <h2 style={{ fontFamily:'var(--font-fraunces)', fontSize:'19px', marginBottom:'4px' }}>{mode === 'add' ? 'Add a child' : 'Edit profile'}</h2>
@@ -335,13 +368,19 @@ export default function AccountPage() {
               ))}
             </div>
 
-            <label style={{ fontSize:'13px', fontWeight:700, display:'block', marginBottom:'7px' }}>Voice</label>
+            <label style={{ fontSize:'13px', fontWeight:700, display:'block', marginBottom:'2px' }}>Voice</label>
+            <p style={{ fontSize:'12px', color:'#5d5278', marginBottom:'7px' }}>Tap a voice to hear it. Applies to stories from here on — nothing already sent changes.</p>
             <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'8px', marginBottom:'20px' }}>
               {VOICES.map(v => (
-                <button key={v.id} onClick={() => setForm(f => ({ ...f, voiceId: v.id }))} aria-pressed={form.voiceId===v.id}
-                  style={{ textAlign:'left', border:`1.5px solid ${form.voiceId===v.id?'#F4A93C':'#e6d8bd'}`, background: form.voiceId===v.id?'#fff7ea':'#fff', borderRadius:'13px', padding:'11px', cursor:'pointer' }}>
-                  <div style={{ fontWeight:800, fontSize:'14px' }}>{v.name}</div>
-                  <div style={{ fontSize:'12px', color:'#5d5278' }}>{v.tone}</div>
+                <button key={v.id} onClick={() => { setForm(f => ({ ...f, voiceId: v.id })); playVoiceSample(v.id) }} aria-pressed={form.voiceId===v.id}
+                  style={{ display:'flex', alignItems:'center', justifyContent:'space-between', gap:'8px', textAlign:'left', border:`1.5px solid ${form.voiceId===v.id?'#F4A93C':'#e6d8bd'}`, background: form.voiceId===v.id?'#fff7ea':'#fff', borderRadius:'13px', padding:'11px', cursor:'pointer' }}>
+                  <span>
+                    <div style={{ fontWeight:800, fontSize:'14px' }}>{v.name}</div>
+                    <div style={{ fontSize:'12px', color:'#5d5278' }}>{v.tone}</div>
+                  </span>
+                  <span aria-hidden="true" style={{ flexShrink:0, fontSize:'13px', color:'#E0852A' }}>
+                    {sampleLoading===v.id ? '♪' : samplePlaying===v.id ? '❚❚' : '▶'}
+                  </span>
                 </button>
               ))}
             </div>
@@ -350,7 +389,7 @@ export default function AccountPage() {
               style={{ width:'100%', padding:'14px', background:'linear-gradient(135deg,#FFD27A,#E0852A)', color:'#3a230a', fontWeight:700, border:'none', borderRadius:'14px', cursor: savingEdit||!form.name.trim() ? 'not-allowed' : 'pointer', fontSize:'15px', opacity: savingEdit||!form.name.trim() ? .6 : 1 }}>
               {savingEdit ? 'Saving…' : mode === 'add' ? 'Add child' : 'Save changes'}
             </button>
-            <button onClick={() => setEditing(false)} style={{ width:'100%', padding:'11px', background:'none', color:'#5d5278', fontWeight:600, border:'none', cursor:'pointer', fontSize:'14px', marginTop:'4px' }}>Cancel</button>
+            <button onClick={closeEdit} style={{ width:'100%', padding:'11px', background:'none', color:'#5d5278', fontWeight:600, border:'none', cursor:'pointer', fontSize:'14px', marginTop:'4px' }}>Cancel</button>
           </div>
         </div>
       )}
