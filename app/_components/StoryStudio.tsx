@@ -68,6 +68,7 @@ export default function StoryStudio(p: Props) {
   const vIdx   = Math.max(0, p.voices.findIndex(v => v.id === p.voiceId))
   const vName  = p.voices[vIdx]?.name ?? 'Willow'
   const nm     = p.name.trim() || 'your child'
+  const nmTitle = p.name.trim() || 'Your child'   // title-position variant — a sentence can't open lowercase
 
   const card  = { background: '#fff', border: '1px solid #efe6d6', borderRadius: 16, marginBottom: 10 }
   const head  = { display: 'flex', alignItems: 'center', gap: 12, padding: '13px 15px', cursor: 'pointer' } as const
@@ -119,8 +120,8 @@ export default function StoryStudio(p: Props) {
       {/* live preview */}
       <div style={{ margin: '12px 16px 0', borderRadius: 18, overflow: 'hidden', border: '1px solid #f0e6d2', boxShadow: '0 14px 34px -16px rgba(120,80,20,.4)' }}>
         <div style={{ height: 132, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 52, background: wt.grad, position: 'relative', transition: 'background .5s cubic-bezier(.16,1,.30,1)' }}>
-          <span style={{ position: 'absolute', top: 10, left: 10, fontSize: 10.5, fontWeight: 700, color: '#fff', background: 'rgba(0,0,0,.28)', borderRadius: 99, padding: '4px 9px' }} aria-live="polite">
-            {skill.name}{locked ? ' · your pick' : ' · rotates through all 6'}
+          <span style={{ position: 'absolute', top: 10, left: 10, fontSize: 10.5, fontWeight: 700, color: '#fff', background: 'rgba(0,0,0,.28)', borderRadius: 99, padding: '4px 9px', maxWidth: 'calc(100% - 106px)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }} aria-live="polite">
+            {skill.name}{locked ? ' · your pick' : ' · rotates through all 7'}
           </span>
           <span style={{ position: 'absolute', top: 10, right: 10, fontSize: 10, fontWeight: 700, color: '#fff', background: 'rgba(0,0,0,.28)', borderRadius: 99, padding: '4px 9px' }}>ⓘ Live preview</span>
           {world.emoji}
@@ -128,7 +129,7 @@ export default function StoryStudio(p: Props) {
         <div style={{ background: '#fff', padding: '14px 17px 15px' }}>
           <div key={`${p.skinSlug}-${p.subjectSlug}-${p.voiceId}`} className="sds-fadein">
             <div style={{ fontSize: 11, letterSpacing: 1.3, textTransform: 'uppercase', color: '#E0852A', fontWeight: 800, marginBottom: 6 }}>{skill.emoji} {skill.name} · Level 1 · {vName}</div>
-            <div style={{ fontFamily: 'var(--font-fraunces)', fontSize: 18, marginBottom: 7 }}>{nm} {cl.title}</div>
+            <div style={{ fontFamily: 'var(--font-fraunces)', fontSize: 18, marginBottom: 7 }}>{nmTitle} {cl.title}</div>
             <div style={{ fontFamily: 'var(--font-fraunces)', fontStyle: 'italic', fontSize: 13.5, lineHeight: 1.65, color: '#4a4063', borderTop: '1px solid #f0e7d6', paddingTop: 10 }}>
               &ldquo;In the {wt.place}, a {wt.hero} named <mark key={nm} className="sds-pop" style={{ background: 'rgba(244,169,60,.24)', color: '#9c5a12', fontStyle: 'normal', fontWeight: 700, borderRadius: 4, padding: '0 4px' }}>{nm}</mark> {cl.action}…&rdquo;
             </div>

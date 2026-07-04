@@ -35,7 +35,7 @@ const strings: Record<string, string> = {
 
   // Curriculum
   'curriculum.kicker': 'The curriculum',
-  'curriculum.title':  '6 learning paths. 30 stories. One bedtime at a time.',
+  'curriculum.title':  '7 learning paths. 35 stories. One bedtime at a time.',
   'curriculum.sub':    "You'll share around {{count}} bedtimes before your child turns eight. A normal story is forgotten by morning — these teach one real concept per night and quietly call back the last.",
   'curriculum.bedtimes': '1,800',
 
@@ -120,7 +120,7 @@ const strings: Record<string, string> = {
   'library.next.sub':    '{{title}} — continues the path',
   'library.next.cta':    'Get next story →',
   'library.being.made':  'Being prepared…',
-  'library.all.paths':   'Explore all 6 learning paths →',
+  'library.all.paths':   'Explore all 7 learning paths →',
 
   // Account
   'account.title':    'Account',
