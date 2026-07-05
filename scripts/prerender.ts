@@ -1,16 +1,20 @@
 #!/usr/bin/env tsx
 // scripts/prerender.ts
-// Pre-renders every audio file before launch so every user gets instant delivery.
+// Pre-renders the LANDING-PAGE PREVIEW clips (Level 1, per subject × skin ×
+// voice) so the sampler plays instantly with zero cold-render latency.
+//
+// It does NOT pre-render full delivered stories. Delivered audio now speaks the
+// child's name, so its cache key includes a per-name segment that can't be known
+// ahead of time (audioCacheKey(..., nameTag)). Full stories are therefore
+// rendered ON DEMAND at delivery, once we have the child's name, world, voice
+// and age — the first delivery for each unique combination renders via Kokoro
+// and caches; repeats are instant. (Pre-rendering name-free "full" files was
+// dead work: no delivery key ever matched them.)
 //
 // Usage:
-//   npm run prerender                    # all subjects, all levels
+//   npm run prerender                    # all subjects (previews)
 //   npm run prerender -- --subject money # one subject
-//   npm run prerender -- --level 1       # just one level (useful after editing a template)
 //   npm run prerender -- --dry           # print what would be rendered, no API calls
-//
-// The inventory is derived from the content registries (subjects × levels ×
-// skins × voices × age variants, plus L1 previews), so it grows with the
-// content; the run prints a cost estimate ($0.80/M chars) before rendering.
 //
 // Safe to re-run — already-cached files are skipped automatically.
 
@@ -56,44 +60,26 @@ function buildJobs(): RenderJob[] {
     const levels = getAllLevels(subjectSlug)
     const skins  = getAllSkins(subjectSlug)
 
-    for (const level of levels) {
-      if (args.level && level.ordinal !== parseInt(args.level)) continue
+    // Only Level 1 has a landing-page preview clip; skip the rest entirely.
+    const level = levels.find(l => l.ordinal === 1)
+    if (!level) continue
 
-      for (const skin of skins) {
-        for (const voice of voices) {
-          // Full story render — the default plus any age-tuned variants.
-          const ageBands: (AgeBand | undefined)[] = [undefined, ...(Object.keys(level.ageVariants ?? {}) as AgeBand[])]
-          for (const ageBand of ageBands) {
-            try {
-              const { audioText, ageTag } = assembleAudio(subjectSlug, level.ordinal, skin.slug, ageBand)
-              jobs.push({
-                subjectSlug, levelOrdinal: level.ordinal, levelTitle: level.title,
-                skinSlug: skin.slug, voiceId: voice.id,
-                cacheKey: audioCacheKey(subjectSlug, level.ordinal, skin.slug, voice.id, LANG, false, ageTag),
-                audioText,
-                isPreview: false,
-              })
-            } catch (err) {
-              console.warn(`  ⚠ skip ${subjectSlug} L${level.ordinal} ${skin.slug} ${ageBand ?? 'all'}: ${(err as Error).message}`)
-            }
-          }
-
-          // Preview clip for level 1 only (used on landing page)
-          if (level.ordinal === 1) {
-            try {
-              const { audioText } = assembleAudio(subjectSlug, 1, skin.slug)
-              // Preview = first ~400 chars at a word boundary
-              const clip = previewText(audioText, 400)
-              jobs.push({
-                subjectSlug, levelOrdinal: 1, levelTitle: `${level.title} (preview)`,
-                skinSlug: skin.slug, voiceId: voice.id,
-                cacheKey: audioCacheKey(subjectSlug, 1, skin.slug, voice.id, LANG, true),
-                audioText: clip,
-                isPreview: true,
-              })
-            } catch { /* skip */ }
-          }
-        }
+    for (const skin of skins) {
+      for (const voice of voices) {
+        // Preview clip for level 1 (the landing-page sampler). Name-free, so it
+        // caches cleanly and is shared across all visitors.
+        try {
+          const { audioText } = assembleAudio(subjectSlug, 1, skin.slug)
+          // Preview = first ~400 chars at a word boundary
+          const clip = previewText(audioText, 400)
+          jobs.push({
+            subjectSlug, levelOrdinal: 1, levelTitle: `${level.title} (preview)`,
+            skinSlug: skin.slug, voiceId: voice.id,
+            cacheKey: audioCacheKey(subjectSlug, 1, skin.slug, voice.id, LANG, true),
+            audioText: clip,
+            isPreview: true,
+          })
+        } catch { /* skip */ }
       }
     }
   }

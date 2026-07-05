@@ -43,6 +43,7 @@ type Props = {
   sampleLoading: number | null
   playingVoiceIdx: number
   onBuild: () => void
+  paused?: boolean   // stop the auto-rotate while the builder overlay is open
 }
 
 const AMBER = '#F4A93C'
@@ -51,14 +52,17 @@ export default function StoryStudio(p: Props) {
   const [open, setOpen]     = useState<'details' | 'world' | 'voice' | 'skill'>('details')
   const [locked, setLocked] = useState(false)
 
-  // Auto-rotate the showcase through the skills until the user interacts.
+  // Auto-rotate the showcase through the skills until the user interacts — but
+  // NOT while the builder overlay is open (p.paused). This card and the builder
+  // share the parent's subjectSlug, so a running rotation would overwrite the
+  // subject the user just picked in the builder every 4.5s.
   useEffect(() => {
-    if (locked) return
+    if (locked || p.paused) return
     const id = setInterval(() => {
       p.setSubject(prev => ORDER[(ORDER.indexOf(prev) + 1) % ORDER.length]!)
     }, 4500)
     return () => clearInterval(id)
-  }, [locked]) // eslint-disable-line react-hooks/exhaustive-deps
+  }, [locked, p.paused]) // eslint-disable-line react-hooks/exhaustive-deps
 
   const lock = () => setLocked(true)
   const world  = p.skins.find(s => s.slug === p.skinSlug)   ?? p.skins[0]!

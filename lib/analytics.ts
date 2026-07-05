@@ -29,6 +29,7 @@ export type AnalyticsEvent =
   | 'subscription_renewed'    // Stripe invoice.payment_succeeded (renewal)
   | 'waitlist_joined'
   | 'account_deleted'
+  | 'referral_recorded'        // a referral was recorded at signup (credit pending first payment)
   | 'referral_credited'        // a paid referral earned the referrer a free month
   | 'referral_skipped'         // a ref code was present but couldn't be rewarded
 

@@ -67,6 +67,11 @@ export async function POST(req: NextRequest) {
     if (result.reason === 'assembly_failed') {
       return NextResponse.json({ error: 'We hit a snag building this story. We\'re on it — please try again later.' }, { status: 500 })
     }
+    if (result.reason === 'render_failed') {
+      // Transient — nothing was recorded, so a retry (or the cron) will pick it
+      // up. 503 signals "try again", not a permanent error.
+      return NextResponse.json({ error: 'The narration is taking a moment to prepare — please try again shortly.' }, { status: 503 })
+    }
     // already_delivered — treat as success so the UI just refreshes.
     return NextResponse.json({ ok: true, alreadyDelivered: true })
   }

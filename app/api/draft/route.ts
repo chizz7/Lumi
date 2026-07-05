@@ -28,6 +28,13 @@ export async function POST(req: NextRequest) {
   if (!body.skinSlug || !body.voiceId || !body.subjectSlug) {
     return NextResponse.json({ error: 'Missing required fields' }, { status: 422 })
   }
+  // A non-empty name is required: with an empty name the delivered AUDIO falls
+  // back to the generic hero template while the emailed SCRIPT fills {child_name}
+  // with "", so the two diverge and the script reads with blank gaps.
+  const childName = (typeof body.childName === 'string' ? body.childName : '').replace(/[{}]/g, '').trim().slice(0, 50)
+  if (!childName) {
+    return NextResponse.json({ error: 'Please enter your child\'s name (or a nickname).' }, { status: 422 })
+  }
   if (!getAllSubjectSlugs().includes(body.subjectSlug)) {
     return NextResponse.json({ error: 'Unknown subject' }, { status: 422 })
   }
@@ -44,8 +51,7 @@ export async function POST(req: NextRequest) {
   const ref = normaliseRefCode(body.ref ?? req.cookies.get('lumi_ref')?.value)
 
   const draft: Draft = {
-    // Braces are stripped defensively in fillTemplate too, but never let them in.
-    childName:    (body.childName ?? '').replace(/[{}]/g, '').trim().slice(0, 50),
+    childName,   // validated non-empty + brace-stripped above
     ageBand:      AGE_BANDS.has(body.ageBand ?? '') ? body.ageBand : '5-6',
     skinSlug:     body.skinSlug,
     subjectSlug:  body.subjectSlug,

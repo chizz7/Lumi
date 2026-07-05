@@ -3,7 +3,7 @@
 // Used in: landing page hero, language-not-available banner, pricing section.
 
 import { NextRequest, NextResponse }       from 'next/server'
-import { parseSignupBody, upsertWaitlistRow } from '@/lib/signup'
+import { parseSignupBody, joinWaitlist }   from '@/lib/signup'
 import { track }                           from '@/lib/analytics'
 import { getResend, EMAIL_FROM }           from '@/lib/email'
 
@@ -13,17 +13,18 @@ export async function POST(req: NextRequest) {
 
   const { email, lang, source } = parsed
 
-  // Upsert — silently succeed if already on the list.
-  const { error, inserted } = await upsertWaitlistRow({ email, lang, source })
+  // Record the join; sendEmail is false when this address was already confirmed
+  // on the waitlist (anti email-bombing), but true when it was only a prior lead.
+  const { error, sendEmail } = await joinWaitlist({ email, lang, source })
 
   if (error) {
     console.error('[waitlist] insert error:', error)
     return NextResponse.json({ error: 'Something went wrong. Please try again.' }, { status: 500 })
   }
 
-  // Already on the list → no repeat email. Without this gate the endpoint is an
-  // email-bombing primitive: anyone can spam a victim's inbox one POST at a time.
-  if (!inserted) return NextResponse.json({ ok: true, already: true })
+  // No email when this address is already confirmed on the waitlist (anti
+  // email-bombing) — but DO send when it existed only as a prior mid-funnel lead.
+  if (!sendEmail) return NextResponse.json({ ok: true, already: true })
 
   // Send confirmation email (first signup only)
   try {

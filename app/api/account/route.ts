@@ -40,7 +40,7 @@ export async function POST(req: NextRequest) {
   let body: { name?: string; ageBand?: string; skinSlug?: string; subjectSlug?: string; voiceId?: string; interestSlug?: string }
   try { body = await req.json() } catch { return NextResponse.json({ error: 'Invalid JSON' }, { status: 400 }) }
 
-  const name = (body.name ?? '').trim().slice(0, 50)
+  const name = (typeof body.name === 'string' ? body.name : '').trim().slice(0, 50)
   if (!name)                                              return NextResponse.json({ error: 'Name is required' }, { status: 422 })
   if (!body.ageBand || !AGE_BANDS.includes(body.ageBand)) return NextResponse.json({ error: 'Invalid age band' }, { status: 422 })
   if (!body.subjectSlug || !getAllSubjectSlugs().includes(body.subjectSlug)) return NextResponse.json({ error: 'Unknown subject' }, { status: 422 })
@@ -153,11 +153,23 @@ export async function DELETE(req: NextRequest) {
 
   // 2. Delete our DB rows. accounts.id has no FK to auth.users, so this won't
   //    cascade automatically — delete the account row explicitly. child_profiles
-  //    and story_instances DO cascade from accounts via their FKs.
-  await adminClient.from('accounts').delete().eq('id', user.id)
+  //    and story_instances DO cascade from accounts via their FKs. A children's-
+  //    data product must NOT tell the user "deleted" if the rows survived, so
+  //    surface a real failure instead of returning ok.
+  const { error: delErr } = await adminClient.from('accounts').delete().eq('id', user.id)
+  if (delErr) {
+    console.error('[account.delete] account row delete failed:', delErr.message)
+    return NextResponse.json({ error: 'We could not delete your data. Please try again or contact support.' }, { status: 500 })
+  }
 
-  // 3. Finally remove the Supabase Auth user.
-  await adminClient.auth.admin.deleteUser(user.id)
+  // 3. Finally remove the Supabase Auth user (holds the email). If this fails the
+  //    app data is already gone but the login would linger — report it so it can
+  //    be retried, rather than claiming a clean deletion.
+  const { error: authErr } = await adminClient.auth.admin.deleteUser(user.id)
+  if (authErr) {
+    console.error('[account.delete] auth user delete failed:', authErr.message)
+    return NextResponse.json({ error: 'Your data was removed but sign-in cleanup did not finish. Please contact support.' }, { status: 500 })
+  }
 
   track('account_deleted', {}, user.id)
   return NextResponse.json({ ok: true })

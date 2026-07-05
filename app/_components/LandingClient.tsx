@@ -244,15 +244,23 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
     })
   }
 
+  // Monotonic token so rapid world/voice switches can't let a stale preview
+  // response win: each call claims the next id and only commits its result if
+  // it's still the latest in flight. (The shared draft cookie also means
+  // concurrent saveDraft calls clobber each other, so ordering matters.)
+  const previewGen = useRef(0)
   const generatePreview = async (overrides: Partial<DraftFields> = {}) => {
+    const gen = ++previewGen.current
     setPreview({ loading: true })
     try {
       await saveDraft(overrides)
       const res  = await fetch('/api/preview')
       const data = await res.json()
+      if (gen !== previewGen.current) return   // a newer request superseded us
       if (!res.ok) throw new Error(data.error || 'preview failed')
       setPreview({ loading: false, script: data.script, audioUrl: data.audioUrl, audioError: data.audioError })
     } catch {
+      if (gen !== previewGen.current) return
       setPreview({ loading: false, error: "We couldn't build the preview just now. Please try again." })
     }
   }
@@ -445,6 +453,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
               setName={setChildName} setAge={setAgeBand} setWorld={setSkinSlug} setSubject={setSubjectSlug} setVoiceId={setVoiceId}
               skins={SKINS} ageBands={AGE_BANDS} voices={voices} paths={paths}
               playSample={playSample} sampleLoading={sampleLoading} playingVoiceIdx={playingVoiceIdx}
+              paused={overlayOpen}
               onBuild={() => { setOverlayOpen(true); setLeadDone(false); setLeadEmail(''); setLeadError(false); setCheckoutSecret(null); generatePreview() }}
             />
           </div>

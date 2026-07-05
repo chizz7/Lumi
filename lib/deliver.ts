@@ -22,7 +22,7 @@ export interface DeliverableProfile {
 
 export type DeliverResult =
   | { delivered: true;  levelTitle: string; audioUrl: string }
-  | { delivered: false; reason: 'completed' | 'already_delivered' | 'not_approved' | 'assembly_failed' }
+  | { delivered: false; reason: 'completed' | 'already_delivered' | 'not_approved' | 'assembly_failed' | 'render_failed' }
 
 // Assemble → render audio (cache-first) → email → record → advance level.
 // `accountId` is used only for analytics attribution.
@@ -77,21 +77,23 @@ export async function deliverNextStory(
     return { delivered: false, reason: 'assembly_failed' }
   }
 
+  // Render audio FIRST. A transient TTS failure must NOT record the story or
+  // advance the level — otherwise one Kokoro hiccup permanently "delivers" a
+  // broken story that never retries. Return a retryable result instead; the
+  // cron (or a manual retry) re-attempts on the next run since nothing was
+  // recorded and current_level is unchanged.
   const cacheKey = audioCacheKey(profile.subject_slug, levelOrdinal, profile.skin_slug, profile.voice_id, 'en', false, ageTag, profile.name)
-  let audioUrl = ''
   try {
-    audioUrl = await getOrRenderAudio(audioText, profile.voice_id, cacheKey)
+    await getOrRenderAudio(audioText, profile.voice_id, cacheKey)
   } catch (err) {
-    console.error('[deliver] TTS failed (non-fatal):', err)
+    console.error(`[deliver] TTS render failed for profile ${profile.id} (${profile.subject_slug} L${levelOrdinal}) — will retry:`, err)
+    return { delivered: false, reason: 'render_failed' }
   }
 
-  try {
-    await sendStoryEmail({ to: email, childName: profile.name, levelTitle: level.title, audioUrl, script })
-  } catch (err) {
-    console.error('[deliver] email failed (non-fatal):', err)
-  }
-
-  const { error: insErr } = await adminClient.from('story_instances').insert({
+  // Record the story BEFORE emailing so we have its id for the durable play link
+  // (and so a failed insert stops us before we email + bump). The audio object
+  // exists at cacheKey now, so the /s/:id link will resolve.
+  const { data: inserted, error: insErr } = await adminClient.from('story_instances').insert({
     profile_id:    profile.id,
     subject_slug:  profile.subject_slug,
     level_ordinal: levelOrdinal,
@@ -99,14 +101,28 @@ export async function deliverNextStory(
     voice_id:      profile.voice_id,
     audio_key:     cacheKey,
     script_text:   script,
-  })
-  if (insErr) {
+  }).select('id').single()
+
+  if (insErr || !inserted) {
     // 23505 = unique violation on (profile_id, level_ordinal): a concurrent
-    // deliverer won the race after our read-check. It records + bumps; we stop.
-    if (insErr.code === '23505') return { delivered: false, reason: 'already_delivered' }
-    // Any other insert failure: the email already went out, so log loudly but
-    // still bump the level below — re-running would re-email the same story.
-    console.error('[deliver] story_instances insert failed:', insErr.message)
+    // deliverer won the race after our read-check. It records + emails + bumps;
+    // we stop cleanly without a second email.
+    if (insErr?.code === '23505') return { delivered: false, reason: 'already_delivered' }
+    console.error('[deliver] story_instances insert failed:', insErr?.message)
+    return { delivered: false, reason: 'render_failed' }
+  }
+
+  // Durable play link: re-signs the audio on every open, so a story delivered in
+  // the morning still plays at bedtime (a raw 4h signed URL would be dead).
+  const appUrl  = process.env.NEXT_PUBLIC_APP_URL ?? ''
+  const playUrl = `${appUrl}/s/${inserted.id}`
+
+  try {
+    await sendStoryEmail({ to: email, childName: profile.name, levelTitle: level.title, audioUrl: playUrl, script })
+  } catch (err) {
+    // Non-fatal: the story is already in the library, so the parent can still
+    // reach it even if the email send hiccups.
+    console.error('[deliver] email failed (non-fatal):', err)
   }
 
   await adminClient.from('child_profiles')
@@ -114,5 +130,5 @@ export async function deliverNextStory(
     .eq('id', profile.id)
 
   track('story_delivered', { level: levelOrdinal, subject: profile.subject_slug }, accountId)
-  return { delivered: true, levelTitle: level.title, audioUrl }
+  return { delivered: true, levelTitle: level.title, audioUrl: playUrl }
 }
