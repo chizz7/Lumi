@@ -15,7 +15,7 @@ export function getResend(): Resend {
   return _resend
 }
 
-export const EMAIL_FROM = process.env.EMAIL_FROM ?? 'stories@lumi.app'
+export const EMAIL_FROM = process.env.EMAIL_FROM ?? 'stories@mylumi.xyz'
 
 export async function sendStoryEmail(opts: {
   to:         string

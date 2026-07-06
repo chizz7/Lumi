@@ -2,7 +2,7 @@
 import type { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = process.env.NEXT_PUBLIC_APP_URL ?? 'https://lumi.app'
+  const base = process.env.NEXT_PUBLIC_APP_URL ?? 'https://mylumi.xyz'
   const now  = new Date()
   // Only real, indexable URLs — hash anchors (#how, #pricing) are not separate
   // pages and don't belong in a sitemap.

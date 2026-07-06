@@ -48,7 +48,7 @@ Preview). Values come from each provider's dashboard; see `.env.example`.
 | `DEEPINFRA_API_KEY` | TTS (Kokoro-82M) |
 | `RESEND_API_KEY` | transactional email |
 | `EMAIL_FROM` | verified sender, e.g. `stories@yourdomain.com` |
-| `NEXT_PUBLIC_APP_URL` | the deployed domain, e.g. `https://lumi.app` |
+| `NEXT_PUBLIC_APP_URL` | the deployed domain, e.g. `https://mylumi.xyz` |
 | `DRAFT_SECRET` | `openssl rand -base64 32` |
 | `NEXT_PUBLIC_POSTHOG_KEY` | analytics (optional in dev) |
 | `CRON_SECRET` | protects `/api/cron/deliver`; `openssl rand -base64 32` |

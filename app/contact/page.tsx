@@ -13,8 +13,8 @@ export default function ContactPage() {
         <p style={{ fontSize:'16px', color:'#5d5278', lineHeight:1.6, marginBottom:'28px' }}>
           Story issues, account questions, or just want to say hello — we read every email.
         </p>
-        <a href="mailto:hello@lumi.app" style={{ display:'inline-block', padding:'15px 32px', background:'linear-gradient(135deg,#FFD27A,#E0852A)', color:'#3a230a', fontWeight:700, borderRadius:'15px', textDecoration:'none', fontSize:'16px' }}>
-          hello@lumi.app
+        <a href="mailto:hello@mylumi.xyz" style={{ display:'inline-block', padding:'15px 32px', background:'linear-gradient(135deg,#FFD27A,#E0852A)', color:'#3a230a', fontWeight:700, borderRadius:'15px', textDecoration:'none', fontSize:'16px' }}>
+          hello@mylumi.xyz
         </a>
         <p style={{ marginTop:'16px', fontSize:'13px', color:'#5d5278' }}>We usually reply within one business day.</p>
         <p style={{ marginTop:'24px' }}><Link href="/" style={{ color:'#9B86E0', fontSize:'14px' }}>← Back to Lumi</Link></p>

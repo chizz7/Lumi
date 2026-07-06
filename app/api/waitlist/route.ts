@@ -43,7 +43,7 @@ export async function POST(req: NextRequest) {
     Try a story now →
   </a>
   <p style="font-size:12px;color:#b9adda;margin-top:32px">
-    You signed up at lumi.app. <a href="${process.env.NEXT_PUBLIC_APP_URL}/unsubscribe?email=${encodeURIComponent(email)}" style="color:#b9adda">Unsubscribe</a>
+    You signed up at mylumi.xyz. <a href="${process.env.NEXT_PUBLIC_APP_URL}/unsubscribe?email=${encodeURIComponent(email)}" style="color:#b9adda">Unsubscribe</a>
   </p>
 </body>`,
     })

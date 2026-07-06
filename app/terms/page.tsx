@@ -7,7 +7,7 @@ import Link from 'next/link'
 export const metadata: Metadata = { title: 'Terms of Service' }
 
 const EFFECTIVE_DATE = 'June 2026'
-const CONTACT_EMAIL  = 'hello@lumi.app'
+const CONTACT_EMAIL  = 'hello@mylumi.xyz'
 
 export default function TermsPage() {
   return (
