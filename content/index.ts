@@ -62,14 +62,41 @@ export function getAllSubjectSlugs(): string[] {
 
 // ── Template filling ──────────────────────────────────────────────────────────
 
+// Slot values embed their own leading determiner/size word — e.g.
+// setting = "the warm shallows", objectMotif = "small star-seedling". When a
+// template also writes that word before the slot ("down by the {setting}",
+// "a small {object_motif}"), filling produces a doubled word: "the the warm
+// shallows", "small small star-seedling". These are ALWAYS bugs (and they were
+// reaching customers, incl. the narrated audio). Collapse the duplicate — but
+// only for this closed set of determiners/size words, so we never touch a
+// legitimate repeat in the prose itself (laughter "ha ha", "knock knock", etc).
+const DEDUP_WORDS = new Set([
+  'the', 'a', 'an',
+  'small', 'little', 'old', 'big', 'tiny', 'young', 'tall', 'wee', 'huge', 'giant',
+])
+
+function collapseSlotDupes(text: string): string {
+  // /i makes the backreference case-insensitive so "The the" collapses too; we
+  // keep the FIRST occurrence (preserving its casing) and drop the second. Loop
+  // until stable in case a value produces three in a row (e.g. "the the the").
+  let prev: string
+  do {
+    prev = text
+    text = text.replace(/\b(\w+)(\s+)\1\b/gi, (m, w) =>
+      DEDUP_WORDS.has(w.toLowerCase()) ? w : m)
+  } while (text !== prev)
+  return text
+}
+
 function fillTemplate(template: string, slots: Record<string, string>): string {
-  return template.replace(/\{([a-z_]+)\}/g, (_, key) => {
+  const filled = template.replace(/\{([a-z_]+)\}/g, (_, key) => {
     if (!(key in slots)) throw new Error(`Missing slot value: {${key}}`)
     // Strip braces from slot VALUES: a child named "{hero}" would otherwise be
     // inserted literally and trip assertImmutable's leftover-slot check — which
     // in the delivery path means a paid signup that fails on every retry.
     return slots[key]!.replace(/[{}]/g, '')
   })
+  return collapseSlotDupes(filled)
 }
 
 // Build slot values from a skin (no child name — for audio)

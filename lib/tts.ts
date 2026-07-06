@@ -78,7 +78,10 @@ export async function getOrRenderAudio(
 // v2 fixed the bytes but sent the voice as `voice` — a field Kokoro's DeepInfra
 // endpoint ignores (it reads `preset_voice`), so every v2 file was rendered in
 // the DEFAULT voice regardless of its key. v3 = correct per-voice renders.
-const AUDIO_CACHE_VERSION = 'v3'
+// v4 = fixed slot/template word collisions (e.g. narration said "the the warm
+// shallows", "small small star-seedling"); v3 files at the same key held the
+// doubled-word audio, so bump to force corrected renders.
+const AUDIO_CACHE_VERSION = 'v4'
 
 // Normalise a child's name into a safe, stable cache-key segment. Same name →
 // same file (so repeat names reuse the render); strips anything non-alphanumeric.
