@@ -58,13 +58,14 @@ export async function sendStoryEmail(opts: {
 // a nudge to subscribe — so we can still convert them if they didn't buy on the
 // spot. `previewUrl` is the /p/<token> page, which re-signs its audio on open.
 export async function sendPreviewEmail(opts: {
-  to:         string
-  childName:  string
-  levelTitle: string
-  previewUrl: string
-  excerpt:    string
+  to:          string
+  childName:   string
+  levelTitle:  string
+  previewUrl:  string
+  checkoutUrl: string   // one-tap Stripe checkout for the "Start Story Club" CTA
+  excerpt:     string
 }) {
-  const { to, childName, levelTitle, previewUrl, excerpt } = opts
+  const { to, childName, levelTitle, previewUrl, checkoutUrl, excerpt } = opts
   const name = childName || 'your child'
   const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? ''
 
@@ -84,13 +85,13 @@ export async function sendPreviewEmail(opts: {
   <p style="font-size:13px;color:#9d8fad;margin-bottom:4px">A taste of the story:</p>
   <p style="font-size:14px;line-height:1.7;font-style:italic;color:#5d5278;white-space:pre-line">${excerpt}</p>` : ''}
   <hr style="border:none;border-top:1px solid #e4d8c0;margin:28px 0">
-  <p style="font-size:15px;margin-bottom:16px"><strong>Keep the adventure going.</strong> Story Club sends a new levelled bedtime story every other night — building real skills, one calm evening at a time. First story free.</p>
-  <a href="${appUrl}" style="display:inline-block;background:#3a2470;color:#fff;padding:13px 26px;border-radius:12px;text-decoration:none;font-weight:bold;font-size:15px">Start Story Club →</a>
+  <p style="font-size:15px;margin-bottom:16px"><strong>Keep the adventure going.</strong> Story Club sends a new levelled bedtime story every other night — building real skills, one calm evening at a time. First story free — cancel anytime.</p>
+  <a href="${checkoutUrl}" style="display:inline-block;background:#3a2470;color:#fff;padding:13px 26px;border-radius:12px;text-decoration:none;font-weight:bold;font-size:15px">Start Story Club →</a>
   <p style="font-size:12px;color:#b9adda;margin-top:32px">
     You started a story at mylumi.xyz. <a href="${appUrl}/unsubscribe?email=${encodeURIComponent(to)}" style="color:#b9adda">Unsubscribe</a>
   </p>
 </body>
 </html>`,
-    text: `${name}'s free preview — ${levelTitle}\n\nPlay it again: ${previewUrl}\n\n${excerpt ? excerpt + '\n\n' : ''}Keep the adventure going — Story Club sends a new levelled bedtime story every other night. First story free: ${appUrl}`,
+    text: `${name}'s free preview — ${levelTitle}\n\nPlay it again: ${previewUrl}\n\n${excerpt ? excerpt + '\n\n' : ''}Keep the adventure going — Story Club sends a new levelled bedtime story every other night. First story free, cancel anytime.\n\nStart Story Club: ${checkoutUrl}`,
   })
 }

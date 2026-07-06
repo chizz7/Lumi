@@ -10,7 +10,7 @@ import { NextRequest, NextResponse }         from 'next/server'
 import { parseSignupBody, upsertWaitlistRow } from '@/lib/signup'
 import { getDraft }                          from '@/lib/draft'
 import { assembleStory, previewText }        from '@/content'
-import { previewLink }                       from '@/lib/preview-link'
+import { signPreviewToken }                  from '@/lib/preview-link'
 import { sendPreviewEmail }                  from '@/lib/email'
 import { track }                             from '@/lib/analytics'
 import type { AgeBand }                      from '@/content/types'
@@ -38,19 +38,25 @@ export async function POST(req: NextRequest) {
     const draft = await getDraft(req)
     if (draft) {
       try {
-        const { level, script, ageTag } = assembleStory(
+        const { level, script } = assembleStory(
           draft.subjectSlug, 1, draft.skinSlug, draft.childName, draft.ageBand as AgeBand | undefined,
         )
-        const url = previewLink({
+        const payload = {
           childName:   draft.childName,
           ageBand:     draft.ageBand,
           skinSlug:    draft.skinSlug,
           subjectSlug: draft.subjectSlug,
           voiceId:     draft.voiceId,
-        })
+        }
+        // One signed token drives both the replay page and the one-tap purchase
+        // link, so they describe the same story.
+        const token       = signPreviewToken(payload)
+        const appUrl      = process.env.NEXT_PUBLIC_APP_URL ?? ''
+        const previewUrl  = `${appUrl}/p/${token}`
+        const checkoutUrl = `${appUrl}/api/checkout/from-preview?token=${token}`
         await sendPreviewEmail({
           to: email, childName: draft.childName, levelTitle: level.title,
-          previewUrl: url, excerpt: previewText(script),
+          previewUrl, checkoutUrl, excerpt: previewText(script),
         })
         track('preview_email_sent', { subject: draft.subjectSlug, lang })
       } catch (err) {

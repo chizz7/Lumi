@@ -113,7 +113,7 @@ export default async function PreviewPlayerPage({ params }: { params: Promise<{ 
         <p style={{ fontSize: 14, color: '#dccffa', lineHeight: 1.6, marginBottom: 18 }}>
           Story Club sends a new levelled bedtime story every other night — building real skills, one calm evening at a time. First story free.
         </p>
-        <a href="/" style={{ display: 'inline-block', padding: '14px 30px', background: 'linear-gradient(135deg,#FFD27A,#E0852A)', color: '#3a230a', fontWeight: 800, borderRadius: 13, textDecoration: 'none', fontSize: 15 }}>
+        <a href={`/api/checkout/from-preview?token=${token}`} style={{ display: 'inline-block', padding: '14px 30px', background: 'linear-gradient(135deg,#FFD27A,#E0852A)', color: '#3a230a', fontWeight: 800, borderRadius: 13, textDecoration: 'none', fontSize: 15 }}>
           Start Story Club →
         </a>
       </div>

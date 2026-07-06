@@ -72,6 +72,41 @@ export async function createCheckoutSession(opts: {
   return session.client_secret
 }
 
+// Hosted Checkout variant for links that originate OUTSIDE the app (e.g. the
+// "Start Story Club" button in the preview email). Embedded checkout must mount
+// client-side, which an emailed link can't do — so this returns a full Stripe
+// URL the parent opens directly. Same subscription, trial, and draft-in-metadata
+// as the embedded flow, so the webhook handles both identically.
+export async function createHostedCheckoutSession(opts: {
+  draftJson:  string
+  successUrl: string   // include {CHECKOUT_SESSION_ID}
+  cancelUrl:  string
+}): Promise<string> {  // returns the hosted checkout URL
+  const priceId = process.env.STRIPE_PRICE_ID
+  if (!priceId || !priceId.startsWith('price_')) {
+    throw new Error(
+      `STRIPE_PRICE_ID is ${priceId ? `"${priceId}"` : 'not set'} — it must be a Price ID (starts with "price_"), not a Product ID (prod_…). Fix it in your environment variables.`
+    )
+  }
+
+  const session = await stripe.checkout.sessions.create({
+    mode:                 'subscription',
+    payment_method_types: ['card'],
+    line_items: [{ price: priceId, quantity: 1 }],
+    subscription_data: {
+      trial_period_days: 1,                     // first story free
+      metadata: { draft: opts.draftJson },
+    },
+    metadata:    { draft: opts.draftJson },
+    success_url: opts.successUrl,
+    cancel_url:  opts.cancelUrl,
+    billing_address_collection: 'auto',
+  })
+
+  if (!session.url) throw new Error('Stripe did not return a checkout URL')
+  return session.url
+}
+
 // The currency we fall back to when a customer has no settlement currency
 // yet (e.g. credited before their first invoice). Matches our default price.
 const DEFAULT_CREDIT_CURRENCY = 'cad'
