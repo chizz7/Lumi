@@ -19,6 +19,7 @@ const stripePromise = STRIPE_PK ? loadStripe(STRIPE_PK) : null
 import { getAllLevels }                  from '@/content'
 import { SUBJECT_META, WORLD_META, AGE_BANDS } from '@/content/meta'
 import { interestForWorld }              from '@/content/interests'
+import { fbEvent }                       from '@/lib/fpixel'
 import StoryStudio                       from './StoryStudio'
 import { playUrl, stopCurrent, subscribe as subscribePlayer, getState as getPlayerState } from '@/lib/howlerPlayer'
 
@@ -230,6 +231,8 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, lang, source: 'builder-preview' }),
     }).catch(() => {})
+    // Meta Pixel: preview-email captured = a Lead.
+    fbEvent('Lead', { content_name: 'builder-preview' })
   }
 
   // Draft fields, with optional overrides so live preview switching never reads
@@ -316,7 +319,10 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
       await saveDraft()
       const res  = await fetch('/api/checkout', { method: 'POST' })
       const data = await res.json()
-      if (data.clientSecret) setCheckoutSecret(data.clientSecret)
+      if (data.clientSecret) {
+        setCheckoutSecret(data.clientSecret)
+        fbEvent('InitiateCheckout', { value: 9.99, currency: 'USD' })
+      }
       else setCheckoutError(data.error || "We couldn't start checkout. Please try again.")
     } catch {
       setCheckoutError("We couldn't start checkout. Please try again.")

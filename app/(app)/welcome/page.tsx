@@ -2,9 +2,13 @@
 // Stripe redirects here after checkout.session.completed.
 // The webhook has already run and Level 1 is being delivered.
 
+import { Suspense } from 'react'
+import SubscribePixel from '@/app/_components/SubscribePixel'
+
 export default function WelcomePage() {
   return (
     <main style={{ minHeight:'100vh', background:'linear-gradient(170deg,#241a52,#3a2470)', display:'flex', alignItems:'center', justifyContent:'center', padding:'40px 24px' }}>
+      <Suspense fallback={null}><SubscribePixel /></Suspense>
       <div style={{ maxWidth:'480px', width:'100%', textAlign:'center', color:'#fff' }}>
         <div style={{ width:'80px', height:'80px', borderRadius:'50%', background:'#54B6A6', display:'grid', placeItems:'center', fontSize:'36px', margin:'0 auto 22px', boxShadow:'0 0 0 12px rgba(84,182,166,.18)' }}>✓</div>
         <h1 style={{ fontFamily:'var(--font-fraunces)', fontSize:'28px', marginBottom:'10px' }}>

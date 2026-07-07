@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from 'next'
 import { Fraunces, Figtree }        from 'next/font/google'
 import { getI18n }                  from '@/lib/i18n'
 import PostHogProvider              from './_components/PostHogProvider'
+import FacebookPixel                from './_components/FacebookPixel'
 import RefCapture                   from './_components/RefCapture'
 import './globals.css'
 
@@ -60,6 +61,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       </head>
       <body className="antialiased">
         <PostHogProvider>
+          <FacebookPixel />
           <RefCapture />
           {children}
         </PostHogProvider>
