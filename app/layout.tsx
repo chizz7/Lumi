@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL ?? 'https://mylumi.xyz'),
   title: { default:'Lumi — Screen-Free Bedtime Stories That Teach', template:'%s · Lumi' },
   description: "Personalized, screen-free audio bedtime stories that teach your child real-life skills — kindness, focus, confidence and more — one calm night at a time.",
-  keywords: ['screen-free bedtime stories','audio bedtime stories for kids','bedtime stories that teach','social-emotional skills for kids','personalized children stories','kids audio stories ages 3-8'],
+  keywords: ['screen-free bedtime stories','audio bedtime stories for kids','bedtime stories that teach','social-emotional skills for kids','personalized children stories','kids audio stories ages 3-11'],
   authors: [{ name:'Lumi' }],
   openGraph: {
     type:'website', siteName:'Lumi',
