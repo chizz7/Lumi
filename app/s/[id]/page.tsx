@@ -15,6 +15,8 @@
 
 import { adminClient, BUCKETS } from '@/lib/supabase'
 import { getAllLevels }         from '@/content'
+import { fetchWordTimings }     from '@/lib/tts'
+import ReadAlong                from '@/app/_components/ReadAlong'
 import type { Metadata }        from 'next'
 
 export const dynamic = 'force-dynamic'
@@ -54,10 +56,13 @@ export default async function StoryPlayerPage({ params }: { params: Promise<{ id
     )
   }
 
-  // Re-sign fresh on every open (1h window, plenty for one sitting).
-  const { data: signed } = await adminClient.storage
-    .from(BUCKETS.AUDIO)
-    .createSignedUrl(story.audio_key, 60 * 60)
+  // Re-sign fresh on every open (1h window, plenty for one sitting), and load the
+  // cached word timings so the child can watch each word light up (null → the
+  // read-along just shows plain text).
+  const [{ data: signed }, words] = await Promise.all([
+    adminClient.storage.from(BUCKETS.AUDIO).createSignedUrl(story.audio_key, 60 * 60),
+    fetchWordTimings(story.audio_key),
+  ])
 
   // Level title for a friendly heading (best-effort; falls back gracefully).
   const level = getAllLevels(story.subject_slug).find(l => l.ordinal === story.level_ordinal)
@@ -76,13 +81,7 @@ export default async function StoryPlayerPage({ params }: { params: Promise<{ id
         <h1 style={{ fontFamily: 'var(--font-fraunces)', fontSize: 25, lineHeight: 1.2, marginBottom: 18 }}>{title}</h1>
 
         {signed?.signedUrl ? (
-          <audio
-            controls
-            preload="none"
-            playsInline
-            src={signed.signedUrl}
-            style={{ width: '100%', marginBottom: 6 }}
-          />
+          <ReadAlong audioUrl={signed.signedUrl} script={story.script_text ?? ''} words={words} />
         ) : (
           <p style={{ fontSize: 14, color: '#c0392b', background: 'rgba(235,138,138,.1)', border: '1px solid rgba(235,138,138,.3)', borderRadius: 12, padding: '12px 14px' }}>
             The narration is taking a moment to prepare. Please refresh this page shortly, or
@@ -90,17 +89,6 @@ export default async function StoryPlayerPage({ params }: { params: Promise<{ id
           </p>
         )}
       </div>
-
-      {story.script_text && (
-        <section style={{ marginTop: 24 }}>
-          <h2 style={{ fontSize: 13, letterSpacing: 1, textTransform: 'uppercase', color: '#9d8fad', fontWeight: 800, marginBottom: 12 }}>
-            Read along
-          </h2>
-          <div style={{ fontFamily: 'var(--font-fraunces)', fontSize: 17, lineHeight: 1.75, color: '#3a3358', whiteSpace: 'pre-line' }}>
-            {story.script_text}
-          </div>
-        </section>
-      )}
 
       <div style={{ textAlign: 'center', marginTop: 34 }}>
         <a href="/library" style={{ display: 'inline-block', padding: '13px 26px', background: 'linear-gradient(135deg,#FFD27A,#E0852A)', color: '#3a230a', fontWeight: 700, borderRadius: 13, textDecoration: 'none', fontSize: 15 }}>

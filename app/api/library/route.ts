@@ -5,6 +5,8 @@ import { NextRequest, NextResponse } from 'next/server'
 import { requireUser, adminClient, BUCKETS } from '@/lib/supabase'
 import { getLevel, getLevelCount }             from '@/content'
 import { canRequestStory, nextStoryAvailableAt } from '@/lib/cadence'
+import { fetchWordTimings }                    from '@/lib/tts'
+import type { WordTiming }                     from '@/lib/tts'
 
 export async function GET(req: NextRequest) {
   const gate = await requireUser()
@@ -38,10 +40,13 @@ export async function GET(req: NextRequest) {
   // One batch signed-URL call for every audio file instead of one per story.
   const audioKeys = [...new Set((instances ?? []).map(i => i.audio_key).filter(Boolean))] as string[]
   const signedUrlByKey = new Map<string, string>()
+  const wordsByKey     = new Map<string, WordTiming[] | null>()
   if (audioKeys.length > 0) {
-    const { data: signed } = await adminClient.storage
-      .from(BUCKETS.AUDIO)
-      .createSignedUrls(audioKeys, 60 * 60 * 4)
+    const [{ data: signed }] = await Promise.all([
+      adminClient.storage.from(BUCKETS.AUDIO).createSignedUrls(audioKeys, 60 * 60 * 4),
+      // Read-along word timings per story (best-effort; missing → plain text).
+      Promise.all(audioKeys.map(async k => wordsByKey.set(k, await fetchWordTimings(k)))),
+    ])
     for (const s of signed ?? []) {
       if (s.path && s.signedUrl) signedUrlByKey.set(s.path, s.signedUrl)
     }
@@ -64,6 +69,7 @@ export async function GET(req: NextRequest) {
         deliveredAt:  inst.delivered_at,
         script:       inst.script_text ?? '',
         audioUrl:     inst.audio_key ? (signedUrlByKey.get(inst.audio_key) ?? null) : null,
+        words:        inst.audio_key ? (wordsByKey.get(inst.audio_key) ?? null) : null,
       }
     })
 

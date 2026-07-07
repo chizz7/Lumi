@@ -4,8 +4,10 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { WORLD_META } from '@/content/meta'
 import AppNav from '@/app/_components/AppNav'
+import ReadAlong from '@/app/_components/ReadAlong'
+import type { WordTiming } from '@/lib/tts'
 
-interface Story  { id: string; levelOrdinal: number; levelTitle: string; concept: string; skinSlug: string; voiceId: string; deliveredAt: string; script: string; audioUrl: string | null }
+interface Story  { id: string; levelOrdinal: number; levelTitle: string; concept: string; skinSlug: string; voiceId: string; deliveredAt: string; script: string; audioUrl: string | null; words: WordTiming[] | null }
 interface Child  { id: string; name: string; currentLevel: number; totalLevels: number; subjectSlug: string; nextLevel: number | null; nextAvailableAt: string | null; canRequestNext: boolean; stories: Story[] }
 interface LibData { children: Child[] }
 
@@ -238,9 +240,11 @@ export default function LibraryPage() {
               <h2 style={{ fontFamily:'var(--font-fraunces)', fontSize:'17px', marginBottom:'4px' }}>{s.levelTitle}</h2>
               <time dateTime={s.deliveredAt} style={{ fontSize:'12px', color:'#5d5278' }}>{new Date(s.deliveredAt).toLocaleDateString()}</time>
 
-              {/* Inline audio player */}
+              {/* Inline read-along player: audio + word highlighting for early readers */}
               {playing === s.id && s.audioUrl && (
-                <audio src={s.audioUrl} controls autoPlay style={{ width:'100%', marginTop:'12px' }} />
+                <div style={{ marginTop:'12px' }}>
+                  <ReadAlong audioUrl={s.audioUrl} script={s.script} words={s.words} autoPlay />
+                </div>
               )}
 
               {/* Readable script */}

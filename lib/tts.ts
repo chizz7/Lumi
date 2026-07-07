@@ -47,7 +47,7 @@ export async function getOrRenderAudio(
   // The `audio` field is a base64 data URI. We MUST decode it to real MP3 bytes —
   // storing the raw response body produces a JSON file mislabelled audio/mpeg that
   // iOS WebKit (correctly) refuses to decode.
-  const json = (await res.json()) as { audio?: string; output_format?: string }
+  const json = (await res.json()) as { audio?: string; output_format?: string; words?: unknown }
   if (!json.audio) {
     throw new Error('Kokoro response missing "audio" field')
   }
@@ -65,12 +65,74 @@ export async function getOrRenderAudio(
     throw new Error(`Storage upload failed: ${error.message}`)
   }
 
+  // Kokoro also returns per-word timestamps. Cache them next to the MP3 so the
+  // read-along player can highlight each word as it's spoken. Best-effort: a
+  // failure here must never break audio delivery (highlighting is optional).
+  const timings = normalizeWords(json.words)
+  if (timings) {
+    try {
+      await adminClient.storage
+        .from(BUCKETS.AUDIO)
+        .upload(wordsKeyFor(cacheKey), Buffer.from(JSON.stringify(timings)), {
+          contentType: 'application/json', upsert: true,
+        })
+    } catch (err) {
+      console.error('[tts] word-timing upload failed (non-fatal):', err)
+    }
+  }
+
   const { data: signed } = await adminClient.storage
     .from(BUCKETS.AUDIO)
     .createSignedUrl(cacheKey, 60 * 60 * 4)
 
   if (!signed?.signedUrl) throw new Error('Could not sign audio URL')
   return signed.signedUrl
+}
+
+// ── Word timings (read-along) ─────────────────────────────────────────────────
+
+export interface WordTiming { word: string; start: number; end: number }
+
+// The timings JSON lives beside the MP3: full-v4-…-.mp3 → full-v4-…-.words.json.
+function wordsKeyFor(audioKey: string): string {
+  return audioKey.endsWith('.mp3') ? audioKey.slice(0, -4) + '.words.json' : audioKey + '.words.json'
+}
+
+// Kokoro's `words` shape isn't strictly contracted across providers, so accept
+// the common variants ({word|text|token} + {start|start_time|s} / end) and
+// return a clean, sorted list — or null if nothing usable is present.
+function normalizeWords(raw: unknown): WordTiming[] | null {
+  if (!Array.isArray(raw) || raw.length === 0) return null
+  const out: WordTiming[] = []
+  for (const item of raw) {
+    if (!item || typeof item !== 'object') continue
+    const o = item as Record<string, unknown>
+    const word  = (o.word ?? o.text ?? o.token) as unknown
+    const start = (o.start ?? o.start_time ?? o.s ?? o.begin) as unknown
+    const end   = (o.end ?? o.end_time ?? o.e ?? o.stop) as unknown
+    if (typeof word !== 'string') continue
+    const s = typeof start === 'number' ? start : Number(start)
+    const e = typeof end === 'number' ? end : Number(end)
+    if (!Number.isFinite(s)) continue
+    out.push({ word, start: s, end: Number.isFinite(e) ? e : s })
+  }
+  if (!out.length) return null
+  out.sort((a, b) => a.start - b.start)
+  return out
+}
+
+// Fetch cached word timings for an audio key. Returns null when none exist
+// (e.g. audio rendered before this feature) so the player degrades to plain text.
+export async function fetchWordTimings(audioKey: string): Promise<WordTiming[] | null> {
+  try {
+    const { data, error } = await adminClient.storage
+      .from(BUCKETS.AUDIO)
+      .download(wordsKeyFor(audioKey))
+    if (error || !data) return null
+    return normalizeWords(JSON.parse(await data.text()))
+  } catch {
+    return null
+  }
 }
 
 // Bump this when the render/encoding pipeline changes so stale cached files are
