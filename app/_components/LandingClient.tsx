@@ -430,7 +430,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
 
         {/* ─────────────── HERO ─────────────── */}
         <section aria-labelledby="hero-heading" className="pt-20 pb-14 md:pt-[120px] md:pb-[90px]" style={{ position:'relative', background:'linear-gradient(180deg,#1a1342,#2c1f5e 60%,#34246e)', color:'#fff', overflow:'hidden' }}>
-          <div className="grid grid-cols-1 md:grid-cols-2" style={{ maxWidth:'1140px', margin:'0 auto', padding:'0 24px', gap:'48px', alignItems:'center' }}>
+          <div className="grid grid-cols-1 md:grid-cols-2" style={{ maxWidth:'1140px', margin:'0 auto', padding:'0 24px', gap:'48px', alignItems:'start' }}>
             {/* Copy */}
             <div>
               <p style={{ fontSize:'12px', letterSpacing:'2.5px', textTransform:'uppercase', color:'#FFD27A', fontWeight:700, marginBottom:'14px' }}>{t('hero.eyebrow')}</p>
