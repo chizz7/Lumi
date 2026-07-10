@@ -13,7 +13,7 @@ export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url)
   const subject = searchParams.get('subject') || 'money'
   const skin    = searchParams.get('skin')    || 'sea'
-  const voice   = searchParams.get('voice')   || 'af_heart'
+  const voice   = searchParams.get('voice')   || 'af_nicole'   // Sage — the default demo voice
 
   // Guard: only allow known voice ids so we never spend TTS on arbitrary input.
   const knownVoices = getVoicesForLang('en').map(v => v.id)

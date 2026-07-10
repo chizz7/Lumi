@@ -81,7 +81,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
   const [ageBand,     setAgeBand]         = useState('5-6')
   const [skinSlug,    setSkinSlug]        = useState('sea')
   const [subjectSlug, setSubjectSlug]     = useState('kindness')
-  const [voiceId,     setVoiceId]         = useState(voices[0]?.id ?? 'af_heart')
+  const [voiceId,     setVoiceId]         = useState(voices[0]?.id ?? 'af_nicole')
   const [activePath,  setActivePath]      = useState<string>('kindness')
   const [activeVoice, setActiveVoice]     = useState(0)
   const [langBanner,  setLangBanner]      = useState(showLangBanner)
@@ -681,7 +681,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
             {/* Carry the voice they just chose straight into the builder */}
             <button onClick={() => { const v = voices[activeVoice]; if (v) setVoiceId(v.id); ph('voice_cta_clicked', { voice: voices[activeVoice]?.id }); openBuilder() }}
               style={{ padding:'13px 24px', background:'linear-gradient(135deg,#FFD27A,#E0852A)', color:'#3a230a', fontWeight:700, border:'none', borderRadius:'13px', cursor:'pointer', fontSize:'14px', boxShadow:'0 12px 26px -10px rgba(244,169,60,.6)' }}>
-              {t('voices.build', { name: voices[activeVoice]?.name ?? 'Willow' })}
+              {t('voices.build', { name: voices[activeVoice]?.name ?? 'Sage' })}
             </button>
             {/* Your own voice teaser */}
             <div style={{ maxWidth:'520px', margin:'20px auto 0', background:'#fff', border:'1.5px dashed #EB8A8A', borderRadius:'17px', padding:'20px', textAlign:'center' }}>
@@ -1136,7 +1136,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                     )}
 
                     <p style={{ fontSize:'12px', color:'#4a4063', textAlign:'center', margin:'14px 0 0' }}>
-                      Level 1 of 5 · {SUBJECT_NAMES[subjectSlug] ?? 'Money'} path · {voices.find(v => v.id === voiceId)?.name ?? 'Willow'}'s voice
+                      Level 1 of 5 · {SUBJECT_NAMES[subjectSlug] ?? 'Money'} path · {voices.find(v => v.id === voiceId)?.name ?? 'Sage'}'s voice
                     </p>
                   </>
                 )}

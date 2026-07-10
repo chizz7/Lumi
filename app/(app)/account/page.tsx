@@ -30,7 +30,7 @@ export default function AccountPage() {
   const [editing, setEditing] = useState(false)
   const [mode, setMode] = useState<'edit' | 'add'>('edit')
   const [savingEdit, setSavingEdit] = useState(false)
-  const [form, setForm] = useState({ childId:'', name:'', ageBand:'5-6', skinSlug:'sea', subjectSlug:'money', voiceId:'af_heart' })
+  const [form, setForm] = useState({ childId:'', name:'', ageBand:'5-6', skinSlug:'sea', subjectSlug:'money', voiceId:'af_nicole' })
 
   // Voice sample playback in the edit modal — parents pick a NEW voice for
   // future stories here, but unlike the pre-purchase builder they had no way
@@ -88,7 +88,7 @@ export default function AccountPage() {
 
   const openAdd = () => {
     setMode('add')
-    setForm({ childId:'', name:'', ageBand:'5-6', skinSlug:'sea', subjectSlug:'money', voiceId: VOICES[0]?.id ?? 'af_heart' })
+    setForm({ childId:'', name:'', ageBand:'5-6', skinSlug:'sea', subjectSlug:'money', voiceId: VOICES[0]?.id ?? 'af_nicole' })
     setEditing(true)
   }
 

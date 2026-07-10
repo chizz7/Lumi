@@ -135,7 +135,7 @@ export default function StoryStudio(p: Props) {
   const wt     = WORLD[p.skinSlug]  ?? WORLD.jungle!
   const cl     = CLAUSE[p.subjectSlug] ?? CLAUSE.kindness!
   const vIdx   = Math.max(0, p.voices.findIndex(v => v.id === p.voiceId))
-  const vName  = p.voices[vIdx]?.name ?? 'Willow'
+  const vName  = p.voices[vIdx]?.name ?? 'Sage'
   const nm     = p.name.trim() || 'your child'
   const nmTitle = p.name.trim() || 'Your child'   // title-position variant — a sentence can't open lowercase
 

@@ -20,8 +20,9 @@ export interface VoiceConfig {
 // 4 curated voices per language matching our UI personality slots
 export const VOICES_BY_LANG: Record<string, [VoiceConfig, VoiceConfig, VoiceConfig, VoiceConfig]> = {
   en: [
-    { id: 'af_heart',  name: 'Willow',   tone: 'warm & soft' },
+    // Sage first: voices[0] is the default demo/sample voice across the site.
     { id: 'af_nicole', name: 'Sage',     tone: 'hushed & dreamy' },
+    { id: 'af_heart',  name: 'Willow',   tone: 'warm & soft' },
     { id: 'am_michael', name: 'River',   tone: 'calm & deep' },
     { id: 'bf_emma',   name: 'Juniper',  tone: 'gentle storyteller' },
   ],
