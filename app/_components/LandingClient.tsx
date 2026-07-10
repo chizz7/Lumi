@@ -20,6 +20,12 @@ import { getAllLevels }                  from '@/content'
 import { SUBJECT_META, WORLD_META, AGE_BANDS } from '@/content/meta'
 import { interestForWorld }              from '@/content/interests'
 import { fbEvent }                       from '@/lib/fpixel'
+import posthog                           from 'posthog-js'
+
+// Client-side funnel event — no-ops when PostHog isn't initialised (dev/no key).
+const ph = (event: string, props?: Record<string, unknown>) => {
+  if (typeof window !== 'undefined' && window.__posthog_initialised) posthog.capture(event, props)
+}
 import StoryStudio                       from './StoryStudio'
 import { playUrl, stopCurrent, subscribe as subscribePlayer, getState as getPlayerState } from '@/lib/howlerPlayer'
 
@@ -85,6 +91,29 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
   const [faqOpen,     setFaqOpen]         = useState<number | null>(null)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
+  // Scent-match paid traffic: when the ad that brought the visitor named a skill
+  // (?skill=money or a utm_content/utm_term containing one), open the Story
+  // Studio on that skill and pin the showcase — the auto-rotation must never
+  // contradict the promise of the ad they just clicked.
+  const [subjectPinned, setSubjectPinned] = useState(false)
+  useEffect(() => {
+    const q   = new URLSearchParams(window.location.search)
+    const hay = `${q.get('skill') ?? ''} ${q.get('utm_content') ?? ''} ${q.get('utm_term') ?? ''}`.toLowerCase()
+    if (!hay.trim()) return
+    const ALIASES: Record<string, string> = {
+      money: 'money', save: 'money', skill: 'money',
+      focus: 'focus', kind: 'kindness', empath: 'kindness',
+      resilien: 'resilience', confiden: 'confidence', brave: 'confidence',
+      problem: 'problem', puzzle: 'problem', speak: 'voice', voice: 'voice',
+    }
+    const hit = Object.keys(ALIASES).find(k => hay.includes(k))
+    if (hit) {
+      setSubjectSlug(ALIASES[hit]!)
+      setActivePath(ALIASES[hit]!)
+      setSubjectPinned(true)
+    }
+  }, [])
+
   // ── Audio sampler (hero + voice switcher) ───────────────────────────────────
   const sampleCache    = useRef<Record<string, string>>({})  // combo -> signed url
   const [sampleLoading, setSampleLoading] = useState<number | null>(null)
@@ -108,6 +137,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
   // blocked. The uncached path still warms+plays as a desktop fallback.
   const playSampleFor = (skin: string, vid: string, voiceIdx?: number) => {
     setSampleError(null)
+    ph('sample_played', { skin, voiceId: vid, subject: subjectSlug })
     if (voiceIdx != null) setActiveVoice(voiceIdx)
     // Never let two audios play at once: pause the native preview player before
     // starting a Howler sample.
@@ -233,6 +263,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
     }).catch(() => {})
     // Meta Pixel: preview-email captured = a Lead.
     fbEvent('Lead', { content_name: 'builder-preview' })
+    ph('lead_submitted', { source: 'builder-preview' })
   }
 
   // Draft fields, with optional overrides so live preview switching never reads
@@ -310,7 +341,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
   }
 
   // ── Builder submit ─────────────────────────────────────────────────────────
-  const openBuilder = () => { setOverlayOpen(true); setBuilderStep(1); setPreview(null); setLeadDone(false); setLeadEmail(''); setLeadError(false); setCheckoutSecret(null) }
+  const openBuilder = () => { ph('builder_opened', { source: 'cta' }); setOverlayOpen(true); setBuilderStep(1); setPreview(null); setLeadDone(false); setLeadEmail(''); setLeadError(false); setCheckoutSecret(null) }
   // Fetch a client_secret and mount Embedded Checkout in the modal — no redirect.
   const startCheckout = async () => {
     if (checkoutLoading) return
@@ -322,6 +353,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
       if (data.clientSecret) {
         setCheckoutSecret(data.clientSecret)
         fbEvent('InitiateCheckout', { value: 9.99, currency: 'USD' })
+        ph('checkout_started', { subject: subjectSlug, skin: skinSlug })
       }
       else setCheckoutError(data.error || "We couldn't start checkout. Please try again.")
     } catch {
@@ -332,7 +364,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
   }
 
   // ── FAQ items ──────────────────────────────────────────────────────────────
-  const faqs = [1,2,3,4,5].map(n => ({
+  const faqs = [1,2,3,4,5,6,7,8].map(n => ({
     q: t(`faq.${n}.q`),
     a: t(`faq.${n}.a`),
   }))
@@ -459,8 +491,8 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
               setName={setChildName} setAge={setAgeBand} setWorld={setSkinSlug} setSubject={setSubjectSlug} setVoiceId={setVoiceId}
               skins={SKINS} ageBands={AGE_BANDS} voices={voices} paths={paths}
               playSample={playSample} sampleLoading={sampleLoading} playingVoiceIdx={playingVoiceIdx}
-              paused={overlayOpen}
-              onBuild={() => { setOverlayOpen(true); setLeadDone(false); setLeadEmail(''); setLeadError(false); setCheckoutSecret(null); generatePreview() }}
+              paused={overlayOpen || subjectPinned}
+              onBuild={() => { ph('builder_opened', { source: 'studio' }); setOverlayOpen(true); setLeadDone(false); setLeadEmail(''); setLeadError(false); setCheckoutSecret(null); generatePreview() }}
             />
           </div>
         </section>
@@ -468,7 +500,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
         {/* ─────────────── PROOF BAR — honest product facts (no fabricated press) ─────────────── */}
         <div style={{ background:'#16123a', color:'#cfc3ea', padding:'20px 0' }}>
           <div style={{ maxWidth:'1140px', margin:'0 auto', padding:'0 24px', display:'flex', alignItems:'center', justifyContent:'center', gap:'12px 30px', flexWrap:'wrap' }}>
-            {['7 skill paths','35 leveled stories','6 worlds','4 calm voices','100% screen-free','Expert-reviewed'].map(name => (
+            {['Written by humans, reviewed by teachers','One skill per story — 35 leveled stories','COPPA-safe · no ads, no tracking','100% screen-free'].map(name => (
               <span key={name} style={{ fontFamily:'var(--font-fraunces)', fontWeight:600, fontSize:'15px', opacity:.85 }}>{name}</span>
             ))}
           </div>
@@ -615,6 +647,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
               <button onClick={openBuilder} style={{ padding:'15px 24px', background:'linear-gradient(135deg,#FFD27A,#E0852A)', color:'#3a230a', fontWeight:700, border:'none', borderRadius:'15px', cursor:'pointer', fontSize:'15px' }}>
                 {t('sample.cta')}
               </button>
+              <p style={{ fontSize:'13px', color:'#8a7a5c', marginTop:'12px' }}>✓ {t('hero.trust.rating')} · {t('hero.trust.families')} · {t('hero.trust.card')}</p>
             </div>
             <div>
               <blockquote style={{ background:'#fff', border:'1px solid #ece0c8', borderRadius:'18px', padding:'26px', fontSize:'18px', lineHeight:1.7, fontFamily:'var(--font-fraunces)', boxShadow:'0 10px 30px -14px rgba(8,4,28,.35)', margin:0 }}>

@@ -118,10 +118,15 @@ export default function StoryStudio(p: Props) {
   // subject the user just picked in the builder every 4.5s.
   useEffect(() => {
     if (locked || p.paused) return
-    const id = setInterval(() => {
-      p.setSubject(prev => ORDER[(ORDER.indexOf(prev) + 1) % ORDER.length]!)
-    }, 4500)
-    return () => clearInterval(id)
+    // Hold the first impression stable for 8s before the showcase starts
+    // rotating — a moving fold reads as noise in the first seconds.
+    let id: ReturnType<typeof setInterval> | undefined
+    const t0 = setTimeout(() => {
+      id = setInterval(() => {
+        p.setSubject(prev => ORDER[(ORDER.indexOf(prev) + 1) % ORDER.length]!)
+      }, 4500)
+    }, 8000)
+    return () => { clearTimeout(t0); if (id) clearInterval(id) }
   }, [locked, p.paused]) // eslint-disable-line react-hooks/exhaustive-deps
 
   const lock = () => setLocked(true)
@@ -186,7 +191,7 @@ export default function StoryStudio(p: Props) {
         <div style={{ height: 150, background: wt.grad, position: 'relative', transition: 'background .5s cubic-bezier(.16,1,.30,1)' }}>
           <NightScene worldEmoji={world.emoji} />
           <span style={{ position: 'absolute', top: 10, left: 10, fontSize: 10.5, fontWeight: 700, color: '#fff', background: 'rgba(0,0,0,.28)', borderRadius: 99, padding: '4px 9px', maxWidth: 'calc(100% - 106px)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }} aria-live="polite">
-            {skill.name}{locked ? ' · your pick' : ' · rotates through all 7'}
+            {skill.name}{locked || p.paused ? ' · your pick' : ' · rotates through all 7'}
           </span>
           <span style={{ position: 'absolute', top: 10, right: 10, fontSize: 10, fontWeight: 700, color: '#fff', background: 'rgba(0,0,0,.28)', borderRadius: 99, padding: '4px 9px' }}>ⓘ Live preview</span>
         </div>
