@@ -27,6 +27,8 @@ const ph = (event: string, props?: Record<string, unknown>) => {
   if (typeof window !== 'undefined' && window.__posthog_initialised) posthog.capture(event, props)
 }
 import StoryStudio                       from './StoryStudio'
+import WorldGallery                      from './WorldGallery'
+import { StepVignette, LevelTrail }      from './Vignettes'
 import { playUrl, stopCurrent, subscribe as subscribePlayer, getState as getPlayerState } from '@/lib/howlerPlayer'
 
 // ─── Types ───────────────────────────────────────────────────────────────────
@@ -91,6 +93,26 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
   const [faqOpen,     setFaqOpen]         = useState<number | null>(null)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
+  // Gentle re-engagement: if the visitor reads deep into the page without ever
+  // playing a sample or opening the builder, offer the 20-second sample once.
+  // Desktop only (mobile has the sticky CTA) and dismissed for the session.
+  const engagedRef = useRef(false)
+  const [nudge, setNudge] = useState(false)
+  useEffect(() => {
+    try { if (sessionStorage.getItem('lumi-nudge')) return } catch { /* private mode */ }
+    const onScroll = () => {
+      const d = document.documentElement
+      if (window.scrollY > (d.scrollHeight - window.innerHeight) * 0.55 && !engagedRef.current) {
+        setNudge(true)
+        ph('nudge_shown')
+        window.removeEventListener('scroll', onScroll)
+      }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+  const dismissNudge = () => { setNudge(false); try { sessionStorage.setItem('lumi-nudge', '1') } catch { /* noop */ } }
+
   // Scent-match paid traffic: when the ad that brought the visitor named a skill
   // (?skill=money or a utm_content/utm_term containing one), open the Story
   // Studio on that skill and pin the showcase — the auto-rotation must never
@@ -142,6 +164,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
   // blocked. The uncached path still warms+plays as a desktop fallback.
   const playSampleFor = (skin: string, vid: string, voiceIdx?: number) => {
     setSampleError(null)
+    engagedRef.current = true
     ph('sample_played', { skin, voiceId: vid, subject: subjectSlug })
     if (voiceIdx != null) setActiveVoice(voiceIdx)
     const idx = voiceIdx ?? voices.findIndex(v => v.id === vid)
@@ -351,7 +374,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
   }
 
   // ── Builder submit ─────────────────────────────────────────────────────────
-  const openBuilder = () => { ph('builder_opened', { source: 'cta' }); setOverlayOpen(true); setBuilderStep(1); setPreview(null); setLeadDone(false); setLeadEmail(''); setLeadError(false); setCheckoutSecret(null) }
+  const openBuilder = () => { engagedRef.current = true; ph('builder_opened', { source: 'cta' }); setOverlayOpen(true); setBuilderStep(1); setPreview(null); setLeadDone(false); setLeadEmail(''); setLeadError(false); setCheckoutSecret(null) }
   // Fetch a client_secret and mount Embedded Checkout in the modal — no redirect.
   const startCheckout = async () => {
     if (checkoutLoading) return
@@ -502,7 +525,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
               skins={SKINS} ageBands={AGE_BANDS} voices={voices} paths={paths}
               playSample={playSample} sampleLoading={sampleLoading} playingVoiceIdx={playingVoiceIdx}
               paused={overlayOpen || subjectPinned}
-              onBuild={() => { ph('builder_opened', { source: 'studio' }); setOverlayOpen(true); setLeadDone(false); setLeadEmail(''); setLeadError(false); setCheckoutSecret(null); generatePreview() }}
+              onBuild={() => { engagedRef.current = true; ph('builder_opened', { source: 'studio' }); setOverlayOpen(true); setLeadDone(false); setLeadEmail(''); setLeadError(false); setCheckoutSecret(null); generatePreview() }}
             />
           </div>
         </section>
@@ -525,9 +548,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
             <div className="grid grid-cols-1 md:grid-cols-3" style={{ gap:'22px' }}>
               {[1,2,3].map(n => (
                 <div key={n} style={{ background:'#fff', border:'1px solid #ece0c8', borderRadius:'20px', padding:'26px', boxShadow:'0 10px 30px -14px rgba(8,4,28,.35)' }}>
-                  <div style={{ width:'54px', height:'54px', background:'#fff7ea', borderRadius:'15px', display:'grid', placeItems:'center', fontSize:'26px', marginBottom:'16px' }}>
-                    {['👶','▶️','📬'][n-1]}
-                  </div>
+                  <StepVignette n={n as 1 | 2 | 3} />
                   <h3 style={{ fontFamily:'var(--font-fraunces)', fontSize:'20px', marginBottom:'8px' }}>{n}. {t(`how.step${n}.title`)}</h3>
                   <p style={{ fontSize:'14.5px', color:'#4a4063', lineHeight:1.5 }}>{t(`how.step${n}.desc`)}</p>
                 </div>
@@ -535,6 +556,10 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
             </div>
           </div>
         </section>
+
+        {/* ─────────────── WORLD GALLERY — pick their world, visually ─────────────── */}
+        <WorldGallery skins={SKINS} t={t}
+          onPick={slug => { setSkinSlug(slug); ph('world_card_clicked', { world: slug }); openBuilder() }} />
 
         {/* ─────────────── CURRICULUM ─────────────── */}
         <section id="curriculum" aria-labelledby="curriculum-heading" style={{ padding:'80px 0', background:'linear-gradient(170deg,#241a52,#3a2470)', color:'#fff' }}>
@@ -559,9 +584,11 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
             <div className="grid grid-cols-1 md:grid-cols-2" style={{ gap:'40px', alignItems:'start' }}>
               {/* Level-by-level breakdown */}
               <div>
-                <h3 style={{ fontFamily:'var(--font-fraunces)', fontSize:'18px', marginBottom:'18px', color:'rgba(255,255,255,.7)', fontWeight:500 }}>
+                <h3 style={{ fontFamily:'var(--font-fraunces)', fontSize:'18px', marginBottom:'10px', color:'rgba(255,255,255,.7)', fontWeight:500 }}>
                   {ap.emoji} {ap.name} — {activeLevels.length} levels
                 </h3>
+                <LevelTrail active={expandedLevel} onPick={n => setExpandedLevel(expandedLevel === n ? null : n)} />
+                <p style={{ fontSize:'12.5px', color:'rgba(255,255,255,.55)', margin:'4px 0 16px' }}>{t('curriculum.trail')}</p>
                 <div style={{ display:'flex', flexDirection:'column', gap:'10px' }}>
                     {activeLevels.map((lv, i) => (
                       <div key={lv.ordinal}>
@@ -605,12 +632,15 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                 <p style={{ fontSize:'15px', color:'#d9cdec', lineHeight:1.65, marginBottom:'14px' }}>
                   {ap.why}
                 </p>
-                <p style={{ fontSize:'15px', color:'#d9cdec', lineHeight:1.65, marginBottom:'22px' }}>
-                  Each level teaches one concept, then a later level quietly calls it back — not as revision, but woven naturally into a new adventure. Spaced repetition without flashcards.
-                </p>
-                <a href="/curriculum" style={{ display:'inline-block', padding:'12px 20px', background:'rgba(255,255,255,.1)', color:'#fff', borderRadius:'12px', textDecoration:'none', fontWeight:700, fontSize:'14px', border:'1px solid rgba(255,255,255,.2)' }}>
-                  Full curriculum detail →
-                </a>
+                <div style={{ display:'flex', gap:'12px', flexWrap:'wrap', alignItems:'center' }}>
+                  <button onClick={() => { setSubjectSlug(activePath); ph('path_cta_clicked', { path: activePath }); openBuilder() }}
+                    style={{ padding:'13px 22px', background:'linear-gradient(135deg,#FFD27A,#E0852A)', color:'#3a230a', fontWeight:700, border:'none', borderRadius:'13px', cursor:'pointer', fontSize:'14px', boxShadow:'0 12px 26px -10px rgba(244,169,60,.6)' }}>
+                    {t('curriculum.startpath', { name: ap.name })}
+                  </button>
+                  <a href="/curriculum" style={{ display:'inline-block', padding:'12px 20px', background:'rgba(255,255,255,.1)', color:'#fff', borderRadius:'12px', textDecoration:'none', fontWeight:700, fontSize:'14px', border:'1px solid rgba(255,255,255,.2)' }}>
+                    Full curriculum detail →
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -648,6 +678,11 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
               ))}
             </div>
             <p style={{ fontSize:'13.5px', color:'#4a4063', margin:'14px auto' }}>{t('voices.now')} <strong>{voices[activeVoice]?.name}</strong></p>
+            {/* Carry the voice they just chose straight into the builder */}
+            <button onClick={() => { const v = voices[activeVoice]; if (v) setVoiceId(v.id); ph('voice_cta_clicked', { voice: voices[activeVoice]?.id }); openBuilder() }}
+              style={{ padding:'13px 24px', background:'linear-gradient(135deg,#FFD27A,#E0852A)', color:'#3a230a', fontWeight:700, border:'none', borderRadius:'13px', cursor:'pointer', fontSize:'14px', boxShadow:'0 12px 26px -10px rgba(244,169,60,.6)' }}>
+              {t('voices.build', { name: voices[activeVoice]?.name ?? 'Willow' })}
+            </button>
             {/* Your own voice teaser */}
             <div style={{ maxWidth:'520px', margin:'20px auto 0', background:'#fff', border:'1.5px dashed #EB8A8A', borderRadius:'17px', padding:'20px', textAlign:'center' }}>
               <span style={{ display:'inline-block', fontSize:'10.5px', letterSpacing:'1px', textTransform:'uppercase', fontWeight:800, color:'#fff', background:'#EB8A8A', padding:'3px 10px', borderRadius:'99px', marginBottom:'9px' }}>{t('voices.own.badge')}</span>
@@ -828,6 +863,21 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
           </div>
         </div>
       </footer>
+
+      {/* ─────────────── SCROLL NUDGE — deep readers who haven't listened or built yet (desktop) ─────────────── */}
+      {nudge && !overlayOpen && (
+        <div className="hidden md:flex" style={{ position:'fixed', right:'22px', bottom:'22px', zIndex:140, gap:'13px', alignItems:'flex-start', background:'#211a3a', border:'1px solid rgba(255,210,122,.45)', borderRadius:'18px', padding:'15px 16px', boxShadow:'0 18px 44px -14px rgba(8,4,28,.85)', maxWidth:'330px' }}>
+          <span style={{ fontSize:'22px' }}>🌙</span>
+          <div style={{ flex:1 }}>
+            <div style={{ color:'#fff', fontWeight:700, fontSize:'13.5px', lineHeight:1.4 }}>{t('nudge.text')}</div>
+            <button onClick={() => { dismissNudge(); ph('nudge_play'); playSample(activeVoice) }}
+              style={{ marginTop:'9px', padding:'9px 15px', borderRadius:'10px', border:'none', cursor:'pointer', fontWeight:800, fontSize:'12.5px', background:'linear-gradient(135deg,#FFD27A,#E0852A)', color:'#3a230a' }}>
+              {t('nudge.play')}
+            </button>
+          </div>
+          <button onClick={dismissNudge} aria-label="Dismiss" style={{ background:'none', border:'none', color:'rgba(255,255,255,.6)', cursor:'pointer', fontSize:'15px', padding:0 }}>✕</button>
+        </div>
+      )}
 
       {/* ─────────────── MOBILE STICKY CTA — only on mobile, hidden while the builder is open ─────────────── */}
       {!overlayOpen && (
