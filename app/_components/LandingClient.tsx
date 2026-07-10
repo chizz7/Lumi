@@ -118,6 +118,11 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
   const sampleCache    = useRef<Record<string, string>>({})  // combo -> signed url
   const [sampleLoading, setSampleLoading] = useState<number | null>(null)
   const [sampleError,   setSampleError]   = useState<string | null>(null)
+  // The sample the user ASKED to play, recorded at tap time. Button state is
+  // driven by this + the live player state — never reverse-derived from the
+  // sample cache, whose keys shift under a playing sample as the showcase
+  // rotates subjects (that made the Stop button vanish mid-play).
+  const [activeSample, setActiveSample] = useState<{ url: string; voiceIdx: number } | null>(null)
 
   const sampleKey = (skin: string, vid: string) => `${subjectSlug}|${skin}|${vid}`
 
@@ -139,21 +144,24 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
     setSampleError(null)
     ph('sample_played', { skin, voiceId: vid, subject: subjectSlug })
     if (voiceIdx != null) setActiveVoice(voiceIdx)
+    const idx = voiceIdx ?? voices.findIndex(v => v.id === vid)
     // Never let two audios play at once: pause the native preview player before
     // starting a Howler sample.
     previewAudioRef.current?.pause()
     const cached = sampleCache.current[sampleKey(skin, vid)]
     if (cached) {
-      // Tap-to-stop: if this exact sample is already playing, stop it instead of
-      // restarting — gives the samples a working pause/stop control.
+      // Tap-to-stop: if this exact sample is already playing (or still loading),
+      // stop it instead of restarting — a persistent, working stop control.
       const s = getPlayerState()
-      if (s.url === cached && s.playing) { stopCurrent(); return }
-      playUrl(cached); return                         // synchronous → iOS-safe
+      if (s.url === cached && (s.playing || s.loading)) { stopCurrent(); setActiveSample(null); return }
+      setActiveSample({ url: cached, voiceIdx: idx })  // Stop shows instantly, before load completes
+      playUrl(cached); return                          // synchronous → iOS-safe
     }
     if (voiceIdx != null) setSampleLoading(voiceIdx)
     warmSample(vid, skin)
       .then(url => {
         if (!url) { setSampleError('Sample is still preparing — tap again in a moment.'); return }
+        setActiveSample({ url, voiceIdx: idx })
         playUrl(url)
       })
       .catch(() => setSampleError('Could not load the sample — please try again.'))
@@ -167,11 +175,13 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
   }
 
   // Live player state so sample buttons can show a pause/stop affordance and
-  // highlight which voice is currently playing (index for the current world).
+  // highlight which voice is currently playing. The stop control persists from
+  // the tap (loading included) until the user stops it or the audio ends.
   const player = useSyncExternalStore(subscribePlayer, getPlayerState, getPlayerState)
-  const playingVoiceIdx = player.playing
-    ? voices.findIndex(v => sampleCache.current[sampleKey(skinSlug, v.id)] === player.url)
-    : -1
+  const playingVoiceIdx =
+    activeSample && player.url === activeSample.url && (player.playing || player.loading)
+      ? activeSample.voiceIdx
+      : -1
 
   // Pre-warm EVERY voice sample for the current world so any voice tap hits the
   // synchronous (iOS-safe) play path. The active voice warms first.
