@@ -12,12 +12,12 @@ const strings: Record<string, string> = {
   'hero.eyebrow':  'Screen-free bedtime, made for them',
   'hero.title':    'Screen-free bedtime stories that quietly raise a kinder, more capable kid.',
   'hero.title.em': 'kinder, more capable kid',
-  'hero.sub':      'A story made for your child — their name, their world, a voice you choose — arrives every few days and teaches one real-life skill at a time: kindness, focus, confidence, resilience and more. No screens, no prep. First story free.',
+  'hero.sub':      'Their name, their world, a calm voice you choose — a new adventure every few days that teaches one real-life skill at a time. First story free.',
   'hero.cta.primary':   'Build their free story →',
   'hero.cta.secondary': 'Hear a sample',
-  'hero.trust.rating':  'Cancel anytime',
-  'hero.trust.families':'New story every few days',
-  'hero.trust.card':    'No card needed',
+  'hero.trust.rating':  'First story free',
+  'hero.trust.families':'No card needed',
+  'hero.trust.card':    'Cancel anytime',
 
   // Proof bar
   'proof.label':   'Featured in',
@@ -59,6 +59,10 @@ const strings: Record<string, string> = {
   // Testimonials
   'testimonials.kicker': 'Why parents trust it',
   'testimonials.title':  'Made carefully, on purpose.',
+  'founder.note': "Lumi is new — so instead of borrowed praise, here's our promise: every story is written by a person, checked against a teacher-built curriculum, and ends calm. Try the first one free, and judge it the only way that matters — by your child's face.",
+  'founder.sig':  '— The Lumi team',
+  'midcta.title': "Tonight's story is free — build it in 60 seconds.",
+  'midcta.chips': '✓ No account · ✓ No card · ✓ Their name in the title',
 
   // Pricing
   'pricing.kicker':       'Simple pricing',
@@ -96,11 +100,17 @@ const strings: Record<string, string> = {
   'faq.2.q': 'Is the AI making up stories about my child?',
   'faq.2.a': "No. Stories are written and expert-reviewed in advance. Personalization only adds your child's name, chosen world, and a recurring character — never the lesson.",
   'faq.3.q': 'What ages is this for?',
-  'faq.3.a': 'Leveled by age band (roughly 3–8). You pick the band; we match the language and difficulty.',
+  'faq.3.a': 'Leveled by age band (roughly 3–11). You pick the band; we match the language and difficulty.',
   'faq.4.q': 'Can I really use my own voice?',
   'faq.4.a': 'Yes — after you create an account and give consent, you can record your voice for narration.',
   'faq.5.q': 'What about my data?',
   'faq.5.a': 'We collect interest tags, not identity. You can export or delete everything in one tap.',
+  'faq.6.q': 'What does it cost — and can I really cancel?',
+  'faq.6.a': 'Your first story is free, no card needed. The Story Club is $9.99/month for a new story every other day, and you can cancel in one tap from your account — no calls, no hoops.',
+  'faq.7.q': "What if my child doesn't like a story?",
+  'faq.7.a': "Tap “report” on any story and it's on us — an automatic credit, no questions asked.",
+  'faq.8.q': 'How is this different from an audiobook?',
+  'faq.8.a': "Audiobooks entertain; Lumi is a leveled curriculum. Each story teaches exactly one skill, and later stories quietly call it back — spaced repetition without flashcards. And it stars your child.",
 
   // Final CTA
   'final.title': "Tonight's story is happening anyway.",

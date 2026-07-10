@@ -91,21 +91,28 @@ export async function POST(req: NextRequest) {
     // ── 4. Payment succeeded — a real charge cleared ─────────────────────────
     case 'invoice.payment_succeeded': {
       const invoice = event.data.object as Stripe.Invoice
-      if (invoice.billing_reason === 'subscription_cycle') {
-        track('subscription_renewed', { customerId: invoice.customer as string }, undefined)
+      const customerId = invoice.customer as string
+
+      // Validate this customer exists in Lumi before processing any events.
+      // (Someone with Stripe API access could create subscriptions directly,
+      // so we only process invoices for known accounts.)
+      const { data: account } = await adminClient
+        .from('accounts').select('id').eq('stripe_customer_id', customerId).maybeSingle()
+
+      if (!account) {
+        console.warn(`[webhook] payment_succeeded for unknown customer: ${customerId}`)
+        return
       }
+
+      if (invoice.billing_reason === 'subscription_cycle') {
+        track('subscription_renewed', { customerId }, account.id)
+      }
+
       // Only a NON-zero charge counts as a real payment (the trial-start invoice
       // is $0). This is the moment a pending referral becomes a paid referral.
       if ((invoice.amount_paid ?? 0) > 0) {
-        const customerId = invoice.customer as string
-        const { data: account } = await adminClient
-          .from('accounts').select('id').eq('stripe_customer_id', customerId).maybeSingle()
-        // Non-fatal: a referral-credit hiccup must not 5xx a real payment event.
-        // The row stays 'pending' and settles on the next cycle or from admin.
-        if (account) {
-          try { await creditReferralOnPayment(account.id) }
-          catch (err) { console.error('[webhook] referral credit failed (non-fatal):', (err as Error).message) }
-        }
+        try { await creditReferralOnPayment(account.id) }
+        catch (err) { console.error('[webhook] referral credit failed (non-fatal):', (err as Error).message) }
       }
       break
     }

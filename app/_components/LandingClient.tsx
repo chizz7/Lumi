@@ -20,6 +20,12 @@ import { getAllLevels }                  from '@/content'
 import { SUBJECT_META, WORLD_META, AGE_BANDS } from '@/content/meta'
 import { interestForWorld }              from '@/content/interests'
 import { fbEvent }                       from '@/lib/fpixel'
+import posthog                           from 'posthog-js'
+
+// Client-side funnel event — no-ops when PostHog isn't initialised (dev/no key).
+const ph = (event: string, props?: Record<string, unknown>) => {
+  if (typeof window !== 'undefined' && window.__posthog_initialised) posthog.capture(event, props)
+}
 import StoryStudio                       from './StoryStudio'
 import { playUrl, stopCurrent, subscribe as subscribePlayer, getState as getPlayerState } from '@/lib/howlerPlayer'
 
@@ -85,10 +91,38 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
   const [faqOpen,     setFaqOpen]         = useState<number | null>(null)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
+  // Scent-match paid traffic: when the ad that brought the visitor named a skill
+  // (?skill=money or a utm_content/utm_term containing one), open the Story
+  // Studio on that skill and pin the showcase — the auto-rotation must never
+  // contradict the promise of the ad they just clicked.
+  const [subjectPinned, setSubjectPinned] = useState(false)
+  useEffect(() => {
+    const q   = new URLSearchParams(window.location.search)
+    const hay = `${q.get('skill') ?? ''} ${q.get('utm_content') ?? ''} ${q.get('utm_term') ?? ''}`.toLowerCase()
+    if (!hay.trim()) return
+    const ALIASES: Record<string, string> = {
+      money: 'money', save: 'money', skill: 'money',
+      focus: 'focus', kind: 'kindness', empath: 'kindness',
+      resilien: 'resilience', confiden: 'confidence', brave: 'confidence',
+      problem: 'problem', puzzle: 'problem', speak: 'voice', voice: 'voice',
+    }
+    const hit = Object.keys(ALIASES).find(k => hay.includes(k))
+    if (hit) {
+      setSubjectSlug(ALIASES[hit]!)
+      setActivePath(ALIASES[hit]!)
+      setSubjectPinned(true)
+    }
+  }, [])
+
   // ── Audio sampler (hero + voice switcher) ───────────────────────────────────
   const sampleCache    = useRef<Record<string, string>>({})  // combo -> signed url
   const [sampleLoading, setSampleLoading] = useState<number | null>(null)
   const [sampleError,   setSampleError]   = useState<string | null>(null)
+  // The sample the user ASKED to play, recorded at tap time. Button state is
+  // driven by this + the live player state — never reverse-derived from the
+  // sample cache, whose keys shift under a playing sample as the showcase
+  // rotates subjects (that made the Stop button vanish mid-play).
+  const [activeSample, setActiveSample] = useState<{ url: string; voiceIdx: number } | null>(null)
 
   const sampleKey = (skin: string, vid: string) => `${subjectSlug}|${skin}|${vid}`
 
@@ -108,22 +142,26 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
   // blocked. The uncached path still warms+plays as a desktop fallback.
   const playSampleFor = (skin: string, vid: string, voiceIdx?: number) => {
     setSampleError(null)
+    ph('sample_played', { skin, voiceId: vid, subject: subjectSlug })
     if (voiceIdx != null) setActiveVoice(voiceIdx)
+    const idx = voiceIdx ?? voices.findIndex(v => v.id === vid)
     // Never let two audios play at once: pause the native preview player before
     // starting a Howler sample.
     previewAudioRef.current?.pause()
     const cached = sampleCache.current[sampleKey(skin, vid)]
     if (cached) {
-      // Tap-to-stop: if this exact sample is already playing, stop it instead of
-      // restarting — gives the samples a working pause/stop control.
+      // Tap-to-stop: if this exact sample is already playing (or still loading),
+      // stop it instead of restarting — a persistent, working stop control.
       const s = getPlayerState()
-      if (s.url === cached && s.playing) { stopCurrent(); return }
-      playUrl(cached); return                         // synchronous → iOS-safe
+      if (s.url === cached && (s.playing || s.loading)) { stopCurrent(); setActiveSample(null); return }
+      setActiveSample({ url: cached, voiceIdx: idx })  // Stop shows instantly, before load completes
+      playUrl(cached); return                          // synchronous → iOS-safe
     }
     if (voiceIdx != null) setSampleLoading(voiceIdx)
     warmSample(vid, skin)
       .then(url => {
         if (!url) { setSampleError('Sample is still preparing — tap again in a moment.'); return }
+        setActiveSample({ url, voiceIdx: idx })
         playUrl(url)
       })
       .catch(() => setSampleError('Could not load the sample — please try again.'))
@@ -137,11 +175,13 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
   }
 
   // Live player state so sample buttons can show a pause/stop affordance and
-  // highlight which voice is currently playing (index for the current world).
+  // highlight which voice is currently playing. The stop control persists from
+  // the tap (loading included) until the user stops it or the audio ends.
   const player = useSyncExternalStore(subscribePlayer, getPlayerState, getPlayerState)
-  const playingVoiceIdx = player.playing
-    ? voices.findIndex(v => sampleCache.current[sampleKey(skinSlug, v.id)] === player.url)
-    : -1
+  const playingVoiceIdx =
+    activeSample && player.url === activeSample.url && (player.playing || player.loading)
+      ? activeSample.voiceIdx
+      : -1
 
   // Pre-warm EVERY voice sample for the current world so any voice tap hits the
   // synchronous (iOS-safe) play path. The active voice warms first.
@@ -233,6 +273,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
     }).catch(() => {})
     // Meta Pixel: preview-email captured = a Lead.
     fbEvent('Lead', { content_name: 'builder-preview' })
+    ph('lead_submitted', { source: 'builder-preview' })
   }
 
   // Draft fields, with optional overrides so live preview switching never reads
@@ -310,7 +351,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
   }
 
   // ── Builder submit ─────────────────────────────────────────────────────────
-  const openBuilder = () => { setOverlayOpen(true); setBuilderStep(1); setPreview(null); setLeadDone(false); setLeadEmail(''); setLeadError(false); setCheckoutSecret(null) }
+  const openBuilder = () => { ph('builder_opened', { source: 'cta' }); setOverlayOpen(true); setBuilderStep(1); setPreview(null); setLeadDone(false); setLeadEmail(''); setLeadError(false); setCheckoutSecret(null) }
   // Fetch a client_secret and mount Embedded Checkout in the modal — no redirect.
   const startCheckout = async () => {
     if (checkoutLoading) return
@@ -322,6 +363,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
       if (data.clientSecret) {
         setCheckoutSecret(data.clientSecret)
         fbEvent('InitiateCheckout', { value: 9.99, currency: 'USD' })
+        ph('checkout_started', { subject: subjectSlug, skin: skinSlug })
       }
       else setCheckoutError(data.error || "We couldn't start checkout. Please try again.")
     } catch {
@@ -332,7 +374,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
   }
 
   // ── FAQ items ──────────────────────────────────────────────────────────────
-  const faqs = [1,2,3,4,5].map(n => ({
+  const faqs = [1,2,3,4,5,6,7,8].map(n => ({
     q: t(`faq.${n}.q`),
     a: t(`faq.${n}.a`),
   }))
@@ -459,8 +501,8 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
               setName={setChildName} setAge={setAgeBand} setWorld={setSkinSlug} setSubject={setSubjectSlug} setVoiceId={setVoiceId}
               skins={SKINS} ageBands={AGE_BANDS} voices={voices} paths={paths}
               playSample={playSample} sampleLoading={sampleLoading} playingVoiceIdx={playingVoiceIdx}
-              paused={overlayOpen}
-              onBuild={() => { setOverlayOpen(true); setLeadDone(false); setLeadEmail(''); setLeadError(false); setCheckoutSecret(null); generatePreview() }}
+              paused={overlayOpen || subjectPinned}
+              onBuild={() => { ph('builder_opened', { source: 'studio' }); setOverlayOpen(true); setLeadDone(false); setLeadEmail(''); setLeadError(false); setCheckoutSecret(null); generatePreview() }}
             />
           </div>
         </section>
@@ -468,7 +510,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
         {/* ─────────────── PROOF BAR — honest product facts (no fabricated press) ─────────────── */}
         <div style={{ background:'#16123a', color:'#cfc3ea', padding:'20px 0' }}>
           <div style={{ maxWidth:'1140px', margin:'0 auto', padding:'0 24px', display:'flex', alignItems:'center', justifyContent:'center', gap:'12px 30px', flexWrap:'wrap' }}>
-            {['7 skill paths','35 leveled stories','6 worlds','4 calm voices','100% screen-free','Expert-reviewed'].map(name => (
+            {['Written by humans, reviewed by teachers','One skill per story — 35 leveled stories','COPPA-safe · no ads, no tracking','100% screen-free'].map(name => (
               <span key={name} style={{ fontFamily:'var(--font-fraunces)', fontWeight:600, fontSize:'15px', opacity:.85 }}>{name}</span>
             ))}
           </div>
@@ -574,6 +616,19 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
           </div>
         </section>
 
+        {/* ─────────────── MID-PAGE CTA — catch readers who just saw the curriculum ─────────────── */}
+        <section aria-label="Try it free" style={{ background:'linear-gradient(135deg,#FFD27A,#E0852A)', padding:'34px 0' }}>
+          <div style={{ maxWidth:'1140px', margin:'0 auto', padding:'0 24px', display:'flex', alignItems:'center', justifyContent:'space-between', gap:'18px 28px', flexWrap:'wrap' }}>
+            <div>
+              <div style={{ fontFamily:'var(--font-fraunces)', fontSize:'clamp(20px,2.4vw,26px)', color:'#3a230a', fontWeight:600 }}>{t('midcta.title')}</div>
+              <div style={{ fontSize:'14px', color:'#5c3a10', marginTop:'5px', fontWeight:600 }}>{t('midcta.chips')}</div>
+            </div>
+            <button onClick={openBuilder} style={{ padding:'15px 26px', background:'#211a3a', color:'#FFD27A', fontWeight:800, border:'none', borderRadius:'14px', cursor:'pointer', fontSize:'15px', boxShadow:'0 14px 30px -12px rgba(33,26,58,.55)', flexShrink:0 }}>
+              {t('hero.cta.primary')}
+            </button>
+          </div>
+        </section>
+
         {/* ─────────────── VOICES ─────────────── */}
         <section id="voices" aria-labelledby="voices-heading" style={{ padding:'80px 0', background:'#FBF4E6' }}>
           <div style={{ maxWidth:'1140px', margin:'0 auto', padding:'0 24px', textAlign:'center' }}>
@@ -615,6 +670,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
               <button onClick={openBuilder} style={{ padding:'15px 24px', background:'linear-gradient(135deg,#FFD27A,#E0852A)', color:'#3a230a', fontWeight:700, border:'none', borderRadius:'15px', cursor:'pointer', fontSize:'15px' }}>
                 {t('sample.cta')}
               </button>
+              <p style={{ fontSize:'13px', color:'#8a7a5c', marginTop:'12px' }}>✓ {t('hero.trust.rating')} · {t('hero.trust.families')} · {t('hero.trust.card')}</p>
             </div>
             <div>
               <blockquote style={{ background:'#fff', border:'1px solid #ece0c8', borderRadius:'18px', padding:'26px', fontSize:'18px', lineHeight:1.7, fontFamily:'var(--font-fraunces)', boxShadow:'0 10px 30px -14px rgba(8,4,28,.35)', margin:0 }}>
@@ -641,6 +697,14 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                 </div>
               ))}
             </div>
+            {/* Honest founder note — Lumi is new; say so and let the product carry the proof.
+                Replace with real attributable parent quotes as they arrive. */}
+            <div style={{ maxWidth:'680px', margin:'30px auto 0', background:'#fff7ea', border:'1.5px solid #f1ddb6', borderRadius:'20px', padding:'26px 30px', textAlign:'left' }}>
+              <p style={{ fontFamily:'var(--font-fraunces)', fontStyle:'italic', fontSize:'16.5px', lineHeight:1.75, color:'#211a3a', margin:0 }}>
+                &ldquo;{t('founder.note')}&rdquo;
+              </p>
+              <p style={{ fontSize:'13.5px', color:'#8a6a1f', marginTop:'12px', fontWeight:700 }}>{t('founder.sig')} 🌙</p>
+            </div>
           </div>
         </section>
 
@@ -648,7 +712,11 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
         <section id="pricing" aria-labelledby="pricing-heading" style={{ padding:'80px 0', background:'#F4E9D4' }}>
           <div style={{ maxWidth:'1140px', margin:'0 auto', padding:'0 24px', textAlign:'center' }}>
             <p style={{ fontSize:'12.5px', letterSpacing:'1.8px', textTransform:'uppercase', color:'#E0852A', fontWeight:800 }}>{t('pricing.kicker')}</p>
-            <h2 id="pricing-heading" style={{ fontFamily:'var(--font-fraunces)', fontSize:'clamp(26px,3vw,36px)', marginBottom:'40px' }}>{t('pricing.title')}</h2>
+            <h2 id="pricing-heading" style={{ fontFamily:'var(--font-fraunces)', fontSize:'clamp(26px,3vw,36px)', marginBottom:'16px' }}>{t('pricing.title')}</h2>
+            {/* Risk reversal, unmissable — was fine print below the grid */}
+            <div style={{ display:'inline-flex', gap:'10px', alignItems:'center', background:'#fff', border:'1.5px solid #F4A93C', borderRadius:'99px', padding:'10px 22px', marginBottom:'32px', boxShadow:'0 10px 24px -12px rgba(224,133,42,.5)' }}>
+              <span style={{ fontSize:'14px', fontWeight:700, color:'#5c3a10' }}>{t('pricing.guarantee')}</span>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-2" style={{ gap:'24px', maxWidth:'760px', margin:'0 auto 22px' }}>
               {/* Free */}
               <div style={{ background:'#fff', border:'1px solid #ece0c8', borderRadius:'20px', padding:'32px', textAlign:'center' }}>
@@ -675,7 +743,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                 </button>
               </div>
             </div>
-            <p style={{ fontSize:'14px', color:'#4a4063', lineHeight:1.6 }}>{t('pricing.guarantee')}<br/>{t('pricing.value')}</p>
+            <p style={{ fontSize:'14px', color:'#4a4063', lineHeight:1.6 }}>{t('pricing.value')}</p>
           </div>
         </section>
 
@@ -725,6 +793,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
             <button onClick={openBuilder} style={{ padding:'16px 32px', background:'linear-gradient(135deg,#FFD27A,#E0852A)', color:'#3a230a', fontWeight:700, border:'none', borderRadius:'16px', cursor:'pointer', fontSize:'16px', boxShadow:'0 14px 32px -12px rgba(244,169,60,.8)' }}>
               {t('final.cta')}
             </button>
+            <p style={{ fontSize:'13.5px', color:'#cfc3ea', marginTop:'16px' }}>✓ {t('hero.trust.rating')} · {t('hero.trust.families')} · {t('hero.trust.card')}</p>
           </div>
         </section>
 
@@ -766,6 +835,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
           <button onClick={openBuilder} style={{ width:'100%', padding:'15px', background:'linear-gradient(135deg,#FFD27A,#E0852A)', color:'#3a230a', fontWeight:700, border:'none', borderRadius:'14px', cursor:'pointer', fontSize:'15px' }}>
             {t('hero.cta.primary')}
           </button>
+          <div style={{ textAlign:'center', fontSize:'11.5px', color:'#cfc3ea', marginTop:'7px' }}>✓ {t('hero.trust.rating')} · {t('hero.trust.families')}</div>
         </div>
       )}
 

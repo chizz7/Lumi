@@ -21,15 +21,16 @@ const WORLD: Record<string, { place: string; hero: string; grad: string }> = {
   dino:   { place: 'green fern valley',  hero: 'gentle dino',           grad: 'linear-gradient(150deg,#9a7b3c,#5e4520)' },
   jungle: { place: 'deep green jungle',  hero: 'small tiger cub',       grad: 'linear-gradient(150deg,#3a8f7e,#1f5e52)' },
 }
-const CLAUSE: Record<string, { action: string; title: string; hint: string }> = {
-  money:      { action: 'found three shiny coins in the sand',       title: 'and the Three Coins', hint: 'save & value coins' },
-  focus:      { action: 'had one important thing to finish',          title: 'Stays on Track',      hint: 'finish what matters' },
-  resilience: { action: 'was trying something new — and finding it hard', title: 'Tries Again',     hint: "keep going when it's hard" },
-  kindness:   { action: 'noticed someone who quietly needed help',     title: 'Lends a Hand',        hint: 'notice & help others' },
-  problem:    { action: 'found a puzzle no one else could crack',      title: 'Figures It Out',      hint: 'figure things out' },
-  confidence: { action: 'felt small before a very big moment',         title: 'Finds Their Voice',   hint: 'find their voice' },
+const CLAUSE: Record<string, { action: string; title: string; hint: string; hear: string }> = {
+  money:      { action: 'found three shiny coins in the sand',       title: 'and the Three Coins', hint: 'save & value coins',        hear: 'a treasure adventure' },
+  focus:      { action: 'had one important thing to finish',          title: 'Stays on Track',      hint: 'finish what matters',       hear: 'a big mission to finish' },
+  resilience: { action: 'was trying something new — and finding it hard', title: 'Tries Again',     hint: "keep going when it's hard", hear: 'a tricky new challenge' },
+  kindness:   { action: 'noticed someone who quietly needed help',     title: 'Lends a Hand',        hint: 'notice & help others',      hear: 'a friend who needs help' },
+  problem:    { action: 'found a puzzle no one else could crack',      title: 'Figures It Out',      hint: 'figure things out',         hear: 'a puzzle to crack' },
+  confidence: { action: 'felt small before a very big moment',         title: 'Finds Their Voice',   hint: 'find their voice',          hear: 'one very big moment' },
+  voice:      { action: 'had something important to say — and a wobbly voice to say it', title: 'Speaks Up', hint: 'say what matters, kindly', hear: 'a moment to be heard' },
 }
-const ORDER = ['kindness', 'resilience', 'focus', 'confidence', 'problem', 'money']
+const ORDER = ['kindness', 'resilience', 'focus', 'confidence', 'problem', 'money', 'voice']
 
 type Props = {
   name: string; ageBand: string; skinSlug: string; subjectSlug: string; voiceId: string
@@ -48,6 +49,65 @@ type Props = {
 
 const AMBER = '#F4A93C'
 
+// The banner scene: a child tucked in bed with a glowing storybook, dreaming of
+// their chosen world (its emoji floats in the dream bubble). Drawn as flat
+// silhouettes so it sits on any world gradient behind it.
+function NightScene({ worldEmoji }: { worldEmoji: string }) {
+  const INK = '#140e33'
+  return (
+    <svg viewBox="0 0 520 150" preserveAspectRatio="xMidYMax slice"
+      style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }} aria-hidden="true">
+      <defs>
+        <radialGradient id="ss-glow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%"  stopColor="#FFD98A" stopOpacity=".55" />
+          <stop offset="45%" stopColor="#F4A93C" stopOpacity=".16" />
+          <stop offset="100%" stopColor="#F4A93C" stopOpacity="0" />
+        </radialGradient>
+        <radialGradient id="ss-book" cx="50%" cy="30%" r="75%">
+          <stop offset="0%" stopColor="#FFF6E0" /><stop offset="100%" stopColor="#FFCE7A" />
+        </radialGradient>
+        <mask id="ss-moon"><rect width="100%" height="100%" fill="#fff" /><circle cx="452" cy="26" r="19" fill="#000" /></mask>
+      </defs>
+      {/* sky */}
+      <circle cx="60" cy="38" r="2" fill="#fff" opacity=".75" />
+      <circle cx="120" cy="58" r="1.5" fill="#fff" opacity=".5" />
+      <circle cx="228" cy="30" r="2" fill="#fff" opacity=".6" />
+      <circle cx="415" cy="72" r="1.8" fill="#fff" opacity=".55" />
+      <circle cx="490" cy="82" r="1.5" fill="#fff" opacity=".5" />
+      <circle cx="460" cy="33" r="20" fill="#FBF4E6" opacity=".95" mask="url(#ss-moon)" />
+      {/* dream bubble — the world they picked */}
+      <circle cx="330" cy="52" r="30" fill="rgba(255,255,255,.13)" stroke="rgba(255,255,255,.32)" strokeWidth="1.5" />
+      <circle cx="296" cy="86" r="7" fill="rgba(255,255,255,.13)" stroke="rgba(255,255,255,.28)" strokeWidth="1" />
+      <circle cx="280" cy="99" r="4" fill="rgba(255,255,255,.12)" />
+      <text x="330" y="63" textAnchor="middle" fontSize="30">{worldEmoji}</text>
+      {/* warm glow from the book */}
+      <ellipse cx="180" cy="112" rx="135" ry="54" fill="url(#ss-glow)" />
+      {/* silhouettes */}
+      <g fill={INK}>
+        <rect x="30" y="118" width="322" height="44" rx="12" />
+        <rect x="34" y="78" width="26" height="48" rx="8" />
+        <ellipse cx="92" cy="116" rx="34" ry="12" />
+        <path d="M112 150 C108 108 118 96 136 95 C152 94 162 106 160 128 L158 150 Z" />
+        <circle cx="140" cy="82" r="17" />
+        <path d="M126 70 q14 -12 28 -2 q-7 -3 -14 -2 q-8 1 -14 4 z" />
+        <path d="M156 108 C172 112 180 118 188 124 L182 134 C174 128 162 122 154 120 Z" />
+        <path d="M168 150 C200 122 260 122 300 138 C316 144 322 150 322 150 Z" />
+        <g transform="translate(272 122)">
+          <circle cx="0" cy="0" r="12" /><circle cx="-9" cy="-9" r="5" /><circle cx="9" cy="-9" r="5" />
+          <ellipse cx="0" cy="12" rx="10" ry="9" />
+        </g>
+      </g>
+      {/* the glowing open book */}
+      <g transform="translate(196 122) rotate(-6)">
+        <ellipse cx="0" cy="3" rx="36" ry="14" fill="#FFCE7A" opacity=".35" />
+        <path d="M0 -13 L36 -6 L36 14 L0 9 Z" fill="url(#ss-book)" />
+        <path d="M0 -13 L-36 -6 L-36 14 L0 9 Z" fill="url(#ss-book)" opacity=".95" />
+        <path d="M0 -13 L0 9" stroke="#E0852A" strokeWidth="1.5" opacity=".5" />
+      </g>
+    </svg>
+  )
+}
+
 export default function StoryStudio(p: Props) {
   const [open, setOpen]     = useState<'details' | 'world' | 'voice' | 'skill'>('details')
   const [locked, setLocked] = useState(false)
@@ -58,10 +118,15 @@ export default function StoryStudio(p: Props) {
   // subject the user just picked in the builder every 4.5s.
   useEffect(() => {
     if (locked || p.paused) return
-    const id = setInterval(() => {
-      p.setSubject(prev => ORDER[(ORDER.indexOf(prev) + 1) % ORDER.length]!)
-    }, 4500)
-    return () => clearInterval(id)
+    // Hold the first impression stable for 8s before the showcase starts
+    // rotating — a moving fold reads as noise in the first seconds.
+    let id: ReturnType<typeof setInterval> | undefined
+    const t0 = setTimeout(() => {
+      id = setInterval(() => {
+        p.setSubject(prev => ORDER[(ORDER.indexOf(prev) + 1) % ORDER.length]!)
+      }, 4500)
+    }, 8000)
+    return () => { clearTimeout(t0); if (id) clearInterval(id) }
   }, [locked, p.paused]) // eslint-disable-line react-hooks/exhaustive-deps
 
   const lock = () => setLocked(true)
@@ -123,12 +188,12 @@ export default function StoryStudio(p: Props) {
 
       {/* live preview */}
       <div style={{ margin: '12px 16px 0', borderRadius: 18, overflow: 'hidden', border: '1px solid #f0e6d2', boxShadow: '0 14px 34px -16px rgba(120,80,20,.4)' }}>
-        <div style={{ height: 132, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 52, background: wt.grad, position: 'relative', transition: 'background .5s cubic-bezier(.16,1,.30,1)' }}>
+        <div style={{ height: 150, background: wt.grad, position: 'relative', transition: 'background .5s cubic-bezier(.16,1,.30,1)' }}>
+          <NightScene worldEmoji={world.emoji} />
           <span style={{ position: 'absolute', top: 10, left: 10, fontSize: 10.5, fontWeight: 700, color: '#fff', background: 'rgba(0,0,0,.28)', borderRadius: 99, padding: '4px 9px', maxWidth: 'calc(100% - 106px)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }} aria-live="polite">
-            {skill.name}{locked ? ' · your pick' : ' · rotates through all 7'}
+            {skill.name}{locked || p.paused ? ' · your pick' : ' · rotates through all 7'}
           </span>
           <span style={{ position: 'absolute', top: 10, right: 10, fontSize: 10, fontWeight: 700, color: '#fff', background: 'rgba(0,0,0,.28)', borderRadius: 99, padding: '4px 9px' }}>ⓘ Live preview</span>
-          {world.emoji}
         </div>
         <div style={{ background: '#fff', padding: '14px 17px 15px' }}>
           <div key={`${p.skinSlug}-${p.subjectSlug}-${p.voiceId}`} className="sds-fadein">
@@ -136,6 +201,11 @@ export default function StoryStudio(p: Props) {
             <div style={{ fontFamily: 'var(--font-fraunces)', fontSize: 18, marginBottom: 7 }}>{nmTitle} {cl.title}</div>
             <div style={{ fontFamily: 'var(--font-fraunces)', fontStyle: 'italic', fontSize: 13.5, lineHeight: 1.65, color: '#4a4063', borderTop: '1px solid #f0e7d6', paddingTop: 10 }}>
               &ldquo;In the {wt.place}, a {wt.hero} named <mark key={nm} className="sds-pop" style={{ background: 'rgba(244,169,60,.24)', color: '#9c5a12', fontStyle: 'normal', fontWeight: 700, borderRadius: 4, padding: '0 4px' }}>{nm}</mark> {cl.action}…&rdquo;
+            </div>
+            {/* The dual promise, made concrete: joy for them, a lesson for you. */}
+            <div style={{ display: 'flex', gap: '6px 16px', flexWrap: 'wrap', marginTop: 10, fontSize: 12, color: '#4a4063' }}>
+              <span>👂 <b style={{ color: '#211a3a' }}>They hear:</b> {cl.hear}</span>
+              <span>🌱 <b style={{ color: '#211a3a' }}>They learn:</b> {cl.hint}</span>
             </div>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: 12 }}>
