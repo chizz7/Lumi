@@ -63,6 +63,16 @@ const strings: Record<string, string> = {
   'founder.sig':  '— The Lumi team',
   'midcta.title': "Tonight's story is free — build it in 60 seconds.",
   'midcta.chips': '✓ No account · ✓ No card · ✓ Their name in the title',
+  'worlds.kicker': 'Their world',
+  'worlds.title':  'Adventures set where they already live.',
+  'worlds.sub':    'The same lesson is written for all six worlds — pick the one that makes your kid lean in.',
+  'worlds.loves':  'for kids who love',
+  'worlds.cta':    'Build in this world →',
+  'curriculum.trail': 'Each level teaches one concept — later levels quietly call it back. Tap a stop to peek.',
+  'curriculum.startpath': 'Start {{name}} free →',
+  'voices.build':  'Build their story with {{name}} →',
+  'nudge.text':    "Still deciding? Hear 20 seconds of tonight's story.",
+  'nudge.play':    '▶ Play a sample',
 
   // Pricing
   'pricing.kicker':       'Simple pricing',
