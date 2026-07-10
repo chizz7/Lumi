@@ -59,6 +59,10 @@ const strings: Record<string, string> = {
   // Testimonials
   'testimonials.kicker': 'Why parents trust it',
   'testimonials.title':  'Made carefully, on purpose.',
+  'founder.note': "Lumi is new — so instead of borrowed praise, here's our promise: every story is written by a person, checked against a teacher-built curriculum, and ends calm. Try the first one free, and judge it the only way that matters — by your child's face.",
+  'founder.sig':  '— The Lumi team',
+  'midcta.title': "Tonight's story is free — build it in 60 seconds.",
+  'midcta.chips': '✓ No account · ✓ No card · ✓ Their name in the title',
 
   // Pricing
   'pricing.kicker':       'Simple pricing',

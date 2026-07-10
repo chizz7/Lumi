@@ -616,6 +616,19 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
           </div>
         </section>
 
+        {/* ─────────────── MID-PAGE CTA — catch readers who just saw the curriculum ─────────────── */}
+        <section aria-label="Try it free" style={{ background:'linear-gradient(135deg,#FFD27A,#E0852A)', padding:'34px 0' }}>
+          <div style={{ maxWidth:'1140px', margin:'0 auto', padding:'0 24px', display:'flex', alignItems:'center', justifyContent:'space-between', gap:'18px 28px', flexWrap:'wrap' }}>
+            <div>
+              <div style={{ fontFamily:'var(--font-fraunces)', fontSize:'clamp(20px,2.4vw,26px)', color:'#3a230a', fontWeight:600 }}>{t('midcta.title')}</div>
+              <div style={{ fontSize:'14px', color:'#5c3a10', marginTop:'5px', fontWeight:600 }}>{t('midcta.chips')}</div>
+            </div>
+            <button onClick={openBuilder} style={{ padding:'15px 26px', background:'#211a3a', color:'#FFD27A', fontWeight:800, border:'none', borderRadius:'14px', cursor:'pointer', fontSize:'15px', boxShadow:'0 14px 30px -12px rgba(33,26,58,.55)', flexShrink:0 }}>
+              {t('hero.cta.primary')}
+            </button>
+          </div>
+        </section>
+
         {/* ─────────────── VOICES ─────────────── */}
         <section id="voices" aria-labelledby="voices-heading" style={{ padding:'80px 0', background:'#FBF4E6' }}>
           <div style={{ maxWidth:'1140px', margin:'0 auto', padding:'0 24px', textAlign:'center' }}>
@@ -684,6 +697,14 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                 </div>
               ))}
             </div>
+            {/* Honest founder note — Lumi is new; say so and let the product carry the proof.
+                Replace with real attributable parent quotes as they arrive. */}
+            <div style={{ maxWidth:'680px', margin:'30px auto 0', background:'#fff7ea', border:'1.5px solid #f1ddb6', borderRadius:'20px', padding:'26px 30px', textAlign:'left' }}>
+              <p style={{ fontFamily:'var(--font-fraunces)', fontStyle:'italic', fontSize:'16.5px', lineHeight:1.75, color:'#211a3a', margin:0 }}>
+                &ldquo;{t('founder.note')}&rdquo;
+              </p>
+              <p style={{ fontSize:'13.5px', color:'#8a6a1f', marginTop:'12px', fontWeight:700 }}>{t('founder.sig')} 🌙</p>
+            </div>
           </div>
         </section>
 
@@ -691,7 +712,11 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
         <section id="pricing" aria-labelledby="pricing-heading" style={{ padding:'80px 0', background:'#F4E9D4' }}>
           <div style={{ maxWidth:'1140px', margin:'0 auto', padding:'0 24px', textAlign:'center' }}>
             <p style={{ fontSize:'12.5px', letterSpacing:'1.8px', textTransform:'uppercase', color:'#E0852A', fontWeight:800 }}>{t('pricing.kicker')}</p>
-            <h2 id="pricing-heading" style={{ fontFamily:'var(--font-fraunces)', fontSize:'clamp(26px,3vw,36px)', marginBottom:'40px' }}>{t('pricing.title')}</h2>
+            <h2 id="pricing-heading" style={{ fontFamily:'var(--font-fraunces)', fontSize:'clamp(26px,3vw,36px)', marginBottom:'16px' }}>{t('pricing.title')}</h2>
+            {/* Risk reversal, unmissable — was fine print below the grid */}
+            <div style={{ display:'inline-flex', gap:'10px', alignItems:'center', background:'#fff', border:'1.5px solid #F4A93C', borderRadius:'99px', padding:'10px 22px', marginBottom:'32px', boxShadow:'0 10px 24px -12px rgba(224,133,42,.5)' }}>
+              <span style={{ fontSize:'14px', fontWeight:700, color:'#5c3a10' }}>{t('pricing.guarantee')}</span>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-2" style={{ gap:'24px', maxWidth:'760px', margin:'0 auto 22px' }}>
               {/* Free */}
               <div style={{ background:'#fff', border:'1px solid #ece0c8', borderRadius:'20px', padding:'32px', textAlign:'center' }}>
@@ -718,7 +743,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
                 </button>
               </div>
             </div>
-            <p style={{ fontSize:'14px', color:'#4a4063', lineHeight:1.6 }}>{t('pricing.guarantee')}<br/>{t('pricing.value')}</p>
+            <p style={{ fontSize:'14px', color:'#4a4063', lineHeight:1.6 }}>{t('pricing.value')}</p>
           </div>
         </section>
 
@@ -768,6 +793,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
             <button onClick={openBuilder} style={{ padding:'16px 32px', background:'linear-gradient(135deg,#FFD27A,#E0852A)', color:'#3a230a', fontWeight:700, border:'none', borderRadius:'16px', cursor:'pointer', fontSize:'16px', boxShadow:'0 14px 32px -12px rgba(244,169,60,.8)' }}>
               {t('final.cta')}
             </button>
+            <p style={{ fontSize:'13.5px', color:'#cfc3ea', marginTop:'16px' }}>✓ {t('hero.trust.rating')} · {t('hero.trust.families')} · {t('hero.trust.card')}</p>
           </div>
         </section>
 
@@ -809,6 +835,7 @@ export default function LandingClient({ lang, strings, voices, showLangBanner, l
           <button onClick={openBuilder} style={{ width:'100%', padding:'15px', background:'linear-gradient(135deg,#FFD27A,#E0852A)', color:'#3a230a', fontWeight:700, border:'none', borderRadius:'14px', cursor:'pointer', fontSize:'15px' }}>
             {t('hero.cta.primary')}
           </button>
+          <div style={{ textAlign:'center', fontSize:'11.5px', color:'#cfc3ea', marginTop:'7px' }}>✓ {t('hero.trust.rating')} · {t('hero.trust.families')}</div>
         </div>
       )}
 
