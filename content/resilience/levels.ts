@@ -9,1391 +9,1163 @@ import type { Level } from '@/content/types'
 export const LEVELS: Level[] = [
   {
     ordinal: 1,
-    title: "It’s Okay to Find It Hard",
+    title: "The Wobble Marks",
     concept: "Hard things are meant to feel hard at first",
     callback: null,
     ageFloor: 3,
-    summary: "A small hero tries something new, finds it difficult, and decides they must just be bad at it. Their companion shares a gentle secret: hard things are supposed to feel hard at the start — that feeling is a sign of learning, not a sign to stop.",
-    teachingNote: "Before a child can persist, they need permission to struggle — naming \"hard is normal\" removes the shame that makes them quit.",
+    summary: "Tonight is the moon parade, and the hero wants to do their very first roll under the old stone arch — the arch every grown-up touches as they pass, though nobody ever says why. After a string of funny flops, the hero finally looks at the arch up close and finds the stone crowded with tiny wobble marks: every smooth roller crashed here first. Hard at the start was never a warning — it is how every beginning feels.",
+    teachingNote: "Before a child can persist, they need permission to struggle — discovering that everyone's beginning was wobbly removes the shame that makes them quit.",
     learningBeat: "It is okay to find it hard",
     ageVariants: {
       '3-4': {
-        audioTemplate: `The {hero} wanted to learn something new. In {setting}, a line of smooth stones crossed a little stream. The {hero} wanted to hop from stone to stone, all the way across.
+        audioTemplate: `Tonight was the moon parade in {setting}. Everyone would roll under the old stone arch, one happy roll each. The {hero} wanted to roll too.
 
-The {hero} looked at the first stone. Hop. Wobble, wobble. Slip! One little foot splashed in the water. The {hero} tried again. Hop. Wobble. Slip! Both feet got wet this time.
+And the arch was odd. Every big one touched it as they passed. One little touch. Nobody said why.
 
-The {hero} sat down on the bank. "I cannot do this," said the {hero}. "I keep slipping. I must be bad at hopping. I think I should just stop."
+The {hero} practised. One, two, three, roll! Flump. The {hero} landed in a heap.
 
-Soft footsteps came close. It was {companion_name}, carrying a small, glowing {object_motif}.
+Try again. Roll! Flump. Upside down this time.
 
-"Little one, why so sad?" they asked gently.
+"Rolling is too hard," said the {hero}. "I will hide instead."
 
-"Hopping is too hard," said the {hero}. "Everyone else can do it. I only fall. I want to quit."
+{companion_name} came close, carrying the {object_motif}. "Hmm," they said. "Have you ever looked at the arch up close?"
 
-{companion_name} sat down beside the {hero}. "It is okay to find it hard," they said. "Listen closely. Hard things are supposed to feel hard at the start. That wobbly, tricky feeling is not a bad sign. It is the feeling of learning. It means you are growing, not that you should stop."
+The {hero} looked. Lean close. Can you see them too? Tiny dents. Hundreds of tiny dents.
 
-The {hero} looked up. "The hard feeling means I am learning?"
+"Wobble marks!" said the {hero}. "Every big one wobbled here when they were small. So... it is okay to find it hard! Hard is how it starts."
 
-"Yes," said {companion_name}. "Every good hopper wobbled first. Even me. Would you try one more time? Slow and gentle. I will stay right here."
+The {hero} rolled again. Wobbly, but round! And again. Rounder!
 
-The {hero} took a deep breath. The {hero} looked at the first stone and hopped. Steady. The {hero} looked at the next stone and hopped again. Steady! One more. Hop. The {hero} did not slip.
+At the parade, the {hero} rolled right under the arch, and touched it. One new little dent.
 
-"I did it!" said the {hero}. "It was still a little hard. But I crossed!"
+"{refrain}," said {companion_name} softly.
 
-{companion_name} held up the {object_motif}, and it glowed warm and bright. "You did," they said. "And it is okay that it felt hard. That is just how new things feel at the beginning. You were brave. You kept going."
+The moon came up slow and round. The {hero} yawned.
 
-The {hero} smiled a big, sleepy smile. Above {setting}, the first stars blinked awake. The {hero} felt proud and calm and warm.
-
-Hard things can feel hard. That is okay. That is how we learn and grow.
+The new dent would still be there tomorrow. With room beside it.
 
 {refrain}.`,
-        scriptTemplate: `{child_name} wanted to learn something new. In {setting}, a line of smooth stones crossed a little stream. {child_name} wanted to hop from stone to stone, all the way across.
+        scriptTemplate: `Tonight was the moon parade in {setting}. Everyone would roll under the old stone arch, one happy roll each. {child_name} the {hero} wanted to roll too.
 
-{child_name} looked at the first stone. Hop. Wobble, wobble. Slip! One little foot splashed in the water. {child_name} tried again. Hop. Wobble. Slip! Both feet got wet this time.
+And the arch was odd. Every big one touched it as they passed. One little touch. Nobody said why.
 
-{child_name} sat down on the bank. "I cannot do this," said {child_name}. "I keep slipping. I must be bad at hopping. I think I should just stop."
+{child_name} practised. One, two, three, roll! Flump. {child_name} landed in a heap.
 
-Soft footsteps came close. It was {companion_name}, carrying a small, glowing {object_motif}.
+Try again. Roll! Flump. Upside down this time.
 
-"Little one, why so sad?" they asked gently.
+"Rolling is too hard," said {child_name}. "I will hide instead."
 
-"Hopping is too hard," said {child_name}. "Everyone else can do it. I only fall. I want to quit."
+{companion_name} came close, carrying the {object_motif}. "Hmm," they said. "Have you ever looked at the arch up close?"
 
-{companion_name} sat down beside {child_name}. "It is okay to find it hard," they said. "Listen closely. Hard things are supposed to feel hard at the start. That wobbly, tricky feeling is not a bad sign. It is the feeling of learning. It means you are growing, not that you should stop."
+{child_name} looked. Lean close. Can you see them too? Tiny dents. Hundreds of tiny dents.
 
-{child_name} looked up. "The hard feeling means I am learning?"
+"Wobble marks!" said {child_name}. "Every big one wobbled here when they were small. So... it is okay to find it hard! Hard is how it starts."
 
-"Yes," said {companion_name}. "Every good hopper wobbled first. Even me. Would you try one more time? Slow and gentle. I will stay right here."
+{child_name} rolled again. Wobbly, but round! And again. Rounder!
 
-{child_name} took a deep breath. {child_name} looked at the first stone and hopped. Steady. {child_name} looked at the next stone and hopped again. Steady! One more. Hop. {child_name} did not slip.
+At the parade, {child_name} rolled right under the arch, and touched it. One new little dent.
 
-"I did it!" said {child_name}. "It was still a little hard. But I crossed!"
+"{refrain}," said {companion_name} softly.
 
-{companion_name} held up the {object_motif}, and it glowed warm and bright. "You did," they said. "And it is okay that it felt hard. That is just how new things feel at the beginning. You were brave. You kept going."
+The moon came up slow and round. {child_name} yawned.
 
-{child_name} smiled a big, sleepy smile. Above {setting}, the first stars blinked awake. {child_name} felt proud and calm and warm.
-
-Hard things can feel hard. That is okay. That is how we learn and grow.
+The new dent would still be there tomorrow. With room beside it.
 
 {refrain}.`,
       },
       '5-6': {
-        audioTemplate: `The {hero} had watched the others do it a hundred times. In {setting}, a path of smooth stepping stones crossed the wide stream, and everyone seemed to skip across without a thought. Today, the {hero} decided, was the day to learn.
+        audioTemplate: `Tonight was the moon parade, and all through {setting} everyone was practising their moon-roll. One roll each, right under the old stone arch — that was how the parade always began. More than anything, the {hero} wanted to roll under the arch tonight too.
 
-The {hero} stood at the water's edge and looked at the first stone. It seemed close enough. The {hero} hopped — and wobbled — and slipped, landing with a cold splash. The {hero} climbed out, shivered, and tried again. Hop. Wobble. Splash. A third time. Hop. Slip. Splash.
+And the arch had one odd secret. Every grown one touched it as they passed underneath. One small touch, quick as a blink. Nobody ever said why.
 
-By now the {hero} was wet and tired and cross. "I cannot do this," the {hero} said, sitting down hard on the bank. "The others make it look easy. I only fall in. I must be bad at this. I am going to stop and never try again."
+The {hero} found a quiet spot to practise. Ready — roll! The world spun the wrong way, and the {hero} landed flat, flump, like a dropped pancake.
 
-A gentle voice spoke from nearby. "That sounds like a big feeling." It was {companion_name}, holding a small {object_motif} that caught the light.
+Again. Flump. This time the {hero} ended up facing backwards, blinking at nothing.
 
-"It is too hard," said the {hero}. "I keep getting it wrong. If I were any good, it would be easy by now."
+A third try barely got started before it fell over sideways.
 
-{companion_name} sat down beside the {hero} and thought for a moment. "May I tell you something true?" they asked. "It is okay to find it hard. In fact, hard things are supposed to feel hard when you are just beginning. That difficult, wobbly feeling you have right now? That is not a sign that you are bad at it. That is the feeling of your body and your mind learning something new."
+The {hero} sat down with hot cheeks. "The big ones roll like water. I flop like laundry. I must be the only one who finds it this hard. Maybe I will just watch."
 
-The {hero} frowned. "But it feels like I am failing."
+{companion_name} wandered over, carrying the {object_motif}. They did not say try again. They only said, "Hmm. Before you hide — have you looked at the arch up close?"
 
-"I know it does," said {companion_name} kindly. "But learning and failing can feel almost the same at the start. The difference is what you do next. If the hard feeling makes you stop, the learning stops too. If you let the hard feeling stay, and try once more, the learning keeps going."
+Up close, the arch was not smooth at all. Lean close. Can you see them too? Tiny dents. Hundreds of tiny dents, low down, just where a learner might tip against the stone.
 
-{companion_name} turned the {object_motif} over slowly. "Watch the first stone, not all of them. Small steps. You do not have to cross the whole stream at once."
+"Wobble marks," breathed the {hero}. "Every big one wobbled here. They crashed and flopped, just where I crash and flop. That is why they touch the arch — hello to their old wobbles!" The {hero} stood up slowly. "So it is okay to find it hard. It was hard for every single one of them. Hard at the start is how rolling works."
 
-The {hero} took a slow breath. This time, the {hero} looked only at the first stone. Hop. The {hero} stood there, arms out, wobbling — but not slipping. Then the {hero} looked at the second stone. Hop. Steady. The third. Hop.
+So the {hero} stopped trying to be smooth. One proud, wobbly, laughing roll — halfway round. Another, a little further. And the third came out whole, bumpy and beautiful, all the way around.
 
-The {hero} was standing in the middle of the stream, halfway across, and had not fallen once.
+That night the {hero} rolled under the arch with everyone, and touched the stone on the way through. One new little dent among the hundreds.
 
-"Keep going," said {companion_name} softly. "One stone at a time."
+"{refrain}," said {companion_name}, in a voice like remembering.
 
-Hop. Hop. Hop. And then the {hero} was standing on the far bank, dry and amazed.
+The parade wound home under the moon. Lights went out, one by one, across {setting}. The {hero}'s legs were tired in the best way.
 
-"I crossed!" the {hero} called out. "It was still hard. My legs were shaking the whole way. But I did it!"
-
-{companion_name} smiled and held up the glowing {object_motif}. "You did. And notice — it did not stop being hard. You just stopped letting the hard part scare you away. That is the secret nobody tells you. Hard is not the enemy. Quitting too soon is."
-
-The {hero} looked back at the line of stones, then at the water, then at {companion_name}. "So next time it feels hard, I do not have to stop?"
-
-"Next time it feels hard," said {companion_name}, "you can smile and think: this is just the feeling of learning. And you can take one more step."
-
-The stars were coming out over {setting}. The {hero} felt tired in a good way, the way you feel after something real. Warm, and proud, and ready to try again tomorrow.
+And near the top of the arch, higher than anyone could reach, was one very old dent. Whose was that? A question for tomorrow.
 
 {refrain}.`,
-        scriptTemplate: `{child_name} had watched the others do it a hundred times. In {setting}, a path of smooth stepping stones crossed the wide stream, and everyone seemed to skip across without a thought. Today, {child_name} decided, was the day to learn.
+        scriptTemplate: `Tonight was the moon parade, and all through {setting} everyone was practising their moon-roll. One roll each, right under the old stone arch — that was how the parade always began. More than anything, {child_name} the {hero} wanted to roll under the arch tonight too.
 
-{child_name} stood at the water's edge and looked at the first stone. It seemed close enough. {child_name} hopped — and wobbled — and slipped, landing with a cold splash. {child_name} climbed out, shivered, and tried again. Hop. Wobble. Splash. A third time. Hop. Slip. Splash.
+And the arch had one odd secret. Every grown one touched it as they passed underneath. One small touch, quick as a blink. Nobody ever said why.
 
-By now {child_name} was wet and tired and cross. "I cannot do this," {child_name} said, sitting down hard on the bank. "The others make it look easy. I only fall in. I must be bad at this. I am going to stop and never try again."
+{child_name} found a quiet spot to practise. Ready — roll! The world spun the wrong way, and {child_name} landed flat, flump, like a dropped pancake.
 
-A gentle voice spoke from nearby. "That sounds like a big feeling." It was {companion_name}, holding a small {object_motif} that caught the light.
+Again. Flump. This time {child_name} ended up facing backwards, blinking at nothing.
 
-"It is too hard," said {child_name}. "I keep getting it wrong. If I were any good, it would be easy by now."
+A third try barely got started before it fell over sideways.
 
-{companion_name} sat down beside {child_name} and thought for a moment. "May I tell you something true?" they asked. "It is okay to find it hard. In fact, hard things are supposed to feel hard when you are just beginning. That difficult, wobbly feeling you have right now? That is not a sign that you are bad at it. That is the feeling of your body and your mind learning something new."
+{child_name} sat down with hot cheeks. "The big ones roll like water. I flop like laundry. I must be the only one who finds it this hard. Maybe I will just watch."
 
-{child_name} frowned. "But it feels like I am failing."
+{companion_name} wandered over, carrying the {object_motif}. They did not say try again. They only said, "Hmm. Before you hide — have you looked at the arch up close?"
 
-"I know it does," said {companion_name} kindly. "But learning and failing can feel almost the same at the start. The difference is what you do next. If the hard feeling makes you stop, the learning stops too. If you let the hard feeling stay, and try once more, the learning keeps going."
+Up close, the arch was not smooth at all. Lean close. Can you see them too? Tiny dents. Hundreds of tiny dents, low down, just where a learner might tip against the stone.
 
-{companion_name} turned the {object_motif} over slowly. "Watch the first stone, not all of them. Small steps. You do not have to cross the whole stream at once."
+"Wobble marks," breathed {child_name}. "Every big one wobbled here. They crashed and flopped, just where I crash and flop. That is why they touch the arch — hello to their old wobbles!" {child_name} stood up slowly. "So it is okay to find it hard. It was hard for every single one of them. Hard at the start is how rolling works."
 
-{child_name} took a slow breath. This time, {child_name} looked only at the first stone. Hop. {child_name} stood there, arms out, wobbling — but not slipping. Then {child_name} looked at the second stone. Hop. Steady. The third. Hop.
+So {child_name} stopped trying to be smooth. One proud, wobbly, laughing roll — halfway round. Another, a little further. And the third came out whole, bumpy and beautiful, all the way around.
 
-{child_name} was standing in the middle of the stream, halfway across, and had not fallen once.
+That night {child_name} rolled under the arch with everyone, and touched the stone on the way through. One new little dent among the hundreds.
 
-"Keep going," said {companion_name} softly. "One stone at a time."
+"{refrain}," said {companion_name}, in a voice like remembering.
 
-Hop. Hop. Hop. And then {child_name} was standing on the far bank, dry and amazed.
+The parade wound home under the moon. Lights went out, one by one, across {setting}. {child_name}'s legs were tired in the best way.
 
-"I crossed!" {child_name} called out. "It was still hard. My legs were shaking the whole way. But I did it!"
-
-{companion_name} smiled and held up the glowing {object_motif}. "You did. And notice — it did not stop being hard. You just stopped letting the hard part scare you away. That is the secret nobody tells you. Hard is not the enemy. Quitting too soon is."
-
-{child_name} looked back at the line of stones, then at the water, then at {companion_name}. "So next time it feels hard, I do not have to stop?"
-
-"Next time it feels hard," said {companion_name}, "you can smile and think: this is just the feeling of learning. And you can take one more step."
-
-The stars were coming out over {setting}. {child_name} felt tired in a good way, the way you feel after something real. Warm, and proud, and ready to try again tomorrow.
+And near the top of the arch, higher than anyone could reach, was one very old dent. Whose was that? A question for tomorrow.
 
 {refrain}.`,
       },
       '7-8': {
-        audioTemplate: `Every evening, the older ones crossed the stream on the stepping stones without even looking down. In {setting}, the smooth grey stones marched in a curving line from one bank to the other, and to the {hero} they looked like magic. Tonight, the {hero} had decided, would be the night to learn to cross them alone.
+        audioTemplate: `The moon parade came once a season to {setting}, and it always began the same way: one by one, everyone rolled under the old stone arch — a single, joyful, head-over-heels roll — and the parade poured through behind them like a river let loose. Tonight was parade night. And tonight, for the first time, the {hero} meant to roll under the arch too.
 
-The {hero} stood at the edge of the water, heart thumping. The first stone was close. Easy, thought the {hero}. Just hop. So the {hero} hopped — and the moment both feet landed, the world tilted. Arms flew out, one foot skidded, and with a loud, cold splash the {hero} went straight into the stream.
+There was just one strange thing about that arch, a thing the {hero} had noticed long ago and never solved. Every grown one who passed beneath it reached out and touched the stone. One small touch, quick as a blink, always in the same low spot. Nobody announced it. Nobody explained it. They just touched the arch, smiled a private sort of smile, and rolled on.
 
-Spluttering, the {hero} climbed back onto the bank. "Fine," the {hero} muttered. "That was just practice." A second try. Splash. A third. Splash. A fourth try, and this time the {hero} nearly made it to the second stone before slipping sideways into the water.
+The {hero} found a quiet hollow to practise in, well away from watching eyes. Ready. Steady. Roll!
 
-The {hero} sat down on the muddy bank, soaked to the bone and blinking hard so the tears would not come. "I cannot do this," the {hero} whispered. "The others do it without even trying. I have fallen in four times. There is clearly something wrong with me. I am just bad at this, and I should stop before I fall in again."
+The sky and the ground traded places twice, disagreed about it, and dropped the {hero} flat. Flump.
 
-"Four times?" said a warm voice. "That is four times braver than someone who never tried at all."
+"Fine," said the {hero}, spitting out a leaf. "That was a practice one."
 
-The {hero} looked up. {companion_name} was standing on the bank, holding a small {object_motif} that glowed softly in the dusk.
+The second roll went sideways almost at once and ended with the {hero} facing the wrong direction entirely, blinking at a puzzled beetle. The third barely began before it sat down. The fourth was going beautifully right up until it was not.
 
-"It is not brave, it is embarrassing," said the {hero}, wiping a wet cheek. "Everyone else finds this easy. If I were any good, I would have crossed by now. It is too hard."
+The {hero} lay in the hollow and stared at the early stars. "The big ones roll like water poured from a jug," the {hero} said to nobody. "I roll like a dropped basket. Nobody else finds this hard — you can tell by how easily they do it. It must come to everyone but me. I will watch the parade from somewhere dark and comfortable, and clap politely, and that will be that."
 
-{companion_name} came and sat beside the {hero} on the damp grass. For a while they said nothing at all, just watched the water slide by. Then they spoke.
+"That does sound comfortable," said {companion_name}, who had arrived without a sound and settled down nearby with the {object_motif}. Then, after a while: "Hmm. Before you choose your dark comfortable spot — have you ever looked at the old arch up close? Really close?"
 
-"Can I tell you a secret that took me a long time to learn?" they asked. "It is okay to find it hard. Truly. Hard things are supposed to feel hard when you begin them. That difficult, shaky, I-want-to-give-up feeling you have right now — everyone feels it. The others you watched crossing so easily? They all felt exactly this when they started. You just did not see that part."
+The {hero} had walked under that arch a thousand times and never once looked at it. So, grumbling gently, the {hero} went and looked.
 
-"But it feels like failing," said the {hero}.
+Up close, the arch was not smooth at all. Lean in, close as a whisper. Can you see them too? Dents. Tiny dents, chips and scuffs and little crescent dings, hundreds upon hundreds of them, crowded low along the stone — exactly the height where a learner, mid-wobble, might tip over against it.
 
-"I know," said {companion_name} gently. "Here is the tricky thing. When you learn something new, failing and learning feel almost the same. Falling in the water is not proof that you are bad at crossing. It is proof that you are learning to cross. The wobble is the lesson. If you quit now, you would be quitting right in the middle of getting better."
+The {hero} touched one. Then another. Then a small crooked one, low down, worn shiny at the edges.
 
-The {hero} looked at the {object_motif} in {companion_name}'s hands. It was small and steady and calm.
+"That one is mine," said {companion_name}, sounding rather pleased about it.
 
-"When you crossed the first time," the {hero} asked, "did you fall in?"
+And the whole strange thing came open at once, like a door the {hero} had been leaning on the wrong way. "These are wobble marks," the {hero} said slowly. "Every single one of them learned here. They crashed where I crash. They flopped where I flop. That is what the touch means — every parade, they say hello to the wobbles that taught them." The {hero} laughed out loud at the size of it. "So it is okay to find it hard. It was hard for all of them. Hard at the start is not a warning. It is just the first page."
 
-{companion_name} laughed softly. "More times than you have. I stopped counting. And every single time, a voice in my head said, stop, you are no good at this. I am very glad I did not listen to it."
+The {hero} went back to the hollow, and this time did not try to roll like water. The {hero} rolled like a learner, wobbly and loud and laughing — halfway round. Again, three-quarters. Again. And the fifth roll of the night came around whole: bumpy, crooked, absolutely a roll.
 
-The {hero} was quiet for a moment. Then, slowly, the {hero} stood up. "Will you stay?" the {hero} asked. "While I try one more time?"
+When the parade gathered at moonrise, the {hero} was in it. The roll under the arch was not the smoothest one that night, and the {hero} touched the stone on the way through anyway — one small proud touch, adding one new little dent to the crowd of them.
 
-"I am not going anywhere," said {companion_name}. "But this time, do not look at the whole stream. Look at the first stone only. Just that one. Cross it in your mind before you cross it with your feet."
+"{refrain}," said {companion_name} from the archway, in a voice like remembering.
 
-The {hero} took a deep, shaky breath and looked — really looked — at the first stone. Not the whole crossing. Just the first step. Then the {hero} hopped. Arms out, knees soft, eyes down. Wobble. Wobble. Steady.
+The parade wound home the long way, under a moon as round as a perfect roll. Lanterns went out across {setting}, one by one. The {hero}'s legs ached in the best possible way.
 
-The {hero} was standing on the first stone, and had not fallen.
+One last thought floated past, right on the edge of sleep. Near the top of the arch, far higher than any learner could tip, there had been a single old dent, all alone. Who in the world wobbles at the top of an arch?
 
-"Now the next," said {companion_name} quietly. "One stone at a time."
-
-Hop. Steady. Hop. Steady. The {hero} moved slowly along the curving line, wobbling on every stone, catching balance every time. Halfway across, a foot slipped — but this time the {hero} bent low, spread both arms, and held on instead of tumbling in.
-
-"I nearly fell!" the {hero} called out.
-
-"But you did not," said {companion_name}. "You caught yourself. That is new too."
-
-Three more stones. Two. One. And then the {hero} stepped onto the far bank, still dripping from before, legs trembling, grinning so wide it almost hurt.
-
-"I crossed!" the {hero} shouted across the water. "It was so hard! My legs were shaking the whole way! But I did it, I really did it!"
-
-{companion_name} lifted the glowing {object_motif} in salute, and its warm light reached all the way across the stream. "You did. And listen closely, because this is the part that matters most. It did not get easy. You crossed while it was still hard. That is the real trick. Brave is not waiting until something feels easy. Brave is taking one more step while it still feels hard."
-
-The stars were bright now over {setting}. The {hero} looked back at the line of stones — the stones that had beaten the {hero} four times and then, at last, had not.
-
-"So the hard feeling," said the {hero} slowly, "was not telling me to stop."
-
-"No," said {companion_name}. "It was telling you that you were learning. It always is."
-
-And warm, and tired, and proud, the {hero} sat down on the far bank to rest.
+A question for tomorrow.
 
 {refrain}.`,
-        scriptTemplate: `Every evening, the older ones crossed the stream on the stepping stones without even looking down. In {setting}, the smooth grey stones marched in a curving line from one bank to the other, and to {child_name} they looked like magic. Tonight, {child_name} had decided, would be the night to learn to cross them alone.
+        scriptTemplate: `The moon parade came once a season to {setting}, and it always began the same way: one by one, everyone rolled under the old stone arch — a single, joyful, head-over-heels roll — and the parade poured through behind them like a river let loose. Tonight was parade night. And tonight, for the first time, {child_name} the {hero} meant to roll under the arch too.
 
-{child_name} stood at the edge of the water, heart thumping. The first stone was close. Easy, thought {child_name}. Just hop. So {child_name} hopped — and the moment both feet landed, the world tilted. Arms flew out, one foot skidded, and with a loud, cold splash {child_name} went straight into the stream.
+There was just one strange thing about that arch, a thing {child_name} had noticed long ago and never solved. Every grown one who passed beneath it reached out and touched the stone. One small touch, quick as a blink, always in the same low spot. Nobody announced it. Nobody explained it. They just touched the arch, smiled a private sort of smile, and rolled on.
 
-Spluttering, {child_name} climbed back onto the bank. "Fine," {child_name} muttered. "That was just practice." A second try. Splash. A third. Splash. A fourth try, and this time {child_name} nearly made it to the second stone before slipping sideways into the water.
+{child_name} found a quiet hollow to practise in, well away from watching eyes. Ready. Steady. Roll!
 
-{child_name} sat down on the muddy bank, soaked to the bone and blinking hard so the tears would not come. "I cannot do this," {child_name} whispered. "The others do it without even trying. I have fallen in four times. There is clearly something wrong with me. I am just bad at this, and I should stop before I fall in again."
+The sky and the ground traded places twice, disagreed about it, and dropped {child_name} flat. Flump.
 
-"Four times?" said a warm voice. "That is four times braver than someone who never tried at all."
+"Fine," said {child_name}, spitting out a leaf. "That was a practice one."
 
-{child_name} looked up. {companion_name} was standing on the bank, holding a small {object_motif} that glowed softly in the dusk.
+The second roll went sideways almost at once and ended with {child_name} facing the wrong direction entirely, blinking at a puzzled beetle. The third barely began before it sat down. The fourth was going beautifully right up until it was not.
 
-"It is not brave, it is embarrassing," said {child_name}, wiping a wet cheek. "Everyone else finds this easy. If I were any good, I would have crossed by now. It is too hard."
+{child_name} lay in the hollow and stared at the early stars. "The big ones roll like water poured from a jug," {child_name} said to nobody. "I roll like a dropped basket. Nobody else finds this hard — you can tell by how easily they do it. It must come to everyone but me. I will watch the parade from somewhere dark and comfortable, and clap politely, and that will be that."
 
-{companion_name} came and sat beside {child_name} on the damp grass. For a while they said nothing at all, just watched the water slide by. Then they spoke.
+"That does sound comfortable," said {companion_name}, who had arrived without a sound and settled down nearby with the {object_motif}. Then, after a while: "Hmm. Before you choose your dark comfortable spot — have you ever looked at the old arch up close? Really close?"
 
-"Can I tell you a secret that took me a long time to learn?" they asked. "It is okay to find it hard. Truly. Hard things are supposed to feel hard when you begin them. That difficult, shaky, I-want-to-give-up feeling you have right now — everyone feels it. The others you watched crossing so easily? They all felt exactly this when they started. You just did not see that part."
+{child_name} had walked under that arch a thousand times and never once looked at it. So, grumbling gently, {child_name} went and looked.
 
-"But it feels like failing," said {child_name}.
+Up close, the arch was not smooth at all. Lean in, close as a whisper. Can you see them too? Dents. Tiny dents, chips and scuffs and little crescent dings, hundreds upon hundreds of them, crowded low along the stone — exactly the height where a learner, mid-wobble, might tip over against it.
 
-"I know," said {companion_name} gently. "Here is the tricky thing. When you learn something new, failing and learning feel almost the same. Falling in the water is not proof that you are bad at crossing. It is proof that you are learning to cross. The wobble is the lesson. If you quit now, you would be quitting right in the middle of getting better."
+{child_name} touched one. Then another. Then a small crooked one, low down, worn shiny at the edges.
 
-{child_name} looked at the {object_motif} in {companion_name}'s hands. It was small and steady and calm.
+"That one is mine," said {companion_name}, sounding rather pleased about it.
 
-"When you crossed the first time," {child_name} asked, "did you fall in?"
+And the whole strange thing came open at once, like a door {child_name} had been leaning on the wrong way. "These are wobble marks," {child_name} said slowly. "Every single one of them learned here. They crashed where I crash. They flopped where I flop. That is what the touch means — every parade, they say hello to the wobbles that taught them." {child_name} laughed out loud at the size of it. "So it is okay to find it hard. It was hard for all of them. Hard at the start is not a warning. It is just the first page."
 
-{companion_name} laughed softly. "More times than you have. I stopped counting. And every single time, a voice in my head said, stop, you are no good at this. I am very glad I did not listen to it."
+{child_name} went back to the hollow, and this time did not try to roll like water. {child_name} rolled like a learner, wobbly and loud and laughing — halfway round. Again, three-quarters. Again. And the fifth roll of the night came around whole: bumpy, crooked, absolutely a roll.
 
-{child_name} was quiet for a moment. Then, slowly, {child_name} stood up. "Will you stay?" {child_name} asked. "While I try one more time?"
+When the parade gathered at moonrise, {child_name} was in it. The roll under the arch was not the smoothest one that night, and {child_name} touched the stone on the way through anyway — one small proud touch, adding one new little dent to the crowd of them.
 
-"I am not going anywhere," said {companion_name}. "But this time, do not look at the whole stream. Look at the first stone only. Just that one. Cross it in your mind before you cross it with your feet."
+"{refrain}," said {companion_name} from the archway, in a voice like remembering.
 
-{child_name} took a deep, shaky breath and looked — really looked — at the first stone. Not the whole crossing. Just the first step. Then {child_name} hopped. Arms out, knees soft, eyes down. Wobble. Wobble. Steady.
+The parade wound home the long way, under a moon as round as a perfect roll. Lanterns went out across {setting}, one by one. {child_name}'s legs ached in the best possible way.
 
-{child_name} was standing on the first stone, and had not fallen.
+One last thought floated past, right on the edge of sleep. Near the top of the arch, far higher than any learner could tip, there had been a single old dent, all alone. Who in the world wobbles at the top of an arch?
 
-"Now the next," said {companion_name} quietly. "One stone at a time."
-
-Hop. Steady. Hop. Steady. {child_name} moved slowly along the curving line, wobbling on every stone, catching balance every time. Halfway across, a foot slipped — but this time {child_name} bent low, spread both arms, and held on instead of tumbling in.
-
-"I nearly fell!" {child_name} called out.
-
-"But you did not," said {companion_name}. "You caught yourself. That is new too."
-
-Three more stones. Two. One. And then {child_name} stepped onto the far bank, still dripping from before, legs trembling, grinning so wide it almost hurt.
-
-"I crossed!" {child_name} shouted across the water. "It was so hard! My legs were shaking the whole way! But I did it, I really did it!"
-
-{companion_name} lifted the glowing {object_motif} in salute, and its warm light reached all the way across the stream. "You did. And listen closely, because this is the part that matters most. It did not get easy. You crossed while it was still hard. That is the real trick. Brave is not waiting until something feels easy. Brave is taking one more step while it still feels hard."
-
-The stars were bright now over {setting}. {child_name} looked back at the line of stones — the stones that had beaten {child_name} four times and then, at last, had not.
-
-"So the hard feeling," said {child_name} slowly, "was not telling me to stop."
-
-"No," said {companion_name}. "It was telling you that you were learning. It always is."
-
-And warm, and tired, and proud, {child_name} sat down on the far bank to rest.
+A question for tomorrow.
 
 {refrain}.`,
       },
       '9-11': {
-        audioTemplate: `There was a way across the ravine that only the older ones seemed to know. In {setting}, the stream ran deep and quick between two banks, and the only crossing was a scattered line of stepping stones — some flat, some tilted, some barely breaking the surface — that curved out into the current and back again like a half-drawn bridge. Every evening the {hero} watched the others read that line of stones the way you might read a familiar sentence, stepping quick and certain, never once looking as though they might fall. And every evening the {hero} stayed behind on the near bank, promising that tomorrow would be the day.
+        audioTemplate: `The moon parade came once a season to {setting}, and there was exactly one way in. You rolled. One full, head-over-heels, no-half-measures roll, right under the old stone arch, and then the parade swept you up and carried you off into the best night of the season. The {hero} had watched it happen from the sidelines three times now, clapping politely and privately dying a little. Tonight, that ended. Tonight the {hero} would roll under the arch with everyone else, or so the plan went.
 
-Tonight there was no more tomorrow to hide behind. The others had already crossed and gone ahead, and the light was thinning to a bruised gold over the water. To reach the far side before dark, the {hero} would have to cross alone.
+There was one detail about the arch that the {hero} had never been able to explain. Everyone who passed beneath it — everyone grown, everyone graceful — reached out and touched the stone. One brief touch, low on the left side, quick as a blink. Nobody announced it. Nobody taught it. If you asked, the grown ones just smiled the particular smile of somebody holding a very old, very comfortable secret, and changed the subject.
 
-So the {hero} rolled up both sleeves, fixed both eyes on the first stone, and stepped out.
+The {hero} had a more urgent problem than secrets, though, which was that the {hero} could not actually roll.
 
-The first stone was fine. The second was fine. On the third, the stone tilted underfoot — just slightly, a shift the {hero} had not expected — and the whole crossing seemed to lurch. Arms wheeling, breath caught high and tight, the {hero} grabbed for a balance that was not there and went down hard into the water. The cold hit like a slap. The current tugged with a patient, steady strength, and it took two clumsy, gasping tries for the {hero} to climb back onto the near bank.
+This fact was established thoroughly, in a quiet hollow far from witnesses. The first attempt began with confidence and ended flat in the grass — flump — with the sky looking smugly down. The second went sideways at once, and finished with the {hero} facing the wrong way entirely, eye to eye with a beetle who had clearly seen this sort of thing before. The third simply sat down midway, like a wave that changes its mind. The fourth was glorious for exactly half a turn.
 
-The {hero} tried again. And again. Each time the {hero} got a little further before the same thing happened: a stone tilting where a stone should have been solid, a foot sliding on slick green weed, the sudden sickening lurch and then the cold. By the fifth fall the {hero} was soaked through and shivering, fingers pale and stiff, and something worse than cold had settled behind the ribs.
+The {hero} lay where the fourth attempt had filed it and gave up in an orderly fashion.
 
-The {hero} sat down on the bank, knees drawn up, and stared at the stones with a kind of quiet fury.
+"Here is what I know," the {hero} announced to the early stars. "The big ones roll like water poured from a jug. I roll like the jug. Nobody else finds this hard — you can tell, because they do it laughing. Whatever it is they have, I was not given it. So I will watch from somewhere dark, and clap, and that will simply have to be a personality."
 
-"I cannot do this," said the {hero}, and the words came out flat and certain. "I have tried and tried, and I just keep falling in. The others do it without even thinking. There is obviously something they have that I do not. I am simply bad at this. The sensible thing — the only thing — is to stop, before I fall in again and freeze."
+"Mm. It could be," said {companion_name}, who had materialised nearby with the {object_motif}, in the way of companions who always know exactly when someone is announcing things to stars. They did not argue. Arguing would have been useless and they knew it. Instead, after a comfortable silence, they said only, "Hmm. Before you retire from rolling forever — have you ever looked at the arch? Not walked under it. Looked at it."
 
-It was, the {hero} decided, not giving up. It was just being reasonable. There was a difference. Wasn't there?
+It was a strange enough question that the {hero} went.
 
-"That," said a voice from behind, "is the most dangerous thought there is. Because it sounds so much like wisdom."
+The arch stood quiet in the settling dark, moon on its shoulder, older than every story anyone told about it. Up close — really close, close as a whisper, and you can lean in too, look low on the stone, what do you see there? — the arch was not smooth at all. It was covered in dents. Tiny ones. Chips and scuffs and small crescent dings, hundreds upon hundreds of them, all crowded along the stone at exactly the height where a learner, mid-wobble, tips over and meets the arch personally.
 
-The {hero} turned. {companion_name} had come down to the water's edge without a sound and now stood there, turning a small {object_motif} over and over, the way some people fiddle with a thing while thinking carefully about what to say.
+The {hero} stood very still, doing the arithmetic of it.
 
-"It is not a thought, it is a fact," said the {hero}, hating how thick the words had gone. "Five times I have fallen. Five. If I were any good at this, I would have crossed by now. It is too hard."
+"That crooked one is mine," said {companion_name} from behind, and there was something in their voice the {hero} had never heard before — pride, pointed backwards. "Third from the bottom. I hit that stone so many times we were practically related."
 
-{companion_name} did not argue. They came and sat on the cold stone beside the {hero}, and for a long moment they only watched the current pull threads of gold across the dark water. When they finally spoke, it was slowly, as though each word had been weighed.
+"You," said the {hero}. "You wobbled."
 
-"It is okay to find it hard," they said. "I want you to really hear that, because I think you have it backwards, and almost everyone does at first. You have decided that because this is hard, it means you are bad at it, and that you should stop. But hard is not a verdict. Hard is simply what the beginning of a difficult thing feels like — every single time, for every single person. That shaky, humiliated, I-should-quit feeling in your chest right now? That is not the feeling of failing. That is the exact feeling of learning something actually worth learning."
+"Magnificently."
 
-"It does not feel like learning," said the {hero}. "It feels like drowning, slightly."
+And the secret opened up all at once, the way a puzzle does when the last piece stops being a piece and becomes the picture. The touch. The low spot. The private smile. "These are wobble marks," the {hero} said slowly. "All of them learned here. Every water-smooth roller in that parade crashed exactly where I have been crashing all evening. The touch is a thank-you. They greet their own wobbles on the way through." The {hero} put one astonished laugh into the dark. "So it is okay to find it hard. It was hard for every single one of them. Hard at the start is not evidence against me. It is the entry fee. It always was."
 
-{companion_name} laughed, quiet and kind. "Yes. It often does. Here is the part nobody tells you. When you watch the others cross so easily, you are watching the end of their story, not the beginning. Every one of them fell in that water. Every one of them sat on this exact bank, soaked and furious, certain they were the only one who could not manage it. You did not see that part, so you assumed it never happened. But the difference between them and you tonight is not talent. It is only that they fell in a few more times than you have — and did not stop."
+The {hero} walked back to the hollow and rolled like somebody with nothing left to hide — loudly, wobbily, laughing at the sky. Halfway. Then three-quarters. Then, on the fifth try of the night, all the way round: crooked, bumpy, undeniable.
 
-The {hero} said nothing. Out in the current, the water folded and unfolded over the tilted third stone, the one that had done the throwing every time.
+At moonrise the parade gathered, and the {hero} was in it. The roll under the arch was nobody's smoothest. It was, however, entirely the {hero}'s own, and on the way through the {hero} reached out and touched the stone, adding one new dent to the congregation.
 
-"The third stone moves," said the {hero} at last, almost to no one. "It tilts. I keep putting my weight down as though it will hold, and it does not."
+"{refrain}," said {companion_name} at the archway, quietly, like a password.
 
-"Ah," said {companion_name}, and there was something pleased in their voice. "Now that — that is not the sound of someone who is bad at this. That is the sound of someone who is learning. You just told me something about the crossing you did not know an hour ago. So. If the third stone tilts, what might you do differently?"
+The parade took the long way home under a moon as round as a well-finished roll. Lanterns dimmed across {setting}, one by one, and the {hero}'s legs ached in the deeply satisfying way of legs that earned it.
 
-The {hero} thought. "Step on the edge nearest the bank. Keep moving. Do not stop and stand on it."
+One last thought drifted past on the edge of sleep. Near the very top of the arch, far above any height a learner could tip, sat a single ancient dent, all alone. Who wobbles at the top of an arch?
 
-"Then you already know more than you did when you decided to quit," said {companion_name}, and held up the {object_motif}, which in the last of the light glowed with a small, steady warmth. "One more time. Not because it will suddenly be easy — it will not be. But because the only way the hard part ever shrinks is if you walk into it once more while it is still hard."
-
-The {hero} did not feel brave. Both legs were shaking, the chest was tight, and every reasonable part wanted to go home. But the {hero} stood up anyway, looked at the first stone — only the first — and stepped out.
-
-First stone. Second. And then the third, the tilting one — and this time the {hero} did not plant a foot and wait. The {hero} touched the near edge lightly, the way you might touch something hot, and was already moving to the fourth before the stone could betray anyone. The tilt came, but the {hero} was no longer standing there to be thrown.
-
-Fourth stone. Fifth. The current hissed and pulled, and on the sixth stone a foot slipped on weed and the whole world lurched sideways — but the {hero} bent low, dropped low and heavy, spread both arms wide, and held. No fall. Just the {hero}, crouched in the middle of the ravine with the water roaring beneath, heart slamming, holding on.
-
-"I nearly went in," gasped the {hero}.
-
-"You nearly did," {companion_name} agreed from the bank. "And you did not. Keep going. One stone at a time."
-
-The {hero} did not cross gracefully. The {hero} crossed slowly, wobbling, arms out, teeth gritted, reading each stone in turn instead of trusting the whole line at once. But the {hero} crossed. When one foot came down at last on the solid earth of the far bank, both legs nearly folded, and the {hero} turned to look back at the crooked line of stones just beaten, and began, helplessly, to laugh.
-
-"I did it!" called the {hero} across the water, voice cracking. "It was awful the whole way. My legs are still shaking. It never once felt easy. But I did it!"
-
-"No," {companion_name} called back, lifting the glowing {object_motif} high so its light stretched all the way across the ravine. "It did not feel easy — and that is precisely the point. You crossed while it was still hard. That is the only kind of crossing there is. Anyone can manage a thing once it has stopped being difficult. What you just did — moving forward while your whole body begged you to stop — that is the thing almost no one learns. Remember this feeling. The next time something is hard, do not read it as a wall. Read it as a beginning."
-
-Above {setting}, the first stars had come out, sharp and clear over the darkening water. The {hero} sat down on the far bank, soaked and trembling and grinning, and understood, in a way that would not be forgotten, that the hard feeling had never once been an order to stop. It had been saying, the whole time, that the {hero} was learning.
+Somebody must know. Tomorrow, the {hero} decided, somebody would be asked.
 
 {refrain}.`,
-        scriptTemplate: `There was a way across the ravine that only the older ones seemed to know. In {setting}, the stream ran deep and quick between two banks, and the only crossing was a scattered line of stepping stones — some flat, some tilted, some barely breaking the surface — that curved out into the current and back again like a half-drawn bridge. Every evening {child_name} watched the others read that line of stones the way you might read a familiar sentence, stepping quick and certain, never once looking as though they might fall. And every evening {child_name} stayed behind on the near bank, promising that tomorrow would be the day.
+        scriptTemplate: `The moon parade came once a season to {setting}, and there was exactly one way in. You rolled. One full, head-over-heels, no-half-measures roll, right under the old stone arch, and then the parade swept you up and carried you off into the best night of the season. {child_name} the {hero} had watched it happen from the sidelines three times now, clapping politely and privately dying a little. Tonight, that ended. Tonight {child_name} would roll under the arch with everyone else, or so the plan went.
 
-Tonight there was no more tomorrow to hide behind. The others had already crossed and gone ahead, and the light was thinning to a bruised gold over the water. To reach the far side before dark, {child_name} would have to cross alone.
+There was one detail about the arch that {child_name} had never been able to explain. Everyone who passed beneath it — everyone grown, everyone graceful — reached out and touched the stone. One brief touch, low on the left side, quick as a blink. Nobody announced it. Nobody taught it. If you asked, the grown ones just smiled the particular smile of somebody holding a very old, very comfortable secret, and changed the subject.
 
-So {child_name} rolled up both sleeves, fixed both eyes on the first stone, and stepped out.
+{child_name} had a more urgent problem than secrets, though, which was that {child_name} could not actually roll.
 
-The first stone was fine. The second was fine. On the third, the stone tilted underfoot — just slightly, a shift {child_name} had not expected — and the whole crossing seemed to lurch. Arms wheeling, breath caught high and tight, {child_name} grabbed for a balance that was not there and went down hard into the water. The cold hit like a slap. The current tugged with a patient, steady strength, and it took two clumsy, gasping tries for {child_name} to climb back onto the near bank.
+This fact was established thoroughly, in a quiet hollow far from witnesses. The first attempt began with confidence and ended flat in the grass — flump — with the sky looking smugly down. The second went sideways at once, and finished with {child_name} facing the wrong way entirely, eye to eye with a beetle who had clearly seen this sort of thing before. The third simply sat down midway, like a wave that changes its mind. The fourth was glorious for exactly half a turn.
 
-{child_name} tried again. And again. Each time {child_name} got a little further before the same thing happened: a stone tilting where a stone should have been solid, a foot sliding on slick green weed, the sudden sickening lurch and then the cold. By the fifth fall {child_name} was soaked through and shivering, fingers pale and stiff, and something worse than cold had settled behind the ribs.
+{child_name} lay where the fourth attempt had filed it and gave up in an orderly fashion.
 
-{child_name} sat down on the bank, knees drawn up, and stared at the stones with a kind of quiet fury.
+"Here is what I know," {child_name} announced to the early stars. "The big ones roll like water poured from a jug. I roll like the jug. Nobody else finds this hard — you can tell, because they do it laughing. Whatever it is they have, I was not given it. So I will watch from somewhere dark, and clap, and that will simply have to be a personality."
 
-"I cannot do this," said {child_name}, and the words came out flat and certain. "I have tried and tried, and I just keep falling in. The others do it without even thinking. There is obviously something they have that I do not. I am simply bad at this. The sensible thing — the only thing — is to stop, before I fall in again and freeze."
+"Mm. It could be," said {companion_name}, who had materialised nearby with the {object_motif}, in the way of companions who always know exactly when someone is announcing things to stars. They did not argue. Arguing would have been useless and they knew it. Instead, after a comfortable silence, they said only, "Hmm. Before you retire from rolling forever — have you ever looked at the arch? Not walked under it. Looked at it."
 
-It was, {child_name} decided, not giving up. It was just being reasonable. There was a difference. Wasn't there?
+It was a strange enough question that {child_name} went.
 
-"That," said a voice from behind, "is the most dangerous thought there is. Because it sounds so much like wisdom."
+The arch stood quiet in the settling dark, moon on its shoulder, older than every story anyone told about it. Up close — really close, close as a whisper, and you can lean in too, look low on the stone, what do you see there? — the arch was not smooth at all. It was covered in dents. Tiny ones. Chips and scuffs and small crescent dings, hundreds upon hundreds of them, all crowded along the stone at exactly the height where a learner, mid-wobble, tips over and meets the arch personally.
 
-{child_name} turned. {companion_name} had come down to the water's edge without a sound and now stood there, turning a small {object_motif} over and over, the way some people fiddle with a thing while thinking carefully about what to say.
+{child_name} stood very still, doing the arithmetic of it.
 
-"It is not a thought, it is a fact," said {child_name}, hating how thick the words had gone. "Five times I have fallen. Five. If I were any good at this, I would have crossed by now. It is too hard."
+"That crooked one is mine," said {companion_name} from behind, and there was something in their voice {child_name} had never heard before — pride, pointed backwards. "Third from the bottom. I hit that stone so many times we were practically related."
 
-{companion_name} did not argue. They came and sat on the cold stone beside {child_name}, and for a long moment they only watched the current pull threads of gold across the dark water. When they finally spoke, it was slowly, as though each word had been weighed.
+"You," said {child_name}. "You wobbled."
 
-"It is okay to find it hard," they said. "I want you to really hear that, because I think you have it backwards, and almost everyone does at first. You have decided that because this is hard, it means you are bad at it, and that you should stop. But hard is not a verdict. Hard is simply what the beginning of a difficult thing feels like — every single time, for every single person. That shaky, humiliated, I-should-quit feeling in your chest right now? That is not the feeling of failing. That is the exact feeling of learning something actually worth learning."
+"Magnificently."
 
-"It does not feel like learning," said {child_name}. "It feels like drowning, slightly."
+And the secret opened up all at once, the way a puzzle does when the last piece stops being a piece and becomes the picture. The touch. The low spot. The private smile. "These are wobble marks," {child_name} said slowly. "All of them learned here. Every water-smooth roller in that parade crashed exactly where I have been crashing all evening. The touch is a thank-you. They greet their own wobbles on the way through." {child_name} put one astonished laugh into the dark. "So it is okay to find it hard. It was hard for every single one of them. Hard at the start is not evidence against me. It is the entry fee. It always was."
 
-{companion_name} laughed, quiet and kind. "Yes. It often does. Here is the part nobody tells you. When you watch the others cross so easily, you are watching the end of their story, not the beginning. Every one of them fell in that water. Every one of them sat on this exact bank, soaked and furious, certain they were the only one who could not manage it. You did not see that part, so you assumed it never happened. But the difference between them and you tonight is not talent. It is only that they fell in a few more times than you have — and did not stop."
+{child_name} walked back to the hollow and rolled like somebody with nothing left to hide — loudly, wobbily, laughing at the sky. Halfway. Then three-quarters. Then, on the fifth try of the night, all the way round: crooked, bumpy, undeniable.
 
-{child_name} said nothing. Out in the current, the water folded and unfolded over the tilted third stone, the one that had done the throwing every time.
+At moonrise the parade gathered, and {child_name} was in it. The roll under the arch was nobody's smoothest. It was, however, entirely {child_name}'s own, and on the way through {child_name} reached out and touched the stone, adding one new dent to the congregation.
 
-"The third stone moves," said {child_name} at last, almost to no one. "It tilts. I keep putting my weight down as though it will hold, and it does not."
+"{refrain}," said {companion_name} at the archway, quietly, like a password.
 
-"Ah," said {companion_name}, and there was something pleased in their voice. "Now that — that is not the sound of someone who is bad at this. That is the sound of someone who is learning. You just told me something about the crossing you did not know an hour ago. So. If the third stone tilts, what might you do differently?"
+The parade took the long way home under a moon as round as a well-finished roll. Lanterns dimmed across {setting}, one by one, and {child_name}'s legs ached in the deeply satisfying way of legs that earned it.
 
-{child_name} thought. "Step on the edge nearest the bank. Keep moving. Do not stop and stand on it."
+One last thought drifted past on the edge of sleep. Near the very top of the arch, far above any height a learner could tip, sat a single ancient dent, all alone. Who wobbles at the top of an arch?
 
-"Then you already know more than you did when you decided to quit," said {companion_name}, and held up the {object_motif}, which in the last of the light glowed with a small, steady warmth. "One more time. Not because it will suddenly be easy — it will not be. But because the only way the hard part ever shrinks is if you walk into it once more while it is still hard."
-
-{child_name} did not feel brave. Both legs were shaking, the chest was tight, and every reasonable part wanted to go home. But {child_name} stood up anyway, looked at the first stone — only the first — and stepped out.
-
-First stone. Second. And then the third, the tilting one — and this time {child_name} did not plant a foot and wait. {child_name} touched the near edge lightly, the way you might touch something hot, and was already moving to the fourth before the stone could betray anyone. The tilt came, but {child_name} was no longer standing there to be thrown.
-
-Fourth stone. Fifth. The current hissed and pulled, and on the sixth stone a foot slipped on weed and the whole world lurched sideways — but {child_name} bent low, dropped low and heavy, spread both arms wide, and held. No fall. Just {child_name}, crouched in the middle of the ravine with the water roaring beneath, heart slamming, holding on.
-
-"I nearly went in," gasped {child_name}.
-
-"You nearly did," {companion_name} agreed from the bank. "And you did not. Keep going. One stone at a time."
-
-{child_name} did not cross gracefully. {child_name} crossed slowly, wobbling, arms out, teeth gritted, reading each stone in turn instead of trusting the whole line at once. But {child_name} crossed. When one foot came down at last on the solid earth of the far bank, both legs nearly folded, and {child_name} turned to look back at the crooked line of stones just beaten, and began, helplessly, to laugh.
-
-"I did it!" called {child_name} across the water, voice cracking. "It was awful the whole way. My legs are still shaking. It never once felt easy. But I did it!"
-
-"No," {companion_name} called back, lifting the glowing {object_motif} high so its light stretched all the way across the ravine. "It did not feel easy — and that is precisely the point. You crossed while it was still hard. That is the only kind of crossing there is. Anyone can manage a thing once it has stopped being difficult. What you just did — moving forward while your whole body begged you to stop — that is the thing almost no one learns. Remember this feeling. The next time something is hard, do not read it as a wall. Read it as a beginning."
-
-Above {setting}, the first stars had come out, sharp and clear over the darkening water. {child_name} sat down on the far bank, soaked and trembling and grinning, and understood, in a way that would not be forgotten, that the hard feeling had never once been an order to stop. It had been saying, the whole time, that {child_name} was learning.
+Somebody must know. Tomorrow, {child_name} decided, somebody would be asked.
 
 {refrain}.`,
       },
     },
-    audioTemplate: `The night settled gently over {setting}, where a small {hero} was trying something new — and finding it hard.
+    audioTemplate: `Tonight was the moon parade, and all through {setting} everyone was practising their moon-roll. One roll each, right under the old stone arch — that was how the parade always began. More than anything, the {hero} wanted to roll under the arch tonight too.
 
-A {object_motif} sat nearby, new and just beginning itself.
+And the arch had one odd secret. Every grown one touched it as they passed underneath. One small touch, quick as a blink. Nobody ever said why.
 
-The {hero} tried, and it did not work. Tried again, and it still did not work. "Maybe I am just not good at this," they said, ready to give up.
+The {hero} found a quiet spot to practise. Ready — roll! The world spun the wrong way, and the {hero} landed flat, flump, like a dropped pancake.
 
-{companion_name} came near. "May I tell you a secret?" they said softly. "Hard things are meant to feel hard at first. That feeling is not a sign to stop — it is a sign you are learning something real."
+Again. Flump. This time the {hero} ended up facing backwards, blinking at nothing.
 
-The {hero} looked at the {object_motif}. It was new now, but it was growing, slow and steady.
+A third try barely got started before it fell over sideways.
 
-"It is okay to find it hard," said {companion_name}. "Everyone does, at the start."
+The {hero} sat down with hot cheeks. "The big ones roll like water. I flop like laundry. I must be the only one who finds it this hard. Maybe I will just watch."
 
-The {hero} breathed out, and the giving-up feeling softened. Hard was allowed. Hard was simply part of new.
+{companion_name} wandered over, carrying the {object_motif}. They did not say try again. They only said, "Hmm. Before you hide — have you looked at the arch up close?"
 
-They tried once more — not to be perfect, only to keep going — and it felt a little less heavy than before.
+Up close, the arch was not smooth at all. Lean close. Can you see them too? Tiny dents. Hundreds of tiny dents, low down, just where a learner might tip against the stone.
+
+"Wobble marks," breathed the {hero}. "Every big one wobbled here. They crashed and flopped, just where I crash and flop. That is why they touch the arch — hello to their old wobbles!" The {hero} stood up slowly. "So it is okay to find it hard. It was hard for every single one of them. Hard at the start is how rolling works."
+
+So the {hero} stopped trying to be smooth. One proud, wobbly, laughing roll — halfway round. Another, a little further. And the third came out whole, bumpy and beautiful, all the way around.
+
+That night the {hero} rolled under the arch with everyone, and touched the stone on the way through. One new little dent among the hundreds.
+
+"{refrain}," said {companion_name}, in a voice like remembering.
+
+The parade wound home under the moon. Lights went out, one by one, across {setting}. The {hero}'s legs were tired in the best way.
+
+And near the top of the arch, higher than anyone could reach, was one very old dent. Whose was that? A question for tomorrow.
 
 {refrain}.`,
-    scriptTemplate: `The night settled gently over {setting}, where {child_name} the {hero} was trying something new — and finding it hard.
+    scriptTemplate: `Tonight was the moon parade, and all through {setting} everyone was practising their moon-roll. One roll each, right under the old stone arch — that was how the parade always began. More than anything, {child_name} the {hero} wanted to roll under the arch tonight too.
 
-A {object_motif} sat nearby, new and just beginning itself.
+And the arch had one odd secret. Every grown one touched it as they passed underneath. One small touch, quick as a blink. Nobody ever said why.
 
-{child_name} tried, and it did not work. Tried again, and it still did not work. "Maybe I am just not good at this," {child_name} said, ready to give up.
+{child_name} found a quiet spot to practise. Ready — roll! The world spun the wrong way, and {child_name} landed flat, flump, like a dropped pancake.
 
-{companion_name} came near. "May I tell you a secret, {child_name}?" they said softly. "Hard things are meant to feel hard at first. That feeling is not a sign to stop — it is a sign you are learning something real."
+Again. Flump. This time {child_name} ended up facing backwards, blinking at nothing.
 
-{child_name} looked at the {object_motif}. It was new now, but it was growing, slow and steady.
+A third try barely got started before it fell over sideways.
 
-"It is okay to find it hard," said {companion_name}. "Everyone does, at the start."
+{child_name} sat down with hot cheeks. "The big ones roll like water. I flop like laundry. I must be the only one who finds it this hard. Maybe I will just watch."
 
-{child_name} breathed out, and the giving-up feeling softened. Hard was allowed. Hard was simply part of new.
+{companion_name} wandered over, carrying the {object_motif}. They did not say try again. They only said, "Hmm. Before you hide — have you looked at the arch up close?"
 
-{child_name} tried once more — not to be perfect, only to keep going — and it felt a little less heavy than before.
+Up close, the arch was not smooth at all. Lean close. Can you see them too? Tiny dents. Hundreds of tiny dents, low down, just where a learner might tip against the stone.
+
+"Wobble marks," breathed {child_name}. "Every big one wobbled here. They crashed and flopped, just where I crash and flop. That is why they touch the arch — hello to their old wobbles!" {child_name} stood up slowly. "So it is okay to find it hard. It was hard for every single one of them. Hard at the start is how rolling works."
+
+So {child_name} stopped trying to be smooth. One proud, wobbly, laughing roll — halfway round. Another, a little further. And the third came out whole, bumpy and beautiful, all the way around.
+
+That night {child_name} rolled under the arch with everyone, and touched the stone on the way through. One new little dent among the hundreds.
+
+"{refrain}," said {companion_name}, in a voice like remembering.
+
+The parade wound home under the moon. Lights went out, one by one, across {setting}. {child_name}'s legs were tired in the best way.
+
+And near the top of the arch, higher than anyone could reach, was one very old dent. Whose was that? A question for tomorrow.
 
 {refrain}.`,
   },
   {
     ordinal: 2,
-    title: "The Power of Yet",
+    title: "The Echo That Waited",
     concept: "Adding \"yet\" turns \"I can't\" into \"not so far\"",
     callback: "Hard is meant to feel hard (Level 1)",
     ageFloor: 4,
-    summary: "When the hero says \"I can't do it,\" their companion teaches them one small, powerful word to add to the end: \"yet.\" It builds on Level 1 — if hard is allowed, then \"can't\" is only \"not so far.\"",
+    summary: "At goodnight-call time, the old echo stone rings an answer back to everyone who calls across the water — everyone except the hero's companion, and nobody knows why. When the hero's own first far-call comes out as a honk, one look at a little sprout still reaching for the light turns \"I can't\" into \"not so far\" — a word small enough to carry and strong enough to give away.",
     teachingNote: "One word — \"yet\" — reframes a fixed limit as a place on a journey, and gives a child somewhere to keep going.",
     learningBeat: "not so far",
     ageVariants: {
       '3-4': {
-        audioTemplate: `In {setting}, the {hero} wanted to skip a stone across the water. The {hero} threw the stone. Plop. It sank.
+        audioTemplate: `It was goodnight-call time in {setting}. Far away stood the old echo stone. You called to it, and it rang your goodnight back.
 
-"I can't do it," said the {hero}. "I can't skip a stone. I want to give up."
+The {hero} took a big breath and called. Honk! Like a sleepy duck. The stone stayed quiet.
 
-{companion_name} came close. {companion_name} smiled.
+Honk! Quiet again.
 
-"Hard is allowed," said {companion_name}. "We learned that. Do you remember?"
+"I can't do the far-call," said the {hero}.
 
-The {hero} nodded. But the {hero} was still sad.
+{companion_name} looked at the {object_motif}. "Hmm. Still reaching for the light. Still growing."
 
-"I have one little word for you," said {companion_name}. "A tiny, mighty word. The word is yet."
+"Oh!" said the {hero}. "The sprout can't reach the light yet. And I can't call yet! Can't just means not so far."
 
-"Yet?" said the {hero}.
+Shh. Here is a secret. The stone has never rung for {companion_name}. Not once. Can you guess why?
 
-"Yet," said {companion_name}. "Put it at the end. Do not say I can't. Say I can't yet."
+"I said I can't, long ago," said {companion_name}. "And I stopped trying."
 
-The {hero} tried the word. "I can't yet."
+"Then say not so far!" said the {hero}.
 
-"That is not the same as never," said {companion_name}. "I can't yet just means not so far. You have not done it so far. But you are still trying."
+The {hero} tried again. One, two, three — the call flew! And the stone rang back.
 
-The {hero} held the little word close, like a warm {object_motif}.
+Then {companion_name} called too, old and wobbly. The stone rang again. Their very first ring.
 
-"I can't skip a stone yet," said the {hero}. "Not so far."
+"{refrain}," whispered {companion_name}.
 
-"Try again," said {companion_name}.
+Two echoes floated home. Soft. Softer.
 
-The {hero} picked up a smooth stone. The {hero} looked at the water. The {hero} threw.
-
-Plop. It sank again.
-
-"I can't yet," said the {hero}. "Not so far. But I am still here."
-
-The {hero} threw again. Plop.
-
-The {hero} threw again. And this time, skip, skip, skip! The stone hopped across the water.
-
-"You did it!" said {companion_name}.
-
-The {hero} laughed. "I could not do it. Then I could. The word yet helped me."
-
-{companion_name} gave the {hero} the little {object_motif} to keep.
-
-"When something feels too hard," said {companion_name}, "add the word yet. I can't becomes not so far."
-
-The {hero} was sleepy now. The stars came out over {setting}. The {hero} yawned.
-
-"Yet," whispered the {hero}. "Such a small word. Such a big help."
-
-Goodnight, brave {hero}. Tomorrow there will be new hard things. And you will say the little word.
+Tomorrow: the double-call, together.
 
 {refrain}.`,
-        scriptTemplate: `In {setting}, {child_name} wanted to skip a stone across the water. {child_name} threw the stone. Plop. It sank.
+        scriptTemplate: `It was goodnight-call time in {setting}. Far away stood the old echo stone. You called to it, and it rang your goodnight back.
 
-"I can't do it," said {child_name}. "I can't skip a stone. I want to give up."
+{child_name} the {hero} took a big breath and called. Honk! Like a sleepy duck. The stone stayed quiet.
 
-{companion_name} came close. {companion_name} smiled.
+Honk! Quiet again.
 
-"Hard is allowed," said {companion_name}. "We learned that. Do you remember?"
+"I can't do the far-call," said {child_name}.
 
-{child_name} nodded. But {child_name} was still sad.
+{companion_name} looked at the {object_motif}. "Hmm. Still reaching for the light. Still growing."
 
-"I have one little word for you," said {companion_name}. "A tiny, mighty word. The word is yet."
+"Oh!" said {child_name}. "The sprout can't reach the light yet. And I can't call yet! Can't just means not so far."
 
-"Yet?" said {child_name}.
+Shh. Here is a secret. The stone has never rung for {companion_name}. Not once. Can you guess why?
 
-"Yet," said {companion_name}. "Put it at the end. Do not say I can't. Say I can't yet."
+"I said I can't, long ago," said {companion_name}. "And I stopped trying."
 
-{child_name} tried the word. "I can't yet."
+"Then say not so far!" said {child_name}.
 
-"That is not the same as never," said {companion_name}. "I can't yet just means not so far. You have not done it so far. But you are still trying."
+{child_name} tried again. One, two, three — the call flew! And the stone rang back.
 
-{child_name} held the little word close, like a warm {object_motif}.
+Then {companion_name} called too, old and wobbly. The stone rang again. Their very first ring.
 
-"I can't skip a stone yet," said {child_name}. "Not so far."
+"{refrain}," whispered {companion_name}.
 
-"Try again," said {companion_name}.
+Two echoes floated home. Soft. Softer.
 
-{child_name} picked up a smooth stone. {child_name} looked at the water. {child_name} threw.
-
-Plop. It sank again.
-
-"I can't yet," said {child_name}. "Not so far. But I am still here."
-
-{child_name} threw again. Plop.
-
-{child_name} threw again. And this time, skip, skip, skip! The stone hopped across the water.
-
-"You did it!" said {companion_name}.
-
-{child_name} laughed. "I could not do it. Then I could. The word yet helped me."
-
-{companion_name} gave {child_name} the little {object_motif} to keep.
-
-"When something feels too hard," said {companion_name}, "add the word yet. I can't becomes not so far."
-
-{child_name} was sleepy now. The stars came out over {setting}. {child_name} yawned.
-
-"Yet," whispered {child_name}. "Such a small word. Such a big help."
-
-Goodnight, brave {child_name}. Tomorrow there will be new hard things. And you will say the little word.
+Tomorrow: the double-call, together.
 
 {refrain}.`,
       },
       '5-6': {
-        audioTemplate: `The sun was setting over {setting}, painting the sky in soft gold. The {hero} stood at the edge of the water with a whole pocket of flat stones, trying to skip just one across the surface.
+        audioTemplate: `Goodnight-call time came to {setting} just after sundown. Far across the water stood the old echo stone. You filled up with breath, sent your far-call sailing, and the stone rang your goodnight back. Tonight, at last, the {hero} was old enough to try.
 
-Throw. Plop. The stone sank.
+There was one odd thing about the echo stone. It answered everybody. Everybody except {companion_name} — and no one knew why.
 
-Throw. Plop. Another one gone.
+The {hero} planted both feet, took an enormous breath, and called. Out came — honk. A surprised duck.
 
-The {hero} sat down hard. "I can't do it," the {hero} said. "Everyone else can skip stones. I've tried and tried, and mine always sink. I'm just not good at this. I want to go home."
+The stone said nothing.
 
-{companion_name} sat down beside the {hero}, close and calm.
+Again, bigger. Honk! An even more surprised duck.
 
-"Do you remember what we learned before?" {companion_name} asked gently. "That hard is allowed? That a thing being hard doesn't mean it's wrong, it just means it's worth doing?"
+The third try was so small it fell in the water just past the {hero}'s nose.
 
-"I remember," said the {hero}. "But hard still feels heavy."
+"I can't do the far-call," said the {hero}. "Hard at the start is allowed, I know — I met the wobble marks. But this is not hard. This is can't."
 
-"It does," said {companion_name}. "So today I want to give you something to carry with the heavy feeling. It's a word. Just one small word. Do you want to hear it?"
+{companion_name} only said, "Hmm," and nodded at the {object_motif}. "Reaching for the light all season, that one. Not there. Doesn't seem to mind."
 
-The {hero} nodded.
+The {hero} looked at the little sprout: stretched as far as it could stretch, nowhere near the light, growing anyway.
 
-"The word is yet," said {companion_name}.
+And the idea arrived, small and bright. "It can't reach the light yet," said the {hero} slowly. "It just isn't finished. Maybe I'm not finished either. Can't doesn't mean never. Can't only means not so far!"
 
-The {hero} frowned. "Yet? That's so tiny. What can such a little word do?"
+Now lean close, for a secret. When the {hero} said that, {companion_name} went very quiet. Can you guess why the stone never answers them?
 
-"Watch," said {companion_name}. "You said, I can't do it. That sentence has a door slammed shut at the end. Now add the word yet. I can't do it... yet."
+"I said I can't once, long ago," said {companion_name} at last. "I believed it. I never called again. The stone never got its chance."
 
-The {hero} said it slowly. "I can't do it... yet."
+The {hero} stood up. "Then we're both not-so-far. Watch me."
 
-"Feel the difference?" said {companion_name}. "I can't means the door is closed forever. But I can't yet means the door is just still shut for now. It means not so far. You haven't done it so far, that's all. Not so far is not the same as never."
+"{refrain}," said {companion_name} quietly, like a promise.
 
-The {hero} turned the word over like a smooth {object_motif} in a pocket. Not so far. There was room in those words. There was a tomorrow tucked inside them.
+Honk. "Not so far!" Honk. "Not so far!" And then the call came out round and true, and the old stone rang it back: one clear goodnight, floating home over the water.
 
-"Not so far," the {hero} whispered. "I can't skip a stone... yet."
+"Your turn," said the {hero}. "Say it."
 
-"Now try again," said {companion_name}, "and hold on to yet the whole time."
+"Not so far," said {companion_name}, in a rusty little voice. And they called — wobbly, old, brave — and the stone rang back for them, for the first time in their long life.
 
-The {hero} chose a stone, flat and grey, bent low the way the water was low, and flicked the stone sideways.
+They listened until the last echo folded into the dark. The water went smooth. The stars leaned closer.
 
-Plop. It sank.
+"Tomorrow," said {companion_name} sleepily, "teach me the double-call."
 
-"I can't yet," the {hero} said quickly, before the sad feeling could grow. "Not so far. Again."
-
-Plop.
-
-"Not so far. Again."
-
-The {hero} kept the little {object_motif} of a word tight in one hand and threw with the other. Plop. Plop. And then...
-
-Skip. Skip. Skip-skip-skip.
-
-The stone danced across the water and touched the far shore.
-
-The {hero} leapt up. "It skipped! Did you see? It skipped all the way across!"
-
-{companion_name} clapped. "I saw. And do you know what changed?"
-
-"I got better?" said the {hero}.
-
-"You did," said {companion_name}. "But something changed before your arm did. You stopped saying I can't and started saying not so far. The word yet kept you throwing long enough to learn."
-
-The {hero} looked at all the stones still waiting in one pocket, and for the first time they didn't feel like a pile of failures. They felt like a pile of tries.
-
-"I'm going to keep this word," said the {hero}, patting one pocket as if the word lived there now, right beside the {object_motif}.
-
-"Keep it forever," said {companion_name}. "And when something feels too big, reading, or climbing, or being brave, add yet to the end. I can't turns into not so far. And not so far always has a next try in it."
-
-The stars were waking up over {setting} now. The {hero} yawned a big, sleepy yawn.
-
-"Yet," the {hero} murmured. "The smallest word. The biggest help."
-
-"Sleep now, brave one," said {companion_name}. "The hard things will wait. And so will your next try."
+Not so far, thought the {hero}, smiling. And then, one day, all the way.
 
 {refrain}.`,
-        scriptTemplate: `The sun was setting over {setting}, painting the sky in soft gold. {child_name} stood at the edge of the water with a whole pocket of flat stones, trying to skip just one across the surface.
+        scriptTemplate: `Goodnight-call time came to {setting} just after sundown. Far across the water stood the old echo stone. You filled up with breath, sent your far-call sailing, and the stone rang your goodnight back. Tonight, at last, {child_name} the {hero} was old enough to try.
 
-Throw. Plop. The stone sank.
+There was one odd thing about the echo stone. It answered everybody. Everybody except {companion_name} — and no one knew why.
 
-Throw. Plop. Another one gone.
+{child_name} planted both feet, took an enormous breath, and called. Out came — honk. A surprised duck.
 
-{child_name} sat down hard. "I can't do it," {child_name} said. "Everyone else can skip stones. I've tried and tried, and mine always sink. I'm just not good at this. I want to go home."
+The stone said nothing.
 
-{companion_name} sat down beside {child_name}, close and calm.
+Again, bigger. Honk! An even more surprised duck.
 
-"Do you remember what we learned before?" {companion_name} asked gently. "That hard is allowed? That a thing being hard doesn't mean it's wrong, it just means it's worth doing?"
+The third try was so small it fell in the water just past {child_name}'s nose.
 
-"I remember," said {child_name}. "But hard still feels heavy."
+"I can't do the far-call," said {child_name}. "Hard at the start is allowed, I know — I met the wobble marks. But this is not hard. This is can't."
 
-"It does," said {companion_name}. "So today I want to give you something to carry with the heavy feeling. It's a word. Just one small word. Do you want to hear it?"
+{companion_name} only said, "Hmm," and nodded at the {object_motif}. "Reaching for the light all season, that one. Not there. Doesn't seem to mind."
 
-{child_name} nodded.
+{child_name} looked at the little sprout: stretched as far as it could stretch, nowhere near the light, growing anyway.
 
-"The word is yet," said {companion_name}.
+And the idea arrived, small and bright. "It can't reach the light yet," said {child_name} slowly. "It just isn't finished. Maybe I'm not finished either. Can't doesn't mean never. Can't only means not so far!"
 
-{child_name} frowned. "Yet? That's so tiny. What can such a little word do?"
+Now lean close, for a secret. When {child_name} said that, {companion_name} went very quiet. Can you guess why the stone never answers them?
 
-"Watch," said {companion_name}. "You said, I can't do it. That sentence has a door slammed shut at the end. Now add the word yet. I can't do it... yet."
+"I said I can't once, long ago," said {companion_name} at last. "I believed it. I never called again. The stone never got its chance."
 
-{child_name} said it slowly. "I can't do it... yet."
+{child_name} stood up. "Then we're both not-so-far. Watch me."
 
-"Feel the difference?" said {companion_name}. "I can't means the door is closed forever. But I can't yet means the door is just still shut for now. It means not so far. You haven't done it so far, that's all. Not so far is not the same as never."
+"{refrain}," said {companion_name} quietly, like a promise.
 
-{child_name} turned the word over like a smooth {object_motif} in a pocket. Not so far. There was room in those words. There was a tomorrow tucked inside them.
+Honk. "Not so far!" Honk. "Not so far!" And then the call came out round and true, and the old stone rang it back: one clear goodnight, floating home over the water.
 
-"Not so far," {child_name} whispered. "I can't skip a stone... yet."
+"Your turn," said {child_name}. "Say it."
 
-"Now try again," said {companion_name}, "and hold on to yet the whole time."
+"Not so far," said {companion_name}, in a rusty little voice. And they called — wobbly, old, brave — and the stone rang back for them, for the first time in their long life.
 
-{child_name} chose a stone, flat and grey, bent low the way the water was low, and flicked the stone sideways.
+They listened until the last echo folded into the dark. The water went smooth. The stars leaned closer.
 
-Plop. It sank.
+"Tomorrow," said {companion_name} sleepily, "teach me the double-call."
 
-"I can't yet," {child_name} said quickly, before the sad feeling could grow. "Not so far. Again."
-
-Plop.
-
-"Not so far. Again."
-
-{child_name} kept the little {object_motif} of a word tight in one hand and threw with the other. Plop. Plop. And then...
-
-Skip. Skip. Skip-skip-skip.
-
-The stone danced across the water and touched the far shore.
-
-{child_name} leapt up. "It skipped! Did you see? It skipped all the way across!"
-
-{companion_name} clapped. "I saw. And do you know what changed?"
-
-"I got better?" said {child_name}.
-
-"You did," said {companion_name}. "But something changed before your arm did. You stopped saying I can't and started saying not so far. The word yet kept you throwing long enough to learn."
-
-{child_name} looked at all the stones still waiting in one pocket, and for the first time they didn't feel like a pile of failures. They felt like a pile of tries.
-
-"I'm going to keep this word," said {child_name}, patting one pocket as if the word lived there now, right beside the {object_motif}.
-
-"Keep it forever," said {companion_name}. "And when something feels too big, reading, or climbing, or being brave, add yet to the end. I can't turns into not so far. And not so far always has a next try in it."
-
-The stars were waking up over {setting} now. {child_name} yawned a big, sleepy yawn.
-
-"Yet," {child_name} murmured. "The smallest word. The biggest help."
-
-"Sleep now, brave one," said {companion_name}. "The hard things will wait. And so will your next try."
+Not so far, thought {child_name}, smiling. And then, one day, all the way.
 
 {refrain}.`,
       },
       '7-8': {
-        audioTemplate: `The lookout tree at the heart of {setting} had a rope that hung all the way down to the ground, and at the top was the best view in the whole world. You could see the rivers, the hills, and the place where the sky turned pink. Everyone the {hero} knew had climbed that rope. Everyone except the {hero}.
+        audioTemplate: `In {setting} there was a custom as old as the hills: when the first star came out, you sent your goodnight across the water. Not spoken — called. The far-call. It sailed to the old echo stone on the far shore, and the stone rang it back, so your own goodnight came home just as you were falling asleep. Tonight, for the first time, the {hero} was old enough to send one.
 
-Tonight the {hero} decided it was finally the night.
+There was one strange thing about the echo stone, a thing everyone knew and nobody mentioned. It answered every far-call ever sent — young, old, loud, shy. Everyone except {companion_name}. In all their long life the stone had never once rung for them, and if you asked {companion_name} why, they changed the subject with tremendous skill.
 
-The {hero} spat on both hands, grabbed the rope, and pulled. Up went one arm. Up went the other. The ground dropped away, a little, then a little more, and then the {hero}'s arms began to burn and shake, and one hand slipped, and down the {hero} came, landing in the soft grass with a thump.
+The {hero} stood at the water's edge, planted both feet, filled up with the biggest breath of the evening, and called.
 
-The {hero} tried again. Higher this time. Then the slip, then the thump.
+Honk.
 
-Again. Thump.
+The sound of a surprised duck. It travelled roughly the length of the {hero}'s shadow and sat down in the shallows.
 
-The {hero} lay in the grass and stared up at the top of the tree, so impossibly far away, and felt hot tears sting.
+The stone, far away, said nothing.
 
-"I can't do it," the {hero} said. "I'm never going to climb this rope. My arms are too weak and everyone else can do it and I just can't. I'm done. I'm going home."
+"Warming up," said the {hero}, and tried again, bigger. Honk! More like a duck that had been planning it all day.
 
-Out of the shadows stepped {companion_name}, who had been watching quietly the whole time.
+The third try was worse — a wisp of a thing that fell in the water just past the {hero}'s nose. The fourth cracked in the middle and became two sounds, neither of them proud.
 
-"That was higher than last time," {companion_name} said, sitting down in the grass beside the {hero}.
+The {hero} sat down hard on the bank. "I can't do the far-call. And before anyone says it — I know hard is allowed. I met the wobble marks. But that was hard. This is can't. Some voices fly and some sink, and mine sinks."
 
-"It doesn't matter how high," said the {hero}. "I still fell. I still can't do it."
+{companion_name} did not argue. They were looking at the {object_motif}, leaning toward the last of the light. "Hmm," was all they said. "Reaching for that light all season, this one. Hasn't got there. Doesn't seem the least bit embarrassed about it."
 
-"Can I tell you something?" said {companion_name}. "Remember when we decided that hard was allowed? That the burning-arms feeling wasn't a sign to stop, but a sign that you were doing something real?"
+The {hero} looked. The little sprout was stretched as tall as it could stretch, nowhere near the light, and growing anyway.
 
-"I remember," the {hero} muttered. "But knowing it's allowed to be hard doesn't get me to the top."
+The idea came up quietly, like the first star. "It can't reach the light yet," the {hero} said slowly. "Yet. It isn't a can't-plant. It just isn't finished." The little word was small, and it fit everything. "Maybe my call isn't a can't either. Can't says the door is shut forever. Yet says I'm just not through it. Can't only means not so far."
 
-"No," {companion_name} agreed. "So I'm going to give you a tool. It's a word. And I promise you it is stronger than it looks." {companion_name} held up one finger. "The word is yet."
+Now — lean close, here is a secret. While the {hero} was saying this, {companion_name} had gone very still. Can you guess why the stone has never rung for them?
 
-The {hero} wiped both eyes. "Yet?"
+"I said I can't, once," said {companion_name}, in a voice like an old drawer opening. "About the far-call. I was young. It came out wrong twice, and I decided the stone and I were not meant for each other. I have not called across that water in my whole life. The stone never refused me. I never gave it the chance."
 
-"Listen to what you said a minute ago," said {companion_name}. "You said, I can't do it. Say it again, but this time put yet on the very end."
+The {hero} stared. {companion_name} — who knew everything, who had a saying for every weather — had been carrying a can't around all along.
 
-"I can't do it... yet," said the {hero}.
+"Then we're both just not-so-far," said the {hero}, standing up. "Watch me."
 
-"There," said {companion_name} softly. "Do you hear how the whole sentence changed? I can't do it is a locked door. But I can't do it yet, that just means not so far. It means you haven't reached the top so far. Not so far isn't the same as never. Not so far still has a road going forward."
+"{refrain}," said {companion_name} quietly, like a promise.
 
-The {hero} sat up slowly. The words felt strange and new, like holding a smooth {object_motif} that had been warmed by the sun.
+Honk. "Not so far." Honk. "Not so far!" Each silly sound stung a little less than the one before, because it was not a verdict anymore — it was practice. And somewhere around the seventh try, the call came out round and full and true, and it flew: over the shallows, over the deep, all the way to the far shore. And the old stone rang. One clear, bright goodnight, floating home across the dark water.
 
-"Not so far," the {hero} repeated. And it was true, it was honest. The {hero} hadn't climbed it so far. That was different from I never will. That had a tomorrow in it.
+The {hero} whooped, then turned. "Your turn."
 
-"Every time you slip," said {companion_name}, "you don't have to say I failed. You can say, not so far, and reach again."
+"It has been a very long time—"
 
-The {hero} stood up. The arms still ached, but something behind the ribs felt lighter. The {hero} tucked the little {object_motif} of a word away somewhere safe inside and took hold of the rope again.
+"Not so far," said the {hero}. "Say it."
 
-"I can't climb this yet," the {hero} said out loud. "Not so far."
+"...Not so far," said {companion_name}, in a rusty voice. And they filled up their old chest and called — wobbly, creaky, brave as anything — and across the water, for the first time in their long life, the stone rang for {companion_name}.
 
-Pull. One arm. The other. Higher than before. The burning came, and the shaking came, and the old voice said give up, but this time the {hero} answered it.
+They stood extremely still while their own goodnight came home to them at last, and their eyes were shining.
 
-"Not so far," the {hero} breathed. "Keep going."
+The two echoes faded together, softer and softer, into the dark. The water smoothed itself out. The stars leaned close to listen.
 
-Higher. The branch that had been the highest point last time passed below the {hero}'s feet. Higher still. The {hero}'s hand slapped against rough bark, the first branch, and grabbed hold.
+"Tomorrow," said {companion_name}, sounding sleepy and lighter than before, "teach me the double-call."
 
-The {hero} hung there, chest heaving, halfway up the great tree, higher than ever before in the whole of the {hero}'s life.
-
-"Look at you," called {companion_name} from below, voice bright with pride.
-
-"I'm not at the top," the {hero} called back, laughing and gasping at once.
-
-"No," said {companion_name}. "You're not at the top, not so far. And that is a wonderful place to be, because it means you're on your way."
-
-The {hero} rested on the branch and looked out. Even from halfway, the view was beautiful: the rivers, the hills, the first stars pricking through over {setting}. The top would come another night. And the {hero} finally, truly believed that it would.
-
-They climbed down together, and the {hero} yawned the enormous yawn of someone who has worked hard and done well.
-
-"That word," said the {hero} sleepily. "Yet. I'm keeping it."
-
-"It's yours now," said {companion_name}. "Carry it everywhere. Whenever your heart says I can't, add yet, and I can't becomes not so far. And not so far is only a place on the way to done."
-
-The {hero} curled up in the soft grass under the lookout tree, the {object_motif} of that little word held close, and let both eyes fall shut.
-
-"Goodnight, tree," the {hero} whispered. "I'll be at your top. Just... not so far. Not yet."
+"Not so far," said the {hero}, grinning. "And then all the way."
 
 {refrain}.`,
-        scriptTemplate: `The lookout tree at the heart of {setting} had a rope that hung all the way down to the ground, and at the top was the best view in the whole world. You could see the rivers, the hills, and the place where the sky turned pink. Everyone {child_name} knew had climbed that rope. Everyone except {child_name}.
+        scriptTemplate: `In {setting} there was a custom as old as the hills: when the first star came out, you sent your goodnight across the water. Not spoken — called. The far-call. It sailed to the old echo stone on the far shore, and the stone rang it back, so your own goodnight came home just as you were falling asleep. Tonight, for the first time, {child_name} the {hero} was old enough to send one.
 
-Tonight {child_name} decided it was finally the night.
+There was one strange thing about the echo stone, a thing everyone knew and nobody mentioned. It answered every far-call ever sent — young, old, loud, shy. Everyone except {companion_name}. In all their long life the stone had never once rung for them, and if you asked {companion_name} why, they changed the subject with tremendous skill.
 
-{child_name} spat on both hands, grabbed the rope, and pulled. Up went one arm. Up went the other. The ground dropped away, a little, then a little more, and then {child_name}'s arms began to burn and shake, and one hand slipped, and down {child_name} came, landing in the soft grass with a thump.
+{child_name} stood at the water's edge, planted both feet, filled up with the biggest breath of the evening, and called.
 
-{child_name} tried again. Higher this time. Then the slip, then the thump.
+Honk.
 
-Again. Thump.
+The sound of a surprised duck. It travelled roughly the length of {child_name}'s shadow and sat down in the shallows.
 
-{child_name} lay in the grass and stared up at the top of the tree, so impossibly far away, and felt hot tears sting.
+The stone, far away, said nothing.
 
-"I can't do it," {child_name} said. "I'm never going to climb this rope. My arms are too weak and everyone else can do it and I just can't. I'm done. I'm going home."
+"Warming up," said {child_name}, and tried again, bigger. Honk! More like a duck that had been planning it all day.
 
-Out of the shadows stepped {companion_name}, who had been watching quietly the whole time.
+The third try was worse — a wisp of a thing that fell in the water just past {child_name}'s nose. The fourth cracked in the middle and became two sounds, neither of them proud.
 
-"That was higher than last time," {companion_name} said, sitting down in the grass beside {child_name}.
+{child_name} sat down hard on the bank. "I can't do the far-call. And before anyone says it — I know hard is allowed. I met the wobble marks. But that was hard. This is can't. Some voices fly and some sink, and mine sinks."
 
-"It doesn't matter how high," said {child_name}. "I still fell. I still can't do it."
+{companion_name} did not argue. They were looking at the {object_motif}, leaning toward the last of the light. "Hmm," was all they said. "Reaching for that light all season, this one. Hasn't got there. Doesn't seem the least bit embarrassed about it."
 
-"Can I tell you something?" said {companion_name}. "Remember when we decided that hard was allowed? That the burning-arms feeling wasn't a sign to stop, but a sign that you were doing something real?"
+{child_name} looked. The little sprout was stretched as tall as it could stretch, nowhere near the light, and growing anyway.
 
-"I remember," {child_name} muttered. "But knowing it's allowed to be hard doesn't get me to the top."
+The idea came up quietly, like the first star. "It can't reach the light yet," {child_name} said slowly. "Yet. It isn't a can't-plant. It just isn't finished." The little word was small, and it fit everything. "Maybe my call isn't a can't either. Can't says the door is shut forever. Yet says I'm just not through it. Can't only means not so far."
 
-"No," {companion_name} agreed. "So I'm going to give you a tool. It's a word. And I promise you it is stronger than it looks." {companion_name} held up one finger. "The word is yet."
+Now — lean close, here is a secret. While {child_name} was saying this, {companion_name} had gone very still. Can you guess why the stone has never rung for them?
 
-{child_name} wiped both eyes. "Yet?"
+"I said I can't, once," said {companion_name}, in a voice like an old drawer opening. "About the far-call. I was young. It came out wrong twice, and I decided the stone and I were not meant for each other. I have not called across that water in my whole life. The stone never refused me. I never gave it the chance."
 
-"Listen to what you said a minute ago," said {companion_name}. "You said, I can't do it. Say it again, but this time put yet on the very end."
+{child_name} stared. {companion_name} — who knew everything, who had a saying for every weather — had been carrying a can't around all along.
 
-"I can't do it... yet," said {child_name}.
+"Then we're both just not-so-far," said {child_name}, standing up. "Watch me."
 
-"There," said {companion_name} softly. "Do you hear how the whole sentence changed? I can't do it is a locked door. But I can't do it yet, that just means not so far. It means you haven't reached the top so far. Not so far isn't the same as never. Not so far still has a road going forward."
+"{refrain}," said {companion_name} quietly, like a promise.
 
-{child_name} sat up slowly. The words felt strange and new, like holding a smooth {object_motif} that had been warmed by the sun.
+Honk. "Not so far." Honk. "Not so far!" Each silly sound stung a little less than the one before, because it was not a verdict anymore — it was practice. And somewhere around the seventh try, the call came out round and full and true, and it flew: over the shallows, over the deep, all the way to the far shore. And the old stone rang. One clear, bright goodnight, floating home across the dark water.
 
-"Not so far," {child_name} repeated. And it was true, it was honest. {child_name} hadn't climbed it so far. That was different from I never will. That had a tomorrow in it.
+{child_name} whooped, then turned. "Your turn."
 
-"Every time you slip," said {companion_name}, "you don't have to say I failed. You can say, not so far, and reach again."
+"It has been a very long time—"
 
-{child_name} stood up. The arms still ached, but something behind the ribs felt lighter. {child_name} tucked the little {object_motif} of a word away somewhere safe inside and took hold of the rope again.
+"Not so far," said {child_name}. "Say it."
 
-"I can't climb this yet," {child_name} said out loud. "Not so far."
+"...Not so far," said {companion_name}, in a rusty voice. And they filled up their old chest and called — wobbly, creaky, brave as anything — and across the water, for the first time in their long life, the stone rang for {companion_name}.
 
-Pull. One arm. The other. Higher than before. The burning came, and the shaking came, and the old voice said give up, but this time {child_name} answered it.
+They stood extremely still while their own goodnight came home to them at last, and their eyes were shining.
 
-"Not so far," {child_name} breathed. "Keep going."
+The two echoes faded together, softer and softer, into the dark. The water smoothed itself out. The stars leaned close to listen.
 
-Higher. The branch that had been the highest point last time passed below {child_name}'s feet. Higher still. {child_name}'s hand slapped against rough bark, the first branch, and grabbed hold.
+"Tomorrow," said {companion_name}, sounding sleepy and lighter than before, "teach me the double-call."
 
-{child_name} hung there, chest heaving, halfway up the great tree, higher than ever before in the whole of {child_name}'s life.
-
-"Look at you," called {companion_name} from below, voice bright with pride.
-
-"I'm not at the top," {child_name} called back, laughing and gasping at once.
-
-"No," said {companion_name}. "You're not at the top, not so far. And that is a wonderful place to be, because it means you're on your way."
-
-{child_name} rested on the branch and looked out. Even from halfway, the view was beautiful: the rivers, the hills, the first stars pricking through over {setting}. The top would come another night. And {child_name} finally, truly believed that it would.
-
-They climbed down together, and {child_name} yawned the enormous yawn of someone who has worked hard and done well.
-
-"That word," said {child_name} sleepily. "Yet. I'm keeping it."
-
-"It's yours now," said {companion_name}. "Carry it everywhere. Whenever your heart says I can't, add yet, and I can't becomes not so far. And not so far is only a place on the way to done."
-
-{child_name} curled up in the soft grass under the lookout tree, the {object_motif} of that little word held close, and let both eyes fall shut.
-
-"Goodnight, tree," {child_name} whispered. "I'll be at your top. Just... not so far. Not yet."
+"Not so far," said {child_name}, grinning. "And then all the way."
 
 {refrain}.`,
       },
       '9-11': {
-        audioTemplate: `There was a flat grey rock at the edge of {setting} that the {hero} thought of as a private studio. Every evening, when the light went amber and soft, the {hero} would sit there with a stick of charcoal and a stack of pale bark-paper and try to draw the living things of the world: the birds, the leaping fish, the way the wind bent the grass.
+        audioTemplate: `Every place has one custom it is quietly famous for, and in {setting} it was this: when the first star came out, you did not say goodnight. You called it. The far-call — one long, full note, sent sailing to the old echo stone on the far shore — and the stone rang it back, so your own goodnight came home across the dark just as you were drifting off. Tonight, for the first time, the {hero} was finally old enough to send a call of their own.
 
-And every evening, lately, the {hero} would end up crushing the paper into a ball.
+There was one strange fact about the echo stone, known to everyone and mentioned by no one. It had answered every far-call ever sent — loud ones, timid ones, calls that wobbled like a dropped plate. Everyone, in all these years, except {companion_name}. The stone had never rung for them, not once, and whenever anyone asked why, {companion_name} developed a sudden fascinating interest in the weather.
 
-Tonight was worse than most. The {hero} had been trying to draw a single bird in flight for over an hour. In the {hero}'s head the bird was perfect, wings wide, feathers sharp, alive. On the paper it came out lumpy and wrong, a smudge with a beak. The {hero} had seen the drawings the others made. The older ones could sketch a bird in three quick lines and somehow it looked like it might lift off the page. Theirs looked easy. Effortless. Like they'd been born already knowing how.
+The {hero} stood at the water's edge, planted both feet, drew in the largest breath of the evening, and released what was meant to be a long, noble, sailing note.
 
-The {hero} looked down at the crumpled pile of failures and felt something cold and final settle in the chest.
+Honk.
 
-"I can't do this," the {hero} said quietly, to no one. "I'm just not an artist. Some people have it and some people don't, and I don't. I've been coming here for weeks and I haven't gotten any better. There's no point." The {hero} set the charcoal down on the rock, gently, the way you put down something you've decided never to pick up again.
+A surprised duck. It travelled the length of the {hero}'s shadow, lost interest, and sat down in the shallows.
 
-"That's a very large decision to make about yourself," said a voice.
+The stone said nothing whatsoever.
 
-{companion_name} was standing a little way off, careful not to crowd, the way {companion_name} always was.
+"Warming up," the {hero} announced, and tried again with more ambition. Honk! — less a surprised duck now, more a duck that had rehearsed. The third attempt was a wisp that fell in the water just past the {hero}'s nose. The fourth cracked neatly in half mid-flight, becoming two sounds, neither of which would claim the other.
 
-"You saw those," the {hero} said, nodding at the crumpled pile, cheeks hot with shame.
+The {hero} sat down on the bank with the particular dignity of the recently humbled. "I can't do the far-call," the {hero} said. "And before anyone quotes the wobble marks at me — I know. Hard is allowed. But hard is when a thing goes badly. This thing does not go at all. Some voices fly and some sink. Mine sinks. There is no lesson here. There is just a duck."
 
-"I saw someone working very hard at something they care about," said {companion_name}, coming to sit on the edge of the flat rock. "Those are different things. May I see the bird?"
+{companion_name} did not argue, which was somehow more annoying than arguing. They were studying the {object_motif}, leaning its whole small body toward the last of the light. "Hmm," they said at last. "This one has been reaching for that light all season. Hasn't arrived. Doesn't appear to consider itself a failure."
 
-Reluctantly, the {hero} smoothed out the least terrible drawing. {companion_name} studied it for a long moment, not politely, but really looking.
+The {hero} was fully prepared to ignore this, and then made the mistake of actually looking. The sprout stood stretched to its absolute limit, nowhere near the light, and visibly, stubbornly, unhurriedly growing.
 
-"The others make it look so easy," the {hero} said, before {companion_name} could speak. "They just... can. And I just can't. That's the difference between us. It's not going to change."
+The thought arrived the way the first star does: quietly, and then impossible to unsee. "It can't reach the light yet," the {hero} said slowly. "Yet. Nobody looks at a growing thing and calls it a failed tree." The {hero} turned the small word over like a key. "Can't slams the whole door. But yet — yet just means the door is still ahead of me. I haven't done it so far. Not so far isn't the same as never."
 
-"I want to ask you something," said {companion_name}, "and I want you to be honest. When you look at the ones who draw so well, do you think you're seeing all of it? Do you think you're seeing the hundreds of evenings they sat on rocks like this one, crushing paper into balls, before you ever met them?"
+Now — lean in, while the {hero} is busy discovering things. Did you notice what happened to {companion_name} during all that? They went very still. Very quiet. Can you guess — before the {hero} does — why the stone has never rung for them?
 
-The {hero} opened a mouth to answer, and then closed it. That thought had genuinely never arrived before. The others had always simply existed as good, finished, complete, effortless, as if they'd skipped the part the {hero} was stuck in.
+"I said I can't, once," {companion_name} said finally, in a voice like an old drawer being opened for the first time in years. "About the far-call. I was young. It came out wrong twice — twice! — and I ruled, then and there, that the stone and I were not meant for each other. It felt very wise at the time." They looked across the water. "I have not called once since. So you see, the stone never refused me. I never gave it anything to answer."
 
-"You're comparing the inside of your work to the outside of theirs," said {companion_name}. "You see your every failed line, because you live inside them. You only see their best, because that's all they show. Of course it looks like they can and you can't."
+The {hero} stared. {companion_name} — who knew everything, who had a proverb for every weather — had spent a lifetime carrying one small, heavy can't.
 
-The {hero} was quiet.
+"Then we are both simply not-so-far," said the {hero}, standing up and dusting off the humility. "Watch me."
 
-"Remember what we learned," {companion_name} went on, gentler now. "That hard is allowed. That the struggling feeling isn't proof you're doing it wrong, it's proof you're doing something real."
+"{refrain}," said {companion_name} quietly, like a promise taken down from a high shelf.
 
-"I remember," said the {hero}. "But I've been struggling for weeks and I'm still bad. At some point struggling has to actually turn into something, or it's just... struggling."
+Honk. "Not so far." Honk. "Not so far!" Each ridiculous sound stung less than the one before, because none of them were verdicts anymore. They were practice, and practice is allowed to be ugly. Around the seventh try the note came out round and full and true, and it flew — all the way to the far shore — and the old stone rang, one clear goodnight sailing home across the dark.
 
-"It does turn into something," said {companion_name}. "And I'm going to give you the thing that lets you notice it turning. It's a word. I know that sounds too small to matter. Hold on to it anyway." {companion_name} paused. "The word is yet."
+The {hero} whooped, then turned. "Your turn."
 
-The {hero} let out a short, tired breath that was almost a laugh. "Yet."
+"It has been an extremely long—"
 
-"You said a whole sentence about yourself a minute ago," said {companion_name}. "You said, I'm just not an artist. I can't do this. Those are locked doors, they close the future off completely. But listen to what happens when you put one word on the end. Say it: I can't do this. Now add yet."
+"Not so far," said the {hero}. "Say it."
 
-"I can't do this," the {hero} said slowly, "yet."
+"...Not so far," said {companion_name}, rusty and quiet. And they filled their old chest with evening air and called — wobbly, creaky, half a lifetime late — and across the water, for the very first time, the stone rang for {companion_name}.
 
-"What changed?"
+They said nothing for a while. Their own goodnight came home across the water, and they stood in it like warm rain.
 
-The {hero} sat with it, and this time didn't rush to dismiss it. Something had changed, actually, something small and real. "It's not... finished anymore," the {hero} said. "I can't do this sounds like the end. I can't do this yet sounds like... the middle."
+The two echoes faded together, softer, and softer, into the dark. The water smoothed itself flat. The stars leaned close.
 
-"That's exactly it," said {companion_name}, and there was something fierce and warm in the voice. "I can't do this means never. I can't do this yet means not so far. And not so far is just an honest description of where you are on a long road. You haven't drawn the bird so far. That is completely, entirely different from you will never draw the bird. Not so far still has every tomorrow in it."
+"Tomorrow," said {companion_name} at last, sounding sleepy and several years lighter, "teach me the double-call."
 
-The {hero} turned the words over, not so far, and felt them settle differently than I'm just not an artist had settled. That old sentence had been a stone in the chest. This one was more like a door left open a crack, with light coming through. The {hero} picked up the charcoal again and rolled it between two fingers, then reached into a pocket and closed a hand around the small {object_motif} kept there, the one from the very first night, the one that meant remember what you already got through.
-
-"It's honest, though, isn't it," the {hero} said slowly. "Not so far isn't pretending. It's not saying I'm secretly amazing. It's just saying, not so far. Keep going."
-
-"That's why it works," said {companion_name}. "It doesn't ask you to lie about how good you are. It only asks you to be honest about not being finished."
-
-The {hero} looked down at the fresh sheet of pale bark-paper, and up at the last bird of the evening wheeling against the amber sky over {setting}. And instead of trying to draw the whole perfect bird all at once, the {hero} drew one line. Just the sweep of the wing. It wasn't right. But it was closer than the first line an hour ago had been, and the {hero} could see that now, could actually measure it.
-
-"That wing is better than the one before," the {hero} said, surprised.
-
-"Not so far," {companion_name} said, smiling, "but closer than before. Both of those are true at the same time. That's the whole secret."
-
-The {hero} drew another line, and another, holding the small word the way one holds the {object_motif}, quietly, without gripping too tight. The bird on the page was still lumpy. But it was a lumpy bird made by someone who had stopped saying never, and that, the {hero} understood now, was the only kind of person who ever learned to draw one properly.
-
-The sky went deep blue. The first stars came out. The {hero} gathered the crumpled papers, but instead of tossing them away, tucked them into the stack, proof of the road already walked.
-
-"I'm not good at this," the {hero} said, standing, but the words came out light now, almost like a joke shared between friends. "Not so far."
-
-"Not so far," {companion_name} agreed. "Which is a wonderful place to be, because everyone who is good at this once stood exactly where you're standing, and said exactly what you just said, and then kept drawing anyway."
-
-The {hero} yawned, the long deep yawn of honest work. Tomorrow evening the flat grey rock would be waiting. And the bird. And the small, mighty word.
-
-"Goodnight," the {hero} whispered to the darkening world. "I'll get you right. Just... not so far."
+"Can't do that one," said the {hero}, grinning into the dark. "Not so far."
 
 {refrain}.`,
-        scriptTemplate: `There was a flat grey rock at the edge of {setting} that {child_name} thought of as a private studio. Every evening, when the light went amber and soft, {child_name} would sit there with a stick of charcoal and a stack of pale bark-paper and try to draw the living things of the world: the birds, the leaping fish, the way the wind bent the grass.
+        scriptTemplate: `Every place has one custom it is quietly famous for, and in {setting} it was this: when the first star came out, you did not say goodnight. You called it. The far-call — one long, full note, sent sailing to the old echo stone on the far shore — and the stone rang it back, so your own goodnight came home across the dark just as you were drifting off. Tonight, for the first time, {child_name} the {hero} was finally old enough to send a call of their own.
 
-And every evening, lately, {child_name} would end up crushing the paper into a ball.
+There was one strange fact about the echo stone, known to everyone and mentioned by no one. It had answered every far-call ever sent — loud ones, timid ones, calls that wobbled like a dropped plate. Everyone, in all these years, except {companion_name}. The stone had never rung for them, not once, and whenever anyone asked why, {companion_name} developed a sudden fascinating interest in the weather.
 
-Tonight was worse than most. {child_name} had been trying to draw a single bird in flight for over an hour. In {child_name}'s head the bird was perfect, wings wide, feathers sharp, alive. On the paper it came out lumpy and wrong, a smudge with a beak. {child_name} had seen the drawings the others made. The older ones could sketch a bird in three quick lines and somehow it looked like it might lift off the page. Theirs looked easy. Effortless. Like they'd been born already knowing how.
+{child_name} stood at the water's edge, planted both feet, drew in the largest breath of the evening, and released what was meant to be a long, noble, sailing note.
 
-{child_name} looked down at the crumpled pile of failures and felt something cold and final settle in the chest.
+Honk.
 
-"I can't do this," {child_name} said quietly, to no one. "I'm just not an artist. Some people have it and some people don't, and I don't. I've been coming here for weeks and I haven't gotten any better. There's no point." {child_name} set the charcoal down on the rock, gently, the way you put down something you've decided never to pick up again.
+A surprised duck. It travelled the length of {child_name}'s shadow, lost interest, and sat down in the shallows.
 
-"That's a very large decision to make about yourself," said a voice.
+The stone said nothing whatsoever.
 
-{companion_name} was standing a little way off, careful not to crowd, the way {companion_name} always was.
+"Warming up," {child_name} announced, and tried again with more ambition. Honk! — less a surprised duck now, more a duck that had rehearsed. The third attempt was a wisp that fell in the water just past {child_name}'s nose. The fourth cracked neatly in half mid-flight, becoming two sounds, neither of which would claim the other.
 
-"You saw those," {child_name} said, nodding at the crumpled pile, cheeks hot with shame.
+{child_name} sat down on the bank with the particular dignity of the recently humbled. "I can't do the far-call," {child_name} said. "And before anyone quotes the wobble marks at me — I know. Hard is allowed. But hard is when a thing goes badly. This thing does not go at all. Some voices fly and some sink. Mine sinks. There is no lesson here. There is just a duck."
 
-"I saw someone working very hard at something they care about," said {companion_name}, coming to sit on the edge of the flat rock. "Those are different things. May I see the bird?"
+{companion_name} did not argue, which was somehow more annoying than arguing. They were studying the {object_motif}, leaning its whole small body toward the last of the light. "Hmm," they said at last. "This one has been reaching for that light all season. Hasn't arrived. Doesn't appear to consider itself a failure."
 
-Reluctantly, {child_name} smoothed out the least terrible drawing. {companion_name} studied it for a long moment, not politely, but really looking.
+{child_name} was fully prepared to ignore this, and then made the mistake of actually looking. The sprout stood stretched to its absolute limit, nowhere near the light, and visibly, stubbornly, unhurriedly growing.
 
-"The others make it look so easy," {child_name} said, before {companion_name} could speak. "They just... can. And I just can't. That's the difference between us. It's not going to change."
+The thought arrived the way the first star does: quietly, and then impossible to unsee. "It can't reach the light yet," {child_name} said slowly. "Yet. Nobody looks at a growing thing and calls it a failed tree." {child_name} turned the small word over like a key. "Can't slams the whole door. But yet — yet just means the door is still ahead of me. I haven't done it so far. Not so far isn't the same as never."
 
-"I want to ask you something," said {companion_name}, "and I want you to be honest. When you look at the ones who draw so well, do you think you're seeing all of it? Do you think you're seeing the hundreds of evenings they sat on rocks like this one, crushing paper into balls, before you ever met them?"
+Now — lean in, while {child_name} is busy discovering things. Did you notice what happened to {companion_name} during all that? They went very still. Very quiet. Can you guess — before {child_name} does — why the stone has never rung for them?
 
-{child_name} opened a mouth to answer, and then closed it. That thought had genuinely never arrived before. The others had always simply existed as good, finished, complete, effortless, as if they'd skipped the part {child_name} was stuck in.
+"I said I can't, once," {companion_name} said finally, in a voice like an old drawer being opened for the first time in years. "About the far-call. I was young. It came out wrong twice — twice! — and I ruled, then and there, that the stone and I were not meant for each other. It felt very wise at the time." They looked across the water. "I have not called once since. So you see, the stone never refused me. I never gave it anything to answer."
 
-"You're comparing the inside of your work to the outside of theirs," said {companion_name}. "You see your every failed line, because you live inside them. You only see their best, because that's all they show. Of course it looks like they can and you can't."
+{child_name} stared. {companion_name} — who knew everything, who had a proverb for every weather — had spent a lifetime carrying one small, heavy can't.
 
-{child_name} was quiet.
+"Then we are both simply not-so-far," said {child_name}, standing up and dusting off the humility. "Watch me."
 
-"Remember what we learned," {companion_name} went on, gentler now. "That hard is allowed. That the struggling feeling isn't proof you're doing it wrong, it's proof you're doing something real."
+"{refrain}," said {companion_name} quietly, like a promise taken down from a high shelf.
 
-"I remember," said {child_name}. "But I've been struggling for weeks and I'm still bad. At some point struggling has to actually turn into something, or it's just... struggling."
+Honk. "Not so far." Honk. "Not so far!" Each ridiculous sound stung less than the one before, because none of them were verdicts anymore. They were practice, and practice is allowed to be ugly. Around the seventh try the note came out round and full and true, and it flew — all the way to the far shore — and the old stone rang, one clear goodnight sailing home across the dark.
 
-"It does turn into something," said {companion_name}. "And I'm going to give you the thing that lets you notice it turning. It's a word. I know that sounds too small to matter. Hold on to it anyway." {companion_name} paused. "The word is yet."
+{child_name} whooped, then turned. "Your turn."
 
-{child_name} let out a short, tired breath that was almost a laugh. "Yet."
+"It has been an extremely long—"
 
-"You said a whole sentence about yourself a minute ago," said {companion_name}. "You said, I'm just not an artist. I can't do this. Those are locked doors, they close the future off completely. But listen to what happens when you put one word on the end. Say it: I can't do this. Now add yet."
+"Not so far," said {child_name}. "Say it."
 
-"I can't do this," {child_name} said slowly, "yet."
+"...Not so far," said {companion_name}, rusty and quiet. And they filled their old chest with evening air and called — wobbly, creaky, half a lifetime late — and across the water, for the very first time, the stone rang for {companion_name}.
 
-"What changed?"
+They said nothing for a while. Their own goodnight came home across the water, and they stood in it like warm rain.
 
-{child_name} sat with it, and this time didn't rush to dismiss it. Something had changed, actually, something small and real. "It's not... finished anymore," {child_name} said. "I can't do this sounds like the end. I can't do this yet sounds like... the middle."
+The two echoes faded together, softer, and softer, into the dark. The water smoothed itself flat. The stars leaned close.
 
-"That's exactly it," said {companion_name}, and there was something fierce and warm in the voice. "I can't do this means never. I can't do this yet means not so far. And not so far is just an honest description of where you are on a long road. You haven't drawn the bird so far. That is completely, entirely different from you will never draw the bird. Not so far still has every tomorrow in it."
+"Tomorrow," said {companion_name} at last, sounding sleepy and several years lighter, "teach me the double-call."
 
-{child_name} turned the words over, not so far, and felt them settle differently than I'm just not an artist had settled. That old sentence had been a stone in the chest. This one was more like a door left open a crack, with light coming through. {child_name} picked up the charcoal again and rolled it between two fingers, then reached into a pocket and closed a hand around the small {object_motif} kept there, the one from the very first night, the one that meant remember what you already got through.
-
-"It's honest, though, isn't it," {child_name} said slowly. "Not so far isn't pretending. It's not saying I'm secretly amazing. It's just saying, not so far. Keep going."
-
-"That's why it works," said {companion_name}. "It doesn't ask you to lie about how good you are. It only asks you to be honest about not being finished."
-
-{child_name} looked down at the fresh sheet of pale bark-paper, and up at the last bird of the evening wheeling against the amber sky over {setting}. And instead of trying to draw the whole perfect bird all at once, {child_name} drew one line. Just the sweep of the wing. It wasn't right. But it was closer than the first line an hour ago had been, and {child_name} could see that now, could actually measure it.
-
-"That wing is better than the one before," {child_name} said, surprised.
-
-"Not so far," {companion_name} said, smiling, "but closer than before. Both of those are true at the same time. That's the whole secret."
-
-{child_name} drew another line, and another, holding the small word the way one holds the {object_motif}, quietly, without gripping too tight. The bird on the page was still lumpy. But it was a lumpy bird made by someone who had stopped saying never, and that, {child_name} understood now, was the only kind of person who ever learned to draw one properly.
-
-The sky went deep blue. The first stars came out. {child_name} gathered the crumpled papers, but instead of tossing them away, tucked them into the stack, proof of the road already walked.
-
-"I'm not good at this," {child_name} said, standing, but the words came out light now, almost like a joke shared between friends. "Not so far."
-
-"Not so far," {companion_name} agreed. "Which is a wonderful place to be, because everyone who is good at this once stood exactly where you're standing, and said exactly what you just said, and then kept drawing anyway."
-
-{child_name} yawned, the long deep yawn of honest work. Tomorrow evening the flat grey rock would be waiting. And the bird. And the small, mighty word.
-
-"Goodnight," {child_name} whispered to the darkening world. "I'll get you right. Just... not so far."
+"Can't do that one," said {child_name}, grinning into the dark. "Not so far."
 
 {refrain}.`,
       },
     },
-    audioTemplate: `Under a wide and quiet sky in {setting}, the {hero} set down what they were trying and said the heaviest words they knew: "I can't do it."
+    audioTemplate: `Goodnight-call time came to {setting} just after sundown. Far across the water stood the old echo stone. You filled up with breath, sent your far-call sailing, and the stone rang your goodnight back. Tonight, at last, the {hero} was old enough to try.
 
-The {object_motif} stirred in the night air, a little taller than the night before.
+There was one odd thing about the echo stone. It answered everybody. Everybody except {companion_name} — and no one knew why.
 
-{companion_name} tilted their head. "Those words feel so final," they said. "But you are missing one. A small one. Add it to the end and listen."
+The {hero} planted both feet, took an enormous breath, and called. Out came — honk. A surprised duck.
 
-"I can't do it…" the {hero} began.
+The stone said nothing.
 
-"…yet," whispered {companion_name}.
+Again, bigger. Honk! An even more surprised duck.
 
-"I can't do it… yet," said the {hero}, and the words felt completely different. Not a wall. A path with more of it still to walk.
+The third try was so small it fell in the water just past the {hero}'s nose.
 
-"Last time you learned that hard is allowed," said {companion_name}. "Yet is what you say while the hard is still happening. It means: not so far. It means: keep going."
+"I can't do the far-call," said the {hero}. "Hard at the start is allowed, I know — I met the wobble marks. But this is not hard. This is can't."
 
-The {hero} looked at the growing {object_motif} and smiled. Not finished. Not stuck. Just — not yet.
+{companion_name} only said, "Hmm," and nodded at the {object_motif}. "Reaching for the light all season, that one. Not there. Doesn't seem to mind."
+
+The {hero} looked at the little sprout: stretched as far as it could stretch, nowhere near the light, growing anyway.
+
+And the idea arrived, small and bright. "It can't reach the light yet," said the {hero} slowly. "It just isn't finished. Maybe I'm not finished either. Can't doesn't mean never. Can't only means not so far!"
+
+Now lean close, for a secret. When the {hero} said that, {companion_name} went very quiet. Can you guess why the stone never answers them?
+
+"I said I can't once, long ago," said {companion_name} at last. "I believed it. I never called again. The stone never got its chance."
+
+The {hero} stood up. "Then we're both not-so-far. Watch me."
+
+"{refrain}," said {companion_name} quietly, like a promise.
+
+Honk. "Not so far!" Honk. "Not so far!" And then the call came out round and true, and the old stone rang it back: one clear goodnight, floating home over the water.
+
+"Your turn," said the {hero}. "Say it."
+
+"Not so far," said {companion_name}, in a rusty little voice. And they called — wobbly, old, brave — and the stone rang back for them, for the first time in their long life.
+
+They listened until the last echo folded into the dark. The water went smooth. The stars leaned closer.
+
+"Tomorrow," said {companion_name} sleepily, "teach me the double-call."
+
+Not so far, thought the {hero}, smiling. And then, one day, all the way.
 
 {refrain}.`,
-    scriptTemplate: `Under a wide and quiet sky in {setting}, {child_name} the {hero} set down what they were trying and said the heaviest words they knew: "I can't do it."
+    scriptTemplate: `Goodnight-call time came to {setting} just after sundown. Far across the water stood the old echo stone. You filled up with breath, sent your far-call sailing, and the stone rang your goodnight back. Tonight, at last, {child_name} the {hero} was old enough to try.
 
-The {object_motif} stirred in the night air, a little taller than the night before.
+There was one odd thing about the echo stone. It answered everybody. Everybody except {companion_name} — and no one knew why.
 
-{companion_name} tilted their head. "Those words feel so final," they said. "But you are missing one, {child_name}. A small one. Add it to the end and listen."
+{child_name} planted both feet, took an enormous breath, and called. Out came — honk. A surprised duck.
 
-"I can't do it…" {child_name} began.
+The stone said nothing.
 
-"…yet," whispered {companion_name}.
+Again, bigger. Honk! An even more surprised duck.
 
-"I can't do it… yet," said {child_name}, and the words felt completely different. Not a wall. A path with more of it still to walk.
+The third try was so small it fell in the water just past {child_name}'s nose.
 
-"Last time you learned that hard is allowed," said {companion_name}. "Yet is what you say while the hard is still happening. It means: not so far. It means: keep going."
+"I can't do the far-call," said {child_name}. "Hard at the start is allowed, I know — I met the wobble marks. But this is not hard. This is can't."
 
-{child_name} looked at the growing {object_motif} and smiled. Not finished. Not stuck. Just — not yet.
+{companion_name} only said, "Hmm," and nodded at the {object_motif}. "Reaching for the light all season, that one. Not there. Doesn't seem to mind."
+
+{child_name} looked at the little sprout: stretched as far as it could stretch, nowhere near the light, growing anyway.
+
+And the idea arrived, small and bright. "It can't reach the light yet," said {child_name} slowly. "It just isn't finished. Maybe I'm not finished either. Can't doesn't mean never. Can't only means not so far!"
+
+Now lean close, for a secret. When {child_name} said that, {companion_name} went very quiet. Can you guess why the stone never answers them?
+
+"I said I can't once, long ago," said {companion_name} at last. "I believed it. I never called again. The stone never got its chance."
+
+{child_name} stood up. "Then we're both not-so-far. Watch me."
+
+"{refrain}," said {companion_name} quietly, like a promise.
+
+Honk. "Not so far!" Honk. "Not so far!" And then the call came out round and true, and the old stone rang it back: one clear goodnight, floating home over the water.
+
+"Your turn," said {child_name}. "Say it."
+
+"Not so far," said {companion_name}, in a rusty little voice. And they called — wobbly, old, brave — and the stone rang back for them, for the first time in their long life.
+
+They listened until the last echo folded into the dark. The water went smooth. The stars leaned closer.
+
+"Tomorrow," said {companion_name} sleepily, "teach me the double-call."
+
+Not so far, thought {child_name}, smiling. And then, one day, all the way.
 
 {refrain}.`,
   },
   {
     ordinal: 3,
-    title: "Mistakes Help Us Grow",
+    title: "The Runaway Seeds",
     concept: "A mistake is information, not failure",
     callback: "Hard is meant to feel hard (Level 1)",
     ageFloor: 4,
-    summary: "The hero makes a mistake and feels ashamed. Their companion shows them that a mistake quietly tells you what to try next — it is how growing works, not the opposite of it. It revisits Level 1: if hard is normal, mistakes are part of hard.",
+    summary: "The hero has one evening to plant a perfect ring of glow-seeds as a welcome-home surprise — and trips, scattering them in a crooked line. But when the moon rises, it is the runaway seeds that light up, not the tidy ring: the spill found the soft, rain-fed ground the plan never knew about. A mistake, the hero discovers, is not a ruin. It is information wearing a disguise.",
     teachingNote: "When mistakes are framed as useful information, a child stops hiding them and starts learning from them.",
     learningBeat: "part of how growing is done",
     ageVariants: {
       '3-4': {
-        audioTemplate: `In {setting}, the {hero} woke up happy. Today was building day. {companion_name} was coming to help, and the {hero} had a special plan.
+        audioTemplate: `{companion_name} would be home at moonrise. So the {hero} made a surprise in {setting}: a ring of glow-seeds around the {object_motif}. Glow-seeds shine when the moon comes up.
 
-The {hero} wanted to build the tallest tower ever, all by themselves, before {companion_name} arrived. So the {hero} stacked and stacked, holding tight to a little {object_motif} for luck.
+The {hero} carried the full pouch, so carefully. Then — trip! Plip, plip, plip. Seeds spilled everywhere, in a long crooked line.
 
-But the tower leaned. Then it wobbled. Then, crash! Down it came, right as {companion_name} walked in.
+"Oh no," said the {hero}. "I ruined it."
 
-The {hero}'s cheeks went hot. "I did it wrong," the {hero} said. "I ruined it. Maybe I am just bad at building."
+The {hero} planted the rest in a neat ring anyway. One seed, two seeds, three. Then the moon peeked up.
 
-The {hero} wanted to hide. A tumbled tower felt like proof of something sad.
+Look closely in the dark. Which seeds are glowing? Not the tidy ring. The runaway ones!
 
-{companion_name} sat down in the pile of blocks. "Let's look," they said softly. "A tower that falls is not a bad tower. It is a tower telling you something."
+The spilled seeds shone all down the crooked line. That ground was soft and rainy. Seeds love soft ground.
 
-"Telling me what?" asked the {hero}.
+"My mistake was not a ruin," said the {hero}. "It was a clue! Getting it wrong is part of how growing is done."
 
-{companion_name} picked up a wide, flat block and a skinny one. "See? The skinny blocks were on the bottom. That is why it wobbled. The tower just showed you where to put the strong blocks."
+So the {hero} moved every seed to the crooked line. It became a little river of light.
 
-The {hero} blinked. "So the crash was... a clue?"
+{companion_name} came home and gasped. "A glowing river! For me?"
 
-"Yes," said {companion_name}, smiling. "A mistake is not the end. A mistake is information. It quietly tells you what to try next. Getting something wrong and then learning from it is part of how growing is done."
+"{refrain}," said the {hero}, the way {companion_name} always said it.
 
-The {hero} looked at the little {object_motif} still in their hand. Then the {hero} looked at the blocks in a new way.
-
-This time, the {hero} put the wide blocks on the bottom. Big ones first. Skinny ones on top. Slow and steady.
-
-The tower grew. Taller than before. Taller than the {hero}! It did not wobble at all.
-
-"You did that," said {companion_name}, "because the first tower taught you how."
-
-The {hero} laughed. The hot, sad feeling was gone. Falling down had not made the {hero} bad. It had made the {hero} wiser.
-
-That night in {setting}, the {hero} held the {object_motif} close and felt proud, not because nothing went wrong, but because something did, and the {hero} learned from it.
+They sat in the seed-light. One runaway seed was still hiding. Tomorrow, they would find its glow.
 
 {refrain}.`,
-        scriptTemplate: `In {setting}, {child_name} woke up happy. Today was building day. {companion_name} was coming to help, and {child_name} had a special plan.
+        scriptTemplate: `{companion_name} would be home at moonrise. So {child_name} the {hero} made a surprise in {setting}: a ring of glow-seeds around the {object_motif}. Glow-seeds shine when the moon comes up.
 
-{child_name} wanted to build the tallest tower ever, all by themselves, before {companion_name} arrived. So {child_name} stacked and stacked, holding tight to a little {object_motif} for luck.
+{child_name} carried the full pouch, so carefully. Then — trip! Plip, plip, plip. Seeds spilled everywhere, in a long crooked line.
 
-But the tower leaned. Then it wobbled. Then, crash! Down it came, right as {companion_name} walked in.
+"Oh no," said {child_name}. "I ruined it."
 
-{child_name}'s cheeks went hot. "I did it wrong," {child_name} said. "I ruined it. Maybe I am just bad at building."
+{child_name} planted the rest in a neat ring anyway. One seed, two seeds, three. Then the moon peeked up.
 
-{child_name} wanted to hide. A tumbled tower felt like proof of something sad.
+Look closely in the dark. Which seeds are glowing? Not the tidy ring. The runaway ones!
 
-{companion_name} sat down in the pile of blocks. "Let's look," they said softly. "A tower that falls is not a bad tower. It is a tower telling you something."
+The spilled seeds shone all down the crooked line. That ground was soft and rainy. Seeds love soft ground.
 
-"Telling me what?" asked {child_name}.
+"My mistake was not a ruin," said {child_name}. "It was a clue! Getting it wrong is part of how growing is done."
 
-{companion_name} picked up a wide, flat block and a skinny one. "See? The skinny blocks were on the bottom. That is why it wobbled. The tower just showed you where to put the strong blocks."
+So {child_name} moved every seed to the crooked line. It became a little river of light.
 
-{child_name} blinked. "So the crash was... a clue?"
+{companion_name} came home and gasped. "A glowing river! For me?"
 
-"Yes," said {companion_name}, smiling. "A mistake is not the end. A mistake is information. It quietly tells you what to try next. Getting something wrong and then learning from it is part of how growing is done."
+"{refrain}," said {child_name}, the way {companion_name} always said it.
 
-{child_name} looked at the little {object_motif} still in their hand. Then {child_name} looked at the blocks in a new way.
-
-This time, {child_name} put the wide blocks on the bottom. Big ones first. Skinny ones on top. Slow and steady.
-
-The tower grew. Taller than before. Taller than {child_name}! It did not wobble at all.
-
-"You did that," said {companion_name}, "because the first tower taught you how."
-
-{child_name} laughed. The hot, sad feeling was gone. Falling down had not made {child_name} bad. It had made {child_name} wiser.
-
-That night in {setting}, {child_name} held the {object_motif} close and felt proud, not because nothing went wrong, but because something did, and {child_name} learned from it.
+They sat in the seed-light. One runaway seed was still hiding. Tomorrow, they would find its glow.
 
 {refrain}.`,
       },
       '5-6': {
-        audioTemplate: `In {setting}, the sun came up gold and quiet, and the {hero} was already awake. Today the whole town was having a sharing fair, and the {hero} had promised to bring something special: a boat, built by hand, that could really float.
+        audioTemplate: `{companion_name} had gone across {setting} for the day, home at moonrise. That gave the {hero} the whole evening for a secret: a perfect ring of glow-seeds around the {object_motif}, right beside the door. Glow-seeds sleep all day, but when moonlight touches them, they wake and shine.
 
-The {hero} had been dreaming about it for days. {companion_name} had offered to help, but the {hero} wanted to do it alone. "I want everyone to see I can do it myself," the {hero} said, holding tight to a small {object_motif} that always felt lucky.
+Twenty seeds, counted and saved. Enough for one perfect circle.
 
-So the {hero} worked all morning. They chose the biggest, heaviest pieces they could find, because a big boat had to be strong, didn't it? They pushed and tied and packed it all together until the boat was as heavy as a stone.
+Carrying the pouch to the door, the {hero} was extra careful — which is exactly when the trip happened. Plip-plip-plip. Seeds bounced and scattered in a long, messy, crooked line across the ground.
 
-When it was time, the whole town gathered by the water. The {hero}'s heart was thumping. Everyone watched. Slowly, proudly, the {hero} set the boat down on the water.
+"No, no, no," whispered the {hero}, scooping up every seed in sight. Only fourteen came back. "I've ruined it before I even started."
 
-It sank. Straight down. Bubbles and all.
+Hard at the start was allowed — the wobble marks had said so. But this didn't feel hard. It felt spoiled.
 
-Somebody giggled. The {hero}'s face went hot and red. This was supposed to be the best moment, and instead the boat was at the bottom and everyone had seen it. "I made it wrong," the {hero} whispered. "In front of everybody. Maybe I am just not a builder. Maybe I should never have tried."
+The {hero} planted the fourteen in the neatest ring ever made, patted each one, and stepped back just as the moon slid up.
 
-The {hero} wanted to run home and never come back.
+Now look closely, into the dark. Which seeds are waking? Not the tidy ring. Little green-gold lights are blinking on — all along the crooked spill.
 
-{companion_name} came and knelt beside the {hero}, not laughing, not fussing, just calm. "That was hard," they said. "And I saw you try really, really hard. Can we look at what happened, you and me?"
+Six runaway seeds were shining. The fourteen perfect ones sat dark.
 
-"It sank," said the {hero} miserably. "That's all."
+The {hero} crept closer. The crooked line ran just where rain always trickled — soft, deep, happy ground. The neat ring sat on ground packed hard as a road. The spill had found the good soil.
 
-"It sank," {companion_name} agreed. "And that is telling us something useful. Why do you think it sank?"
+"Oh," breathed the {hero}. "My mistake wasn't a ruin. It was information. The seeds were showing me where they wanted to go. Getting it wrong is part of how growing is done!"
 
-The {hero} sniffed and thought. "Because... it was so heavy?"
+So the {hero} dug up all fourteen dark seeds and planted them along the crooked line, one by one. And one by one they woke: a winding river of light, from the path right up to the door. Better than any ring.
 
-"Maybe," said {companion_name}. "Heavy things sink. Light things float. Your boat just gave you a clue. It didn't say 'you are bad.' It said, 'try me lighter.'"
+"{refrain}," whispered the {hero} to the seeds — the way {companion_name} always said it.
 
-The {hero} looked up. "So the mistake is like a clue?"
+{companion_name} came home at moonrise, stopped, and stared. "A river of light! For me? How did you know where they'd grow?"
 
-"Exactly like a clue," said {companion_name}, smiling. "A mistake is not proof that you're bad at something. A mistake is information. It quietly tells you what to try next. Making one and then learning from it is part of how growing is done."
+"I got it wrong first," said the {hero}, very proud. "The wrong showed me the right."
 
-The {hero} still felt the sting of everyone watching. But the {object_motif} in their hand felt a little braver now. "Can I try again?" the {hero} asked.
+They sat together in the glow while the moon climbed higher. The little lights blinked, slow and sleepy.
 
-"The town is still here," said {companion_name}. "And so are you."
-
-This time the {hero} chose the lightest wood, thin and dry. They made the boat wide, like a leaf, and hollow, like a cup. It took a while. Some pieces still went wrong, and each time, the {hero} looked closely and fixed just that one thing.
-
-When the {hero} set the second boat on the water, it floated. It bobbed and it turned and it drifted out like it belonged there. The town cheered, but the loudest sound was the {hero}'s own happy laugh.
-
-"You did that," said {companion_name}, "because the first boat taught you how. The one that sank is the reason this one floats."
-
-The {hero} watched the little boat ride the ripples. The hot, ashamed feeling had melted away. Sinking hadn't made the {hero} a bad builder. It had shown the {hero} exactly what to do.
-
-That night in {setting}, the {hero} set the {object_motif} on the windowsill and felt something warm and steady inside. Not because the day had been perfect, but because it hadn't, and the {hero} had grown anyway.
+Somewhere out there, the twentieth seed was still hiding. Tomorrow they would hunt for one small stray glow.
 
 {refrain}.`,
-        scriptTemplate: `In {setting}, the sun came up gold and quiet, and {child_name} was already awake. Today the whole town was having a sharing fair, and {child_name} had promised to bring something special: a boat, built by hand, that could really float.
+        scriptTemplate: `{companion_name} had gone across {setting} for the day, home at moonrise. That gave {child_name} the {hero} the whole evening for a secret: a perfect ring of glow-seeds around the {object_motif}, right beside the door. Glow-seeds sleep all day, but when moonlight touches them, they wake and shine.
 
-{child_name} had been dreaming about it for days. {companion_name} had offered to help, but {child_name} wanted to do it alone. "I want everyone to see I can do it myself," {child_name} said, holding tight to a small {object_motif} that always felt lucky.
+Twenty seeds, counted and saved. Enough for one perfect circle.
 
-So {child_name} worked all morning. They chose the biggest, heaviest pieces they could find, because a big boat had to be strong, didn't it? They pushed and tied and packed it all together until the boat was as heavy as a stone.
+Carrying the pouch to the door, {child_name} was extra careful — which is exactly when the trip happened. Plip-plip-plip. Seeds bounced and scattered in a long, messy, crooked line across the ground.
 
-When it was time, the whole town gathered by the water. {child_name}'s heart was thumping. Everyone watched. Slowly, proudly, {child_name} set the boat down on the water.
+"No, no, no," whispered {child_name}, scooping up every seed in sight. Only fourteen came back. "I've ruined it before I even started."
 
-It sank. Straight down. Bubbles and all.
+Hard at the start was allowed — the wobble marks had said so. But this didn't feel hard. It felt spoiled.
 
-Somebody giggled. {child_name}'s face went hot and red. This was supposed to be the best moment, and instead the boat was at the bottom and everyone had seen it. "I made it wrong," {child_name} whispered. "In front of everybody. Maybe I am just not a builder. Maybe I should never have tried."
+{child_name} planted the fourteen in the neatest ring ever made, patted each one, and stepped back just as the moon slid up.
 
-{child_name} wanted to run home and never come back.
+Now look closely, into the dark. Which seeds are waking? Not the tidy ring. Little green-gold lights are blinking on — all along the crooked spill.
 
-{companion_name} came and knelt beside {child_name}, not laughing, not fussing, just calm. "That was hard," they said. "And I saw you try really, really hard. Can we look at what happened, you and me?"
+Six runaway seeds were shining. The fourteen perfect ones sat dark.
 
-"It sank," said {child_name} miserably. "That's all."
+{child_name} crept closer. The crooked line ran just where rain always trickled — soft, deep, happy ground. The neat ring sat on ground packed hard as a road. The spill had found the good soil.
 
-"It sank," {companion_name} agreed. "And that is telling us something useful. Why do you think it sank?"
+"Oh," breathed {child_name}. "My mistake wasn't a ruin. It was information. The seeds were showing me where they wanted to go. Getting it wrong is part of how growing is done!"
 
-{child_name} sniffed and thought. "Because... it was so heavy?"
+So {child_name} dug up all fourteen dark seeds and planted them along the crooked line, one by one. And one by one they woke: a winding river of light, from the path right up to the door. Better than any ring.
 
-"Maybe," said {companion_name}. "Heavy things sink. Light things float. Your boat just gave you a clue. It didn't say 'you are bad.' It said, 'try me lighter.'"
+"{refrain}," whispered {child_name} to the seeds — the way {companion_name} always said it.
 
-{child_name} looked up. "So the mistake is like a clue?"
+{companion_name} came home at moonrise, stopped, and stared. "A river of light! For me? How did you know where they'd grow?"
 
-"Exactly like a clue," said {companion_name}, smiling. "A mistake is not proof that you're bad at something. A mistake is information. It quietly tells you what to try next. Making one and then learning from it is part of how growing is done."
+"I got it wrong first," said {child_name}, very proud. "The wrong showed me the right."
 
-{child_name} still felt the sting of everyone watching. But the {object_motif} in their hand felt a little braver now. "Can I try again?" {child_name} asked.
+They sat together in the glow while the moon climbed higher. The little lights blinked, slow and sleepy.
 
-"The town is still here," said {companion_name}. "And so are you."
-
-This time {child_name} chose the lightest wood, thin and dry. They made the boat wide, like a leaf, and hollow, like a cup. It took a while. Some pieces still went wrong, and each time, {child_name} looked closely and fixed just that one thing.
-
-When {child_name} set the second boat on the water, it floated. It bobbed and it turned and it drifted out like it belonged there. The town cheered, but the loudest sound was {child_name}'s own happy laugh.
-
-"You did that," said {companion_name}, "because the first boat taught you how. The one that sank is the reason this one floats."
-
-{child_name} watched the little boat ride the ripples. The hot, ashamed feeling had melted away. Sinking hadn't made {child_name} a bad builder. It had shown {child_name} exactly what to do.
-
-That night in {setting}, {child_name} set the {object_motif} on the windowsill and felt something warm and steady inside. Not because the day had been perfect, but because it hadn't, and {child_name} had grown anyway.
+Somewhere out there, the twentieth seed was still hiding. Tomorrow they would hunt for one small stray glow.
 
 {refrain}.`,
       },
       '7-8': {
-        audioTemplate: `In {setting}, there was a fair coming — the biggest one of the whole year — and this time there was a contest. Whoever could build the finest bridge across the little stream would have it used by the whole town for the rest of the summer. The {hero} wanted to win more than anything.
+        audioTemplate: `{companion_name} had gone across {setting} for the day and would not be home until moonrise. Which meant the {hero} had one whole evening for the plan — and the plan was beautiful. A perfect ring of glow-seeds around the {object_motif}, right beside {companion_name}'s door. Glow-seeds sleep all day looking like plain grey pebbles, but the first touch of moonlight wakes them, and they shine green-gold for a hundred nights. A welcome-home ring of light. Perfectly round. Perfectly planned.
 
-For a week, the {hero} planned in secret. {companion_name} kept offering to help, but every time, the {hero} shook their head. "I want to do this one myself," the {hero} said, turning a small {object_motif} over and over in their hands. "I want everyone to know I did it, all on my own." Deep down, the {hero} believed that if the bridge was good, it would prove, once and for all, that the {hero} was truly clever.
+The {hero} had traded a week of errands for those seeds — twenty of them, counted twice. The seed-seller had said only one strange thing while pouring them into the pouch: "Plant them where they fall." Which was obviously nonsense, because seeds fall wherever you drop them, and a plan is a plan.
 
-The morning of the fair, the {hero} carried their bridge down to the stream. It was beautiful to look at — tall and grand, with a proud arch in the middle. A crowd gathered on both banks. The {hero}'s stomach fluttered with excitement and nerves.
+The {hero} carried the pouch toward the door slowly, carefully, importantly. And tripped.
 
-"Go on!" someone called. "Cross it!"
+Plip-plip-plip-plip. Twenty glow-seeds leapt from the pouch and bounced away merrily, scattering themselves in a long crooked ribbon across the ground, as if they had been waiting all day for the chance.
 
-The {hero} stepped onto the bridge. One step. Two steps. On the third step, there was a crack, then a groan, and then the whole middle sagged and folded and dropped the {hero} — splash — right into the cold stream.
+"No no no no," whispered the {hero}, crawling around in the dusk, patting the ground. Fourteen came back. Six were simply gone — vanished into the crooked dark. "I've ruined it. Before I even started, I ruined it."
 
-Laughter burst out along the banks. Not mean laughter, maybe, but the {hero} felt it like a sting all over. Water dripped from their nose. Everyone had watched. Everyone had seen the grand bridge crumple like wet paper.
+There was a hot, prickly feeling behind the {hero}'s eyes. Hard was allowed, of course. The wobble marks had settled that ages ago. But this was not hard. This was spoiled, which felt like a different thing entirely — a thing you could not practise your way out of.
 
-The {hero} scrambled out and stood there, soaked and shaking, cheeks burning hotter than the sun. "I got it wrong," the {hero} said, and their voice wobbled. "In front of the whole town. I worked so hard and it broke anyway. Maybe I'm just not clever after all. Maybe I never was."
+Still. Fourteen seeds could make a smaller perfect ring. The {hero} planted them in the neatest circle ever pressed into ground, evenly spaced to the width of a claw, and then fetched water for them — and even the water misbehaved. It ran straight off the ring's packed earth and trickled away sideways, following some crooked little path of its own, exactly the way the seeds had gone.
 
-The {hero} wanted to disappear. The bridge, broken in the water, felt like proof of everything the {hero} feared about themselves.
+"Everything runs away from my plan," muttered the {hero}, and sat down to wait for the moon, braced for the evening to be a disappointment.
 
-{companion_name} made their way through the crowd and sat down on the wet bank, right next to the {hero}, not caring about the mud. They didn't laugh. They didn't say "it's fine" in that quick way that means it isn't. They just waited until the {hero} was ready.
+The moon came up slow and generous. And — look closely now, out into the dark. Something is waking. Little green-gold lights, blinking on one by one. But where? Not the tidy ring. The lights are coming from the crooked line.
 
-"That hurt," {companion_name} said at last. "I know it did. Falling in front of everyone is one of the hardest things there is."
+The six runaway seeds were shining — every single lost one of them — strung out along their messy ribbon like lanterns on a street. The fourteen perfect seeds sat in their perfect circle, dark as buttons.
 
-The {hero} nodded, still staring at the water.
+The {hero} crept over, nose to the ground, and looked properly. The crooked ribbon ran exactly where rain always trickled: low, soft, deep-watered ground, the best soil in the whole garden. The proud ring sat on earth packed hard as a road. And round seeds roll downhill — of course they do — down into the soft hollows where the water goes. The spill had not been bad luck. The spill had been a map.
 
-"Can I show you something?" {companion_name} asked. The {hero} shrugged, which meant yes. {companion_name} reached into the stream and lifted up the broken middle of the bridge. "Look here. See where it snapped? It cracked right at the top of the arch, where there was nothing underneath to hold it. No supports. The bridge isn't telling you that you're bad at building. It's telling you exactly where it needed to be stronger."
+"Plant them where they fall," said the {hero} slowly, and the seller's nonsense stopped being nonsense. "They fall where they roll, and they roll where the water goes. My mistake wasn't a ruin — it was information. It knew things the plan didn't." The {hero} was already digging. "Getting it wrong is part of how growing is done. It might be the biggest part."
 
-The {hero} looked. It was true. The break wasn't everywhere — it was in one clear place. "So the way it broke... is like a message?" the {hero} asked slowly.
+Fourteen dark seeds came up out of the perfect circle and went down again, one by one, along the crooked shining line. And one by one they woke, green-gold, until a winding river of light ran from the path all the way to {companion_name}'s door. It was not round. It was not planned. It was better.
 
-"That's just what it is," said {companion_name}. "A mistake isn't proof that you're not clever. A mistake is information. It quietly tells you what to try next, if you're brave enough to look at it instead of hiding from it. Getting something wrong and learning from it isn't the opposite of growing — it is part of how growing is done."
+"{refrain}," whispered the {hero} to the seeds, the way {companion_name} always said it, and sat down to wait.
 
-The {hero} wiped their face and squeezed the {object_motif} in their fist. The crowd had drifted off now, back to the fair, and somehow that made it easier to breathe. "The contest is over, though," the {hero} said. "I already lost."
+{companion_name} came home at moonrise and stopped so suddenly they nearly sat down. "A river," they said. "A river of light, to my own door. However did you know where glow-seeds grow? Gardeners twice my age can't tell that soil."
 
-"The contest, maybe," said {companion_name}. "But the stream is still here. And nobody's watching now. Just you, me, and what the bridge tried to teach you."
+"I didn't know," said the {hero}, glowing a little too. "I dropped them. The drop knew. My mistake did the smartest part."
 
-So the {hero} began again. This time, the {hero} didn't build for show. The {hero} built for the stream. They set strong posts down into the streambed first, right where the middle would be. They made the bridge lower, flatter, sturdier — less grand to look at, but honest. When one plank felt wobbly, the {hero} didn't panic. They studied it, saw why, and fixed just that. Each little mistake became one more thing the {hero} knew.
+They sat together in the seed-light while the moon climbed, and the {hero} told the whole story — the trip, the runaway water, the map hiding inside the mess — and {companion_name} laughed in all the right places.
 
-By the time the sun was low, the second bridge was finished. The {hero} took a deep breath and stepped onto it. One step. Two. Three. Across the middle. All the way to the other side. It held. It didn't even creak.
+The lights blinked slower. The night leaned in, soft and warm.
 
-The {hero} stood on the far bank, and this time no crowd cheered — but the {hero} felt taller than any grand arch. {companion_name} grinned from across the stream. "You built that," they called, "because the first bridge showed you how. The one that broke is the reason this one holds."
+Somewhere out in the dark, the twentieth seed had still not been found. It was out there right now, secretly glowing in some low soft hollow nobody had thought to look in.
 
-The {hero} looked back at the little bridge, steady over the water, and felt the burning shame finally cool into something quiet and strong. Falling in hadn't made the {hero} a failure. It had made the {hero} a better builder than they'd been that morning.
-
-That night in {setting}, the {hero} set the {object_motif} beside the bed and thought, just before sleep, that maybe the best day wasn't the one where nothing went wrong. Maybe it was this one — the day something went very wrong, and the {hero} grew right through it.
+Tomorrow, they would follow the crooked places and find it.
 
 {refrain}.`,
-        scriptTemplate: `In {setting}, there was a fair coming — the biggest one of the whole year — and this time there was a contest. Whoever could build the finest bridge across the little stream would have it used by the whole town for the rest of the summer. {child_name} wanted to win more than anything.
+        scriptTemplate: `{companion_name} had gone across {setting} for the day and would not be home until moonrise. Which meant {child_name} the {hero} had one whole evening for the plan — and the plan was beautiful. A perfect ring of glow-seeds around the {object_motif}, right beside {companion_name}'s door. Glow-seeds sleep all day looking like plain grey pebbles, but the first touch of moonlight wakes them, and they shine green-gold for a hundred nights. A welcome-home ring of light. Perfectly round. Perfectly planned.
 
-For a week, {child_name} planned in secret. {companion_name} kept offering to help, but every time, {child_name} shook their head. "I want to do this one myself," {child_name} said, turning a small {object_motif} over and over in their hands. "I want everyone to know I did it, all on my own." Deep down, {child_name} believed that if the bridge was good, it would prove, once and for all, that {child_name} was truly clever.
+{child_name} had traded a week of errands for those seeds — twenty of them, counted twice. The seed-seller had said only one strange thing while pouring them into the pouch: "Plant them where they fall." Which was obviously nonsense, because seeds fall wherever you drop them, and a plan is a plan.
 
-The morning of the fair, {child_name} carried their bridge down to the stream. It was beautiful to look at — tall and grand, with a proud arch in the middle. A crowd gathered on both banks. {child_name}'s stomach fluttered with excitement and nerves.
+{child_name} carried the pouch toward the door slowly, carefully, importantly. And tripped.
 
-"Go on!" someone called. "Cross it!"
+Plip-plip-plip-plip. Twenty glow-seeds leapt from the pouch and bounced away merrily, scattering themselves in a long crooked ribbon across the ground, as if they had been waiting all day for the chance.
 
-{child_name} stepped onto the bridge. One step. Two steps. On the third step, there was a crack, then a groan, and then the whole middle sagged and folded and dropped {child_name} — splash — right into the cold stream.
+"No no no no," whispered {child_name}, crawling around in the dusk, patting the ground. Fourteen came back. Six were simply gone — vanished into the crooked dark. "I've ruined it. Before I even started, I ruined it."
 
-Laughter burst out along the banks. Not mean laughter, maybe, but {child_name} felt it like a sting all over. Water dripped from their nose. Everyone had watched. Everyone had seen the grand bridge crumple like wet paper.
+There was a hot, prickly feeling behind {child_name}'s eyes. Hard was allowed, of course. The wobble marks had settled that ages ago. But this was not hard. This was spoiled, which felt like a different thing entirely — a thing you could not practise your way out of.
 
-{child_name} scrambled out and stood there, soaked and shaking, cheeks burning hotter than the sun. "I got it wrong," {child_name} said, and their voice wobbled. "In front of the whole town. I worked so hard and it broke anyway. Maybe I'm just not clever after all. Maybe I never was."
+Still. Fourteen seeds could make a smaller perfect ring. {child_name} planted them in the neatest circle ever pressed into ground, evenly spaced, and then fetched water for them — and even the water misbehaved. It ran straight off the ring's packed earth and trickled away sideways, following some crooked little path of its own, exactly the way the seeds had gone.
 
-{child_name} wanted to disappear. The bridge, broken in the water, felt like proof of everything {child_name} feared about themselves.
+"Everything runs away from my plan," muttered {child_name}, and sat down to wait for the moon, braced for the evening to be a disappointment.
 
-{companion_name} made their way through the crowd and sat down on the wet bank, right next to {child_name}, not caring about the mud. They didn't laugh. They didn't say "it's fine" in that quick way that means it isn't. They just waited until {child_name} was ready.
+The moon came up slow and generous. And — look closely now, out into the dark. Something is waking. Little green-gold lights, blinking on one by one. But where? Not the tidy ring. The lights are coming from the crooked line.
 
-"That hurt," {companion_name} said at last. "I know it did. Falling in front of everyone is one of the hardest things there is."
+The six runaway seeds were shining — every single lost one of them — strung out along their messy ribbon like lanterns on a street. The fourteen perfect seeds sat in their perfect circle, dark as buttons.
 
-{child_name} nodded, still staring at the water.
+{child_name} crept over, nose to the ground, and looked properly. The crooked ribbon ran exactly where rain always trickled: low, soft, deep-watered ground, the best soil in the whole garden. The proud ring sat on earth packed hard as a road. And round seeds roll downhill — of course they do — down into the soft hollows where the water goes. The spill had not been bad luck. The spill had been a map.
 
-"Can I show you something?" {companion_name} asked. {child_name} shrugged, which meant yes. {companion_name} reached into the stream and lifted up the broken middle of the bridge. "Look here. See where it snapped? It cracked right at the top of the arch, where there was nothing underneath to hold it. No supports. The bridge isn't telling you that you're bad at building. It's telling you exactly where it needed to be stronger."
+"Plant them where they fall," said {child_name} slowly, and the seller's nonsense stopped being nonsense. "They fall where they roll, and they roll where the water goes. My mistake wasn't a ruin — it was information. It knew things the plan didn't." {child_name} was already digging. "Getting it wrong is part of how growing is done. It might be the biggest part."
 
-{child_name} looked. It was true. The break wasn't everywhere — it was in one clear place. "So the way it broke... is like a message?" {child_name} asked slowly.
+Fourteen dark seeds came up out of the perfect circle and went down again, one by one, along the crooked shining line. And one by one they woke, green-gold, until a winding river of light ran from the path all the way to {companion_name}'s door. It was not round. It was not planned. It was better.
 
-"That's just what it is," said {companion_name}. "A mistake isn't proof that you're not clever. A mistake is information. It quietly tells you what to try next, if you're brave enough to look at it instead of hiding from it. Getting something wrong and learning from it isn't the opposite of growing — it is part of how growing is done."
+"{refrain}," whispered {child_name} to the seeds, the way {companion_name} always said it, and sat down to wait.
 
-{child_name} wiped their face and squeezed the {object_motif} in their fist. The crowd had drifted off now, back to the fair, and somehow that made it easier to breathe. "The contest is over, though," {child_name} said. "I already lost."
+{companion_name} came home at moonrise and stopped so suddenly they nearly sat down. "A river," they said. "A river of light, to my own door. However did you know where glow-seeds grow? Gardeners twice my age can't tell that soil."
 
-"The contest, maybe," said {companion_name}. "But the stream is still here. And nobody's watching now. Just you, me, and what the bridge tried to teach you."
+"I didn't know," said {child_name}, glowing a little too. "I dropped them. The drop knew. My mistake did the smartest part."
 
-So {child_name} began again. This time, {child_name} didn't build for show. {child_name} built for the stream. They set strong posts down into the streambed first, right where the middle would be. They made the bridge lower, flatter, sturdier — less grand to look at, but honest. When one plank felt wobbly, {child_name} didn't panic. They studied it, saw why, and fixed just that. Each little mistake became one more thing {child_name} knew.
+They sat together in the seed-light while the moon climbed, and {child_name} told the whole story — the trip, the runaway water, the map hiding inside the mess — and {companion_name} laughed in all the right places.
 
-By the time the sun was low, the second bridge was finished. {child_name} took a deep breath and stepped onto it. One step. Two. Three. Across the middle. All the way to the other side. It held. It didn't even creak.
+The lights blinked slower. The night leaned in, soft and warm.
 
-{child_name} stood on the far bank, and this time no crowd cheered — but {child_name} felt taller than any grand arch. {companion_name} grinned from across the stream. "You built that," they called, "because the first bridge showed you how. The one that broke is the reason this one holds."
+Somewhere out in the dark, the twentieth seed had still not been found. It was out there right now, secretly glowing in some low soft hollow nobody had thought to look in.
 
-{child_name} looked back at the little bridge, steady over the water, and felt the burning shame finally cool into something quiet and strong. Falling in hadn't made {child_name} a failure. It had made {child_name} a better builder than they'd been that morning.
-
-That night in {setting}, {child_name} set the {object_motif} beside the bed and thought, just before sleep, that maybe the best day wasn't the one where nothing went wrong. Maybe it was this one — the day something went very wrong, and {child_name} grew right through it.
+Tomorrow, they would follow the crooked places and find it.
 
 {refrain}.`,
       },
       '9-11': {
-        audioTemplate: `In {setting}, the festival of lights came only once a year, and this year the {hero} had been given the greatest honor of all. Every family in the town would write a wish on a paper lantern, and someone had to build the raft that would carry all those wishes out across the water at dusk, glowing, for everyone to watch. The town had chosen the {hero}.
+        audioTemplate: `{companion_name} had gone across {setting} for the whole day and would not be back until moonrise, which meant the {hero} had approximately one evening to execute the finest surprise ever planned. And it was planned. It had been planned for a week, in secret, with diagrams.
 
-The {hero} had never wanted anything so badly, or been so afraid of anything. To be chosen felt like being told, at last, that they mattered — that they were capable, that they were somebody the town could count on. And so, when {companion_name} gently offered to help with the raft, the {hero} said no. "They picked me," the {hero} said, turning a small {object_motif} over and over between their fingers, the way they always did when they were nervous. "If someone helps me, then it isn't really me they can count on, is it? I have to do this part alone."
+A ring of glow-seeds around the {object_motif}, right beside {companion_name}'s door. Glow-seeds spend their days disguised as plain grey pebbles — you would step over one without a glance — but the first touch of moonlight wakes them, and after that they shine green-gold every night for a hundred nights. Twenty seeds, earned with a full week of errands, counted twice into a soft pouch. Twenty seeds made a circle exactly the size of a welcome.
 
-{companion_name} watched the {hero} for a long moment, and then nodded. "All right," they said. "But I'm here. Remember that I'm here."
+The seed-seller had said precisely one strange thing while pouring them out. "Plant them where they fall." The {hero} had nodded politely, the way you nod at people who speak in riddles, and privately filed it under nonsense. Seeds fall where you drop them. Nobody builds a masterpiece by dropping it.
 
-For three days the {hero} worked in secret, and the work went badly in a hundred small ways the {hero} chose not to notice. The lashings that held the raft together kept slipping, and instead of stopping to understand why, the {hero} just tied them tighter and hurried on. There wasn't time to fix everything, the {hero} told themselves. It only had to hold for one evening. It only had to hold long enough.
+The {hero} carried the pouch toward the door with the slow, ceremonial care of somebody transporting treasure. Which, of course, is exactly when the ground produced a root, or a ridge, or possibly nothing at all, and the {hero} tripped.
 
-Dusk came. The whole town gathered along the shore, hundreds of them, their faces warm in the light of the lanterns they carried. Children sat on shoulders. Old people leaned on the railings. Every single one of them had written a wish, and every single wish was about to be placed, one by one, onto the {hero}'s raft. The {hero} stood at the water's edge with the {object_motif} clutched tight, heart hammering, and thought: this is the moment everything changes.
+Plip-plip-plip-plip. Twenty glow-seeds soared out of the pouch with what sounded suspiciously like joy, bounced, scattered, and ran — a long crooked ribbon of tiny thumps disappearing into the dusk.
 
-The lanterns went on, one after another, until the raft was a floating hill of soft light, the most beautiful thing the {hero} had ever seen. The town held its breath. The {hero} pushed the raft gently out onto the dark water.
+The {hero} spent the next while crawling in the dark, patting the ground like someone apologising to it. Fourteen seeds came back. Six were gone — properly gone, swallowed by the crooked shadows. "I ruined it," the {hero} said to the empty garden. "A week of planning, and I ruined it in four steps."
 
-It drifted. It glowed. And then, near the middle, a lashing the {hero} had never fixed came loose. The logs turned. The raft twisted, buckled, and slowly, terribly, folded in on itself. One by one, then all at once, the lanterns tipped and hissed out in the water. The light went dark. Hundreds of wishes floated loose and sinking on the black surface of the water, and a great, low sound of dismay rolled through the crowd.
+And here is the thing about that feeling. The {hero} knew hard was allowed — the wobble marks had settled that long ago. But this did not feel like hard, which you can lean into. It felt like spoiled, which just sits there. A mistake seemed like the opposite of a plan, the way a hole is the opposite of a wall.
 
-The {hero} stood frozen. The heat that rushed up their neck and into their face was worse than any pain they had ever felt. This wasn't a game they had lost. These were everyone's wishes. Their grandmother's wish. The little kids' wishes. The whole town had trusted the {hero} with the most important night of the year, and the {hero} had let every single one of them down, in front of every single one of them.
+Still: fourteen seeds make a smaller circle. The {hero} pressed them into the neatest ring in the history of rings, spaced to perfection, and fetched water — whereupon even the water joined the rebellion. It slid straight off the ring's packed earth and wandered away sideways in a thin silver thread, following its own crooked little path. The same path, more or less, that the seeds had taken. The {hero} was too tired to wonder about that, and sat down to wait for the moon, prepared for disappointment.
 
-"I ruined it," the {hero} whispered, and the words tasted like ash. "I ruined everything. They trusted me and I ruined it. I knew those knots were wrong and I didn't fix them." Tears came hot and fast, and the worst part, the part that made the {hero} want to sink into the ground and vanish, was the quiet certainty underneath: this is proof. This is proof that I am not who they hoped. I am not capable. I never was.
+The moon rose slow and generous over {setting}. And — lean out into the dark for a moment. Something is waking up out there. Tiny green-gold lights, blinking on, one, then three, then six. But look where. Not the tidy ring. The lights are strung along the crooked line.
 
-The {hero} ran. They ran from the shore, from the murmuring crowd, all the way to the dark and empty edge of {setting}, and there they sat with their knees pulled up and the {object_motif} pressed against their forehead, shaking.
+All six runaway seeds were shining. Every lost, unplanned, given-up-for-gone one of them, glowing in a messy ribbon like lanterns down a lane. The fourteen perfect seeds sat in their perfect circle, dark as buttons on a coat.
 
-It was a long time before footsteps came. {companion_name} did not rush. They sat down beside the {hero} on the cold ground and, for a while, said nothing at all — did not tell the {hero} it was fine, because it wasn't fine, and they both knew it. That silence, strangely, was the first thing all night that didn't hurt.
+The {hero} went over on quiet feet and finally looked at the ground instead of the plan. The crooked ribbon lay exactly where rain always trickled — low, soft, deep-drinking soil, the richest in the garden. The ring sat proudly on earth packed hard as a road. And round seeds roll. Of course they roll. They roll downhill into the hollows, and the hollows are where the water goes, which is precisely where a seed most wants to live. The spill had not been clumsiness punishing a good plan. The spill had been twenty small experts sorting themselves.
 
-"I let them all down," the {hero} said finally, voice cracking. "Don't tell me I didn't."
+"Plant them where they fall," the {hero} said slowly, and the riddle quietly stopped being a riddle. "Because where they fall is where they roll, and where they roll is where the water is. The mistake knew the garden better than my diagram did. It wasn't a ruin. It was information." The {hero} was already digging, laughing a little. "Getting it wrong is part of how growing is done. Maybe the load-bearing part."
 
-"You did," {companion_name} said quietly. The {hero} flinched, but {companion_name} went on, steady and kind. "You let them down tonight. That's true, and pretending it isn't true wouldn't help you. But listen to me, because this next part is just as true, and it's the part shame doesn't want you to hear." They waited until the {hero} looked up. "You knew the lashings were wrong. You just told me so yourself. That's not proof that you're not capable. That is the single most useful thing you could possibly know right now."
+Fourteen seeds came up out of the perfect dark circle and went back down along the crooked shining line. One by one they woke, green-gold, until a winding river of light ran from the path all the way to {companion_name}'s door. It was not symmetrical. It was not on the diagram. It was better than both.
 
-"How?" the {hero} said bitterly. "How is knowing I failed useful?"
+"{refrain}," the {hero} whispered to the seeds — {companion_name}'s own saying, borrowed for the occasion — and sat down in the glow to wait.
 
-"Because it tells you exactly what to do differently," said {companion_name}. "A mistake isn't a verdict on who you are. A mistake is information. It's the raft, out there in the dark, telling you precisely where it needed to be stronger — and telling you something else, too: that next time, you stop when something feels wrong instead of tying it tighter and hoping. You didn't fail because you're not capable. You failed because you tried to carry the whole thing alone, and you ignored what the work was trying to tell you. Those are things a person learns. Getting something wrong and letting it teach you isn't the opposite of growing up — it is part of how growing is done."
+{companion_name} arrived at moonrise and stopped so abruptly they nearly fell over their own feet. "A river of light. To my door." They looked closer, and their voice went odd. "Glow-seeds only take in perfect soil. Gardeners spend years learning to read it. How did you know?"
 
-The {hero} was quiet for a long time, turning the {object_motif} slowly in the dark. The shame was still there, hot and heavy. But underneath it, for the first time all night, was a thin, steadying thread of something else. Not an excuse. A direction.
+"I didn't," said the {hero}. "I dropped them. The drop knew. I just finally listened to it."
 
-"I could rebuild it," the {hero} said slowly. "For tomorrow night. The festival's second evening. If — if the town would even let me."
+So the whole story came out — the diagrams, the trip, the mutinous watering can, the map hiding inside the mess — and {companion_name} laughed until they had to sit down, and then went quiet and happy, watching their doorway shine.
 
-"They wrote their wishes on paper," {companion_name} said, the smallest smile in their voice. "Paper can be written again. And the town didn't choose you because you were perfect. Nobody is. They can choose you again because you're the one who's going to understand exactly why the first raft failed."
+The lights blinked slower. The moon climbed. The garden settled.
 
-So the {hero} went back the next day, in the plain light of morning, and this time the {hero} did not build in secret and did not build alone. The {hero} studied the broken raft where it had washed up, learned every place it had come apart, and understood each one. When {companion_name} offered a second pair of hands, the {hero} said yes — and found that saying yes did not make the raft any less theirs. They tested every lashing by pulling on it hard, on purpose, so that any weakness would show now, in the daylight, and not later in front of the town. Where a knot slipped, the {hero} did not tie it tighter and hope. The {hero} stopped, and thought, and tied it differently, and pulled again.
+Somewhere out in the dark, the twentieth seed still had not been found. It was glowing right now, in some soft crooked hollow nobody had checked, patient as buried treasure.
 
-By the second dusk, the new raft sat low and solid on the water, unremarkable to look at and strong as bedrock. The town came back — all of them, which frightened the {hero} more than anything — and wrote their wishes again. The {hero}'s hands trembled as the first lantern went down. But the raft held. It held through every lantern, held as the {hero} pushed it out, held as it drifted glowing into the middle of the dark water and stayed there, a hill of light that did not fold or fail. This time the great sound from the crowd was not dismay. It was a cheer, and it rolled over the {hero} like warm water.
-
-But the thing the {hero} would remember, long after, was not the cheer. It was the quiet knowledge, settling deep and permanent inside them, that the raft glowing out there existed because the first one had sunk — that the failure everyone had watched was the exact reason tonight had held. The shame had cooled at last into something the {hero} could keep: not the belief that they never made mistakes, but the harder, truer strength of someone who had made a real one, in front of everyone, and grown straight through the middle of it.
-
-That night in {setting}, the {hero} set the {object_motif} on the windowsill and watched the last of the lantern light fade over the water, and was not afraid of being chosen anymore.
+Tomorrow they would follow the low places and find out where the last mistake grew.
 
 {refrain}.`,
-        scriptTemplate: `In {setting}, the festival of lights came only once a year, and this year {child_name} had been given the greatest honor of all. Every family in the town would write a wish on a paper lantern, and someone had to build the raft that would carry all those wishes out across the water at dusk, glowing, for everyone to watch. The town had chosen {child_name}.
+        scriptTemplate: `{companion_name} had gone across {setting} for the whole day and would not be back until moonrise, which meant {child_name} the {hero} had approximately one evening to execute the finest surprise ever planned. And it was planned. It had been planned for a week, in secret, with diagrams.
 
-{child_name} had never wanted anything so badly, or been so afraid of anything. To be chosen felt like being told, at last, that they mattered — that they were capable, that they were somebody the town could count on. And so, when {companion_name} gently offered to help with the raft, {child_name} said no. "They picked me," {child_name} said, turning a small {object_motif} over and over between their fingers, the way they always did when they were nervous. "If someone helps me, then it isn't really me they can count on, is it? I have to do this part alone."
+A ring of glow-seeds around the {object_motif}, right beside {companion_name}'s door. Glow-seeds spend their days disguised as plain grey pebbles — you would step over one without a glance — but the first touch of moonlight wakes them, and after that they shine green-gold every night for a hundred nights. Twenty seeds, earned with a full week of errands, counted twice into a soft pouch. Twenty seeds made a circle exactly the size of a welcome.
 
-{companion_name} watched {child_name} for a long moment, and then nodded. "All right," they said. "But I'm here. Remember that I'm here."
+The seed-seller had said precisely one strange thing while pouring them out. "Plant them where they fall." {child_name} had nodded politely, the way you nod at people who speak in riddles, and privately filed it under nonsense. Seeds fall where you drop them. Nobody builds a masterpiece by dropping it.
 
-For three days {child_name} worked in secret, and the work went badly in a hundred small ways {child_name} chose not to notice. The lashings that held the raft together kept slipping, and instead of stopping to understand why, {child_name} just tied them tighter and hurried on. There wasn't time to fix everything, {child_name} told themselves. It only had to hold for one evening. It only had to hold long enough.
+{child_name} carried the pouch toward the door with the slow, ceremonial care of somebody transporting treasure. Which, of course, is exactly when the ground produced a root, or a ridge, or possibly nothing at all, and {child_name} tripped.
 
-Dusk came. The whole town gathered along the shore, hundreds of them, their faces warm in the light of the lanterns they carried. Children sat on shoulders. Old people leaned on the railings. Every single one of them had written a wish, and every single wish was about to be placed, one by one, onto {child_name}'s raft. {child_name} stood at the water's edge with the {object_motif} clutched tight, heart hammering, and thought: this is the moment everything changes.
+Plip-plip-plip-plip. Twenty glow-seeds soared out of the pouch with what sounded suspiciously like joy, bounced, scattered, and ran — a long crooked ribbon of tiny thumps disappearing into the dusk.
 
-The lanterns went on, one after another, until the raft was a floating hill of soft light, the most beautiful thing {child_name} had ever seen. The town held its breath. {child_name} pushed the raft gently out onto the dark water.
+{child_name} spent the next while crawling in the dark, patting the ground like someone apologising to it. Fourteen seeds came back. Six were gone — properly gone, swallowed by the crooked shadows. "I ruined it," {child_name} said to the empty garden. "A week of planning, and I ruined it in four steps."
 
-It drifted. It glowed. And then, near the middle, a lashing {child_name} had never fixed came loose. The logs turned. The raft twisted, buckled, and slowly, terribly, folded in on itself. One by one, then all at once, the lanterns tipped and hissed out in the water. The light went dark. Hundreds of wishes floated loose and sinking on the black surface of the water, and a great, low sound of dismay rolled through the crowd.
+And here is the thing about that feeling. {child_name} knew hard was allowed — the wobble marks had settled that long ago. But this did not feel like hard, which you can lean into. It felt like spoiled, which just sits there. A mistake seemed like the opposite of a plan, the way a hole is the opposite of a wall.
 
-{child_name} stood frozen. The heat that rushed up their neck and into their face was worse than any pain they had ever felt. This wasn't a game they had lost. These were everyone's wishes. {child_name}'s grandmother's wish. The little kids' wishes. The whole town had trusted {child_name} with the most important night of the year, and {child_name} had let every single one of them down, in front of every single one of them.
+Still: fourteen seeds make a smaller circle. {child_name} pressed them into the neatest ring in the history of rings, spaced to perfection, and fetched water — whereupon even the water joined the rebellion. It slid straight off the ring's packed earth and wandered away sideways in a thin silver thread, following its own crooked little path. The same path, more or less, that the seeds had taken. {child_name} was too tired to wonder about that, and sat down to wait for the moon, prepared for disappointment.
 
-"I ruined it," {child_name} whispered, and the words tasted like ash. "I ruined everything. They trusted me and I ruined it. I knew those knots were wrong and I didn't fix them." Tears came hot and fast, and the worst part, the part that made {child_name} want to sink into the ground and vanish, was the quiet certainty underneath: this is proof. This is proof that I am not who they hoped. I am not capable. I never was.
+The moon rose slow and generous over {setting}. And — lean out into the dark for a moment. Something is waking up out there. Tiny green-gold lights, blinking on, one, then three, then six. But look where. Not the tidy ring. The lights are strung along the crooked line.
 
-{child_name} ran. They ran from the shore, from the murmuring crowd, all the way to the dark and empty edge of {setting}, and there they sat with their knees pulled up and the {object_motif} pressed against their forehead, shaking.
+All six runaway seeds were shining. Every lost, unplanned, given-up-for-gone one of them, glowing in a messy ribbon like lanterns down a lane. The fourteen perfect seeds sat in their perfect circle, dark as buttons on a coat.
 
-It was a long time before footsteps came. {companion_name} did not rush. They sat down beside {child_name} on the cold ground and, for a while, said nothing at all — did not tell {child_name} it was fine, because it wasn't fine, and they both knew it. That silence, strangely, was the first thing all night that didn't hurt.
+{child_name} went over on quiet feet and finally looked at the ground instead of the plan. The crooked ribbon lay exactly where rain always trickled — low, soft, deep-drinking soil, the richest in the garden. The ring sat proudly on earth packed hard as a road. And round seeds roll. Of course they roll. They roll downhill into the hollows, and the hollows are where the water goes, which is precisely where a seed most wants to live. The spill had not been clumsiness punishing a good plan. The spill had been twenty small experts sorting themselves.
 
-"I let them all down," {child_name} said finally, voice cracking. "Don't tell me I didn't."
+"Plant them where they fall," {child_name} said slowly, and the riddle quietly stopped being a riddle. "Because where they fall is where they roll, and where they roll is where the water is. The mistake knew the garden better than my diagram did. It wasn't a ruin. It was information." {child_name} was already digging, laughing a little. "Getting it wrong is part of how growing is done. Maybe the load-bearing part."
 
-"You did," {companion_name} said quietly. {child_name} flinched, but {companion_name} went on, steady and kind. "You let them down tonight. That's true, and pretending it isn't true wouldn't help you. But listen to me, because this next part is just as true, and it's the part shame doesn't want you to hear." They waited until {child_name} looked up. "You knew the lashings were wrong. You just told me so yourself. That's not proof that you're not capable. That is the single most useful thing you could possibly know right now."
+Fourteen seeds came up out of the perfect dark circle and went back down along the crooked shining line. One by one they woke, green-gold, until a winding river of light ran from the path all the way to {companion_name}'s door. It was not symmetrical. It was not on the diagram. It was better than both.
 
-"How?" {child_name} said bitterly. "How is knowing I failed useful?"
+"{refrain}," {child_name} whispered to the seeds — {companion_name}'s own saying, borrowed for the occasion — and sat down in the glow to wait.
 
-"Because it tells you exactly what to do differently," said {companion_name}. "A mistake isn't a verdict on who you are. A mistake is information. It's the raft, out there in the dark, telling you precisely where it needed to be stronger — and telling you something else, too: that next time, you stop when something feels wrong instead of tying it tighter and hoping. You didn't fail because you're not capable. You failed because you tried to carry the whole thing alone, and you ignored what the work was trying to tell you. Those are things a person learns. Getting something wrong and letting it teach you isn't the opposite of growing up — it is part of how growing is done."
+{companion_name} arrived at moonrise and stopped so abruptly they nearly fell over their own feet. "A river of light. To my door." They looked closer, and their voice went odd. "Glow-seeds only take in perfect soil. Gardeners spend years learning to read it. How did you know?"
 
-{child_name} was quiet for a long time, turning the {object_motif} slowly in the dark. The shame was still there, hot and heavy. But underneath it, for the first time all night, was a thin, steadying thread of something else. Not an excuse. A direction.
+"I didn't," said {child_name}. "I dropped them. The drop knew. I just finally listened to it."
 
-"I could rebuild it," {child_name} said slowly. "For tomorrow night. The festival's second evening. If — if the town would even let me."
+So the whole story came out — the diagrams, the trip, the mutinous watering can, the map hiding inside the mess — and {companion_name} laughed until they had to sit down, and then went quiet and happy, watching their doorway shine.
 
-"They wrote their wishes on paper," {companion_name} said, the smallest smile in their voice. "Paper can be written again. And the town didn't choose you because you were perfect. Nobody is. They can choose you again because you're the one who's going to understand exactly why the first raft failed."
+The lights blinked slower. The moon climbed. The garden settled.
 
-So {child_name} went back the next day, in the plain light of morning, and this time {child_name} did not build in secret and did not build alone. {child_name} studied the broken raft where it had washed up, learned every place it had come apart, and understood each one. When {companion_name} offered a second pair of hands, {child_name} said yes — and found that saying yes did not make the raft any less theirs. They tested every lashing by pulling on it hard, on purpose, so that any weakness would show now, in the daylight, and not later in front of the town. Where a knot slipped, {child_name} did not tie it tighter and hope. {child_name} stopped, and thought, and tied it differently, and pulled again.
+Somewhere out in the dark, the twentieth seed still had not been found. It was glowing right now, in some soft crooked hollow nobody had checked, patient as buried treasure.
 
-By the second dusk, the new raft sat low and solid on the water, unremarkable to look at and strong as bedrock. The town came back — all of them, which frightened {child_name} more than anything — and wrote their wishes again. {child_name}'s hands trembled as the first lantern went down. But the raft held. It held through every lantern, held as {child_name} pushed it out, held as it drifted glowing into the middle of the dark water and stayed there, a hill of light that did not fold or fail. This time the great sound from the crowd was not dismay. It was a cheer, and it rolled over {child_name} like warm water.
-
-But the thing {child_name} would remember, long after, was not the cheer. It was the quiet knowledge, settling deep and permanent inside them, that the raft glowing out there existed because the first one had sunk — that the failure everyone had watched was the exact reason tonight had held. The shame had cooled at last into something {child_name} could keep: not the belief that they never made mistakes, but the harder, truer strength of someone who had made a real one, in front of everyone, and grown straight through the middle of it.
-
-That night in {setting}, {child_name} set the {object_motif} on the windowsill and watched the last of the lantern light fade over the water, and was not afraid of being chosen anymore.
+Tomorrow they would follow the low places and find out where the last mistake grew.
 
 {refrain}.`,
       },
     },
-    audioTemplate: `In the soft dark of {setting}, the {hero} made a mistake — a real one — and wished they could disappear.
+    audioTemplate: `{companion_name} had gone across {setting} for the day, home at moonrise. That gave the {hero} the whole evening for a secret: a perfect ring of glow-seeds around the {object_motif}, right beside the door. Glow-seeds sleep all day, but when moonlight touches them, they wake and shine.
 
-"I got it wrong," they said, cheeks warm. "I should not make mistakes."
+Twenty seeds, counted and saved. Enough for one perfect circle.
 
-The {object_motif} rustled, its newest leaf unfurling from where an old one had fallen.
+Carrying the pouch to the door, the {hero} was extra careful — which is exactly when the trip happened. Plip-plip-plip. Seeds bounced and scattered in a long, messy, crooked line across the ground.
 
-{companion_name} settled beside them, calm and warm. "Look at the {object_motif}," they said. "It grows by trying, dropping a leaf, and trying again. A mistake is not the end of growing. It is part of how growing is done."
+"No, no, no," whispered the {hero}, scooping up every seed in sight. Only fourteen came back. "I've ruined it before I even started."
 
-"But it felt bad," said the {hero}.
+Hard at the start was allowed — the wobble marks had said so. But this didn't feel hard. It felt spoiled.
 
-"Feelings like that fade," said {companion_name}. "What stays is what the mistake taught you. It whispered exactly what to try next. That is a gift, not a failure."
+The {hero} planted the fourteen in the neatest ring ever made, patted each one, and stepped back just as the moon slid up.
 
-The {hero} thought about it, and the heavy, hiding feeling loosened. A mistake was only the world telling them which way to go.
+Now look closely, into the dark. Which seeds are waking? Not the tidy ring. Little green-gold lights are blinking on — all along the crooked spill.
 
-They looked once more at the {object_motif}, growing in the dark, and felt a little braver.
+Six runaway seeds were shining. The fourteen perfect ones sat dark.
+
+The {hero} crept closer. The crooked line ran just where rain always trickled — soft, deep, happy ground. The neat ring sat on ground packed hard as a road. The spill had found the good soil.
+
+"Oh," breathed the {hero}. "My mistake wasn't a ruin. It was information. The seeds were showing me where they wanted to go. Getting it wrong is part of how growing is done!"
+
+So the {hero} dug up all fourteen dark seeds and planted them along the crooked line, one by one. And one by one they woke: a winding river of light, from the path right up to the door. Better than any ring.
+
+"{refrain}," whispered the {hero} to the seeds — the way {companion_name} always said it.
+
+{companion_name} came home at moonrise, stopped, and stared. "A river of light! For me? How did you know where they'd grow?"
+
+"I got it wrong first," said the {hero}, very proud. "The wrong showed me the right."
+
+They sat together in the glow while the moon climbed higher. The little lights blinked, slow and sleepy.
+
+Somewhere out there, the twentieth seed was still hiding. Tomorrow they would hunt for one small stray glow.
 
 {refrain}.`,
-    scriptTemplate: `In the soft dark of {setting}, {child_name} the {hero} made a mistake — a real one — and wished they could disappear.
+    scriptTemplate: `{companion_name} had gone across {setting} for the day, home at moonrise. That gave {child_name} the {hero} the whole evening for a secret: a perfect ring of glow-seeds around the {object_motif}, right beside the door. Glow-seeds sleep all day, but when moonlight touches them, they wake and shine.
 
-"I got it wrong," {child_name} said, cheeks warm. "I should not make mistakes."
+Twenty seeds, counted and saved. Enough for one perfect circle.
 
-The {object_motif} rustled, its newest leaf unfurling from where an old one had fallen.
+Carrying the pouch to the door, {child_name} was extra careful — which is exactly when the trip happened. Plip-plip-plip. Seeds bounced and scattered in a long, messy, crooked line across the ground.
 
-{companion_name} settled beside them, calm and warm. "Look at the {object_motif}, {child_name}," they said. "It grows by trying, dropping a leaf, and trying again. A mistake is not the end of growing. It is part of how growing is done."
+"No, no, no," whispered {child_name}, scooping up every seed in sight. Only fourteen came back. "I've ruined it before I even started."
 
-"But it felt bad," said {child_name}.
+Hard at the start was allowed — the wobble marks had said so. But this didn't feel hard. It felt spoiled.
 
-"Feelings like that fade," said {companion_name}. "What stays is what the mistake taught you. It whispered exactly what to try next. That is a gift, not a failure."
+{child_name} planted the fourteen in the neatest ring ever made, patted each one, and stepped back just as the moon slid up.
 
-{child_name} thought about it, and the heavy, hiding feeling loosened. A mistake was only the world telling them which way to go.
+Now look closely, into the dark. Which seeds are waking? Not the tidy ring. Little green-gold lights are blinking on — all along the crooked spill.
 
-{child_name} looked once more at the {object_motif}, growing in the dark, and felt a little braver.
+Six runaway seeds were shining. The fourteen perfect ones sat dark.
+
+{child_name} crept closer. The crooked line ran just where rain always trickled — soft, deep, happy ground. The neat ring sat on ground packed hard as a road. The spill had found the good soil.
+
+"Oh," breathed {child_name}. "My mistake wasn't a ruin. It was information. The seeds were showing me where they wanted to go. Getting it wrong is part of how growing is done!"
+
+So {child_name} dug up all fourteen dark seeds and planted them along the crooked line, one by one. And one by one they woke: a winding river of light, from the path right up to the door. Better than any ring.
+
+"{refrain}," whispered {child_name} to the seeds — the way {companion_name} always said it.
+
+{companion_name} came home at moonrise, stopped, and stared. "A river of light! For me? How did you know where they'd grow?"
+
+"I got it wrong first," said {child_name}, very proud. "The wrong showed me the right."
+
+They sat together in the glow while the moon climbed higher. The little lights blinked, slow and sleepy.
+
+Somewhere out there, the twentieth seed was still hiding. Tomorrow they would hunt for one small stray glow.
 
 {refrain}.`,
   },

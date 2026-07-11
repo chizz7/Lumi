@@ -14,573 +14,408 @@ import type { Level } from '@/content/types'
 
 export const LEVELS: Level[] = [
   {
-    ordinal: 1, title: 'Noticing How Others Feel',
-    concept: 'Paying attention to the feelings of others', callback: null, ageFloor: 3,
-    summary: 'A small hero learns that kindness begins before any action — with noticing. With their companion, they practise reading the quiet signs that tell you how someone else is feeling.',
-    teachingNote: 'Empathy starts with attention: a child cannot be kind to a feeling they have not noticed.',
-    learningBeat: 'That is where kindness is born',
+    ordinal: 1, title: "The Quietest Hiding Place",
+    concept: "Paying attention to the feelings of others", callback: null, ageFloor: 3,
+    summary: "Nobody has ever found the champion — hide-and-seek's smallest, quietest legend — and tonight even the famous giveaway giggle has gone missing. Every clever spot turns up empty, until the hero stops asking where a hider would hide and starts asking how a hider might feel. Reading those quiet signs is what finally finds the friend: noticing a feeling is where kindness begins.",
+    teachingNote: "Empathy starts with attention: a child cannot be kind to a feeling they have not noticed.",
+    learningBeat: "That is where kindness is born",
     ageVariants: {
   '3-4': {
-    audioTemplate: `The {hero} wanted to be kind.
+    audioTemplate: `It was the last hide-and-seek before bed.
 
-The {hero} lived by the {setting}. The {hero} thought kindness had to be big. Big and loud. Like a giant gift. Like a big, big hug.
+The {hero} wanted to find the champion. The best hider in {setting}. Nobody had ever found them. Not once!
 
-One day the {hero} met {companion_name}.
+And everyone knew: when you got close, the champion giggled. But tonight? No giggle anywhere.
 
-'I want to be kind,' said the {hero}. 'But I am small. My kind things feel small too.'
+The {hero} looked in one spot. Nothing. Two spots. Nothing. Three spots. Only {companion_name}, peeking in there too. Oops!
 
-'Kindness can be quiet,' said {companion_name}. 'Sit with me and watch.'
+'Hmm,' said {companion_name}. 'No giggle tonight, little {hero}.'
 
-The {hero} did not understand.
+The {hero} thought hard. Before the game, the champion looked sad. Their smile fell down. Their shoulders drooped.
 
-'Look,' said {companion_name}. 'Look at the little one over there.'
+Now listen. Can you hear it too? Hic. A tiny hiccup, near the {object_motif}.
 
-The {hero} looked. The little one sat low. Their head hung down. They did not play.
+'They are hiding a sad feeling,' said the {hero}. 'And I noticed it! That is where kindness is born.'
 
-'How do they feel?' asked {companion_name}.
+The {hero} went to the warm glow. No shouting. Just sitting down, soft and close.
 
-'Sad,' said the {hero}. 'They look sad.'
+'I feel sad sometimes too,' said the {hero}.
 
-'You saw it. You noticed,' said {companion_name}. 'That is where kindness is born.'
+Out crept the champion. One small smile. Then a big one.
 
-The {hero} felt warm inside. It was a good, soft feeling.
+'You found the me,' said the champion.
 
-So they sat by the {setting}, and they looked, and they looked.
+'{refrain},' whispered {companion_name}.
 
-They saw a small friend hiding away. 'Scared,' whispered the {hero}.
+'Tomorrow I will show you my best spot,' said the champion. 'We will giggle very quietly.'
 
-They saw a big friend jump and wave. 'Happy,' whispered the {hero}.
-
-They saw a new friend standing all alone. 'Shy,' whispered the {hero}.
-
-They saw a tired friend with slow, slow feet. 'Sleepy,' whispered the {hero}.
-
-Each time, the {hero} noticed. Each time, the {hero} felt the noticing in their chest, soft and quiet.
-
-The {hero} held the {object_motif} close and thought about the sad little one.
-
-'Now go and sit with them,' said {companion_name}. 'Close and quiet.'
-
-So the {hero} went to the little one. The {hero} sat down close. Very close. Quiet and near. Not loud. Not big.
-
-The little one lifted their head. The little one gave one small smile. Then a bigger one.
-
-The {hero} smiled too.
-
-Kindness did not have to be big. Kindness could be quiet. Kindness could be near.
-
-The moon rose over the {setting}, soft and round. The wind went hush, hush, hush.
-
-The {hero} grew sleepy. The {hero} held the {object_motif} and gave a long, slow yawn.
-
-'I noticed today,' the {hero} whispered.
-
-{companion_name} nodded, slow and kind, and stayed close while the {hero} closed their eyes.
+The {hero} yawned. Friend found. Game done.
 
 {refrain}.`,
-    scriptTemplate: `{child_name} wanted to be kind.
+    scriptTemplate: `It was the last hide-and-seek before bed.
 
-{child_name} lived by the {setting}. {child_name} thought kindness had to be big. Big and loud. Like a giant gift. Like a big, big hug.
+{child_name} wanted to find the champion. The best hider in {setting}. Nobody had ever found them. Not once!
 
-One day {child_name} met {companion_name}.
+And everyone knew: when you got close, the champion giggled. But tonight? No giggle anywhere.
 
-'I want to be kind,' said {child_name}. 'But I am small. My kind things feel small too.'
+{child_name} looked in one spot. Nothing. Two spots. Nothing. Three spots. Only {companion_name}, peeking in there too. Oops!
 
-'Kindness can be quiet,' said {companion_name}. 'Sit with me and watch.'
+'Hmm,' said {companion_name}. 'No giggle tonight, little {hero}.'
 
-{child_name} did not understand.
+{child_name} thought hard. Before the game, the champion looked sad. Their smile fell down. Their shoulders drooped.
 
-'Look,' said {companion_name}. 'Look at the little one over there.'
+Now listen. Can you hear it too? Hic. A tiny hiccup, near the {object_motif}.
 
-{child_name} looked. The little one sat low. Their head hung down. They did not play.
+'They are hiding a sad feeling,' said {child_name}. 'And I noticed it! That is where kindness is born.'
 
-'How do they feel?' asked {companion_name}.
+{child_name} went to the warm glow. No shouting. Just sitting down, soft and close.
 
-'Sad,' said {child_name}. 'They look sad.'
+'I feel sad sometimes too,' said {child_name}.
 
-'You saw it. You noticed,' said {companion_name}. 'That is where kindness is born.'
+Out crept the champion. One small smile. Then a big one.
 
-{child_name} felt warm inside. It was a good, soft feeling.
+'You found the me,' said the champion.
 
-So they sat by the {setting}, and they looked, and they looked.
+'{refrain},' whispered {companion_name}.
 
-They saw a small friend hiding away. 'Scared,' whispered {child_name}.
+'Tomorrow I will show you my best spot,' said the champion. 'We will giggle very quietly.'
 
-They saw a big friend jump and wave. 'Happy,' whispered {child_name}.
-
-They saw a new friend standing all alone. 'Shy,' whispered {child_name}.
-
-They saw a tired friend with slow, slow feet. 'Sleepy,' whispered {child_name}.
-
-Each time, {child_name} noticed. Each time, {child_name} felt the noticing in their chest, soft and quiet.
-
-{child_name} held the {object_motif} close and thought about the sad little one.
-
-'Now go and sit with them,' said {companion_name}. 'Close and quiet.'
-
-So {child_name} went to the little one. {child_name} sat down close. Very close. Quiet and near. Not loud. Not big.
-
-The little one lifted their head. The little one gave one small smile. Then a bigger one.
-
-{child_name} smiled too.
-
-Kindness did not have to be big. Kindness could be quiet. Kindness could be near.
-
-The moon rose over the {setting}, soft and round. The wind went hush, hush, hush.
-
-{child_name} grew sleepy. {child_name} held the {object_motif} and gave a long, slow yawn.
-
-'I noticed today,' {child_name} whispered.
-
-{companion_name} nodded, slow and kind, and stayed close while {child_name} closed their eyes.
+{child_name} yawned. Friend found. Game done.
 
 {refrain}.`
   },
   '5-6': {
-    audioTemplate: `The {hero} wanted to be kind more than almost anything.
+    audioTemplate: `Tonight was the last hide-and-seek before bed, and the {hero} wanted one thing: to find the champion at last.
 
-The trouble was, the {hero} thought kindness had to be big. A huge present. A rescue. Something so grand that everyone would gasp and clap. And the {hero} was not big, and did not have grand things to give. So every day the {hero} felt like kindness was for someone else.
+The champion was the smallest, quietest player in all of {setting}, and nobody had ever found them. Not once. But everyone knew the champion's one weakness. When a seeker crept close, a tiny giggle always slipped out. Tonight the game had gone on and on, and there had been no giggle anywhere.
 
-One evening, down by the {setting}, the {hero} found {companion_name} sitting quietly.
+One by one the other players yawned and went home. Only the {hero} and {companion_name} stayed.
 
-'I want to be kind,' said the {hero}, 'but I never have anything big enough. What if I am just not a kind sort of person?'
+The {hero} searched the clever way. Behind the tall stone? Nothing. Under the drooping leaves? Nothing. Then the {hero} pounced on a suspicious lump. 'Found you!' But the lump was {companion_name}, sneaking up on it from the other side. The real lump was a rock.
 
-{companion_name} did not answer right away. Instead they said, 'Come and sit. I want to show you something most people walk straight past.'
+'Hmm,' said {companion_name}. 'You have looked everywhere a clever hider would be, little {hero}.'
 
-The {hero} sat.
+The {hero} flopped down to think, and the evening played itself again. Before the game, when everyone was shouting out names for teams, nobody had shouted the champion's name. Their smile had slipped right off. Their shoulders had curled. They had walked away before the counting started.
 
-'Look over there,' said {companion_name}, 'at the one by the water.'
+Hold very still and listen. Can you hear it too? Hic. A tiny hiccup, somewhere near the {object_motif}.
 
-The {hero} looked. Another child stood a little apart from everyone else. Their shoulders were curled in. Their voice, when they spoke, came out small. They kept turning their face away.
+'Oh,' whispered the {hero}, sitting up. 'They are not hiding to win. They are hiding because of a feeling. I saw it happen and I nearly walked right past it. Noticing the feeling comes first. That is where kindness is born.'
 
-'What do you see?' asked {companion_name}.
+Once the {hero} asked where a sad feeling would go, the answer was easy. When you feel forgotten, you go where it is warm.
 
-'I don't know,' said the {hero}. 'They're just standing there.'
+The {hero} padded over to the soft glow of the {object_motif}. No pouncing. No shouting. Just sitting down beside the little hollow there.
 
-'Look again. Not with your eyes only. Look the way you would look for a hidden thing.'
+'I heard my name get forgotten once too,' the {hero} said softly. 'It made me want to be invisible.'
 
-So the {hero} looked again, slower this time. The curled shoulders. The quiet voice. The face turned away.
+A rustle. And the champion crept out into the glow, blinking.
 
-'Oh,' the {hero} said softly. 'I think they feel left out. I think they might be a little sad.'
+'You found me,' they said. 'Everyone else only ever looked for the hiding. You looked for the me.'
 
-{companion_name} smiled. 'You noticed. Before you gave anything, before you did anything at all, you noticed how someone felt. That is where kindness is born.'
+'{refrain},' said {companion_name}, very softly.
 
-The {hero} sat very still, turning the idea over.
+The champion said the {hero} had won the game. The {hero} said it was a tie.
 
-'Let's practise,' said {companion_name}. 'Noticing is like any game. It grows when you play it.'
+'Tomorrow,' the champion whispered, 'I will show you my greatest hiding spot. You will have to giggle very, very quietly.'
 
-So they watched the busy {setting} together. A small one hopped from foot to foot near the front of a line. 'Excited,' guessed the {hero}. A bigger one sighed and dragged their feet. 'Worn out,' said the {hero}. Two friends laughed close together. 'Glad,' said the {hero}. Someone gripped their hands tight and stared at the ground. 'Nervous,' whispered the {hero}, and {companion_name} nodded each time.
-
-It surprised the {hero} how much a person showed without saying a word. A tilt of the head. A held breath. Hands that fidgeted or went still. Each one was a little message, waiting to be read.
-
-The more the {hero} looked, the more there was to see. Feelings were everywhere, quiet as footprints, once you knew to follow them.
-
-The {hero} held the {object_motif} and thought about the child by the water.
-
-'I think I know what to do now,' said the {hero}.
-
-'Then the noticing did its work,' said {companion_name}.
-
-The {hero} walked over, not in a big rush, not with a grand plan. Just close and quiet. The {hero}'s hands felt light, not heavy with worry the way they had before. 'You can stand with me, if you want,' the {hero} said. 'I saw you over here on your own.'
-
-The other child looked up, surprised. And then, slowly, they smiled — a real one. 'I'd like that,' they said. For a moment neither of them said anything, and that was all right too. Their shoulders came loose. Their voice came back.
-
-It was such a small thing. No one gasped. No one clapped. But it had mattered, and the {hero} could feel that it had.
-
-Later, the sky over the {setting} went soft and dim, and the first lights of evening blinked awake.
-
-'I always thought I was too small to be kind,' said the {hero}.
-
-'You were never too small,' said {companion_name}. 'You only needed to see.'
-
-The {hero} thought of all the quiet feelings still out there, and how many they might notice tomorrow.
-
-The {hero} yawned, holding the {object_motif} close, watching the {setting} settle into quiet.
+The {hero} smiled, and yawned. The glow burned low. Game over. Friend found.
 
 {refrain}.`,
-    scriptTemplate: `{child_name} wanted to be kind more than almost anything.
+    scriptTemplate: `Tonight was the last hide-and-seek before bed, and {child_name} wanted one thing: to find the champion at last.
 
-The trouble was, {child_name} thought kindness had to be big. A huge present. A rescue. Something so grand that everyone would gasp and clap. And {child_name} was not big, and did not have grand things to give. So every day {child_name} felt like kindness was for someone else.
+The champion was the smallest, quietest player in all of {setting}, and nobody had ever found them. Not once. But everyone knew the champion's one weakness. When a seeker crept close, a tiny giggle always slipped out. Tonight the game had gone on and on, and there had been no giggle anywhere.
 
-One evening, down by the {setting}, {child_name} found {companion_name} sitting quietly.
+One by one the other players yawned and went home. Only {child_name} and {companion_name} stayed.
 
-'I want to be kind,' said {child_name}, 'but I never have anything big enough. What if I am just not a kind sort of person?'
+{child_name} searched the clever way. Behind the tall stone? Nothing. Under the drooping leaves? Nothing. Then {child_name} pounced on a suspicious lump. 'Found you!' But the lump was {companion_name}, sneaking up on it from the other side. The real lump was a rock.
 
-{companion_name} did not answer right away. Instead they said, 'Come and sit. I want to show you something most people walk straight past.'
+'Hmm,' said {companion_name}. 'You have looked everywhere a clever hider would be, little {hero}.'
 
-{child_name} sat.
+{child_name} flopped down to think, and the evening played itself again. Before the game, when everyone was shouting out names for teams, nobody had shouted the champion's name. Their smile had slipped right off. Their shoulders had curled. They had walked away before the counting started.
 
-'Look over there,' said {companion_name}, 'at the one by the water.'
+Hold very still and listen. Can you hear it too? Hic. A tiny hiccup, somewhere near the {object_motif}.
 
-{child_name} looked. Another child stood a little apart from everyone else. Their shoulders were curled in. Their voice, when they spoke, came out small. They kept turning their face away.
+'Oh,' whispered {child_name}, sitting up. 'They are not hiding to win. They are hiding because of a feeling. I saw it happen and I nearly walked right past it. Noticing the feeling comes first. That is where kindness is born.'
 
-'What do you see?' asked {companion_name}.
+Once {child_name} asked where a sad feeling would go, the answer was easy. When you feel forgotten, you go where it is warm.
 
-'I don't know,' said {child_name}. 'They're just standing there.'
+{child_name} padded over to the soft glow of the {object_motif}. No pouncing. No shouting. Just sitting down beside the little hollow there.
 
-'Look again. Not with your eyes only. Look the way you would look for a hidden thing.'
+'I heard my name get forgotten once too,' {child_name} said softly. 'It made me want to be invisible.'
 
-So {child_name} looked again, slower this time. The curled shoulders. The quiet voice. The face turned away.
+A rustle. And the champion crept out into the glow, blinking.
 
-'Oh,' {child_name} said softly. 'I think they feel left out. I think they might be a little sad.'
+'You found me,' they said. 'Everyone else only ever looked for the hiding. You looked for the me.'
 
-{companion_name} smiled. 'You noticed. Before you gave anything, before you did anything at all, you noticed how someone felt. That is where kindness is born.'
+'{refrain},' said {companion_name}, very softly.
 
-{child_name} sat very still, turning the idea over.
+The champion said {child_name} had won the game. {child_name} said it was a tie.
 
-'Let's practise,' said {companion_name}. 'Noticing is like any game. It grows when you play it.'
+'Tomorrow,' the champion whispered, 'I will show you my greatest hiding spot. You will have to giggle very, very quietly.'
 
-So they watched the busy {setting} together. A small one hopped from foot to foot near the front of a line. 'Excited,' guessed {child_name}. A bigger one sighed and dragged their feet. 'Worn out,' said {child_name}. Two friends laughed close together. 'Glad,' said {child_name}. Someone gripped their hands tight and stared at the ground. 'Nervous,' whispered {child_name}, and {companion_name} nodded each time.
-
-It surprised {child_name} how much a person showed without saying a word. A tilt of the head. A held breath. Hands that fidgeted or went still. Each one was a little message, waiting to be read.
-
-The more {child_name} looked, the more there was to see. Feelings were everywhere, quiet as footprints, once you knew to follow them.
-
-{child_name} held the {object_motif} and thought about the child by the water.
-
-'I think I know what to do now,' said {child_name}.
-
-'Then the noticing did its work,' said {companion_name}.
-
-{child_name} walked over, not in a big rush, not with a grand plan. Just close and quiet. {child_name}'s hands felt light, not heavy with worry the way they had before. 'You can stand with me, if you want,' {child_name} said. 'I saw you over here on your own.'
-
-The other child looked up, surprised. And then, slowly, they smiled — a real one. 'I'd like that,' they said. For a moment neither of them said anything, and that was all right too. Their shoulders came loose. Their voice came back.
-
-It was such a small thing. No one gasped. No one clapped. But it had mattered, and {child_name} could feel that it had.
-
-Later, the sky over the {setting} went soft and dim, and the first lights of evening blinked awake.
-
-'I always thought I was too small to be kind,' said {child_name}.
-
-'You were never too small,' said {companion_name}. 'You only needed to see.'
-
-{child_name} thought of all the quiet feelings still out there, and how many they might notice tomorrow.
-
-{child_name} yawned, holding the {object_motif} close, watching the {setting} settle into quiet.
+{child_name} smiled, and yawned. The glow burned low. Game over. Friend found.
 
 {refrain}.`
   },
   '7-8': {
-    audioTemplate: `The {hero} had decided, that whole week, to become kind. Not a little kind — properly kind, the sort people remembered. The problem was that every idea the {hero} came up with was enormous. Build someone a boat. Give away a treasure. Save the day in front of everybody. And since the {hero} had no boat, no treasure, and no day that needed saving, the plan kept stalling before it began.
+    audioTemplate: `Everyone in {setting} agreed on one thing about the champion: nobody had ever found them. Not in three whole seasons of hide-and-seek. Seekers had searched behind every stone and shadow, and the smallest, quietest player had never once been caught.
 
-By the time evening settled over the {setting}, the {hero} had worked themselves into a proper knot.
+There was just one crack in the champion's armour, and everyone knew it. When a seeker got truly close, a giggle slipped out — tiny, helpless, impossible to stop. Champions, it turns out, are not made of stone.
 
-{companion_name} found them there, chin in hands, frowning at nothing.
+Tonight was the last game before bed, and the {hero} had decided it was going to be a famous night: the night the champion finally got found. The {hero} had a list of spots, a plan, and a best accomplice — {companion_name}, who claimed to be in it purely for the glory.
 
-'That is a very serious face,' said {companion_name}. 'What is it carrying?'
+But tonight the game went strange and long. One by one the other seekers yawned, surrendered, and drifted home. The dark came down soft over {setting}. And there had not been one single giggle. The {hero} had crept close to every famous hiding place, and the game's most famous sound had simply not happened.
 
-'I want to be kind,' the {hero} admitted, 'but every kind thing I imagine is too big for me. Maybe I'm just not built for it.'
+'Something is wrong with tonight,' said the {hero}. 'Where is the giggle?'
 
-{companion_name} sat down beside them without a word for a moment. Then they tipped their head toward the far side of the {setting}. 'Before you decide that, do something for me. Watch that one over there. Don't do anything. Just watch.'
+'Hmm,' said {companion_name}, in the tone of someone who has noticed something and is waiting, politely, for you to notice it too.
 
-The {hero} followed the look. Another young one stood near the others but not quite with them, laughing when the group laughed — except the laugh came a half-second late, and stopped a half-second early. They kept glancing toward the path, as if measuring how far it was.
+The {hero} did not notice it yet, and did strategy instead. The hollow behind the tall stones: nothing. The gap beneath the drooping fronds: nothing. Then came a suspicious, champion-sized lump near the path. The {hero} stalked it with tremendous skill and pounced — onto {companion_name}, who had been stalking the same lump from the other side. The actual lump was a rock.
 
-'They're fine,' said the {hero}. 'They're laughing.'
+'We are excellent at this,' said {companion_name}, from underneath the {hero}.
 
-'Are they?' said {companion_name}. 'Watch the parts that aren't the mouth.'
+Out of spots and out of plans, the {hero} flopped back in the dark and let the evening replay itself. And there, snagged like a thread, was the thing the {hero} had seen and not truly seen. Before the game. Teams being picked. Names being shouted, cheerful as popping corn. And at the edge, the champion, waiting — for a name that never came. Nobody shouts the name of a player they have never once found. The champion's smile had slipped, just a little. Their shoulders had curled in. And they had walked away before the counting even began.
 
-So the {hero} watched harder. The late laugh. The eyes that kept sliding away. The arms wrapped around themselves as though the evening had turned cold, though it hadn't.
+Hold very still and listen. Can you hear it too? Hic. The tiniest hiccup in the world, from near the warm glow of the {object_motif}.
 
-'Oh,' said the {hero}, quiet now. 'They're pretending. They look like they're having fun, but underneath I think they feel... lonely. Like they want to leave but don't know how.'
+The {hero} sat up slowly, everything rearranging.
 
-{companion_name} nodded slowly. 'You just did the hardest part of kindness, and you didn't lift a finger. You looked past what someone showed on purpose and saw what they truly felt. That is where kindness is born.'
+'They are not hiding to win,' the {hero} said. 'They have not been playing at all. They are hiding because of a feeling — and I watched that feeling happen and walked straight past it, because I was too busy planning to be famous. Noticing comes first. That is where kindness is born.'
 
-The {hero} turned the thought over, surprised by it. 'But I didn't do anything.'
+Once the {hero} started asking where a small sad feeling would go, the answer was suddenly easy. When you feel forgotten, you do not pick the cleverest spot. You pick the warmest one.
 
-'You did the thing that comes first,' said {companion_name}. 'Everything kind you will ever do starts here, with noticing. Miss this, and even a grand gesture lands on the wrong person at the wrong time.'
+The {hero} walked to the {object_motif} — no stalking, no pouncing — and sat down beside the hollow where its glow ran deepest.
 
-'Show me how to get better at it,' said the {hero}.
+'I am not here to win,' the {hero} said, to nobody visible. 'I saw your smile slip when the names were called. Mine slips like that too. Once it made me want to be invisible for a week.'
 
-So they practised, right there in the fading light. {companion_name} would tip their chin toward someone, and the {hero} would read them. A little one clutching a grown-up's sleeve at the edge of the crowd — 'shy, maybe scared.' Someone marching off with quick, hard steps — 'angry, or trying not to cry.' Two others leaning close, heads together, easy and warm — 'happy, safe.' Each time, the {hero} looked for the quiet signs first: the shoulders, the hands, the eyes, the space a person left between themselves and everyone else.
+A pause. A rustle. And the champion crept out into the glow, blinking, and looked at the {hero} a long moment.
 
-'It's like reading,' the {hero} said slowly, 'except the words are on people instead of pages.'
+'Three seasons,' the champion said at last. 'Everyone searched for my hiding, little {hero}. You are the first one who searched for my feeling. You found the me.'
 
-'And most people never learn to read it,' said {companion_name}. 'You are, right now.'
+'{refrain},' said {companion_name}, very softly, and for once added nothing about glory.
 
-It was strange, the {hero} thought. The {setting} looked exactly the same as it had an hour ago, and yet it didn't at all. Everywhere they turned there were small signals they had never bothered to read before — a slumped posture here, a too-bright smile there, a voice pitched a little too high. The world had been talking all along, quietly, and the {hero} was only now learning the language.
+They sat together while the glow breathed slow. The champion ruled that the {hero} had officially won the game. The {hero} ruled it a tie. In the end they compromised: the {hero} had won, but only in secret.
 
-'The trick,' said {companion_name}, 'is that people hide the feelings they think they shouldn't have. The sad ones. The scared ones. Those are the ones that most need noticing, and they're the hardest to see.' The {hero} nodded, thinking of the laugh that came too late.
+'Tomorrow,' the champion whispered, 'I will show you my greatest spot. The one nobody will ever find. It has been a bit lonely, knowing it alone. You will have to learn to giggle in total silence.'
 
-The {hero} held the {object_motif} and looked back at the one who had laughed too late. They were still there, still pretending, still glancing at the path.
+'I will practise tonight,' promised the {hero}, with a yawn that ruined the promise on the spot.
 
-'I want to go over,' said the {hero}. 'But what if I get it wrong?'
-
-'Then you'll have gone over gently, and asked, and listened,' said {companion_name}. 'Noticing isn't being sure. It's caring enough to check.'
-
-The {hero} felt something steady settle in their chest — not the pounding nerves from before, just a quiet readiness. They stood and crossed the {setting}, slowly, so as not to startle anyone.
-
-'Hey,' the {hero} said, stopping a friendly distance away. 'I was about to go find a quieter spot. Want to come? You don't have to.'
-
-The other one blinked. For a heartbeat they looked ready to say the automatic thing, the everything's-fine thing. Then their shoulders dropped, just a little, and something true came into their face.
-
-'Yeah,' they said. 'Actually — yeah. I'd like that.'
-
-They walked off together, and the pretend-laugh was gone, replaced by something smaller and far more real. Some kind things, the {hero} realised, were so quiet that only the person receiving them ever knew.
-
-No crowd cheered. No one had even noticed. But the {hero} understood now that the biggest part of what had just happened had taken place before a single word — in the looking.
-
-Above the {setting}, the light thinned to the colour of sleep.
-
-'I thought kindness was something you had to be big enough for,' said the {hero}.
-
-'It's something you have to be awake enough for,' said {companion_name}, 'and you were.'
-
-The {hero} yawned, the {object_motif} warm in their hands, and let the quiet of the {setting} fold around them.
+The glow burned down to an ember. The game was over. The friend was found. Sleep came seeking next, and it knew just where to look.
 
 {refrain}.`,
-    scriptTemplate: `{child_name} had decided, that whole week, to become kind. Not a little kind — properly kind, the sort people remembered. The problem was that every idea {child_name} came up with was enormous. Build someone a boat. Give away a treasure. Save the day in front of everybody. And since {child_name} had no boat, no treasure, and no day that needed saving, the plan kept stalling before it began.
+    scriptTemplate: `Everyone in {setting} agreed on one thing about the champion: nobody had ever found them. Not in three whole seasons of hide-and-seek. Seekers had searched behind every stone and shadow, and the smallest, quietest player had never once been caught.
 
-By the time evening settled over the {setting}, {child_name} had worked themselves into a proper knot.
+There was just one crack in the champion's armour, and everyone knew it. When a seeker got truly close, a giggle slipped out — tiny, helpless, impossible to stop. Champions, it turns out, are not made of stone.
 
-{companion_name} found them there, chin in hands, frowning at nothing.
+Tonight was the last game before bed, and {child_name} had decided it was going to be a famous night: the night the champion finally got found. {child_name} had a list of spots, a plan, and a best accomplice — {companion_name}, who claimed to be in it purely for the glory.
 
-'That is a very serious face,' said {companion_name}. 'What is it carrying?'
+But tonight the game went strange and long. One by one the other seekers yawned, surrendered, and drifted home. The dark came down soft over {setting}. And there had not been one single giggle. {child_name} had crept close to every famous hiding place, and the game's most famous sound had simply not happened.
 
-'I want to be kind,' {child_name} admitted, 'but every kind thing I imagine is too big for me. Maybe I'm just not built for it.'
+'Something is wrong with tonight,' said {child_name}. 'Where is the giggle?'
 
-{companion_name} sat down beside them without a word for a moment. Then they tipped their head toward the far side of the {setting}. 'Before you decide that, do something for me. Watch that one over there. Don't do anything. Just watch.'
+'Hmm,' said {companion_name}, in the tone of someone who has noticed something and is waiting, politely, for you to notice it too.
 
-{child_name} followed the look. Another young one stood near the others but not quite with them, laughing when the group laughed — except the laugh came a half-second late, and stopped a half-second early. They kept glancing toward the path, as if measuring how far it was.
+{child_name} did not notice it yet, and did strategy instead. The hollow behind the tall stones: nothing. The gap beneath the drooping fronds: nothing. Then came a suspicious, champion-sized lump near the path. {child_name} stalked it with tremendous skill and pounced — onto {companion_name}, who had been stalking the same lump from the other side. The actual lump was a rock.
 
-'They're fine,' said {child_name}. 'They're laughing.'
+'We are excellent at this,' said {companion_name}, from underneath {child_name}.
 
-'Are they?' said {companion_name}. 'Watch the parts that aren't the mouth.'
+Out of spots and out of plans, {child_name} flopped back in the dark and let the evening replay itself. And there, snagged like a thread, was the thing {child_name} had seen and not truly seen. Before the game. Teams being picked. Names being shouted, cheerful as popping corn. And at the edge, the champion, waiting — for a name that never came. Nobody shouts the name of a player they have never once found. The champion's smile had slipped, just a little. Their shoulders had curled in. And they had walked away before the counting even began.
 
-So {child_name} watched harder. The late laugh. The eyes that kept sliding away. The arms wrapped around themselves as though the evening had turned cold, though it hadn't.
+Hold very still and listen. Can you hear it too? Hic. The tiniest hiccup in the world, from near the warm glow of the {object_motif}.
 
-'Oh,' said {child_name}, quiet now. 'They're pretending. They look like they're having fun, but underneath I think they feel... lonely. Like they want to leave but don't know how.'
+{child_name} sat up slowly, everything rearranging.
 
-{companion_name} nodded slowly. 'You just did the hardest part of kindness, and you didn't lift a finger. You looked past what someone showed on purpose and saw what they truly felt. That is where kindness is born.'
+'They are not hiding to win,' {child_name} said. 'They have not been playing at all. They are hiding because of a feeling — and I watched that feeling happen and walked straight past it, because I was too busy planning to be famous. Noticing comes first. That is where kindness is born.'
 
-{child_name} turned the thought over, surprised by it. 'But I didn't do anything.'
+Once {child_name} started asking where a small sad feeling would go, the answer was suddenly easy. When you feel forgotten, you do not pick the cleverest spot. You pick the warmest one.
 
-'You did the thing that comes first,' said {companion_name}. 'Everything kind you will ever do starts here, with noticing. Miss this, and even a grand gesture lands on the wrong person at the wrong time.'
+{child_name} walked to the {object_motif} — no stalking, no pouncing — and sat down beside the hollow where its glow ran deepest.
 
-'Show me how to get better at it,' said {child_name}.
+'I am not here to win,' {child_name} said, to nobody visible. 'I saw your smile slip when the names were called. Mine slips like that too. Once it made me want to be invisible for a week.'
 
-So they practised, right there in the fading light. {companion_name} would tip their chin toward someone, and {child_name} would read them. A little one clutching a grown-up's sleeve at the edge of the crowd — 'shy, maybe scared.' Someone marching off with quick, hard steps — 'angry, or trying not to cry.' Two others leaning close, heads together, easy and warm — 'happy, safe.' Each time, {child_name} looked for the quiet signs first: the shoulders, the hands, the eyes, the space a person left between themselves and everyone else.
+A pause. A rustle. And the champion crept out into the glow, blinking, and looked at {child_name} a long moment.
 
-'It's like reading,' {child_name} said slowly, 'except the words are on people instead of pages.'
+'Three seasons,' the champion said at last. 'Everyone searched for my hiding, little {hero}. You are the first one who searched for my feeling. You found the me.'
 
-'And most people never learn to read it,' said {companion_name}. 'You are, right now.'
+'{refrain},' said {companion_name}, very softly, and for once added nothing about glory.
 
-It was strange, {child_name} thought. The {setting} looked exactly the same as it had an hour ago, and yet it didn't at all. Everywhere they turned there were small signals they had never bothered to read before — a slumped posture here, a too-bright smile there, a voice pitched a little too high. The world had been talking all along, quietly, and {child_name} was only now learning the language.
+They sat together while the glow breathed slow. The champion ruled that {child_name} had officially won the game. {child_name} ruled it a tie. In the end they compromised: {child_name} had won, but only in secret.
 
-'The trick,' said {companion_name}, 'is that people hide the feelings they think they shouldn't have. The sad ones. The scared ones. Those are the ones that most need noticing, and they're the hardest to see.' {child_name} nodded, thinking of the laugh that came too late.
+'Tomorrow,' the champion whispered, 'I will show you my greatest spot. The one nobody will ever find. It has been a bit lonely, knowing it alone. You will have to learn to giggle in total silence.'
 
-{child_name} held the {object_motif} and looked back at the one who had laughed too late. They were still there, still pretending, still glancing at the path.
+'I will practise tonight,' promised {child_name}, with a yawn that ruined the promise on the spot.
 
-'I want to go over,' said {child_name}. 'But what if I get it wrong?'
-
-'Then you'll have gone over gently, and asked, and listened,' said {companion_name}. 'Noticing isn't being sure. It's caring enough to check.'
-
-{child_name} felt something steady settle in their chest — not the pounding nerves from before, just a quiet readiness. They stood and crossed the {setting}, slowly, so as not to startle anyone.
-
-'Hey,' {child_name} said, stopping a friendly distance away. 'I was about to go find a quieter spot. Want to come? You don't have to.'
-
-The other one blinked. For a heartbeat they looked ready to say the automatic thing, the everything's-fine thing. Then their shoulders dropped, just a little, and something true came into their face.
-
-'Yeah,' they said. 'Actually — yeah. I'd like that.'
-
-They walked off together, and the pretend-laugh was gone, replaced by something smaller and far more real. Some kind things, {child_name} realised, were so quiet that only the person receiving them ever knew.
-
-No crowd cheered. No one had even noticed. But {child_name} understood now that the biggest part of what had just happened had taken place before a single word — in the looking.
-
-Above the {setting}, the light thinned to the colour of sleep.
-
-'I thought kindness was something you had to be big enough for,' said {child_name}.
-
-'It's something you have to be awake enough for,' said {companion_name}, 'and you were.'
-
-{child_name} yawned, the {object_motif} warm in their hands, and let the quiet of the {setting} fold around them.
+The glow burned down to an ember. The game was over. The friend was found. Sleep came seeking next, and it knew just where to look.
 
 {refrain}.`
   },
   '9-11': {
-    audioTemplate: `For most of that week, the {hero} had been quietly obsessed with the idea of being kind — really kind, the kind that left a mark. The trouble was that every version of kindness the {hero} could picture was large and public: a dramatic rescue, a magnificent gift, some moment where a crowd went quiet and then broke into applause. Measured against that, the {hero}'s ordinary days felt thin. What was the point of wanting to be good if you never had anything grand enough to prove it?
+    audioTemplate: `Everyone in {setting} agreed on exactly one thing about the champion: nobody had ever found them. Not in three seasons of hide-and-seek. Seekers had grown up, retired, and handed their searching routes down to younger ones, and still the smallest, quietest player in the game had never once been caught.
 
-The {hero} was still tangled in this when evening came down over the {setting} and {companion_name} appeared, settling nearby with the unhurried calm of someone who had all the time in the world.
+There was just one crack in the champion's armour, and everyone knew it. When a seeker got truly close, a giggle slipped out — tiny, helpless, bright as a dropped spoon. Champions, it turns out, are not made of stone.
 
-'You've been somewhere far away in your head all day,' {companion_name} observed. 'Where?'
+Tonight was the last game before bed, and the {hero} had privately decided it was going to be a famous night: the night the champion finally got found. There was a list of spots, a strategy, and a best accomplice — {companion_name}, who claimed to be in it purely for the snacks.
 
-'Trying to work out how to be kind,' the {hero} said, and heard how strange it sounded aloud. 'And failing. Everything I think of is too big. I don't have treasures to give away or anyone to rescue. So maybe I'm just... not the kind of person it comes naturally to.'
+But the game went strange. It went long. One by one the other seekers yawned and drifted home to bed; the dark came down soft over {setting}; and there had not been one single giggle. The {hero} had crept close — genuinely, expertly close — to every famous hiding place in the game, and the game's most famous sound had simply declined to happen.
 
-{companion_name} didn't rush to disagree, which the {hero} half-expected and was oddly grateful for. Instead they looked out across the {setting}, to where a cluster of others their age had gathered.
+'Something is off,' the {hero} muttered. 'I have been close. I know I have. Where is the giggle?'
 
-'Do me a favour before you decide that,' {companion_name} said. 'See the one at the edge of that group? Don't go over. Don't do anything. Just watch, properly, for a little while.'
+'Hmm,' said {companion_name}, in the tone of someone who has noticed something and is waiting, with enormous politeness, for you to notice it too.
 
-The {hero} looked. At first there was nothing to see. The one at the edge was laughing along with the rest, joining in, apparently as easy as anybody. If anything, they seemed to be trying harder than the others — laughing a little louder, agreeing a little faster.
+The {hero} did not notice it. The {hero} did strategy instead. The hollow behind the tall stones: nothing. The gap beneath the drooping fronds where the shadows pooled thickest: nothing. Then a suspicious, champion-sized lump near the path, which the {hero} stalked with tremendous skill and pounced upon magnificently — and which turned out to be {companion_name}, who had been stalking the very same lump from the other side. The actual lump was a rock.
 
-'They seem fine,' the {hero} said. 'Happy, even.'
+'We are excellent at this,' observed {companion_name}, from underneath the {hero}.
 
-'Keep watching,' said {companion_name}. 'Not the performance. The person underneath it.'
+Out of spots, out of theories, and nearly out of dignity, the {hero} flopped back in the dark and let the whole evening replay itself. And there it was, snagged like a thread: the thing the {hero} had seen and not truly seen. Before the game. Teams being picked. Names being shouted one after another, cheerful as popping corn. And at the edge of the noise, the champion, waiting for a name that never came. Of course it never came. Nobody shouts the name of a player they have never once found; over three seasons, the game had slowly, accidentally taught itself to forget them. The champion's smile had slipped, just a little — the {hero} had seen it slip, and filed it under nothing. Their shoulders had curled inward. And they had turned and walked into the evening before the counting even began.
 
-It was an odd instruction, but the {hero} obeyed, and this time watched the way you might study a picture that hides a second image inside the first. And slowly, the second image surfaced. The laugh arrived a beat behind everyone else's, as though it were being copied rather than felt. When the others weren't looking, the smile slid off entirely, and what was left underneath was tired. They had positioned themselves half a step outside the circle. Every so often their eyes went to the path that led away, and lingered there, and came back.
+Hold very still now, and listen with your softest listening. Can you hear it too? Hic. The tiniest hiccup in the world, from near the warm glow of the {object_motif}.
 
-'Oh,' the {hero} said, and the word came out softer than intended. 'They're not happy at all, are they. They're doing an enormous amount of work to look happy. Underneath it they're... I think they feel left out. Maybe they think if they stopped smiling, nobody would notice, and that would somehow be worse.'
+The {hero} sat up slowly, feeling the whole night rearrange itself.
 
-For a long moment {companion_name} said nothing. Then: 'You just did the thing almost nobody bothers to do. You looked past the face someone put on for the world and saw the feeling they were hiding behind it. And you did it without being asked, without being told, without doing a single thing. That is where kindness is born.'
+'They are not hiding to win,' the {hero} said. 'They have not been playing at all. They are hiding because of a feeling — and I watched that feeling happen and walked straight past it, because I was busy planning to be famous. Noticing has to come first. That is where kindness is born.'
 
-The {hero} frowned, not in disagreement but in genuine puzzlement. 'But that's just... looking. I didn't help them. I didn't do anything.'
+And once the question changed — not where would a clever hider hide, but where would a small forgotten feeling go — the answer stopped being a mystery at all. When you feel forgotten, you do not choose the cleverest spot. You choose the warmest one.
 
-'You did the thing that has to come first, or nothing else works,' said {companion_name}. 'A grand gift given to someone who needed to be left alone isn't kindness — it's noise. Comfort offered to a person who wanted to be cheered up lands wrong. Every genuinely kind act begins with reading, accurately, what another person actually feels. Skip that, and even your biggest gesture is really about you.'
+The {hero} crossed over to the {object_motif} — no stalking, no pouncing, no plans — and sat down beside the hollow where its glow ran deepest, and spoke to nobody visible.
 
-That landed somewhere real. The {hero} thought of all the enormous kind things they had imagined that week, and realised, with a small flush of embarrassment, that in every single one of them the {hero} had pictured the crowd, the applause — themselves, at the centre, being seen as good.
+'I am not here to win. I saw your smile slip when the names were being called. Mine has slipped exactly like that. Once it made me want to be invisible for a week, and the worst part was how well it worked.'
 
-'Teach me to be better at it,' the {hero} said. 'The noticing.'
+A long pause. A rustle. And the champion crept out into the glow, blinking, hiccuping once more — hic — and studied the {hero} for a while.
 
-So, in the last of the light, they practised. {companion_name} would indicate someone with the smallest tilt of the head, and the {hero} would try to read them past the surface. A younger one bouncing on their toes, bright and loud — 'excited, but also showing off a bit, wanting someone to look.' An older one with a fixed, careful expression, moving very deliberately — 'upset about something, and determined not to let it show.' Two friends with their heads bent together — 'easy, safe, they trust each other.' Each time the {hero} learned to look for the quiet evidence rather than the announcement: the set of a pair of shoulders, the busyness of a pair of hands, the distance a person kept, the direction their eyes drifted when they thought no one was watching.
+'Three seasons,' the champion said at last. 'Seekers have looked behind every stone in {setting}, little {hero}. You are the first one who ever looked for how I felt. Everyone else was searching for the hiding. You found the me.'
 
-'It's a whole language,' the {hero} said, half to themselves. 'People are talking all the time without saying anything. I just never learned to hear it.'
+'{refrain},' said {companion_name} softly, and for once added nothing whatsoever about snacks.
 
-'Most never do,' said {companion_name}. 'And here is the hard part. The feelings people work hardest to hide are usually the ones that most need noticing — the sadness, the fear, the loneliness. Nobody dresses those up as loud. They dress them up as fine. So the kindest thing you can learn is to be a little suspicious of fine.'
+They sat together while the glow breathed slow. The champion ruled that the {hero} had officially won the game. The {hero} ruled it a tie. They compromised: the {hero} had won, but the champion would deny it forever.
 
-'Why do people hide it?' the {hero} asked. 'If they feel bad, why pretend so hard that they don't?'
+'Tomorrow,' the champion whispered, 'I will show you my greatest spot. The one nobody will ever find. It has been lonely, if I am honest, being the only one who knows it. You will have to learn to giggle in complete silence.'
 
-'Because feeling bad in front of others can feel like one more thing to be judged for,' said {companion_name}. 'So they cover it. Which means the person laughing loudest is sometimes the one you most need to look at twice.'
+'I will practise tonight,' promised the {hero}, and yawned so widely that the promise fell straight into it.
 
-The {hero} sat with that. It rearranged something. All week the {hero} had been waiting for a person to obviously, unmistakably need help — someone crying, someone hurt, a problem with a flashing sign on it. But real life didn't hand you flashing signs. Real life handed you a laugh that came a half-beat late and trusted you to catch it.
+The glow burned down to an ember. The game was over. The friend was found.
 
-The {hero} held the {object_motif}, turning it slowly, and looked back across the {setting} to the one still standing at the edge of the group, still laughing a half-beat late.
-
-'I want to go over,' the {hero} said. 'But I'm nervous I'll read it wrong. What if I make it worse?'
-
-'You might read it wrong,' {companion_name} agreed, which wasn't the reassurance the {hero} had wanted. 'Noticing doesn't make you certain. It makes you careful. You go over gently, you leave them a way out, and you pay attention to what they do next. If you're wrong, you'll see that too — because you'll still be watching.'
-
-The nervousness didn't vanish, exactly, but it changed shape, settling into something steadier, more like resolve. The {hero} crossed the {setting} without hurry, stopping a comfortable arm's length away rather than crowding in.
-
-'Hey,' the {hero} said, keeping it light. 'I'm going to slip off somewhere quieter for a bit. No pressure, but you're welcome to come. Or not.'
-
-For a second the automatic answer surfaced in the other's face — the bright, practised everything's-fine that the {hero} now recognised for exactly what it was. And then it faltered. Something underneath it let go, just slightly, and what replaced it was quieter and unmistakably true.
-
-'Yeah,' they said, and the relief in that single word was its own small confession. 'Yeah. I'd really like that, actually.'
-
-The {hero} felt the small, warm click of having guessed right — not triumph, just relief, and under it something gentler.
-
-They walked off together, away from the noise, and the {hero} noticed that the copied laugh had disappeared, replaced now by the ordinary, unremarkable ease of a person who has stopped pretending. The {hero} kept stealing glances at their new companion as they walked, not checking up on them exactly, just staying awake to them — and found, a little to their own surprise, that the watching no longer felt like effort. It had started to feel like caring wearing its everyday clothes.
-
-Nothing dramatic had happened. No one had cheered; hardly anyone had even glanced their way. And yet the {hero} understood, with a certainty that felt older than they were, that the most important part of the whole evening had happened silently, before a single word was spoken — in the simple, difficult act of looking closely enough to see.
-
-Above the {setting}, the last light dissolved into the deep blue of oncoming night.
-
-'I spent all week believing I had to be big enough to be kind,' the {hero} said.
-
-'You only had to be awake enough,' said {companion_name}. 'That, you already are.'
-
-The {hero} yawned, the {object_motif} resting easy in their hands, and let the hush of the {setting} draw slowly in around them.
+Sleep came seeking next. It knew exactly where to look.
 
 {refrain}.`,
-    scriptTemplate: `For most of that week, {child_name} had been quietly obsessed with the idea of being kind — really kind, the kind that left a mark. The trouble was that every version of kindness {child_name} could picture was large and public: a dramatic rescue, a magnificent gift, some moment where a crowd went quiet and then broke into applause. Measured against that, {child_name}'s ordinary days felt thin. What was the point of wanting to be good if you never had anything grand enough to prove it?
+    scriptTemplate: `Everyone in {setting} agreed on exactly one thing about the champion: nobody had ever found them. Not in three seasons of hide-and-seek. Seekers had grown up, retired, and handed their searching routes down to younger ones, and still the smallest, quietest player in the game had never once been caught.
 
-{child_name} was still tangled in this when evening came down over the {setting} and {companion_name} appeared, settling nearby with the unhurried calm of someone who had all the time in the world.
+There was just one crack in the champion's armour, and everyone knew it. When a seeker got truly close, a giggle slipped out — tiny, helpless, bright as a dropped spoon. Champions, it turns out, are not made of stone.
 
-'You've been somewhere far away in your head all day,' {companion_name} observed. 'Where?'
+Tonight was the last game before bed, and {child_name} had privately decided it was going to be a famous night: the night the champion finally got found. There was a list of spots, a strategy, and a best accomplice — {companion_name}, who claimed to be in it purely for the snacks.
 
-'Trying to work out how to be kind,' {child_name} said, and heard how strange it sounded aloud. 'And failing. Everything I think of is too big. I don't have treasures to give away or anyone to rescue. So maybe I'm just... not the kind of person it comes naturally to.'
+But the game went strange. It went long. One by one the other seekers yawned and drifted home to bed; the dark came down soft over {setting}; and there had not been one single giggle. {child_name} had crept close — genuinely, expertly close — to every famous hiding place in the game, and the game's most famous sound had simply declined to happen.
 
-{companion_name} didn't rush to disagree, which {child_name} half-expected and was oddly grateful for. Instead they looked out across the {setting}, to where a cluster of others their age had gathered.
+'Something is off,' {child_name} muttered. 'I have been close. I know I have. Where is the giggle?'
 
-'Do me a favour before you decide that,' {companion_name} said. 'See the one at the edge of that group? Don't go over. Don't do anything. Just watch, properly, for a little while.'
+'Hmm,' said {companion_name}, in the tone of someone who has noticed something and is waiting, with enormous politeness, for you to notice it too.
 
-{child_name} looked. At first there was nothing to see. The one at the edge was laughing along with the rest, joining in, apparently as easy as anybody. If anything, they seemed to be trying harder than the others — laughing a little louder, agreeing a little faster.
+{child_name} did not notice it. {child_name} did strategy instead. The hollow behind the tall stones: nothing. The gap beneath the drooping fronds where the shadows pooled thickest: nothing. Then a suspicious, champion-sized lump near the path, which {child_name} stalked with tremendous skill and pounced upon magnificently — and which turned out to be {companion_name}, who had been stalking the very same lump from the other side. The actual lump was a rock.
 
-'They seem fine,' {child_name} said. 'Happy, even.'
+'We are excellent at this,' observed {companion_name}, from underneath {child_name}.
 
-'Keep watching,' said {companion_name}. 'Not the performance. The person underneath it.'
+Out of spots, out of theories, and nearly out of dignity, {child_name} flopped back in the dark and let the whole evening replay itself. And there it was, snagged like a thread: the thing {child_name} had seen and not truly seen. Before the game. Teams being picked. Names being shouted one after another, cheerful as popping corn. And at the edge of the noise, the champion, waiting for a name that never came. Of course it never came. Nobody shouts the name of a player they have never once found; over three seasons, the game had slowly, accidentally taught itself to forget them. The champion's smile had slipped, just a little — {child_name} had seen it slip, and filed it under nothing. Their shoulders had curled inward. And they had turned and walked into the evening before the counting even began.
 
-It was an odd instruction, but {child_name} obeyed, and this time watched the way you might study a picture that hides a second image inside the first. And slowly, the second image surfaced. The laugh arrived a beat behind everyone else's, as though it were being copied rather than felt. When the others weren't looking, the smile slid off entirely, and what was left underneath was tired. They had positioned themselves half a step outside the circle. Every so often their eyes went to the path that led away, and lingered there, and came back.
+Hold very still now, and listen with your softest listening. Can you hear it too? Hic. The tiniest hiccup in the world, from near the warm glow of the {object_motif}.
 
-'Oh,' {child_name} said, and the word came out softer than intended. 'They're not happy at all, are they. They're doing an enormous amount of work to look happy. Underneath it they're... I think they feel left out. Maybe they think if they stopped smiling, nobody would notice, and that would somehow be worse.'
+{child_name} sat up slowly, feeling the whole night rearrange itself.
 
-For a long moment {companion_name} said nothing. Then: 'You just did the thing almost nobody bothers to do. You looked past the face someone put on for the world and saw the feeling they were hiding behind it. And you did it without being asked, without being told, without doing a single thing. That is where kindness is born.'
+'They are not hiding to win,' {child_name} said. 'They have not been playing at all. They are hiding because of a feeling — and I watched that feeling happen and walked straight past it, because I was busy planning to be famous. Noticing has to come first. That is where kindness is born.'
 
-{child_name} frowned, not in disagreement but in genuine puzzlement. 'But that's just... looking. I didn't help them. I didn't do anything.'
+And once the question changed — not where would a clever hider hide, but where would a small forgotten feeling go — the answer stopped being a mystery at all. When you feel forgotten, you do not choose the cleverest spot. You choose the warmest one.
 
-'You did the thing that has to come first, or nothing else works,' said {companion_name}. 'A grand gift given to someone who needed to be left alone isn't kindness — it's noise. Comfort offered to a person who wanted to be cheered up lands wrong. Every genuinely kind act begins with reading, accurately, what another person actually feels. Skip that, and even your biggest gesture is really about you.'
+{child_name} crossed over to the {object_motif} — no stalking, no pouncing, no plans — and sat down beside the hollow where its glow ran deepest, and spoke to nobody visible.
 
-That landed somewhere real. {child_name} thought of all the enormous kind things they had imagined that week, and realised, with a small flush of embarrassment, that in every single one of them {child_name} had pictured the crowd, the applause — themselves, at the centre, being seen as good.
+'I am not here to win. I saw your smile slip when the names were being called. Mine has slipped exactly like that. Once it made me want to be invisible for a week, and the worst part was how well it worked.'
 
-'Teach me to be better at it,' {child_name} said. 'The noticing.'
+A long pause. A rustle. And the champion crept out into the glow, blinking, hiccuping once more — hic — and studied {child_name} for a while.
 
-So, in the last of the light, they practised. {companion_name} would indicate someone with the smallest tilt of the head, and {child_name} would try to read them past the surface. A younger one bouncing on their toes, bright and loud — 'excited, but also showing off a bit, wanting someone to look.' An older one with a fixed, careful expression, moving very deliberately — 'upset about something, and determined not to let it show.' Two friends with their heads bent together — 'easy, safe, they trust each other.' Each time {child_name} learned to look for the quiet evidence rather than the announcement: the set of a pair of shoulders, the busyness of a pair of hands, the distance a person kept, the direction their eyes drifted when they thought no one was watching.
+'Three seasons,' the champion said at last. 'Seekers have looked behind every stone in {setting}, little {hero}. You are the first one who ever looked for how I felt. Everyone else was searching for the hiding. You found the me.'
 
-'It's a whole language,' {child_name} said, half to themselves. 'People are talking all the time without saying anything. I just never learned to hear it.'
+'{refrain},' said {companion_name} softly, and for once added nothing whatsoever about snacks.
 
-'Most never do,' said {companion_name}. 'And here is the hard part. The feelings people work hardest to hide are usually the ones that most need noticing — the sadness, the fear, the loneliness. Nobody dresses those up as loud. They dress them up as fine. So the kindest thing you can learn is to be a little suspicious of fine.'
+They sat together while the glow breathed slow. The champion ruled that {child_name} had officially won the game. {child_name} ruled it a tie. They compromised: {child_name} had won, but the champion would deny it forever.
 
-'Why do people hide it?' {child_name} asked. 'If they feel bad, why pretend so hard that they don't?'
+'Tomorrow,' the champion whispered, 'I will show you my greatest spot. The one nobody will ever find. It has been lonely, if I am honest, being the only one who knows it. You will have to learn to giggle in complete silence.'
 
-'Because feeling bad in front of others can feel like one more thing to be judged for,' said {companion_name}. 'So they cover it. Which means the person laughing loudest is sometimes the one you most need to look at twice.'
+'I will practise tonight,' promised {child_name}, and yawned so widely that the promise fell straight into it.
 
-{child_name} sat with that. It rearranged something. All week {child_name} had been waiting for a person to obviously, unmistakably need help — someone crying, someone hurt, a problem with a flashing sign on it. But real life didn't hand you flashing signs. Real life handed you a laugh that came a half-beat late and trusted you to catch it.
+The glow burned down to an ember. The game was over. The friend was found.
 
-{child_name} held the {object_motif}, turning it slowly, and looked back across the {setting} to the one still standing at the edge of the group, still laughing a half-beat late.
-
-'I want to go over,' {child_name} said. 'But I'm nervous I'll read it wrong. What if I make it worse?'
-
-'You might read it wrong,' {companion_name} agreed, which wasn't the reassurance {child_name} had wanted. 'Noticing doesn't make you certain. It makes you careful. You go over gently, you leave them a way out, and you pay attention to what they do next. If you're wrong, you'll see that too — because you'll still be watching.'
-
-The nervousness didn't vanish, exactly, but it changed shape, settling into something steadier, more like resolve. {child_name} crossed the {setting} without hurry, stopping a comfortable arm's length away rather than crowding in.
-
-'Hey,' {child_name} said, keeping it light. 'I'm going to slip off somewhere quieter for a bit. No pressure, but you're welcome to come. Or not.'
-
-For a second the automatic answer surfaced in the other's face — the bright, practised everything's-fine that {child_name} now recognised for exactly what it was. And then it faltered. Something underneath it let go, just slightly, and what replaced it was quieter and unmistakably true.
-
-'Yeah,' they said, and the relief in that single word was its own small confession. 'Yeah. I'd really like that, actually.'
-
-{child_name} felt the small, warm click of having guessed right — not triumph, just relief, and under it something gentler.
-
-They walked off together, away from the noise, and {child_name} noticed that the copied laugh had disappeared, replaced now by the ordinary, unremarkable ease of a person who has stopped pretending. {child_name} kept stealing glances at their new companion as they walked, not checking up on them exactly, just staying awake to them — and found, a little to their own surprise, that the watching no longer felt like effort. It had started to feel like caring wearing its everyday clothes.
-
-Nothing dramatic had happened. No one had cheered; hardly anyone had even glanced their way. And yet {child_name} understood, with a certainty that felt older than they were, that the most important part of the whole evening had happened silently, before a single word was spoken — in the simple, difficult act of looking closely enough to see.
-
-Above the {setting}, the last light dissolved into the deep blue of oncoming night.
-
-'I spent all week believing I had to be big enough to be kind,' {child_name} said.
-
-'You only had to be awake enough,' said {companion_name}. 'That, you already are.'
-
-{child_name} yawned, the {object_motif} resting easy in their hands, and let the hush of the {setting} draw slowly in around them.
+Sleep came seeking next. It knew exactly where to look.
 
 {refrain}.`
   }
 },
-    audioTemplate: `Night drifted softly over {setting}, and a small {hero} sat beside a {object_motif}, watching the others nearby.
+    audioTemplate: `Tonight was the last hide-and-seek before bed, and the {hero} wanted one thing: to find the champion at last.
 
-One of them sat apart, very quiet, shoulders low.
+The champion was the smallest, quietest player in all of {setting}, and nobody had ever found them. Not once. But everyone knew the champion's one weakness. When a seeker crept close, a tiny giggle always slipped out. Tonight the game had gone on and on, and there had been no giggle anywhere.
 
-The {hero} had not noticed before — but tonight they did. "Something feels different about them," they said.
+One by one the other players yawned and went home. Only the {hero} and {companion_name} stayed.
 
-{companion_name} nodded warmly. "That is the first kindness of all," they said. "Noticing. Before you ever do a thing, you see how someone feels. Their face, the way they sit, whether they are quiet or bright."
+The {hero} searched the clever way. Behind the tall stone? Nothing. Under the drooping leaves? Nothing. Then the {hero} pounced on a suspicious lump. 'Found you!' But the lump was {companion_name}, sneaking up on it from the other side. The real lump was a rock.
 
-The {hero} looked again, really looked, and saw it clearly: that friend was sad.
+'Hmm,' said {companion_name}. 'You have looked everywhere a clever hider would be, little {hero}.'
 
-The {object_motif} glowed a little warmer, as if noticing too.
+The {hero} flopped down to think, and the evening played itself again. Before the game, when everyone was shouting out names for teams, nobody had shouted the champion's name. Their smile had slipped right off. Their shoulders had curled. They had walked away before the counting started.
 
-"Most people walk right past a feeling," said {companion_name}. "You stopped and saw it. That is where kindness is born."
+Hold very still and listen. Can you hear it too? Hic. A tiny hiccup, somewhere near the {object_motif}.
 
-The {hero} kept watching the world with these new, gentler eyes, and it looked different now — full of feelings to notice.
+'Oh,' whispered the {hero}, sitting up. 'They are not hiding to win. They are hiding because of a feeling. I saw it happen and I nearly walked right past it. Noticing the feeling comes first. That is where kindness is born.'
+
+Once the {hero} asked where a sad feeling would go, the answer was easy. When you feel forgotten, you go where it is warm.
+
+The {hero} padded over to the soft glow of the {object_motif}. No pouncing. No shouting. Just sitting down beside the little hollow there.
+
+'I heard my name get forgotten once too,' the {hero} said softly. 'It made me want to be invisible.'
+
+A rustle. And the champion crept out into the glow, blinking.
+
+'You found me,' they said. 'Everyone else only ever looked for the hiding. You looked for the me.'
+
+'{refrain},' said {companion_name}, very softly.
+
+The champion said the {hero} had won the game. The {hero} said it was a tie.
+
+'Tomorrow,' the champion whispered, 'I will show you my greatest hiding spot. You will have to giggle very, very quietly.'
+
+The {hero} smiled, and yawned. The glow burned low. Game over. Friend found.
 
 {refrain}.`,
-    scriptTemplate: `Night drifted softly over {setting}, and {child_name} the {hero} sat beside a {object_motif}, watching the others nearby.
+    scriptTemplate: `Tonight was the last hide-and-seek before bed, and {child_name} wanted one thing: to find the champion at last.
 
-One of them sat apart, very quiet, shoulders low.
+The champion was the smallest, quietest player in all of {setting}, and nobody had ever found them. Not once. But everyone knew the champion's one weakness. When a seeker crept close, a tiny giggle always slipped out. Tonight the game had gone on and on, and there had been no giggle anywhere.
 
-{child_name} had not noticed before — but tonight they did. "Something feels different about them," {child_name} said.
+One by one the other players yawned and went home. Only {child_name} and {companion_name} stayed.
 
-{companion_name} nodded warmly. "That is the first kindness of all, {child_name}," they said. "Noticing. Before you ever do a thing, you see how someone feels. Their face, the way they sit, whether they are quiet or bright."
+{child_name} searched the clever way. Behind the tall stone? Nothing. Under the drooping leaves? Nothing. Then {child_name} pounced on a suspicious lump. 'Found you!' But the lump was {companion_name}, sneaking up on it from the other side. The real lump was a rock.
 
-{child_name} looked again, really looked, and saw it clearly: that friend was sad.
+'Hmm,' said {companion_name}. 'You have looked everywhere a clever hider would be, little {hero}.'
 
-The {object_motif} glowed a little warmer, as if noticing too.
+{child_name} flopped down to think, and the evening played itself again. Before the game, when everyone was shouting out names for teams, nobody had shouted the champion's name. Their smile had slipped right off. Their shoulders had curled. They had walked away before the counting started.
 
-"Most people walk right past a feeling," said {companion_name}. "You stopped and saw it. That is where kindness is born."
+Hold very still and listen. Can you hear it too? Hic. A tiny hiccup, somewhere near the {object_motif}.
 
-{child_name} kept watching the world with these new, gentler eyes, and it looked different now — full of feelings to notice.
+'Oh,' whispered {child_name}, sitting up. 'They are not hiding to win. They are hiding because of a feeling. I saw it happen and I nearly walked right past it. Noticing the feeling comes first. That is where kindness is born.'
+
+Once {child_name} asked where a sad feeling would go, the answer was easy. When you feel forgotten, you go where it is warm.
+
+{child_name} padded over to the soft glow of the {object_motif}. No pouncing. No shouting. Just sitting down beside the little hollow there.
+
+'I heard my name get forgotten once too,' {child_name} said softly. 'It made me want to be invisible.'
+
+A rustle. And the champion crept out into the glow, blinking.
+
+'You found me,' they said. 'Everyone else only ever looked for the hiding. You looked for the me.'
+
+'{refrain},' said {companion_name}, very softly.
+
+The champion said {child_name} had won the game. {child_name} said it was a tie.
+
+'Tomorrow,' the champion whispered, 'I will show you my greatest hiding spot. You will have to giggle very, very quietly.'
+
+{child_name} smiled, and yawned. The glow burned low. Game over. Friend found.
 
 {refrain}.`,
   },
-
   {
     ordinal: 2, title: 'A Small Kindness',
     concept: 'Kindness does not have to be big to matter', callback: 'Noticing how others feel (Level 1)', ageFloor: 4,

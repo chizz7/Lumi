@@ -13,1285 +13,1097 @@ import type { Level } from '@/content/types'
 
 export const LEVELS: Level[] = [
   {
-    ordinal: 1, title: 'One Thing at a Time',
-    concept: 'Doing one thing fully before starting the next', callback: null, ageFloor: 3,
-    summary: 'A small hero tries to do everything at once and finishes nothing. With a gentle companion, they learn to pick a single thing, give it their whole attention, and only then move on — and discover they actually get more done by doing less at once.',
-    teachingNote: 'Attention is a muscle: doing one thing at a time is the first and most important habit of focus.',
-    learningBeat: 'One thing, then the next',
-    ageVariants: {
-  '3-4': { audioTemplate: `The {hero} had many things to do in {setting}. So many things! And the {hero} wanted to do them all at once.
-
-The {hero} wanted to build a tall tower. The {hero} wanted to paint a little fish. The {hero} wanted to find the {object_motif}. All of it. Right now.
-
-So the {hero} started the tower. One block. Two blocks. Three blocks up. But then a block slipped down. The {hero} did not stop to fix it. The {hero} ran off to paint instead.
-
-Then the {hero} started the fish. One fin. Two fins. But the fish was tricky to paint. The {hero} did not finish it. The {hero} ran off to look for the {object_motif} instead.
-
-The {hero} looked here. The {hero} looked there. The {hero} looked up high and down low. The {hero} looked behind the big chair. But the {object_motif} was hidden well. Looking was slow. Looking was hard. And so the {hero} stopped again.
-
-Now the {hero} looked around at everything. The tower was not done. The fish was not done. The {object_motif} was still lost. Nothing was done at all. The {hero} felt cross and hot inside. The {hero} wanted to cry.
-
-{companion_name} came and sat down close. {companion_name} spoke in a soft, kind voice. 'One thing, then the next. Do the first thing all the way. The other things can wait for you. They will still be there.'
-
-The {hero} took a big, slow breath. In, and out.
-
-The {hero} went back to the tower. Only the tower. Nothing else. Three blocks. Four blocks. Five blocks up! The tower stood tall and strong. It was done.
-
-Then the fish. Only the fish. Nothing else. One fin. Two fins. A big round eye. A little smile. The fish was done.
-
-Then the {object_motif}. Only that. Nothing else. Slow and calm. The {hero} looked behind the big chair. The {hero} looked under the soft mat. And there it was! Found at last.
-
-The {hero} held the {object_motif} up high. Everything was done now. Every single thing.
-
-{companion_name} smiled a warm, sleepy smile. 'All finished. Look at that.'
-
-The {hero} gave a big, happy yawn. The moon came up soft and round above {setting}. The {hero} felt calm. The {hero} felt sleepy. And the {hero} felt very, very glad.
-
-{refrain}.`, scriptTemplate: `{child_name} had many things to do in {setting}. So many things! And {child_name} wanted to do them all at once.
-
-{child_name} wanted to build a tall tower. {child_name} wanted to paint a little fish. {child_name} wanted to find the {object_motif}. All of it. Right now.
-
-So {child_name} started the tower. One block. Two blocks. Three blocks up. But then a block slipped down. {child_name} did not stop to fix it. {child_name} ran off to paint instead.
-
-Then {child_name} started the fish. One fin. Two fins. But the fish was tricky to paint. {child_name} did not finish it. {child_name} ran off to look for the {object_motif} instead.
-
-{child_name} looked here. {child_name} looked there. {child_name} looked up high and down low. {child_name} looked behind the big chair. But the {object_motif} was hidden well. Looking was slow. Looking was hard. And so {child_name} stopped again.
-
-Now {child_name} looked around at everything. The tower was not done. The fish was not done. The {object_motif} was still lost. Nothing was done at all. {child_name} felt cross and hot inside. {child_name} wanted to cry.
-
-{companion_name} came and sat down close. {companion_name} spoke in a soft, kind voice. 'One thing, then the next. Do the first thing all the way. The other things can wait for you. They will still be there.'
-
-{child_name} took a big, slow breath. In, and out.
-
-{child_name} went back to the tower. Only the tower. Nothing else. Three blocks. Four blocks. Five blocks up! The tower stood tall and strong. It was done.
-
-Then the fish. Only the fish. Nothing else. One fin. Two fins. A big round eye. A little smile. The fish was done.
-
-Then the {object_motif}. Only that. Nothing else. Slow and calm. {child_name} looked behind the big chair. {child_name} looked under the soft mat. And there it was! Found at last.
-
-{child_name} held the {object_motif} up high. Everything was done now. Every single thing.
-
-{companion_name} smiled a warm, sleepy smile. 'All finished. Look at that.'
-
-{child_name} gave a big, happy yawn. The moon came up soft and round above {setting}. {child_name} felt calm. {child_name} felt sleepy. And {child_name} felt very, very glad.
-
-{refrain}.` },
-  '5-6': { audioTemplate: `The {hero} woke up in {setting} with a busy, bouncy feeling. There was so much to do today, and the {hero} wanted to do every bit of it at once.
-
-'I will build the tallest tower,' said the {hero}, hopping out of bed. 'And paint a picture. And find the {object_motif}. And tidy the whole nook. All before lunch!'
-
-So the {hero} began the tower. The blocks went up, one on top of another, wobbling higher and higher and higher. But then a block slipped, and the whole top leaned. Instead of fixing it, the {hero} thought, I will paint instead. Painting will be quicker anyway.
-
-The {hero} ran to the paints and dipped the brush. Blue for the sky. Green for the hills. But the green was tricky to mix, and it kept coming out muddy, and before the picture was even half done the {hero} thought, I will look for the {object_motif} instead. That will be much more fun.
-
-So the {hero} hunted here and there, under the rug, behind the door, inside the toy box. But the {object_motif} was hidden well, and hunting was slow, and slow felt boring, so the {hero} thought, I will tidy up instead. Tidying is easy. I can do that.
-
-But the nook was full of half-started things now. A half-built tower, leaning over. A half-painted picture, still wet. Boxes pulled out and left open all across the floor. The {hero} turned in a slow circle and felt hot tears sting. Nothing was finished. Nothing at all. Everything was a muddle, and the muddle was bigger than when the day began.
-
-{companion_name} padded over and sat down close beside the {hero}. 'That looks like a heavy, tangled feeling,' {companion_name} said gently. 'You started four things this morning, and now all four are calling to you at the very same time.'
-
-The {hero} sniffled and rubbed a red nose. 'I wanted to do them all. But I can't.'
-
-'You can,' said {companion_name}. 'Just not in the same moment. One thing, then the next. Give the tower everything until it stands. Then the painting. It all gets easier when your hands are holding only one.'
-
-The {hero} wiped both eyes with the back of a hand and thought about that for a little while. It sounded almost too simple to be true. Then the {hero} went back to the tower, and only the tower, and nothing else at all. The slipped block went back into place. One more on top, then another, careful and slow and steady, until the tower stood taller than the {hero}'s own knee. Done.
-
-Then the painting, and only the painting. The {hero} stirred and stirred, and the green got mixed at last. The hills turned green and the sky turned blue, and a small round sun sat glowing in the corner. Done.
-
-Then the {hero} searched for the {object_motif}, and only that, slow and patient, looking under and behind and inside, one place at a time, until there it was in the very last spot of all. The {hero} held the {object_motif} up high and laughed out loud. Done.
-
-And the tidying was the easiest of all now, because most things were already finished and simply needed to go back where they belonged. Block by block, box by box, brush by brush, the whole nook grew tidy and neat again.
-
-The {hero} stood in the middle and looked all around. A tower standing tall. A picture drying on the wall. The {object_motif} in the middle of the table. Everything exactly where it belonged.
-
-{companion_name} gave a warm little hum. 'Look at all of it. Every single bit finished.'
-
-The {hero} grinned a tired, happy grin. Outside, {setting} was going quiet and blue, and a soft dark was gently tucking everything in for the night. The {hero} curled up small, the busy, bouncy feeling all melted away at last, calm and slow and ready to sleep.
-
-{refrain}.`, scriptTemplate: `{child_name} woke up in {setting} with a busy, bouncy feeling. There was so much to do today, and {child_name} wanted to do every bit of it at once.
-
-'I will build the tallest tower,' said {child_name}, hopping out of bed. 'And paint a picture. And find the {object_motif}. And tidy the whole nook. All before lunch!'
-
-So {child_name} began the tower. The blocks went up, one on top of another, wobbling higher and higher and higher. But then a block slipped, and the whole top leaned. Instead of fixing it, {child_name} thought, I will paint instead. Painting will be quicker anyway.
-
-{child_name} ran to the paints and dipped the brush. Blue for the sky. Green for the hills. But the green was tricky to mix, and it kept coming out muddy, and before the picture was even half done {child_name} thought, I will look for the {object_motif} instead. That will be much more fun.
-
-So {child_name} hunted here and there, under the rug, behind the door, inside the toy box. But the {object_motif} was hidden well, and hunting was slow, and slow felt boring, so {child_name} thought, I will tidy up instead. Tidying is easy. I can do that.
-
-But the nook was full of half-started things now. A half-built tower, leaning over. A half-painted picture, still wet. Boxes pulled out and left open all across the floor. {child_name} turned in a slow circle and felt hot tears sting. Nothing was finished. Nothing at all. Everything was a muddle, and the muddle was bigger than when the day began.
-
-{companion_name} padded over and sat down close beside {child_name}. 'That looks like a heavy, tangled feeling,' {companion_name} said gently. 'You started four things this morning, and now all four are calling to you at the very same time.'
-
-{child_name} sniffled and rubbed a red nose. 'I wanted to do them all. But I can't.'
-
-'You can,' said {companion_name}. 'Just not in the same moment. One thing, then the next. Give the tower everything until it stands. Then the painting. It all gets easier when your hands are holding only one.'
-
-{child_name} wiped both eyes with the back of a hand and thought about that for a little while. It sounded almost too simple to be true. Then {child_name} went back to the tower, and only the tower, and nothing else at all. The slipped block went back into place. One more on top, then another, careful and slow and steady, until the tower stood taller than {child_name}'s own knee. Done.
-
-Then the painting, and only the painting. {child_name} stirred and stirred, and the green got mixed at last. The hills turned green and the sky turned blue, and a small round sun sat glowing in the corner. Done.
-
-Then {child_name} searched for the {object_motif}, and only that, slow and patient, looking under and behind and inside, one place at a time, until there it was in the very last spot of all. {child_name} held the {object_motif} up high and laughed out loud. Done.
-
-And the tidying was the easiest of all now, because most things were already finished and simply needed to go back where they belonged. Block by block, box by box, brush by brush, the whole nook grew tidy and neat again.
-
-{child_name} stood in the middle and looked all around. A tower standing tall. A picture drying on the wall. The {object_motif} in the middle of the table. Everything exactly where it belonged.
-
-{companion_name} gave a warm little hum. 'Look at all of it. Every single bit finished.'
-
-{child_name} grinned a tired, happy grin. Outside, {setting} was going quiet and blue, and a soft dark was gently tucking everything in for the night. {child_name} curled up small, the busy, bouncy feeling all melted away at last, calm and slow and ready to sleep.
-
-{refrain}.` },
-  '7-8': { audioTemplate: `The {hero} had a whole afternoon and a whole long list, and the {hero} meant to finish every single thing on it before the sky went dark over {setting}.
-
-There was a fort to build. A map to draw. The {object_motif} to find, the one that had been missing for days now. And a whole shelf of scattered treasures to sort back into their baskets. It was a big list, but the afternoon was long, and the {hero} felt sure there was time.
-
-'Easy,' the {hero} said out loud, rolling up both sleeves. 'I will just do them all at once.'
-
-So the {hero} started the fort, dragging cushions and branches into a tall, leaning wall. It was going well, too, until one corner sagged and slid. Instead of propping it back up, the {hero} spotted the drawing paper across the room and thought, the map will be quicker. I will do that part first and come back.
-
-The map started fine. A river here, a winding path there, a little forest of dots for trees. But the coastline was fiddly, all little bays and points, and the {hero}'s lines kept going crooked and wobbly no matter how carefully they tried to steer the pencil. It was slow, careful work, and the {hero} did not much like slow, careful work. Before the coast was anywhere near done, the {hero} put the pencil down. Finding the {object_motif} would be far more fun, the {hero} decided.
-
-So off the {hero} went, lifting lids and peering under things and shaking out cushions. But the {object_motif} stayed stubbornly hidden, and searching with no luck at all felt slow and dull. The scattered treasures caught the {hero}'s eye instead, bright and easy. Maybe sorting those would feel like getting somewhere.
-
-But halfway through the very first basket, the {hero} stopped and looked up, and the looking made the {hero}'s stomach sink right down.
-
-The fort was a sagging heap. The map trailed off into a crooked, half-drawn coast. The {object_motif} was still lost. And now the treasures sat in three half-sorted piles instead of one tidy mess. Four things begun. Nothing, not one thing, finished. The whole nook looked worse than when the {hero} had started, and the sky outside the window was already turning deep gold.
-
-The {hero} sat down hard on the floor and let out a long, wobbly breath. 'I worked the whole afternoon,' the {hero} said quietly, 'and I have nothing to show for it. Nothing.'
-
-'You did work hard. That part is true,' said {companion_name}, stepping carefully over the sagging fort to sit close by. 'I watched you the whole time. Do you know what I saw? Someone who ran off to a brand new thing every single time the old one got tricky.'
-
-The {hero} frowned down at the floor. 'Because the tricky part was boring.'
-
-'The tricky part is the part that matters,' {companion_name} said. 'When you leave it behind, the trickiness just waits for you in the next thing, and the next. One thing, then the next, all the way through. Pick one. Give it all of you, even the boring middle, until it is truly done. Then pick up the next.'
-
-The {hero} looked at the four unfinished messes spread across the floor. It felt impossible and simple at the very same time.
-
-'Which one first?' the {hero} asked.
-
-'You choose,' said {companion_name}.
-
-So the {hero} chose the fort. Only the fort, nothing else. The sagging corner got a proper prop, then a second one to be sure. A roof of blanket went over the top and was tucked in tight. The {hero} crawled inside, held their breath, and it held too. Done. Really done, this time.
-
-Then the map. Only the map. The crooked coast was still a little crooked, but the {hero} stayed right with it this time, breathing slow, not letting the eyes wander to anything else, going carefully around every wiggly bay and pointed cape until the whole island had a proper edge all the way around. The {hero} added the winding river last, and the little forest of trees, and a small star to mark the way home. Done.
-
-Then the {object_motif}. Only that. The {hero} searched properly now, one shelf at a time instead of darting all over, checking each spot before moving to the next. And behind the very last basket on the very last shelf, the {hero}'s fingers finally closed around it. The {hero} lifted the {object_motif} into the air and laughed out loud.
-
-And the treasures were the easiest of all, because the {hero} was in the good swing of finishing now, and one basket after another filled up and clicked shut. Shells in one, stones in another, feathers in the last. It went quickly, the way things do when you are not trying to do three of them at the very same time.
-
-The {hero} stood in the middle of the nook and turned in a slow circle. A fort that held. A finished map. The {object_motif} back at last. Every basket full and closed. It had all fit into the one afternoon after all.
-
-{companion_name} leaned against the sturdy fort with a quiet, pleased look and did not say a single word, which somehow said plenty.
-
-Outside, the last of the gold was fading, and the lanterns of {setting} were blinking on, one by one by one, like the day itself was finishing up, slow and unhurried. The {hero} yawned wide, crawled into the finished fort, and felt the good, heavy calm of a job done all the way to the end.
-
-{refrain}.`, scriptTemplate: `{child_name} had a whole afternoon and a whole long list, and {child_name} meant to finish every single thing on it before the sky went dark over {setting}.
-
-There was a fort to build. A map to draw. The {object_motif} to find, the one that had been missing for days now. And a whole shelf of scattered treasures to sort back into their baskets. It was a big list, but the afternoon was long, and {child_name} felt sure there was time.
-
-'Easy,' {child_name} said out loud, rolling up both sleeves. 'I will just do them all at once.'
-
-So {child_name} started the fort, dragging cushions and branches into a tall, leaning wall. It was going well, too, until one corner sagged and slid. Instead of propping it back up, {child_name} spotted the drawing paper across the room and thought, the map will be quicker. I will do that part first and come back.
-
-The map started fine. A river here, a winding path there, a little forest of dots for trees. But the coastline was fiddly, all little bays and points, and {child_name}'s lines kept going crooked and wobbly no matter how carefully they tried to steer the pencil. It was slow, careful work, and {child_name} did not much like slow, careful work. Before the coast was anywhere near done, {child_name} put the pencil down. Finding the {object_motif} would be far more fun, {child_name} decided.
-
-So off {child_name} went, lifting lids and peering under things and shaking out cushions. But the {object_motif} stayed stubbornly hidden, and searching with no luck at all felt slow and dull. The scattered treasures caught {child_name}'s eye instead, bright and easy. Maybe sorting those would feel like getting somewhere.
-
-But halfway through the very first basket, {child_name} stopped and looked up, and the looking made {child_name}'s stomach sink right down.
-
-The fort was a sagging heap. The map trailed off into a crooked, half-drawn coast. The {object_motif} was still lost. And now the treasures sat in three half-sorted piles instead of one tidy mess. Four things begun. Nothing, not one thing, finished. The whole nook looked worse than when {child_name} had started, and the sky outside the window was already turning deep gold.
-
-{child_name} sat down hard on the floor and let out a long, wobbly breath. 'I worked the whole afternoon,' {child_name} said quietly, 'and I have nothing to show for it. Nothing.'
-
-'You did work hard. That part is true,' said {companion_name}, stepping carefully over the sagging fort to sit close by. 'I watched you the whole time. Do you know what I saw? Someone who ran off to a brand new thing every single time the old one got tricky.'
-
-{child_name} frowned down at the floor. 'Because the tricky part was boring.'
-
-'The tricky part is the part that matters,' {companion_name} said. 'When you leave it behind, the trickiness just waits for you in the next thing, and the next. One thing, then the next, all the way through. Pick one. Give it all of you, even the boring middle, until it is truly done. Then pick up the next.'
-
-{child_name} looked at the four unfinished messes spread across the floor. It felt impossible and simple at the very same time.
-
-'Which one first?' {child_name} asked.
-
-'You choose,' said {companion_name}.
-
-So {child_name} chose the fort. Only the fort, nothing else. The sagging corner got a proper prop, then a second one to be sure. A roof of blanket went over the top and was tucked in tight. {child_name} crawled inside, held their breath, and it held too. Done. Really done, this time.
-
-Then the map. Only the map. The crooked coast was still a little crooked, but {child_name} stayed right with it this time, breathing slow, not letting the eyes wander to anything else, going carefully around every wiggly bay and pointed cape until the whole island had a proper edge all the way around. {child_name} added the winding river last, and the little forest of trees, and a small star to mark the way home. Done.
-
-Then the {object_motif}. Only that. {child_name} searched properly now, one shelf at a time instead of darting all over, checking each spot before moving to the next. And behind the very last basket on the very last shelf, {child_name}'s fingers finally closed around it. {child_name} lifted the {object_motif} into the air and laughed out loud.
-
-And the treasures were the easiest of all, because {child_name} was in the good swing of finishing now, and one basket after another filled up and clicked shut. Shells in one, stones in another, feathers in the last. It went quickly, the way things do when you are not trying to do three of them at the very same time.
-
-{child_name} stood in the middle of the nook and turned in a slow circle. A fort that held. A finished map. The {object_motif} back at last. Every basket full and closed. It had all fit into the one afternoon after all.
-
-{companion_name} leaned against the sturdy fort with a quiet, pleased look and did not say a single word, which somehow said plenty.
-
-Outside, the last of the gold was fading, and the lanterns of {setting} were blinking on, one by one by one, like the day itself was finishing up, slow and unhurried. {child_name} yawned wide, crawled into the finished fort, and felt the good, heavy calm of a job done all the way to the end.
-
-{refrain}.` },
-  '9-11': { audioTemplate: `The {hero} had exactly one afternoon to get everything ready, and everything was a long list.
-
-Friends were coming to {setting} at dusk. It was the first proper gathering the {hero} had ever hosted, the sort of thing the {hero} had watched grown-ups do a hundred times and had always looked so easy, and now the {hero} wanted every part of it to be right. There were lanterns to string along the path. A pot of soup to tend on the low fire. A tray of little honey-cakes to bake. A welcome sign to letter and hang above the door. And somewhere in the muddle, the {object_motif} had to be found and set out on the table, because a gathering in {setting} simply was not a gathering without it. The {hero} had wanted this day for weeks, and there could be no do-over. It had to go well the first time.
-
-'Plenty of time,' the {hero} told themselves, surveying it all, 'as long as I keep everything moving at once.'
-
-So that was the plan, and it seemed a clever one: keep everything moving at once, never let a single job sit still. The {hero} lit the fire under the soup, then hurried straight off to string the first lantern while it heated. Halfway up the path, hands full of tangled cord, the {hero} remembered that the honey-cakes needed mixing early or they would never bake and cool in time. So down came the cord, half-strung and looping in the dirt, and off the {hero} went to the mixing bowl.
-
-The batter was sticky and slow to come together. Before it was anywhere near smooth, another thought arrived, sharp and urgent: the welcome sign would take ages to letter, and the ink took ages to dry, so it was really better to start that now. The {hero} wiped sticky fingers on a cloth, left the bowl sitting, and picked up the lettering brush. Two letters in, the brush was too fat for neat work and needed a finer point, and while hunting through the drawer for a better one the {hero} passed the table and thought, the {object_motif}. I still have not found the {object_motif}, and everyone will notice if it is missing. So the search began instead, drawers pulled open, shelves patted down, cushions lifted and dropped.
-
-That was when the smell reached them.
-
-The soup. The {hero} spun around. The pot had climbed from a gentle simmer to a furious, spitting boil, and the bottom was beginning to catch and blacken. The {hero} hauled it off the heat, chest giving a hard, sick lurch, and stood there breathing the scorched, bitter smell while the afternoon light leaned long and gold across the floor and the shadows stretched toward evening.
-
-The {hero} made themselves stop, and look, and really look, at the whole nook.
-
-The soup was saved, barely, but it had needed watching and had not got any. One lantern hung crooked over the path and the rest lay in a tangle in the dirt. The batter sat half-mixed and slowly going stiff in the bowl. The welcome sign said WELC and nothing more, the ink already drying on an unfinished word. The {object_motif} was still lost. Dusk was maybe an hour off now, and the {hero} had been busy, genuinely and sweatily busy, moving without a single pause for the entire afternoon, and had somehow finished not one single thing on the list.
-
-Something hot pricked behind the {hero}'s eyes. Not quite tears. Just the awful, cornered feeling of having run and run at top speed and arrived precisely nowhere.
-
-'You have had a whirlwind of an afternoon,' said {companion_name}, who had come in quietly through the side door and was taking in the wreckage without a single trace of scolding. 'There is something I want to ask you. Not to be clever. I actually want to know. How many of these jobs did you start?'
-
-The {hero} counted them off on sticky fingers, throat tight. 'All of them. Every single one.'
-
-'And how many did you actually finish before you moved on to the next?'
-
-'None,' the {hero} admitted, and the word came out very small.
-
-'And how many did you leave the very second they got difficult?'
-
-The {hero} did not answer, and the silence was its own kind of answer.
-
-{companion_name} crouched down by the tangled lanterns and lifted one, turning it slowly over. 'Here is the thing nobody quite tells you. Your attention is not like water. You cannot pour it into five cups at once and expect any of them to fill. It only ever fills one at a time. Every time you jumped to a new job, you carried a full cup to a new empty one and spilled what was already in it. One thing, then the next. Fill a single cup all the way up. Then, and only then, move.'
-
-'But there is so little time left,' the {hero} said, gesturing helplessly at the window. 'Doing them one at a time feels far too slow. I will never finish.'
-
-'It feels slow,' {companion_name} agreed, and there was no arguing in the voice, only patience. 'It is not. Slow is what you just did all afternoon. Five things touched, none of them done. Let me show you what finishing actually feels like instead. Then decide.'
-
-The {hero} took a breath that shook a little on the way in, held it, and chose.
-
-The soup first, because it sat closest to the edge of ruin. The {hero} stayed with it, and only it, scraping the scorched skin gently off the bottom, adding a splash of water, stirring low and patient in slow circles until the smell turned from burnt back to something good and green. Then, and only then, the {hero} stepped away. One thing, done, and something in the chest loosened by a notch.
-
-The lanterns next. No darting off to check anything else, no glancing at the sign or the bowl, just cord, hook, cord, hook, steadily up the whole length of the path until the long line of them swung soft and even in the dusk-blue air. It was almost restful, the {hero} found, to have only one task in front of the eyes and one task in the hands, nothing shouting for attention from across the room. Done.
-
-The batter had stiffened while it waited, but a little more milk and a good long stir brought it back, and the {hero} spooned it into the tray and slid it onto the hearth to bake, resting a small stone by their elbow as a plain reminder to check it in a while, a way of keeping half an eye on one nearly finished thing without truly abandoning the next. The sign, then. The {hero} sat down properly with it, and WELC became WELCOME in careful, even letters, and hung straight and level above the door.
-
-And the {object_motif}. The {hero} searched the way you can only search when nothing else is tugging at your sleeve, calm and methodical, shelf by shelf, drawer by drawer, and found it at last tucked quietly behind the very thing it had always been meant to sit beside. The {hero} set the {object_motif} in the centre of the table, exactly where it belonged, and it looked as though it had never been lost at all.
-
-The honey-cakes came out warm and golden-edged just as the first knock sounded at the door.
-
-The {hero} stood still for a moment and looked slowly around at a thing that was, impossibly, finished. Lanterns lit and glowing down the path. Soup steaming and good. Sign hanging straight. The {object_motif} in its rightful place. It had not taken more time than the frantic way had taken. It had taken less, somehow, and it had left the {hero} calm enough to actually cross the room and open the door and smile at the faces waiting there.
-
-{companion_name} caught their eye from across the room and gave the smallest nod, the kind that does not need any words stacked on top of it.
-
-Later, much later, when the friends had gone home and {setting} had settled into its deep evening quiet, the {hero} lay in the dark and went back over the whole afternoon, not the panic of the middle of it, but the strange, steadying pleasure of that first finished thing, and how the next had come easier, and the next after that easier still. The tight, jittery feeling that had chased the {hero} around all day was long gone now. In its place was something roomier and slower and altogether kinder, and the {hero} carried it gently down into sleep.
-
-{refrain}.`, scriptTemplate: `{child_name} had exactly one afternoon to get everything ready, and everything was a long list.
-
-Friends were coming to {setting} at dusk. It was the first proper gathering {child_name} had ever hosted, the sort of thing {child_name} had watched grown-ups do a hundred times and had always looked so easy, and now {child_name} wanted every part of it to be right. There were lanterns to string along the path. A pot of soup to tend on the low fire. A tray of little honey-cakes to bake. A welcome sign to letter and hang above the door. And somewhere in the muddle, the {object_motif} had to be found and set out on the table, because a gathering in {setting} simply was not a gathering without it. {child_name} had wanted this day for weeks, and there could be no do-over. It had to go well the first time.
-
-'Plenty of time,' {child_name} told themselves, surveying it all, 'as long as I keep everything moving at once.'
-
-So that was the plan, and it seemed a clever one: keep everything moving at once, never let a single job sit still. {child_name} lit the fire under the soup, then hurried straight off to string the first lantern while it heated. Halfway up the path, hands full of tangled cord, {child_name} remembered that the honey-cakes needed mixing early or they would never bake and cool in time. So down came the cord, half-strung and looping in the dirt, and off {child_name} went to the mixing bowl.
-
-The batter was sticky and slow to come together. Before it was anywhere near smooth, another thought arrived, sharp and urgent: the welcome sign would take ages to letter, and the ink took ages to dry, so it was really better to start that now. {child_name} wiped sticky fingers on a cloth, left the bowl sitting, and picked up the lettering brush. Two letters in, the brush was too fat for neat work and needed a finer point, and while hunting through the drawer for a better one {child_name} passed the table and thought, the {object_motif}. I still have not found the {object_motif}, and everyone will notice if it is missing. So the search began instead, drawers pulled open, shelves patted down, cushions lifted and dropped.
-
-That was when the smell reached them.
-
-The soup. {child_name} spun around. The pot had climbed from a gentle simmer to a furious, spitting boil, and the bottom was beginning to catch and blacken. {child_name} hauled it off the heat, chest giving a hard, sick lurch, and stood there breathing the scorched, bitter smell while the afternoon light leaned long and gold across the floor and the shadows stretched toward evening.
-
-{child_name} made themselves stop, and look, and really look, at the whole nook.
-
-The soup was saved, barely, but it had needed watching and had not got any. One lantern hung crooked over the path and the rest lay in a tangle in the dirt. The batter sat half-mixed and slowly going stiff in the bowl. The welcome sign said WELC and nothing more, the ink already drying on an unfinished word. The {object_motif} was still lost. Dusk was maybe an hour off now, and {child_name} had been busy, genuinely and sweatily busy, moving without a single pause for the entire afternoon, and had somehow finished not one single thing on the list.
-
-Something hot pricked behind {child_name}'s eyes. Not quite tears. Just the awful, cornered feeling of having run and run at top speed and arrived precisely nowhere.
-
-'You have had a whirlwind of an afternoon,' said {companion_name}, who had come in quietly through the side door and was taking in the wreckage without a single trace of scolding. 'There is something I want to ask you. Not to be clever. I actually want to know. How many of these jobs did you start?'
-
-{child_name} counted them off on sticky fingers, throat tight. 'All of them. Every single one.'
-
-'And how many did you actually finish before you moved on to the next?'
-
-'None,' {child_name} admitted, and the word came out very small.
-
-'And how many did you leave the very second they got difficult?'
-
-{child_name} did not answer, and the silence was its own kind of answer.
-
-{companion_name} crouched down by the tangled lanterns and lifted one, turning it slowly over. 'Here is the thing nobody quite tells you. Your attention is not like water. You cannot pour it into five cups at once and expect any of them to fill. It only ever fills one at a time. Every time you jumped to a new job, you carried a full cup to a new empty one and spilled what was already in it. One thing, then the next. Fill a single cup all the way up. Then, and only then, move.'
-
-'But there is so little time left,' {child_name} said, gesturing helplessly at the window. 'Doing them one at a time feels far too slow. I will never finish.'
-
-'It feels slow,' {companion_name} agreed, and there was no arguing in the voice, only patience. 'It is not. Slow is what you just did all afternoon. Five things touched, none of them done. Let me show you what finishing actually feels like instead. Then decide.'
-
-{child_name} took a breath that shook a little on the way in, held it, and chose.
-
-The soup first, because it sat closest to the edge of ruin. {child_name} stayed with it, and only it, scraping the scorched skin gently off the bottom, adding a splash of water, stirring low and patient in slow circles until the smell turned from burnt back to something good and green. Then, and only then, {child_name} stepped away. One thing, done, and something in the chest loosened by a notch.
-
-The lanterns next. No darting off to check anything else, no glancing at the sign or the bowl, just cord, hook, cord, hook, steadily up the whole length of the path until the long line of them swung soft and even in the dusk-blue air. It was almost restful, {child_name} found, to have only one task in front of the eyes and one task in the hands, nothing shouting for attention from across the room. Done.
-
-The batter had stiffened while it waited, but a little more milk and a good long stir brought it back, and {child_name} spooned it into the tray and slid it onto the hearth to bake, resting a small stone by their elbow as a plain reminder to check it in a while, a way of keeping half an eye on one nearly finished thing without truly abandoning the next. The sign, then. {child_name} sat down properly with it, and WELC became WELCOME in careful, even letters, and hung straight and level above the door.
-
-And the {object_motif}. {child_name} searched the way you can only search when nothing else is tugging at your sleeve, calm and methodical, shelf by shelf, drawer by drawer, and found it at last tucked quietly behind the very thing it had always been meant to sit beside. {child_name} set the {object_motif} in the centre of the table, exactly where it belonged, and it looked as though it had never been lost at all.
-
-The honey-cakes came out warm and golden-edged just as the first knock sounded at the door.
-
-{child_name} stood still for a moment and looked slowly around at a thing that was, impossibly, finished. Lanterns lit and glowing down the path. Soup steaming and good. Sign hanging straight. The {object_motif} in its rightful place. It had not taken more time than the frantic way had taken. It had taken less, somehow, and it had left {child_name} calm enough to actually cross the room and open the door and smile at the faces waiting there.
-
-{companion_name} caught their eye from across the room and gave the smallest nod, the kind that does not need any words stacked on top of it.
-
-Later, much later, when the friends had gone home and {setting} had settled into its deep evening quiet, {child_name} lay in the dark and went back over the whole afternoon, not the panic of the middle of it, but the strange, steadying pleasure of that first finished thing, and how the next had come easier, and the next after that easier still. The tight, jittery feeling that had chased {child_name} around all day was long gone now. In its place was something roomier and slower and altogether kinder, and {child_name} carried it gently down into sleep.
-
-{refrain}.` }
-},
-    audioTemplate: `The night was soft and quiet, and a small {hero} sat in {setting} with a {object_motif} glowing gently nearby.
-
-There was so much to do. The {hero} began one thing, then jumped to another, then a third — and somehow finished none of them.
-
-{companion_name} settled close. "You are trying to hold everything at once," they said kindly. "Choose just one. Let the rest wait."
-
-The {hero} took a slow breath and picked a single thing. Only that one. The {object_motif} seemed to glow a little brighter, as if it were watching too.
-
-And something surprising happened. With one thing at a time, the {hero} finished it. Then the next. Then the next.
-
-"I did more by doing less at once," the {hero} whispered.
-
-"That is the secret," said {companion_name}. "One thing, then the next. That is how big things get done."
-
-The {hero} curled up as the {object_motif} dimmed to a slow, steady light.
-
-{refrain}.`,
-    scriptTemplate: `The night was soft and quiet, and {child_name} the {hero} sat in {setting} with a {object_motif} glowing gently nearby.
-
-There was so much to do. {child_name} began one thing, then jumped to another, then a third — and somehow finished none of them.
-
-{companion_name} settled close. "You are trying to hold everything at once," they said kindly. "Choose just one, {child_name}. Let the rest wait."
-
-{child_name} took a slow breath and picked a single thing. Only that one. The {object_motif} seemed to glow a little brighter, as if it were watching too.
-
-And something surprising happened. With one thing at a time, {child_name} finished it. Then the next. Then the next.
-
-"I did more by doing less at once," {child_name} whispered.
-
-"That is the secret," said {companion_name}. "One thing, then the next. That is how big things get done."
-
-{child_name} curled up as the {object_motif} dimmed to a slow, steady light.
-
-{refrain}.`,
-  },
-
-  {
-    ordinal: 2, title: 'A Plan is a Path',
-    concept: 'Breaking a big goal into small, ordered steps', callback: 'Doing one thing at a time (Level 1)', ageFloor: 4,
-    summary: 'Faced with something that feels too big, the hero freezes — until their companion shows them how to break it into small steps and walk them in order. The story builds directly on Level 1: a plan is just one-thing-at-a-time, written down.',
-    teachingNote: 'A plan turns an overwhelming goal into a series of small, doable steps — and small steps are never scary.',
-    learningBeat: 'you can do the first small step',
+    ordinal: 1, title: "The Light in Three Places",
+    concept: "Doing one thing fully before starting the next", callback: null, ageFloor: 3,
+    summary: "Every night at moonrise, a tiny light blinks somewhere out in the dark — and tonight it blinks from three places at once. Chasing all three at the same time catches none of them. Only when the hero sits still and watches one place fully does the secret come out: two of the lights are reflections, and the real one only shows itself to someone giving it their whole attention.",
+    teachingNote: "Attention is a muscle: giving one thing your whole focus — and only then moving to the next — is the first habit every other focus skill builds on.",
+    learningBeat: "One thing, then the next",
     ageVariants: {
   '3-4': {
-    audioTemplate: `The {hero} stood at the edge of {setting}. Far, far away was the place the {hero} wanted to reach. It looked so far away.
+    audioTemplate: `Just after moonrise, a tiny light blinked in {setting}. Blink. Blink. Pop!
 
-'I can't walk all that way,' said the {hero}. 'It is too far. It is too big.'
+The {hero} wanted to find it and say hello.
 
-The {hero} sat down in a little heap. The {hero} did not want to start. The far place felt too big to even begin.
+But tonight there were three lights! Count them. One. Two. Three!
 
-Soft and slow, {companion_name} came and sat down close by. {companion_name} was warm and calm.
+The {hero} ran to the first light. Blink — the second flashed. The {hero} ran to the second. Blink — the third flashed! The {hero} ran round and round. Bump! Right into the pebbles {companion_name} was sorting.
 
-'You look stuck,' said {companion_name}.
+All three lights went out.
 
-'It is too far,' said the {hero}. 'Look.'
+'Hmm,' said {companion_name}. 'I only see it when I watch one thing.'
 
-'A long way is just small steps, one after another,' said {companion_name}. 'You can do the first small step.'
+The {hero} sat still and watched one light. Only one.
 
-The {hero} held the {object_motif} and looked up.
+Look closely. Two lights blink at the same time. Can you see it too? Twins!
 
-'See that little rock?' said {companion_name}. 'That is step one. Just walk to the rock. Nothing else.'
+'Oh!' said the {hero}. 'Two are just reflections! There is one little light. One thing, then the next!'
 
-The {hero} walked to the little rock. That was easy!
+The {hero} watched the real light. Out came a tiny glowing friend!
 
-'Now that tree,' said {companion_name}. 'That is step two.'
+It floated close. It landed beside the {object_motif}. It blinked slow, and slower.
 
-The {hero} walked to the tree. Easy again.
+'{refrain},' whispered {companion_name}.
 
-'Now the log,' said {companion_name}. 'That is step three.'
+The little friend went to sleep. The {hero} felt sleepy too. Tomorrow it might show its daytime bed.
 
-The {hero} hopped over the log. Easy, easy.
-
-One step. Then one step. Then one step. Slow and calm. Slow and calm.
-
-Remember, one thing at a time. Just like before. One thing. Then the next thing.
-
-The {hero} did not look at the whole long way. That was too big. The {hero} looked at the next small step. Only that. Just the next one.
-
-Step by step, the {hero} went. Past the rock. Past the tree. Past the log. Past the little hill. Over the tiny stream.
-
-The {hero} smiled a big smile. 'Look at me go!'
-
-The far place was closer now. Then closer still. Then very, very close.
-
-'You kept going,' said {companion_name}. 'One step, then the next, all the way.'
-
-The {hero} took the last step. Here at last! The {hero} had done it, all by walking one step at a time.
-
-The {hero} was not scared now. The long way was just small steps. And the {hero} could take each one.
-
-In {setting}, the sky went soft and dim. Little lights blinked far above. The {hero} held the {object_motif} close and gave a happy, sleepy sigh.
-
-The {hero} yawned a big yawn. Time to rest now. Time for a warm, cozy sleep.
-
-Tomorrow there would be more steps. And that was okay. One at a time. Always one at a time.
+Soft light. Slow blinks. Goodnight.
 
 {refrain}.`,
-    scriptTemplate: `{child_name} stood at the edge of {setting}. Far, far away was the place {child_name} wanted to reach. It looked so far away.
+    scriptTemplate: `Just after moonrise, a tiny light blinked in {setting}. Blink. Blink. Pop!
 
-'I can't walk all that way,' said {child_name}. 'It is too far. It is too big.'
+{child_name} the {hero} wanted to find it and say hello.
 
-{child_name} sat down in a little heap. {child_name} did not want to start. The far place felt too big to even begin.
+But tonight there were three lights! Count them. One. Two. Three!
 
-Soft and slow, {companion_name} came and sat down close by. {companion_name} was warm and calm.
+{child_name} ran to the first light. Blink — the second flashed. {child_name} ran to the second. Blink — the third flashed! {child_name} ran round and round. Bump! Right into the pebbles {companion_name} was sorting.
 
-'You look stuck,' said {companion_name}.
+All three lights went out.
 
-'It is too far,' said {child_name}. 'Look.'
+'Hmm,' said {companion_name}. 'I only see it when I watch one thing.'
 
-'A long way is just small steps, one after another,' said {companion_name}. 'You can do the first small step.'
+{child_name} sat still and watched one light. Only one.
 
-{child_name} held the {object_motif} and looked up.
+Look closely. Two lights blink at the same time. Can you see it too? Twins!
 
-'See that little rock?' said {companion_name}. 'That is step one. Just walk to the rock. Nothing else.'
+'Oh!' said {child_name}. 'Two are just reflections! There is one little light. One thing, then the next!'
 
-{child_name} walked to the little rock. That was easy!
+{child_name} watched the real light. Out came a tiny glowing friend!
 
-'Now that tree,' said {companion_name}. 'That is step two.'
+It floated close. It landed beside the {object_motif}. It blinked slow, and slower.
 
-{child_name} walked to the tree. Easy again.
+'{refrain},' whispered {companion_name}.
 
-'Now the log,' said {companion_name}. 'That is step three.'
+The little friend went to sleep. {child_name} felt sleepy too. Tomorrow it might show its daytime bed.
 
-{child_name} hopped over the log. Easy, easy.
-
-One step. Then one step. Then one step. Slow and calm. Slow and calm.
-
-Remember, one thing at a time. Just like before. One thing. Then the next thing.
-
-{child_name} did not look at the whole long way. That was too big. {child_name} looked at the next small step. Only that. Just the next one.
-
-Step by step, {child_name} went. Past the rock. Past the tree. Past the log. Past the little hill. Over the tiny stream.
-
-{child_name} smiled a big smile. 'Look at me go!'
-
-The far place was closer now. Then closer still. Then very, very close.
-
-'You kept going,' said {companion_name}. 'One step, then the next, all the way.'
-
-{child_name} took the last step. Here at last! {child_name} had done it, all by walking one step at a time.
-
-{child_name} was not scared now. The long way was just small steps. And {child_name} could take each one.
-
-In {setting}, the sky went soft and dim. Little lights blinked far above. {child_name} held the {object_motif} close and gave a happy, sleepy sigh.
-
-{child_name} yawned a big yawn. Time to rest now. Time for a warm, cozy sleep.
-
-Tomorrow there would be more steps. And that was okay. One at a time. Always one at a time.
+Soft light. Slow blinks. Goodnight.
 
 {refrain}.`
   },
   '5-6': {
-    audioTemplate: `The {hero} stood at the very edge of {setting} and looked out at the place far, far away. It was the place the {hero} had dreamed of reaching all week long. But now that it was really time to go, the far place looked impossibly far, and the {hero}'s feet did not want to move at all.
+    audioTemplate: `Just after moonrise, a tiny light blinked in {setting}. Blink. Blink. Pop! Then it was gone.
 
-The {hero}'s tummy went tight. 'I can't walk all the way over there,' the {hero} whispered. 'It is too far. I will never make it. Not ever.'
+The {hero} had watched it from bed for seven nights, and tonight the {hero} wanted one thing with all their heart: to find that little light and say hello before the moon climbed too high. It only ever blinked while the moon was low.
 
-So the {hero} sat right down and did not start at all. Sometimes a thing feels so big that starting feels like the very hardest part.
+But tonight something odd was waiting. There was not one light. There were three. One blinked by the big smooth stone. One blinked out on the still pool. One blinked in the shadowy nook.
 
-That was when {companion_name} wandered over and settled down close by, quiet and warm as a blanket.
+'Three!' said the {hero}. 'I will visit them all at once!'
 
-'You look stuck,' said {companion_name}.
+Off the {hero} dashed toward the stone. Blink — the pool light flashed. The {hero} spun and rushed for the pool. Blink — the nook light flickered. The {hero} turned again, and again, faster and faster, until — bump! — the {hero} skidded right through the tidy pile of pebbles {companion_name} had spent all evening sorting, and stopped right where the chase began.
 
-'It is too big,' said the {hero}. 'Look how far it is. I don't even know how to begin.'
+All three lights went dark at once.
 
-{companion_name} did not pretend the far place was near. It really was far, and pretending would not help. Instead, {companion_name} picked up the {object_motif} and drew a little line in the soft dirt.
+'I ran fast enough for three,' the {hero} puffed, 'and I said hello to none.'
 
-'A long way is only small steps, one after another,' said {companion_name}. 'We do not walk the whole way at once. Nobody can. We walk one step, and then the next. You can do the first small step, even when the whole thing feels too big.'
+'Hmm,' said {companion_name}, calmly restacking pebbles. 'I only ever see it when I am busy watching one thing.'
 
-{companion_name} pointed a little way off. 'See that grey rock? Do not think about the far place yet. Just walk to the rock. That is step one, and that is all.'
+So the {hero} tried something new. The {hero} sat very still and watched only the pool. Not the stone. Not the nook. Just the pool.
 
-The {hero} stood up slowly and walked to the grey rock. That was not so hard. That was easy, really.
+And the stillness showed a secret. Lean close and watch too. The pool light and the stone light blink at exactly the same moment. Can you see it too? Twins.
 
-'Good,' said {companion_name}. 'Now the crooked tree. That is step two.'
+'Oh,' whispered the {hero}. 'Those two are only reflections. There was one little light all along! One thing, then the next — watch one thing all the way, and it tells you everything.'
 
-The {hero} walked to the crooked tree.
+The {hero} turned, gently now, to the shadowy nook. And out floated the real light: a tiny glowing creature, small as a thumbprint, blinking hello.
 
-'Now the little hill. That is step three.'
+The {hero} kept perfectly still. The little light drifted closer, circled once, twice, and settled beside the {object_motif}, blinking slower and slower until the two glows matched.
 
-The {hero} climbed up the little hill and down the other side.
+'{refrain},' murmured {companion_name} softly.
 
-'Now the flat log across the ditch,' said {companion_name}. 'That is step four.'
+The moon climbed high. The little light dimmed to a sleepy shimmer. Tomorrow, perhaps, it would show the {hero} where it sleeps in the daytime. That secret could wait.
 
-The {hero} walked across the log with both arms out, and did not fall.
-
-One step. Then the next step. Then the next. The {hero} remembered the trick from before now, the good old trick: one thing at a time. Not everything at once. Only the very next thing.
-
-For a moment the {hero} looked up at all the way that was still left to go, and the tight feeling came rushing back. It was still so far. The {hero}'s feet went still.
-
-'Do not look at the whole way,' said {companion_name} gently. 'That is too much for anybody. Look at the next step. Only that one.'
-
-So the {hero} looked at the next step, and only the next step. And that step was easy. And so was the one after it. And the one after that.
-
-Step by step, the {hero} went. Past the rock. Past the tree. Over the hill. Around the bend. Across the little stream on three flat stones. Each step was small, and the {hero} could do each small step.
-
-The far place was not far now. It was close. Then it was very, very close.
-
-'You kept going,' said {companion_name}. 'One step, then the next, all the way here.'
-
-The {hero} took the last step and arrived. The dreamed-of place was real, right there underfoot, close enough to touch. The {hero} had crossed the whole of {setting}, one small step at a time, and here it was.
-
-'I did it,' the {hero} laughed. 'I really, really did it.'
-
-Above {setting}, the first stars blinked awake, one and then another. The {hero} sat down to rest and held the {object_motif} in both hands, tired in the good and cozy way that comes after a job well done.
-
-Tomorrow there would be a new far place, and new steps to take. And that was alright. The {hero} knew the trick now, deep down. One small step, and then the next.
+Warm dark. Slow blinks.
 
 {refrain}.`,
-    scriptTemplate: `{child_name} stood at the very edge of {setting} and looked out at the place far, far away. It was the place {child_name} had dreamed of reaching all week long. But now that it was really time to go, the far place looked impossibly far, and {child_name}'s feet did not want to move at all.
+    scriptTemplate: `Just after moonrise, a tiny light blinked in {setting}. Blink. Blink. Pop! Then it was gone.
 
-{child_name}'s tummy went tight. 'I can't walk all the way over there,' {child_name} whispered. 'It is too far. I will never make it. Not ever.'
+{child_name} the {hero} had watched it from bed for seven nights, and tonight {child_name} wanted one thing with all their heart: to find that little light and say hello before the moon climbed too high. It only ever blinked while the moon was low.
 
-So {child_name} sat right down and did not start at all. Sometimes a thing feels so big that starting feels like the very hardest part.
+But tonight something odd was waiting. There was not one light. There were three. One blinked by the big smooth stone. One blinked out on the still pool. One blinked in the shadowy nook.
 
-That was when {companion_name} wandered over and settled down close by, quiet and warm as a blanket.
+'Three!' said {child_name}. 'I will visit them all at once!'
 
-'You look stuck,' said {companion_name}.
+Off {child_name} dashed toward the stone. Blink — the pool light flashed. {child_name} spun and rushed for the pool. Blink — the nook light flickered. {child_name} turned again, and again, faster and faster, until — bump! — {child_name} skidded right through the tidy pile of pebbles {companion_name} had spent all evening sorting, and stopped right where the chase began.
 
-'It is too big,' said {child_name}. 'Look how far it is. I don't even know how to begin.'
+All three lights went dark at once.
 
-{companion_name} did not pretend the far place was near. It really was far, and pretending would not help. Instead, {companion_name} picked up the {object_motif} and drew a little line in the soft dirt.
+'I ran fast enough for three,' {child_name} puffed, 'and I said hello to none.'
 
-'A long way is only small steps, one after another,' said {companion_name}. 'We do not walk the whole way at once. Nobody can. We walk one step, and then the next. You can do the first small step, even when the whole thing feels too big.'
+'Hmm,' said {companion_name}, calmly restacking pebbles. 'I only ever see it when I am busy watching one thing.'
 
-{companion_name} pointed a little way off. 'See that grey rock? Do not think about the far place yet. Just walk to the rock. That is step one, and that is all.'
+So {child_name} tried something new. {child_name} sat very still and watched only the pool. Not the stone. Not the nook. Just the pool.
 
-{child_name} stood up slowly and walked to the grey rock. That was not so hard. That was easy, really.
+And the stillness showed a secret. Lean close and watch too. The pool light and the stone light blink at exactly the same moment. Can you see it too? Twins.
 
-'Good,' said {companion_name}. 'Now the crooked tree. That is step two.'
+'Oh,' whispered {child_name}. 'Those two are only reflections. There was one little light all along! One thing, then the next — watch one thing all the way, and it tells you everything.'
 
-{child_name} walked to the crooked tree.
+{child_name} turned, gently now, to the shadowy nook. And out floated the real light: a tiny glowing creature, small as a thumbprint, blinking hello.
 
-'Now the little hill. That is step three.'
+{child_name} kept perfectly still. The little light drifted closer, circled once, twice, and settled beside the {object_motif}, blinking slower and slower until the two glows matched.
 
-{child_name} climbed up the little hill and down the other side.
+'{refrain},' murmured {companion_name} softly.
 
-'Now the flat log across the ditch,' said {companion_name}. 'That is step four.'
+The moon climbed high. The little light dimmed to a sleepy shimmer. Tomorrow, perhaps, it would show {child_name} where it sleeps in the daytime. That secret could wait.
 
-{child_name} walked across the log with both arms out, and did not fall.
-
-One step. Then the next step. Then the next. {child_name} remembered the trick from before now, the good old trick: one thing at a time. Not everything at once. Only the very next thing.
-
-For a moment {child_name} looked up at all the way that was still left to go, and the tight feeling came rushing back. It was still so far. {child_name}'s feet went still.
-
-'Do not look at the whole way,' said {companion_name} gently. 'That is too much for anybody. Look at the next step. Only that one.'
-
-So {child_name} looked at the next step, and only the next step. And that step was easy. And so was the one after it. And the one after that.
-
-Step by step, {child_name} went. Past the rock. Past the tree. Over the hill. Around the bend. Across the little stream on three flat stones. Each step was small, and {child_name} could do each small step.
-
-The far place was not far now. It was close. Then it was very, very close.
-
-'You kept going,' said {companion_name}. 'One step, then the next, all the way here.'
-
-{child_name} took the last step and arrived. The dreamed-of place was real, right there underfoot, close enough to touch. {child_name} had crossed the whole of {setting}, one small step at a time, and here it was.
-
-'I did it,' {child_name} laughed. 'I really, really did it.'
-
-Above {setting}, the first stars blinked awake, one and then another. {child_name} sat down to rest and held the {object_motif} in both hands, tired in the good and cozy way that comes after a job well done.
-
-Tomorrow there would be a new far place, and new steps to take. And that was alright. {child_name} knew the trick now, deep down. One small step, and then the next.
+Warm dark. Slow blinks.
 
 {refrain}.`
   },
   '7-8': {
-    audioTemplate: `From the top of the ridge, the {hero} could see the whole of {setting} spread out below in the low evening light, and far, far across it stood the place the {hero} had been thinking about for days. Up close, in daydreams, it had always felt possible, even easy. Now, standing here at the real edge with the real distance stretching out ahead, it felt like far too much.
+    audioTemplate: `For seven nights running, a tiny light had blinked in {setting}, always just after moonrise, always for a little while, and always gone before anyone got near. Blink. Blink. Pop! Then nothing.
 
-The {hero} stopped before even taking a single step. 'I can't get all the way over there,' the {hero} said. 'Look how far it is. It would take forever. I should just go home and forget about it.'
+The {hero} had watched it from bed every one of those nights, guessing at it. A fallen star, maybe. A lantern the size of a berry. Tonight the {hero} had a plan and a firm, warm want: be out there at moonrise, find the little light, and say hello, properly, before the moon climbed too high. It never blinked once the moon was high.
 
-The {hero} sat down on a flat stone, arms wrapped around both knees, and stared hard at the ground so as not to see the distance at all.
+But the night had a surprise ready. When the moon lifted and the first blink came, it did not come from one place. It came from three. One light blinked beside the big smooth stone. One blinked out on the still pool. One blinked deep in the shadowy nook, low and small.
 
-{companion_name} came up the ridge and sat down nearby, in no hurry whatsoever.
+'Three,' breathed the {hero}. 'Three lights! I thought I was lucky to get one. I'll visit them all — all at once, before any of them can leave.'
 
-'That is a long way,' {companion_name} agreed, looking out at it. There was no use pretending it was short.
+That was the plan, and it lasted almost no time at all. The {hero} dashed for the smooth stone and got halfway there when the pool light flashed, bright and inviting, so the {hero} swerved for the pool instead. Blink — the nook light flickered, as if it might be leaving, and the {hero} spun toward the nook. Then the stone light again. Then the pool. The {hero} turned and doubled and turned again, going faster and faster after all three at once, until — bump — the {hero} skidded straight through the neat little pile of round pebbles that {companion_name} had spent the entire evening sorting by roundness, and came to a stop exactly, precisely where the chase had begun.
 
-'It is too far,' the {hero} said. 'And I don't even know where to begin. So there's no point in beginning at all.'
+Every one of the three lights went dark at the same moment.
 
-{companion_name} reached over, took the {object_motif}, and used its edge to scratch a row of little marks into the dirt between them. A short line. A dot. Another dot. And another.
+The {hero} sat in the scattered pebbles and puffed. 'I ran fast enough for three lights. I ran fast enough for ten. And I said hello to none of them. Why do they always go out the moment I get going?'
 
-'Here is the thing almost everybody gets wrong,' said {companion_name}. 'They try to walk the whole way in their head, all at once, and their head fills right up, and they freeze. But nobody crosses {setting} in one giant leap. A big journey is only small steps, written down in order and walked one at a time. You can do the first small step, even when the whole thing feels impossible.'
+That was the second mystery of the night, and it felt even unfairer than the first.
 
-The {hero} looked at the row of marks in the dirt. 'A plan,' the {hero} said slowly.
+'Hmm,' said {companion_name}, calmly gathering pebbles back into their pile. 'I have only ever seen it on nights when I was busy watching one thing.'
 
-'A plan is a path,' said {companion_name}. 'First that grey rock. Then the split tree. Then the low bushes. Then the stream. Do not look at the far place. Just look at the next mark. Can you walk to that grey rock?'
+The {hero} looked at {companion_name}. Then at the three dark places. Then, slowly, the {hero} tried the strangest plan of the evening: sitting completely still, and watching only the pool. Not the stone, though it was tempting. Not the nook, though it itched. One thing. The pool.
 
-'That's easy,' said the {hero}. 'That's nothing at all.'
+The moon rose a little. The blinking came back. And stillness showed the {hero} what all that running never could. Lean in close and watch too. The pool light and the stone light blink at exactly the same instant, every single time. Can you see it too? Twins.
 
-'Then go and do the easy thing,' said {companion_name}.
+'Oh,' whispered the {hero}, very quietly, so as not to scare the answer away. 'They are the same light. The pool and the smooth stone are like mirrors — those two are only reflections. There was one little light all along, and it hides whenever everything around it is rushing. Two mysteries, one answer. One thing, then the next — watch one thing all the way, and it hands you the rest for free.'
 
-So the {hero} stood up and walked to the grey rock. And then, because the split tree was right there and it was also easy, the {hero} walked to that too. Then to the low bushes. One mark, and then the next mark. The {hero} was not thinking about the far place anymore. The {hero} was only thinking about the next small step, the way you do one thing at a time and let the rest wait its turn.
+So the {hero} turned, gently, to the shadowy nook, and simply watched, with both eyes and a whole quiet heart. And out of the dark floated the real light at last: a tiny glowing creature no bigger than a thumbprint, blinking its small hello.
 
-The grey rock came and went underfoot. The split tree came and went. At each mark the {hero} paused just long enough to spot the next one, then walked to it, and the far place, for now, was allowed to stay far and quiet and forgotten. It was almost restful, this way of going. There was never more than one small thing to do at a time, and one small thing was never too much.
+The {hero} did not chase. The {hero} stayed. The little light drifted closer all on its own, circled the {hero} once, circled twice, and settled down beside the {object_motif}, where it blinked slower, and slower, until the two glows rose and fell together like breathing.
 
-Halfway across {setting}, the {hero} made the old mistake of looking up. All at once the whole rest of the way came rushing in, so very much still to go, and the tight, heavy feeling grabbed hold again. The {hero}'s feet stopped dead. 'It's still so far,' the {hero} said, the wobble creeping back. 'I'm not even close.'
+'{refrain},' murmured {companion_name}, setting the last pebble on the pile.
 
-'You looked at the whole way again,' said {companion_name}, catching up and settling on a nearby root. 'That is the exact thing that stops everybody. So shrink it back down. What is the very next step? Just that one, and no more.'
+The moon climbed high, right on schedule. The little creature dimmed to a sleepy shimmer and stayed.
 
-The {hero} breathed out, long and slow, and looked, not at the far place, but at the nearest thing of all, a mossy log only a few paces on. 'The log,' the {hero} said.
+Where did it sleep in the daytime? Somewhere near. Somewhere secret. Tomorrow, perhaps, it would show the {hero} the way. That could wait.
 
-'Then walk to the log,' said {companion_name}.
-
-The {hero} walked to the log. And the tight feeling let go its grip, because the log was easy, and after the log there was only ever one more easy thing waiting. Step by step, mark by mark, the {hero} crossed the whole second half of {setting} the same way as the first, one small piece at a time, never once trying to swallow it whole.
-
-And then, almost by surprise, there were no marks left to walk. The {hero} took one last step and stood in the very place that had looked impossibly far away from the ridge. It was real now, solid under two tired feet. The {hero} had walked the whole long way there.
-
-'I made it,' the {hero} said, half laughing, looking around. 'It didn't even feel that big, in the end.'
-
-'There it is,' said {companion_name}, arriving beside the {hero} and holding out the {object_motif}. 'You walked every last bit of that yourself.'
-
-The {hero} took the {object_motif} and turned to look back across {setting} at the whole path, every rock and tree and bend already walked and behind now. From here, the long way did not look frightening at all. It just looked like a line of small steps, each one easy, laid neatly end to end.
-
-For a while the {hero} just sat there getting a breath back, listening to the small sounds of {setting} settling down for the night, feeling lighter than at the start, the way you feel when a thing you had been dreading turns out to be behind you.
-
-Overhead, {setting} was going violet and soft, and somewhere off in the dusk a night bird called once and went quiet. The {hero} leaned back, warm and tired and deeply pleased, and watched the way home settle slowly into shadow.
-
-Tomorrow there would be another far place, and another long way. But the {hero} was not the least bit worried about that now.
+The night went soft. The pool went still.
 
 {refrain}.`,
-    scriptTemplate: `From the top of the ridge, {child_name} could see the whole of {setting} spread out below in the low evening light, and far, far across it stood the place {child_name} had been thinking about for days. Up close, in daydreams, it had always felt possible, even easy. Now, standing here at the real edge with the real distance stretching out ahead, it felt like far too much.
+    scriptTemplate: `For seven nights running, a tiny light had blinked in {setting}, always just after moonrise, always for a little while, and always gone before anyone got near. Blink. Blink. Pop! Then nothing.
 
-{child_name} stopped before even taking a single step. 'I can't get all the way over there,' {child_name} said. 'Look how far it is. It would take forever. I should just go home and forget about it.'
+{child_name} the {hero} had watched it from bed every one of those nights, guessing at it. A fallen star, maybe. A lantern the size of a berry. Tonight {child_name} had a plan and a firm, warm want: be out there at moonrise, find the little light, and say hello, properly, before the moon climbed too high. It never blinked once the moon was high.
 
-{child_name} sat down on a flat stone, arms wrapped around both knees, and stared hard at the ground so as not to see the distance at all.
+But the night had a surprise ready. When the moon lifted and the first blink came, it did not come from one place. It came from three. One light blinked beside the big smooth stone. One blinked out on the still pool. One blinked deep in the shadowy nook, low and small.
 
-{companion_name} came up the ridge and sat down nearby, in no hurry whatsoever.
+'Three,' breathed {child_name}. 'Three lights! I thought I was lucky to get one. I'll visit them all — all at once, before any of them can leave.'
 
-'That is a long way,' {companion_name} agreed, looking out at it. There was no use pretending it was short.
+That was the plan, and it lasted almost no time at all. {child_name} dashed for the smooth stone and got halfway there when the pool light flashed, bright and inviting, so {child_name} swerved for the pool instead. Blink — the nook light flickered, as if it might be leaving, and {child_name} spun toward the nook. Then the stone light again. Then the pool. {child_name} turned and doubled and turned again, going faster and faster after all three at once, until — bump — {child_name} skidded straight through the neat little pile of round pebbles that {companion_name} had spent the entire evening sorting by roundness, and came to a stop exactly, precisely where the chase had begun.
 
-'It is too far,' {child_name} said. 'And I don't even know where to begin. So there's no point in beginning at all.'
+Every one of the three lights went dark at the same moment.
 
-{companion_name} reached over, took the {object_motif}, and used its edge to scratch a row of little marks into the dirt between them. A short line. A dot. Another dot. And another.
+{child_name} sat in the scattered pebbles and puffed. 'I ran fast enough for three lights. I ran fast enough for ten. And I said hello to none of them. Why do they always go out the moment I get going?'
 
-'Here is the thing almost everybody gets wrong,' said {companion_name}. 'They try to walk the whole way in their head, all at once, and their head fills right up, and they freeze. But nobody crosses {setting} in one giant leap. A big journey is only small steps, written down in order and walked one at a time. You can do the first small step, even when the whole thing feels impossible.'
+That was the second mystery of the night, and it felt even unfairer than the first.
 
-{child_name} looked at the row of marks in the dirt. 'A plan,' {child_name} said slowly.
+'Hmm,' said {companion_name}, calmly gathering pebbles back into their pile. 'I have only ever seen it on nights when I was busy watching one thing.'
 
-'A plan is a path,' said {companion_name}. 'First that grey rock. Then the split tree. Then the low bushes. Then the stream. Do not look at the far place. Just look at the next mark. Can you walk to that grey rock?'
+{child_name} looked at {companion_name}. Then at the three dark places. Then, slowly, {child_name} tried the strangest plan of the evening: sitting completely still, and watching only the pool. Not the stone, though it was tempting. Not the nook, though it itched. One thing. The pool.
 
-'That's easy,' said {child_name}. 'That's nothing at all.'
+The moon rose a little. The blinking came back. And stillness showed {child_name} what all that running never could. Lean in close and watch too. The pool light and the stone light blink at exactly the same instant, every single time. Can you see it too? Twins.
 
-'Then go and do the easy thing,' said {companion_name}.
+'Oh,' whispered {child_name}, very quietly, so as not to scare the answer away. 'They are the same light. The pool and the smooth stone are like mirrors — those two are only reflections. There was one little light all along, and it hides whenever everything around it is rushing. Two mysteries, one answer. One thing, then the next — watch one thing all the way, and it hands you the rest for free.'
 
-So {child_name} stood up and walked to the grey rock. And then, because the split tree was right there and it was also easy, {child_name} walked to that too. Then to the low bushes. One mark, and then the next mark. {child_name} was not thinking about the far place anymore. {child_name} was only thinking about the next small step, the way you do one thing at a time and let the rest wait its turn.
+So {child_name} turned, gently, to the shadowy nook, and simply watched, with both eyes and a whole quiet heart. And out of the dark floated the real light at last: a tiny glowing creature no bigger than a thumbprint, blinking its small hello.
 
-The grey rock came and went underfoot. The split tree came and went. At each mark {child_name} paused just long enough to spot the next one, then walked to it, and the far place, for now, was allowed to stay far and quiet and forgotten. It was almost restful, this way of going. There was never more than one small thing to do at a time, and one small thing was never too much.
+{child_name} did not chase. {child_name} stayed. The little light drifted closer all on its own, circled {child_name} once, circled twice, and settled down beside the {object_motif}, where it blinked slower, and slower, until the two glows rose and fell together like breathing.
 
-Halfway across {setting}, {child_name} made the old mistake of looking up. All at once the whole rest of the way came rushing in, so very much still to go, and the tight, heavy feeling grabbed hold again. {child_name}'s feet stopped dead. 'It's still so far,' {child_name} said, the wobble creeping back. 'I'm not even close.'
+'{refrain},' murmured {companion_name}, setting the last pebble on the pile.
 
-'You looked at the whole way again,' said {companion_name}, catching up and settling on a nearby root. 'That is the exact thing that stops everybody. So shrink it back down. What is the very next step? Just that one, and no more.'
+The moon climbed high, right on schedule. The little creature dimmed to a sleepy shimmer and stayed.
 
-{child_name} breathed out, long and slow, and looked, not at the far place, but at the nearest thing of all, a mossy log only a few paces on. 'The log,' {child_name} said.
+Where did it sleep in the daytime? Somewhere near. Somewhere secret. Tomorrow, perhaps, it would show {child_name} the way. That could wait.
 
-'Then walk to the log,' said {companion_name}.
-
-{child_name} walked to the log. And the tight feeling let go its grip, because the log was easy, and after the log there was only ever one more easy thing waiting. Step by step, mark by mark, {child_name} crossed the whole second half of {setting} the same way as the first, one small piece at a time, never once trying to swallow it whole.
-
-And then, almost by surprise, there were no marks left to walk. {child_name} took one last step and stood in the very place that had looked impossibly far away from the ridge. It was real now, solid under two tired feet. {child_name} had walked the whole long way there.
-
-'I made it,' {child_name} said, half laughing, looking around. 'It didn't even feel that big, in the end.'
-
-'There it is,' said {companion_name}, arriving beside {child_name} and holding out the {object_motif}. 'You walked every last bit of that yourself.'
-
-{child_name} took the {object_motif} and turned to look back across {setting} at the whole path, every rock and tree and bend already walked and behind now. From here, the long way did not look frightening at all. It just looked like a line of small steps, each one easy, laid neatly end to end.
-
-For a while {child_name} just sat there getting a breath back, listening to the small sounds of {setting} settling down for the night, feeling lighter than at the start, the way you feel when a thing you had been dreading turns out to be behind you.
-
-Overhead, {setting} was going violet and soft, and somewhere off in the dusk a night bird called once and went quiet. {child_name} leaned back, warm and tired and deeply pleased, and watched the way home settle slowly into shadow.
-
-Tomorrow there would be another far place, and another long way. But {child_name} was not the least bit worried about that now.
+The night went soft. The pool went still.
 
 {refrain}.`
   },
   '9-11': {
-    audioTemplate: `There was a place on the far side of {setting} that the {hero} had wanted to reach for as long as the {hero} could remember, not a short walk away but a real distance, the kind of trip you had to plan and pack for. All season the {hero} had talked about going. The {hero} had described it to anyone who would listen, had pictured arriving a hundred times over. And yet, all season, somehow, the actual going had never quite happened. There was always a reason, and underneath every reason was the same quiet, unspoken one: it was simply too big to start.
+    audioTemplate: `There were two mysteries in {setting} that night, and the {hero} went to bed planning to solve exactly one of them.
 
-Tonight the {hero} had finally dragged everything out to get ready, and that, it turned out, was the problem. Laid out all at once, the whole thing at a single glance, the long winding route, the food and gear to carry, the streams that would have to be crossed, the places to stop and rest, the weather to guess at, the enormous and complicated shape of it, the journey looked less like an adventure and a great deal more like a wall. A wall with no door in it. The {hero} stood over the scattered pile of it and felt that familiar, sinking heaviness, the one that arrived without fail whenever something mattered far too much and loomed far too large.
+The first was seven nights old. Every evening, just after moonrise, a tiny light blinked somewhere out in the dark — blink, blink, pop — and then, some quiet while later, stopped. Nobody knew what it was. {companion_name} claimed to have seen it up close once, years ago, and refused to say anything more than 'you will want to see it yourself,' which was the most annoying possible answer and also, probably, true.
 
-'I don't think I can actually do this,' the {hero} admitted at last, mostly to the empty air. 'It's too much. There are a hundred separate things to sort out, and I don't even know which one is supposed to come first. Maybe it was a silly idea all along. Maybe I should just leave it.'
+Tonight the {hero} meant to see it. That was the want, simple and warm: be there at moonrise, find the light, say hello before the moon climbed too high and the blinking stopped for the night.
 
-It is a particular and lonely kind of misery, wanting something with your whole heart and feeling, at the very same moment, completely unable to take the first step toward it. The {hero} sank down among the scattered plans and did not so much as touch a single one of them.
+The second mystery arrived with the first blink. Because the light did not blink from one place. It blinked from three. One beside the big smooth stone. One out on the still pool. One low in the shadowy nook. Three lights, where seven nights of watching had only ever promised one.
 
-{companion_name} had been somewhere nearby in the dusk, and now came quietly over, taking a long, unhurried look at everything spread across the ground before finally sitting down beside it all.
+'Three,' said the {hero}, already moving. 'Then I will meet them all. At once. Before any of them can leave.'
 
-'So,' {companion_name} said, in no rush at all. 'You've been sitting here trying to look at every last piece of it at once.'
+What followed was not the {hero}'s finest quarter of an hour. The dash to the stone got exactly halfway before the pool light flashed and the {hero} swerved. The pool got three good strides before the nook flickered — leaving, surely leaving! — and the {hero} spun. Stone, pool, nook, stone. Faster and faster, each light forever one dash away, until — bump — the {hero} ploughed through the little pile of pebbles {companion_name} had spent the whole evening sorting by roundness, scattering a night of careful work in every direction, and slid to a halt on the exact spot where the chase had started.
 
-'I can't help it,' said the {hero}, miserable. 'It's all right there in front of me. And it's all so big.'
+All three lights went out at the same instant. As if somebody had quietly closed a door.
 
-'Of course it looks impossible from there,' said {companion_name}. 'You're trying to carry the entire journey in your head in one single armful. Nobody alive can hold all of that at once. It's too much for anyone. But that heavy, stuck feeling, it isn't proof that you can't do the thing. It's only proof that you're looking at it the wrong way, from the wrong end.'
+The {hero} sat among the scattered pebbles and let the puffing slow down. 'Every time,' the {hero} said. 'Seven nights, and now tonight. The moment I get close, it goes dark. Why does it always vanish the second anyone moves toward it?'
 
-{companion_name} reached out and picked up the {object_motif}, and then, instead of explaining anything more, used it to smooth a clean, flat patch of ground. Then, with one careful edge, {companion_name} began to draw: a single short line, and at the very end of it, a small mark.
+And there it was: mystery number two, standing right beside mystery number one, both of them looking rather pleased with themselves.
 
-'Watch this. This isn't the whole journey. Don't think about the whole journey. This is only the first stretch, from right here to the old crossing, and nothing more than that. Can you picture just that much, only that much?'
+'Hmm,' said {companion_name}, gathering pebbles without any hurry at all. 'For what it is worth — the one time I saw it properly, I was not chasing anything. I was busy watching one thing.'
 
-The {hero} leaned in and looked. That much, all on its own, was easy, an afternoon's walk on a good path, nothing frightening about it whatsoever. 'Yes,' the {hero} said. 'That part's simple. I could do that part with my eyes closed.'
+The {hero} started to argue, and then did not. Instead, the {hero} tried the strangest tactic of the whole evening. Stillness. The {hero} picked the pool — just the pool, not the stone, not the nook, though both of them itched like anything — and watched it the way you watch something you have decided to truly see. Whole eyes. Quiet body. One thing.
 
-'Good. That's exactly the feeling.' {companion_name} drew a second line onward from the end of the first, and set down a second mark. 'And from the crossing to the ridge, then. Just that one piece, on its own, all by itself, is that piece hard?'
+The moon rose a little. The blinking came back. And within ten slow breaths, stillness had handed over what an hour of sprinting never touched. Lean in; you can catch it too. The pool light and the stone light blink at precisely the same instant, every time, without fail. Can you see it too? Twins.
 
-'No,' the {hero} admitted, more slowly this time. 'No, that one's not hard either.'
+'They are the same light,' the {hero} whispered. 'The pool is a mirror. So is the polished face of the stone. Two reflections, one real light — and it hides from hurry. That is why it kept vanishing. It was never vanishing at all. It was waiting for the rushing to stop.' The {hero} laughed, softly, at the tidiness of it. 'Two mysteries, one answer. One thing, then the next — watch one thing all the way through, and it solves the rest for you.'
 
-'Then you keep going,' said {companion_name}, and held the {object_motif} out across the space between them. 'You draw the rest of it yourself. One piece at a time. Not the whole way, never the whole way, just the next honest step after the one that comes before it.'
+The real light lived in the shadowy nook. The {hero} turned toward it gently and did not take a single step. Just watched, and let it decide.
 
-So the {hero} took the {object_motif} and, a little uncertainly at first, began to draw. The ridge to the twin rocks. The twin rocks to the shallow ford. The shallows to the wide meadow. The meadow to the last long rise before the far place itself. Each new line the {hero} added was only a small, plain, entirely doable thing, and not a single one of them, taken by itself, was frightening in the least. And a genuinely strange thing began to happen as the {hero} drew, line by patient line: the wall came apart. What had been one solid, impossible mass just moments before was quietly becoming a row of small, ordinary, manageable steps, laid out one after another in their proper order, each one waiting calmly for its own turn to be walked.
+It decided. Out of the dark it came: a tiny glowing creature, smaller than a thumbprint, blinking a careful hello. It drifted nearer in slow loops, circled the {hero} once, twice, and then settled — of all places — beside the {object_motif}, where its blink slowed and deepened until the two glows rose and fell together, like two sleepers sharing one breath.
 
-The {hero} sat back on both heels and looked at the finished line of marks stretching all the way across the smoothed ground. 'It's a path,' the {hero} said, honestly surprised. 'When you put it that way, it's just a path.'
+'{refrain},' murmured {companion_name}, placing the last pebble back on a rebuilt pile.
 
-'A plan is a path,' said {companion_name}. 'That's all a plan has ever been, the big frightening thing broken down into steps small enough to actually take, written out in the order you mean to walk them. You can do the first small step, even when the whole thing still feels completely impossible. And here's the part people forget: the moment the first step is finished, you look down, and the second one is already lying there, waiting for you, just as small.'
+They sat with it a long, unhurried while. The moon climbed high, and the little creature dimmed to a shimmer and stayed, folded and content.
 
-The {hero} traced the whole line slowly with one finger, from this near side of {setting} all the way across to the far place at the end, and felt something in the chest quietly come loose, not because the journey had grown one bit shorter, it hadn't, but because it had stopped being a single terrible thing. It was many small things now, arranged in a tidy row. And the {hero} had done small things before, plenty of them.
+It would need a name — something that small, and that stubborn about stillness, deserved one. But naming was daytime work. So was the question of where it slept when the sun was up, and whether it would let the {hero} come and see. Tomorrow had room for all of that.
 
-'But I still can't do all of it tonight,' the {hero} said. And this time the words did not come out as despair at all, only as a plain and peaceful fact.
-
-'No,' {companion_name} agreed easily. 'And nobody ever asked you to. Tonight you do exactly one thing, the first step and no further. So tell me, what is it?'
-
-The {hero} looked down at the very beginning of the line, at that first short mark. The first step was not the whole journey. It was not even setting out. It was smaller and quieter than that. 'Pack the carry-bag,' the {hero} said. 'Just that. Get it ready and set it by the way out, so it's waiting there at first light.'
-
-'Then go and do that one thing,' said {companion_name}, 'and let tomorrow keep its own steps for tomorrow.'
-
-So the {hero} did. Not the journey, only the packing. The {hero} gathered together everything that first stretch of the path would need, folded it, checked it twice, and set the full bag down by the way out of {setting}, exactly where the morning light would be sure to find it. It took only a little while, in the end. And it was, the {hero} noticed with something close to a smile, the very same old trick from before, the oldest and steadiest one there is: not everything all at once, but one thing at a time, the next thing and only ever the next thing.
-
-When it was done, the {hero} stood a while in the settling dark and looked at the packed bag waiting there, one small step, finished and solid and real. The far place was still exactly as far as it had been. Nothing at all about the distance itself had changed. But the {hero} was no longer frozen in front of it, because the {hero} was no longer standing at the foot of an impossible wall. The {hero} was standing instead at the near end of a path, a real path, and the first stone of it had already been stepped.
-
-'That's the hardest one behind you now,' said {companion_name} quietly, from the shadows. 'The very first one. It is always, always the heaviest to lift.'
-
-Above {setting}, the dark had come on soft and full and complete, and the plan lay finished there on the ground, its long line of little marks holding the very last of the light. The {hero} held the {object_motif} loosely in one hand and felt the particular, settling calm of a thing at last begun, not finished, not solved, nothing so tidy as that, but no longer impossible. Simply begun. And the rest of the steps, every last one of them, could wait in peace for their own mornings.
-
-The {hero} would walk them, one at a time.
+The pool smoothed over. The night leaned close.
 
 {refrain}.`,
-    scriptTemplate: `There was a place on the far side of {setting} that {child_name} had wanted to reach for as long as {child_name} could remember, not a short walk away but a real distance, the kind of trip you had to plan and pack for. All season {child_name} had talked about going. {child_name} had described it to anyone who would listen, had pictured arriving a hundred times over. And yet, all season, somehow, the actual going had never quite happened. There was always a reason, and underneath every reason was the same quiet, unspoken one: it was simply too big to start.
+    scriptTemplate: `There were two mysteries in {setting} that night, and {child_name} the {hero} went to bed planning to solve exactly one of them.
 
-Tonight {child_name} had finally dragged everything out to get ready, and that, it turned out, was the problem. Laid out all at once, the whole thing at a single glance, the long winding route, the food and gear to carry, the streams that would have to be crossed, the places to stop and rest, the weather to guess at, the enormous and complicated shape of it, the journey looked less like an adventure and a great deal more like a wall. A wall with no door in it. {child_name} stood over the scattered pile of it and felt that familiar, sinking heaviness, the one that arrived without fail whenever something mattered far too much and loomed far too large.
+The first was seven nights old. Every evening, just after moonrise, a tiny light blinked somewhere out in the dark — blink, blink, pop — and then, some quiet while later, stopped. Nobody knew what it was. {companion_name} claimed to have seen it up close once, years ago, and refused to say anything more than 'you will want to see it yourself,' which was the most annoying possible answer and also, probably, true.
 
-'I don't think I can actually do this,' {child_name} admitted at last, mostly to the empty air. 'It's too much. There are a hundred separate things to sort out, and I don't even know which one is supposed to come first. Maybe it was a silly idea all along. Maybe I should just leave it.'
+Tonight {child_name} meant to see it. That was the want, simple and warm: be there at moonrise, find the light, say hello before the moon climbed too high and the blinking stopped for the night.
 
-It is a particular and lonely kind of misery, wanting something with your whole heart and feeling, at the very same moment, completely unable to take the first step toward it. {child_name} sank down among the scattered plans and did not so much as touch a single one of them.
+The second mystery arrived with the first blink. Because the light did not blink from one place. It blinked from three. One beside the big smooth stone. One out on the still pool. One low in the shadowy nook. Three lights, where seven nights of watching had only ever promised one.
 
-{companion_name} had been somewhere nearby in the dusk, and now came quietly over, taking a long, unhurried look at everything spread across the ground before finally sitting down beside it all.
+'Three,' said {child_name}, already moving. 'Then I will meet them all. At once. Before any of them can leave.'
 
-'So,' {companion_name} said, in no rush at all. 'You've been sitting here trying to look at every last piece of it at once.'
+What followed was not {child_name}'s finest quarter of an hour. The dash to the stone got exactly halfway before the pool light flashed and {child_name} swerved. The pool got three good strides before the nook flickered — leaving, surely leaving! — and {child_name} spun. Stone, pool, nook, stone. Faster and faster, each light forever one dash away, until — bump — {child_name} ploughed through the little pile of pebbles {companion_name} had spent the whole evening sorting by roundness, scattering a night of careful work in every direction, and slid to a halt on the exact spot where the chase had started.
 
-'I can't help it,' said {child_name}, miserable. 'It's all right there in front of me. And it's all so big.'
+All three lights went out at the same instant. As if somebody had quietly closed a door.
 
-'Of course it looks impossible from there,' said {companion_name}. 'You're trying to carry the entire journey in your head in one single armful. Nobody alive can hold all of that at once. It's too much for anyone. But that heavy, stuck feeling, it isn't proof that you can't do the thing. It's only proof that you're looking at it the wrong way, from the wrong end.'
+{child_name} sat among the scattered pebbles and let the puffing slow down. 'Every time,' {child_name} said. 'Seven nights, and now tonight. The moment I get close, it goes dark. Why does it always vanish the second anyone moves toward it?'
 
-{companion_name} reached out and picked up the {object_motif}, and then, instead of explaining anything more, used it to smooth a clean, flat patch of ground. Then, with one careful edge, {companion_name} began to draw: a single short line, and at the very end of it, a small mark.
+And there it was: mystery number two, standing right beside mystery number one, both of them looking rather pleased with themselves.
 
-'Watch this. This isn't the whole journey. Don't think about the whole journey. This is only the first stretch, from right here to the old crossing, and nothing more than that. Can you picture just that much, only that much?'
+'Hmm,' said {companion_name}, gathering pebbles without any hurry at all. 'For what it is worth — the one time I saw it properly, I was not chasing anything. I was busy watching one thing.'
 
-{child_name} leaned in and looked. That much, all on its own, was easy, an afternoon's walk on a good path, nothing frightening about it whatsoever. 'Yes,' {child_name} said. 'That part's simple. I could do that part with my eyes closed.'
+{child_name} started to argue, and then did not. Instead, {child_name} tried the strangest tactic of the whole evening. Stillness. {child_name} picked the pool — just the pool, not the stone, not the nook, though both of them itched like anything — and watched it the way you watch something you have decided to truly see. Whole eyes. Quiet body. One thing.
 
-'Good. That's exactly the feeling.' {companion_name} drew a second line onward from the end of the first, and set down a second mark. 'And from the crossing to the ridge, then. Just that one piece, on its own, all by itself, is that piece hard?'
+The moon rose a little. The blinking came back. And within ten slow breaths, stillness had handed over what an hour of sprinting never touched. Lean in; you can catch it too. The pool light and the stone light blink at precisely the same instant, every time, without fail. Can you see it too? Twins.
 
-'No,' {child_name} admitted, more slowly this time. 'No, that one's not hard either.'
+'They are the same light,' {child_name} whispered. 'The pool is a mirror. So is the polished face of the stone. Two reflections, one real light — and it hides from hurry. That is why it kept vanishing. It was never vanishing at all. It was waiting for the rushing to stop.' {child_name} laughed, softly, at the tidiness of it. 'Two mysteries, one answer. One thing, then the next — watch one thing all the way through, and it solves the rest for you.'
 
-'Then you keep going,' said {companion_name}, and held the {object_motif} out across the space between them. 'You draw the rest of it yourself. One piece at a time. Not the whole way, never the whole way, just the next honest step after the one that comes before it.'
+The real light lived in the shadowy nook. {child_name} turned toward it gently and did not take a single step. Just watched, and let it decide.
 
-So {child_name} took the {object_motif} and, a little uncertainly at first, began to draw. The ridge to the twin rocks. The twin rocks to the shallow ford. The shallows to the wide meadow. The meadow to the last long rise before the far place itself. Each new line {child_name} added was only a small, plain, entirely doable thing, and not a single one of them, taken by itself, was frightening in the least. And a genuinely strange thing began to happen as {child_name} drew, line by patient line: the wall came apart. What had been one solid, impossible mass just moments before was quietly becoming a row of small, ordinary, manageable steps, laid out one after another in their proper order, each one waiting calmly for its own turn to be walked.
+It decided. Out of the dark it came: a tiny glowing creature, smaller than a thumbprint, blinking a careful hello. It drifted nearer in slow loops, circled {child_name} once, twice, and then settled — of all places — beside the {object_motif}, where its blink slowed and deepened until the two glows rose and fell together, like two sleepers sharing one breath.
 
-{child_name} sat back on both heels and looked at the finished line of marks stretching all the way across the smoothed ground. 'It's a path,' {child_name} said, honestly surprised. 'When you put it that way, it's just a path.'
+'{refrain},' murmured {companion_name}, placing the last pebble back on a rebuilt pile.
 
-'A plan is a path,' said {companion_name}. 'That's all a plan has ever been, the big frightening thing broken down into steps small enough to actually take, written out in the order you mean to walk them. You can do the first small step, even when the whole thing still feels completely impossible. And here's the part people forget: the moment the first step is finished, you look down, and the second one is already lying there, waiting for you, just as small.'
+They sat with it a long, unhurried while. The moon climbed high, and the little creature dimmed to a shimmer and stayed, folded and content.
 
-{child_name} traced the whole line slowly with one finger, from this near side of {setting} all the way across to the far place at the end, and felt something in the chest quietly come loose, not because the journey had grown one bit shorter, it hadn't, but because it had stopped being a single terrible thing. It was many small things now, arranged in a tidy row. And {child_name} had done small things before, plenty of them.
+It would need a name — something that small, and that stubborn about stillness, deserved one. But naming was daytime work. So was the question of where it slept when the sun was up, and whether it would let {child_name} come and see. Tomorrow had room for all of that.
 
-'But I still can't do all of it tonight,' {child_name} said. And this time the words did not come out as despair at all, only as a plain and peaceful fact.
-
-'No,' {companion_name} agreed easily. 'And nobody ever asked you to. Tonight you do exactly one thing, the first step and no further. So tell me, what is it?'
-
-{child_name} looked down at the very beginning of the line, at that first short mark. The first step was not the whole journey. It was not even setting out. It was smaller and quieter than that. 'Pack the carry-bag,' {child_name} said. 'Just that. Get it ready and set it by the way out, so it's waiting there at first light.'
-
-'Then go and do that one thing,' said {companion_name}, 'and let tomorrow keep its own steps for tomorrow.'
-
-So {child_name} did. Not the journey, only the packing. {child_name} gathered together everything that first stretch of the path would need, folded it, checked it twice, and set the full bag down by the way out of {setting}, exactly where the morning light would be sure to find it. It took only a little while, in the end. And it was, {child_name} noticed with something close to a smile, the very same old trick from before, the oldest and steadiest one there is: not everything all at once, but one thing at a time, the next thing and only ever the next thing.
-
-When it was done, {child_name} stood a while in the settling dark and looked at the packed bag waiting there, one small step, finished and solid and real. The far place was still exactly as far as it had been. Nothing at all about the distance itself had changed. But {child_name} was no longer frozen in front of it, because {child_name} was no longer standing at the foot of an impossible wall. {child_name} was standing instead at the near end of a path, a real path, and the first stone of it had already been stepped.
-
-'That's the hardest one behind you now,' said {companion_name} quietly, from the shadows. 'The very first one. It is always, always the heaviest to lift.'
-
-Above {setting}, the dark had come on soft and full and complete, and the plan lay finished there on the ground, its long line of little marks holding the very last of the light. {child_name} held the {object_motif} loosely in one hand and felt the particular, settling calm of a thing at last begun, not finished, not solved, nothing so tidy as that, but no longer impossible. Simply begun. And the rest of the steps, every last one of them, could wait in peace for their own mornings.
-
-{child_name} would walk them, one at a time.
+The pool smoothed over. The night leaned close.
 
 {refrain}.`
   }
 },
-    audioTemplate: `The {object_motif} lit the edge of {setting}, and a small {hero} stared at something that felt much too big to do.
+    audioTemplate: `Just after moonrise, a tiny light blinked in {setting}. Blink. Blink. Pop! Then it was gone.
 
-"I cannot do all of that," said the {hero}, and sat right down.
+The {hero} had watched it from bed for seven nights, and tonight the {hero} wanted one thing with all their heart: to find that little light and say hello before the moon climbed too high. It only ever blinked while the moon was low.
 
-{companion_name} did not hurry. "You are right — you cannot do all of it at once," they said. "But you can do the first small step. Then the next."
+But tonight something odd was waiting. There was not one light. There were three. One blinked by the big smooth stone. One blinked out on the still pool. One blinked in the shadowy nook.
 
-Together they laid the steps out in order, like stones across a stream. First this. Then this. Then this.
+'Three!' said the {hero}. 'I will visit them all at once!'
 
-The {hero} remembered last time — one thing at a time — and smiled. A plan was just that, written as a path.
+Off the {hero} dashed toward the stone. Blink — the pool light flashed. The {hero} spun and rushed for the pool. Blink — the nook light flickered. The {hero} turned again, and again, faster and faster, until — bump! — the {hero} skidded right through the tidy pile of pebbles {companion_name} had spent all evening sorting, and stopped right where the chase began.
 
-So the {hero} took the first stone-step. Only that one. Then the second. The {object_motif} glowed a little warmer with each.
+All three lights went dark at once.
 
-Before long, the thing that felt too big was simply… done, one calm step after another.
+'I ran fast enough for three,' the {hero} puffed, 'and I said hello to none.'
 
-"The path was here the whole time," said {companion_name}. "We only had to lay it down."
+'Hmm,' said {companion_name}, calmly restacking pebbles. 'I only ever see it when I am busy watching one thing.'
+
+So the {hero} tried something new. The {hero} sat very still and watched only the pool. Not the stone. Not the nook. Just the pool.
+
+And the stillness showed a secret. Lean close and watch too. The pool light and the stone light blink at exactly the same moment. Can you see it too? Twins.
+
+'Oh,' whispered the {hero}. 'Those two are only reflections. There was one little light all along! One thing, then the next — watch one thing all the way, and it tells you everything.'
+
+The {hero} turned, gently now, to the shadowy nook. And out floated the real light: a tiny glowing creature, small as a thumbprint, blinking hello.
+
+The {hero} kept perfectly still. The little light drifted closer, circled once, twice, and settled beside the {object_motif}, blinking slower and slower until the two glows matched.
+
+'{refrain},' murmured {companion_name} softly.
+
+The moon climbed high. The little light dimmed to a sleepy shimmer. Tomorrow, perhaps, it would show the {hero} where it sleeps in the daytime. That secret could wait.
+
+Warm dark. Slow blinks.
 
 {refrain}.`,
-    scriptTemplate: `The {object_motif} lit the edge of {setting}, and {child_name} the {hero} stared at something that felt much too big to do.
+    scriptTemplate: `Just after moonrise, a tiny light blinked in {setting}. Blink. Blink. Pop! Then it was gone.
 
-"I cannot do all of that," said {child_name}, and sat right down.
+{child_name} the {hero} had watched it from bed for seven nights, and tonight {child_name} wanted one thing with all their heart: to find that little light and say hello before the moon climbed too high. It only ever blinked while the moon was low.
 
-{companion_name} did not hurry. "You are right — you cannot do all of it at once," they said. "But you can do the first small step, {child_name}. Then the next."
+But tonight something odd was waiting. There was not one light. There were three. One blinked by the big smooth stone. One blinked out on the still pool. One blinked in the shadowy nook.
 
-Together they laid the steps out in order, like stones across a stream. First this. Then this. Then this.
+'Three!' said {child_name}. 'I will visit them all at once!'
 
-{child_name} remembered last time — one thing at a time — and smiled. A plan was just that, written as a path.
+Off {child_name} dashed toward the stone. Blink — the pool light flashed. {child_name} spun and rushed for the pool. Blink — the nook light flickered. {child_name} turned again, and again, faster and faster, until — bump! — {child_name} skidded right through the tidy pile of pebbles {companion_name} had spent all evening sorting, and stopped right where the chase began.
 
-So {child_name} took the first stone-step. Only that one. Then the second. The {object_motif} glowed a little warmer with each.
+All three lights went dark at once.
 
-Before long, the thing that felt too big was simply… done, one calm step after another.
+'I ran fast enough for three,' {child_name} puffed, 'and I said hello to none.'
 
-"The path was here the whole time," said {companion_name}. "We only had to lay it down."
+'Hmm,' said {companion_name}, calmly restacking pebbles. 'I only ever see it when I am busy watching one thing.'
+
+So {child_name} tried something new. {child_name} sat very still and watched only the pool. Not the stone. Not the nook. Just the pool.
+
+And the stillness showed a secret. Lean close and watch too. The pool light and the stone light blink at exactly the same moment. Can you see it too? Twins.
+
+'Oh,' whispered {child_name}. 'Those two are only reflections. There was one little light all along! One thing, then the next — watch one thing all the way, and it tells you everything.'
+
+{child_name} turned, gently now, to the shadowy nook. And out floated the real light: a tiny glowing creature, small as a thumbprint, blinking hello.
+
+{child_name} kept perfectly still. The little light drifted closer, circled once, twice, and settled beside the {object_motif}, blinking slower and slower until the two glows matched.
+
+'{refrain},' murmured {companion_name} softly.
+
+The moon climbed high. The little light dimmed to a sleepy shimmer. Tomorrow, perhaps, it would show {child_name} where it sleeps in the daytime. That secret could wait.
+
+Warm dark. Slow blinks.
 
 {refrain}.`,
   },
 
   {
-    ordinal: 3, title: 'When the Mind Wanders',
-    concept: 'Noticing a distraction and gently coming back', callback: 'Doing one thing at a time (Level 1)', ageFloor: 4,
-    summary: "The hero keeps drifting away from what they meant to do. Their companion teaches them that wandering is normal — the skill is simply noticing, and gently returning, without being hard on yourself. It revisits Level 1's one-thing focus.",
-    teachingNote: 'Focus is not never getting distracted — it is noticing kindly when you drift, and choosing to come back.',
-    learningBeat: 'noticing, and coming back',
+    ordinal: 2, title: "The Stair Under the Moss",
+    concept: "Breaking a big goal into small, ordered steps", callback: "Doing one thing at a time (Level 1)", ageFloor: 4,
+    summary: "Once a season the sky above the high ridge blooms with slow, drifting stars — and tonight is the night. The hero tries to take the whole ridge in one giant rush and slides straight back down, until the tumble itself scrapes the moss off something flat and pale: the first stone of an old winding stair. A big goal, it turns out, was never one giant leap. It is small steps, laid in order, walked one at a time.",
+    teachingNote: "A plan turns an overwhelming goal into a series of small, doable steps — and the first small step is always within reach.",
+    learningBeat: "you can do the first small step",
     ageVariants: {
-  '3-4': { audioTemplate: `the {hero} lived in {setting}. Tonight the {hero} wanted to build one small tower. Just one tower. One block on one block.
+  '3-4': {
+    audioTemplate: `Tonight the sky over {setting} would bloom! Silver stars would drift down like petals. The best watching spot was the top of the big hill.
 
-One block. Then two. Then three.
+The {hero} wanted to be up there so much.
 
-But a bird went tweet up high. The {hero} looked up. The tower waited.
+The {hero} ran at the hill. One big go! Whoosh — slip — thump!
 
-Then a leaf blew by. The {hero} watched it go. The tower waited.
+'Again!' Run, slip, thump!
 
-Then a cloud went slow. The {hero} watched the cloud. The tower waited.
+'It is too big,' said the {hero}. 'I can't.'
 
-The {hero} felt a little sad. The blocks were still just three. So many things to look at. So hard to build.
+'Hmm,' said {companion_name}. 'Old paths whisper, one stone at a time.'
 
-{companion_name} came close and sat down in the soft grass. {companion_name} was calm and warm.
+Then the {hero} saw it. The slide had scraped away some moss. Look under the moss! Can you see it too? A little stone step!
 
-'Your mind went for a little walk,' said {companion_name}. 'That is okay. Every mind does that. The whole trick is noticing, and coming back.'
+Behind it, another step. And another! A secret stair, going up and up.
 
-The {hero} nodded and picked up the first block again. The grass was cool. The night was soft. Time to build, slow and easy.
+'The hill is too big,' said the {hero}. 'But you can do the first small step!'
 
-The {hero} took a slow breath, in and out. The {hero} found the {object_motif} and set it down by the blocks. Just to look at. Just to hold.
+Step one. Step two. Step three. The {object_motif} glowed to show the next stone. Step by step, all the way up!
 
-One thing at a time. Just the tower now.
+At the top, the sky bloomed. Stars drifted down, slow and soft.
 
-One block. A bird went tweet. The {hero} noticed. The {hero} came back. One block on top.
+'{refrain},' whispered {companion_name}.
 
-Two blocks. A leaf blew by. The {hero} noticed. The {hero} came back. Two blocks on top.
+The {hero} watched, warm and sleepy. One star. Two stars. Three.
 
-Three blocks. A cloud went slow. The {hero} noticed. The {hero} came back. Three blocks on top.
-
-No fuss. No sad. Just come back, and build.
-
-The tower grew tall and straight. The {hero} did not get cross. The {hero} just came back, again and again and again.
-
-Soon the tower was as tall as the {hero}'s knee. Then as tall as the {hero}'s tummy. Then as tall as the {hero}'s nose.
-
-'You did it,' said {companion_name} softly. 'You kept coming back. That is the whole thing.'
-
-The {hero} smiled a big soft smile. The moon was up now over {setting}. All was quiet and slow.
-
-The {hero} looked at the tall tower. The {hero} looked at the {object_motif}. One tower. One night. One quiet heart.
-
-The {hero} gave one big yawn. One block at a time. One breath at a time. Come back, come back, come back.
-
-{refrain}.`, scriptTemplate: `{child_name} lived in {setting}. Tonight {child_name} wanted to build one small tower. Just one tower. One block on one block.
-
-One block. Then two. Then three.
-
-But a bird went tweet up high. {child_name} looked up. The tower waited.
-
-Then a leaf blew by. {child_name} watched it go. The tower waited.
-
-Then a cloud went slow. {child_name} watched the cloud. The tower waited.
-
-{child_name} felt a little sad. The blocks were still just three. So many things to look at. So hard to build.
-
-{companion_name} came close and sat down in the soft grass. {companion_name} was calm and warm.
-
-'Your mind went for a little walk,' said {companion_name}. 'That is okay. Every mind does that. The whole trick is noticing, and coming back.'
-
-{child_name} nodded and picked up the first block again. The grass was cool. The night was soft. Time to build, slow and easy.
-
-{child_name} took a slow breath, in and out. {child_name} found the {object_motif} and set it down by the blocks. Just to look at. Just to hold.
-
-One thing at a time. Just the tower now.
-
-One block. A bird went tweet. {child_name} noticed. {child_name} came back. One block on top.
-
-Two blocks. A leaf blew by. {child_name} noticed. {child_name} came back. Two blocks on top.
-
-Three blocks. A cloud went slow. {child_name} noticed. {child_name} came back. Three blocks on top.
-
-No fuss. No sad. Just come back, and build.
-
-The tower grew tall and straight. {child_name} did not get cross. {child_name} just came back, again and again and again.
-
-Soon the tower was as tall as {child_name}'s knee. Then as tall as {child_name}'s tummy. Then as tall as {child_name}'s nose.
-
-'You did it,' said {companion_name} softly. 'You kept coming back. That is the whole thing.'
-
-{child_name} smiled a big soft smile. The moon was up now over {setting}. All was quiet and slow.
-
-{child_name} looked at the tall tower. {child_name} looked at the {object_motif}. One tower. One night. One quiet heart.
-
-{child_name} gave one big yawn. One block at a time. One breath at a time. Come back, come back, come back.
-
-{refrain}.` },
-  '5-6': { audioTemplate: `The {hero} had one job for the evening. Count the ten lanterns along the winding path of {setting} and hang each one on its hook so the way home would glow. Just that. One job, from the first lantern to the last.
-
-The {hero} lifted the first lantern from the basket and hung it. Then the second. Then the third. Easy. The light was warm and round.
-
-But somewhere off in the dark, a splash went plip. The {hero} turned to look. Was it a fish? A frog? Something bigger? The {hero} stood very still, waiting for the sound to come again. It did not come. And while the {hero} waited, the fourth lantern stayed cold in the basket.
-
-The {hero} shook it off and started again. The fourth lantern. The fifth. Then a thought floated up, bright and shiny: what if I built a boat tomorrow? A big one, with a striped flag and a proper sail? The {hero} was already deep in the daydream, picturing the flag snapping in the wind, when the basket tipped and two lanterns rolled away down the path.
-
-The {hero} chased them, set them right, and sat down in the grass with a sigh. The job felt too big now. Every little thing, every sound and every idea, kept tugging the {hero} away from it.
-
-{companion_name} padded over and settled beside the basket, calm as still water, not worried in the least.
-
-'You keep leaving without meaning to,' said {companion_name}. 'A sound, a daydream, and off you go. That is not you being bad at this. That is just what a mind does, it wanders. The whole skill is noticing, and coming back.'
-
-The {hero} frowned. 'But I keep losing my place.'
-
-'Then find it again,' said {companion_name}. 'Gently. No telling yourself off. You notice you have drifted, and you turn back to the one thing. That is the trick, over and over, as many times as it takes.'
-
-{companion_name} nudged the {object_motif} across the grass. 'Keep this beside you. When you feel yourself drift, touch it, and let it mean one thing: back to the lanterns.'
-
-The {hero} picked up the {object_motif} and held it a moment, feeling its weight. Then the {hero} reached for the next lantern.
-
-The sixth lantern went up. The seventh. Off in the dark, the splash went plip again, louder this time. The {hero} felt the pull to turn toward it, and this time noticed the pull as it happened. Just a sound. Back to the lanterns. The {hero} came back, and up went the eighth.
-
-The shiny thought about boats came drifting in again, sail and all. The {hero} watched it float past and, this time, did not climb aboard. Back to the lanterns. Up went the ninth.
-
-It was not that the sounds stopped, or the thoughts stopped. They kept right on coming. The {hero} simply stopped following them all the way out into the dark. Notice. Come back. Notice. Come back. One lantern at a time, exactly the way the {hero} had learned to do one thing at a time.
-
-Up went the tenth lantern, snug on its hook.
-
-The whole path was glowing now, a curving ribbon of soft light threading through {setting}. The {hero} walked back along all ten lanterns, counting each one, and let out a long, slow breath.
-
-'You did every single one,' said {companion_name}.
-
-'I kept wandering off,' said the {hero}.
-
-'You did,' said {companion_name}. 'And you kept coming home to it. That is what finishing really looks like.'
-
-The {hero} set the {object_motif} down beneath the last lantern. The splashes and the daydreams could come and go as they pleased now. The {hero} knew the way back.
-
-Above the path, the first stars blinked awake one by one, and the lanterns swayed a little in the warm, moving air.
-
-The {hero} yawned, tired in the good way, the way you feel after one whole thing carried all the way to its end.
-
-{refrain}.`, scriptTemplate: `{child_name} had one job for the evening. Count the ten lanterns along the winding path of {setting} and hang each one on its hook so the way home would glow. Just that. One job, from the first lantern to the last.
-
-{child_name} lifted the first lantern from the basket and hung it. Then the second. Then the third. Easy. The light was warm and round.
-
-But somewhere off in the dark, a splash went plip. {child_name} turned to look. Was it a fish? A frog? Something bigger? {child_name} stood very still, waiting for the sound to come again. It did not come. And while {child_name} waited, the fourth lantern stayed cold in the basket.
-
-{child_name} shook it off and started again. The fourth lantern. The fifth. Then a thought floated up, bright and shiny: what if I built a boat tomorrow? A big one, with a striped flag and a proper sail? {child_name} was already deep in the daydream, picturing the flag snapping in the wind, when the basket tipped and two lanterns rolled away down the path.
-
-{child_name} chased them, set them right, and sat down in the grass with a sigh. The job felt too big now. Every little thing, every sound and every idea, kept tugging {child_name} away from it.
-
-{companion_name} padded over and settled beside the basket, calm as still water, not worried in the least.
-
-'You keep leaving without meaning to,' said {companion_name}. 'A sound, a daydream, and off you go. That is not you being bad at this. That is just what a mind does, it wanders. The whole skill is noticing, and coming back.'
-
-{child_name} frowned. 'But I keep losing my place.'
-
-'Then find it again,' said {companion_name}. 'Gently. No telling yourself off. You notice you have drifted, and you turn back to the one thing. That is the trick, over and over, as many times as it takes.'
-
-{companion_name} nudged the {object_motif} across the grass. 'Keep this beside you. When you feel yourself drift, touch it, and let it mean one thing: back to the lanterns.'
-
-{child_name} picked up the {object_motif} and held it a moment, feeling its weight. Then {child_name} reached for the next lantern.
-
-The sixth lantern went up. The seventh. Off in the dark, the splash went plip again, louder this time. {child_name} felt the pull to turn toward it, and this time noticed the pull as it happened. Just a sound. Back to the lanterns. {child_name} came back, and up went the eighth.
-
-The shiny thought about boats came drifting in again, sail and all. {child_name} watched it float past and, this time, did not climb aboard. Back to the lanterns. Up went the ninth.
-
-It was not that the sounds stopped, or the thoughts stopped. They kept right on coming. {child_name} simply stopped following them all the way out into the dark. Notice. Come back. Notice. Come back. One lantern at a time, exactly the way {child_name} had learned to do one thing at a time.
-
-Up went the tenth lantern, snug on its hook.
-
-The whole path was glowing now, a curving ribbon of soft light threading through {setting}. {child_name} walked back along all ten lanterns, counting each one, and let out a long, slow breath.
-
-'You did every single one,' said {companion_name}.
-
-'I kept wandering off,' said {child_name}.
-
-'You did,' said {companion_name}. 'And you kept coming home to it. That is what finishing really looks like.'
-
-{child_name} set the {object_motif} down beneath the last lantern. The splashes and the daydreams could come and go as they pleased now. {child_name} knew the way back.
-
-Above the path, the first stars blinked awake one by one, and the lanterns swayed a little in the warm, moving air.
-
-{child_name} yawned, tired in the good way, the way you feel after one whole thing carried all the way to its end.
-
-{refrain}.` },
-  '7-8': { audioTemplate: `The {hero} had promised to finish the map before nightfall. It was a real map of {setting}, every path, every turn, every hidden hollow, and the {hero} had been drawing it patiently for three whole days. Now only the last corner was left, a small square of blank in the bottom edge.
-
-The {hero} spread the map flat on the rock and dipped the pen. One corner. That was all that stood between the {hero} and done.
-
-The first few lines went well. A path here. A curve there. But then, from across the clearing, came the sound of the other young ones playing a chasing game, laughing, thumping feet, shrieks of almost-caught. The {hero}'s pen slowed. The {hero}'s eyes lifted from the page. Who was winning? Who was it? The {hero} watched for a long moment, and the ink dried on the nib in the air.
-
-The {hero} caught it and looked back down. Right. The corner. The {hero} drew one more path, and then wondered, out of nowhere, whether there might be a faster way to draw maps altogether. A cleverer way. Maybe with little carved stamps you could press onto the page. The {hero} could invent them. And soon the {hero} was not drawing the map at all but sketching stamp after stamp in the margin, lost in the plan.
-
-When the {hero} looked up again, the sky had gone the deep colour of a plum. The corner was still not finished. The margin was crowded with doodles.
-
-The {hero} set the pen down and pressed both hands over both eyes. 'I am never going to finish,' the {hero} muttered. 'Something always takes me away.'
-
-'Something always will,' said a voice.
-
-{companion_name} was sitting on the flat rock nearby, still and easy, watching without a trace of fuss.
-
-'You have drifted off, what, four times now?' said {companion_name}. 'A game. An idea. A better idea. That is not a flaw in you. Every mind on this shore does exactly the same thing. It wanders off.'
-
-'Mine wanders more than most,' said the {hero} glumly.
-
-'Maybe it does,' said {companion_name}. 'It matters less than you think. Here is the part that actually matters. The moment you notice you have drifted, you are not late, and you are not lost. You are standing in the one spot where you can begin again. The whole skill is noticing, and coming back. There is nothing fancier to it than that.'
-
-The {hero} looked at the map, then at the tangle of doodles. 'I keep being so annoyed at myself.'
-
-'That is the part you are allowed to put down,' said {companion_name}. 'The wandering is going to happen no matter what. Being cruel about it afterward just builds a second problem on top of the first. So notice, and turn back, kindly. Like calling a friend in for supper, not scolding them for being out in the yard.'
-
-{companion_name} reached out and tapped the {object_motif} where it sat at the edge of the map. 'Give yourself one small anchor. Each time your eyes come back and land on this, let it say the same quiet thing: one thing, the corner. Remember how you learned to do one thing at a time? This is that, again. Just the very next line.'
-
-The {hero} took a slow breath and set the {object_motif} at the top of the page, right where a returning eye would find it. One thing. The corner.
-
-The chasing game broke out again behind the {hero}, louder than before. The laughter pulled, and the {hero} felt it pull, and this time noticed the pulling in the very moment it began. Not winning, not losing. Just a sound in the dark. Back to the corner. The {hero} drew the next path.
-
-The shiny idea about stamps rose up again. The {hero} watched it climb, bright and tempting, and let it drift on by without chasing after it. Back to the corner. Another path, another careful turn.
-
-A moth blundered softly against the lantern beside the map, and the {hero}'s gaze lifted and followed it up into the dark before the {hero} had even decided to look. Then came the catch, the small quiet noticing, the same as before. Only a moth. Nothing to solve. Back to the corner, where the work was waiting patiently the whole time. The {hero} inked another path, slow and steady, then found the next.
-
-It was a strange thing to feel. The distractions did not stop arriving. What changed was that the {hero} stopped riding each one all the way out to sea. Notice. Come back. Notice. Come back. Line by patient line, the last corner of {setting} filled itself in, the split path, the round hollow, the little bridge over the stream.
-
-The {hero} inked the final mark and lifted the pen clear.
-
-The map was done. All of it. Every path of {setting}, corner to corner, sat finished on the page.
-
-For a moment the {hero} just sat with the finished map, watching the last lines dry, feeling how different this quiet was from the restless, itchy quiet of before. Nothing was tugging anymore. There was only the map, and the {hero}, and the settling dark all around.
-
-'Finished,' the {hero} breathed, hardly daring to believe it.
-
-'Finished,' agreed {companion_name}. 'And you wandered the whole way through it. You simply kept coming home. That is what finishing really is, not never leaving, but always turning back.'
-
-The {hero} rolled the map with care and tucked the {object_motif} beside it. Overhead, the last light drained from the sky, and the first cool breath of night moved across {setting}.
-
-The {hero} felt that particular good tiredness that comes from beginning a thing and staying with it, wander after wander, all the way to the end.
-
-{refrain}.`, scriptTemplate: `{child_name} had promised to finish the map before nightfall. It was a real map of {setting}, every path, every turn, every hidden hollow, and {child_name} had been drawing it patiently for three whole days. Now only the last corner was left, a small square of blank in the bottom edge.
-
-{child_name} spread the map flat on the rock and dipped the pen. One corner. That was all that stood between {child_name} and done.
-
-The first few lines went well. A path here. A curve there. But then, from across the clearing, came the sound of the other young ones playing a chasing game, laughing, thumping feet, shrieks of almost-caught. {child_name}'s pen slowed. {child_name}'s eyes lifted from the page. Who was winning? Who was it? {child_name} watched for a long moment, and the ink dried on the nib in the air.
-
-{child_name} caught it and looked back down. Right. The corner. {child_name} drew one more path, and then wondered, out of nowhere, whether there might be a faster way to draw maps altogether. A cleverer way. Maybe with little carved stamps you could press onto the page. {child_name} could invent them. And soon {child_name} was not drawing the map at all but sketching stamp after stamp in the margin, lost in the plan.
-
-When {child_name} looked up again, the sky had gone the deep colour of a plum. The corner was still not finished. The margin was crowded with doodles.
-
-{child_name} set the pen down and pressed both hands over both eyes. 'I am never going to finish,' {child_name} muttered. 'Something always takes me away.'
-
-'Something always will,' said a voice.
-
-{companion_name} was sitting on the flat rock nearby, still and easy, watching without a trace of fuss.
-
-'You have drifted off, what, four times now?' said {companion_name}. 'A game. An idea. A better idea. That is not a flaw in you. Every mind on this shore does exactly the same thing. It wanders off.'
-
-'Mine wanders more than most,' said {child_name} glumly.
-
-'Maybe it does,' said {companion_name}. 'It matters less than you think. Here is the part that actually matters. The moment you notice you have drifted, you are not late, and you are not lost. You are standing in the one spot where you can begin again. The whole skill is noticing, and coming back. There is nothing fancier to it than that.'
-
-{child_name} looked at the map, then at the tangle of doodles. 'I keep being so annoyed at myself.'
-
-'That is the part you are allowed to put down,' said {companion_name}. 'The wandering is going to happen no matter what. Being cruel about it afterward just builds a second problem on top of the first. So notice, and turn back, kindly. Like calling a friend in for supper, not scolding them for being out in the yard.'
-
-{companion_name} reached out and tapped the {object_motif} where it sat at the edge of the map. 'Give yourself one small anchor. Each time your eyes come back and land on this, let it say the same quiet thing: one thing, the corner. Remember how you learned to do one thing at a time? This is that, again. Just the very next line.'
-
-{child_name} took a slow breath and set the {object_motif} at the top of the page, right where a returning eye would find it. One thing. The corner.
-
-The chasing game broke out again behind {child_name}, louder than before. The laughter pulled, and {child_name} felt it pull, and this time noticed the pulling in the very moment it began. Not winning, not losing. Just a sound in the dark. Back to the corner. {child_name} drew the next path.
-
-The shiny idea about stamps rose up again. {child_name} watched it climb, bright and tempting, and let it drift on by without chasing after it. Back to the corner. Another path, another careful turn.
-
-A moth blundered softly against the lantern beside the map, and {child_name}'s gaze lifted and followed it up into the dark before {child_name} had even decided to look. Then came the catch, the small quiet noticing, the same as before. Only a moth. Nothing to solve. Back to the corner, where the work was waiting patiently the whole time. {child_name} inked another path, slow and steady, then found the next.
-
-It was a strange thing to feel. The distractions did not stop arriving. What changed was that {child_name} stopped riding each one all the way out to sea. Notice. Come back. Notice. Come back. Line by patient line, the last corner of {setting} filled itself in, the split path, the round hollow, the little bridge over the stream.
-
-{child_name} inked the final mark and lifted the pen clear.
-
-The map was done. All of it. Every path of {setting}, corner to corner, sat finished on the page.
-
-For a moment {child_name} just sat with the finished map, watching the last lines dry, feeling how different this quiet was from the restless, itchy quiet of before. Nothing was tugging anymore. There was only the map, and {child_name}, and the settling dark all around.
-
-'Finished,' {child_name} breathed, hardly daring to believe it.
-
-'Finished,' agreed {companion_name}. 'And you wandered the whole way through it. You simply kept coming home. That is what finishing really is, not never leaving, but always turning back.'
-
-{child_name} rolled the map with care and tucked the {object_motif} beside it. Overhead, the last light drained from the sky, and the first cool breath of night moved across {setting}.
-
-{child_name} felt that particular good tiredness that comes from beginning a thing and staying with it, wander after wander, all the way to the end.
-
-{refrain}.` },
-  '9-11': { audioTemplate: `The {hero} had set aside the whole evening for one task, and had been quietly proud of that decision for almost ten minutes.
-
-The task was simple to describe and, it turned out, not remotely simple to do: read the old tide-chart of {setting} from beginning to end and copy the important marks into a book, so that the younger ones could learn the safe crossings. The {hero} had meant to do it for weeks. Tonight there were no chores left, no errands, no good reasons to put it off. There was only the chart, the blank book, a steady candle, and a long quiet stretch of time that belonged to no one else.
-
-The {hero} read the first line and copied it out neatly. Then the second. It was going well, well enough that some restless corner of the {hero}'s mind, finding nothing to complain about, quietly went looking for somewhere more interesting to be.
-
-It found a sound first. Water moving somewhere out in the dark of {setting}, a low, rhythmic wash that was almost certainly just the tide, but might, if a person listened hard enough, be something stranger and better. The {hero} listened hard enough. For a whole minute the {hero} was not reading the chart at all but building an elaborate story about what the sound might be, who might be out there, what it would mean, and only noticed the drift when a drop of ink swelled at the nib and fell and spread across the page.
-
-Back to the chart. The {hero} blotted the small dark star of ink and found the line again.
-
-The next escape was quieter, and far harder to catch, because it did not come from outside at all. It came from within, wearing the friendly disguise of a good idea. What if, the {hero} thought, this book would be so much better with little drawings beside each crossing? Pictures the youngest ones could recognise before they could even read. Yes, and colours, and a key at the front, and a proper stitched cover. Within moments the {hero} was no longer copying anything but designing a whole beautiful book that did not exist, while the real one lay open and unfinished under both hands.
-
-When the {hero} surfaced this time, the candle had burned down a clear, accusing notch. A hot, familiar frustration climbed up the {hero}'s neck. Why was this so hard? Other people, the {hero} felt fairly sure, simply sat down and did the thing in front of them, without their own thoughts mounting a rescue every few minutes. The {hero} pressed the heels of both hands hard into both eyes and sat there feeling like exactly the sort of person who could not be trusted with a single quiet task.
-
-'That sigh sounded a great deal like giving up,' said {companion_name}, who had been curled so long and so still on the windowsill that the {hero} had genuinely forgotten anyone else was in the room.
-
-'I cannot stay with it,' said the {hero}. 'And I mean it, I truly want to. I sit down, I honestly want to do it, and then I look up and I have been gone for ages, somewhere else entirely. Something always comes along and takes me.'
-
-{companion_name} stretched, unhurried, and considered the {hero} without the smallest flicker of alarm. 'Let me ask you something. When you drifted just now, the sound, and then the drawings, how did you find out you had drifted at all?'
-
-The {hero} thought about it, and found the answer harder to explain than expected. 'I do not really know. I just, noticed. One moment I was gone, and the next I was back, and I could see the place I had left.'
-
-'That noticing,' said {companion_name}, 'is the entire thing. That is not the moment you failed at the task. That is the exact moment the skill actually happens. Every mind wanders, yours, mine, every mind that has ever tried to sit still and hold to one thing. The wandering was never the problem to solve. The only move there has ever been is noticing, and coming back. Quietly. That is the whole of it.'
-
-'But I have to do it a hundred times a night,' said the {hero}.
-
-'Then you come back a hundred times,' said {companion_name}, as though this were the most ordinary thing in the world. 'A mind that comes back a hundred times is not a broken mind that keeps failing. It is a person doing the real work of paying attention, which was never one enormous act of holding on. It is a thousand small, ordinary returns, one after another.'
-
-The {hero} sat with that a while. Then, more quietly: 'The worst part is being cross at myself every single time it happens.'
-
-'Ah. That part you can set down entirely,' said {companion_name}, gentler now. 'The wandering will happen whether or not you are kind about it, so the crossness changes nothing except to lay a second weight on top of the first. When you catch yourself gone, you do not need a lecture, and you do not need to prove anything. You only need to turn back, the way you would wave in a friend who had wandered off down the beach. No scolding. Just, there you are. Come on back.'
-
-{companion_name} looked toward the {object_motif} resting at the edge of the desk. 'And pick one small thing to come back to. Not the whole finished book. Not the beautiful thing you can already see in your head. Just the next line of the chart. One thing at a time, the way you already know how to do. Let that single line be the whole of the horizon for now.'
-
-The {hero} breathed out slowly and moved the {object_motif} to the top of the page, to the very spot where an eye returning from a wander would fall on it first. One line. Only ever the next line.
-
-The tide kept washing away in the dark, offering up its story again, patient and endless. The {hero} felt the old invitation to follow it out, and this time caught the pull while it was still only a pull, before it could become a whole journey. Not a mystery. Just water. Back to the chart. The next line went into the book in careful ink.
-
-The idea about drawings came drifting up once more, bright and full of promise, and this time the {hero} watched it come, felt honestly how much a part of them still wanted to chase it, and let it pass by uncaught, the way you can let a wave lift you and set you gently down again without letting it carry you off your feet. Back to the chart. Another line. Another safe crossing copied down.
-
-The interruptions did not stop; that was the quiet revelation of the whole evening. The sounds still came. The shiny ideas still came, as bright as ever. What had changed was only this: the {hero} no longer rode each one all the way out to the horizon before remembering to turn around. The gap between drifting and noticing grew shorter and shorter, and the turning-back grew calmer, easier, until it began to feel almost restful, a small, steady rhythm of leaving and returning, leaving and returning, line after line, all the way down the length of the old chart of {setting}.
-
-The {hero} copied the final crossing and set the pen down.
-
-The book was finished. Every safe path marked, corner to corner, clear enough for the smallest and newest crosser to follow in the dark.
-
-'Done,' said the {hero}, and was surprised to find the feeling was not triumph so much as a deep, level calm.
-
-'Done,' said {companion_name}, 'and you wandered off more times tonight than either of us could hope to count. You simply came back even more times than you wandered. That is the whole of it, in the end. Not a mind that never leaves, there is no such mind anywhere. Only a mind that keeps choosing to return.'
-
-The {hero} closed the book over the {object_motif} to hold the place, and looked out at {setting}, where the very tide the {hero} had spent all evening not-following went on moving quietly through the dark, vast and calm and entirely unbothered.
-
-There was a particular kind of tiredness in staying with one thing all the way to its end, and it sat heavier and far better than the thin, scattered tiredness of an evening spent chasing everything at once.
-
-{refrain}.`, scriptTemplate: `{child_name} had set aside the whole evening for one task, and had been quietly proud of that decision for almost ten minutes.
-
-The task was simple to describe and, it turned out, not remotely simple to do: read the old tide-chart of {setting} from beginning to end and copy the important marks into a book, so that the younger ones could learn the safe crossings. {child_name} had meant to do it for weeks. Tonight there were no chores left, no errands, no good reasons to put it off. There was only the chart, the blank book, a steady candle, and a long quiet stretch of time that belonged to no one else.
-
-{child_name} read the first line and copied it out neatly. Then the second. It was going well, well enough that some restless corner of {child_name}'s mind, finding nothing to complain about, quietly went looking for somewhere more interesting to be.
-
-It found a sound first. Water moving somewhere out in the dark of {setting}, a low, rhythmic wash that was almost certainly just the tide, but might, if a person listened hard enough, be something stranger and better. {child_name} listened hard enough. For a whole minute {child_name} was not reading the chart at all but building an elaborate story about what the sound might be, who might be out there, what it would mean, and only noticed the drift when a drop of ink swelled at the nib and fell and spread across the page.
-
-Back to the chart. {child_name} blotted the small dark star of ink and found the line again.
-
-The next escape was quieter, and far harder to catch, because it did not come from outside at all. It came from within, wearing the friendly disguise of a good idea. What if, {child_name} thought, this book would be so much better with little drawings beside each crossing? Pictures the youngest ones could recognise before they could even read. Yes, and colours, and a key at the front, and a proper stitched cover. Within moments {child_name} was no longer copying anything but designing a whole beautiful book that did not exist, while the real one lay open and unfinished under both hands.
-
-When {child_name} surfaced this time, the candle had burned down a clear, accusing notch. A hot, familiar frustration climbed up {child_name}'s neck. Why was this so hard? Other people, {child_name} felt fairly sure, simply sat down and did the thing in front of them, without their own thoughts mounting a rescue every few minutes. {child_name} pressed the heels of both hands hard into both eyes and sat there feeling like exactly the sort of person who could not be trusted with a single quiet task.
-
-'That sigh sounded a great deal like giving up,' said {companion_name}, who had been curled so long and so still on the windowsill that {child_name} had genuinely forgotten anyone else was in the room.
-
-'I cannot stay with it,' said {child_name}. 'And I mean it, I truly want to. I sit down, I honestly want to do it, and then I look up and I have been gone for ages, somewhere else entirely. Something always comes along and takes me.'
-
-{companion_name} stretched, unhurried, and considered {child_name} without the smallest flicker of alarm. 'Let me ask you something. When you drifted just now, the sound, and then the drawings, how did you find out you had drifted at all?'
-
-{child_name} thought about it, and found the answer harder to explain than expected. 'I do not really know. I just, noticed. One moment I was gone, and the next I was back, and I could see the place I had left.'
-
-'That noticing,' said {companion_name}, 'is the entire thing. That is not the moment you failed at the task. That is the exact moment the skill actually happens. Every mind wanders, yours, mine, every mind that has ever tried to sit still and hold to one thing. The wandering was never the problem to solve. The only move there has ever been is noticing, and coming back. Quietly. That is the whole of it.'
-
-'But I have to do it a hundred times a night,' said {child_name}.
-
-'Then you come back a hundred times,' said {companion_name}, as though this were the most ordinary thing in the world. 'A mind that comes back a hundred times is not a broken mind that keeps failing. It is a person doing the real work of paying attention, which was never one enormous act of holding on. It is a thousand small, ordinary returns, one after another.'
-
-{child_name} sat with that a while. Then, more quietly: 'The worst part is being cross at myself every single time it happens.'
-
-'Ah. That part you can set down entirely,' said {companion_name}, gentler now. 'The wandering will happen whether or not you are kind about it, so the crossness changes nothing except to lay a second weight on top of the first. When you catch yourself gone, you do not need a lecture, and you do not need to prove anything. You only need to turn back, the way you would wave in a friend who had wandered off down the beach. No scolding. Just, there you are. Come on back.'
-
-{companion_name} looked toward the {object_motif} resting at the edge of the desk. 'And pick one small thing to come back to. Not the whole finished book. Not the beautiful thing you can already see in your head. Just the next line of the chart. One thing at a time, the way you already know how to do. Let that single line be the whole of the horizon for now.'
-
-{child_name} breathed out slowly and moved the {object_motif} to the top of the page, to the very spot where an eye returning from a wander would fall on it first. One line. Only ever the next line.
-
-The tide kept washing away in the dark, offering up its story again, patient and endless. {child_name} felt the old invitation to follow it out, and this time caught the pull while it was still only a pull, before it could become a whole journey. Not a mystery. Just water. Back to the chart. The next line went into the book in careful ink.
-
-The idea about drawings came drifting up once more, bright and full of promise, and this time {child_name} watched it come, felt honestly how much a part of them still wanted to chase it, and let it pass by uncaught, the way you can let a wave lift you and set you gently down again without letting it carry you off your feet. Back to the chart. Another line. Another safe crossing copied down.
-
-The interruptions did not stop; that was the quiet revelation of the whole evening. The sounds still came. The shiny ideas still came, as bright as ever. What had changed was only this: {child_name} no longer rode each one all the way out to the horizon before remembering to turn around. The gap between drifting and noticing grew shorter and shorter, and the turning-back grew calmer, easier, until it began to feel almost restful, a small, steady rhythm of leaving and returning, leaving and returning, line after line, all the way down the length of the old chart of {setting}.
-
-{child_name} copied the final crossing and set the pen down.
-
-The book was finished. Every safe path marked, corner to corner, clear enough for the smallest and newest crosser to follow in the dark.
-
-'Done,' said {child_name}, and was surprised to find the feeling was not triumph so much as a deep, level calm.
-
-'Done,' said {companion_name}, 'and you wandered off more times tonight than either of us could hope to count. You simply came back even more times than you wandered. That is the whole of it, in the end. Not a mind that never leaves, there is no such mind anywhere. Only a mind that keeps choosing to return.'
-
-{child_name} closed the book over the {object_motif} to hold the place, and looked out at {setting}, where the very tide {child_name} had spent all evening not-following went on moving quietly through the dark, vast and calm and entirely unbothered.
-
-There was a particular kind of tiredness in staying with one thing all the way to its end, and it sat heavier and far better than the thin, scattered tiredness of an evening spent chasing everything at once.
-
-{refrain}.` },
-},
-    audioTemplate: `The {hero} sat in {setting} with the {object_motif} glowing, meaning to do just one thing.
-
-But a sound floated by, and the {hero}'s mind floated after it. Then a thought drifted past, and off the {hero} went again.
-
-"My mind keeps wandering," the {hero} said, a little frustrated.
-
-{companion_name} chuckled, soft and kind. "Everyone's mind wanders — even mine. That is not the mistake. The skill is noticing, and coming back. Gently. No scolding."
-
-So the next time the {hero} drifted, they simply noticed. "Ah — wandering," they said, and came back to the one thing. Then drifted, noticed, and came back again.
-
-Each time was easier, like a path worn smooth. The {object_motif} held its steady light, patient as ever.
-
-"I do not have to be perfect," said the {hero}. "I just have to come back."
-
-"That is the whole of it," said {companion_name}.
+Time to rest. Step by step, back down. Slow and small.
 
 {refrain}.`,
-    scriptTemplate: `{child_name} the {hero} sat in {setting} with the {object_motif} glowing, meaning to do just one thing.
+    scriptTemplate: `Tonight the sky over {setting} would bloom! Silver stars would drift down like petals. The best watching spot was the top of the big hill.
 
-But a sound floated by, and {child_name}'s mind floated after it. Then a thought drifted past, and off {child_name} went again.
+{child_name} the {hero} wanted to be up there so much.
 
-"My mind keeps wandering," {child_name} said, a little frustrated.
+{child_name} ran at the hill. One big go! Whoosh — slip — thump!
 
-{companion_name} chuckled, soft and kind. "Everyone's mind wanders — even mine. That is not the mistake. The skill is noticing, and coming back. Gently. No scolding."
+'Again!' Run, slip, thump!
 
-So the next time {child_name} drifted, they simply noticed. "Ah — wandering," {child_name} said, and came back to the one thing. Then drifted, noticed, and came back again.
+'It is too big,' said {child_name}. 'I can't.'
 
-Each time was easier, like a path worn smooth. The {object_motif} held its steady light, patient as ever.
+'Hmm,' said {companion_name}. 'Old paths whisper, one stone at a time.'
 
-"I do not have to be perfect," said {child_name}. "I just have to come back."
+Then {child_name} saw it. The slide had scraped away some moss. Look under the moss! Can you see it too? A little stone step!
 
-"That is the whole of it," said {companion_name}.
+Behind it, another step. And another! A secret stair, going up and up.
+
+'The hill is too big,' said {child_name}. 'But you can do the first small step!'
+
+Step one. Step two. Step three. The {object_motif} glowed to show the next stone. Step by step, all the way up!
+
+At the top, the sky bloomed. Stars drifted down, slow and soft.
+
+'{refrain},' whispered {companion_name}.
+
+{child_name} watched, warm and sleepy. One star. Two stars. Three.
+
+Time to rest. Step by step, back down. Slow and small.
+
+{refrain}.`
+  },
+  '5-6': {
+    audioTemplate: `Tonight, just once in the whole season, the sky above {setting} would bloom. Slow silver stars would drift down like petals, and the best place to watch was the top of the high ridge.
+
+The {hero} wanted to be up there more than anything. But the ridge was tall. Very tall. And at the bottom, oddly, a little trail of pale pebbles wandered off sideways — away from the top. Who would lay a trail that went the wrong way?
+
+'No time for wrong-way pebbles,' said the {hero}. 'I will take the whole ridge in one big go!'
+
+The {hero} backed up, ran, and charged straight up the slope. Halfway, the ground turned slippery — and down the {hero} slid, all the way to the bottom. Thump.
+
+'Again!' Faster this time. Thump.
+
+The {hero} lay in the moss and groaned. 'The top is too far. It is just too big.'
+
+'Hmm,' said {companion_name}, tucking one pale pebble away for their collection. 'Old paths never shout. They whisper, one stone at a time.'
+
+The {hero} sat up — and stopped. The big slide had scraped a stripe of moss away. Look at what is peeking out. Something flat and pale, with one straight edge. Can you see it too? A step.
+
+A stone step! And past it, under the moss, another. The steps curved sideways around the ridge — the very way the pebble trail pointed. The wrong way was the way up.
+
+'I kept trying to swallow the ridge in one gulp,' whispered the {hero}. 'But nobody has to. You can do the first small step. Anyone can do one stone.'
+
+So the {hero} stepped onto the first stone. The {object_motif} glowed just far enough to show the next one. One thing, then the next, like watching one light at a time. Stone by stone, around and up, the {hero} climbed the whole ridge without a single slip.
+
+At the top, the sky bloomed. Stars drifted down as slow as petals.
+
+'{refrain},' breathed {companion_name}.
+
+They watched until the last star settled. Far across the valley, another faint line of pale stones climbed another hill. Another stair. For another night.
+
+Down the steps they went, one by one, slower and slower.
+
+Warm moss. Quiet sky.
+
+{refrain}.`,
+    scriptTemplate: `Tonight, just once in the whole season, the sky above {setting} would bloom. Slow silver stars would drift down like petals, and the best place to watch was the top of the high ridge.
+
+{child_name} the {hero} wanted to be up there more than anything. But the ridge was tall. Very tall. And at the bottom, oddly, a little trail of pale pebbles wandered off sideways — away from the top. Who would lay a trail that went the wrong way?
+
+'No time for wrong-way pebbles,' said {child_name}. 'I will take the whole ridge in one big go!'
+
+{child_name} backed up, ran, and charged straight up the slope. Halfway, the ground turned slippery — and down {child_name} slid, all the way to the bottom. Thump.
+
+'Again!' Faster this time. Thump.
+
+{child_name} lay in the moss and groaned. 'The top is too far. It is just too big.'
+
+'Hmm,' said {companion_name}, tucking one pale pebble away for their collection. 'Old paths never shout. They whisper, one stone at a time.'
+
+{child_name} sat up — and stopped. The big slide had scraped a stripe of moss away. Look at what is peeking out. Something flat and pale, with one straight edge. Can you see it too? A step.
+
+A stone step! And past it, under the moss, another. The steps curved sideways around the ridge — the very way the pebble trail pointed. The wrong way was the way up.
+
+'I kept trying to swallow the ridge in one gulp,' whispered {child_name}. 'But nobody has to. You can do the first small step. Anyone can do one stone.'
+
+So {child_name} stepped onto the first stone. The {object_motif} glowed just far enough to show the next one. One thing, then the next, like watching one light at a time. Stone by stone, around and up, {child_name} climbed the whole ridge without a single slip.
+
+At the top, the sky bloomed. Stars drifted down as slow as petals.
+
+'{refrain},' breathed {companion_name}.
+
+They watched until the last star settled. Far across the valley, another faint line of pale stones climbed another hill. Another stair. For another night.
+
+Down the steps they went, one by one, slower and slower.
+
+Warm moss. Quiet sky.
+
+{refrain}.`
+  },
+  '7-8': {
+    audioTemplate: `Once a season, only once, the sky above {setting} bloomed. Slow silver stars came drifting down like petals for one hour after moonrise, and the finest watching place was the top of the high ridge, where the whole sky fit in one look.
+
+Tonight was the night, and the {hero} wanted the top of that ridge the way you want a thing you have waited a whole season for. Plan: get up there before the first star fell.
+
+Two odd things stood at the bottom of the ridge. The first was the ridge itself, taller than the {hero} had remembered, its slope smooth and mossy and steep. The second was a little trail of pale pebbles that somebody, sometime, had laid in a neat line — pointing sideways, around the hill, away from the top. Who lays a trail that runs the wrong way?
+
+'No time for wrong-way pebbles,' the {hero} decided. 'The top is up, so up I go. The whole ridge, one big go.'
+
+The {hero} backed up a good long way, ran, and charged the slope. It went beautifully for eleven strides. Then the moss got slick, the climb got steep, and the {hero} slid the whole way back down, landing with a soft, mossy thump.
+
+'Again. Faster.' Fourteen strides this time, and a longer slide back. Thump.
+
+The third try was the clever one, a great zigzag charge, which turned somehow into a great zigzag tangle, and ended in the same mossy heap as tries one and two. The ridge had not moved.
+
+The {hero} lay flat in the moss and stared up at it. 'It is too big,' the {hero} said. 'It is simply too big, and there is not enough of me.'
+
+'Hmm,' said {companion_name}, wandering over and pocketing one of the pale pebbles for their collection, the way they always did with pebbles worth keeping. 'Old paths never shout. They whisper, one stone at a time.'
+
+The {hero} sat up to say that there was no path, that a path was exactly the thing this ridge did not have — and stopped. The three big slides had scraped a long stripe of moss clean off the slope. And peeking out of that scraped stripe was something that had been hiding there all along. Look close, right where the moss is thinnest. Something flat and pale, with one perfectly straight edge. Can you see it too? A step.
+
+The {hero} peeled back more moss. Beyond the first stone, a second. Beyond that, a third, curving sideways around the shoulder of the ridge — sideways, exactly the way the pebble trail pointed. The trail had never gone the wrong way. It went the stair's way. Somebody long ago had built a winding staircase to the top and left a line of pale pebbles to say: begin here.
+
+'I kept trying to swallow the whole ridge in one gulp,' the {hero} said slowly. 'That was my whole plan. Go up. But a stair does not ask for a gulp. It asks for one stone. You can do the first small step — anyone can. And then the step after that is small too.'
+
+So the {hero} stood on the first stone. The {object_motif} glowed just far enough to show the edge of the next, and no further, which turned out to be exactly enough. One thing, then the next — the same trick that had once coaxed a shy little light out of the dark, working now on a whole ridge. Stone, stone, stone. Around and up, unhurried, no slipping, while the moon climbed alongside.
+
+The {hero} stepped onto the top just as the first star let go of the sky.
+
+It came down slow as a petal, and a hundred more came after it, silver and unhurried, blooming and drifting and settling. The whole sky fit in one look, just as promised.
+
+'{refrain},' breathed {companion_name}, from the stone alongside.
+
+They watched until the last star had drifted down and the dark went velvet. Far across the valley, faint in the moonlight, another thin line of pale pebbles climbed toward another hilltop. Another stair, sleeping under its own moss. A climb for another night.
+
+They went down the way they came, one stone at a time, slower and slower, the {object_motif} glowing soft ahead.
+
+Warm moss. Quiet sky. Small steps home.
+
+{refrain}.`,
+    scriptTemplate: `Once a season, only once, the sky above {setting} bloomed. Slow silver stars came drifting down like petals for one hour after moonrise, and the finest watching place was the top of the high ridge, where the whole sky fit in one look.
+
+Tonight was the night, and {child_name} the {hero} wanted the top of that ridge the way you want a thing you have waited a whole season for. Plan: get up there before the first star fell.
+
+Two odd things stood at the bottom of the ridge. The first was the ridge itself, taller than {child_name} had remembered, its slope smooth and mossy and steep. The second was a little trail of pale pebbles that somebody, sometime, had laid in a neat line — pointing sideways, around the hill, away from the top. Who lays a trail that runs the wrong way?
+
+'No time for wrong-way pebbles,' {child_name} decided. 'The top is up, so up I go. The whole ridge, one big go.'
+
+{child_name} backed up a good long way, ran, and charged the slope. It went beautifully for eleven strides. Then the moss got slick, the climb got steep, and {child_name} slid the whole way back down, landing with a soft, mossy thump.
+
+'Again. Faster.' Fourteen strides this time, and a longer slide back. Thump.
+
+The third try was the clever one, a great zigzag charge, which turned somehow into a great zigzag tangle, and ended in the same mossy heap as tries one and two. The ridge had not moved.
+
+{child_name} lay flat in the moss and stared up at it. 'It is too big,' {child_name} said. 'It is simply too big, and there is not enough of me.'
+
+'Hmm,' said {companion_name}, wandering over and pocketing one of the pale pebbles for their collection, the way they always did with pebbles worth keeping. 'Old paths never shout. They whisper, one stone at a time.'
+
+{child_name} sat up to say that there was no path, that a path was exactly the thing this ridge did not have — and stopped. The three big slides had scraped a long stripe of moss clean off the slope. And peeking out of that scraped stripe was something that had been hiding there all along. Look close, right where the moss is thinnest. Something flat and pale, with one perfectly straight edge. Can you see it too? A step.
+
+{child_name} peeled back more moss. Beyond the first stone, a second. Beyond that, a third, curving sideways around the shoulder of the ridge — sideways, exactly the way the pebble trail pointed. The trail had never gone the wrong way. It went the stair's way. Somebody long ago had built a winding staircase to the top and left a line of pale pebbles to say: begin here.
+
+'I kept trying to swallow the whole ridge in one gulp,' {child_name} said slowly. 'That was my whole plan. Go up. But a stair does not ask for a gulp. It asks for one stone. You can do the first small step — anyone can. And then the step after that is small too.'
+
+So {child_name} stood on the first stone. The {object_motif} glowed just far enough to show the edge of the next, and no further, which turned out to be exactly enough. One thing, then the next — the same trick that had once coaxed a shy little light out of the dark, working now on a whole ridge. Stone, stone, stone. Around and up, unhurried, no slipping, while the moon climbed alongside.
+
+{child_name} stepped onto the top just as the first star let go of the sky.
+
+It came down slow as a petal, and a hundred more came after it, silver and unhurried, blooming and drifting and settling. The whole sky fit in one look, just as promised.
+
+'{refrain},' breathed {companion_name}, from the stone alongside.
+
+They watched until the last star had drifted down and the dark went velvet. Far across the valley, faint in the moonlight, another thin line of pale pebbles climbed toward another hilltop. Another stair, sleeping under its own moss. A climb for another night.
+
+They went down the way they came, one stone at a time, slower and slower, the {object_motif} glowing soft ahead.
+
+Warm moss. Quiet sky. Small steps home.
+
+{refrain}.`
+  },
+  '9-11': {
+    audioTemplate: `The {hero} had made a plan for tonight, and the plan had one item on it.
+
+Item one: go up.
+
+Tonight, for the only hour in the whole season, the sky above {setting} would bloom — slow silver stars drifting down like petals, a hundred of them, maybe more — and the one perfect place to watch was the top of the high ridge. The {hero} had waited an entire season for this and wanted it with the kind of wanting that hums. Hence the plan. Hence item one.
+
+The ridge, up close, was bigger than any plan with one item on it. Its slope rose smooth and mossy and steep, with no path anywhere — although, oddly, at its base somebody had once laid a tidy line of pale pebbles that struck off sideways, around the hill, in completely the wrong direction. The {hero} noticed the trail, filed it under strange and useless, and got down to item one.
+
+The first charge was magnificent for eleven strides. Then the moss turned slick, the slope turned serious, and the {hero} slid the whole way back down and arrived with a deep, mossy thump.
+
+The second charge was faster and slid further. The third was a clever zigzag, which knotted itself into a tangle and delivered the {hero} to the same mossy landing spot as the first two. The ridge had not moved. The top had not come one stride closer. The {hero} lay flat, puffing at the sky, and felt the whole evening tilt toward impossible.
+
+'It is too big,' the {hero} announced to the moss. 'The bloom will start, and I will be down here, because the top is too far and there is not enough of me to reach it.'
+
+'Hmm,' said {companion_name}, strolling over and pocketing one of the pale pebbles, as they did with any pebble worth keeping. 'Old paths never shout. They whisper, one stone at a time.'
+
+The {hero} sat up, ready to point out that this ridge had no path whatsoever, that a path was precisely what was missing — and the words never arrived. Because the three great slides had done something no amount of charging ever could. They had scraped a long, clean stripe through the moss. And in that stripe, half uncovered, something pale was showing. Lean in close, right where the moss is thinnest. Flat. Pale. One edge perfectly, unmistakably straight. Can you see it too? A step.
+
+The {hero} peeled the moss back, heart going quick. A stone step. Behind it a second, and behind that a third, each one small, each one level, curving sideways around the shoulder of the ridge — sideways, precisely the direction the pebble trail had been pointing all along. The trail was not wrong. The trail was the label on the first step of a staircase somebody had built long ago, and the moss had been keeping it secret ever since. Three failed charges had found what no amount of squinting at the summit ever would.
+
+The {hero} stood very still and felt the plan rewrite itself. 'Go up,' the {hero} said, 'was never a plan. It was just the wish, wearing a plan's hat. A real plan looks like this. Stone. Stone. Stone. Nobody climbs a ridge. But you can do the first small step, and then the next one after it, and the ridge climbs itself.'
+
+So the {hero} stepped onto the first stone. The {object_motif} glowed exactly one stone ahead, never further, and that turned out to be the whole trick of it — the same trick as watching one thing at a time, the trick that had once coaxed a shy little light out of the dark. The top of the ridge stopped mattering. Only the next stone mattered, and the next stone was always easy. Around and up the stair wound, patient as its builder, while the moon rose alongside like company.
+
+The {hero} arrived at the top with the sky still dark and whole — and then it bloomed. The first star came loose and drifted down slow as a petal, and behind it came the rest, silver and easy, in no hurry whatsoever, as if falling were just another way of settling in for the night.
+
+'{refrain},' breathed {companion_name} from the next stone over, and for the length of the whole bloom neither of them said anything else.
+
+Afterward, in the velvet dark, the {hero} looked out across the valley and saw it: another thin line of pale pebbles, faint in the moonlight, climbing toward another hilltop far away. Whoever built one stair had built two. Perhaps more. Perhaps the hills of {setting} were full of quiet staircases, sleeping under moss, each one waiting with its first small step already laid.
+
+That was a thought to save for tomorrow.
+
+They went down the way they had come, stone by stone, the {object_motif} glowing one step ahead, the night settling like a blanket pulled slowly up.
+
+Warm moss. Quiet sky. Small steps home.
+
+{refrain}.`,
+    scriptTemplate: `{child_name} the {hero} had made a plan for tonight, and the plan had one item on it.
+
+Item one: go up.
+
+Tonight, for the only hour in the whole season, the sky above {setting} would bloom — slow silver stars drifting down like petals, a hundred of them, maybe more — and the one perfect place to watch was the top of the high ridge. {child_name} had waited an entire season for this and wanted it with the kind of wanting that hums. Hence the plan. Hence item one.
+
+The ridge, up close, was bigger than any plan with one item on it. Its slope rose smooth and mossy and steep, with no path anywhere — although, oddly, at its base somebody had once laid a tidy line of pale pebbles that struck off sideways, around the hill, in completely the wrong direction. {child_name} noticed the trail, filed it under strange and useless, and got down to item one.
+
+The first charge was magnificent for eleven strides. Then the moss turned slick, the slope turned serious, and {child_name} slid the whole way back down and arrived with a deep, mossy thump.
+
+The second charge was faster and slid further. The third was a clever zigzag, which knotted itself into a tangle and delivered {child_name} to the same mossy landing spot as the first two. The ridge had not moved. The top had not come one stride closer. {child_name} lay flat, puffing at the sky, and felt the whole evening tilt toward impossible.
+
+'It is too big,' {child_name} announced to the moss. 'The bloom will start, and I will be down here, because the top is too far and there is not enough of me to reach it.'
+
+'Hmm,' said {companion_name}, strolling over and pocketing one of the pale pebbles, as they did with any pebble worth keeping. 'Old paths never shout. They whisper, one stone at a time.'
+
+{child_name} sat up, ready to point out that this ridge had no path whatsoever, that a path was precisely what was missing — and the words never arrived. Because the three great slides had done something no amount of charging ever could. They had scraped a long, clean stripe through the moss. And in that stripe, half uncovered, something pale was showing. Lean in close, right where the moss is thinnest. Flat. Pale. One edge perfectly, unmistakably straight. Can you see it too? A step.
+
+{child_name} peeled the moss back, heart going quick. A stone step. Behind it a second, and behind that a third, each one small, each one level, curving sideways around the shoulder of the ridge — sideways, precisely the direction the pebble trail had been pointing all along. The trail was not wrong. The trail was the label on the first step of a staircase somebody had built long ago, and the moss had been keeping it secret ever since. Three failed charges had found what no amount of squinting at the summit ever would.
+
+{child_name} stood very still and felt the plan rewrite itself. 'Go up,' {child_name} said, 'was never a plan. It was just the wish, wearing a plan's hat. A real plan looks like this. Stone. Stone. Stone. Nobody climbs a ridge. But you can do the first small step, and then the next one after it, and the ridge climbs itself.'
+
+So {child_name} stepped onto the first stone. The {object_motif} glowed exactly one stone ahead, never further, and that turned out to be the whole trick of it — the same trick as watching one thing at a time, the trick that had once coaxed a shy little light out of the dark. The top of the ridge stopped mattering. Only the next stone mattered, and the next stone was always easy. Around and up the stair wound, patient as its builder, while the moon rose alongside like company.
+
+{child_name} arrived at the top with the sky still dark and whole — and then it bloomed. The first star came loose and drifted down slow as a petal, and behind it came the rest, silver and easy, in no hurry whatsoever, as if falling were just another way of settling in for the night.
+
+'{refrain},' breathed {companion_name} from the next stone over, and for the length of the whole bloom neither of them said anything else.
+
+Afterward, in the velvet dark, {child_name} looked out across the valley and saw it: another thin line of pale pebbles, faint in the moonlight, climbing toward another hilltop far away. Whoever built one stair had built two. Perhaps more. Perhaps the hills of {setting} were full of quiet staircases, sleeping under moss, each one waiting with its first small step already laid.
+
+That was a thought to save for tomorrow.
+
+They went down the way they had come, stone by stone, the {object_motif} glowing one step ahead, the night settling like a blanket pulled slowly up.
+
+Warm moss. Quiet sky. Small steps home.
+
+{refrain}.`
+  }
+},
+    audioTemplate: `Tonight, just once in the whole season, the sky above {setting} would bloom. Slow silver stars would drift down like petals, and the best place to watch was the top of the high ridge.
+
+The {hero} wanted to be up there more than anything. But the ridge was tall. Very tall. And at the bottom, oddly, a little trail of pale pebbles wandered off sideways — away from the top. Who would lay a trail that went the wrong way?
+
+'No time for wrong-way pebbles,' said the {hero}. 'I will take the whole ridge in one big go!'
+
+The {hero} backed up, ran, and charged straight up the slope. Halfway, the ground turned slippery — and down the {hero} slid, all the way to the bottom. Thump.
+
+'Again!' Faster this time. Thump.
+
+The {hero} lay in the moss and groaned. 'The top is too far. It is just too big.'
+
+'Hmm,' said {companion_name}, tucking one pale pebble away for their collection. 'Old paths never shout. They whisper, one stone at a time.'
+
+The {hero} sat up — and stopped. The big slide had scraped a stripe of moss away. Look at what is peeking out. Something flat and pale, with one straight edge. Can you see it too? A step.
+
+A stone step! And past it, under the moss, another. The steps curved sideways around the ridge — the very way the pebble trail pointed. The wrong way was the way up.
+
+'I kept trying to swallow the ridge in one gulp,' whispered the {hero}. 'But nobody has to. You can do the first small step. Anyone can do one stone.'
+
+So the {hero} stepped onto the first stone. The {object_motif} glowed just far enough to show the next one. One thing, then the next, like watching one light at a time. Stone by stone, around and up, the {hero} climbed the whole ridge without a single slip.
+
+At the top, the sky bloomed. Stars drifted down as slow as petals.
+
+'{refrain},' breathed {companion_name}.
+
+They watched until the last star settled. Far across the valley, another faint line of pale stones climbed another hill. Another stair. For another night.
+
+Down the steps they went, one by one, slower and slower.
+
+Warm moss. Quiet sky.
+
+{refrain}.`,
+    scriptTemplate: `Tonight, just once in the whole season, the sky above {setting} would bloom. Slow silver stars would drift down like petals, and the best place to watch was the top of the high ridge.
+
+{child_name} the {hero} wanted to be up there more than anything. But the ridge was tall. Very tall. And at the bottom, oddly, a little trail of pale pebbles wandered off sideways — away from the top. Who would lay a trail that went the wrong way?
+
+'No time for wrong-way pebbles,' said {child_name}. 'I will take the whole ridge in one big go!'
+
+{child_name} backed up, ran, and charged straight up the slope. Halfway, the ground turned slippery — and down {child_name} slid, all the way to the bottom. Thump.
+
+'Again!' Faster this time. Thump.
+
+{child_name} lay in the moss and groaned. 'The top is too far. It is just too big.'
+
+'Hmm,' said {companion_name}, tucking one pale pebble away for their collection. 'Old paths never shout. They whisper, one stone at a time.'
+
+{child_name} sat up — and stopped. The big slide had scraped a stripe of moss away. Look at what is peeking out. Something flat and pale, with one straight edge. Can you see it too? A step.
+
+A stone step! And past it, under the moss, another. The steps curved sideways around the ridge — the very way the pebble trail pointed. The wrong way was the way up.
+
+'I kept trying to swallow the ridge in one gulp,' whispered {child_name}. 'But nobody has to. You can do the first small step. Anyone can do one stone.'
+
+So {child_name} stepped onto the first stone. The {object_motif} glowed just far enough to show the next one. One thing, then the next, like watching one light at a time. Stone by stone, around and up, {child_name} climbed the whole ridge without a single slip.
+
+At the top, the sky bloomed. Stars drifted down as slow as petals.
+
+'{refrain},' breathed {companion_name}.
+
+They watched until the last star settled. Far across the valley, another faint line of pale stones climbed another hill. Another stair. For another night.
+
+Down the steps they went, one by one, slower and slower.
+
+Warm moss. Quiet sky.
+
+{refrain}.`,
+  },
+
+  {
+    ordinal: 3, title: "The Keeper's Post",
+    concept: "Noticing a distraction and gently coming back", callback: "Doing one thing at a time (Level 1)", ageFloor: 4,
+    summary: "Tonight, for the very first time, the hero is trusted to tend the light that guides the small night-travellers home — a light that mysteriously dims now and then, no matter how hard anyone stares. The answer has been carved into the keeper's post all along: every keeper's mind wanders. The light never asks you not to drift. It glows for the keeper who notices, and gently comes back.",
+    teachingNote: "Focus is not never getting distracted — it is noticing kindly that you have drifted, and choosing to come back.",
+    learningBeat: "noticing, and coming back",
+    ageVariants: {
+  '3-4': {
+    audioTemplate: `Every night in {setting}, the {object_motif} sat on an old post, showing the small night-travellers the way home.
+
+Tonight, for the first time, the {hero} got to be the keeper!
+
+'Keep it bright,' said {companion_name}. 'It has a little secret.'
+
+The {hero} stared at the light. Stare, stare, stare. Never look away!
+
+But a silver leaf floated by. Ooooh. The {hero}'s thoughts floated after it. Fizz! The light went low.
+
+'Oh no!' The {hero} hurried back. The light rose again.
+
+Then a funny bug walked by. The thoughts walked after it. Fizz! Low again!
+
+The {hero} looked at the old post. Look close. Tiny carved lines, wiggling away and bending back. Can you see it too? Little paths coming home!
+
+'Oh!' said the {hero}. 'Every keeper wandered! The light just wants noticing, and coming back!'
+
+So the {hero} wandered, noticed, and came back. Each time, the light glowed warmer.
+
+The night-travellers came home. One. Two. Three. Safe.
+
+'{refrain},' whispered {companion_name}.
+
+The {hero} carved one tiny wiggle on the post. A keeper's mark.
+
+The light glowed slow and low. Sleepy keeper. Sleepy light.
+
+{refrain}.`,
+    scriptTemplate: `Every night in {setting}, the {object_motif} sat on an old post, showing the small night-travellers the way home.
+
+Tonight, for the first time, {child_name} the {hero} got to be the keeper!
+
+'Keep it bright,' said {companion_name}. 'It has a little secret.'
+
+{child_name} stared at the light. Stare, stare, stare. Never look away!
+
+But a silver leaf floated by. Ooooh. {child_name}'s thoughts floated after it. Fizz! The light went low.
+
+'Oh no!' {child_name} hurried back. The light rose again.
+
+Then a funny bug walked by. The thoughts walked after it. Fizz! Low again!
+
+{child_name} looked at the old post. Look close. Tiny carved lines, wiggling away and bending back. Can you see it too? Little paths coming home!
+
+'Oh!' said {child_name}. 'Every keeper wandered! The light just wants noticing, and coming back!'
+
+So {child_name} wandered, noticed, and came back. Each time, the light glowed warmer.
+
+The night-travellers came home. One. Two. Three. Safe.
+
+'{refrain},' whispered {companion_name}.
+
+{child_name} carved one tiny wiggle on the post. A keeper's mark.
+
+The light glowed slow and low. Sleepy keeper. Sleepy light.
+
+{refrain}.`
+  },
+  '5-6': {
+    audioTemplate: `Every night in {setting}, the {object_motif} sat on an old wooden post, showing the small night-travellers the way home. Keeping it bright was the most important job there was.
+
+And tonight, for the very first time, the job belonged to the {hero}.
+
+'It has one secret,' said {companion_name}. 'It dims, now and then. The keeper before me never said why. They only smiled, and tapped the post.'
+
+The {hero} had a plan. 'Simple. I will stare and never look away. Not once.'
+
+So the {hero} stared. Stare, stare, stare.
+
+Then a silver leaf drifted past, turning slow somersaults. What a leaf, thought the {hero}. You could build a little boat from that. A whole fleet of leaf-boats, sailing—
+
+Fizz. The light dropped low. The {hero} snapped back, three whole steps from the post without ever deciding to walk.
+
+'No, no, no!' The {hero} rushed back and stared harder. So hard that they started counting blinks, and counting turned into daydreaming about numbers — fizz — low again!
+
+The {hero} slumped against the post, cross as a knot. 'I am the worst keeper ever.'
+
+And that was when the {hero} finally saw the post itself. It was covered, top to bottom, in tiny carved lines. Look closely. Every little line wiggles away — and bends back. Can you see it too? Hundreds of tiny paths, all coming home.
+
+'Oh,' whispered the {hero}. 'Every keeper wandered. Every single one. The light never wanted staring. It wants noticing, and coming back.'
+
+The {hero} tried it. A thought drifted after the leaf again — and the {hero} noticed, smiled, and came gently back. The light swelled warm. It happened again; again the {hero} returned, and the light glowed warmer still. Each coming-back fed it.
+
+Out of the dark came the night-travellers, small and sleepy, following the steady glow home. Every last one made it.
+
+'{refrain},' whispered {companion_name}, watching them pass.
+
+Before bed, the {hero} carved one tiny new line on the post. It wiggled away. It bent back home. A keeper's mark.
+
+At the very bottom, one carving was older than all the rest — the longest wander, the gentlest curve home. Whose? That could wait for morning.
+
+The light glowed low and steady. So did the {hero}.
+
+{refrain}.`,
+    scriptTemplate: `Every night in {setting}, the {object_motif} sat on an old wooden post, showing the small night-travellers the way home. Keeping it bright was the most important job there was.
+
+And tonight, for the very first time, the job belonged to {child_name} the {hero}.
+
+'It has one secret,' said {companion_name}. 'It dims, now and then. The keeper before me never said why. They only smiled, and tapped the post.'
+
+{child_name} had a plan. 'Simple. I will stare and never look away. Not once.'
+
+So {child_name} stared. Stare, stare, stare.
+
+Then a silver leaf drifted past, turning slow somersaults. What a leaf, thought {child_name}. You could build a little boat from that. A whole fleet of leaf-boats, sailing—
+
+Fizz. The light dropped low. {child_name} snapped back, three whole steps from the post without ever deciding to walk.
+
+'No, no, no!' {child_name} rushed back and stared harder. So hard that they started counting blinks, and counting turned into daydreaming about numbers — fizz — low again!
+
+{child_name} slumped against the post, cross as a knot. 'I am the worst keeper ever.'
+
+And that was when {child_name} finally saw the post itself. It was covered, top to bottom, in tiny carved lines. Look closely. Every little line wiggles away — and bends back. Can you see it too? Hundreds of tiny paths, all coming home.
+
+'Oh,' whispered {child_name}. 'Every keeper wandered. Every single one. The light never wanted staring. It wants noticing, and coming back.'
+
+{child_name} tried it. A thought drifted after the leaf again — and {child_name} noticed, smiled, and came gently back. The light swelled warm. It happened again; again {child_name} returned, and the light glowed warmer still. Each coming-back fed it.
+
+Out of the dark came the night-travellers, small and sleepy, following the steady glow home. Every last one made it.
+
+'{refrain},' whispered {companion_name}, watching them pass.
+
+Before bed, {child_name} carved one tiny new line on the post. It wiggled away. It bent back home. A keeper's mark.
+
+At the very bottom, one carving was older than all the rest — the longest wander, the gentlest curve home. Whose? That could wait for morning.
+
+The light glowed low and steady. So did {child_name}.
+
+{refrain}.`
+  },
+  '7-8': {
+    audioTemplate: `Every night in {setting}, the {object_motif} sat on top of an old wooden post, its glow reaching across the dark to bring the small night-travellers home — little sleepy creatures trailing in late, steering by one steady light. Keeping it bright was the oldest and most important job there was.
+
+And tonight, for the very first time, the job belonged to the {hero}.
+
+The {hero} had wanted this forever. A real keeper. A whole night. Every traveller home safe under their watch.
+
+'One thing to know,' said {companion_name}, settling nearby with a wink. 'It dims. Now and then, for no reason anyone ever wrote down. The keeper before me never explained. They only smiled, and tapped the post.'
+
+Smiled and tapped the post. That was no kind of instruction. So the {hero} made a better plan: stare at the light and never look away. Not once.
+
+For a while, it went beautifully. The light glowed. The {hero} stared.
+
+Then a silver leaf drifted by, turning slow somersaults. What a leaf, the {hero} thought. Broad as a sail. You could build a boat from a leaf like that. A whole fleet, with tiny flags—
+
+Fizz. The light sank low. The {hero} surfaced three whole steps from the post, with no memory of walking. Hurrying back brought the glow up again, but the plan had a scratch in it now.
+
+'Right,' muttered the {hero}, and stared twice as hard. Staring twice as hard meant noticing every blink, which became counting blinks, which became wondering how high the count would go by morning — fizz — low again! Harder still: the {hero} held so fierce and still that thoughts about holding still crowded out the light entirely. Fizz.
+
+The {hero} slid down and sat with their back against the post, thoroughly cross. 'The harder I grip it, the more I drop it. I am the worst keeper this post has ever had.'
+
+And that is when the {hero}, slumped and scowling, finally looked at the post itself.
+
+It was carved. Not with words — with lines. Hundreds of tiny lines, from the ground all the way up, each no longer than a whisker. Follow just one. It wiggles away, wanders... and bends back where it began. Can you see it too? A tiny path that leaves, and comes home.
+
+Every line on the post did it. Away, and home. Hundreds of keepers, and every one had carved the same small confession: I wandered too.
+
+'Oh,' said the {hero}, very softly. 'It was never about never wandering. Not one keeper managed that. The light does not want staring — it wants noticing, and coming back. That is why they smiled and tapped the post.'
+
+The {hero} stood and tried it. The leaf-boat thought came sailing back, flags and all — and the {hero} noticed it, nodded to it like a passing friend, and came gently home to the light. The glow swelled, warmer than staring ever made it. Another thought wandered off with the {hero} in tow; the noticing came quicker, the coming-back easier, the light warmer still. Every return fed it. One thing, then the next — with a kind new rule stitched on: no scolding. Just notice, and come back.
+
+Out of the dark came the night-travellers, small and sleepy, one after another, steering home by a light that barely trembled again. The {hero} counted them in, lost count twice, noticed, came back, and did not mind at all.
+
+'{refrain},' whispered {companion_name}, as the last little traveller padded past the post and home.
+
+Before bed, the {hero} carved one new line, low on the post where there was room. It wiggled away. It wandered. It bent all the way home. A keeper's mark, earned the only way there was.
+
+And right at the bottom, fainter than all the others, one carving showed the longest wander of all — and the gentlest curve home. Whose it was could wait for morning.
+
+The light glowed low and steady. The night breathed slow.
+
+{refrain}.`,
+    scriptTemplate: `Every night in {setting}, the {object_motif} sat on top of an old wooden post, its glow reaching across the dark to bring the small night-travellers home — little sleepy creatures trailing in late, steering by one steady light. Keeping it bright was the oldest and most important job there was.
+
+And tonight, for the very first time, the job belonged to {child_name} the {hero}.
+
+{child_name} had wanted this forever. A real keeper. A whole night. Every traveller home safe under their watch.
+
+'One thing to know,' said {companion_name}, settling nearby with a wink. 'It dims. Now and then, for no reason anyone ever wrote down. The keeper before me never explained. They only smiled, and tapped the post.'
+
+Smiled and tapped the post. That was no kind of instruction. So {child_name} made a better plan: stare at the light and never look away. Not once.
+
+For a while, it went beautifully. The light glowed. {child_name} stared.
+
+Then a silver leaf drifted by, turning slow somersaults. What a leaf, {child_name} thought. Broad as a sail. You could build a boat from a leaf like that. A whole fleet, with tiny flags—
+
+Fizz. The light sank low. {child_name} surfaced three whole steps from the post, with no memory of walking. Hurrying back brought the glow up again, but the plan had a scratch in it now.
+
+'Right,' muttered {child_name}, and stared twice as hard. Staring twice as hard meant noticing every blink, which became counting blinks, which became wondering how high the count would go by morning — fizz — low again! Harder still: {child_name} held so fierce and still that thoughts about holding still crowded out the light entirely. Fizz.
+
+{child_name} slid down and sat with their back against the post, thoroughly cross. 'The harder I grip it, the more I drop it. I am the worst keeper this post has ever had.'
+
+And that is when {child_name}, slumped and scowling, finally looked at the post itself.
+
+It was carved. Not with words — with lines. Hundreds of tiny lines, from the ground all the way up, each no longer than a whisker. Follow just one. It wiggles away, wanders... and bends back where it began. Can you see it too? A tiny path that leaves, and comes home.
+
+Every line on the post did it. Away, and home. Hundreds of keepers, and every one had carved the same small confession: I wandered too.
+
+'Oh,' said {child_name}, very softly. 'It was never about never wandering. Not one keeper managed that. The light does not want staring — it wants noticing, and coming back. That is why they smiled and tapped the post.'
+
+{child_name} stood and tried it. The leaf-boat thought came sailing back, flags and all — and {child_name} noticed it, nodded to it like a passing friend, and came gently home to the light. The glow swelled, warmer than staring ever made it. Another thought wandered off with {child_name} in tow; the noticing came quicker, the coming-back easier, the light warmer still. Every return fed it. One thing, then the next — with a kind new rule stitched on: no scolding. Just notice, and come back.
+
+Out of the dark came the night-travellers, small and sleepy, one after another, steering home by a light that barely trembled again. {child_name} counted them in, lost count twice, noticed, came back, and did not mind at all.
+
+'{refrain},' whispered {companion_name}, as the last little traveller padded past the post and home.
+
+Before bed, {child_name} carved one new line, low on the post where there was room. It wiggled away. It wandered. It bent all the way home. A keeper's mark, earned the only way there was.
+
+And right at the bottom, fainter than all the others, one carving showed the longest wander of all — and the gentlest curve home. Whose it was could wait for morning.
+
+The light glowed low and steady. The night breathed slow.
+
+{refrain}.`
+  },
+  '9-11': {
+    audioTemplate: `Every night in {setting}, the {object_motif} was set on top of an old wooden post, its glow reaching across the dark like a held-out hand to bring the small night-travellers home. They came late and sleepy, in ones and twos, steering by that single steady light. Keeping it bright was the oldest job there was, and the most quietly important.
+
+Tonight, for the first time in the {hero}'s whole life, the job was theirs.
+
+The {hero} had asked all season. Tonight the answer was finally yes, and the want was simple: a perfect watch. Every traveller home. Proof that they were big enough for the biggest small job there was.
+
+'One thing you should know,' said {companion_name}, settling into the shadows with a wink. 'It dims. Now and then, out of nowhere. I asked the keeper before me a hundred times. They only ever smiled, and tapped the post.'
+
+Smiled and tapped the post. Keepers, the {hero} decided, enjoyed being mysterious. No matter. The plan was iron: stare at the light, never look away, guard it with unbroken attention until sunrise.
+
+For a while it went perfectly. Then a silver leaf came somersaulting slowly past, broad as a little sail, and the {hero} thought — without ever agreeing to think it — what a boat that leaf would make. A fleet of them. Tiny flags. A moonlight regatta, and who would judge it—
+
+Fizz. The light sagged. The {hero} surfaced from the daydream three full steps from the post, no memory of walking, and hurried back, cheeks hot. The glow recovered. The plan did not.
+
+Because now the {hero} stared harder, and staring harder went strange at once. Noticing every blink became counting them; counting became a whole imagined ceremony for the highest blink-count ever recorded — fizz. Again. The third drift was about breakfast. The fourth was the ceremony again, which felt deeply unfair, having been dismissed once already.
+
+Each time, the light dimmed. Each time, the {hero} came back crosser, gripping their own attention tighter, and each tighter grip slipped sooner. That was the part that stung: scolding themselves for wandering turned out to be just one more way of wandering.
+
+The {hero} finally slid down and sat against the post, defeated. 'The harder I hold it, the faster I drop it,' they said aloud. 'I am the worst keeper this light has ever had.'
+
+The post, being a post, said nothing. But down there, nose to the wood for the first time all night, the {hero} finally saw it. Carved from top to bottom. Not names, not words — lines. Thousands of tiny lines, each no longer than a whisker. Pick one and follow it. It sets off, wanders, wobbles somewhere unplanned... and bends back, every time, to exactly where it began. Can you see it too? Tiny paths. Every one leaves. Every one comes home.
+
+The {hero} sat still, doing the arithmetic. Thousands of marks. Generations of keepers. And not one straight line on the whole post — not one keeper whose attention had never left the light.
+
+'It was never about never wandering,' the {hero} said slowly. 'Nobody has ever done it, and they all still got the travellers home. The light does not run on staring. It runs on noticing, and coming back. Wandering was never the failure — staying gone is. That is why they smiled and tapped the post. The answer was carved here the whole time.'
+
+The {hero} stood and kept watch the new way. The regatta came sailing grandly back, flags and all — and the {hero} noticed it, let it pass like a boat rounding a buoy, and came home to the light. The glow rose, warmer than staring had ever coaxed from it. The breakfast thought returned; noticed, released — warmer still. Every coming-back fed the light, as if it had always preferred honest keepers to perfect ones. One thing, then the next, and a gentle homecoming each time the mind slipped its rope.
+
+The travellers arrived not long after: small, sleepy, unbothered, trailing in toward a light that barely trembled for the rest of the watch. The {hero} counted them home, lost count twice, noticed, returned, and found they did not mind at all. The count was not the job. The coming back was.
+
+'{refrain},' whispered {companion_name}, as the last traveller passed the post and vanished, safe, into the warm dark.
+
+Before bed, the {hero} added one small line, low on the post where there was room: a line that wanders — honestly, generously — then curves all the way home. A keeper's mark, earned the only way there is.
+
+At the very bottom of the post, fainter than all the rest, one ancient carving showed the longest wander of all, and the gentlest curve home. Whose it was, and where they went — morning questions, both.
+
+The light glowed low and even. The night breathed slow around it.
+
+{refrain}.`,
+    scriptTemplate: `Every night in {setting}, the {object_motif} was set on top of an old wooden post, its glow reaching across the dark like a held-out hand to bring the small night-travellers home. They came late and sleepy, in ones and twos, steering by that single steady light. Keeping it bright was the oldest job there was, and the most quietly important.
+
+Tonight, for the first time in {child_name} the {hero}'s whole life, the job was theirs.
+
+{child_name} had asked all season. Tonight the answer was finally yes, and the want was simple: a perfect watch. Every traveller home. Proof that they were big enough for the biggest small job there was.
+
+'One thing you should know,' said {companion_name}, settling into the shadows with a wink. 'It dims. Now and then, out of nowhere. I asked the keeper before me a hundred times. They only ever smiled, and tapped the post.'
+
+Smiled and tapped the post. Keepers, {child_name} decided, enjoyed being mysterious. No matter. The plan was iron: stare at the light, never look away, guard it with unbroken attention until sunrise.
+
+For a while it went perfectly. Then a silver leaf came somersaulting slowly past, broad as a little sail, and {child_name} thought — without ever agreeing to think it — what a boat that leaf would make. A fleet of them. Tiny flags. A moonlight regatta, and who would judge it—
+
+Fizz. The light sagged. {child_name} surfaced from the daydream three full steps from the post, no memory of walking, and hurried back, cheeks hot. The glow recovered. The plan did not.
+
+Because now {child_name} stared harder, and staring harder went strange at once. Noticing every blink became counting them; counting became a whole imagined ceremony for the highest blink-count ever recorded — fizz. Again. The third drift was about breakfast. The fourth was the ceremony again, which felt deeply unfair, having been dismissed once already.
+
+Each time, the light dimmed. Each time, {child_name} came back crosser, gripping their own attention tighter, and each tighter grip slipped sooner. That was the part that stung: scolding themselves for wandering turned out to be just one more way of wandering.
+
+{child_name} finally slid down and sat against the post, defeated. 'The harder I hold it, the faster I drop it,' they said aloud. 'I am the worst keeper this light has ever had.'
+
+The post, being a post, said nothing. But down there, nose to the wood for the first time all night, {child_name} finally saw it. Carved from top to bottom. Not names, not words — lines. Thousands of tiny lines, each no longer than a whisker. Pick one and follow it. It sets off, wanders, wobbles somewhere unplanned... and bends back, every time, to exactly where it began. Can you see it too? Tiny paths. Every one leaves. Every one comes home.
+
+{child_name} sat still, doing the arithmetic. Thousands of marks. Generations of keepers. And not one straight line on the whole post — not one keeper whose attention had never left the light.
+
+'It was never about never wandering,' {child_name} said slowly. 'Nobody has ever done it, and they all still got the travellers home. The light does not run on staring. It runs on noticing, and coming back. Wandering was never the failure — staying gone is. That is why they smiled and tapped the post. The answer was carved here the whole time.'
+
+{child_name} stood and kept watch the new way. The regatta came sailing grandly back, flags and all — and {child_name} noticed it, let it pass like a boat rounding a buoy, and came home to the light. The glow rose, warmer than staring had ever coaxed from it. The breakfast thought returned; noticed, released — warmer still. Every coming-back fed the light, as if it had always preferred honest keepers to perfect ones. One thing, then the next, and a gentle homecoming each time the mind slipped its rope.
+
+The travellers arrived not long after: small, sleepy, unbothered, trailing in toward a light that barely trembled for the rest of the watch. {child_name} counted them home, lost count twice, noticed, returned, and found they did not mind at all. The count was not the job. The coming back was.
+
+'{refrain},' whispered {companion_name}, as the last traveller passed the post and vanished, safe, into the warm dark.
+
+Before bed, {child_name} added one small line, low on the post where there was room: a line that wanders — honestly, generously — then curves all the way home. A keeper's mark, earned the only way there is.
+
+At the very bottom of the post, fainter than all the rest, one ancient carving showed the longest wander of all, and the gentlest curve home. Whose it was, and where they went — morning questions, both.
+
+The light glowed low and even. The night breathed slow around it.
+
+{refrain}.`
+  }
+},
+    audioTemplate: `Every night in {setting}, the {object_motif} sat on an old wooden post, showing the small night-travellers the way home. Keeping it bright was the most important job there was.
+
+And tonight, for the very first time, the job belonged to the {hero}.
+
+'It has one secret,' said {companion_name}. 'It dims, now and then. The keeper before me never said why. They only smiled, and tapped the post.'
+
+The {hero} had a plan. 'Simple. I will stare and never look away. Not once.'
+
+So the {hero} stared. Stare, stare, stare.
+
+Then a silver leaf drifted past, turning slow somersaults. What a leaf, thought the {hero}. You could build a little boat from that. A whole fleet of leaf-boats, sailing—
+
+Fizz. The light dropped low. The {hero} snapped back, three whole steps from the post without ever deciding to walk.
+
+'No, no, no!' The {hero} rushed back and stared harder. So hard that they started counting blinks, and counting turned into daydreaming about numbers — fizz — low again!
+
+The {hero} slumped against the post, cross as a knot. 'I am the worst keeper ever.'
+
+And that was when the {hero} finally saw the post itself. It was covered, top to bottom, in tiny carved lines. Look closely. Every little line wiggles away — and bends back. Can you see it too? Hundreds of tiny paths, all coming home.
+
+'Oh,' whispered the {hero}. 'Every keeper wandered. Every single one. The light never wanted staring. It wants noticing, and coming back.'
+
+The {hero} tried it. A thought drifted after the leaf again — and the {hero} noticed, smiled, and came gently back. The light swelled warm. It happened again; again the {hero} returned, and the light glowed warmer still. Each coming-back fed it.
+
+Out of the dark came the night-travellers, small and sleepy, following the steady glow home. Every last one made it.
+
+'{refrain},' whispered {companion_name}, watching them pass.
+
+Before bed, the {hero} carved one tiny new line on the post. It wiggled away. It bent back home. A keeper's mark.
+
+At the very bottom, one carving was older than all the rest — the longest wander, the gentlest curve home. Whose? That could wait for morning.
+
+The light glowed low and steady. So did the {hero}.
+
+{refrain}.`,
+    scriptTemplate: `Every night in {setting}, the {object_motif} sat on an old wooden post, showing the small night-travellers the way home. Keeping it bright was the most important job there was.
+
+And tonight, for the very first time, the job belonged to {child_name} the {hero}.
+
+'It has one secret,' said {companion_name}. 'It dims, now and then. The keeper before me never said why. They only smiled, and tapped the post.'
+
+{child_name} had a plan. 'Simple. I will stare and never look away. Not once.'
+
+So {child_name} stared. Stare, stare, stare.
+
+Then a silver leaf drifted past, turning slow somersaults. What a leaf, thought {child_name}. You could build a little boat from that. A whole fleet of leaf-boats, sailing—
+
+Fizz. The light dropped low. {child_name} snapped back, three whole steps from the post without ever deciding to walk.
+
+'No, no, no!' {child_name} rushed back and stared harder. So hard that they started counting blinks, and counting turned into daydreaming about numbers — fizz — low again!
+
+{child_name} slumped against the post, cross as a knot. 'I am the worst keeper ever.'
+
+And that was when {child_name} finally saw the post itself. It was covered, top to bottom, in tiny carved lines. Look closely. Every little line wiggles away — and bends back. Can you see it too? Hundreds of tiny paths, all coming home.
+
+'Oh,' whispered {child_name}. 'Every keeper wandered. Every single one. The light never wanted staring. It wants noticing, and coming back.'
+
+{child_name} tried it. A thought drifted after the leaf again — and {child_name} noticed, smiled, and came gently back. The light swelled warm. It happened again; again {child_name} returned, and the light glowed warmer still. Each coming-back fed it.
+
+Out of the dark came the night-travellers, small and sleepy, following the steady glow home. Every last one made it.
+
+'{refrain},' whispered {companion_name}, watching them pass.
+
+Before bed, {child_name} carved one tiny new line on the post. It wiggled away. It bent back home. A keeper's mark.
+
+At the very bottom, one carving was older than all the rest — the longest wander, the gentlest curve home. Whose? That could wait for morning.
+
+The light glowed low and steady. So did {child_name}.
 
 {refrain}.`,
   },
