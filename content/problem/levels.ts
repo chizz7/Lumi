@@ -56,13 +56,13 @@ The {hero} felt so good and so sleepy.
 The moon rose soft over {setting}. The {hero} held the {object_motif} close.
 
 {refrain}.`,
-    scriptTemplate: `{child_name} woke up in {setting} and saw a mess. Three things were wrong all at once.
+    scriptTemplate: `{child_name} the {hero} woke up in {setting} and saw a mess. Three things were wrong all at once.
 
 The {object_motif} was lost under a pile. The door was stuck and would not open. And the floor had spilled toys everywhere.
 
 {child_name} looked at all three and felt small. "I can fix it all!" said {child_name}. So {child_name} ran to the {object_motif}. Pick, pick, pick. But then {child_name} looked at the stuck door. "Oh! The door first!" {child_name} ran to push it. Push, push, push. But it would not budge.
 
-Then {child_name} saw the toys. All scattered. {child_name} wanted to pick those up too.
+Then {child_name} saw the toys. All scattered. {child_name} the {hero} wanted to pick those up too.
 
 Three things. All at once. {child_name} sat down and wanted to cry. Everything needed to be fixed but nothing was getting fixed.
 
@@ -130,7 +130,7 @@ The {hero} looked around at the mended window, the whole {object_motif}, the cle
 Over {setting}, the light was turning golden and slow. The {hero} sat with the {object_motif} close, knowing that tomorrow's troubles would seem smaller now that this day had proven: one thing at a time works.
 
 {refrain}.`,
-    scriptTemplate: `{child_name} woke up on a quiet morning in {setting} with three tangled worries waiting. The {object_motif} had a torn seam that wouldn't hold. The garden's weeds had grown tall and wild. And somewhere in the shed, the broken window needed mending.
+    scriptTemplate: `{child_name} the {hero} woke up on a quiet morning in {setting} with three tangled worries waiting. The {object_motif} had a torn seam that wouldn't hold. The garden's weeds had grown tall and wild. And somewhere in the shed, the broken window needed mending.
 
 {child_name} looked at the list of three and felt the weight of it — all urgent, all calling at once.
 
@@ -208,7 +208,7 @@ The {hero} stood back and looked at the finished fence, the whole {object_motif}
 The evening light was turning long over {setting}, and the {hero} knew now that the secret to managing big troubles wasn't to be faster or stronger. It was to be more focused. To pick one thing and do it all the way, then pick the next.
 
 {refrain}.`,
-    scriptTemplate: `{child_name} woke that morning to a weight in their chest — three problems sitting like stones, all demanding attention at once. The {object_motif} had broken. The fence was falling down. The path to the gate had weeds growing through in a thick, choking tangle. Every problem was real. Every problem was urgent. Every problem said: fix me first.
+    scriptTemplate: `{child_name} the {hero} woke that morning to a weight in their chest — three problems sitting like stones, all demanding attention at once. The {object_motif} had broken. The fence was falling down. The path to the gate had weeds growing through in a thick, choking tangle. Every problem was real. Every problem was urgent. Every problem said: fix me first.
 
 {child_name} felt that familiar rushing panic starting, the sense of too-much, of not-enough time. But they ran to the fence anyway. For an hour, {child_name} worked. Nails. Wood. Measuring. Halfway through mending one section, {child_name} looked at the {object_motif} sitting on the porch. Unworn. Broken. Waiting.
 
@@ -306,7 +306,7 @@ The {hero} stood back and looked at what had been accomplished, and felt somethi
 The light was turning gold over {setting}, and the {hero} held the {object_motif} close, knowing that tomorrow would bring more problems. But they also knew now that problems weren't solved by panic, or by juggling, or by trying to do everything at once. They were solved by focus. One thing at a time. All the way.
 
 {refrain}.`,
-    scriptTemplate: `There is a particular kind of dread that settles in the chest when you wake with too many things undone, all of them urgent, all of them yours. This is what {child_name} felt when their eyes opened on that quiet morning in {setting}, before they'd even gotten out of bed.
+    scriptTemplate: `There is a particular kind of dread that settles in the chest when you wake with too many things undone, all of them urgent, all of them yours. This is what {child_name} the {hero} felt when their eyes opened on that quiet morning in {setting}, before they'd even gotten out of bed.
 
 The {object_motif} had been waiting to be repaired for three days. {child_name} kept meaning to fix it and kept not doing it. Meanwhile, the fence section was crumbling faster than expected — one more storm and it might give way entirely. And the path to the main gate had become so overgrown with weeds that {child_name} had to push through them every time they went out, which happened to be several times a day. Every time they pushed through, they thought: I should clear this. I should do this today.
 
@@ -442,13 +442,13 @@ The {hero} held the {object_motif} close. So happy. So sleepy.
 The {hero} yawned. Over {setting}, the stars came out, soft and slow.
 
 {refrain}.`,
-    scriptTemplate: `{child_name} lived in {setting} and wanted something high on a shelf. The {object_motif} was waiting there.
+    scriptTemplate: `{child_name} the {hero} lived in {setting} and wanted something high on a shelf. The {object_motif} was waiting there.
 
 "I can reach it," said {child_name}. "I will just reach up high."
 
 {child_name} stood on their toes. Reach. Reach. Reach. But no. Too high. The {object_motif} stayed on the shelf.
 
-{child_name} tried to jump. Jump, jump, jump. Still too high. The {object_motif} did not come down.
+{child_name} the {hero} tried to jump. Jump, jump, jump. Still too high. The {object_motif} did not come down.
 
 {child_name} felt stuck. The shelf was too high. {child_name} was too short. "I can't do this," said {child_name}.
 
@@ -496,7 +496,7 @@ The {object_motif} was now in the new room, where it was needed. The {hero} look
 The evening came soft over {setting}. The {hero} held the {object_motif} close, knowing tomorrow would bring another stuck moment. But now the {hero} knew: the first way is not the only way.
 
 {refrain}.`,
-    scriptTemplate: `{child_name} wanted to move the {object_motif} from one room to another, but the doorway was too narrow. The {object_motif} was large and wide, and the door was not.
+    scriptTemplate: `{child_name} the {hero} wanted to move the {object_motif} from one room to another, but the doorway was too narrow. The {object_motif} was large and wide, and the door was not.
 
 {child_name} tried pushing it straight through. Push. Push. Push. The edges scraped. The corners jammed. The {object_motif} would not fit.
 
@@ -540,7 +540,7 @@ Simple. Direct. It had never needed climbing.
 As the light faded over {setting}, the {hero} sat with the {object_motif}, realizing that problems often have multiple solutions. Most people just try one approach and, when it fails, try it harder instead of trying it differently.
 
 {refrain}.`,
-    scriptTemplate: `{child_name} stood before a puzzle with no obvious entry point. The {object_motif} needed to be lifted over a wall, but there was no ladder, no ramp, no clear way up.
+    scriptTemplate: `{child_name} the {hero} stood before a puzzle with no obvious entry point. The {object_motif} needed to be lifted over a wall, but there was no ladder, no ramp, no clear way up.
 
 {child_name}'s first approach: climb the wall yourself, pull the {object_motif} up from above. {child_name} tried. The wall was smooth and too high. Halfway up, {child_name} slipped and fell, unhurt but frustrated. The {object_motif} still sat on the ground, unmoved.
 
@@ -586,7 +586,7 @@ The {hero} filled a bowl with fresh water and set the {object_motif} in it. Left
 As evening settled over {setting}, the {hero} realized something fundamental: problems have multiple solutions, and rushing to the first one often means missing better approaches. The moment of pause — actually thinking before acting — changed everything.
 
 {refrain}.`,
-    scriptTemplate: `{child_name} stood before the {object_motif} with a problem: it had been damaged by salt water and needed cleaning, but they didn't have the right tools. No soft cloth. No gentle soap. Nothing suited for the delicate repair work.
+    scriptTemplate: `{child_name} the {hero} stood before the {object_motif} with a problem: it had been damaged by salt water and needed cleaning, but they didn't have the right tools. No soft cloth. No gentle soap. Nothing suited for the delicate repair work.
 
 {child_name}'s first instinct was direct: grab a rough towel, use whatever soap was available, and scrub the salt away. It made sense as an approach. Get the damage off quickly.
 
@@ -626,7 +626,7 @@ And that way worked.
 The {object_motif} was solved now. The {hero} held it close as the night grew soft over {setting}.
 
 {refrain}.`,
-    scriptTemplate: `{child_name} tried one way to do something. It did not work.
+    scriptTemplate: `{child_name} the {hero} tried one way to do something. It did not work.
 
 But {companion_name} said: "Think. Are there other ways?"
 
@@ -690,7 +690,7 @@ The {hero} held it close and felt so happy.
 "Asking makes the puzzle whole," said the {hero}. "I needed to see both the outside and the inside."
 
 {refrain}.`,
-    scriptTemplate: `{child_name} woke up and the {object_motif} would not sing. It used to sing when you touched it. Now: silence.
+    scriptTemplate: `{child_name} the {hero} woke up and the {object_motif} would not sing. It used to sing when you touched it. Now: silence.
 
 {child_name} shook it. No song.
 
@@ -826,7 +826,7 @@ The {hero} slept through until morning.
 The {hero} held the {object_motif} and slept deeply, understanding now that asking for help had mattered more than struggling alone with only the outside view.
 
 {refrain}.`,
-    scriptTemplate: `{child_name} couldn't sleep. For four nights, sleep had eluded them, and each morning brought a heavier tiredness. They felt caught between exhaustion and wakefulness, stuck in the space where rest should be but wasn't.
+    scriptTemplate: `{child_name} the {hero} couldn't sleep. For four nights, sleep had eluded them, and each morning brought a heavier tiredness. They felt caught between exhaustion and wakefulness, stuck in the space where rest should be but wasn't.
 
 "I'm broken," {child_name} said to {companion_name}. "I can't sleep anymore."
 
@@ -892,7 +892,7 @@ And slowly, strength returned — not the hurried recovery the {hero} had wanted
 The {hero} held the {object_motif}, feeling genuinely rested now, knowing that the deeper the understanding, the truer the solution.
 
 {refrain}.`,
-    scriptTemplate: `{child_name} had been sick for a week — not dangerously, but enough to keep them in bed, weak and frustrated. The fever had broken. The worst symptoms had passed. But still, they couldn't seem to recover their energy. Sitting up for an hour left them exhausted. Walking to the window drained them completely.
+    scriptTemplate: `{child_name} the {hero} had been sick for a week — not dangerously, but enough to keep them in bed, weak and frustrated. The fever had broken. The worst symptoms had passed. But still, they couldn't seem to recover their energy. Sitting up for an hour left them exhausted. Walking to the window drained them completely.
 
 "Something's wrong with me," {child_name} said to {companion_name}, who brought soup. "I should be better by now. Why am I still so weak?"
 
@@ -998,7 +998,7 @@ The {hero} held the {object_motif} and smiled.
 "Trying again is how we learn," said {companion_name}. "That's how you get better."
 
 {refrain}.`,
-    scriptTemplate: `{child_name} made a shape out of clay. A bowl. It was pretty. Round and smooth.
+    scriptTemplate: `{child_name} the {hero} made a shape out of clay. A bowl. It was pretty. Round and smooth.
 
 But when {child_name} put water in it, the water seeped through the bottom.
 
@@ -1052,7 +1052,7 @@ Twenty minutes later, the bird, calm and curious, found the seeds, drank the wat
 The {hero} sat with the {object_motif}, watching the bird disappear into the evening sky.
 
 {refrain}.`,
-    scriptTemplate: `{child_name} was trying to catch a bird that had flown into the cabin. It wasn't dangerous, just a small thing that had gotten confused, and the {object_motif} couldn't be left outside with it loose.
+    scriptTemplate: `{child_name} the {hero} was trying to catch a bird that had flown into the cabin. It wasn't dangerous, just a small thing that had gotten confused, and the {object_motif} couldn't be left outside with it loose.
 
 {child_name}'s first attempt: chase it directly. Run at it, corner it, grab it gently.
 
@@ -1108,7 +1108,7 @@ The entire assembly slid together perfectly.
 The {hero} held the repaired {object_motif}, whole again, and understood: the first attempt had been a necessary step, not a misstep.
 
 {refrain}.`,
-    scriptTemplate: `{child_name} was rebuilding the {object_motif} after it had broken. There were seventeen small pieces, and {child_name} tried to fit them together as they remembered them fitting before.
+    scriptTemplate: `{child_name} the {hero} was rebuilding the {object_motif} after it had broken. There were seventeen small pieces, and {child_name} the {hero} tried to fit them together as they remembered them fitting before.
 
 The first assembly worked up to a point, then three pieces refused to fit at the end. {child_name} tried forcing them. Tried different orders. Nothing. The whole construction came apart in frustrated hands.
 
@@ -1166,7 +1166,7 @@ The {hero} looked at the sealed crack, thinking about the journey from wrong gue
 The {hero} held the {object_motif}, understanding now that the wall they'd fixed was strong partly because it had been fixed badly first — that failure had held information that success needed.
 
 {refrain}.`,
-    scriptTemplate: `{child_name} had an idea for how to reinforce a cracked wall: if they packed clay deeply into the crack, it might hold and prevent further breaking. It made sense in theory. In execution, the clay didn't bond to the old stone; it just sat there, inert and separate, not integrated.
+    scriptTemplate: `{child_name} the {hero} had an idea for how to reinforce a cracked wall: if they packed clay deeply into the crack, it might hold and prevent further breaking. It made sense in theory. In execution, the clay didn't bond to the old stone; it just sat there, inert and separate, not integrated.
 
 When {child_name} tested it, the clay pulled away. The crack remained as vulnerable as before.
 
@@ -1212,7 +1212,7 @@ This time, it worked.
 The {hero} held the {object_motif}, knowing now that trying again was not failing. It was learning.
 
 {refrain}.`,
-    scriptTemplate: `{child_name} tried to build something. The first try didn't work.
+    scriptTemplate: `{child_name} the {hero} tried to build something. The first try didn't work.
 
 But the try taught them something.
 
@@ -1262,7 +1262,7 @@ The {hero} held the {object_motif} close.
 "Listen to what it needs," said {companion_name}. "That's how you solve it right."
 
 {refrain}.`,
-    scriptTemplate: `{child_name} found a {object_motif} stuck in the soft dirt. It was caught. It needed to come out.
+    scriptTemplate: `{child_name} the {hero} found a {object_motif} stuck in the soft dirt. It was caught. It needed to come out.
 
 {child_name} pulled hard. Pull, pull, pull!
 
@@ -1318,7 +1318,7 @@ Behind the door sat the {object_motif}, waiting.
 The {hero} carried the {object_motif} back, understanding that the answer had been there all along, hidden in what the problem was trying to tell.
 
 {refrain}.`,
-    scriptTemplate: `{child_name} faced a door that would not budge. It was locked. The {object_motif} was on the other side, and {child_name} needed to get through.
+    scriptTemplate: `{child_name} the {hero} faced a door that would not budge. It was locked. The {object_motif} was on the other side, and {child_name} needed to get through.
 
 {child_name} pushed the door hard. Push, push, push. The door didn't move. It was solid and unyielding.
 
@@ -1374,7 +1374,7 @@ Inside sat something precious — not because it was valuable, but because it ha
 The {hero} closed the box carefully, now understanding that the most elegant solutions often come from listening to what the problem is actually trying to tell you, not from forcing your will onto it.
 
 {refrain}.`,
-    scriptTemplate: `{child_name} had a delicate puzzle box, the {object_motif}. It was locked with no visible keyhole. After examining it carefully, {child_name} concluded it must be forced open. Gently at first, but if necessary, forcefully.
+    scriptTemplate: `{child_name} the {hero} had a delicate puzzle box, the {object_motif}. It was locked with no visible keyhole. After examining it carefully, {child_name} concluded it must be forced open. Gently at first, but if necessary, forcefully.
 
 {child_name} pushed on the lid. Nothing. Pushed harder. The wood creaked. Still nothing. {child_name} felt the old wood starting to crack under the pressure.
 
@@ -1426,7 +1426,7 @@ It took longer. It required patience. But when the {hero} was done, the {object_
 The {hero} held the {object_motif} close, understanding that the most skilled problem-solvers aren't the ones who attack hardest. They're the ones who listen most carefully to what the problem is actually, truly asking for.
 
 {refrain}.`,
-    scriptTemplate: `{child_name} came upon the {object_motif}, and it needed repair. But this was delicate work, the kind that demanded a particular kind of listening.
+    scriptTemplate: `{child_name} the {hero} came upon the {object_motif}, and it needed repair. But this was delicate work, the kind that demanded a particular kind of listening.
 
 {child_name}'s instinct was direct: identify the damage, attack the problem aggressively, get it fixed. Pull out the broken parts. Replace them. Move on.
 
@@ -1468,7 +1468,7 @@ The {hero} gave it what it needed, and the problem opened.
 The {object_motif} was held close. The night grew soft over {setting}.
 
 {refrain}.`,
-    scriptTemplate: `{child_name} faced a problem. {child_name} wanted to force it open. Push, push, push.
+    scriptTemplate: `{child_name} the {hero} faced a problem. {child_name} the {hero} wanted to force it open. Push, push, push.
 
 But {companion_name} said: "Wait. Listen to what it is asking for."
 
