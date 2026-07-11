@@ -421,818 +421,834 @@ Only the {object_motif} kept its secret, a tiny picture no one could name yet. "
 {refrain}.`,
   },
   {
-    ordinal: 2, title: 'Some Are Worth More',
+    ordinal: 2, title: 'The Little Sun',
     concept: "A coin's value and its size are different things",
-    summary: "The hero finds two coins — one much bigger than the other — and assumes the bigger one must be worth more. A trip to the market proves them wrong: the smaller coin buys twice as much. Their companion explains that a coin's value comes from what it is, not how large it looks.",
+    summary: "Once a season the night-trader's cart rolls through, and tonight the hero wants the star-stitched blanket on its top shelf. Their magnificent big coin turns out to buy exactly one clothes-peg — while the dull little coin they nearly left under a stone hides a tiny golden sun, the rarest mark of all. Bigger, the hero discovers, never meant worth more.",
     teachingNote: "Children naturally assume bigger means more valuable — this story builds the habit of asking 'what is it worth?' instead of 'how big is it?'.",
     learningBeat: "A coin's worth comes from what it is, not how large it looks",
     ageVariants: {
   '3-4': {
-    audioTemplate: `The {hero} lived beside {setting}, and more than anything, the {hero} loved to count coins.
+    audioTemplate: `The night-trader's cart had come to {setting}. It would leave at moonrise.
 
-One bright morning, the {hero} dug in the sand and found two coins. One coin was big. One coin was small.
+On its top shelf sat a soft star-stitched blanket. The {hero} wanted that blanket so much.
 
-"The big one must be worth more," said the {hero}. "Big things are always worth more!" The {hero} held the {object_motif} up high and grinned.
+In the {hero}'s pocket sat two found coins. One big. One small. Count them. One. Two. And the {object_motif}, just for luck.
 
-Off ran the {hero} to the busy market. There stood {companion_name}, sorting coins into neat little piles.
+The {hero} put the big coin down. "One blanket, please!"
 
-"Look what I found!" said the {hero}. "A big coin and a small coin. I will buy the most with the big one, of course!"
+The trader smiled. "For this big coin? One clothes-peg."
 
-{companion_name} smiled softly. "Let us go and see."
+But the big coin was so big!
 
-First, the {hero} gave the big coin to a market seller and pointed at the berries. The seller nodded and handed back one basket. Just one small basket.
+"Hmm," said {companion_name}. "Look closer, little {hero}."
 
-Then the {hero} gave the small coin to the very same seller. The seller smiled and handed back two baskets! Two whole baskets of berries for the little coin.
+The {hero} rubbed the small coin clean. Look, right under the dust. Can you see it too? A tiny golden sun!
 
-The {hero} blinked and blinked. "But it is smaller! How can the small one buy more than the big one?"
+"Oh!" said the {hero}. "The little one is the special one! A coin's worth comes from what it is, not how large it looks!"
 
-{companion_name} knelt down beside the {hero}. "Do you remember? Coins have many names and many looks. A coin's worth comes from what it is, not how large it looks."
+Ting! The little coin rang like a tiny bell.
 
-The {hero} looked at the small coin. Then at the big coin. They had different names. They had different looks. And the little one was simply worth more.
+"A little sun!" said the trader. "The rarest of all. It is worth my softest blanket."
 
-The {hero} laughed out loud and carried both baskets home, one in each arm. The {hero} even gave one sweet berry to {companion_name}, who ate it with a happy nod. The berries were sweet and red and just right.
+Down came the blanket. So soft. So warm. {companion_name} snuggled under one corner. "{refrain}," they whispered.
 
-That night, the {hero} lined up both coins on the windowsill, the big one and the small one, side by side. The {hero} patted them once and let out a long, sleepy yawn.
+The cart rolled away slow. "Next time," called the trader, "I will tell you where little suns are made."
+
+Warm blanket. Quiet stars. Sleepy eyes.
 
 {refrain}.`,
-    scriptTemplate: `{child_name} lived beside {setting}, and more than anything, {child_name} loved to count coins.
+    scriptTemplate: `The night-trader's cart had come to {setting}. It would leave at moonrise.
 
-One bright morning, {child_name} dug in the sand and found two coins. One coin was big. One coin was small.
+On its top shelf sat a soft star-stitched blanket. {child_name} wanted that blanket so much.
 
-"The big one must be worth more," said {child_name}. "Big things are always worth more!" {child_name} held the {object_motif} up high and grinned.
+In {child_name}'s pocket sat two found coins. One big. One small. Count them. One. Two. And the {object_motif}, just for luck.
 
-Off ran {child_name} to the busy market. There stood {companion_name}, sorting coins into neat little piles.
+{child_name} put the big coin down. "One blanket, please!"
 
-"Look what I found!" said {child_name}. "A big coin and a small coin. I will buy the most with the big one, of course!"
+The trader smiled. "For this big coin? One clothes-peg."
 
-{companion_name} smiled softly. "Let us go and see."
+But the big coin was so big!
 
-First, {child_name} gave the big coin to a market seller and pointed at the berries. The seller nodded and handed back one basket. Just one small basket.
+"Hmm," said {companion_name}. "Look closer, little {hero}."
 
-Then {child_name} gave the small coin to the very same seller. The seller smiled and handed back two baskets! Two whole baskets of berries for the little coin.
+{child_name} rubbed the small coin clean. Look, right under the dust. Can you see it too? A tiny golden sun!
 
-{child_name} blinked and blinked. "But it is smaller! How can the small one buy more than the big one?"
+"Oh!" said {child_name}. "The little one is the special one! A coin's worth comes from what it is, not how large it looks!"
 
-{companion_name} knelt down beside {child_name}. "Do you remember? Coins have many names and many looks. A coin's worth comes from what it is, not how large it looks."
+Ting! The little coin rang like a tiny bell.
 
-{child_name} looked at the small coin. Then at the big coin. They had different names. They had different looks. And the little one was simply worth more.
+"A little sun!" said the trader. "The rarest of all. It is worth my softest blanket."
 
-{child_name} laughed out loud and carried both baskets home, one in each arm. {child_name} even gave one sweet berry to {companion_name}, who ate it with a happy nod. The berries were sweet and red and just right.
+Down came the blanket. So soft. So warm. {companion_name} snuggled under one corner. "{refrain}," they whispered.
 
-That night, {child_name} lined up both coins on the windowsill, the big one and the small one, side by side. {child_name} patted them once and let out a long, sleepy yawn.
+The cart rolled away slow. "Next time," called the trader, "I will tell you where little suns are made."
+
+Warm blanket. Quiet stars. Sleepy eyes.
 
 {refrain}.`
   },
   '5-6': {
-    audioTemplate: `The {hero} lived beside {setting}, and the {hero} had been saving coins for as long as anyone could remember. Every coin went into a little pouch, and every night the {hero} counted them twice.
+    audioTemplate: `Once a season, the night-trader's cart rolled through {setting}, and it left at moonrise. Tonight it was here. On its top shelf sat the star-stitched blanket the {hero} had wanted since the first cold evening of the year.
 
-One morning, while walking along the edge of {setting}, the {hero} found two coins half-buried in the ground. The {hero} brushed them clean and held them up. One coin was large, wider than a thumb. The other was small, no bigger than a fingertip.
+Tonight, at last, the {hero} had money. That morning, an old lost purse had turned up under a stone, and inside were two coins. One was enormous — wide as a biscuit and heavy. The other was small and grey, no bigger than a button. The {hero} slipped them in a pocket beside the {object_motif}, for luck, and hurried to the cart with {companion_name}.
 
-"Well, that is easy," said the {hero}. "The big one must be worth more. Bigger always means more." The {hero} tucked the {object_motif} into the pouch and hurried toward the market, already dreaming of everything the big coin might buy.
+"One blanket, please!" said the {hero}, laying the enormous coin on the counter with a proud thump.
 
-At the market stood {companion_name}, who knew more about coins than anyone in all of {setting}. {companion_name} was arranging a row of coins by name, the way they always did.
+The trader turned it over and smiled kindly. "For this? I can give you one clothes-peg."
 
-"Good morning!" called the {hero}. "Look! I found two coins. A big one and a small one. I am going to spend the big one, because it will buy the most."
+A clothes-peg! The {hero} pushed the coin closer, in case it had not been seen properly. Then polished it until it gleamed. Then stacked three pebbles on top, to make it taller. Still one clothes-peg.
 
-{companion_name} looked up and tilted their head. "That is a fine guess. Shall we test it and see?"
+"But it's the biggest coin I have ever found!" said the {hero}.
 
-The {hero} marched straight to a market seller with a table piled high with sweet purple plums. The {hero} set down the big coin. "How many plums for this?" asked the {hero}, standing very tall.
+"Hmm," said {companion_name} softly. "Didn't you once open a box by looking closer?"
 
-The seller studied the big coin, then placed a single plum into the {hero}'s hands. Just one.
+Looking closer. The {hero} took out the little grey coin — and noticed how heavy it was. Small as a button, heavy as a secret. And under the dust, something waited.
 
-The {hero} frowned but did not give up. "And how many for this little one?" The {hero} set down the small coin instead.
+Lean close now. Right under the smudge. Can you see it too? A tiny golden sun.
 
-The seller studied the small coin, smiled, and counted out two plums. Then, after a moment, a third. Three plums for the little coin.
+The {hero} rubbed it clear with one thumb, and the sun shone. "It was never about big or small!" said the {hero}. "A coin's worth comes from what it is, not how large it looks!"
 
-The {hero} stared. Three for the small, and only one for the big? The {hero} turned around slowly. "{companion_name}, that cannot be right. The small coin is tiny. How can it be worth more than the big one?"
+"In thirty years," whispered the trader, "I have seen a little sun only once. It is worth the finest thing on this cart."
 
-{companion_name} came over and crouched beside the {hero}. "Do you remember what we learned? Coins have all sorts of names, and all sorts of looks. This big coin has one name. That small coin has another. A coin's worth comes from what it is, not how large it looks."
+The {hero} tapped it on the counter. Ting — a ring like a far-away bell saying yes.
 
-The {hero} turned the two coins over and over. It was true. They did not look alike at all. One was heavy and wide, one was light and small, and each had its own name stamped upon it. Size had fooled the {hero} completely.
+So the trade was made. Down came the blanket, even softer than it looked, and the {hero} wrapped one end around {companion_name}, who said they were quite warm already, and snuggled in anyway.
 
-"So if I had only spent the big one," the {hero} said slowly, "I would have gone home with a single plum, when I could have had three."
+"{refrain}," murmured {companion_name}, from somewhere inside the stars.
 
-{companion_name} nodded once and said nothing more, letting the {hero} think it through.
+The cart rolled away slow. "Next season, little {hero}," the trader called back, "I will tell you where the little suns were made."
 
-The {hero} looked at the small coin with new respect. Then the {hero} spent it, carried away three warm plums, and shared one with {companion_name} right there at the market.
+The big coin stayed in the pocket. It made a fine paperweight.
 
-On the walk home, the {hero} kept the big coin safe in the pouch, not because it was worth the most, but because it had taught the best lesson of the day. The {hero} would never judge a coin by its size again.
-
-That evening, the {hero} set both coins on the shelf, the big beside the small, and looked at them for a long, quiet moment. Then the {hero} climbed under the blanket, full of plums, and let their eyes fall shut.
+The blanket was warm. The night was soft. The {hero}'s eyes closed on their own.
 
 {refrain}.`,
-    scriptTemplate: `{child_name} lived beside {setting}, and {child_name} had been saving coins for as long as anyone could remember. Every coin went into a little pouch, and every night {child_name} counted them twice.
+    scriptTemplate: `Once a season, the night-trader's cart rolled through {setting}, and it left at moonrise. Tonight it was here. On its top shelf sat the star-stitched blanket {child_name} had wanted since the first cold evening of the year.
 
-One morning, while walking along the edge of {setting}, {child_name} found two coins half-buried in the ground. {child_name} brushed them clean and held them up. One coin was large, wider than a thumb. The other was small, no bigger than a fingertip.
+Tonight, at last, {child_name} had money. That morning, an old lost purse had turned up under a stone, and inside were two coins. One was enormous — wide as a biscuit and heavy. The other was small and grey, no bigger than a button. {child_name} slipped them in a pocket beside the {object_motif}, for luck, and hurried to the cart with {companion_name}.
 
-"Well, that is easy," said {child_name}. "The big one must be worth more. Bigger always means more." {child_name} tucked the {object_motif} into the pouch and hurried toward the market, already dreaming of everything the big coin might buy.
+"One blanket, please!" said {child_name}, laying the enormous coin on the counter with a proud thump.
 
-At the market stood {companion_name}, who knew more about coins than anyone in all of {setting}. {companion_name} was arranging a row of coins by name, the way they always did.
+The trader turned it over and smiled kindly. "For this? I can give you one clothes-peg."
 
-"Good morning!" called {child_name}. "Look! I found two coins. A big one and a small one. I am going to spend the big one, because it will buy the most."
+A clothes-peg! {child_name} pushed the coin closer, in case it had not been seen properly. Then polished it until it gleamed. Then stacked three pebbles on top, to make it taller. Still one clothes-peg.
 
-{companion_name} looked up and tilted their head. "That is a fine guess. Shall we test it and see?"
+"But it's the biggest coin I have ever found!" said {child_name}.
 
-{child_name} marched straight to a market seller with a table piled high with sweet purple plums. {child_name} set down the big coin. "How many plums for this?" asked {child_name}, standing very tall.
+"Hmm," said {companion_name} softly. "Didn't you once open a box by looking closer?"
 
-The seller studied the big coin, then placed a single plum into {child_name}'s hands. Just one.
+Looking closer. {child_name} took out the little grey coin — and noticed how heavy it was. Small as a button, heavy as a secret. And under the dust, something waited.
 
-{child_name} frowned but did not give up. "And how many for this little one?" {child_name} set down the small coin instead.
+Lean close now. Right under the smudge. Can you see it too? A tiny golden sun.
 
-The seller studied the small coin, smiled, and counted out two plums. Then, after a moment, a third. Three plums for the little coin.
+{child_name} rubbed it clear with one thumb, and the sun shone. "It was never about big or small!" said {child_name}. "A coin's worth comes from what it is, not how large it looks!"
 
-{child_name} stared. Three for the small, and only one for the big? {child_name} turned around slowly. "{companion_name}, that cannot be right. The small coin is tiny. How can it be worth more than the big one?"
+"In thirty years," whispered the trader, "I have seen a little sun only once. It is worth the finest thing on this cart."
 
-{companion_name} came over and crouched beside {child_name}. "Do you remember what we learned? Coins have all sorts of names, and all sorts of looks. This big coin has one name. That small coin has another. A coin's worth comes from what it is, not how large it looks."
+{child_name} tapped it on the counter. Ting — a ring like a far-away bell saying yes.
 
-{child_name} turned the two coins over and over. It was true. They did not look alike at all. One was heavy and wide, one was light and small, and each had its own name stamped upon it. Size had fooled {child_name} completely.
+So the trade was made. Down came the blanket, even softer than it looked, and {child_name} wrapped one end around {companion_name}, who said they were quite warm already, and snuggled in anyway.
 
-"So if I had only spent the big one," {child_name} said slowly, "I would have gone home with a single plum, when I could have had three."
+"{refrain}," murmured {companion_name}, from somewhere inside the stars.
 
-{companion_name} nodded once and said nothing more, letting {child_name} think it through.
+The cart rolled away slow. "Next season, little {hero}," the trader called back, "I will tell you where the little suns were made."
 
-{child_name} looked at the small coin with new respect. Then {child_name} spent it, carried away three warm plums, and shared one with {companion_name} right there at the market.
+The big coin stayed in the pocket. It made a fine paperweight.
 
-On the walk home, {child_name} kept the big coin safe in the pouch, not because it was worth the most, but because it had taught the best lesson of the day. {child_name} would never judge a coin by its size again.
-
-That evening, {child_name} set both coins on the shelf, the big beside the small, and looked at them for a long, quiet moment. Then {child_name} climbed under the blanket, full of plums, and let their eyes fall shut.
+The blanket was warm. The night was soft. {child_name}'s eyes closed on their own.
 
 {refrain}.`
   },
   '7-8': {
-    audioTemplate: `The {hero} had a rule: every coin worth keeping went into the wooden box beneath the bed, and no coin left the box without a very good reason. Living beside {setting}, the {hero} had grown up hearing that money was a serious thing, and the {hero} took it seriously indeed.
+    audioTemplate: `The night-trader came to {setting} once a season, often enough to feel like magic, rarely enough that nobody ever got used to it. The cart arrived that evening with lanterns swinging and brass bell chiming, and it would leave at moonrise.
 
-So when the {hero} found two coins wedged between the stones on the path one morning, it felt like a small kind of treasure. The {hero} pried them loose, rubbed the dirt away, and laid them flat on one palm to compare.
+The {hero} had one thing in mind: the star-stitched blanket, folded on the top shelf between a telescope and a teapot. It had been there last season too, deep blue, sewn with small white stars, and the {hero} had thought about it through every chilly evening since.
 
-One coin was large. It filled nearly the whole of the {hero}'s hand, broad and heavy and important-looking. The other was small enough to hide under a fingernail, thin and light as a leaf.
+And tonight, for once, there was money. That morning the {hero} had pulled an old cloth purse from under a mossy stone. Inside were two coins. The first was magnificent: wide as a biscuit, thick as a thumb, heavy enough to make a pocket swing. The second was small and grey and dull, hardly bigger than a button. The {hero} very nearly left the little one where it lay, then dropped it in the pocket anyway, next to the {object_motif}, and went to find {companion_name}.
 
-"No contest," the {hero} decided out loud. "The big one is worth far more than the little one. Anyone can see that." The {hero} closed a fist around the {object_motif} and set off for the market with a spring in each step, certain that a coin so large could buy nearly anything.
+"Tonight," announced the {hero}, "I am buying the blanket. Look at the size of this coin. It could buy the whole shelf."
 
-The market was crowded and loud, full of sellers calling out prices and baskets stacked in bright towers. Near the middle of it all stood {companion_name}, who had spent a lifetime among coins and could name any of them with a single glance.
+"Mm," said {companion_name}, which was not quite agreement.
 
-"There you are," said {companion_name}, catching sight of the {hero}. "You look pleased with yourself this morning."
+At the cart, the {hero} laid the great coin on the counter with both hands, the way you might present a trophy.
 
-"I found two coins," said the {hero}, holding both up proudly. "A big one and a small one. I am going to buy the biggest bag of roasted nuts in the whole market, and I will pay with the big coin, because the big coin must be worth the most."
+The trader picked it up, turned it over once, and smiled a kind, slightly sorry smile. "For this, I can offer you one clothes-peg."
 
-{companion_name} raised an eyebrow, amused. "You are certain of that?"
+The {hero} waited for the joke to finish. It did not finish.
 
-"Of course," said the {hero}. "Look at the size of it."
+"One clothes-peg? It's the biggest coin I have ever found!"
 
-"Then go and try," said {companion_name}. "I will wait right here."
+"It is certainly the biggest," the trader agreed pleasantly.
 
-The {hero} strode up to the nut seller's stall, where warm bags of roasted nuts were lined up in a row. "One big bag, please," said the {hero}, placing the large coin firmly on the counter.
+So the {hero} got to work. The coin was polished on a sleeve until an arm ached, in case shine helped. It was moved closer to the lantern, in case light helped. Three pebbles were stacked on top of it, in case tallness helped. The trader watched all this with great interest and offered, at last, two clothes-pegs — for the entertainment.
 
-The seller picked up the big coin, turned it over, and slid the smallest bag across the counter. "That is what this one buys," the seller said kindly.
+The {hero} slumped against the cart wheel. "But big should mean more. That's the whole point of big."
 
-The {hero} stared at the little bag. "Only that? But it is such a big coin."
+"Hmm," said {companion_name}, settling down beside the {hero}. "You opened a locked box once, remember. Not by pushing harder. By looking closer."
 
-"Size is not the price," said the seller, already turning to the next customer.
+Looking closer. The {hero} took out the little grey coin, the one that was almost left under a stone, and gave it a proper look for the first time. It was small, yes. But it was heavy — strangely heavy, small as a button and heavy as a secret. Its edge was milled with fine lines, finer than on any coin the {hero} had ever read. And under the dust on its face there was a shape.
 
-The {hero}'s cheeks went warm. That was not how the morning was supposed to go. Determined not to leave it there, the {hero} set down the small coin instead. "Then what will this one buy?"
+Lean close, right under the smudge. Can you see it too? A tiny golden sun, fast asleep.
 
-The seller glanced at the small coin, and this time nodded with real approval. The seller reached for the largest bag on the stall, the fat one bursting at the top, and set it down in front of the {hero}. "That one buys this. And a handful more, if you like."
+The {hero} rubbed it clear with one thumb, and the sun woke up and shone.
 
-The {hero} could hardly believe it. The little coin, the one that could hide under a fingernail, bought twice what the great big coin had bought. Twice as much, from the smaller of the two.
+Everything went quiet at the cart. The trader leaned in slowly.
 
-Slowly, the {hero} walked back to {companion_name}, a bag in each hand and a puzzled frown on their face. "It makes no sense," said the {hero}. "The small coin bought more than the big one. How? The big one is the big one."
+"It was never about big or small," said the {hero}, holding it up. "A coin's worth comes from what it is, not how large it looks!"
 
-{companion_name} sat down on a crate so their eyes were level with the {hero}'s. "Think back to what you learned. Coins come with different names and different faces. The big coin has one name, and it is not worth much. The small coin has another, and it is worth a great deal. A coin's worth comes from what it is, not how large it looks."
+"In thirty years of trading," the trader said softly, "I have seen a little sun once — in my grandmother's hand, when I was smaller than you. She told me it was worth the finest thing a cart could carry."
 
-The {hero} turned the two coins over in the light, reading the names stamped on each. They truly were different, name and face and all. The only thing the {hero} had noticed was size, and size had led the {hero} straight to the wrong choice.
+The {hero} tapped the coin gently on the counter, and it rang. Ting — high and clear, like a bell agreeing from far away.
 
-"I nearly spent the good one thinking it was the poor one," the {hero} admitted, half laughing and half embarrassed. "I almost had it backward."
+"The blanket," said the trader, "is a little sun's worth exactly. As if they were made for each other."
 
-"Almost," agreed {companion_name}, "but you looked again. That is the whole trick of it. Always look again."
+Down it came from the top shelf, and it was softer than it had looked, which almost never happens. The {hero} wrapped one end around {companion_name}, who said they were perfectly warm already and then burrowed in until only two curious eyes showed.
 
-The {hero} spent the small coin on the big bag, saved the large coin for another day, and shared the roasted nuts with {companion_name} as they walked back through the thinning crowd. They were warm and salty and worth every bit of the fuss.
+"{refrain}," murmured {companion_name}, from somewhere inside the stars.
 
-That night, the {hero} did not hide the two coins away in the box beneath the bed. Instead the {hero} left them out on the sill, big and small, side by side, so that the very first thing in the morning would be a reminder never to be fooled by size again.
+The cart packed itself up unhurriedly, lantern by lantern. As it rolled away, the trader leaned out. "Next season, little {hero}, come and find me. There is one more little sun somewhere in the world — and I will tell you where they were made."
 
-The {hero} pulled the blanket up, listened to the far-off sounds of {setting}, and smiled a slow, sleepy smile.
+The wheels grew quieter. The moon came up on time.
+
+The big coin stayed in the pocket after all. It made, everyone agreed, an excellent paperweight.
+
+The blanket was warm. The night was kind. The {hero}'s eyes closed on their own.
 
 {refrain}.`,
-    scriptTemplate: `{child_name} had a rule: every coin worth keeping went into the wooden box beneath the bed, and no coin left the box without a very good reason. Living beside {setting}, {child_name} had grown up hearing that money was a serious thing, and {child_name} took it seriously indeed.
+    scriptTemplate: `The night-trader came to {setting} once a season, often enough to feel like magic, rarely enough that nobody ever got used to it. The cart arrived that evening with lanterns swinging and brass bell chiming, and it would leave at moonrise.
 
-So when {child_name} found two coins wedged between the stones on the path one morning, it felt like a small kind of treasure. {child_name} pried them loose, rubbed the dirt away, and laid them flat on one palm to compare.
+{child_name} had one thing in mind: the star-stitched blanket, folded on the top shelf between a telescope and a teapot. It had been there last season too, deep blue, sewn with small white stars, and {child_name} had thought about it through every chilly evening since.
 
-One coin was large. It filled nearly the whole of {child_name}'s hand, broad and heavy and important-looking. The other was small enough to hide under a fingernail, thin and light as a leaf.
+And tonight, for once, there was money. That morning {child_name} had pulled an old cloth purse from under a mossy stone. Inside were two coins. The first was magnificent: wide as a biscuit, thick as a thumb, heavy enough to make a pocket swing. The second was small and grey and dull, hardly bigger than a button. {child_name} very nearly left the little one where it lay, then dropped it in the pocket anyway, next to the {object_motif}, and went to find {companion_name}.
 
-"No contest," {child_name} decided out loud. "The big one is worth far more than the little one. Anyone can see that." {child_name} closed a fist around the {object_motif} and set off for the market with a spring in each step, certain that a coin so large could buy nearly anything.
+"Tonight," announced {child_name}, "I am buying the blanket. Look at the size of this coin. It could buy the whole shelf."
 
-The market was crowded and loud, full of sellers calling out prices and baskets stacked in bright towers. Near the middle of it all stood {companion_name}, who had spent a lifetime among coins and could name any of them with a single glance.
+"Mm," said {companion_name}, which was not quite agreement.
 
-"There you are," said {companion_name}, catching sight of {child_name}. "You look pleased with yourself this morning."
+At the cart, {child_name} laid the great coin on the counter with both hands, the way you might present a trophy.
 
-"I found two coins," said {child_name}, holding both up proudly. "A big one and a small one. I am going to buy the biggest bag of roasted nuts in the whole market, and I will pay with the big coin, because the big coin must be worth the most."
+The trader picked it up, turned it over once, and smiled a kind, slightly sorry smile. "For this, I can offer you one clothes-peg."
 
-{companion_name} raised an eyebrow, amused. "You are certain of that?"
+{child_name} waited for the joke to finish. It did not finish.
 
-"Of course," said {child_name}. "Look at the size of it."
+"One clothes-peg? It's the biggest coin I have ever found!"
 
-"Then go and try," said {companion_name}. "I will wait right here."
+"It is certainly the biggest," the trader agreed pleasantly.
 
-{child_name} strode up to the nut seller's stall, where warm bags of roasted nuts were lined up in a row. "One big bag, please," said {child_name}, placing the large coin firmly on the counter.
+So {child_name} got to work. The coin was polished on a sleeve until an arm ached, in case shine helped. It was moved closer to the lantern, in case light helped. Three pebbles were stacked on top of it, in case tallness helped. The trader watched all this with great interest and offered, at last, two clothes-pegs — for the entertainment.
 
-The seller picked up the big coin, turned it over, and slid the smallest bag across the counter. "That is what this one buys," the seller said kindly.
+{child_name} slumped against the cart wheel. "But big should mean more. That's the whole point of big."
 
-{child_name} stared at the little bag. "Only that? But it is such a big coin."
+"Hmm," said {companion_name}, settling down beside {child_name}. "You opened a locked box once, remember. Not by pushing harder. By looking closer."
 
-"Size is not the price," said the seller, already turning to the next customer.
+Looking closer. {child_name} took out the little grey coin, the one that was almost left under a stone, and gave it a proper look for the first time. It was small, yes. But it was heavy — strangely heavy, small as a button and heavy as a secret. Its edge was milled with fine lines, finer than on any coin {child_name} had ever read. And under the dust on its face there was a shape.
 
-{child_name}'s cheeks went warm. That was not how the morning was supposed to go. Determined not to leave it there, {child_name} set down the small coin instead. "Then what will this one buy?"
+Lean close, right under the smudge. Can you see it too? A tiny golden sun, fast asleep.
 
-The seller glanced at the small coin, and this time nodded with real approval. The seller reached for the largest bag on the stall, the fat one bursting at the top, and set it down in front of {child_name}. "That one buys this. And a handful more, if you like."
+{child_name} rubbed it clear with one thumb, and the sun woke up and shone.
 
-{child_name} could hardly believe it. The little coin, the one that could hide under a fingernail, bought twice what the great big coin had bought. Twice as much, from the smaller of the two.
+Everything went quiet at the cart. The trader leaned in slowly.
 
-Slowly, {child_name} walked back to {companion_name}, a bag in each hand and a puzzled frown on their face. "It makes no sense," said {child_name}. "The small coin bought more than the big one. How? The big one is the big one."
+"It was never about big or small," said {child_name}, holding it up. "A coin's worth comes from what it is, not how large it looks!"
 
-{companion_name} sat down on a crate so their eyes were level with {child_name}'s. "Think back to what you learned. Coins come with different names and different faces. The big coin has one name, and it is not worth much. The small coin has another, and it is worth a great deal. A coin's worth comes from what it is, not how large it looks."
+"In thirty years of trading," the trader said softly, "I have seen a little sun once — in my grandmother's hand, when I was smaller than you. She told me it was worth the finest thing a cart could carry."
 
-{child_name} turned the two coins over in the light, reading the names stamped on each. They truly were different, name and face and all. The only thing {child_name} had noticed was size, and size had led {child_name} straight to the wrong choice.
+{child_name} tapped the coin gently on the counter, and it rang. Ting — high and clear, like a bell agreeing from far away.
 
-"I nearly spent the good one thinking it was the poor one," {child_name} admitted, half laughing and half embarrassed. "I almost had it backward."
+"The blanket," said the trader, "is a little sun's worth exactly. As if they were made for each other."
 
-"Almost," agreed {companion_name}, "but you looked again. That is the whole trick of it. Always look again."
+Down it came from the top shelf, and it was softer than it had looked, which almost never happens. {child_name} wrapped one end around {companion_name}, who said they were perfectly warm already and then burrowed in until only two curious eyes showed.
 
-{child_name} spent the small coin on the big bag, saved the large coin for another day, and shared the roasted nuts with {companion_name} as they walked back through the thinning crowd. They were warm and salty and worth every bit of the fuss.
+"{refrain}," murmured {companion_name}, from somewhere inside the stars.
 
-That night, {child_name} did not hide the two coins away in the box beneath the bed. Instead {child_name} left them out on the sill, big and small, side by side, so that the very first thing in the morning would be a reminder never to be fooled by size again.
+The cart packed itself up unhurriedly, lantern by lantern. As it rolled away, the trader leaned out. "Next season, little {hero}, come and find me. There is one more little sun somewhere in the world — and I will tell you where they were made."
 
-{child_name} pulled the blanket up, listened to the far-off sounds of {setting}, and smiled a slow, sleepy smile.
+The wheels grew quieter. The moon came up on time.
+
+The big coin stayed in the pocket after all. It made, everyone agreed, an excellent paperweight.
+
+The blanket was warm. The night was kind. {child_name}'s eyes closed on their own.
 
 {refrain}.`
   },
   '9-11': {
-    audioTemplate: `The {hero} kept accounts. Not in any grand way, just a folded scrap of paper in a pocket, where every coin earned and every coin spent was noted in a careful hand. Living beside {setting}, where the seasons could be generous one month and stingy the next, the {hero} had learned early that keeping track of money was a way of keeping track of yourself. It made the {hero} feel older than the other children, and a little wiser, and if the {hero} was honest, a little proud.
+    audioTemplate: `The purse was the first mystery. The {hero} found it that morning beneath a mossy stone at the edge of {setting} — old waxed cloth, stitched shut with sailmaker's thread, a tiny ship embroidered on the flap. Inside were two coins and the smell of long ago.
 
-That pride was exactly the trouble.
+The first coin was a monster. Wide as a biscuit, thick as a thumb, heavy enough to make the whole pocket swing when the {hero} walked. The second was small, grey, and dull, hardly bigger than a button, and the {hero} came within one lazy breath of leaving it under the stone. Into the pocket it went anyway, next to the {object_motif}, mostly out of politeness.
 
-It began on an ordinary morning. The {hero} was crossing the old market path when something caught the light between two flat stones. The {hero} crouched, worked a fingernail into the gap, and freed not one coin but two. Wiping them clean on a sleeve, the {hero} held them up to compare.
+The timing could not have been better, because tonight the night-trader's cart stood at the crossroads, lanterns swinging, brass bell chiming, due to roll away at moonrise as it did once a season. And on the cart's top shelf, folded between a telescope and a teapot, sat the star-stitched blanket: deep blue, sewn all over with small white stars, wanted by the {hero} since the first cold evening of the year with a steady, patient wanting that had never once had money behind it.
 
-The difference was almost comical. One coin was large, broad as a full walnut, heavy in the palm, its edge thick and its face crowded with detail. The other was scarcely more than a chip of metal, thin and light, small enough to vanish in the crease of a knuckle.
+Now there was money. Now there was a coin the size of a biscuit.
 
-The {hero} weighed them, one in each hand, and felt the old certainty settle in. Bigger was more. It was the most obvious thing in the world. A large coin was simply a larger amount of money; anyone could see it. The {hero} slipped the small one into a pocket almost carelessly and closed a fist around the {object_motif}, the big one, the important one, and began to plan.
+"The blanket, please," said the {hero}, laying the great coin on the counter the way you might present a trophy.
 
-There was a particular stall the {hero} had been thinking about for a week, a baker who sold honey buns so good that the smell of them reached halfway across the market. They were not cheap. But with a coin this size, the {hero} thought, cheap did not matter. The {hero} could buy a whole row of them and still have change to note down on the folded paper.
+The trader picked it up, weighed it in one hand, turned it over twice, and smiled the kind smile of someone about to be disappointing. "For this? One clothes-peg."
 
-At the market, {companion_name} was where {companion_name} always was, near the well at the center, sorting a small heap of coins into groups only they understood. {companion_name} had handled money longer than the {hero} had been alive and had a way of knowing the worth of a thing at a glance.
+The {hero} laughed. The trader did not.
 
-"You are walking like someone with a plan," {companion_name} observed, without looking up.
+"It's the biggest coin I have ever found," said the {hero}, with dignity.
 
-"I found two coins," said the {hero}, unable to keep the grin down. "A big one and a small one. I am going to buy honey buns with the big one. Look at it, it must be worth a fortune."
+"It is certainly the biggest," the trader agreed, and waited to see what the {hero} would do about it.
 
-{companion_name} did look up then, and studied the {hero} for a moment with an expression that was not quite a smile. "Must it," {companion_name} said. It did not sound like a question, and {companion_name} added nothing more. "Go on, then. I will be here."
+What followed was not the {hero}'s finest hour. The great coin was polished on a sleeve until an arm ached, in case shine was the problem. It was carried around to the other side of the lantern, in case shadow was the problem. It was stood upright and steadied with three stacked pebbles, in case the counter simply needed to see how tall it could be. The trader observed all of this with genuine enjoyment and raised the offer to two clothes-pegs, for the entertainment.
 
-The {hero} went, buoyed by that certainty, straight to the baker's stall where the honey buns sat in golden rows. "I would like four," the {hero} said grandly, and laid the big coin on the counter with a satisfying little clack.
+The {hero} slumped against the cart wheel, defeated by arithmetic that refused to behave. Big should mean more. That was the whole point of big. Everything else worked that way — big waves, big trees, big dinners.
 
-The baker picked it up, turned it over, and instead of reaching for the buns, set it back down with an apologetic tilt of the head. "This will buy you one," the baker said. "Not four. One."
+"Hmm," said {companion_name}, from the {hero}'s side. "You opened a locked box once, remember. Not by pushing harder. By looking closer."
 
-The {hero} felt the grin freeze. "One? But it is the biggest coin I have ever seen."
+The little grey coin was still in the pocket, busy being unimportant. The {hero} took it out — and frowned. It was heavy. Not heavy for its size; heavy like a secret, small as a button and dense as a promise. Its edge was milled with lines finer than on any coin the {hero} had ever read, dozens of them, patient and exact. Coins had names, the {hero} knew that much by now; names, faces, edges, marks. So what was this one's name? Under the dust on its face, something waited.
 
-"It is big," the baker agreed, not unkindly. "It is also not worth very much. Big and valuable are not the same thing, young one."
+Lean in, right under the smudge. Can you see it too? A tiny golden sun, fast asleep.
 
-Heat crept up the {hero}'s neck. Around the stall, an ordinary morning went on, no one watching, no one who had even noticed, and yet the {hero} felt the small, sharp sting of having been so sure, so loudly sure, and so wrong. One honey bun. The {hero} had marched up expecting a feast and could afford a single bun.
+One pass of a thumb, and the sun woke up and shone.
 
-For a moment the {hero} nearly took the one bun and slipped away. But something nagged, the small coin, forgotten in the pocket. Almost defiantly, the {hero} fished it out and set it beside the big one. "And this little one? What does this buy?"
+The counter went very quiet. Somewhere behind the lanterns, the trader stopped breathing for a moment.
 
-The baker's face changed at once. "Ah," the baker said, with new interest, and picked up the small coin the way one picks up something that matters. "This one buys four. Perhaps five, if you are patient with me while I count." And the baker began laying honey buns on the counter, one, two, three, four, until the {hero} had to cup both hands to hold them.
+"It was never about big or small," the {hero} said slowly, the whole evening rearranging itself. "The name, the mark, the make — that is the coin. A coin's worth comes from what it is, not how large it looks."
 
-The {hero} stood there, hands full of warm buns bought with the coin that could hide under a fingernail, staring at the big coin still sitting alone and nearly useless on the counter. The whole thing turned itself over in the {hero}'s mind. The small one, the one nearly left behind, was worth several times the great heavy one the {hero} had been so proud of.
+"In thirty years of this cart," said the trader, "I have seen a little sun once. My grandmother kept one in her left glove for luck, and she would not trade it for a wagon of the big ones. It is worth the finest thing I carry — and the finest thing I carry is that blanket."
 
-The {hero} walked back to {companion_name} slowly, buns balanced carefully, cheeks still warm.
+The {hero} tapped the little coin once on the counter. Ting. High and clear, like a far-off bell agreeing.
 
-"It bought four with the small one," the {hero} said. "And only one with the big one. I had it completely backward. I stood there and told the baker how much the big coin was worth, and it was hardly worth anything." The {hero} looked down at the two coins. "I feel a little foolish."
+The trade was made without another word, the way the best trades are. The blanket came down from the top shelf, softer than it had looked, which almost never happens, and big enough that when the {hero} draped one end over {companion_name}, they vanished entirely except for two curious eyes.
 
-{companion_name} took the coins and held them side by side, one on each fingertip, so the {hero} could see them plainly. "Look at them properly this time. Not at their size, at their names, their faces, what they actually are. These two coins have different names, just as you learned before, and different faces stamped upon them. One name is worth a great deal and the other very little, and neither fact has a thing to do with how big the coin is. A coin's worth comes from what it is, not how large it looks."
+"{refrain}," said {companion_name}, muffled, from somewhere among the sewn stars.
 
-The {hero} took the coins back and, for the first time, really read them, the names along the edges, the small marks on each face that the {hero} had been too dazzled by size to notice. They were as different as two things could be. All the certainty of the morning had rested on nothing but bigness, and bigness had been the one part that did not matter at all.
+The cart packed itself up without hurry, lantern by lantern. The trader leaned out as the wheels began to turn. "Next season, little {hero}, come and find me. Bring that purse — a ship stitched like that means it sailed a long way to reach you, and I trade in stories too."
 
-"So the size was the trick," the {hero} said quietly. "It looked like the answer, and it was the thing pulling me the wrong way the whole time."
+The wheels faded down the road. The moon arrived exactly on time.
 
-"It usually is," said {companion_name}, and left it there.
+Walking home through {setting}, the {hero} thought about how sure they had been at the counter, and how kindly the evening had corrected them. The great coin rode along in the pocket, magnificent and mostly useless, already promoted to paperweight. The little sun was gone, and the warmth it had bought was everywhere.
 
-The {hero} spent the small coin, kept the big one for what it truly was, and shared the honey buns with {companion_name} beside the well, and they were every bit as good as their smell had promised, better, perhaps, for having very nearly not been bought at all.
-
-Walking home, the {hero} took out the folded scrap of paper and, instead of a number, wrote a single short line to remember, then tucked it away.
-
-That night the {hero} set the two coins on the sill where the light of {setting} could reach them, the great one and the small one, and lay looking at them until the difference stopped seeming strange and started seeming obvious. The last thought before sleep was not about the buns at all, but about how sure the {hero} had been, and how easily sure could be wrong, and how good it felt to look again.
+The {hero} lay down under new stars, the sewn ones and the real ones, and let the two skies blur into each other.
 
 {refrain}.`,
-    scriptTemplate: `{child_name} kept accounts. Not in any grand way, just a folded scrap of paper in a pocket, where every coin earned and every coin spent was noted in a careful hand. Living beside {setting}, where the seasons could be generous one month and stingy the next, {child_name} had learned early that keeping track of money was a way of keeping track of yourself. It made {child_name} feel older than the other children, and a little wiser, and if {child_name} was honest, a little proud.
+    scriptTemplate: `The purse was the first mystery. {child_name} found it that morning beneath a mossy stone at the edge of {setting} — old waxed cloth, stitched shut with sailmaker's thread, a tiny ship embroidered on the flap. Inside were two coins and the smell of long ago.
 
-That pride was exactly the trouble.
+The first coin was a monster. Wide as a biscuit, thick as a thumb, heavy enough to make the whole pocket swing when {child_name} walked. The second was small, grey, and dull, hardly bigger than a button, and {child_name} came within one lazy breath of leaving it under the stone. Into the pocket it went anyway, next to the {object_motif}, mostly out of politeness.
 
-It began on an ordinary morning. {child_name} was crossing the old market path when something caught the light between two flat stones. {child_name} crouched, worked a fingernail into the gap, and freed not one coin but two. Wiping them clean on a sleeve, {child_name} held them up to compare.
+The timing could not have been better, because tonight the night-trader's cart stood at the crossroads, lanterns swinging, brass bell chiming, due to roll away at moonrise as it did once a season. And on the cart's top shelf, folded between a telescope and a teapot, sat the star-stitched blanket: deep blue, sewn all over with small white stars, wanted by {child_name} since the first cold evening of the year with a steady, patient wanting that had never once had money behind it.
 
-The difference was almost comical. One coin was large, broad as a full walnut, heavy in the palm, its edge thick and its face crowded with detail. The other was scarcely more than a chip of metal, thin and light, small enough to vanish in the crease of a knuckle.
+Now there was money. Now there was a coin the size of a biscuit.
 
-{child_name} weighed them, one in each hand, and felt the old certainty settle in. Bigger was more. It was the most obvious thing in the world. A large coin was simply a larger amount of money; anyone could see it. {child_name} slipped the small one into a pocket almost carelessly and closed a fist around the {object_motif}, the big one, the important one, and began to plan.
+"The blanket, please," said {child_name}, laying the great coin on the counter the way you might present a trophy.
 
-There was a particular stall {child_name} had been thinking about for a week, a baker who sold honey buns so good that the smell of them reached halfway across the market. They were not cheap. But with a coin this size, {child_name} thought, cheap did not matter. {child_name} could buy a whole row of them and still have change to note down on the folded paper.
+The trader picked it up, weighed it in one hand, turned it over twice, and smiled the kind smile of someone about to be disappointing. "For this? One clothes-peg."
 
-At the market, {companion_name} was where {companion_name} always was, near the well at the center, sorting a small heap of coins into groups only they understood. {companion_name} had handled money longer than {child_name} had been alive and had a way of knowing the worth of a thing at a glance.
+{child_name} laughed. The trader did not.
 
-"You are walking like someone with a plan," {companion_name} observed, without looking up.
+"It's the biggest coin I have ever found," said {child_name}, with dignity.
 
-"I found two coins," said {child_name}, unable to keep the grin down. "A big one and a small one. I am going to buy honey buns with the big one. Look at it, it must be worth a fortune."
+"It is certainly the biggest," the trader agreed, and waited to see what {child_name} would do about it.
 
-{companion_name} did look up then, and studied {child_name} for a moment with an expression that was not quite a smile. "Must it," {companion_name} said. It did not sound like a question, and {companion_name} added nothing more. "Go on, then. I will be here."
+What followed was not {child_name}'s finest hour. The great coin was polished on a sleeve until an arm ached, in case shine was the problem. It was carried around to the other side of the lantern, in case shadow was the problem. It was stood upright and steadied with three stacked pebbles, in case the counter simply needed to see how tall it could be. The trader observed all of this with genuine enjoyment and raised the offer to two clothes-pegs, for the entertainment.
 
-{child_name} went, buoyed by that certainty, straight to the baker's stall where the honey buns sat in golden rows. "I would like four," {child_name} said grandly, and laid the big coin on the counter with a satisfying little clack.
+{child_name} slumped against the cart wheel, defeated by arithmetic that refused to behave. Big should mean more. That was the whole point of big. Everything else worked that way — big waves, big trees, big dinners.
 
-The baker picked it up, turned it over, and instead of reaching for the buns, set it back down with an apologetic tilt of the head. "This will buy you one," the baker said. "Not four. One."
+"Hmm," said {companion_name}, from {child_name}'s side. "You opened a locked box once, remember. Not by pushing harder. By looking closer."
 
-{child_name} felt the grin freeze. "One? But it is the biggest coin I have ever seen."
+The little grey coin was still in the pocket, busy being unimportant. {child_name} took it out — and frowned. It was heavy. Not heavy for its size; heavy like a secret, small as a button and dense as a promise. Its edge was milled with lines finer than on any coin {child_name} had ever read, dozens of them, patient and exact. Coins had names, {child_name} knew that much by now; names, faces, edges, marks. So what was this one's name? Under the dust on its face, something waited.
 
-"It is big," the baker agreed, not unkindly. "It is also not worth very much. Big and valuable are not the same thing, young one."
+Lean in, right under the smudge. Can you see it too? A tiny golden sun, fast asleep.
 
-Heat crept up {child_name}'s neck. Around the stall, an ordinary morning went on, no one watching, no one who had even noticed, and yet {child_name} felt the small, sharp sting of having been so sure, so loudly sure, and so wrong. One honey bun. {child_name} had marched up expecting a feast and could afford a single bun.
+One pass of a thumb, and the sun woke up and shone.
 
-For a moment {child_name} nearly took the one bun and slipped away. But something nagged, the small coin, forgotten in the pocket. Almost defiantly, {child_name} fished it out and set it beside the big one. "And this little one? What does this buy?"
+The counter went very quiet. Somewhere behind the lanterns, the trader stopped breathing for a moment.
 
-The baker's face changed at once. "Ah," the baker said, with new interest, and picked up the small coin the way one picks up something that matters. "This one buys four. Perhaps five, if you are patient with me while I count." And the baker began laying honey buns on the counter, one, two, three, four, until {child_name} had to cup both hands to hold them.
+"It was never about big or small," {child_name} said slowly, the whole evening rearranging itself. "The name, the mark, the make — that is the coin. A coin's worth comes from what it is, not how large it looks."
 
-{child_name} stood there, hands full of warm buns bought with the coin that could hide under a fingernail, staring at the big coin still sitting alone and nearly useless on the counter. The whole thing turned itself over in {child_name}'s mind. The small one, the one nearly left behind, was worth several times the great heavy one {child_name} had been so proud of.
+"In thirty years of this cart," said the trader, "I have seen a little sun once. My grandmother kept one in her left glove for luck, and she would not trade it for a wagon of the big ones. It is worth the finest thing I carry — and the finest thing I carry is that blanket."
 
-{child_name} walked back to {companion_name} slowly, buns balanced carefully, cheeks still warm.
+{child_name} tapped the little coin once on the counter. Ting. High and clear, like a far-off bell agreeing.
 
-"It bought four with the small one," {child_name} said. "And only one with the big one. I had it completely backward. I stood there and told the baker how much the big coin was worth, and it was hardly worth anything." {child_name} looked down at the two coins. "I feel a little foolish."
+The trade was made without another word, the way the best trades are. The blanket came down from the top shelf, softer than it had looked, which almost never happens, and big enough that when {child_name} draped one end over {companion_name}, they vanished entirely except for two curious eyes.
 
-{companion_name} took the coins and held them side by side, one on each fingertip, so {child_name} could see them plainly. "Look at them properly this time. Not at their size, at their names, their faces, what they actually are. These two coins have different names, just as you learned before, and different faces stamped upon them. One name is worth a great deal and the other very little, and neither fact has a thing to do with how big the coin is. A coin's worth comes from what it is, not how large it looks."
+"{refrain}," said {companion_name}, muffled, from somewhere among the sewn stars.
 
-{child_name} took the coins back and, for the first time, really read them, the names along the edges, the small marks on each face that {child_name} had been too dazzled by size to notice. They were as different as two things could be. All the certainty of the morning had rested on nothing but bigness, and bigness had been the one part that did not matter at all.
+The cart packed itself up without hurry, lantern by lantern. The trader leaned out as the wheels began to turn. "Next season, little {hero}, come and find me. Bring that purse — a ship stitched like that means it sailed a long way to reach you, and I trade in stories too."
 
-"So the size was the trick," {child_name} said quietly. "It looked like the answer, and it was the thing pulling me the wrong way the whole time."
+The wheels faded down the road. The moon arrived exactly on time.
 
-"It usually is," said {companion_name}, and left it there.
+Walking home through {setting}, {child_name} thought about how sure they had been at the counter, and how kindly the evening had corrected them. The great coin rode along in the pocket, magnificent and mostly useless, already promoted to paperweight. The little sun was gone, and the warmth it had bought was everywhere.
 
-{child_name} spent the small coin, kept the big one for what it truly was, and shared the honey buns with {companion_name} beside the well, and they were every bit as good as their smell had promised, better, perhaps, for having very nearly not been bought at all.
-
-Walking home, {child_name} took out the folded scrap of paper and, instead of a number, wrote a single short line to remember, then tucked it away.
-
-That night {child_name} set the two coins on the sill where the light of {setting} could reach them, the great one and the small one, and lay looking at them until the difference stopped seeming strange and started seeming obvious. The last thought before sleep was not about the buns at all, but about how sure {child_name} had been, and how easily sure could be wrong, and how good it felt to look again.
+{child_name} lay down under new stars, the sewn ones and the real ones, and let the two skies blur into each other.
 
 {refrain}.`
   }
 },
     callback: 'Coins have different names and appearances (Level 1)', ageFloor: 3,
-    audioTemplate: `One calm evening, a small {hero} found two {object_motif}s in {setting} — one large and flat, one small and thin.
+    audioTemplate: `Once a season, the night-trader's cart rolled through {setting}, and it left at moonrise. Tonight it was here. On its top shelf sat the star-stitched blanket the {hero} had wanted since the first cold evening of the year.
 
-"The big one must be worth more," said the {hero} firmly.
+Tonight, at last, the {hero} had money. That morning, an old lost purse had turned up under a stone, and inside were two coins. One was enormous — wide as a biscuit and heavy. The other was small and grey, no bigger than a button. The {hero} slipped them in a pocket beside the {object_motif}, for luck, and hurried to the cart with {companion_name}.
 
-{companion_name} tilted their head. "Shall we find out?"
+"One blanket, please!" said the {hero}, laying the enormous coin on the counter with a proud thump.
 
-They went to the little market together. The small coin bought two sweet berries. The large coin bought just one.
+The trader turned it over and smiled kindly. "For this? I can give you one clothes-peg."
 
-"But it was bigger!" said the {hero}.
+A clothes-peg! The {hero} pushed the coin closer, in case it had not been seen properly. Then polished it until it gleamed. Then stacked three pebbles on top, to make it taller. Still one clothes-peg.
 
-"A coin's worth comes from what it is, not how large it looks," said {companion_name} gently. "Do you remember the names we learned? The small one — can you remember what it's called?"
+"But it's the biggest coin I have ever found!" said the {hero}.
 
-The {hero} did remember. And now they knew something new: what a coin looks like and what a coin is worth are two very different questions.
+"Hmm," said {companion_name} softly. "Didn't you once open a box by looking closer?"
 
-They walked home together through {setting}, and the {hero} held both coins and thought about this all the way.
+Looking closer. The {hero} took out the little grey coin — and noticed how heavy it was. Small as a button, heavy as a secret. And under the dust, something waited.
+
+Lean close now. Right under the smudge. Can you see it too? A tiny golden sun.
+
+The {hero} rubbed it clear with one thumb, and the sun shone. "It was never about big or small!" said the {hero}. "A coin's worth comes from what it is, not how large it looks!"
+
+"In thirty years," whispered the trader, "I have seen a little sun only once. It is worth the finest thing on this cart."
+
+The {hero} tapped it on the counter. Ting — a ring like a far-away bell saying yes.
+
+So the trade was made. Down came the blanket, even softer than it looked, and the {hero} wrapped one end around {companion_name}, who said they were quite warm already, and snuggled in anyway.
+
+"{refrain}," murmured {companion_name}, from somewhere inside the stars.
+
+The cart rolled away slow. "Next season, little {hero}," the trader called back, "I will tell you where the little suns were made."
+
+The big coin stayed in the pocket. It made a fine paperweight.
+
+The blanket was warm. The night was soft. The {hero}'s eyes closed on their own.
 
 {refrain}.`,
-    scriptTemplate: `One calm evening, {child_name} the {hero} found two {object_motif}s in {setting} — one large and flat, one small and thin.
+    scriptTemplate: `Once a season, the night-trader's cart rolled through {setting}, and it left at moonrise. Tonight it was here. On its top shelf sat the star-stitched blanket {child_name} had wanted since the first cold evening of the year.
 
-"The big one must be worth more," said {child_name} firmly.
+Tonight, at last, {child_name} had money. That morning, an old lost purse had turned up under a stone, and inside were two coins. One was enormous — wide as a biscuit and heavy. The other was small and grey, no bigger than a button. {child_name} slipped them in a pocket beside the {object_motif}, for luck, and hurried to the cart with {companion_name}.
 
-{companion_name} tilted their head. "Shall we find out?"
+"One blanket, please!" said {child_name}, laying the enormous coin on the counter with a proud thump.
 
-They went to the little market together. The small coin bought two sweet berries. The large coin bought just one.
+The trader turned it over and smiled kindly. "For this? I can give you one clothes-peg."
 
-"But it was bigger!" said {child_name}.
+A clothes-peg! {child_name} pushed the coin closer, in case it had not been seen properly. Then polished it until it gleamed. Then stacked three pebbles on top, to make it taller. Still one clothes-peg.
 
-"A coin's worth comes from what it is, not how large it looks," said {companion_name} gently. "Do you remember the names we learned? The small one — can you remember what it's called?"
+"But it's the biggest coin I have ever found!" said {child_name}.
 
-{child_name} did remember. And now they knew something new: what a coin looks like and what a coin is worth are two very different questions.
+"Hmm," said {companion_name} softly. "Didn't you once open a box by looking closer?"
 
-They walked home together through {setting}, and {child_name} held both coins and thought about this all the way.
+Looking closer. {child_name} took out the little grey coin — and noticed how heavy it was. Small as a button, heavy as a secret. And under the dust, something waited.
+
+Lean close now. Right under the smudge. Can you see it too? A tiny golden sun.
+
+{child_name} rubbed it clear with one thumb, and the sun shone. "It was never about big or small!" said {child_name}. "A coin's worth comes from what it is, not how large it looks!"
+
+"In thirty years," whispered the trader, "I have seen a little sun only once. It is worth the finest thing on this cart."
+
+{child_name} tapped it on the counter. Ting — a ring like a far-away bell saying yes.
+
+So the trade was made. Down came the blanket, even softer than it looked, and {child_name} wrapped one end around {companion_name}, who said they were quite warm already, and snuggled in anyway.
+
+"{refrain}," murmured {companion_name}, from somewhere inside the stars.
+
+The cart rolled away slow. "Next season, little {hero}," the trader called back, "I will tell you where the little suns were made."
+
+The big coin stayed in the pocket. It made a fine paperweight.
+
+The blanket was warm. The night was soft. {child_name}'s eyes closed on their own.
 
 {refrain}.`,
   },
   {
-    ordinal: 3, title: 'Trading and Giving Change',
+    ordinal: 3, title: 'Two Coins Back',
     concept: 'When you pay more than something costs, you get change back',
-    summary: 'After saving five coins, the hero tries to buy a shell that costs only three. The shopkeeper hands back two coins — and the hero is surprised to learn this is called change. Their companion connects the moment to something already learned: one of those returned coins is worth more than it looks.',
+    summary: "The moon-loaf for tonight's picnic costs three coins, and the hero's one small coin is worth five — so paying feels like losing two. After a funny evening of trying to make the coin smaller, the hero hands it over anyway, and two coins come walking back across the counter. At last the mysterious word on the baker's little sign makes sense.",
     teachingNote: 'Understanding change turns a transaction from a confusing exchange into a logical, predictable conversation — a skill that removes anxiety at shop counters.',
     learningBeat: 'That is called change',
     ageVariants: {
-  '3-4': { audioTemplate: `In {setting}, the {hero} shook a little pouch until five round coins slid out into one hand. Five! Cool and smooth, and every one of them saved.
+  '3-4': {
+    audioTemplate: `Tonight was picnic night! The {hero} and {companion_name} spread a picnic blanket in {setting}. The {object_motif} sat on one corner, holding it down.
 
-Today was the day. Near the market stall hung a small paper kite, red as a poppy, and the {hero} had wanted it for a long, long time.
+One thing was missing. The moon-loaf! The baker made just one each night, round and golden and warm.
 
-"How much for the kite?" the {hero} asked, standing very tall.
+The {hero} had one small coin. Little, but the {hero} knew its marks. It was worth five!
 
-"Three coins," said the shopkeeper.
+The moon-loaf cost three. Count with me. One, two, three.
 
-Carefully, the {hero} counted them out. One. Two. Three. The shopkeeper lifted the kite down and handed it over, and it felt as light as a leaf.
+But five is more than three! "If I pay five for three," said the {hero}, "I lose two!"
 
-The {hero} turned to go. But the shopkeeper reached out again, and into the {hero}'s hand dropped two more coins. Two of them!
+At the stall hung a small sign: "Change given, always." Change? What was change?
 
-The {hero} stopped and blinked. "Wait. I gave you my coins. Why are you putting some back?"
+The {hero} had an idea. "Please cut my coin in three pieces, like a loaf!"
 
-{companion_name} hopped up onto the counter, right beside the {object_motif} that sat there.
+The baker laughed. "Coins don't slice, little {hero}."
 
-"You brought five coins for something that cost only three. The other two belong to you. That is called change."
+The {hero} sighed and paid the whole coin anyway.
 
-The {hero} looked down. Two coins. One was small and plain, hiding under the other.
+The baker handed over the warm loaf. Then — watch the baker's hand. Can you see it too? Two little coins, coming back! Chink, chink.
 
-"Remember what we learned?" said {companion_name}. "That quiet little coin is worth more than it looks."
+"You gave back the extra!" said the {hero}. "Like the sign says! That is called change!"
 
-And the {hero} did remember. A coin could be small and still be strong. This was one of those.
+One coin back bought honey-butter for the loaf. Even better than the plan!
 
-The {hero} squeezed the two coins tight and dropped them back into the pouch, first the small one, then the big one.
+They ate under the moon. "{refrain}," whispered {companion_name}.
 
-Outside {setting}, the wind was already waiting. The {hero} let the string unwind, and the paper kite lifted, tugged, and climbed high into the evening.
+"Tomorrow," said the baker, packing up, "the loaf will be a new secret shape."
 
-Two coins in the pouch. A kite in the sky. And something brand new that finally had a name.
+What shape? Morning knows.
 
-{refrain}.`, scriptTemplate: `In {setting}, {child_name} shook a little pouch until five round coins slid out into one hand. Five! Cool and smooth, and every one of them saved.
-
-Today was the day. Near the market stall hung a small paper kite, red as a poppy, and {child_name} had wanted it for a long, long time.
-
-"How much for the kite?" {child_name} asked, standing very tall.
-
-"Three coins," said the shopkeeper.
-
-Carefully, {child_name} counted them out. One. Two. Three. The shopkeeper lifted the kite down and handed it over, and it felt as light as a leaf.
-
-{child_name} turned to go. But the shopkeeper reached out again, and into {child_name}'s hand dropped two more coins. Two of them!
-
-{child_name} stopped and blinked. "Wait. I gave you my coins. Why are you putting some back?"
-
-{companion_name} hopped up onto the counter, right beside the {object_motif} that sat there.
-
-"You brought five coins for something that cost only three. The other two belong to you. That is called change."
-
-{child_name} looked down. Two coins. One was small and plain, hiding under the other.
-
-"Remember what we learned?" said {companion_name}. "That quiet little coin is worth more than it looks."
-
-And {child_name} did remember. A coin could be small and still be strong. This was one of those.
-
-{child_name} squeezed the two coins tight and dropped them back into the pouch, first the small one, then the big one.
-
-Outside {setting}, the wind was already waiting. {child_name} let the string unwind, and the paper kite lifted, tugged, and climbed high into the evening.
-
-Two coins in the pouch. A kite in the sky. And something brand new that finally had a name.
-
-{refrain}.` },
-  '5-6': { audioTemplate: `In {setting}, the {hero} untied the little pouch and poured the coins into one palm. One, two, three, four, five. Five whole coins, and not one of them spent. Some had come from helping. Some had come from waiting instead of buying. All of them had been saved for a day exactly like today.
-
-Because today, the {hero} was going to the market alone.
-
-At the corner stall, a small wooden whistle hung on a string, the kind that made a low, round hoot when you blew it. The {hero} had walked past it three times this week. Today would be different.
-
-"Excuse me," the {hero} said to the shopkeeper, holding the pouch with both hands. "How much for the whistle?"
-
-"Three coins," the shopkeeper said.
-
-Three. The {hero} had five. That was enough, and more than enough. Carefully, so none would roll away, the {hero} counted three coins onto the counter. One. Two. Three.
-
-The shopkeeper lifted the whistle from its hook and set it in the {hero}'s hand. It was smooth and warmer than the coins.
-
-The {hero} turned to leave — and the shopkeeper said, "Wait. Here." Two coins dropped back into the {hero}'s palm. Clink, clink.
-
-The {hero} froze. Two coins. Going the wrong way. Toward, not away.
-
-"But I paid you," the {hero} said slowly. "I gave you coins. Why are you giving these back to me?"
-
-{companion_name} climbed up onto the edge of the counter and settled beside the {object_motif} someone had left there.
-
-"Look at what happened," said {companion_name}. "You brought five. The whistle cost three. Five is two more than three. So two come home with you. That is called change."
-
-The {hero} stared at the two coins in the middle of that open palm. It was strange. You handed coins to someone, and sometimes they handed a few right back, and that was not a mistake at all. That was just how it worked.
-
-Then the {hero} noticed something. One of the two coins was small and a little dull, the sort you might not look at twice.
-
-{companion_name} noticed the {hero} noticing.
-
-"You already know about that one," {companion_name} said quietly. "The small one. Remember?"
-
-The {hero} did remember. Not every coin showed its worth on the outside. A plain little coin could be worth more than a big bright one — they had learned that together, not so long ago. And here was one of those very coins, come back in the change, easy to miss if you did not know its secret.
-
-The {hero} did know its secret. So the {hero} did not throw it loose in the pouch. The small coin went in first, carefully, like something that mattered. The bigger coin followed after.
-
-"So," the {hero} said, half to {companion_name} and half to the whistle, "if I bring more than a thing costs, the extra comes back to me."
-
-{companion_name} bobbed. "Every time."
-
-Outside the stall, the light over {setting} had gone soft and low at the edges. The {hero} lifted the whistle and blew. A round, hooting note rolled out across the rooftops, and somewhere a bird answered it.
-
-The {hero} laughed. A whistle that sang. Two coins still saved, when they might have been gone. And best of all, a new word to carry home and keep.
-
-{refrain}.`, scriptTemplate: `In {setting}, {child_name} untied the little pouch and poured the coins into one palm. One, two, three, four, five. Five whole coins, and not one of them spent. Some had come from helping. Some had come from waiting instead of buying. All of them had been saved for a day exactly like today.
-
-Because today, {child_name} was going to the market alone.
-
-At the corner stall, a small wooden whistle hung on a string, the kind that made a low, round hoot when you blew it. {child_name} had walked past it three times this week. Today would be different.
-
-"Excuse me," {child_name} said to the shopkeeper, holding the pouch with both hands. "How much for the whistle?"
-
-"Three coins," the shopkeeper said.
-
-Three. {child_name} had five. That was enough, and more than enough. Carefully, so none would roll away, {child_name} counted three coins onto the counter. One. Two. Three.
-
-The shopkeeper lifted the whistle from its hook and set it in {child_name}'s hand. It was smooth and warmer than the coins.
-
-{child_name} turned to leave — and the shopkeeper said, "Wait. Here." Two coins dropped back into {child_name}'s palm. Clink, clink.
-
-{child_name} froze. Two coins. Going the wrong way. Toward, not away.
-
-"But I paid you," {child_name} said slowly. "I gave you coins. Why are you giving these back to me?"
-
-{companion_name} climbed up onto the edge of the counter and settled beside the {object_motif} someone had left there.
-
-"Look at what happened," said {companion_name}. "You brought five. The whistle cost three. Five is two more than three. So two come home with you. That is called change."
-
-{child_name} stared at the two coins in the middle of that open palm. It was strange. You handed coins to someone, and sometimes they handed a few right back, and that was not a mistake at all. That was just how it worked.
-
-Then {child_name} noticed something. One of the two coins was small and a little dull, the sort you might not look at twice.
-
-{companion_name} noticed {child_name} noticing.
-
-"You already know about that one," {companion_name} said quietly. "The small one. Remember?"
-
-{child_name} did remember. Not every coin showed its worth on the outside. A plain little coin could be worth more than a big bright one — they had learned that together, not so long ago. And here was one of those very coins, come back in the change, easy to miss if you did not know its secret.
-
-{child_name} did know its secret. So {child_name} did not throw it loose in the pouch. The small coin went in first, carefully, like something that mattered. The bigger coin followed after.
-
-"So," {child_name} said, half to {companion_name} and half to the whistle, "if I bring more than a thing costs, the extra comes back to me."
-
-{companion_name} bobbed. "Every time."
-
-Outside the stall, the light over {setting} had gone soft and low at the edges. {child_name} lifted the whistle and blew. A round, hooting note rolled out across the rooftops, and somewhere a bird answered it.
-
-{child_name} laughed. A whistle that sang. Two coins still saved, when they might have been gone. And best of all, a new word to carry home and keep.
-
-{refrain}.` },
-  '7-8': { audioTemplate: `The five coins had lived in the {hero}'s pouch for eleven days.
-
-The {hero} knew, because the {hero} had counted them every night — one, two, three, four, five — sliding each cool coin from one palm to the other before bed. Some had been earned by carrying things. One had been found. Two had been saved simply by not spending them, which, it turned out, was the hardest way of all. Five coins. Enough, at last, for the thing by the market stall.
-
-The thing was a small carved boat, no longer than a hand, with a real cloth sail. It sat on the shopkeeper's shelf in {setting}, and the {hero} had decided, eleven days ago, that it would one day come home.
-
-Today the {hero} walked to the market with the pouch held tight and a whole speech ready.
-
-"Good afternoon," the {hero} said, because it seemed like the sort of thing you said when you were buying something important and doing it by yourself. "I would like to buy the little boat. The one with the sail."
-
-The shopkeeper took it down and turned it over once. "Three coins," the shopkeeper said.
-
-Three. The {hero} had rehearsed for five. For a second the extra two coins felt like a mistake, like showing up with too much of something. But the {hero} counted three coins onto the worn wooden counter — one, two, three — lining them up straight, and pushed them across.
-
-The shopkeeper slid the boat into the {hero}'s hands. It was lighter than it looked and smelled faintly of cut wood.
-
-The {hero} said thank you and turned to go, already imagining the boat on the water. And that was when the shopkeeper said, "Hold on. These are yours."
-
-Two coins landed back in the {hero}'s open palm.
-
-The {hero} stopped walking. This did not fit. You gave coins away to get a thing — that was the whole shape of buying, everyone knew that. Coins went one direction. But here were two of them, warm from the shopkeeper's hand, sitting in the {hero}'s palm as if they had simply changed their minds and come back.
-
-"I think there's been a mistake," the {hero} said carefully. "I already paid. Why are you giving me coins?"
-
-{companion_name} had been waiting on the windowsill and now crossed to the counter, stopping beside the {object_motif} that lay near the till.
-
-"No mistake," said {companion_name}. "Think it through. You carried five coins in. The boat cost three. What is five take away three?"
-
-"Two," said the {hero}.
-
-"Two," {companion_name} agreed. "So two were never really spent. They were only ever going to come back to you. That is called change."
-
-The {hero} turned the word over along with the coins. Change. It made a strange kind of sense, once you stood still long enough to see it. You did not have to bring the exact amount and no more. You could bring plenty, hand it over, and trust the extra to find its way home. The counter was not a place where coins vanished. It was a place where they were counted, and the leftover ones were returned.
-
-Then the {hero} looked closer at the two coins and went quiet.
-
-One of them was small. Smaller than the other, and dull, with a worn face — the kind of coin you might let roll under a shelf without chasing it.
-
-"That one," {companion_name} said, watching the {hero}'s face. "You've met a coin like that before."
-
-And the {hero} had. Not long ago, the two of them had learned a secret that most people walked right past: that some coins are worth more than they look, that size and shine do not tell you a coin's real worth. And here, hidden in the change, easy to overlook, sat exactly such a coin. If the {hero} had not known better, it might have seemed like the smallest, least important part of the whole day.
-
-But the {hero} did know better.
-
-So the {hero} did not toss the coins carelessly into the pouch. The small one went in first, on purpose, the way you put away something you understand the value of. The larger coin dropped in after it, and the two of them clicked together at the bottom.
-
-"So the change isn't just leftover," the {hero} said slowly, working it out aloud. "The change might have the best coin in it."
-
-{companion_name} tipped forward, pleased. "Now you're really looking."
-
-Outside, the wind was combing across {setting}, exactly the kind of wind a small boat with a cloth sail was built for. The {hero} carried the boat to the water's edge and set it down where the ripples could reach it. It caught the breeze, leaned, and slid out across the surface, trailing a thin bright wake.
-
-The {hero} crouched there and watched it go, one hand resting on the pouch. A boat that truly sailed. Two coins that had come home when they might have stayed behind. And a brand-new word — change — that turned out to be bigger, and quite a bit richer, than it had first appeared.
-
-{refrain}.`, scriptTemplate: `The five coins had lived in {child_name}'s pouch for eleven days.
-
-{child_name} knew, because {child_name} had counted them every night — one, two, three, four, five — sliding each cool coin from one palm to the other before bed. Some had been earned by carrying things. One had been found. Two had been saved simply by not spending them, which, it turned out, was the hardest way of all. Five coins. Enough, at last, for the thing by the market stall.
-
-The thing was a small carved boat, no longer than a hand, with a real cloth sail. It sat on the shopkeeper's shelf in {setting}, and {child_name} had decided, eleven days ago, that it would one day come home.
-
-Today {child_name} walked to the market with the pouch held tight and a whole speech ready.
-
-"Good afternoon," {child_name} said, because it seemed like the sort of thing you said when you were buying something important and doing it by yourself. "I would like to buy the little boat. The one with the sail."
-
-The shopkeeper took it down and turned it over once. "Three coins," the shopkeeper said.
-
-Three. {child_name} had rehearsed for five. For a second the extra two coins felt like a mistake, like showing up with too much of something. But {child_name} counted three coins onto the worn wooden counter — one, two, three — lining them up straight, and pushed them across.
-
-The shopkeeper slid the boat into {child_name}'s hands. It was lighter than it looked and smelled faintly of cut wood.
-
-{child_name} said thank you and turned to go, already imagining the boat on the water. And that was when the shopkeeper said, "Hold on. These are yours."
-
-Two coins landed back in {child_name}'s open palm.
-
-{child_name} stopped walking. This did not fit. You gave coins away to get a thing — that was the whole shape of buying, everyone knew that. Coins went one direction. But here were two of them, warm from the shopkeeper's hand, sitting in {child_name}'s palm as if they had simply changed their minds and come back.
-
-"I think there's been a mistake," {child_name} said carefully. "I already paid. Why are you giving me coins?"
-
-{companion_name} had been waiting on the windowsill and now crossed to the counter, stopping beside the {object_motif} that lay near the till.
-
-"No mistake," said {companion_name}. "Think it through. You carried five coins in. The boat cost three. What is five take away three?"
-
-"Two," said {child_name}.
-
-"Two," {companion_name} agreed. "So two were never really spent. They were only ever going to come back to you. That is called change."
-
-{child_name} turned the word over along with the coins. Change. It made a strange kind of sense, once you stood still long enough to see it. You did not have to bring the exact amount and no more. You could bring plenty, hand it over, and trust the extra to find its way home. The counter was not a place where coins vanished. It was a place where they were counted, and the leftover ones were returned.
-
-Then {child_name} looked closer at the two coins and went quiet.
-
-One of them was small. Smaller than the other, and dull, with a worn face — the kind of coin you might let roll under a shelf without chasing it.
-
-"That one," {companion_name} said, watching {child_name}'s face. "You've met a coin like that before."
-
-And {child_name} had. Not long ago, the two of them had learned a secret that most people walked right past: that some coins are worth more than they look, that size and shine do not tell you a coin's real worth. And here, hidden in the change, easy to overlook, sat exactly such a coin. If {child_name} had not known better, it might have seemed like the smallest, least important part of the whole day.
-
-But {child_name} did know better.
-
-So {child_name} did not toss the coins carelessly into the pouch. The small one went in first, on purpose, the way you put away something you understand the value of. The larger coin dropped in after it, and the two of them clicked together at the bottom.
-
-"So the change isn't just leftover," {child_name} said slowly, working it out aloud. "The change might have the best coin in it."
-
-{companion_name} tipped forward, pleased. "Now you're really looking."
-
-Outside, the wind was combing across {setting}, exactly the kind of wind a small boat with a cloth sail was built for. {child_name} carried the boat to the water's edge and set it down where the ripples could reach it. It caught the breeze, leaned, and slid out across the surface, trailing a thin bright wake.
-
-{child_name} crouched there and watched it go, one hand resting on the pouch. A boat that truly sailed. Two coins that had come home when they might have stayed behind. And a brand-new word — change — that turned out to be bigger, and quite a bit richer, than it had first appeared.
-
-{refrain}.` },
-  '9-11': { audioTemplate: `There is a particular weight to five coins when you have saved every one of them yourself, and the {hero} had learned that weight by heart.
-
-For most of a month the coins had ridden in a pouch at the {hero}'s side, and every night before sleep they came out to be counted. One, two, three, four, five. Two had been earned by work — the slow, unglamorous kind, the carrying and the fetching. One had been a gift. And two had been saved the hardest way there is, which is simply by wanting something else and not buying it. The {hero} had walked past a dozen small temptations to keep those last two. That was what made the five feel heavier than five coins had any right to feel. They were not just money. They were patience, made round and solid and cool to the touch.
-
-And today they were going to be spent — all of it decided, all of it planned — on the compass that hung in the window of the stall in {setting}.
-
-It was not a large thing, the compass. It fit in a palm. But its needle actually swung and settled and pointed, and the {hero} had stood at that window enough times to have memorized the way the light moved across its face. Three times the {hero} had almost gone in. Three times something — shyness, mostly, the ordinary fear of doing a grown-up thing alone for the first time — had turned the {hero} back around. Not today. Today the {hero} pushed the door open before the fear could get a word in.
-
-"I'd like to buy the compass, please," the {hero} said. The voice came out steadier than expected, which was its own small victory. "The one in the window."
-
-The shopkeeper reached in, lifted it down, and set it on the counter between them. "Good choice," the shopkeeper said. "That'll be three coins."
-
-Three.
-
-The {hero} had come braced to part with five. There is a way you prepare yourself to give something up — you go a little numb to it beforehand, so it will not hurt when the moment comes — and the {hero} had done exactly that with all five coins. To be told the number was three left a curious gap, like leaning into a door you expect to be heavy and finding it swings open at a touch. For a heartbeat the {hero} even wondered whether bringing more than the price was some kind of error, whether it marked you out as someone who did not understand how any of this worked.
-
-But the {hero} counted three coins onto the counter anyway — one, two, three, set down in a neat row — and slid them across the worn wood. The shopkeeper nodded and pressed the compass into the {hero}'s waiting hands. It was cool, and heavier than it looked, and the needle inside gave a small excited quiver at being moved.
-
-The {hero} said thank you and turned to leave, already half-lost in the ownership of it, already picturing the needle pointing the way home. And then the shopkeeper's voice: "Hang on. Don't forget these."
-
-Two coins dropped, one after the other, back into the {hero}'s palm.
-
-The {hero} stood very still.
-
-It did not fit. It went against the entire shape of the thing. Buying, as far as the {hero} had ever understood it, ran in one direction only: coins out, object in, the pouch a little lighter every time. That was simply the arithmetic of the world. Yet here were two coins moving upstream, still holding the warmth of the shopkeeper's hand, sitting in the {hero}'s palm as though they had thought better of leaving and doubled back.
-
-"I think you've made a mistake," the {hero} said — carefully, because it felt rude to argue with a grown-up over money, and ruder still to be wrong about it. "I already paid you. Why are you giving me coins back?"
-
-From the sill by the window, where it had been watching the whole careful performance, {companion_name} crossed to the counter and settled at the {hero}'s elbow, near the {object_motif} that lay beside the till.
-
-"No mistake anywhere," said {companion_name}. "Just arithmetic doing its job. You walked in with five. The compass cost three. Five, take away three."
-
-"Two," the {hero} said.
-
-"Two," said {companion_name}. "Which were never really the compass's to keep. They were always going to turn around and come back to you. That is called change."
-
-The {hero} turned the word over slowly, the way you turn a stone to see the underside. Change. So this was a thing with a name — this quiet reversal at the end of a purchase, this handing-back. It reorganized something in the {hero}'s head. You did not, it turned out, have to arrive with the exact price counted out to the last coin, anxious and precise. You could bring more than enough, offer it up in good faith, and trust the counter to sort the difference and send the remainder home. The stall was not a place where coins simply disappeared. It was a place where they were weighed against a price, and whatever was extra came back.
-
-And then the {hero} actually looked at the two coins, and the looking changed everything.
-
-One of them was small. Noticeably smaller than its companion, and dull-faced, worn soft around the rim — the exact sort of coin your eye slides past, the sort you might let roll away under the shelving and not bother to chase, judging it the least of what you held.
-
-{companion_name} was watching the {hero}'s expression shift. "You've seen a coin like that before," it said, more quietly now. "You know something about it that most people don't."
-
-And the {hero} did. It came back all at once — the thing the two of them had puzzled out together not so long ago, the secret hiding in plain sight at the bottom of every pouch: that a coin's worth is not written in its size or its polish, that the plainest, smallest coin can carry more value than the broadest and the brightest. The {hero} had been proud of learning it. And now, look — here was exactly such a coin, folded invisibly into the change, so easy to dismiss that a person who didn't know better might have counted it as almost nothing at all.
-
-But the {hero} knew better. That was the whole point of having learned it.
-
-So the {hero} did not tip the two coins loosely into the pouch. The small one went in first, deliberately, the way you set down something whose value only you can see. The larger coin followed, and the two of them met at the bottom with a small companionable click.
-
-"So change isn't just the leftover part," the {hero} said, thinking it through out loud, unwilling to let the idea go before it was fully caught. "It isn't the scraps. The best coin I own might come back inside the change — and if I weren't paying attention, I'd walk out thinking I'd only been handed spare bits."
-
-{companion_name} tilted toward the {hero}, plainly pleased. "That," it said, "is the difference between counting coins and actually reading them."
-
-Outside, the afternoon had gone long and low over {setting}, and a good steady wind was walking across the open ground. The {hero} held the compass flat on one palm and let the needle settle. It swung, wavered, and came to rest, sure of itself, pointing off toward home. The {hero} smiled at that — at the small ordinary miracle of a thing that knew its own direction — and rested the other hand on the pouch, where two saved coins sat waiting, one of them worth far more than its size would ever admit.
-
-A compass that truly pointed. Two coins carried home that could so easily have been left behind. And a new word, learned standing at a counter alone: bigger than it sounded, richer than it looked, and now, unmistakably, the {hero}'s own.
-
-{refrain}.`, scriptTemplate: `There is a particular weight to five coins when you have saved every one of them yourself, and {child_name} had learned that weight by heart.
-
-For most of a month the coins had ridden in a pouch at {child_name}'s side, and every night before sleep they came out to be counted. One, two, three, four, five. Two had been earned by work — the slow, unglamorous kind, the carrying and the fetching. One had been a gift. And two had been saved the hardest way there is, which is simply by wanting something else and not buying it. {child_name} had walked past a dozen small temptations to keep those last two. That was what made the five feel heavier than five coins had any right to feel. They were not just money. They were patience, made round and solid and cool to the touch.
-
-And today they were going to be spent — all of it decided, all of it planned — on the compass that hung in the window of the stall in {setting}.
-
-It was not a large thing, the compass. It fit in a palm. But its needle actually swung and settled and pointed, and {child_name} had stood at that window enough times to have memorized the way the light moved across its face. Three times {child_name} had almost gone in. Three times something — shyness, mostly, the ordinary fear of doing a grown-up thing alone for the first time — had turned {child_name} back around. Not today. Today {child_name} pushed the door open before the fear could get a word in.
-
-"I'd like to buy the compass, please," {child_name} said. The voice came out steadier than expected, which was its own small victory. "The one in the window."
-
-The shopkeeper reached in, lifted it down, and set it on the counter between them. "Good choice," the shopkeeper said. "That'll be three coins."
-
-Three.
-
-{child_name} had come braced to part with five. There is a way you prepare yourself to give something up — you go a little numb to it beforehand, so it will not hurt when the moment comes — and {child_name} had done exactly that with all five coins. To be told the number was three left a curious gap, like leaning into a door you expect to be heavy and finding it swings open at a touch. For a heartbeat {child_name} even wondered whether bringing more than the price was some kind of error, whether it marked you out as someone who did not understand how any of this worked.
-
-But {child_name} counted three coins onto the counter anyway — one, two, three, set down in a neat row — and slid them across the worn wood. The shopkeeper nodded and pressed the compass into {child_name}'s waiting hands. It was cool, and heavier than it looked, and the needle inside gave a small excited quiver at being moved.
-
-{child_name} said thank you and turned to leave, already half-lost in the ownership of it, already picturing the needle pointing the way home. And then the shopkeeper's voice: "Hang on. Don't forget these."
-
-Two coins dropped, one after the other, back into {child_name}'s palm.
-
-{child_name} stood very still.
-
-It did not fit. It went against the entire shape of the thing. Buying, as far as {child_name} had ever understood it, ran in one direction only: coins out, object in, the pouch a little lighter every time. That was simply the arithmetic of the world. Yet here were two coins moving upstream, still holding the warmth of the shopkeeper's hand, sitting in {child_name}'s palm as though they had thought better of leaving and doubled back.
-
-"I think you've made a mistake," {child_name} said — carefully, because it felt rude to argue with a grown-up over money, and ruder still to be wrong about it. "I already paid you. Why are you giving me coins back?"
-
-From the sill by the window, where it had been watching the whole careful performance, {companion_name} crossed to the counter and settled at {child_name}'s elbow, near the {object_motif} that lay beside the till.
-
-"No mistake anywhere," said {companion_name}. "Just arithmetic doing its job. You walked in with five. The compass cost three. Five, take away three."
-
-"Two," {child_name} said.
-
-"Two," said {companion_name}. "Which were never really the compass's to keep. They were always going to turn around and come back to you. That is called change."
-
-{child_name} turned the word over slowly, the way you turn a stone to see the underside. Change. So this was a thing with a name — this quiet reversal at the end of a purchase, this handing-back. It reorganized something in {child_name}'s head. You did not, it turned out, have to arrive with the exact price counted out to the last coin, anxious and precise. You could bring more than enough, offer it up in good faith, and trust the counter to sort the difference and send the remainder home. The stall was not a place where coins simply disappeared. It was a place where they were weighed against a price, and whatever was extra came back.
-
-And then {child_name} actually looked at the two coins, and the looking changed everything.
-
-One of them was small. Noticeably smaller than its companion, and dull-faced, worn soft around the rim — the exact sort of coin your eye slides past, the sort you might let roll away under the shelving and not bother to chase, judging it the least of what you held.
-
-{companion_name} was watching {child_name}'s expression shift. "You've seen a coin like that before," it said, more quietly now. "You know something about it that most people don't."
-
-And {child_name} did. It came back all at once — the thing the two of them had puzzled out together not so long ago, the secret hiding in plain sight at the bottom of every pouch: that a coin's worth is not written in its size or its polish, that the plainest, smallest coin can carry more value than the broadest and the brightest. {child_name} had been proud of learning it. And now, look — here was exactly such a coin, folded invisibly into the change, so easy to dismiss that a person who didn't know better might have counted it as almost nothing at all.
-
-But {child_name} knew better. That was the whole point of having learned it.
-
-So {child_name} did not tip the two coins loosely into the pouch. The small one went in first, deliberately, the way you set down something whose value only you can see. The larger coin followed, and the two of them met at the bottom with a small companionable click.
-
-"So change isn't just the leftover part," {child_name} said, thinking it through out loud, unwilling to let the idea go before it was fully caught. "It isn't the scraps. The best coin I own might come back inside the change — and if I weren't paying attention, I'd walk out thinking I'd only been handed spare bits."
-
-{companion_name} tilted toward {child_name}, plainly pleased. "That," it said, "is the difference between counting coins and actually reading them."
-
-Outside, the afternoon had gone long and low over {setting}, and a good steady wind was walking across the open ground. {child_name} held the compass flat on one palm and let the needle settle. It swung, wavered, and came to rest, sure of itself, pointing off toward home. {child_name} smiled at that — at the small ordinary miracle of a thing that knew its own direction — and rested the other hand on the pouch, where two saved coins sat waiting, one of them worth far more than its size would ever admit.
-
-A compass that truly pointed. Two coins carried home that could so easily have been left behind. And a new word, learned standing at a counter alone: bigger than it sounded, richer than it looked, and now, unmistakably, {child_name}'s own.
-
-{refrain}.` },
-},
-    callback: 'Some coins are worth more than they look (Level 2)', ageFloor: 4,
-    audioTemplate: `A small {hero} had been collecting {object_motif}s for three whole nights. There were five now, and there was one thing they wanted: the spotted shell at the market stall.
-
-"It costs three," said the shopkeeper.
-
-The {hero} held out all five. "I only have these."
-
-"Then I'll give you something back," said the shopkeeper — and placed two coins in the {hero}'s hand.
-
-"Those are mine?" said the {hero}, surprised.
-
-{companion_name} leaned close. "That is called change. When you give more than something costs, the difference comes back to you. You paid five, the shell cost three — so two return."
-
-The {hero} looked at the shell, and then at the two coins, and understood something new: trading is a kind of conversation, and change is the honest reply.
-
-"And remember," said {companion_name}, "the two you got back — one of them is worth more than it looks. You learned that already."
-
-The {hero} smiled. They were getting good at this.
+Warm bread. Full tummies. Slow, sleepy blinks.
 
 {refrain}.`,
-    scriptTemplate: `{child_name} the {hero} had been collecting {object_motif}s for three whole nights. There were five now, and there was one thing they wanted: the spotted shell at the market stall.
+    scriptTemplate: `Tonight was picnic night! {child_name} and {companion_name} spread a picnic blanket in {setting}. The {object_motif} sat on one corner, holding it down.
 
-"It costs three," said the shopkeeper.
+One thing was missing. The moon-loaf! The baker made just one each night, round and golden and warm.
 
-{child_name} held out all five. "I only have these."
+{child_name} had one small coin. Little, but {child_name} knew its marks. It was worth five!
 
-"Then I'll give you something back," said the shopkeeper — and placed two coins in {child_name}'s hand.
+The moon-loaf cost three. Count with me. One, two, three.
 
-"Those are mine?" said {child_name}, surprised.
+But five is more than three! "If I pay five for three," said {child_name}, "I lose two!"
 
-{companion_name} leaned close. "That is called change. When you give more than something costs, the difference comes back to you. You paid five, the shell cost three — so two return."
+At the stall hung a small sign: "Change given, always." Change? What was change?
 
-{child_name} looked at the shell, and then at the two coins, and understood something new: trading is a kind of conversation, and change is the honest reply.
+{child_name} had an idea. "Please cut my coin in three pieces, like a loaf!"
 
-"And remember," said {companion_name}, "the two you got back — one of them is worth more than it looks. You learned that already."
+The baker laughed. "Coins don't slice, little {hero}."
 
-{child_name} smiled. They were getting good at this.
+{child_name} sighed and paid the whole coin anyway.
+
+The baker handed over the warm loaf. Then — watch the baker's hand. Can you see it too? Two little coins, coming back! Chink, chink.
+
+"You gave back the extra!" said {child_name}. "Like the sign says! That is called change!"
+
+One coin back bought honey-butter for the loaf. Even better than the plan!
+
+They ate under the moon. "{refrain}," whispered {companion_name}.
+
+"Tomorrow," said the baker, packing up, "the loaf will be a new secret shape."
+
+What shape? Morning knows.
+
+Warm bread. Full tummies. Slow, sleepy blinks.
+
+{refrain}.`
+  },
+  '5-6': {
+    audioTemplate: `Tonight was picnic night. The {hero} and {companion_name} had picked the spot days ago — the mossy rise in {setting} where the moon comes up first — and the {object_motif} was already sitting on the picnic blanket, holding down one corner.
+
+Only one thing was missing: the moon-loaf. Every evening the baker made exactly one, round and golden with a swirl on top, and tonight it was still there, filling the whole market with its warm smell.
+
+The {hero} had exactly one coin, and it was a good one. It was small, but the {hero} had read its marks the way coins should be read, and it was worth five. The moon-loaf cost three.
+
+And that was the trouble. "If I pay five for a three-coin loaf," said the {hero}, "I lose two. That's not fair trading. That's just losing."
+
+Above the stall hung a little chalk sign: "Change given, always." The {hero} had wondered about that sign all week. Change? Change into what?
+
+So the {hero} made a plan. First, the {hero} asked the baker to slice the coin in three, like a loaf. The baker laughed so hard that flour puffed off her apron. "Coins don't slice, little {hero}."
+
+Next, the {hero} went hunting for a swap: one five-coin for three ones. The toy-seller had no little coins, only whistles. The fruit-seller offered a button. A very nice button, but a button.
+
+The moon was nearly up. The loaf was getting cool.
+
+"Hmm," said {companion_name}. "That sign isn't finished with you yet."
+
+The {hero} trudged back, laid the five-coin on the counter, and sighed. "One moon-loaf, please. I know it's too much."
+
+The baker smiled and handed over the warm loaf. Then — watch the baker's hands, quick. Can you see it too? Two little coins, walking back across the counter. Chink, chink.
+
+The {hero} stared. "You gave back the extra! The sign! That is called change!"
+
+"Always," said the baker.
+
+And here was the funny thing. If the swapping plan had worked, there would be nothing left over — but now a coin came back, and it bought a pat of honey-butter for the top of the loaf. The failed plan had turned into a better one.
+
+They ate on the blanket while the moon climbed, warm bread and melting honey-butter, and the last coin went safe into the {hero}'s pocket for another day.
+
+"{refrain}," said {companion_name}, with honey-butter on the tip of their nose.
+
+"Come tomorrow," called the baker, packing up. "Tomorrow's loaf is a new shape. A secret one. It's something that flies."
+
+Something that flies! But that was a puzzle for the morning.
+
+The market lights went out one by one. The bread was warm. The night was slow.
+
+{refrain}.`,
+    scriptTemplate: `Tonight was picnic night. {child_name} and {companion_name} had picked the spot days ago — the mossy rise in {setting} where the moon comes up first — and the {object_motif} was already sitting on the picnic blanket, holding down one corner.
+
+Only one thing was missing: the moon-loaf. Every evening the baker made exactly one, round and golden with a swirl on top, and tonight it was still there, filling the whole market with its warm smell.
+
+{child_name} had exactly one coin, and it was a good one. It was small, but {child_name} had read its marks the way coins should be read, and it was worth five. The moon-loaf cost three.
+
+And that was the trouble. "If I pay five for a three-coin loaf," said {child_name}, "I lose two. That's not fair trading. That's just losing."
+
+Above the stall hung a little chalk sign: "Change given, always." {child_name} had wondered about that sign all week. Change? Change into what?
+
+So {child_name} made a plan. First, {child_name} asked the baker to slice the coin in three, like a loaf. The baker laughed so hard that flour puffed off her apron. "Coins don't slice, little {hero}."
+
+Next, {child_name} went hunting for a swap: one five-coin for three ones. The toy-seller had no little coins, only whistles. The fruit-seller offered a button. A very nice button, but a button.
+
+The moon was nearly up. The loaf was getting cool.
+
+"Hmm," said {companion_name}. "That sign isn't finished with you yet."
+
+{child_name} trudged back, laid the five-coin on the counter, and sighed. "One moon-loaf, please. I know it's too much."
+
+The baker smiled and handed over the warm loaf. Then — watch the baker's hands, quick. Can you see it too? Two little coins, walking back across the counter. Chink, chink.
+
+{child_name} stared. "You gave back the extra! The sign! That is called change!"
+
+"Always," said the baker.
+
+And here was the funny thing. If the swapping plan had worked, there would be nothing left over — but now a coin came back, and it bought a pat of honey-butter for the top of the loaf. The failed plan had turned into a better one.
+
+They ate on the blanket while the moon climbed, warm bread and melting honey-butter, and the last coin went safe into {child_name}'s pocket for another day.
+
+"{refrain}," said {companion_name}, with honey-butter on the tip of their nose.
+
+"Come tomorrow," called the baker, packing up. "Tomorrow's loaf is a new shape. A secret one. It's something that flies."
+
+Something that flies! But that was a puzzle for the morning.
+
+The market lights went out one by one. The bread was warm. The night was slow.
+
+{refrain}.`
+  },
+  '7-8': {
+    audioTemplate: `Picnic night came once a week, and the {hero} took it as seriously as some folk take birthdays. The spot was chosen days in advance: the mossy rise in {setting} where the moon shows up first, before it has finished combing its hair. By sunset the picnic blanket was spread, and the {object_motif} sat on one corner to keep the breeze from stealing it.
+
+All that was missing was the middle of the picnic — the moon-loaf. Every evening the baker made exactly one: round, golden, with a swirl on top like a shell, and famous for three streets in every direction. Tonight it was still on the stall, sending its warm smell out over the market like an announcement.
+
+The {hero} had one coin, and knew precisely what it was. That was the thing about coins now — since the business with the box and the business with the little sun, the {hero} read them the way other people read signs. Name, face, edge. This one was small, worn smooth at the rim, and worth five.
+
+The moon-loaf cost three.
+
+Most people would call that good news. The {hero} stood in front of the stall doing unhappy arithmetic. "Five for a three-coin loaf," muttered the {hero}. "That's paying five and getting three. That's losing two coins into thin air. I didn't learn to read coins just to throw two of them away."
+
+Above the stall, swinging gently, hung a small chalk-written sign the {hero} had never understood: "Change given, always." All week that sign had been an itch. Change? Change into what? Loaves into birds? Bakers into boats?
+
+There was nothing for it but cleverness. The {hero}'s first plan was surgical: ask the baker to slice the coin into three fair pieces, the way you slice a loaf. The baker laughed so warmly that flour rose off her apron in a small cloud. "Coins don't slice, little {hero}. Not even for you."
+
+The second plan was trade. Somewhere in this market, surely, someone would swap one five for three ones. The toy-seller turned out his pockets: whistles. The fruit-seller offered a large friendly button and seemed genuinely sorry when it was declined. The potter had two little coins but needed them for her own loaf tomorrow, which was fair, and said so.
+
+The moon had one eyebrow over the edge of the world now. The loaf was cooling. {companion_name}, who had been watching all this from the blanket with the patience of a stone, said only: "Hmm. I don't think that sign is finished with you yet."
+
+So the {hero} gave up — or thought so, which at the time felt like the same thing. Back to the stall, coin on the counter, chin up. "One moon-loaf, please. I know this coin is too much. Take it anyway. Some picnics are worth overpaying for."
+
+The baker did not take it anyway. The baker took it exactly. She handed across the warm loaf, then opened the wooden till, and — watch her hands now, quick. Can you see it too? Two little coins, walking back across the counter, one and then the other. Chink, chink.
+
+The {hero} looked at the coins, at the sign, at the coins again, and the whole week's itch scratched itself at once.
+
+"You've given back the extra," said the {hero} slowly. "I paid five, the loaf cost three, and two came home. That is called change! The sign was never a riddle. It was a promise."
+
+"Always has been," said the baker, dusting her hands.
+
+And then the evening did the thing good evenings do: it turned out better than the plan. Because if the slicing plan had worked, or the swapping plan had worked, the {hero} would have paid three exact coins and walked away with bread and nothing else. Instead there were two coins back, and one of them bought a pat of honey-butter, golden as the loaf itself, which the failed plans could never have paid for. The last coin went deep into the pocket for another day.
+
+The picnic was, by unanimous vote of everyone present, the best one yet. Warm bread, honey-butter melting into the swirl, the moon fully up and looking pleased with itself.
+
+"{refrain}," said {companion_name}, quietly, the way it should be said.
+
+As the market packed up behind them, the baker called across: "Come tomorrow! Tomorrow's loaf is a new shape — a secret one. I'll tell you this much: it's something that flies."
+
+Something that flies. A bird? A kite? A question for the morning, and a good one to fall asleep on.
+
+The lamps went out one by one. The blanket grew warmer. The {hero}'s eyes closed between one slow bite of moonlight and the next.
+
+{refrain}.`,
+    scriptTemplate: `Picnic night came once a week, and {child_name} took it as seriously as some folk take birthdays. The spot was chosen days in advance: the mossy rise in {setting} where the moon shows up first, before it has finished combing its hair. By sunset the picnic blanket was spread, and the {object_motif} sat on one corner to keep the breeze from stealing it.
+
+All that was missing was the middle of the picnic — the moon-loaf. Every evening the baker made exactly one: round, golden, with a swirl on top like a shell, and famous for three streets in every direction. Tonight it was still on the stall, sending its warm smell out over the market like an announcement.
+
+{child_name} had one coin, and knew precisely what it was. That was the thing about coins now — since the business with the box and the business with the little sun, {child_name} read them the way other people read signs. Name, face, edge. This one was small, worn smooth at the rim, and worth five.
+
+The moon-loaf cost three.
+
+Most people would call that good news. {child_name} stood in front of the stall doing unhappy arithmetic. "Five for a three-coin loaf," muttered {child_name}. "That's paying five and getting three. That's losing two coins into thin air. I didn't learn to read coins just to throw two of them away."
+
+Above the stall, swinging gently, hung a small chalk-written sign {child_name} had never understood: "Change given, always." All week that sign had been an itch. Change? Change into what? Loaves into birds? Bakers into boats?
+
+There was nothing for it but cleverness. {child_name}'s first plan was surgical: ask the baker to slice the coin into three fair pieces, the way you slice a loaf. The baker laughed so warmly that flour rose off her apron in a small cloud. "Coins don't slice, little {hero}. Not even for you."
+
+The second plan was trade. Somewhere in this market, surely, someone would swap one five for three ones. The toy-seller turned out his pockets: whistles. The fruit-seller offered a large friendly button and seemed genuinely sorry when it was declined. The potter had two little coins but needed them for her own loaf tomorrow, which was fair, and said so.
+
+The moon had one eyebrow over the edge of the world now. The loaf was cooling. {companion_name}, who had been watching all this from the blanket with the patience of a stone, said only: "Hmm. I don't think that sign is finished with you yet."
+
+So {child_name} gave up — or thought so, which at the time felt like the same thing. Back to the stall, coin on the counter, chin up. "One moon-loaf, please. I know this coin is too much. Take it anyway. Some picnics are worth overpaying for."
+
+The baker did not take it anyway. The baker took it exactly. She handed across the warm loaf, then opened the wooden till, and — watch her hands now, quick. Can you see it too? Two little coins, walking back across the counter, one and then the other. Chink, chink.
+
+{child_name} looked at the coins, at the sign, at the coins again, and the whole week's itch scratched itself at once.
+
+"You've given back the extra," said {child_name} slowly. "I paid five, the loaf cost three, and two came home. That is called change! The sign was never a riddle. It was a promise."
+
+"Always has been," said the baker, dusting her hands.
+
+And then the evening did the thing good evenings do: it turned out better than the plan. Because if the slicing plan had worked, or the swapping plan had worked, {child_name} would have paid three exact coins and walked away with bread and nothing else. Instead there were two coins back, and one of them bought a pat of honey-butter, golden as the loaf itself, which the failed plans could never have paid for. The last coin went deep into the pocket for another day.
+
+The picnic was, by unanimous vote of everyone present, the best one yet. Warm bread, honey-butter melting into the swirl, the moon fully up and looking pleased with itself.
+
+"{refrain}," said {companion_name}, quietly, the way it should be said.
+
+As the market packed up behind them, the baker called across: "Come tomorrow! Tomorrow's loaf is a new shape — a secret one. I'll tell you this much: it's something that flies."
+
+Something that flies. A bird? A kite? A question for the morning, and a good one to fall asleep on.
+
+The lamps went out one by one. The blanket grew warmer. {child_name}'s eyes closed between one slow bite of moonlight and the next.
+
+{refrain}.`
+  },
+  '9-11': {
+    audioTemplate: `There are two kinds of plans: the kind you make, and the kind the evening makes for you. The {hero} did not know it yet, but tonight belonged to the second kind.
+
+It was picnic night, the best-defended tradition in {setting}. The spot had been claimed since Tuesday — the mossy rise where the moon comes up first — and by sunset the picnic blanket was down, with the {object_motif} sitting on one corner so the breeze couldn't make off with it. {companion_name} lay in the middle of the blanket like the guest of honour, which, by long agreement, they were.
+
+All that was missing was the middle of the picnic: the moon-loaf. The baker made exactly one each evening — round, golden, a swirl on top — and the rule of the market was simple: when it was gone, it was gone. Tonight it was not gone. Its smell drifted over the stalls like a rumour that happened to be true.
+
+The {hero} had one coin and knew it completely. Since the business with the locked box and the little sun, coins had stopped being round mysteries; the {hero} read them — name, face, edge — the way sailors read weather. This one was small, worn silky at the rim, and worth five. The moon-loaf cost three.
+
+Anyone else would have skipped to the stall. The {hero} stood still, doing arithmetic with a frown. Five paid for three received meant two coins gone, vanished, evaporated. It felt less like buying bread and more like being quietly robbed by mathematics. "I did not learn to read coins," said the {hero} with feeling, "in order to feed two of them to a bread stall."
+
+There was also the sign. It had been bothering the {hero} for days: a small chalk-lettered board swinging above the stall. "Change given, always." Change. Change into what? It sounded half like a promise and half like a magic trick, and no one ever explained it, the way grown folk never explain the things they think everyone knows.
+
+The first plan was surgical. The {hero} presented the coin and asked, politely, whether the baker might slice it into three fair pieces, the way one slices a loaf. The baker laughed until flour lifted off her apron. "Coins don't slice, little {hero}. Not for kings, and not even for you."
+
+The second plan was commerce. Somewhere in the market, someone would surely swap one five for three ones. The toy-seller had whistles and apologies. The fruit-seller offered a large, warm-hearted button. The potter genuinely had two small coins, and genuinely needed them, and the {hero} — who knew exactly what being saved-for felt like — could not argue with that.
+
+The moon cleared the edge of the world. The loaf cooled from glorious to merely wonderful. {companion_name} watched the whole campaign from the blanket and offered, in total, one remark: "Hmm. I don't think that sign is finished with you yet."
+
+Which is how the {hero} arrived back at the stall, out of plans, and laid the five-coin on the counter with the dignity of an honest surrender. "One moon-loaf, please. This coin is worth more than the loaf. I know it. Take it anyway — some picnics are worth overpaying for."
+
+But the baker did not take it anyway. The baker took it exactly. The loaf came across, warm as a lantern, and then the till opened, and — watch her hands here, closely. Can you see it too? Two little coins, walking back over the counter, one and then the other. Chink, chink.
+
+The {hero} stood absolutely still, and the sign, the till, the week-long itch, and the arithmetic all fell into one straight line.
+
+"You gave back the difference," said the {hero} slowly. "Five in. Three for the loaf. Two home again. Nothing vanished at all — that is called change. The sign isn't a riddle. It's the whole deal, written small: pay more than it costs, and the rest comes back to you. It was never losing. It was a conversation, and the counter answers."
+
+"Always has," said the baker, "to anyone who finishes the sentence."
+
+Then came the part the {hero} would remember longest. The failed plans had been aiming at exactness: three coins, one loaf, nothing over. But the plan that failed into paying five had produced something the perfect plans never could — two coins back, and one of them, on a whim, became a pat of honey-butter, golden and melting, for the top of the loaf. The evening's plan, as it turned out, had simply been better than the {hero}'s. The last coin went deep into the pocket, already saving itself for something.
+
+The picnic that followed set records that may still stand. Warm bread. Honey-butter in the swirl. The moon high and smug, as if the whole thing had been its idea.
+
+"{refrain}," said {companion_name}, quietly, at the exact moment it was true.
+
+Behind them the market folded itself away, and the baker called one last thing across the dark: "Tomorrow's loaf is a new shape — a secret one. I'll say only this: it's something that flies."
+
+Something that flies. A gull? A kite? A dragonfly with excellent posture? The {hero} sorted the possibilities from likeliest to loveliest, and somewhere in the middle of the list, stopped needing to know until morning.
+
+The lamps went out one by one. The night leaned back. The blanket held its warmth like bread holds its own.
+
+{refrain}.`,
+    scriptTemplate: `There are two kinds of plans: the kind you make, and the kind the evening makes for you. {child_name} did not know it yet, but tonight belonged to the second kind.
+
+It was picnic night, the best-defended tradition in {setting}. The spot had been claimed since Tuesday — the mossy rise where the moon comes up first — and by sunset the picnic blanket was down, with the {object_motif} sitting on one corner so the breeze couldn't make off with it. {companion_name} lay in the middle of the blanket like the guest of honour, which, by long agreement, they were.
+
+All that was missing was the middle of the picnic: the moon-loaf. The baker made exactly one each evening — round, golden, a swirl on top — and the rule of the market was simple: when it was gone, it was gone. Tonight it was not gone. Its smell drifted over the stalls like a rumour that happened to be true.
+
+{child_name} had one coin and knew it completely. Since the business with the locked box and the little sun, coins had stopped being round mysteries; {child_name} read them — name, face, edge — the way sailors read weather. This one was small, worn silky at the rim, and worth five. The moon-loaf cost three.
+
+Anyone else would have skipped to the stall. {child_name} stood still, doing arithmetic with a frown. Five paid for three received meant two coins gone, vanished, evaporated. It felt less like buying bread and more like being quietly robbed by mathematics. "I did not learn to read coins," said {child_name} with feeling, "in order to feed two of them to a bread stall."
+
+There was also the sign. It had been bothering {child_name} for days: a small chalk-lettered board swinging above the stall. "Change given, always." Change. Change into what? It sounded half like a promise and half like a magic trick, and no one ever explained it, the way grown folk never explain the things they think everyone knows.
+
+The first plan was surgical. {child_name} presented the coin and asked, politely, whether the baker might slice it into three fair pieces, the way one slices a loaf. The baker laughed until flour lifted off her apron. "Coins don't slice, little {hero}. Not for kings, and not even for you."
+
+The second plan was commerce. Somewhere in the market, someone would surely swap one five for three ones. The toy-seller had whistles and apologies. The fruit-seller offered a large, warm-hearted button. The potter genuinely had two small coins, and genuinely needed them, and {child_name} — who knew exactly what being saved-for felt like — could not argue with that.
+
+The moon cleared the edge of the world. The loaf cooled from glorious to merely wonderful. {companion_name} watched the whole campaign from the blanket and offered, in total, one remark: "Hmm. I don't think that sign is finished with you yet."
+
+Which is how {child_name} arrived back at the stall, out of plans, and laid the five-coin on the counter with the dignity of an honest surrender. "One moon-loaf, please. This coin is worth more than the loaf. I know it. Take it anyway — some picnics are worth overpaying for."
+
+But the baker did not take it anyway. The baker took it exactly. The loaf came across, warm as a lantern, and then the till opened, and — watch her hands here, closely. Can you see it too? Two little coins, walking back over the counter, one and then the other. Chink, chink.
+
+{child_name} stood absolutely still, and the sign, the till, the week-long itch, and the arithmetic all fell into one straight line.
+
+"You gave back the difference," said {child_name} slowly. "Five in. Three for the loaf. Two home again. Nothing vanished at all — that is called change. The sign isn't a riddle. It's the whole deal, written small: pay more than it costs, and the rest comes back to you. It was never losing. It was a conversation, and the counter answers."
+
+"Always has," said the baker, "to anyone who finishes the sentence."
+
+Then came the part {child_name} would remember longest. The failed plans had been aiming at exactness: three coins, one loaf, nothing over. But the plan that failed into paying five had produced something the perfect plans never could — two coins back, and one of them, on a whim, became a pat of honey-butter, golden and melting, for the top of the loaf. The evening's plan, as it turned out, had simply been better than {child_name}'s. The last coin went deep into the pocket, already saving itself for something.
+
+The picnic that followed set records that may still stand. Warm bread. Honey-butter in the swirl. The moon high and smug, as if the whole thing had been its idea.
+
+"{refrain}," said {companion_name}, quietly, at the exact moment it was true.
+
+Behind them the market folded itself away, and the baker called one last thing across the dark: "Tomorrow's loaf is a new shape — a secret one. I'll say only this: it's something that flies."
+
+Something that flies. A gull? A kite? A dragonfly with excellent posture? {child_name} sorted the possibilities from likeliest to loveliest, and somewhere in the middle of the list, stopped needing to know until morning.
+
+The lamps went out one by one. The night leaned back. The blanket held its warmth like bread holds its own.
+
+{refrain}.`
+  }
+},
+    callback: 'Some coins are worth more than they look (Level 2)', ageFloor: 4,
+    audioTemplate: `Tonight was picnic night. The {hero} and {companion_name} had picked the spot days ago — the mossy rise in {setting} where the moon comes up first — and the {object_motif} was already sitting on the picnic blanket, holding down one corner.
+
+Only one thing was missing: the moon-loaf. Every evening the baker made exactly one, round and golden with a swirl on top, and tonight it was still there, filling the whole market with its warm smell.
+
+The {hero} had exactly one coin, and it was a good one. It was small, but the {hero} had read its marks the way coins should be read, and it was worth five. The moon-loaf cost three.
+
+And that was the trouble. "If I pay five for a three-coin loaf," said the {hero}, "I lose two. That's not fair trading. That's just losing."
+
+Above the stall hung a little chalk sign: "Change given, always." The {hero} had wondered about that sign all week. Change? Change into what?
+
+So the {hero} made a plan. First, the {hero} asked the baker to slice the coin in three, like a loaf. The baker laughed so hard that flour puffed off her apron. "Coins don't slice, little {hero}."
+
+Next, the {hero} went hunting for a swap: one five-coin for three ones. The toy-seller had no little coins, only whistles. The fruit-seller offered a button. A very nice button, but a button.
+
+The moon was nearly up. The loaf was getting cool.
+
+"Hmm," said {companion_name}. "That sign isn't finished with you yet."
+
+The {hero} trudged back, laid the five-coin on the counter, and sighed. "One moon-loaf, please. I know it's too much."
+
+The baker smiled and handed over the warm loaf. Then — watch the baker's hands, quick. Can you see it too? Two little coins, walking back across the counter. Chink, chink.
+
+The {hero} stared. "You gave back the extra! The sign! That is called change!"
+
+"Always," said the baker.
+
+And here was the funny thing. If the swapping plan had worked, there would be nothing left over — but now a coin came back, and it bought a pat of honey-butter for the top of the loaf. The failed plan had turned into a better one.
+
+They ate on the blanket while the moon climbed, warm bread and melting honey-butter, and the last coin went safe into the {hero}'s pocket for another day.
+
+"{refrain}," said {companion_name}, with honey-butter on the tip of their nose.
+
+"Come tomorrow," called the baker, packing up. "Tomorrow's loaf is a new shape. A secret one. It's something that flies."
+
+Something that flies! But that was a puzzle for the morning.
+
+The market lights went out one by one. The bread was warm. The night was slow.
+
+{refrain}.`,
+    scriptTemplate: `Tonight was picnic night. {child_name} and {companion_name} had picked the spot days ago — the mossy rise in {setting} where the moon comes up first — and the {object_motif} was already sitting on the picnic blanket, holding down one corner.
+
+Only one thing was missing: the moon-loaf. Every evening the baker made exactly one, round and golden with a swirl on top, and tonight it was still there, filling the whole market with its warm smell.
+
+{child_name} had exactly one coin, and it was a good one. It was small, but {child_name} had read its marks the way coins should be read, and it was worth five. The moon-loaf cost three.
+
+And that was the trouble. "If I pay five for a three-coin loaf," said {child_name}, "I lose two. That's not fair trading. That's just losing."
+
+Above the stall hung a little chalk sign: "Change given, always." {child_name} had wondered about that sign all week. Change? Change into what?
+
+So {child_name} made a plan. First, {child_name} asked the baker to slice the coin in three, like a loaf. The baker laughed so hard that flour puffed off her apron. "Coins don't slice, little {hero}."
+
+Next, {child_name} went hunting for a swap: one five-coin for three ones. The toy-seller had no little coins, only whistles. The fruit-seller offered a button. A very nice button, but a button.
+
+The moon was nearly up. The loaf was getting cool.
+
+"Hmm," said {companion_name}. "That sign isn't finished with you yet."
+
+{child_name} trudged back, laid the five-coin on the counter, and sighed. "One moon-loaf, please. I know it's too much."
+
+The baker smiled and handed over the warm loaf. Then — watch the baker's hands, quick. Can you see it too? Two little coins, walking back across the counter. Chink, chink.
+
+{child_name} stared. "You gave back the extra! The sign! That is called change!"
+
+"Always," said the baker.
+
+And here was the funny thing. If the swapping plan had worked, there would be nothing left over — but now a coin came back, and it bought a pat of honey-butter for the top of the loaf. The failed plan had turned into a better one.
+
+They ate on the blanket while the moon climbed, warm bread and melting honey-butter, and the last coin went safe into {child_name}'s pocket for another day.
+
+"{refrain}," said {companion_name}, with honey-butter on the tip of their nose.
+
+"Come tomorrow," called the baker, packing up. "Tomorrow's loaf is a new shape. A secret one. It's something that flies."
+
+Something that flies! But that was a puzzle for the morning.
+
+The market lights went out one by one. The bread was warm. The night was slow.
 
 {refrain}.`,
   },
