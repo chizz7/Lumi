@@ -102,6 +102,7 @@ assembleStory(subjectSlug, levelOrdinal, skinSlug, childName)   // → both
 
 ## Key Files to Understand First
 
+0. `docs/08_STORY_CRAFT.md` — The "calm adventure" story framework (5-beat spine: HOOK → TRY → TURN → WIN → SETTLE; soft-twist library; audio participation hooks). All new/rewritten stories follow it. Money L1 "The Keyhole Coin" is the reference implementation.
 1. `content/money/levels.ts` — The 5 story templates with `audioTemplate`, `scriptTemplate`, `summary`, `teachingNote` (the gold-standard path; the other 5 follow the same shape)
 2. `content/money/skins.ts` — 6 worlds (sea, space, forest, castle, dino, jungle) with slot values
 3. `lib/tts.ts` — `getOrRenderAudio()` cache-first TTS pipeline

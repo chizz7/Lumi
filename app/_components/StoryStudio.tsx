@@ -22,7 +22,7 @@ const WORLD: Record<string, { place: string; hero: string; grad: string }> = {
   jungle: { place: 'deep green jungle',  hero: 'small tiger cub',       grad: 'linear-gradient(150deg,#3a8f7e,#1f5e52)' },
 }
 const CLAUSE: Record<string, { action: string; title: string; hint: string; hear: string }> = {
-  money:      { action: 'found three shiny coins in the sand',       title: 'and the Three Coins', hint: 'save & value coins',        hear: 'a treasure adventure' },
+  money:      { action: 'found a music box that opens for just one coin in all the world', title: 'and the Keyhole Coin', hint: 'save & value coins', hear: 'a keyhole mystery' },
   focus:      { action: 'had one important thing to finish',          title: 'Stays on Track',      hint: 'finish what matters',       hear: 'a big mission to finish' },
   resilience: { action: 'was trying something new — and finding it hard', title: 'Tries Again',     hint: "keep going when it's hard", hear: 'a tricky new challenge' },
   kindness:   { action: 'noticed someone who quietly needed help',     title: 'Lends a Hand',        hint: 'notice & help others',      hear: 'a friend who needs help' },

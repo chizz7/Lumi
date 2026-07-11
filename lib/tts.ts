@@ -143,7 +143,9 @@ export async function fetchWordTimings(audioKey: string): Promise<WordTiming[] |
 // v4 = fixed slot/template word collisions (e.g. narration said "the the warm
 // shallows", "small small star-seedling"); v3 files at the same key held the
 // doubled-word audio, so bump to force corrected renders.
-const AUDIO_CACHE_VERSION = 'v4'
+// v5 = story rewrites to the "calm adventure" structure (docs/08_STORY_CRAFT.md),
+// starting with money L1 "The Keyhole Coin"; v4 files hold the old prose.
+const AUDIO_CACHE_VERSION = 'v5'
 
 // Normalise a child's name into a safe, stable cache-key segment. Same name →
 // same file (so repeat names reuse the render); strips anything non-alphanumeric.

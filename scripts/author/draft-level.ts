@@ -78,16 +78,29 @@ ${allLevels}
 
 ${prevLevel ? `## Previous story template (for tone + style reference)\n${prevLevel.template.slice(0, 400)}…\n` : ''}
 
-## Hard rules
-1. 5-beat structure: cozy opening → discovery/problem → attempt or turn → teaching moment → calm wind-down
-2. The teaching moment must come from {companion_name}, spoken gently to {child_name}
-3. Bedtime register throughout: calm, warm, wonder-filled. Energy decreases beat by beat.
-4. No fear, no peril, no cliffhangers. Every story winds down to calm.
-5. Length: 250–380 words
-6. Short sentences. Nothing over 25 words.
-7. End with "{refrain}." alone on its own line — this is the closing ritual
-8. Do NOT include a title — just the story text
-9. Use all six slot markers at least once each
+## Hard rules — the "calm adventure" spine (see docs/08_STORY_CRAFT.md)
+1. 5-beat structure: HOOK (the hero WANTS something concrete tonight + one small oddity)
+   → TRY (the hero attempts the obvious way and fails, gently and a little comically,
+   BECAUSE they don't yet have the concept) → TURN (a soft twist reframes the problem;
+   the concept is the KEY that unlocks it — the insight is spoken by {child_name}, not
+   lectured by the companion) → WIN ({child_name} applies the concept themselves and
+   succeeds) → SETTLE (final ~20%: pure wind-down, shortening sentences, one warm
+   "ember" of tomorrow — an unanswered cozy detail, never a cliffhanger).
+2. {companion_name} is an accomplice, not a professor: at most ONE nudge; the hero
+   does the discovering. The twist may touch the companion's own past.
+3. Excitement comes from curiosity, mystery, mischief and agency — NEVER fear, peril,
+   menace or time-pressure. Twists reframe things upward (kinder/cleverer than they
+   seemed). The middle rises; the ending glides.
+4. Audio hooks: use "{refrain}" once mid-story in dialogue AND as the final line;
+   include one whispered aside to the listener with a guessable clue ("Can you see it
+   too?..."); include one small sound word (clink, click, pfft).
+5. The twist lands at 55–70% of the story. Nothing new happens in the last 20%.
+6. Length: 250–380 words. Short sentences; nothing over 25 words.
+7. End with "{refrain}." alone on its own line — the closing ritual.
+8. Do NOT include a title — just the story text.
+9. Use all six slot markers at least once each.
+10. The learning-beat phrase for this level must appear VERBATIM, spoken by the hero
+    at the TURN.
 
 Write only the story text. Start with the first sentence of the story.`
 
