@@ -382,7 +382,7 @@ All done.
 The {hero} felt so much better. The night grew soft. The {object_motif} sat close, and all three problems were solved.
 
 {refrain}.`,
-    scriptTemplate: `The night was still over {setting} when {child_name} had a problem. Then another. Then another.
+    scriptTemplate: `The night was still over {setting} when {child_name} the {hero} had a problem. Then another. Then another.
 
 {child_name} looked at all three and felt lost.
 
@@ -946,7 +946,7 @@ The door opened.
 The {hero} understood: asking made the puzzle whole.
 
 {refrain}.`,
-    scriptTemplate: `A lock on the door wouldn't open. {child_name} pushed the key. Nothing.
+    scriptTemplate: `A lock on the door wouldn't open. {child_name} the {hero} pushed the key. Nothing.
 
 {child_name} pushed harder. Still nothing.
 
@@ -1105,7 +1105,7 @@ The entire assembly slid together perfectly.
 
 "You gathered information," {companion_name} corrected. "And that information let you solve it on the second try."
 
-The {hero} held the repaired {object_motif}, whole again, and understood: the first attempt had been a necessary step, not a misstep.
+The {hero} held the repaired {object_motif}, whole again. "Trying again is how we learn," the {hero} realized. The first attempt had been a necessary step, not a misstep.
 
 {refrain}.`,
     scriptTemplate: `{child_name} the {hero} was rebuilding the {object_motif} after it had broken. There were seventeen small pieces, and {child_name} the {hero} tried to fit them together as they remembered them fitting before.
