@@ -342,7 +342,7 @@ The {hero} wound the {object_motif} up carefully, the way you handle something y
 
 {child_name} crouched, took hold, and pulled. This was not a decision so much as a reflex; the hand simply closed and yanked before any part of {child_name} had thought about it. That, it would turn out, was the whole problem in miniature — but {child_name} did not know that yet.
 
-Everyone has a first move — the thing the body does before the mind catches up. {child_name's first move, always, was to act: to grab, to fix, to make the trouble go away by sheer effort. Most days it worked well enough. Tonight it was about to cost something.
+Everyone has a first move — the thing the body does before the mind catches up. {child_name}'s first move, always, was to act: to grab, to fix, to make the trouble go away by sheer effort. Most days it worked well enough. Tonight it was about to cost something.
 
 Nothing gave. Or rather, the wrong thing gave: the tangle drew tighter, gripping down on itself, and one of the strands made a thin, strained sound that {child_name} did not like at all. It was the sound of something close to breaking.
 
@@ -437,7 +437,7 @@ And in looking, {child_name} saw things they had rushed right past — a shape h
 {refrain}.`
   }
 }
-,
+},
 
   {
     ordinal: 2, title: 'Different Ways to Solve',
@@ -755,7 +755,7 @@ At the top, the {object_motif} was waiting.
 {refrain}.`
   }
 }
-,
+},
 
   {
     ordinal: 3, title: 'Inside and Outside',
@@ -1077,12 +1077,12 @@ The door opened.
 {refrain}.`
   }
 }
-,
+},
 
   {
     ordinal: 4, title: 'Wrong Guesses Teach',
     concept: 'Trying again after a wrong guess — failure teaches you', callback: 'think before you act + ask for help + persistence', ageFloor: 5,
-    summary: 'The hero makes a guess or attempt that's wrong, realizes it teaches something, tries again with new knowledge, and succeeds. Brings prior tools plus introduces resilience.',
+    summary: 'The hero makes a guess or attempt that\'s wrong, realizes it teaches something, tries again with new knowledge, and succeeds. Brings prior tools plus introduces resilience.',
     teachingNote: 'Wrong attempts are not failures; they are teaching moments. Mistakes hold information.',
     learningBeat: 'Wrong guesses teach you',
     ageVariants: {
@@ -1339,13 +1339,13 @@ This time, it worked.
 {refrain}.`
   }
 }
-,
+},
 
   {
     ordinal: 5, title: 'Listen to the Problem',
     concept: 'Problems have their own solutions: listen to what the problem is asking for', callback: 'think before you act + ask for help + persistence + try and see', ageFloor: 5,
     summary: 'Capstone: the hero faces a complex problem, tries usual approaches, realizes by paying close attention to what the problem ACTUALLY needs (not what they think it should be), discovers the answer. Brings all prior lessons together.',
-    teachingNote: 'The deepest problem-solving comes from listening — to the problem itself, to what it's actually asking for. Understanding the real shape of the trouble leads to elegant solutions.',
+    teachingNote: 'The deepest problem-solving comes from listening — to the problem itself, to what it\'s actually asking for. Understanding the real shape of the trouble leads to elegant solutions.',
     learningBeat: 'Listen to what the problem is asking',
     ageVariants: {
   '3-4': {
@@ -1430,13 +1430,13 @@ The {hero} opened the door and found the {object_motif} waiting inside, kept saf
 The {hero} held the {object_motif} and understood: solving wasn't about knowing the answer ahead of time. It was about listening to what the problem wanted.
 
 {refrain}.`,
-    scriptTemplate: `{child_name's little pocket door was stuck. Not locked, just... stuck. Jammed. {child_name} needed to open it, and everything they knew said to force it.
+    scriptTemplate: `{child_name}'s little pocket door was stuck. Not locked, just... stuck. Jammed. {child_name} needed to open it, and everything they knew said to force it.
 
 They pulled. The door resisted.
 
 They pulled harder. It budged an inch, then stuck again even tighter.
 
-"Let me think," said {child_name. "What is the door actually telling me?"
+"Let me think," said {child_name}. "What is the door actually telling me?"
 
 The door wasn't saying "pull harder." The door was stuck because something inside was blocking it.
 
@@ -1608,5 +1608,6 @@ It fit there perfectly.
 
 {refrain}.`
   }
+}
 }
 ]
