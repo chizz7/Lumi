@@ -934,27 +934,27 @@ Somewhere out there, the twentieth seed was still hiding. Tomorrow they would hu
 {refrain}.`,
       },
       '7-8': {
-        audioTemplate: `{companion_name} had gone across {setting} for the day and would not be home until moonrise. Which meant the {hero} had one whole evening for the plan — and the plan was beautiful. A perfect ring of glow-seeds around the {object_motif}, right beside {companion_name}'s door. Glow-seeds sleep all day looking like plain grey pebbles, but the first touch of moonlight wakes them, and they shine green-gold for a hundred nights. A welcome-home ring of light. Perfectly round. Perfectly planned.
+        audioTemplate: `{companion_name} had gone across {setting} for the day and would not be home until moonrise. Which meant the {hero} had one evening for the plan — and the plan was beautiful. A perfect ring of glow-seeds around the {object_motif}, right beside {companion_name}'s door. Glow-seeds sleep all day, but the first touch of moonlight wakes them, and they shine green-gold for a hundred nights. A welcome-home ring of light. Perfectly round. Perfectly planned.
 
 The {hero} had traded a week of errands for those seeds — twenty of them, counted twice. The seed-seller had said only one strange thing while pouring them into the pouch: "Plant them where they fall." Which was obviously nonsense, because seeds fall wherever you drop them, and a plan is a plan.
 
 The {hero} carried the pouch toward the door slowly, carefully, importantly. And tripped.
 
-Plip-plip-plip-plip. Twenty glow-seeds leapt from the pouch and bounced away merrily, scattering themselves in a long crooked ribbon across the ground, as if they had been waiting all day for the chance.
+Plip-plip-plip-plip. The glow-seeds leapt from the pouch and bounced away merrily, scattering in a long crooked ribbon, as if they had been waiting all day for the chance.
 
 "No no no no," whispered the {hero}, crawling around in the dusk, patting the ground. Fourteen came back. Six were simply gone — vanished into the crooked dark. "I've ruined it. Before I even started, I ruined it."
 
-There was a hot, prickly feeling behind the {hero}'s eyes. Hard was allowed, of course. The wobble marks had settled that ages ago. But this was not hard. This was spoiled, which felt like a different thing entirely — a thing you could not practise your way out of.
+There was a hot, prickly feeling behind the {hero}'s eyes. Hard was allowed, of course. The wobble marks had settled that ages ago. But this was not hard. This was spoiled, which felt like a different thing entirely.
 
-Still. Fourteen seeds could make a smaller perfect ring. The {hero} planted them in the neatest circle ever pressed into ground, evenly spaced to the width of a claw, and then fetched water for them — and even the water misbehaved. It ran straight off the ring's packed earth and trickled away sideways, following some crooked little path of its own, exactly the way the seeds had gone.
+Still. Fourteen seeds could make a smaller perfect ring. The {hero} planted them in the neatest circle ever pressed into ground, evenly spaced, and then fetched water — and even the water misbehaved. It ran off the ring's packed earth and trickled away sideways, down some crooked path of its own, exactly the way the seeds had gone.
 
-"Everything runs away from my plan," muttered the {hero}, and sat down to wait for the moon, braced for the evening to be a disappointment.
+"Everything runs away from my plan," muttered the {hero}, and sat down to wait for the moon, braced for disappointment.
 
 The moon came up slow and generous. And — look closely now, out into the dark. Something is waking. Little green-gold lights, blinking on one by one. But where? Not the tidy ring. The lights are coming from the crooked line.
 
-The six runaway seeds were shining — every single lost one of them — strung out along their messy ribbon like lanterns on a street. The fourteen perfect seeds sat in their perfect circle, dark as buttons.
+The six runaway seeds were shining — every lost one — strung out along their messy ribbon like lanterns on a street. The fourteen perfect seeds sat in their perfect circle, dark as buttons.
 
-The {hero} crept over, nose to the ground, and looked properly. The crooked ribbon ran exactly where rain always trickled: low, soft, deep-watered ground, the best soil in the whole garden. The proud ring sat on earth packed hard as a road. And round seeds roll downhill — of course they do — down into the soft hollows where the water goes. The spill had not been bad luck. The spill had been a map.
+The {hero} crept over, nose to the ground, and looked properly. The crooked ribbon ran exactly where rain always trickled: low, soft, deep-watered ground, the best soil in the whole garden. The proud ring sat on earth packed hard as a road. And round seeds roll downhill, into the soft hollows where the water goes. The spill had not been bad luck. The spill had been a map.
 
 "Plant them where they fall," said the {hero} slowly, and the seller's nonsense stopped being nonsense. "They fall where they roll, and they roll where the water goes. My mistake wasn't a ruin — it was information. It knew things the plan didn't." The {hero} was already digging. "Getting it wrong is part of how growing is done. It might be the biggest part."
 
@@ -970,32 +970,32 @@ They sat together in the seed-light while the moon climbed, and the {hero} told 
 
 The lights blinked slower. The night leaned in, soft and warm.
 
-Somewhere out in the dark, the twentieth seed had still not been found. It was out there right now, secretly glowing in some low soft hollow nobody had thought to look in.
+Somewhere out in the dark, the twentieth seed had still not been found. It was out there right now, secretly glowing in some soft hollow nobody had checked.
 
 Tomorrow, they would follow the crooked places and find it.
 
 {refrain}.`,
-        scriptTemplate: `{companion_name} had gone across {setting} for the day and would not be home until moonrise. Which meant {child_name} the {hero} had one whole evening for the plan — and the plan was beautiful. A perfect ring of glow-seeds around the {object_motif}, right beside {companion_name}'s door. Glow-seeds sleep all day looking like plain grey pebbles, but the first touch of moonlight wakes them, and they shine green-gold for a hundred nights. A welcome-home ring of light. Perfectly round. Perfectly planned.
+        scriptTemplate: `{companion_name} had gone across {setting} for the day and would not be home until moonrise. Which meant {child_name} the {hero} had one evening for the plan — and the plan was beautiful. A perfect ring of glow-seeds around the {object_motif}, right beside {companion_name}'s door. Glow-seeds sleep all day, but the first touch of moonlight wakes them, and they shine green-gold for a hundred nights. A welcome-home ring of light. Perfectly round. Perfectly planned.
 
 {child_name} had traded a week of errands for those seeds — twenty of them, counted twice. The seed-seller had said only one strange thing while pouring them into the pouch: "Plant them where they fall." Which was obviously nonsense, because seeds fall wherever you drop them, and a plan is a plan.
 
 {child_name} carried the pouch toward the door slowly, carefully, importantly. And tripped.
 
-Plip-plip-plip-plip. Twenty glow-seeds leapt from the pouch and bounced away merrily, scattering themselves in a long crooked ribbon across the ground, as if they had been waiting all day for the chance.
+Plip-plip-plip-plip. The glow-seeds leapt from the pouch and bounced away merrily, scattering in a long crooked ribbon, as if they had been waiting all day for the chance.
 
 "No no no no," whispered {child_name}, crawling around in the dusk, patting the ground. Fourteen came back. Six were simply gone — vanished into the crooked dark. "I've ruined it. Before I even started, I ruined it."
 
-There was a hot, prickly feeling behind {child_name}'s eyes. Hard was allowed, of course. The wobble marks had settled that ages ago. But this was not hard. This was spoiled, which felt like a different thing entirely — a thing you could not practise your way out of.
+There was a hot, prickly feeling behind {child_name}'s eyes. Hard was allowed, of course. The wobble marks had settled that ages ago. But this was not hard. This was spoiled, which felt like a different thing entirely.
 
-Still. Fourteen seeds could make a smaller perfect ring. {child_name} planted them in the neatest circle ever pressed into ground, evenly spaced, and then fetched water for them — and even the water misbehaved. It ran straight off the ring's packed earth and trickled away sideways, following some crooked little path of its own, exactly the way the seeds had gone.
+Still. Fourteen seeds could make a smaller perfect ring. {child_name} planted them in the neatest circle ever pressed into ground, evenly spaced, and then fetched water — and even the water misbehaved. It ran off the ring's packed earth and trickled away sideways, down some crooked path of its own, exactly the way the seeds had gone.
 
-"Everything runs away from my plan," muttered {child_name}, and sat down to wait for the moon, braced for the evening to be a disappointment.
+"Everything runs away from my plan," muttered {child_name}, and sat down to wait for the moon, braced for disappointment.
 
 The moon came up slow and generous. And — look closely now, out into the dark. Something is waking. Little green-gold lights, blinking on one by one. But where? Not the tidy ring. The lights are coming from the crooked line.
 
-The six runaway seeds were shining — every single lost one of them — strung out along their messy ribbon like lanterns on a street. The fourteen perfect seeds sat in their perfect circle, dark as buttons.
+The six runaway seeds were shining — every lost one — strung out along their messy ribbon like lanterns on a street. The fourteen perfect seeds sat in their perfect circle, dark as buttons.
 
-{child_name} crept over, nose to the ground, and looked properly. The crooked ribbon ran exactly where rain always trickled: low, soft, deep-watered ground, the best soil in the whole garden. The proud ring sat on earth packed hard as a road. And round seeds roll downhill — of course they do — down into the soft hollows where the water goes. The spill had not been bad luck. The spill had been a map.
+{child_name} crept over, nose to the ground, and looked properly. The crooked ribbon ran exactly where rain always trickled: low, soft, deep-watered ground, the best soil in the whole garden. The proud ring sat on earth packed hard as a road. And round seeds roll downhill, into the soft hollows where the water goes. The spill had not been bad luck. The spill had been a map.
 
 "Plant them where they fall," said {child_name} slowly, and the seller's nonsense stopped being nonsense. "They fall where they roll, and they roll where the water goes. My mistake wasn't a ruin — it was information. It knew things the plan didn't." {child_name} was already digging. "Getting it wrong is part of how growing is done. It might be the biggest part."
 
@@ -1011,7 +1011,7 @@ They sat together in the seed-light while the moon climbed, and {child_name} tol
 
 The lights blinked slower. The night leaned in, soft and warm.
 
-Somewhere out in the dark, the twentieth seed had still not been found. It was out there right now, secretly glowing in some low soft hollow nobody had thought to look in.
+Somewhere out in the dark, the twentieth seed had still not been found. It was out there right now, secretly glowing in some soft hollow nobody had checked.
 
 Tomorrow, they would follow the crooked places and find it.
 
@@ -1020,25 +1020,25 @@ Tomorrow, they would follow the crooked places and find it.
       '9-11': {
         audioTemplate: `{companion_name} had gone across {setting} for the whole day and would not be back until moonrise, which meant the {hero} had approximately one evening to execute the finest surprise ever planned. And it was planned. It had been planned for a week, in secret, with diagrams.
 
-A ring of glow-seeds around the {object_motif}, right beside {companion_name}'s door. Glow-seeds spend their days disguised as plain grey pebbles — you would step over one without a glance — but the first touch of moonlight wakes them, and after that they shine green-gold every night for a hundred nights. Twenty seeds, earned with a full week of errands, counted twice into a soft pouch. Twenty seeds made a circle exactly the size of a welcome.
+A ring of glow-seeds around the {object_motif}, right beside {companion_name}'s door. Glow-seeds spend their days disguised as plain grey pebbles, but the first touch of moonlight wakes them, and after that they shine green-gold for a hundred nights. Twenty seeds, earned with a week of errands, counted twice into a soft pouch — a circle exactly the size of a welcome.
 
 The seed-seller had said precisely one strange thing while pouring them out. "Plant them where they fall." The {hero} had nodded politely, the way you nod at people who speak in riddles, and privately filed it under nonsense. Seeds fall where you drop them. Nobody builds a masterpiece by dropping it.
 
-The {hero} carried the pouch toward the door with the slow, ceremonial care of somebody transporting treasure. Which, of course, is exactly when the ground produced a root, or a ridge, or possibly nothing at all, and the {hero} tripped.
+The {hero} carried the pouch toward the door with the slow, ceremonial care of somebody transporting treasure. Which is exactly when the ground produced a root, or possibly nothing at all, and the {hero} tripped.
 
 Plip-plip-plip-plip. Twenty glow-seeds soared out of the pouch with what sounded suspiciously like joy, bounced, scattered, and ran — a long crooked ribbon of tiny thumps disappearing into the dusk.
 
 The {hero} spent the next while crawling in the dark, patting the ground like someone apologising to it. Fourteen seeds came back. Six were gone — properly gone, swallowed by the crooked shadows. "I ruined it," the {hero} said to the empty garden. "A week of planning, and I ruined it in four steps."
 
-And here is the thing about that feeling. The {hero} knew hard was allowed — the wobble marks had settled that long ago. But this did not feel like hard, which you can lean into. It felt like spoiled, which just sits there. A mistake seemed like the opposite of a plan, the way a hole is the opposite of a wall.
+And here is the thing about that feeling. The {hero} knew hard was allowed — the wobble marks had settled that long ago. But this did not feel like hard, which you can lean into. It felt like spoiled, which just sits there.
 
-Still: fourteen seeds make a smaller circle. The {hero} pressed them into the neatest ring in the history of rings, spaced to perfection, and fetched water — whereupon even the water joined the rebellion. It slid straight off the ring's packed earth and wandered away sideways in a thin silver thread, following its own crooked little path. The same path, more or less, that the seeds had taken. The {hero} was too tired to wonder about that, and sat down to wait for the moon, prepared for disappointment.
+Still: fourteen seeds make a smaller circle. The {hero} pressed them into the neatest ring in the history of rings, spaced to perfection, and fetched water — whereupon even the water joined the rebellion, sliding off the ring's packed earth and wandering away sideways in a thin silver thread: the same crooked path, more or less, that the seeds had taken. The {hero} was too tired to wonder about that, and sat down to wait for the moon.
 
 The moon rose slow and generous over {setting}. And — lean out into the dark for a moment. Something is waking up out there. Tiny green-gold lights, blinking on, one, then three, then six. But look where. Not the tidy ring. The lights are strung along the crooked line.
 
 All six runaway seeds were shining. Every lost, unplanned, given-up-for-gone one of them, glowing in a messy ribbon like lanterns down a lane. The fourteen perfect seeds sat in their perfect circle, dark as buttons on a coat.
 
-The {hero} went over on quiet feet and finally looked at the ground instead of the plan. The crooked ribbon lay exactly where rain always trickled — low, soft, deep-drinking soil, the richest in the garden. The ring sat proudly on earth packed hard as a road. And round seeds roll. Of course they roll. They roll downhill into the hollows, and the hollows are where the water goes, which is precisely where a seed most wants to live. The spill had not been clumsiness punishing a good plan. The spill had been twenty small experts sorting themselves.
+The {hero} went over on quiet feet and finally looked at the ground instead of the plan. The crooked ribbon lay exactly where rain always trickled — low, soft, deep-drinking soil, the richest in the garden. The ring sat proudly on earth packed hard as a road. And round seeds roll. Of course they roll. They roll downhill into the hollows, and the hollows are where the water goes, which is precisely where a seed most wants to live. The spill had not been clumsiness. It had been twenty small experts sorting themselves.
 
 "Plant them where they fall," the {hero} said slowly, and the riddle quietly stopped being a riddle. "Because where they fall is where they roll, and where they roll is where the water is. The mistake knew the garden better than my diagram did. It wasn't a ruin. It was information." The {hero} was already digging, laughing a little. "Getting it wrong is part of how growing is done. Maybe the load-bearing part."
 
@@ -1061,25 +1061,25 @@ Tomorrow they would follow the low places and find out where the last mistake gr
 {refrain}.`,
         scriptTemplate: `{companion_name} had gone across {setting} for the whole day and would not be back until moonrise, which meant {child_name} the {hero} had approximately one evening to execute the finest surprise ever planned. And it was planned. It had been planned for a week, in secret, with diagrams.
 
-A ring of glow-seeds around the {object_motif}, right beside {companion_name}'s door. Glow-seeds spend their days disguised as plain grey pebbles — you would step over one without a glance — but the first touch of moonlight wakes them, and after that they shine green-gold every night for a hundred nights. Twenty seeds, earned with a full week of errands, counted twice into a soft pouch. Twenty seeds made a circle exactly the size of a welcome.
+A ring of glow-seeds around the {object_motif}, right beside {companion_name}'s door. Glow-seeds spend their days disguised as plain grey pebbles, but the first touch of moonlight wakes them, and after that they shine green-gold for a hundred nights. Twenty seeds, earned with a week of errands, counted twice into a soft pouch — a circle exactly the size of a welcome.
 
 The seed-seller had said precisely one strange thing while pouring them out. "Plant them where they fall." {child_name} had nodded politely, the way you nod at people who speak in riddles, and privately filed it under nonsense. Seeds fall where you drop them. Nobody builds a masterpiece by dropping it.
 
-{child_name} carried the pouch toward the door with the slow, ceremonial care of somebody transporting treasure. Which, of course, is exactly when the ground produced a root, or a ridge, or possibly nothing at all, and {child_name} tripped.
+{child_name} carried the pouch toward the door with the slow, ceremonial care of somebody transporting treasure. Which is exactly when the ground produced a root, or possibly nothing at all, and {child_name} tripped.
 
 Plip-plip-plip-plip. Twenty glow-seeds soared out of the pouch with what sounded suspiciously like joy, bounced, scattered, and ran — a long crooked ribbon of tiny thumps disappearing into the dusk.
 
 {child_name} spent the next while crawling in the dark, patting the ground like someone apologising to it. Fourteen seeds came back. Six were gone — properly gone, swallowed by the crooked shadows. "I ruined it," {child_name} said to the empty garden. "A week of planning, and I ruined it in four steps."
 
-And here is the thing about that feeling. {child_name} knew hard was allowed — the wobble marks had settled that long ago. But this did not feel like hard, which you can lean into. It felt like spoiled, which just sits there. A mistake seemed like the opposite of a plan, the way a hole is the opposite of a wall.
+And here is the thing about that feeling. {child_name} knew hard was allowed — the wobble marks had settled that long ago. But this did not feel like hard, which you can lean into. It felt like spoiled, which just sits there.
 
-Still: fourteen seeds make a smaller circle. {child_name} pressed them into the neatest ring in the history of rings, spaced to perfection, and fetched water — whereupon even the water joined the rebellion. It slid straight off the ring's packed earth and wandered away sideways in a thin silver thread, following its own crooked little path. The same path, more or less, that the seeds had taken. {child_name} was too tired to wonder about that, and sat down to wait for the moon, prepared for disappointment.
+Still: fourteen seeds make a smaller circle. {child_name} pressed them into the neatest ring in the history of rings, spaced to perfection, and fetched water — whereupon even the water joined the rebellion, sliding off the ring's packed earth and wandering away sideways in a thin silver thread: the same crooked path, more or less, that the seeds had taken. {child_name} was too tired to wonder about that, and sat down to wait for the moon.
 
 The moon rose slow and generous over {setting}. And — lean out into the dark for a moment. Something is waking up out there. Tiny green-gold lights, blinking on, one, then three, then six. But look where. Not the tidy ring. The lights are strung along the crooked line.
 
 All six runaway seeds were shining. Every lost, unplanned, given-up-for-gone one of them, glowing in a messy ribbon like lanterns down a lane. The fourteen perfect seeds sat in their perfect circle, dark as buttons on a coat.
 
-{child_name} went over on quiet feet and finally looked at the ground instead of the plan. The crooked ribbon lay exactly where rain always trickled — low, soft, deep-drinking soil, the richest in the garden. The ring sat proudly on earth packed hard as a road. And round seeds roll. Of course they roll. They roll downhill into the hollows, and the hollows are where the water goes, which is precisely where a seed most wants to live. The spill had not been clumsiness punishing a good plan. The spill had been twenty small experts sorting themselves.
+{child_name} went over on quiet feet and finally looked at the ground instead of the plan. The crooked ribbon lay exactly where rain always trickled — low, soft, deep-drinking soil, the richest in the garden. The ring sat proudly on earth packed hard as a road. And round seeds roll. Of course they roll. They roll downhill into the hollows, and the hollows are where the water goes, which is precisely where a seed most wants to live. The spill had not been clumsiness. It had been twenty small experts sorting themselves.
 
 "Plant them where they fall," {child_name} said slowly, and the riddle quietly stopped being a riddle. "Because where they fall is where they roll, and where they roll is where the water is. The mistake knew the garden better than my diagram did. It wasn't a ruin. It was information." {child_name} was already digging, laughing a little. "Getting it wrong is part of how growing is done. Maybe the load-bearing part."
 
@@ -1171,833 +1171,693 @@ Somewhere out there, the twentieth seed was still hiding. Tomorrow they would hu
   },
   {
     ordinal: 4,
-    title: "Try a Different Way",
+    title: "The Sideways Bell",
     concept: "When one way does not work, try another",
     callback: "The power of yet (Level 2)",
     ageFloor: 5,
-    summary: "The hero keeps trying the same thing the same way and keeps getting stuck. Their companion helps them see that persistence is not doing the same thing harder — it is being willing to try a different way. It builds on Level 2: \"not yet\" invites a new path.",
-    teachingNote: "Resilience is flexible, not stubborn — the skill is changing your approach, not just repeating the same effort.",
+    summary: "It is story-night, but the great bell that gathers everyone will not ring, no matter how hard the hero pulls — and pulling harder only makes it worse. The clue comes from the smallest thing on the square: the tiny chime beside it that nobody rings, because it rings itself. It never pulls down. It swings sideways. Some stuck things don't need a harder way — they need a different one.",
+    teachingNote: "Flexible thinking is resilience in action: a child who can say \"harder isn't working, what else could I try?\" has a way forward that effort alone can't give.",
     learningBeat: "A different way",
     ageVariants: {
       '3-4': {
-        audioTemplate: `Deep in {setting}, the {hero} found a little round door. Behind it, something wonderful was waiting. But the little door was stuck tight, and it would not open.
+        audioTemplate: `It was story-night in {setting}. When the big bell rang, everyone came to hear the story. The {hero} loved story-night best of all.
 
-So the {hero} pushed. Push, push, push! The door did not open.
+But tonight, the bell would not ring.
 
-The {hero} pushed again, the very same way, in the very same spot. Push, push, push! The door stayed shut.
+The {hero} pulled the rope. One pull. Two pulls. Three big pulls. Nothing.
 
-Again and again the {hero} pushed, harder and harder. The door did not move, not even a little. The {hero} huffed and puffed and felt cross.
+{companion_name} pulled too. Still nothing.
 
-Just then, {companion_name} came along. "You are working so hard," said {companion_name}. "But you keep pushing the same way, over and over. Maybe the door does not need a bigger push. Maybe it needs a different way."
+"I can't ring it," puffed the {hero}. "Well — not so far."
 
-"A different way?" said the {hero}.
+Beside the big bell hung a tiny chime. Nobody ever rang it. It rang itself.
 
-"Yes," said {companion_name} softly. "When one way does not work, we can try another one."
+A little breeze came by, and the tiny chime sang. Watch closely. Which way does it swing? Not down. Sideways!
 
-The {hero} looked at the door again. Right beside it hung a shiny {object_motif}, swinging gently. The {hero} had been pushing so hard that they never even saw it.
+"Oh!" said the {hero}. "The breeze doesn't pull harder. It swings a different way!"
 
-"What if I do not push at all?" said the {hero}. "What if I pull?"
+The {hero} peeked inside the big bell. A round seed-pod was stuck in there. Pulling down had squeezed it tight.
 
-The {hero} took a slow, deep breath. Then, instead of pushing, the {hero} pulled. Cre-e-eak! The little round door swung wide open!
+So the {hero} gave the bell one soft sideways push. The pod rolled out, free!
 
-Inside was a warm room full of tiny glowing stars. The {hero} gasped and clapped their hands. Pushing harder had never, ever worked. But trying a different way opened the door in one try.
+Dong! Dong! The bell sang. Story-night!
 
-"You did it!" cheered {companion_name}. "You did not give up. You just found a new way to try."
+"{refrain}," said {companion_name}, smiling.
 
-"Will it always work the very first time?" asked the {hero}.
+Everyone came, and the story was long and lovely.
 
-"Not always," said {companion_name}. "But there is always another way to try. That is what makes you brave."
+After, they planted the seed-pod beside the {object_motif}. Pat, pat.
 
-The {hero} held the shiny {object_motif} close and smiled a big sleepy smile. Now the {hero} knew a wonderful little secret. Being stuck is not the end of the story. It only means it is time to try a different way.
+What grows from a bell-seed? Tomorrow will start to tell.
 
 {refrain}.`,
-        scriptTemplate: `Deep in {setting}, {child_name} found a little round door. Behind it, something wonderful was waiting. But the little door was stuck tight, and it would not open.
+        scriptTemplate: `It was story-night in {setting}. When the big bell rang, everyone came to hear the story. {child_name} the {hero} loved story-night best of all.
 
-So {child_name} pushed. Push, push, push! The door did not open.
+But tonight, the bell would not ring.
 
-{child_name} pushed again, the very same way, in the very same spot. Push, push, push! The door stayed shut.
+{child_name} pulled the rope. One pull. Two pulls. Three big pulls. Nothing.
 
-Again and again {child_name} pushed, harder and harder. The door did not move, not even a little. {child_name} huffed and puffed and felt cross.
+{companion_name} pulled too. Still nothing.
 
-Just then, {companion_name} came along. "You are working so hard," said {companion_name}. "But you keep pushing the same way, over and over. Maybe the door does not need a bigger push. Maybe it needs a different way."
+"I can't ring it," puffed {child_name}. "Well — not so far."
 
-"A different way?" said {child_name}.
+Beside the big bell hung a tiny chime. Nobody ever rang it. It rang itself.
 
-"Yes," said {companion_name} softly. "When one way does not work, we can try another one."
+A little breeze came by, and the tiny chime sang. Watch closely. Which way does it swing? Not down. Sideways!
 
-{child_name} looked at the door again. Right beside it hung a shiny {object_motif}, swinging gently. {child_name} had been pushing so hard that they never even saw it.
+"Oh!" said {child_name}. "The breeze doesn't pull harder. It swings a different way!"
 
-"What if I do not push at all?" said {child_name}. "What if I pull?"
+{child_name} peeked inside the big bell. A round seed-pod was stuck in there. Pulling down had squeezed it tight.
 
-{child_name} took a slow, deep breath. Then, instead of pushing, {child_name} pulled. Cre-e-eak! The little round door swung wide open!
+So {child_name} gave the bell one soft sideways push. The pod rolled out, free!
 
-Inside was a warm room full of tiny glowing stars. {child_name} gasped and clapped their hands. Pushing harder had never, ever worked. But trying a different way opened the door in one try.
+Dong! Dong! The bell sang. Story-night!
 
-"You did it!" cheered {companion_name}. "You did not give up. You just found a new way to try."
+"{refrain}," said {companion_name}, smiling.
 
-"Will it always work the very first time?" asked {child_name}.
+Everyone came, and the story was long and lovely.
 
-"Not always," said {companion_name}. "But there is always another way to try. That is what makes you brave."
+After, they planted the seed-pod beside the {object_motif}. Pat, pat.
 
-{child_name} held the shiny {object_motif} close and smiled a big sleepy smile. Now {child_name} knew a wonderful little secret. Being stuck is not the end of the story. It only means it is time to try a different way.
+What grows from a bell-seed? Tomorrow will start to tell.
 
 {refrain}.`,
       },
       '5-6': {
-        audioTemplate: `High in {setting}, the {hero} discovered an old round door set into the wall. Something wonderful glowed softly behind it, just out of reach. The {hero} wanted to see it more than anything. But the door was shut tight, and it would not budge.
+        audioTemplate: `It was story-night in {setting}. When the big bronze bell rang at dusk, everyone stopped whatever they were doing and came to the story circle. The {hero} had waited all week — tonight's story was supposed to be the best one yet.
 
-So the {hero} pushed. Push, push, push! Nothing happened.
+But tonight, the bell would not ring.
 
-The {hero} planted both feet, leaned in, and pushed again, the very same way, in the very same spot. Push, push, push! The door did not move.
+The {hero} pulled the rope. The bell tipped, but no ring came. The {hero} pulled harder, feet right off the ground. Silence. The {hero} took a running start and pulled so hard that the rope slipped and the {hero} sat down very suddenly.
 
-"I just need to try harder," the {hero} said. So they did. Again and again and again, the {hero} shoved at the same place with all their might. Their arms grew tired. Their face grew hot. And still the door stayed exactly as shut as before.
+"I can't ring it," puffed the {hero}. Then the {hero} remembered the echo stone. "No. I can't ring it so far. Let me think."
 
-The {hero} sat down with a grumpy thump. "I am trying so hard," they said, "but nothing is working."
+{companion_name} was peering up at the bell too. "Hmm," was all they said. "The big bell is stubborn tonight. Its little sister never gets stuck."
 
-Just then {companion_name} came near. "I have been watching you," said {companion_name} gently. "You are very brave, and you are working very, very hard. But do you see what you keep doing? You push the same way, then you push the same way again, and then the same way once more."
+The little sister was a tiny plain chime that hung beside the great bell. Nobody ever rang it. It rang itself, whenever the evening breeze came by.
 
-"That is what trying hard means," said the {hero}.
+And just then, a breeze did. Watch the little chime closely. Which way does it swing? Not down. Sideways.
 
-"It is one kind of trying," said {companion_name} with a kind smile. "But pushing harder on the same spot is not the only way to be strong. Sometimes real persistence is not doing the same thing louder. Sometimes it is being brave enough to try a different way."
+The {hero} stared. "The breeze never pulls. It swishes sideways — and the chime sings every single time." The {hero} looked at the rope, the same rope everyone pulled, the same straight-down way. "I've been trying one way, just harder and harder. This bell doesn't want a harder way. It wants a different way!"
 
-The {hero} thought about that. It felt strange. They had been so sure that pushing was right. "A different way," the {hero} whispered.
+So the {hero} went up close and peeked inside the bell. There, wedged between the clapper and the rim, sat a smooth round seed-pod. Every hard downward pull had only jammed it tighter.
 
-"Look around," said {companion_name}. "What have you not tried yet?"
+The {hero} gave the bell one soft, sideways nudge. The pod wobbled, rolled, and dropped out, free.
 
-The {hero} stood up and really looked, for the first time. Beside the door hung a shiny {object_motif}, turning slowly on a little hook. Below the door was a smooth handle they had never touched. They had been pushing so hard, and staring so hard at one spot, that they had missed everything else.
+Dong! The great bell sang, so deep and warm the ground hummed. Dong! Dong! Lights bobbed out from every corner, everyone gathered, and the {hero} got to ring the bell for the whole story circle.
 
-"Maybe it does not push," said the {hero} slowly. "Maybe it pulls. Or maybe it slides."
+"{refrain}," said {companion_name}, as the last hum faded into the dark.
 
-The {hero} took a deep breath and, instead of pushing, gave the handle a gentle pull. The door did not open. But it wobbled! Something moved!
+The story was just as good as promised, and twice as long.
 
-"It moved!" cried the {hero}. "That is more than pushing ever did!"
+Afterwards, the two of them planted the troublemaking seed-pod in the soft ground beside the {object_motif}, and patted it in.
 
-"You are getting warmer," laughed {companion_name}. "Keep trying new ways."
+"What does a bell-seed grow into?" wondered the {hero}, yawning.
 
-So the {hero} pulled a little to the side, and with a soft whoosh, the round door slid open like a curtain. Warm golden light spilled out. Inside was a room full of floating, glowing stars, gentle as fireflies.
-
-The {hero} laughed out loud. All that pushing had never worked, not even once. But one calm, clever, different way had opened the door at last.
-
-"You did it," said {companion_name} proudly. "And do you know the best part? You did not give up. You just stopped repeating the one way that was stuck, and you tried a different way instead."
-
-The {hero} picked up the shiny {object_motif} and held it close, warm against their heart. They would remember this. When something will not work no matter how hard you push, that is not the moment to quit. It is the moment to stop, look around, and try a different way.
-
-And with the little stars glowing softly around them, the {hero} smiled a sleepy, happy smile.
+"Morning can start finding out," said {companion_name}.
 
 {refrain}.`,
-        scriptTemplate: `High in {setting}, {child_name} discovered an old round door set into the wall. Something wonderful glowed softly behind it, just out of reach. {child_name} wanted to see it more than anything. But the door was shut tight, and it would not budge.
+        scriptTemplate: `It was story-night in {setting}. When the big bronze bell rang at dusk, everyone stopped whatever they were doing and came to the story circle. {child_name} the {hero} had waited all week — tonight's story was supposed to be the best one yet.
 
-So {child_name} pushed. Push, push, push! Nothing happened.
+But tonight, the bell would not ring.
 
-{child_name} planted both feet, leaned in, and pushed again, the very same way, in the very same spot. Push, push, push! The door did not move.
+{child_name} pulled the rope. The bell tipped, but no ring came. {child_name} pulled harder, feet right off the ground. Silence. {child_name} took a running start and pulled so hard that the rope slipped and {child_name} sat down very suddenly.
 
-"I just need to try harder," {child_name} said. So they did. Again and again and again, {child_name} shoved at the same place with all their might. Their arms grew tired. Their face grew hot. And still the door stayed exactly as shut as before.
+"I can't ring it," puffed {child_name}. Then {child_name} remembered the echo stone. "No. I can't ring it so far. Let me think."
 
-{child_name} sat down with a grumpy thump. "I am trying so hard," they said, "but nothing is working."
+{companion_name} was peering up at the bell too. "Hmm," was all they said. "The big bell is stubborn tonight. Its little sister never gets stuck."
 
-Just then {companion_name} came near. "I have been watching you," said {companion_name} gently. "You are very brave, and you are working very, very hard. But do you see what you keep doing? You push the same way, then you push the same way again, and then the same way once more."
+The little sister was a tiny plain chime that hung beside the great bell. Nobody ever rang it. It rang itself, whenever the evening breeze came by.
 
-"That is what trying hard means," said {child_name}.
+And just then, a breeze did. Watch the little chime closely. Which way does it swing? Not down. Sideways.
 
-"It is one kind of trying," said {companion_name} with a kind smile. "But pushing harder on the same spot is not the only way to be strong. Sometimes real persistence is not doing the same thing louder. Sometimes it is being brave enough to try a different way."
+{child_name} stared. "The breeze never pulls. It swishes sideways — and the chime sings every single time." {child_name} looked at the rope, the same rope everyone pulled, the same straight-down way. "I've been trying one way, just harder and harder. This bell doesn't want a harder way. It wants a different way!"
 
-{child_name} thought about that. It felt strange. They had been so sure that pushing was right. "A different way," {child_name} whispered.
+So {child_name} went up close and peeked inside the bell. There, wedged between the clapper and the rim, sat a smooth round seed-pod. Every hard downward pull had only jammed it tighter.
 
-"Look around," said {companion_name}. "What have you not tried yet?"
+{child_name} gave the bell one soft, sideways nudge. The pod wobbled, rolled, and dropped out, free.
 
-{child_name} stood up and really looked, for the first time. Beside the door hung a shiny {object_motif}, turning slowly on a little hook. Below the door was a smooth handle they had never touched. They had been pushing so hard, and staring so hard at one spot, that they had missed everything else.
+Dong! The great bell sang, so deep and warm the ground hummed. Dong! Dong! Lights bobbed out from every corner, everyone gathered, and {child_name} got to ring the bell for the whole story circle.
 
-"Maybe it does not push," said {child_name} slowly. "Maybe it pulls. Or maybe it slides."
+"{refrain}," said {companion_name}, as the last hum faded into the dark.
 
-{child_name} took a deep breath and, instead of pushing, gave the handle a gentle pull. The door did not open. But it wobbled! Something moved!
+The story was just as good as promised, and twice as long.
 
-"It moved!" cried {child_name}. "That is more than pushing ever did!"
+Afterwards, the two of them planted the troublemaking seed-pod in the soft ground beside the {object_motif}, and patted it in.
 
-"You are getting warmer," laughed {companion_name}. "Keep trying new ways."
+"What does a bell-seed grow into?" wondered {child_name}, yawning.
 
-So {child_name} pulled a little to the side, and with a soft whoosh, the round door slid open like a curtain. Warm golden light spilled out. Inside was a room full of floating, glowing stars, gentle as fireflies.
-
-{child_name} laughed out loud. All that pushing had never worked, not even once. But one calm, clever, different way had opened the door at last.
-
-"You did it," said {companion_name} proudly. "And do you know the best part? You did not give up. You just stopped repeating the one way that was stuck, and you tried a different way instead."
-
-{child_name} picked up the shiny {object_motif} and held it close, warm against their heart. They would remember this. When something will not work no matter how hard you push, that is not the moment to quit. It is the moment to stop, look around, and try a different way.
-
-And with the little stars glowing softly around them, {child_name} smiled a sleepy, happy smile.
+"Morning can start finding out," said {companion_name}.
 
 {refrain}.`,
       },
       '7-8': {
-        audioTemplate: `At the far edge of {setting}, where the light turned soft and blue, the {hero} found a great round door built into an old stone wall. Behind it, something wonderful was glowing. The {hero} could see the warm light leaking around the edges. Whatever it was, they wanted to reach it more than anything in the world. There was only one problem. The door was shut, and it would not open.
+        audioTemplate: `In {setting}, story-night worked like this: at dusk, somebody rang the great bronze bell, and the sound rolled out warm and deep into every corner, and everyone — the busy, the sleepy, the halfway-through-dinner — put things down and came to the story circle. The bell had gathered story-night for a hundred years without missing once. And tonight, of all nights, with the best story of the season promised, the {hero} had been given the honour of ringing it.
 
-So the {hero} did the obvious thing. They pushed.
+The {hero} took hold of the rope, grinned, and pulled.
 
-Push, push, push. The door did not move.
+The bell tipped. No ring.
 
-The {hero} set their feet, squared their shoulders, and pushed again, exactly the same way, in exactly the same spot. Push, push, push. Nothing. Not a creak, not a wobble, not an inch.
+The {hero} pulled harder. The bell swung in a slow, dignified, completely silent arc. The {hero} pulled with everything — both feet off the ground, swinging like laundry in a storm. Nothing. One more mighty go: a running start, a tremendous heave — and the rope slipped, and the {hero} sat down so suddenly that a nearby bird laughed.
 
-"I just have to try harder," the {hero} told themselves. And they believed it. So they tried harder. They threw their whole weight against the same place, over and over, grunting and straining until their arms shook and their cheeks burned. Push, push, push. Push, push, push.
+"Ring it harder!" someone called helpfully from the gathering dark.
 
-The door stayed exactly, perfectly, stubbornly shut.
+"Harder is all I've been doing!" the {hero} called back, and slumped against the bell post. Everything in the {hero} wanted to announce that the bell was broken and story-night was cancelled. But the old echo stone had taught a smaller, stubborner sentence, and the {hero} said it instead. "I can't ring it — not so far. Not so far means keep thinking."
 
-At last the {hero} slumped against the cold stone, out of breath. "I do not understand," they said. "I am trying as hard as I possibly can. Why will it not open?"
+{companion_name} had wandered over and was peering up at the silent bell with their head on one side. "Hmm," was all they offered. "The big one is stubborn tonight. Funny — its little sister never gets stuck."
 
-That was when {companion_name} arrived, quiet as a drifting leaf. "I have been watching you for a while," said {companion_name}. "You have not given up once. That is a wonderful thing."
+The little sister. The {hero} had forgotten it was even there: a tiny plain chime, hardly bigger than a leaf, hanging beside the great bell on its own thin thread. Nobody ever rang it. Nobody needed to. It rang itself, silver and small, whenever an evening breeze came through.
 
-"But it is not working," the {hero} said, and their voice wobbled. "I am doing everything right. I am pushing so hard."
+And just then, an evening breeze came through. Quick — watch the little chime, closely now. Which way does it move? Not down. Nobody is pulling it down. It swings sideways.
 
-"You are," agreed {companion_name} gently. "But let me ask you something. How many times have you pushed?"
+The {hero} sat up straight. "The breeze never pulls," the {hero} said slowly. "Not once. It just swishes past, sideways — and the chime sings every single time." The {hero} looked at the rope, the same rope everyone had always pulled, in the same straight-down way, and then back at the drifting chime. "I've been trying one way all evening, just harder and harder each time. But harder isn't the only door. This bell doesn't want a harder way. It wants a different way."
 
-"Hundreds," said the {hero}.
+So instead of pulling anything, the {hero} went right up under the great bell and peeked inside — which, in a hundred years, apparently nobody had thought to do while yanking on the rope. And there it was. A smooth, round seed-pod, wedged snug between the clapper and the rim, holding the bell's voice like a held breath. Every furious downward pull had rocked the clapper straight into the pod and jammed it tighter. The harder way had been making things worse all along.
 
-"And each time," said {companion_name}, "did you push the same way, in the same spot?"
+The {hero} reached up and gave the bell the gentlest sideways nudge — the breeze's way, the chime's way. The pod wobbled. Rolled. Dropped out into the grass, round and shiny and completely unashamed of itself.
 
-The {hero} opened their mouth to argue, and then stopped. Because it was true. Every single try had been the same try, just louder. "Yes," they admitted, and their face went warm, this time not from pushing but from something like embarrassment. "I suppose it was."
+Dong! The great bell found its voice all at once, so deep and warm that the ground hummed and the stars seemed to lean in. Dong! Dong! Lanterns came bobbing from every direction, the story circle filled, and the {hero} — sideways-thinker, bell-freer — rang the gathering in.
 
-"Here is a secret that took me a long time to learn," said {companion_name}. "Trying hard is good. But doing the exact same thing again and again, only harder, is not really trying hard. It is being stuck in one idea. Real persistence, the strong kind, is being brave enough to try a different way."
+"{refrain}," said {companion_name} quietly, as the last long hum faded into the dark.
 
-The {hero} frowned. Part of them did not want to hear it. Pushing had felt right. Pushing had felt like being determined. Changing now felt almost like admitting the first way had been wrong. "But I was so sure," they said quietly.
+The story was every bit as good as promised, and the {hero} heard it from the very front, with the rope still warm in one hand.
 
-"Being sure is not the same as being right," said {companion_name} kindly. "And changing your plan is not giving up. It is getting smarter. Look around you. What have you not tried?"
+Afterwards, the two of them took the troublemaking seed-pod and planted it in the soft ground beside the {object_motif}, patting it down like a small apology.
 
-Slowly, the {hero} did something they had not done the whole time. They stopped pushing, and they looked. Really looked. Beside the door hung a shiny {object_motif}, swaying softly on a hook. Down low, near the ground, sat a smooth iron handle, half in shadow. There were grooves along one edge of the door, like the tracks of a sliding gate. All this time they had been staring at one single spot, and they had missed everything else.
+"It stopped a hundred-year bell," said the {hero} sleepily. "That's a strong seed. What do you suppose a bell-seed grows into?"
 
-"Maybe," the {hero} said slowly, "it was never a pushing door at all."
-
-They crouched down and gave the handle a careful pull. The door did not open, but it shifted, just a little, with a soft grinding sound. Something that had never happened before.
-
-"It moved!" the {hero} gasped. "Pulling did more in one try than pushing did in a hundred!"
-
-"Keep going," laughed {companion_name}. "You have found the trail. Now follow it."
-
-So the {hero} tried the new idea properly. They braced their feet, gripped the handle, and pulled the great door sideways along its hidden grooves. With a long, deep whoosh, it rolled open like a curtain of stone.
-
-Golden light poured out over them. Inside was a round room filled with slow-floating stars, drifting and glowing like a whole sky brought indoors. It was even more wonderful than the {hero} had imagined.
-
-For a moment they just stood there, breathing it in. Then they laughed, a big, surprised, happy laugh. "All that pushing," they said, shaking their head. "And the answer was a different way the whole time."
-
-"You found it yourself," said {companion_name} proudly. "I only reminded you to look."
-
-The {hero} reached up and lifted the shiny {object_motif} from its hook, holding it close. They wanted to remember this feeling. Not the sore arms, not the frustration, but the moment they stopped repeating themselves and dared to try something new.
-
-"Next time I get stuck," the {hero} said softly, "I will not just push harder. I will stop, and look, and try a different way."
-
-And there, wrapped in warm and floating starlight, the {hero} smiled a slow, sleepy, contented smile.
+"Something worth ringing about," said {companion_name}. "Morning can start finding out."
 
 {refrain}.`,
-        scriptTemplate: `At the far edge of {setting}, where the light turned soft and blue, {child_name} found a great round door built into an old stone wall. Behind it, something wonderful was glowing. {child_name} could see the warm light leaking around the edges. Whatever it was, they wanted to reach it more than anything in the world. There was only one problem. The door was shut, and it would not open.
+        scriptTemplate: `In {setting}, story-night worked like this: at dusk, somebody rang the great bronze bell, and the sound rolled out warm and deep into every corner, and everyone — the busy, the sleepy, the halfway-through-dinner — put things down and came to the story circle. The bell had gathered story-night for a hundred years without missing once. And tonight, of all nights, with the best story of the season promised, {child_name} the {hero} had been given the honour of ringing it.
 
-So {child_name} did the obvious thing. They pushed.
+{child_name} took hold of the rope, grinned, and pulled.
 
-Push, push, push. The door did not move.
+The bell tipped. No ring.
 
-{child_name} set their feet, squared their shoulders, and pushed again, exactly the same way, in exactly the same spot. Push, push, push. Nothing. Not a creak, not a wobble, not an inch.
+{child_name} pulled harder. The bell swung in a slow, dignified, completely silent arc. {child_name} pulled with everything — both feet off the ground, swinging like laundry in a storm. Nothing. One more mighty go: a running start, a tremendous heave — and the rope slipped, and {child_name} sat down so suddenly that a nearby bird laughed.
 
-"I just have to try harder," {child_name} told themselves. And they believed it. So they tried harder. They threw their whole weight against the same place, over and over, grunting and straining until their arms shook and their cheeks burned. Push, push, push. Push, push, push.
+"Ring it harder!" someone called helpfully from the gathering dark.
 
-The door stayed exactly, perfectly, stubbornly shut.
+"Harder is all I've been doing!" {child_name} called back, and slumped against the bell post. Everything in {child_name} wanted to announce that the bell was broken and story-night was cancelled. But the old echo stone had taught a smaller, stubborner sentence, and {child_name} said it instead. "I can't ring it — not so far. Not so far means keep thinking."
 
-At last {child_name} slumped against the cold stone, out of breath. "I do not understand," they said. "I am trying as hard as I possibly can. Why will it not open?"
+{companion_name} had wandered over and was peering up at the silent bell with their head on one side. "Hmm," was all they offered. "The big one is stubborn tonight. Funny — its little sister never gets stuck."
 
-That was when {companion_name} arrived, quiet as a drifting leaf. "I have been watching you for a while," said {companion_name}. "You have not given up once. That is a wonderful thing."
+The little sister. {child_name} had forgotten it was even there: a tiny plain chime, hardly bigger than a leaf, hanging beside the great bell on its own thin thread. Nobody ever rang it. Nobody needed to. It rang itself, silver and small, whenever an evening breeze came through.
 
-"But it is not working," {child_name} said, and their voice wobbled. "I am doing everything right. I am pushing so hard."
+And just then, an evening breeze came through. Quick — watch the little chime, closely now. Which way does it move? Not down. Nobody is pulling it down. It swings sideways.
 
-"You are," agreed {companion_name} gently. "But let me ask you something. How many times have you pushed?"
+{child_name} sat up straight. "The breeze never pulls," {child_name} said slowly. "Not once. It just swishes past, sideways — and the chime sings every single time." {child_name} looked at the rope, the same rope everyone had always pulled, in the same straight-down way, and then back at the drifting chime. "I've been trying one way all evening, just harder and harder each time. But harder isn't the only door. This bell doesn't want a harder way. It wants a different way."
 
-"Hundreds," said {child_name}.
+So instead of pulling anything, {child_name} went right up under the great bell and peeked inside — which, in a hundred years, apparently nobody had thought to do while yanking on the rope. And there it was. A smooth, round seed-pod, wedged snug between the clapper and the rim, holding the bell's voice like a held breath. Every furious downward pull had rocked the clapper straight into the pod and jammed it tighter. The harder way had been making things worse all along.
 
-"And each time," said {companion_name}, "did you push the same way, in the same spot?"
+{child_name} reached up and gave the bell the gentlest sideways nudge — the breeze's way, the chime's way. The pod wobbled. Rolled. Dropped out into the grass, round and shiny and completely unashamed of itself.
 
-{child_name} opened their mouth to argue, and then stopped. Because it was true. Every single try had been the same try, just louder. "Yes," they admitted, and their face went warm, this time not from pushing but from something like embarrassment. "I suppose it was."
+Dong! The great bell found its voice all at once, so deep and warm that the ground hummed and the stars seemed to lean in. Dong! Dong! Lanterns came bobbing from every direction, the story circle filled, and {child_name} — sideways-thinker, bell-freer — rang the gathering in.
 
-"Here is a secret that took me a long time to learn," said {companion_name}. "Trying hard is good. But doing the exact same thing again and again, only harder, is not really trying hard. It is being stuck in one idea. Real persistence, the strong kind, is being brave enough to try a different way."
+"{refrain}," said {companion_name} quietly, as the last long hum faded into the dark.
 
-{child_name} frowned. Part of them did not want to hear it. Pushing had felt right. Pushing had felt like being determined. Changing now felt almost like admitting the first way had been wrong. "But I was so sure," they said quietly.
+The story was every bit as good as promised, and {child_name} heard it from the very front, with the rope still warm in one hand.
 
-"Being sure is not the same as being right," said {companion_name} kindly. "And changing your plan is not giving up. It is getting smarter. Look around you. What have you not tried?"
+Afterwards, the two of them took the troublemaking seed-pod and planted it in the soft ground beside the {object_motif}, patting it down like a small apology.
 
-Slowly, {child_name} did something they had not done the whole time. They stopped pushing, and they looked. Really looked. Beside the door hung a shiny {object_motif}, swaying softly on a hook. Down low, near the ground, sat a smooth iron handle, half in shadow. There were grooves along one edge of the door, like the tracks of a sliding gate. All this time they had been staring at one single spot, and they had missed everything else.
+"It stopped a hundred-year bell," said {child_name} sleepily. "That's a strong seed. What do you suppose a bell-seed grows into?"
 
-"Maybe," {child_name} said slowly, "it was never a pushing door at all."
-
-They crouched down and gave the handle a careful pull. The door did not open, but it shifted, just a little, with a soft grinding sound. Something that had never happened before.
-
-"It moved!" {child_name} gasped. "Pulling did more in one try than pushing did in a hundred!"
-
-"Keep going," laughed {companion_name}. "You have found the trail. Now follow it."
-
-So {child_name} tried the new idea properly. They braced their feet, gripped the handle, and pulled the great door sideways along its hidden grooves. With a long, deep whoosh, it rolled open like a curtain of stone.
-
-Golden light poured out over them. Inside was a round room filled with slow-floating stars, drifting and glowing like a whole sky brought indoors. It was even more wonderful than {child_name} had imagined.
-
-For a moment they just stood there, breathing it in. Then they laughed, a big, surprised, happy laugh. "All that pushing," they said, shaking their head. "And the answer was a different way the whole time."
-
-"You found it yourself," said {companion_name} proudly. "I only reminded you to look."
-
-{child_name} reached up and lifted the shiny {object_motif} from its hook, holding it close. They wanted to remember this feeling. Not the sore arms, not the frustration, but the moment they stopped repeating themselves and dared to try something new.
-
-"Next time I get stuck," {child_name} said softly, "I will not just push harder. I will stop, and look, and try a different way."
-
-And there, wrapped in warm and floating starlight, {child_name} smiled a slow, sleepy, contented smile.
+"Something worth ringing about," said {companion_name}. "Morning can start finding out."
 
 {refrain}.`,
       },
       '9-11': {
-        audioTemplate: `On the last evening of a long journey, at the quiet edge of {setting}, the {hero} came to a wall of ancient stone, and set into that wall was a great round door.
+        audioTemplate: `In {setting} there was exactly one sound that outranked everything, and it was the great bronze bell at dusk on story-night. When it rang, the sound rolled out warm and deep into every corner, and everyone — the busy, the important, the halfway-through-dinner — put their evening down and came to the story circle, because the bell had been gathering story-night for a hundred years and had never once been argued with. Tonight was the best story of the season. And tonight, for the first time ever, the {hero} had been given the honour of ringing the bell.
 
-Behind it, something glowed. Thin lines of warm light traced the door's outline and pooled on the ground at the {hero}'s feet, and though they could not yet see what made that light, they knew, the way you sometimes simply know a thing, that it was what they had come all this way to find. After the long road, after the cold nights and the wrong turnings, only this door stood between the {hero} and the end of the quest. There was just one difficulty. It was shut, and it did not want to open.
+The {hero} took the rope with both hands, savoured the moment appropriately, and pulled.
 
-So the {hero} did what seemed only sensible. They pressed both hands flat against the stone and pushed.
+The bell tipped, swung, and said nothing.
 
-Nothing.
+Now, the {hero} belonged, at this point in life, to the ancient and popular theory that when a thing does not work, you are simply not doing it hard enough. So the {hero} pulled harder. The bell swung in a long, dignified, perfectly silent arc, like a grandparent refusing to be hurried. The {hero} pulled with both feet off the ground. Nothing. The {hero} took a running start and hauled with such conviction that the rope slipped, the evening rotated, and the {hero} landed seated in the grass with the particular dignity of somebody who meant to do that.
 
-They braced a shoulder against the door, dug their heels into the ground, and drove forward with everything they had. The stone was cold and unmoving as a mountain. They pushed until their breath came ragged, then stepped back, shook out their arms, and pushed again, the same shoulder, the same spot, the same way, because surely, surely, the door was about to give. It always felt one push away.
+"Try harder!" called a helpful voice from the gathering dusk.
 
-It was not one push away. It was not ten pushes away, or fifty. The {hero} lost count somewhere in the dark, throwing themselves at the identical patch of stone over and over, each attempt an exact copy of the last, only angrier. "Come. On," they gritted between shoves. "I am. Not. Stopping."
+"Harder," said the {hero} grimly, "is the only thing I have tried." And there it was, the tempting announcement, ready-made: the bell is broken, story-night is off. But the {hero} had stood by an echo stone once and learned a smaller, stubborner sentence, and said that one instead. "I can't ring it — not so far. And not so far means the thinking isn't finished."
 
-And they were proud of that, in a fierce and stubborn way. They had been taught that quitters give up and winners keep going, and so keeping going, pushing and pushing at the same place until their muscles screamed, felt like the very definition of being strong. To stop pushing would be to lose. To try something else would almost be to admit the pushing had been foolish from the start, and the {hero} could not stand that thought. So they pushed harder, and the door mocked them with its stillness.
+{companion_name} had drifted over and was studying the silent bell with their head tipped to one side. They offered no advice whatsoever, which was their way. "Hmm," they said. "The big one is stubborn tonight. Funny — its little sister never gets stuck."
 
-At last their legs gave out and they sank down against the base of the door, chest heaving, eyes stinging. "I am doing everything right," they whispered, and hated how close the words came to tears. "I am trying harder than I have ever tried at anything. Why is that not enough?"
+The little sister. The {hero} had honestly forgotten it existed: a tiny plain chime, no bigger than a leaf, hanging on its own thin thread beside the great bell. It was the least impressive object in {setting}. Nobody rang it. Nobody had ever needed to — it rang itself, small and silver, every time an evening breeze wandered through.
 
-"Because effort and repetition are not the same thing."
+And just then, an evening breeze wandered through. Quick — eyes on the little chime. Watch what the breeze does to it. Does it pull it down, the way everyone pulls the rope? No. It barely touches it at all. It slips past sideways — and the chime sings.
 
-The {hero} turned. {companion_name} had come quietly out of the blue dark and settled nearby, watching with steady, unhurried eyes.
+The {hero} sat up very slowly, the way you do when an idea is climbing out of the grass in front of you. "The breeze never pulls," the {hero} said. "It has never pulled once in its life. It goes past sideways, and that little chime has sung every evening for a hundred years, while we stand here hauling down on the big one like we're trying to uproot it." The {hero} looked at the rope — the same rope, the same straight-down heave, generation after generation — and then at the drifting, shining chime. "Harder was never the only door. It was just the nearest one. This bell doesn't want a harder way. It wants a different way."
 
-"I have been here a while," said {companion_name}. "Long enough to count. Do you know how many times you have pushed that door?"
+So instead of pulling anything at all, the {hero} walked under the great bell and looked up inside it — which, in a century of story-nights, nobody had apparently thought to do while yanking on the rope. And there was the whole mystery, sitting snug as a secret: a smooth round seed-pod, wedged tight between the clapper and the rim, holding the bell's enormous voice like a held breath. Every mighty downward pull had swung the clapper straight into the pod and jammed it tighter. All evening, the harder way had been personally making things worse.
 
-"A lot," said the {hero}, bristling. "I have not given up, if that is what you mean."
+The {hero} reached up and gave the bell the gentlest push sideways — the breeze's way. The pod wobbled, rolled along the rim, and dropped into the grass, round and glossy and entirely unashamed of the chaos it had caused.
 
-"No," {companion_name} agreed. "You have not given up. But answer honestly. How many different things have you tried?"
+Dong! The great bell found its voice all at once, so deep and warm that the ground hummed and the first stars seemed to lean closer. Dong! Dong! Lanterns came bobbing from every direction, the circle filled with everyone in the world, and the {hero} — sideways-thinker, freer of bells — rang story-night in with both hands.
 
-The {hero} started to say a hundred, a thousand, and the number died in their throat. Because it was not a thousand things. It was one thing, done a thousand times. The same shoulder. The same spot. The same push. Heat crawled up the back of their neck, and it was not the heat of effort. It was the sharp, uncomfortable heat of seeing yourself clearly for the first time in a while.
+"{refrain}," said {companion_name} quietly, under the last long hum.
 
-"Once," they admitted at last, very quietly. "I have tried one thing. Just louder each time."
+The story was better than promised, and the {hero} heard it from the very front, rope-warm hands folded, privately rewriting the ancient theory: when a thing does not work, do it differently before you do it harder.
 
-"That is the trap," said {companion_name}, and there was no unkindness in it. "It is the trap almost everyone falls into, because it wears the costume of courage. Pushing harder feels brave. Refusing to change feels loyal, somehow, loyal to the plan, to the version of you that was so certain. But listen carefully, because this is the part that matters. Real persistence is not doing the same thing harder and harder until it works or you break. Real persistence is refusing to quit on the goal while being completely willing to change the way you reach it. The strong move, the genuinely stubborn, unbeatable move, is to be brave enough to try a different way."
+Afterwards, the two of them planted the troublemaking seed-pod in the soft ground beside the {object_motif}, patting it down like a small apology.
 
-The {hero} sat with that, and it was not comfortable. A small, proud voice inside them wanted to argue, wanted to insist that one more push would have done it, that changing course now was a kind of surrender. But underneath the pride was something quieter and more honest, and that quieter part knew {companion_name} was right. Changing your approach was not the same as giving up. It only felt that way because it asked you to set down your certainty, and setting down your certainty was hard.
+"It silenced a hundred-year bell," the {hero} said, half asleep. "Imagine what it'll do as a tree."
 
-"I did not want to stop pushing," the {hero} confessed, "because stopping felt like saying I was wrong."
-
-"You were not wrong to try," said {companion_name}. "You were only wrong to try the same thing forever. There is no shame in that. There is only the next idea. So look. Not at the spot you have been staring at all night. At everything else."
-
-And so the {hero} did the hardest, simplest thing of all. They stopped. They stepped back. And, for the first time, they truly looked.
-
-There was so much they had never seen. Beside the door, a shiny {object_motif} hung swaying on an iron hook, catching the light they had been ignoring. Low against the ground ran a smooth handle, worn pale by other hands in other years. Along one side of the door lay a set of deep grooves cut into the floor, tracks, unmistakably, the kind a thing slides along, not the kind a thing swings upon. The whole time, they had been trying to push open a door that had never, not once, been built to be pushed.
-
-The {hero} let out a breath that was half a laugh and half a groan. "It slides," they murmured. "It was always going to slide."
-
-They crouched, curled their fingers around the cold handle, and pulled, sideways, along the grooves, the exact opposite of everything they had done all night. For a moment nothing happened, and their heart clenched. Then, with a low grinding rumble that they felt in their chest more than heard, the great stone door gave up a single, glorious inch.
-
-"It moved," the {hero} breathed. "One try of a different way did more than a thousand tries of the old one."
-
-"Then keep going," said {companion_name}, and there was pride in it now, warm and bright. "You have found the thread. Follow it home."
-
-The {hero} set their feet, gripped the handle, and hauled. The door rolled along its ancient tracks, slow at first, then smooth, then easy, the way things always seem easy once you have finally found their logic. With a long sigh of stone, it rolled fully open.
-
-Light spilled out and washed over them, gold and gentle and endless. Inside was a great round chamber, and drifting through it were stars, hundreds of them, slow and glowing and untethered, a whole night sky brought quietly indoors. It was more beautiful than anything the {hero} had let themselves imagine on the long road here, and they had almost missed it, not for lack of effort, but for too much of the wrong kind.
-
-For a while they simply stood in the doorway and let the starlight move over their face.
-
-"I nearly gave up," the {hero} said at last, "not on the door, on the whole thing. Because I thought trying harder was my only tool."
-
-"Now you have a better one," said {companion_name}, floating in beside them. "When you meet a wall, you will remember. You do not have to be someone who never gets stuck. You only have to be someone who, when they get stuck, is willing to try a different way."
-
-The {hero} reached up and lifted the shiny {object_motif} from its hook, closing their fingers around it, keeping it, not as a prize, but as a promise to their future self. They would forget this lesson, probably, the way people do. And this small, bright thing would be here to remind them.
-
-Then, with the freed stars turning slowly around them and the long journey finally, gently, at its end, the {hero} let out a deep and easy breath, and smiled.
+"Mm," said {companion_name}. "Morning can start finding out."
 
 {refrain}.`,
-        scriptTemplate: `On the last evening of a long journey, at the quiet edge of {setting}, {child_name} came to a wall of ancient stone, and set into that wall was a great round door.
+        scriptTemplate: `In {setting} there was exactly one sound that outranked everything, and it was the great bronze bell at dusk on story-night. When it rang, the sound rolled out warm and deep into every corner, and everyone — the busy, the important, the halfway-through-dinner — put their evening down and came to the story circle, because the bell had been gathering story-night for a hundred years and had never once been argued with. Tonight was the best story of the season. And tonight, for the first time ever, {child_name} the {hero} had been given the honour of ringing the bell.
 
-Behind it, something glowed. Thin lines of warm light traced the door's outline and pooled on the ground at {child_name}'s feet, and though they could not yet see what made that light, they knew, the way you sometimes simply know a thing, that it was what they had come all this way to find. After the long road, after the cold nights and the wrong turnings, only this door stood between {child_name} and the end of the quest. There was just one difficulty. It was shut, and it did not want to open.
+{child_name} took the rope with both hands, savoured the moment appropriately, and pulled.
 
-So {child_name} did what seemed only sensible. They pressed both hands flat against the stone and pushed.
+The bell tipped, swung, and said nothing.
 
-Nothing.
+Now, {child_name} belonged, at this point in life, to the ancient and popular theory that when a thing does not work, you are simply not doing it hard enough. So {child_name} pulled harder. The bell swung in a long, dignified, perfectly silent arc, like a grandparent refusing to be hurried. {child_name} pulled with both feet off the ground. Nothing. {child_name} took a running start and hauled with such conviction that the rope slipped, the evening rotated, and {child_name} landed seated in the grass with the particular dignity of somebody who meant to do that.
 
-They braced a shoulder against the door, dug their heels into the ground, and drove forward with everything they had. The stone was cold and unmoving as a mountain. They pushed until their breath came ragged, then stepped back, shook out their arms, and pushed again, the same shoulder, the same spot, the same way, because surely, surely, the door was about to give. It always felt one push away.
+"Try harder!" called a helpful voice from the gathering dusk.
 
-It was not one push away. It was not ten pushes away, or fifty. {child_name} lost count somewhere in the dark, throwing themselves at the identical patch of stone over and over, each attempt an exact copy of the last, only angrier. "Come. On," they gritted between shoves. "I am. Not. Stopping."
+"Harder," said {child_name} grimly, "is the only thing I have tried." And there it was, the tempting announcement, ready-made: the bell is broken, story-night is off. But {child_name} had stood by an echo stone once and learned a smaller, stubborner sentence, and said that one instead. "I can't ring it — not so far. And not so far means the thinking isn't finished."
 
-And they were proud of that, in a fierce and stubborn way. They had been taught that quitters give up and winners keep going, and so keeping going, pushing and pushing at the same place until their muscles screamed, felt like the very definition of being strong. To stop pushing would be to lose. To try something else would almost be to admit the pushing had been foolish from the start, and {child_name} could not stand that thought. So they pushed harder, and the door mocked them with its stillness.
+{companion_name} had drifted over and was studying the silent bell with their head tipped to one side. They offered no advice whatsoever, which was their way. "Hmm," they said. "The big one is stubborn tonight. Funny — its little sister never gets stuck."
 
-At last their legs gave out and they sank down against the base of the door, chest heaving, eyes stinging. "I am doing everything right," they whispered, and hated how close the words came to tears. "I am trying harder than I have ever tried at anything. Why is that not enough?"
+The little sister. {child_name} had honestly forgotten it existed: a tiny plain chime, no bigger than a leaf, hanging on its own thin thread beside the great bell. It was the least impressive object in {setting}. Nobody rang it. Nobody had ever needed to — it rang itself, small and silver, every time an evening breeze wandered through.
 
-"Because effort and repetition are not the same thing."
+And just then, an evening breeze wandered through. Quick — eyes on the little chime. Watch what the breeze does to it. Does it pull it down, the way everyone pulls the rope? No. It barely touches it at all. It slips past sideways — and the chime sings.
 
-{child_name} turned. {companion_name} had come quietly out of the blue dark and settled nearby, watching with steady, unhurried eyes.
+{child_name} sat up very slowly, the way you do when an idea is climbing out of the grass in front of you. "The breeze never pulls," {child_name} said. "It has never pulled once in its life. It goes past sideways, and that little chime has sung every evening for a hundred years, while we stand here hauling down on the big one like we're trying to uproot it." {child_name} looked at the rope — the same rope, the same straight-down heave, generation after generation — and then at the drifting, shining chime. "Harder was never the only door. It was just the nearest one. This bell doesn't want a harder way. It wants a different way."
 
-"I have been here a while," said {companion_name}. "Long enough to count. Do you know how many times you have pushed that door?"
+So instead of pulling anything at all, {child_name} walked under the great bell and looked up inside it — which, in a century of story-nights, nobody had apparently thought to do while yanking on the rope. And there was the whole mystery, sitting snug as a secret: a smooth round seed-pod, wedged tight between the clapper and the rim, holding the bell's enormous voice like a held breath. Every mighty downward pull had swung the clapper straight into the pod and jammed it tighter. All evening, the harder way had been personally making things worse.
 
-"A lot," said {child_name}, bristling. "I have not given up, if that is what you mean."
+{child_name} reached up and gave the bell the gentlest push sideways — the breeze's way. The pod wobbled, rolled along the rim, and dropped into the grass, round and glossy and entirely unashamed of the chaos it had caused.
 
-"No," {companion_name} agreed. "You have not given up. But answer honestly. How many different things have you tried?"
+Dong! The great bell found its voice all at once, so deep and warm that the ground hummed and the first stars seemed to lean closer. Dong! Dong! Lanterns came bobbing from every direction, the circle filled with everyone in the world, and {child_name} — sideways-thinker, freer of bells — rang story-night in with both hands.
 
-{child_name} started to say a hundred, a thousand, and the number died in their throat. Because it was not a thousand things. It was one thing, done a thousand times. The same shoulder. The same spot. The same push. Heat crawled up the back of their neck, and it was not the heat of effort. It was the sharp, uncomfortable heat of seeing yourself clearly for the first time in a while.
+"{refrain}," said {companion_name} quietly, under the last long hum.
 
-"Once," they admitted at last, very quietly. "I have tried one thing. Just louder each time."
+The story was better than promised, and {child_name} heard it from the very front, rope-warm hands folded, privately rewriting the ancient theory: when a thing does not work, do it differently before you do it harder.
 
-"That is the trap," said {companion_name}, and there was no unkindness in it. "It is the trap almost everyone falls into, because it wears the costume of courage. Pushing harder feels brave. Refusing to change feels loyal, somehow, loyal to the plan, to the version of you that was so certain. But listen carefully, because this is the part that matters. Real persistence is not doing the same thing harder and harder until it works or you break. Real persistence is refusing to quit on the goal while being completely willing to change the way you reach it. The strong move, the genuinely stubborn, unbeatable move, is to be brave enough to try a different way."
+Afterwards, the two of them planted the troublemaking seed-pod in the soft ground beside the {object_motif}, patting it down like a small apology.
 
-{child_name} sat with that, and it was not comfortable. A small, proud voice inside them wanted to argue, wanted to insist that one more push would have done it, that changing course now was a kind of surrender. But underneath the pride was something quieter and more honest, and that quieter part knew {companion_name} was right. Changing your approach was not the same as giving up. It only felt that way because it asked you to set down your certainty, and setting down your certainty was hard.
+"It silenced a hundred-year bell," {child_name} said, half asleep. "Imagine what it'll do as a tree."
 
-"I did not want to stop pushing," {child_name} confessed, "because stopping felt like saying I was wrong."
-
-"You were not wrong to try," said {companion_name}. "You were only wrong to try the same thing forever. There is no shame in that. There is only the next idea. So look. Not at the spot you have been staring at all night. At everything else."
-
-And so {child_name} did the hardest, simplest thing of all. They stopped. They stepped back. And, for the first time, they truly looked.
-
-There was so much they had never seen. Beside the door, a shiny {object_motif} hung swaying on an iron hook, catching the light they had been ignoring. Low against the ground ran a smooth handle, worn pale by other hands in other years. Along one side of the door lay a set of deep grooves cut into the floor, tracks, unmistakably, the kind a thing slides along, not the kind a thing swings upon. The whole time, they had been trying to push open a door that had never, not once, been built to be pushed.
-
-{child_name} let out a breath that was half a laugh and half a groan. "It slides," they murmured. "It was always going to slide."
-
-They crouched, curled their fingers around the cold handle, and pulled, sideways, along the grooves, the exact opposite of everything they had done all night. For a moment nothing happened, and their heart clenched. Then, with a low grinding rumble that they felt in their chest more than heard, the great stone door gave up a single, glorious inch.
-
-"It moved," {child_name} breathed. "One try of a different way did more than a thousand tries of the old one."
-
-"Then keep going," said {companion_name}, and there was pride in it now, warm and bright. "You have found the thread. Follow it home."
-
-{child_name} set their feet, gripped the handle, and hauled. The door rolled along its ancient tracks, slow at first, then smooth, then easy, the way things always seem easy once you have finally found their logic. With a long sigh of stone, it rolled fully open.
-
-Light spilled out and washed over them, gold and gentle and endless. Inside was a great round chamber, and drifting through it were stars, hundreds of them, slow and glowing and untethered, a whole night sky brought quietly indoors. It was more beautiful than anything {child_name} had let themselves imagine on the long road here, and they had almost missed it, not for lack of effort, but for too much of the wrong kind.
-
-For a while they simply stood in the doorway and let the starlight move over their face.
-
-"I nearly gave up," {child_name} said at last, "not on the door, on the whole thing. Because I thought trying harder was my only tool."
-
-"Now you have a better one," said {companion_name}, floating in beside them. "When you meet a wall, you will remember. You do not have to be someone who never gets stuck. You only have to be someone who, when they get stuck, is willing to try a different way."
-
-{child_name} reached up and lifted the shiny {object_motif} from its hook, closing their fingers around it, keeping it, not as a prize, but as a promise to their future self. They would forget this lesson, probably, the way people do. And this small, bright thing would be here to remind them.
-
-Then, with the freed stars turning slowly around them and the long journey finally, gently, at its end, {child_name} let out a deep and easy breath, and smiled.
+"Mm," said {companion_name}. "Morning can start finding out."
 
 {refrain}.`,
       },
     },
-    audioTemplate: `The {object_motif} had grown tall enough to reach the low branches of {setting}, but the {hero} was stuck — trying the same thing, the same way, over and over.
+    audioTemplate: `It was story-night in {setting}. When the big bronze bell rang at dusk, everyone stopped whatever they were doing and came to the story circle. The {hero} had waited all week — tonight's story was supposed to be the best one yet.
 
-"I am trying so hard," the {hero} said, tired. "Why won't it work?"
+But tonight, the bell would not ring.
 
-{companion_name} watched kindly. "You are saying 'not yet,' which is good," they said. "But 'yet' is an invitation. It asks: what different way could I try?"
+The {hero} pulled the rope. The bell tipped, but no ring came. The {hero} pulled harder, feet right off the ground. Silence. The {hero} took a running start and pulled so hard that the rope slipped and the {hero} sat down very suddenly.
 
-The {hero} paused. They had only ever tried it one way. So this time they tried another — and when that did not work either, they tried a third.
+"I can't ring it," puffed the {hero}. Then the {hero} remembered the echo stone. "No. I can't ring it so far. Let me think."
 
-And the third way… moved. Just a little. Then more.
+{companion_name} was peering up at the bell too. "Hmm," was all they said. "The big bell is stubborn tonight. Its little sister never gets stuck."
 
-"You were not failing," said {companion_name}. "You were finding which way fits. That is what trying really means."
+The little sister was a tiny plain chime that hung beside the great bell. Nobody ever rang it. It rang itself, whenever the evening breeze came by.
 
-The {hero} looked at how the {object_motif} had grown — not straight up, but bending and reaching until it found the light.
+And just then, a breeze did. Watch the little chime closely. Which way does it swing? Not down. Sideways.
 
-"A different way," the {hero} said softly, and kept going.
+The {hero} stared. "The breeze never pulls. It swishes sideways — and the chime sings every single time." The {hero} looked at the rope, the same rope everyone pulled, the same straight-down way. "I've been trying one way, just harder and harder. This bell doesn't want a harder way. It wants a different way!"
+
+So the {hero} went up close and peeked inside the bell. There, wedged between the clapper and the rim, sat a smooth round seed-pod. Every hard downward pull had only jammed it tighter.
+
+The {hero} gave the bell one soft, sideways nudge. The pod wobbled, rolled, and dropped out, free.
+
+Dong! The great bell sang, so deep and warm the ground hummed. Dong! Dong! Lights bobbed out from every corner, everyone gathered, and the {hero} got to ring the bell for the whole story circle.
+
+"{refrain}," said {companion_name}, as the last hum faded into the dark.
+
+The story was just as good as promised, and twice as long.
+
+Afterwards, the two of them planted the troublemaking seed-pod in the soft ground beside the {object_motif}, and patted it in.
+
+"What does a bell-seed grow into?" wondered the {hero}, yawning.
+
+"Morning can start finding out," said {companion_name}.
 
 {refrain}.`,
-    scriptTemplate: `The {object_motif} had grown tall enough to reach the low branches of {setting}, but {child_name} the {hero} was stuck — trying the same thing, the same way, over and over.
+    scriptTemplate: `It was story-night in {setting}. When the big bronze bell rang at dusk, everyone stopped whatever they were doing and came to the story circle. {child_name} the {hero} had waited all week — tonight's story was supposed to be the best one yet.
 
-"I am trying so hard," {child_name} said, tired. "Why won't it work?"
+But tonight, the bell would not ring.
 
-{companion_name} watched kindly. "You are saying 'not yet,' which is good," they said. "But 'yet' is an invitation, {child_name}. It asks: what different way could I try?"
+{child_name} pulled the rope. The bell tipped, but no ring came. {child_name} pulled harder, feet right off the ground. Silence. {child_name} took a running start and pulled so hard that the rope slipped and {child_name} sat down very suddenly.
 
-{child_name} paused. They had only ever tried it one way. So this time {child_name} tried another — and when that did not work either, tried a third.
+"I can't ring it," puffed {child_name}. Then {child_name} remembered the echo stone. "No. I can't ring it so far. Let me think."
 
-And the third way… moved. Just a little. Then more.
+{companion_name} was peering up at the bell too. "Hmm," was all they said. "The big bell is stubborn tonight. Its little sister never gets stuck."
 
-"You were not failing," said {companion_name}. "You were finding which way fits. That is what trying really means."
+The little sister was a tiny plain chime that hung beside the great bell. Nobody ever rang it. It rang itself, whenever the evening breeze came by.
 
-{child_name} looked at how the {object_motif} had grown — not straight up, but bending and reaching until it found the light.
+And just then, a breeze did. Watch the little chime closely. Which way does it swing? Not down. Sideways.
 
-"A different way," {child_name} said softly, and kept going.
+{child_name} stared. "The breeze never pulls. It swishes sideways — and the chime sings every single time." {child_name} looked at the rope, the same rope everyone pulled, the same straight-down way. "I've been trying one way, just harder and harder. This bell doesn't want a harder way. It wants a different way!"
+
+So {child_name} went up close and peeked inside the bell. There, wedged between the clapper and the rim, sat a smooth round seed-pod. Every hard downward pull had only jammed it tighter.
+
+{child_name} gave the bell one soft, sideways nudge. The pod wobbled, rolled, and dropped out, free.
+
+Dong! The great bell sang, so deep and warm the ground hummed. Dong! Dong! Lights bobbed out from every corner, everyone gathered, and {child_name} got to ring the bell for the whole story circle.
+
+"{refrain}," said {companion_name}, as the last hum faded into the dark.
+
+The story was just as good as promised, and twice as long.
+
+Afterwards, the two of them planted the troublemaking seed-pod in the soft ground beside the {object_motif}, and patted it in.
+
+"What does a bell-seed grow into?" wondered {child_name}, yawning.
+
+"Morning can start finding out," said {companion_name}.
 
 {refrain}.`,
   },
   {
     ordinal: 5,
-    title: "Bouncing Back",
+    title: "The Midnight Riser",
     concept: "Falling down and choosing to get back up",
     callback: "Try a different way (Level 4)",
     ageFloor: 5,
-    summary: "The capstone: the hero has a real setback and feels like quitting for good. Drawing on everything — hard is allowed, the power of yet, mistakes teach, try a different way — they choose to get back up. The story gathers the whole path into one brave, gentle moment.",
-    teachingNote: "Bouncing back is not never falling — it is the quiet decision to rise once more, and every earlier skill makes that decision possible.",
+    summary: "After every windy day, the little sprouts along the path lie bent flat — and by morning they are always standing again. Someone must lift them in the night, and nobody has ever seen who. Tonight the hero stays up to catch the Midnight Riser, and discovers the gentlest secret of all: nobody comes. Growing things raise themselves — and so, all this time, has the hero.",
+    teachingNote: "This is the capstone: a child who has learned that hard is normal, that \"can't\" means \"not yet\", that mistakes inform and that ways can change, now sees getting back up not as a duty but as something already inside them.",
     learningBeat: "Rising once more",
     ageVariants: {
       '3-4': {
-        audioTemplate: `Tonight, the {hero} wanted to do the biggest thing yet.
+        audioTemplate: `All day, the wind had huffed through {setting}. Now the little sprouts along the path lay bent right over. Even the {object_motif} was bent flat.
 
-In {setting}, there was a tall, tall hill. At the very top sat a shiny {object_motif}, waiting. The {hero} wanted to carry it all the way up.
+But after windy days, the sprouts always stand up by morning. Someone lifts them in the night. Nobody has ever seen who!
 
-"You can do it," said {companion_name}, hopping close.
+"Tonight I will catch the Riser," said the {hero}.
 
-So the {hero} began to climb. Step, step, step. The hill was steep. The wind pushed. But the {hero} held the {object_motif} tight and kept going.
+The {hero} hid behind a leaf. Too small! A-choo! The sneeze shook everything.
 
-Then, near the top — oh no! The {hero} slipped. Down, down, tumble, roll. All the way back to the bottom. The {object_motif} bounced away into the grass.
+The {hero} hid somewhere bigger, and watched, and watched... and fell asleep. Whoops.
 
-The {hero} sat very still. This was the biggest fall yet. Both knees hurt. The eyes felt hot and teary.
+"Try a different way," whispered the {hero}. So the {hero} lay down right beside the {object_motif}, nose to leaf.
 
-"I don't want to climb anymore," said the {hero} softly. "I want to stop. For always."
+{companion_name} snuggled close. "Hmm," they said. "Some helpers are very shy. Or very close."
 
-{companion_name} sat down too, right beside. "That was a big fall," said {companion_name}. "It's okay to feel sad."
+Watch the little sprout. Very still. Is it moving? Yes! Slower than slow, it was lifting itself!
 
-The {hero} sniffled. And the {hero} remembered all the other days. Remembered that hard is allowed. Remembered the little word "yet." Remembered that falling teaches us things. Remembered you can try a new way.
+"Nobody comes!" whispered the {hero}. "Growing things lift themselves. Falling isn't the end. The secret is rising once more!"
 
-The {hero} looked up at the tall hill. It still looked very big.
+Just then a puff of wind tipped the {hero} over. The {hero} laughed — and rose once more, slow as a sprout.
 
-But slowly, slowly, the {hero} picked up the {object_motif}. Stood up on two wobbly feet. And, Rising once more, the {hero} faced the hill again.
+"{refrain}," said {companion_name}.
 
-"This time," said the {hero}, "I will go slow. I will hold on where the rocks are strong."
+One, two, three sprouts stood tall again. One stayed curled, still sleepy.
 
-Step. Step. Rest. Step. When a wobbly bit came, the {hero} went around it. {companion_name} cheered every little step.
-
-And this time — the {hero} reached the top! The {object_motif} shone in the last soft light of day.
-
-The {hero} did not feel like a big loud winner. The {hero} felt quiet and proud and warm, like a candle inside.
-
-"I fell all the way down," whispered the {hero}, "and I got back up."
-
-{companion_name} snuggled close. The stars came out over {setting}.
-
-And that is the bravest thing of all — not never falling, but always choosing to rise.
+Tomorrow, the {hero} would visit that one first.
 
 {refrain}.`,
-        scriptTemplate: `Tonight, {child_name} wanted to do the biggest thing yet.
+        scriptTemplate: `All day, the wind had huffed through {setting}. Now the little sprouts along the path lay bent right over. Even the {object_motif} was bent flat.
 
-In {setting}, there was a tall, tall hill. At the very top sat a shiny {object_motif}, waiting. {child_name} wanted to carry it all the way up.
+But after windy days, the sprouts always stand up by morning. Someone lifts them in the night. Nobody has ever seen who!
 
-"You can do it," said {companion_name}, hopping close.
+"Tonight I will catch the Riser," said {child_name} the {hero}.
 
-So {child_name} began to climb. Step, step, step. The hill was steep. The wind pushed. But {child_name} held the {object_motif} tight and kept going.
+{child_name} hid behind a leaf. Too small! A-choo! The sneeze shook everything.
 
-Then, near the top — oh no! {child_name} slipped. Down, down, tumble, roll. All the way back to the bottom. The {object_motif} bounced away into the grass.
+{child_name} hid somewhere bigger, and watched, and watched... and fell asleep. Whoops.
 
-{child_name} sat very still. This was the biggest fall yet. Both knees hurt. The eyes felt hot and teary.
+"Try a different way," whispered {child_name}. So {child_name} lay down right beside the {object_motif}, nose to leaf.
 
-"I don't want to climb anymore," said {child_name} softly. "I want to stop. For always."
+{companion_name} snuggled close. "Hmm," they said. "Some helpers are very shy. Or very close."
 
-{companion_name} sat down too, right beside. "That was a big fall," said {companion_name}. "It's okay to feel sad."
+Watch the little sprout. Very still. Is it moving? Yes! Slower than slow, it was lifting itself!
 
-{child_name} sniffled. And {child_name} remembered all the other days. Remembered that hard is allowed. Remembered the little word "yet." Remembered that falling teaches us things. Remembered you can try a new way.
+"Nobody comes!" whispered {child_name}. "Growing things lift themselves. Falling isn't the end. The secret is rising once more!"
 
-{child_name} looked up at the tall hill. It still looked very big.
+Just then a puff of wind tipped {child_name} over. {child_name} laughed — and rose once more, slow as a sprout.
 
-But slowly, slowly, {child_name} picked up the {object_motif}. Stood up on two wobbly feet. And, Rising once more, {child_name} faced the hill again.
+"{refrain}," said {companion_name}.
 
-"This time," said {child_name}, "I will go slow. I will hold on where the rocks are strong."
+One, two, three sprouts stood tall again. One stayed curled, still sleepy.
 
-Step. Step. Rest. Step. When a wobbly bit came, {child_name} went around it. {companion_name} cheered every little step.
-
-And this time — {child_name} reached the top! The {object_motif} shone in the last soft light of day.
-
-{child_name} did not feel like a big loud winner. {child_name} felt quiet and proud and warm, like a candle inside.
-
-"I fell all the way down," whispered {child_name}, "and I got back up."
-
-{companion_name} snuggled close. The stars came out over {setting}.
-
-And that is the bravest thing of all — not never falling, but always choosing to rise.
+Tomorrow, {child_name} would visit that one first.
 
 {refrain}.`,
       },
       '5-6': {
-        audioTemplate: `Of everything the {hero} had ever tried, this was the biggest.
+        audioTemplate: `All day the wind had blustered through {setting}. By evening the little sprouts along the path lay bent right over. Even the {object_motif} was bowed flat, leaf to the ground.
 
-All across {setting}, everyone was talking about the Great Climb. At the top of the highest hill stood an old stone arch, and beneath it waited a shining {object_motif} — a prize for anyone brave enough to carry their own lantern all the way up before the sun went down.
+But here was the old mystery. After every windy day, the sprouts stood straight by morning. Someone must lift them in the night — and nobody had ever seen who.
 
-The {hero} had practised for days. "You're ready," said {companion_name}, walking close as the climb began.
+"Tonight I catch the Midnight Riser," said the {hero}. "And the {object_motif} gets helped first."
 
-At first it went well. The {hero} climbed past the mossy rocks, past the twisty trees, holding the {object_motif} carefully so its light would not go out. Higher and higher. The top came closer.
+The first hiding place was behind a leaf, which turned out to be smaller than the {hero}. Then dust tickled — a-choo! — a sneeze so mighty it bent a sprout the wind had missed.
 
-And then, so near the arch that the {hero} could almost touch it, one foot landed on a loose stone. It rolled. The {hero} slipped — and slid, and tumbled, all the way back down the long hill to the very bottom.
+The second hiding place was cozy, with a view of the whole path. Too cozy. The {hero} woke later to find three sprouts already standing, and no Riser anywhere. Asleep on watch!
 
-The {object_motif} lay in the grass, its light flickered out.
+The {hero} almost gave up. Then remembered the bell. "When one way doesn't work," the {hero} muttered, "you try a different way." Stop watching the whole path, then. Watch one sprout. The {hero} lay down flat beside the {object_motif}, nose to leaf, still as a stone.
 
-The {hero} did not get up. This was the biggest fall of the whole journey, and it hurt everywhere — knees, hands, and somewhere deep in the chest where hope lives.
+{companion_name} padded over and settled close. "Hmm," they whispered. "Some helpers are very shy. Or very close."
 
-"I'm done," said the {hero}, voice small and shaking. "I tried and I fell. I don't want to try again. Not ever."
+The moon climbed. Nobody came. No footsteps, no lantern, no Riser at all. But — keep your eyes on the little sprout. Don't blink. Is it... moving?
 
-{companion_name} sat down in the grass beside the {hero} and did not rush. "That was a very big fall," {companion_name} said gently. "You're allowed to feel this sad."
+It was. Slower than slow, softer than soft, the {object_motif} was lifting its own head. No hands helped it. It rose all by itself, slow as the moon.
 
-So the {hero} felt sad for a while, and that was okay. The sky turned pink and gold. The hill looked enormous and far away.
+"Nobody comes," breathed the {hero}. "Nobody ever came. Growing things lift themselves — that's the whole secret. Falling down isn't the end of anything. The secret is rising once more."
 
-But sitting there in the quiet, the {hero} began to remember. Remembered the first day, when learning that hard things are allowed to be hard. Remembered the magic word "yet" — I can't do it yet. Remembered that every mistake had quietly taught something. Remembered that when one way doesn't work, you can try a different way.
+"I kept this same watch when I was young," whispered {companion_name}. "I never thought to lie down next to the answer. {refrain}."
 
-The {hero} looked at the {object_motif} lying dark in the grass, and picked it up. Held it close until its little light glowed warm again.
+Then one last gust romped down the path and bowled the {hero} right over.
 
-"Maybe," the {hero} whispered, "I don't have to do it perfectly. I just have to begin again."
+The {hero} lay there a moment, laughing at the stars. Then, slow as a sprout, on purpose, the {hero} rose once more — then went down the path with {companion_name}, gently propping the tiredest sprouts.
 
-And, Rising once more, the {hero} stood up on shaky legs and turned to face the hill.
+By moonset, the whole path stood tall. Except one small sprout, still curled, taking its time. Every riser rises at its own speed.
 
-This time was different. The {hero} did not race. Where the stones were loose, the {hero} went slowly and found the solid ground. Where the path was steep, the {hero} rested and breathed. {companion_name} walked alongside the whole way, naming each small win. "That's one step. That's ten. Look how far you've come."
-
-The sun was nearly gone when the {hero} reached the old stone arch at last. The {object_motif} glowed bright beneath it, lighting up the whole hilltop in gold.
-
-The {hero} did not shout or leap about. It wasn't that kind of feeling. It was quieter and deeper — proud, and calm, and warm all through.
-
-"I fell all the way to the bottom," the {hero} said softly, looking out over {setting}, "and I chose to come back up."
-
-{companion_name} leaned close. "That," {companion_name} said, "is the bravest thing anyone can do. Not never falling. Getting up again after you do."
-
-The first stars blinked awake over {setting}. The {hero} held the glowing {object_motif} and felt, at last, that the whole long journey had led exactly here — to this hilltop, this quiet, this brave and gentle choice.
-
-Because the secret was never about never falling down. The secret was always this:
+Tomorrow, the {hero} would visit that one first.
 
 {refrain}.`,
-        scriptTemplate: `Of everything {child_name} had ever tried, this was the biggest.
+        scriptTemplate: `All day the wind had blustered through {setting}. By evening the little sprouts along the path lay bent right over. Even the {object_motif} was bowed flat, leaf to the ground.
 
-All across {setting}, everyone was talking about the Great Climb. At the top of the highest hill stood an old stone arch, and beneath it waited a shining {object_motif} — a prize for anyone brave enough to carry their own lantern all the way up before the sun went down.
+But here was the old mystery. After every windy day, the sprouts stood straight by morning. Someone must lift them in the night — and nobody had ever seen who.
 
-{child_name} had practised for days. "You're ready," said {companion_name}, walking close as the climb began.
+"Tonight I catch the Midnight Riser," said {child_name} the {hero}. "And the {object_motif} gets helped first."
 
-At first it went well. {child_name} climbed past the mossy rocks, past the twisty trees, holding the {object_motif} carefully so its light would not go out. Higher and higher. The top came closer.
+The first hiding place was behind a leaf, which turned out to be smaller than {child_name}. Then dust tickled — a-choo! — a sneeze so mighty it bent a sprout the wind had missed.
 
-And then, so near the arch that {child_name} could almost touch it, one foot landed on a loose stone. It rolled. {child_name} slipped — and slid, and tumbled, all the way back down the long hill to the very bottom.
+The second hiding place was cozy, with a view of the whole path. Too cozy. {child_name} woke later to find three sprouts already standing, and no Riser anywhere. Asleep on watch!
 
-The {object_motif} lay in the grass, its light flickered out.
+{child_name} almost gave up. Then remembered the bell. "When one way doesn't work," {child_name} muttered, "you try a different way." Stop watching the whole path, then. Watch one sprout. {child_name} lay down flat beside the {object_motif}, nose to leaf, still as a stone.
 
-{child_name} did not get up. This was the biggest fall of the whole journey, and it hurt everywhere — knees, hands, and somewhere deep in the chest where hope lives.
+{companion_name} padded over and settled close. "Hmm," they whispered. "Some helpers are very shy. Or very close."
 
-"I'm done," said {child_name}, voice small and shaking. "I tried and I fell. I don't want to try again. Not ever."
+The moon climbed. Nobody came. No footsteps, no lantern, no Riser at all. But — keep your eyes on the little sprout. Don't blink. Is it... moving?
 
-{companion_name} sat down in the grass beside {child_name} and did not rush. "That was a very big fall," {companion_name} said gently. "You're allowed to feel this sad."
+It was. Slower than slow, softer than soft, the {object_motif} was lifting its own head. No hands helped it. It rose all by itself, slow as the moon.
 
-So {child_name} felt sad for a while, and that was okay. The sky turned pink and gold. The hill looked enormous and far away.
+"Nobody comes," breathed {child_name}. "Nobody ever came. Growing things lift themselves — that's the whole secret. Falling down isn't the end of anything. The secret is rising once more."
 
-But sitting there in the quiet, {child_name} began to remember. Remembered the first day, when learning that hard things are allowed to be hard. Remembered the magic word "yet" — I can't do it yet. Remembered that every mistake had quietly taught something. Remembered that when one way doesn't work, you can try a different way.
+"I kept this same watch when I was young," whispered {companion_name}. "I never thought to lie down next to the answer. {refrain}."
 
-{child_name} looked at the {object_motif} lying dark in the grass, and picked it up. Held it close until its little light glowed warm again.
+Then one last gust romped down the path and bowled {child_name} right over.
 
-"Maybe," {child_name} whispered, "I don't have to do it perfectly. I just have to begin again."
+{child_name} lay there a moment, laughing at the stars. Then, slow as a sprout, on purpose, {child_name} rose once more — then went down the path with {companion_name}, gently propping the tiredest sprouts.
 
-And, Rising once more, {child_name} stood up on shaky legs and turned to face the hill.
+By moonset, the whole path stood tall. Except one small sprout, still curled, taking its time. Every riser rises at its own speed.
 
-This time was different. {child_name} did not race. Where the stones were loose, {child_name} went slowly and found the solid ground. Where the path was steep, {child_name} rested and breathed. {companion_name} walked alongside the whole way, naming each small win. "That's one step. That's ten. Look how far you've come."
-
-The sun was nearly gone when {child_name} reached the old stone arch at last. The {object_motif} glowed bright beneath it, lighting up the whole hilltop in gold.
-
-{child_name} did not shout or leap about. It wasn't that kind of feeling. It was quieter and deeper — proud, and calm, and warm all through.
-
-"I fell all the way to the bottom," {child_name} said softly, looking out over {setting}, "and I chose to come back up."
-
-{companion_name} leaned close. "That," {companion_name} said, "is the bravest thing anyone can do. Not never falling. Getting up again after you do."
-
-The first stars blinked awake over {setting}. {child_name} held the glowing {object_motif} and felt, at last, that the whole long journey had led exactly here — to this hilltop, this quiet, this brave and gentle choice.
-
-Because the secret was never about never falling down. The secret was always this:
+Tomorrow, {child_name} would visit that one first.
 
 {refrain}.`,
       },
       '7-8': {
-        audioTemplate: `This was the one the {hero} had been building toward all along — the biggest challenge of the entire journey.
+        audioTemplate: `The wind had spent the entire day rearranging {setting}, and by dusk it had a lot to answer for. All along the path, the little sprouts lay bent flat, leaf to the ground, every single one — and worst of all, the {object_motif} was bowed over too, so low it hurt to look at. The {hero} stood over it with clenched everything.
 
-Every year in {setting}, when summer tipped toward autumn, there was the Lantern Climb. At the top of the tallest hill stood an ancient stone arch, weathered by a hundred storms, and whoever carried their own lit lantern all the way to it before the sun set could ring the old bell and leave a mark on the Climbers' Stone. The {hero} had wanted this for as long as could be remembered.
+But there was a mystery about windy days, and everybody knew it. However flat the sprouts were blown, by morning they always stood straight again. Always. Someone came in the night and lifted them — someone quick, quiet, and never seen. The grown-ups called it the Midnight Riser and smiled when they said it, and nobody had ever caught so much as a shadow of them.
 
-For weeks, the {hero} had trained. Steep paths, loose gravel, the long burn in the legs — all of it. "You've worked so hard," said {companion_name} as the two of them stood at the bottom, the {object_motif} glowing steadily in the {hero}'s hands. "Whatever happens, I'm proud of you."
+"Tonight," announced the {hero}, "I catch the Riser. And the {object_motif} gets helped first, before anyone."
 
-The {hero} set off strong. Up past the mossy boulders, up through the crooked pines, keeping the lantern's flame sheltered from the wind. Each step felt like proof of every hard day that had come before. The arch grew closer. The bell caught the last gold light.
+The first plan was a hiding place behind a leaf, which turned out to be considerably smaller than the {hero}. While rethinking this, the {hero} breathed in some path-dust. A-choo! The sneeze was so enormous it bent over a sprout the wind had missed.
 
-And then, only a few strides from the top, the ground betrayed the {hero}. A slab of loose shale shifted underfoot. There was a sickening lurch, a grab at empty air — and the {hero} fell. Not a small stumble. A real fall, sliding and rolling down the long slope, all the way to the bottom, while the {object_motif} tumbled from open hands and its flame snuffed out in the grass.
+The second plan was a proper lookout: cozy, sheltered, with a commanding view of the whole path. It was, if anything, too cozy. The {hero} woke later, cheek in the moss, to find three sprouts already standing again and not a Riser in sight. They had come and gone — right past a sleeping guard!
 
-For a long moment the {hero} lay still at the foot of the hill. Everything hurt. But the worst hurt was not on the outside. This was the biggest fall of the whole journey, and it had come at the very worst moment, so close to the end.
+The {hero} was one breath from marching home in disgrace. But the great silent bell had taught its lesson well, and the {hero} said it out loud to the dark: "When one way doesn't work, you don't just do it again angrier. You try a different way." Watching everywhere had failed twice. So: watch one sprout, the one that mattered most. The {hero} lay down flat on the ground beside the {object_motif} — nose to leaf, close enough to count its veins — and went as still as the path.
 
-"I'm finished," the {hero} said, and this time the words did not feel dramatic — they felt true. "I did everything right and I still fell. I don't want to try again. What's the point?"
+{companion_name} arrived on quiet feet and settled down alongside without a single question. "Hmm," they whispered, after a while. "Some helpers are very shy. Or very close."
 
-{companion_name} climbed down and sat in the grass, close but not crowding. "That was a terrible fall," {companion_name} said. "I'm not going to tell you it didn't hurt. It did. You're allowed to feel every bit of that."
+The moon climbed. The path lay silver and still. Nobody came. No footsteps, no lantern-light, no rustle of somebody kind sneaking from sprout to sprout. Nothing at all — except. Keep your eyes on the little sprout now. Don't blink. Is it... moving?
 
-So the {hero} sat with it. The sky went from gold to rose to deep and dusky blue. And that was allowed — the sadness was real, and it needed its moment.
+It was moving. Slower than slow, softer than soft, the {object_motif} was lifting its own bowed head. No hands lifted it. No Riser touched it. It was rising by itself. While the {hero} watched, hardly breathing, the little sprout came up from the ground one invisible inch at a time.
 
-But as the {hero} sat there in the gathering dark, the memories came, one by one. The very first lesson, back at the start: that hard things are allowed to feel hard, and that doesn't mean you're failing. The word "yet" — I haven't done it yet. The day the {hero} learned that mistakes are not the end of a story but a kind of teacher, if you let them be. And the day the {hero} discovered that when one path fails, there is almost always another way to try.
+"Nobody comes," the {hero} breathed at last. "Nobody has ever come. There is no Midnight Riser — or, no. There are thousands of them. The Riser is inside every growing thing. They rise themselves." And then, arriving all at once like the answer to a question the {hero} hadn't known they were asking: "That's me too. My flopped rolls. My honking calls. My runaway seeds, my silent bell. I fell all season — and I kept standing up again. Falling down was never the end of anything. The whole secret is rising once more."
 
-The {hero} reached out through the cool grass and found the fallen {object_motif}. Cupped it close, and breathed on the wick, and slowly, slowly, coaxed the little flame back to life until it glowed warm and steady once again.
+"I kept this exact watch when I was young," whispered {companion_name}, eyes shining in the moonlight. "Three windy seasons running. I never solved it — I never thought to lie down next to the answer. {refrain}."
 
-"I don't have to do it perfectly," the {hero} murmured, half to {companion_name} and half to the hill itself. "I just have to be brave enough to begin again."
+And at that precise moment, a final gust of wind came romping down the path, entirely without manners, and bowled the {hero} clean over.
 
-And, Rising once more, the {hero} got to both feet, aching and unsteady, and turned to face the enormous dark hill one more time.
+The {hero} lay flat on the moonlit ground and laughed and laughed. Then — slowly, grandly, on purpose, at exactly the speed of a sprout — the {hero} rose once more.
 
-This climb was nothing like the first. The {hero} did not rush or try to prove anything. Where the shale was loose, the {hero} tested each stone before trusting it. Where the slope was steepest, the {hero} paused to breathe instead of pushing on in a panic. {companion_name} climbed alongside, naming each small victory in the dark. "That's the boulders behind you. That's the pines. Look — you can see the arch."
+The rest of the night was gentle work. Down the path they went together, the {hero} and {companion_name}, propping the tiredest sprouts with soft earth, straightening the halfway ones, rising alongside the rest. Not doing the rising for them — no one could — just keeping them company on the way up.
 
-The very last light was fading from the sky when the {hero} finally reached the ancient arch at the top. The {object_motif} lifted high, and its glow spread gold across the whole hilltop. The {hero} reached up and rang the old bell, and its clear sound rolled out across all of {setting}.
+By moonset the whole path stood tall and silver. All except one small sprout at the very end, still curled like a comma, taking its time. Every riser rises at its own speed.
 
-But strangely, the ringing bell was not the biggest thing. The {hero} did not feel like a loud, triumphant champion. The feeling was quieter than that, and far deeper — a steady, glowing pride, the kind that comes not from never falling but from getting up when falling felt like the end.
-
-"I fell all the way to the bottom," the {hero} said softly, looking out over the darkening land, "and I chose to climb back up anyway."
-
-{companion_name} stood close as the first stars came out over {setting}. "Remember this feeling," {companion_name} said. "Not the bell. This. Because anyone can walk when the path is easy. You learned how to rise."
-
-And the {hero} understood, at last, that the whole long journey had been leading here — not to a hilltop, not to a bell, but to this one quiet truth, held close like a warm and glowing light:
+Tomorrow, the {hero} decided, drooping happily against {companion_name}, that little one would get the first visit of the day.
 
 {refrain}.`,
-        scriptTemplate: `This was the one {child_name} had been building toward all along — the biggest challenge of the entire journey.
+        scriptTemplate: `The wind had spent the entire day rearranging {setting}, and by dusk it had a lot to answer for. All along the path, the little sprouts lay bent flat, leaf to the ground, every single one — and worst of all, the {object_motif} was bowed over too, so low it hurt to look at. {child_name} the {hero} stood over it with clenched everything.
 
-Every year in {setting}, when summer tipped toward autumn, there was the Lantern Climb. At the top of the tallest hill stood an ancient stone arch, weathered by a hundred storms, and whoever carried their own lit lantern all the way to it before the sun set could ring the old bell and leave a mark on the Climbers' Stone. {child_name} had wanted this for as long as could be remembered.
+But there was a mystery about windy days, and everybody knew it. However flat the sprouts were blown, by morning they always stood straight again. Always. Someone came in the night and lifted them — someone quick, quiet, and never seen. The grown-ups called it the Midnight Riser and smiled when they said it, and nobody had ever caught so much as a shadow of them.
 
-For weeks, {child_name} had trained. Steep paths, loose gravel, the long burn in the legs — all of it. "You've worked so hard," said {companion_name} as the two of them stood at the bottom, the {object_motif} glowing steadily in {child_name}'s hands. "Whatever happens, I'm proud of you."
+"Tonight," announced {child_name}, "I catch the Riser. And the {object_motif} gets helped first, before anyone."
 
-{child_name} set off strong. Up past the mossy boulders, up through the crooked pines, keeping the lantern's flame sheltered from the wind. Each step felt like proof of every hard day that had come before. The arch grew closer. The bell caught the last gold light.
+The first plan was a hiding place behind a leaf, which turned out to be considerably smaller than {child_name}. While rethinking this, {child_name} breathed in some path-dust. A-choo! The sneeze was so enormous it bent over a sprout the wind had missed.
 
-And then, only a few strides from the top, the ground betrayed {child_name}. A slab of loose shale shifted underfoot. There was a sickening lurch, a grab at empty air — and {child_name} fell. Not a small stumble. A real fall, sliding and rolling down the long slope, all the way to the bottom, while the {object_motif} tumbled from open hands and its flame snuffed out in the grass.
+The second plan was a proper lookout: cozy, sheltered, with a commanding view of the whole path. It was, if anything, too cozy. {child_name} woke later, cheek in the moss, to find three sprouts already standing again and not a Riser in sight. They had come and gone — right past a sleeping guard!
 
-For a long moment {child_name} lay still at the foot of the hill. Everything hurt. But the worst hurt was not on the outside. This was the biggest fall of the whole journey, and it had come at the very worst moment, so close to the end.
+{child_name} was one breath from marching home in disgrace. But the great silent bell had taught its lesson well, and {child_name} said it out loud to the dark: "When one way doesn't work, you don't just do it again angrier. You try a different way." Watching everywhere had failed twice. So: watch one sprout, the one that mattered most. {child_name} lay down flat on the ground beside the {object_motif} — nose to leaf, close enough to count its veins — and went as still as the path.
 
-"I'm finished," {child_name} said, and this time the words did not feel dramatic — they felt true. "I did everything right and I still fell. I don't want to try again. What's the point?"
+{companion_name} arrived on quiet feet and settled down alongside without a single question. "Hmm," they whispered, after a while. "Some helpers are very shy. Or very close."
 
-{companion_name} climbed down and sat in the grass, close but not crowding. "That was a terrible fall," {companion_name} said. "I'm not going to tell you it didn't hurt. It did. You're allowed to feel every bit of that."
+The moon climbed. The path lay silver and still. Nobody came. No footsteps, no lantern-light, no rustle of somebody kind sneaking from sprout to sprout. Nothing at all — except. Keep your eyes on the little sprout now. Don't blink. Is it... moving?
 
-So {child_name} sat with it. The sky went from gold to rose to deep and dusky blue. And that was allowed — the sadness was real, and it needed its moment.
+It was moving. Slower than slow, softer than soft, the {object_motif} was lifting its own bowed head. No hands lifted it. No Riser touched it. It was rising by itself. While {child_name} watched, hardly breathing, the little sprout came up from the ground one invisible inch at a time.
 
-But as {child_name} sat there in the gathering dark, the memories came, one by one. The very first lesson, back at the start: that hard things are allowed to feel hard, and that doesn't mean you're failing. The word "yet" — I haven't done it yet. The day {child_name} learned that mistakes are not the end of a story but a kind of teacher, if you let them be. And the day {child_name} discovered that when one path fails, there is almost always another way to try.
+"Nobody comes," {child_name} breathed at last. "Nobody has ever come. There is no Midnight Riser — or, no. There are thousands of them. The Riser is inside every growing thing. They rise themselves." And then, arriving all at once like the answer to a question {child_name} hadn't known they were asking: "That's me too. My flopped rolls. My honking calls. My runaway seeds, my silent bell. I fell all season — and I kept standing up again. Falling down was never the end of anything. The whole secret is rising once more."
 
-{child_name} reached out through the cool grass and found the fallen {object_motif}. Cupped it close, and breathed on the wick, and slowly, slowly, coaxed the little flame back to life until it glowed warm and steady once again.
+"I kept this exact watch when I was young," whispered {companion_name}, eyes shining in the moonlight. "Three windy seasons running. I never solved it — I never thought to lie down next to the answer. {refrain}."
 
-"I don't have to do it perfectly," {child_name} murmured, half to {companion_name} and half to the hill itself. "I just have to be brave enough to begin again."
+And at that precise moment, a final gust of wind came romping down the path, entirely without manners, and bowled {child_name} clean over.
 
-And, Rising once more, {child_name} got to both feet, aching and unsteady, and turned to face the enormous dark hill one more time.
+{child_name} lay flat on the moonlit ground and laughed and laughed. Then — slowly, grandly, on purpose, at exactly the speed of a sprout — {child_name} rose once more.
 
-This climb was nothing like the first. {child_name} did not rush or try to prove anything. Where the shale was loose, {child_name} tested each stone before trusting it. Where the slope was steepest, {child_name} paused to breathe instead of pushing on in a panic. {companion_name} climbed alongside, naming each small victory in the dark. "That's the boulders behind you. That's the pines. Look — you can see the arch."
+The rest of the night was gentle work. Down the path they went together, {child_name} and {companion_name}, propping the tiredest sprouts with soft earth, straightening the halfway ones, rising alongside the rest. Not doing the rising for them — no one could — just keeping them company on the way up.
 
-The very last light was fading from the sky when {child_name} finally reached the ancient arch at the top. The {object_motif} lifted high, and its glow spread gold across the whole hilltop. {child_name} reached up and rang the old bell, and its clear sound rolled out across all of {setting}.
+By moonset the whole path stood tall and silver. All except one small sprout at the very end, still curled like a comma, taking its time. Every riser rises at its own speed.
 
-But strangely, the ringing bell was not the biggest thing. {child_name} did not feel like a loud, triumphant champion. The feeling was quieter than that, and far deeper — a steady, glowing pride, the kind that comes not from never falling but from getting up when falling felt like the end.
-
-"I fell all the way to the bottom," {child_name} said softly, looking out over the darkening land, "and I chose to climb back up anyway."
-
-{companion_name} stood close as the first stars came out over {setting}. "Remember this feeling," {companion_name} said. "Not the bell. This. Because anyone can walk when the path is easy. You learned how to rise."
-
-And {child_name} understood, at last, that the whole long journey had been leading here — not to a hilltop, not to a bell, but to this one quiet truth, held close like a warm and glowing light:
+Tomorrow, {child_name} decided, drooping happily against {companion_name}, that little one would get the first visit of the day.
 
 {refrain}.`,
       },
       '9-11': {
-        audioTemplate: `There is a particular kind of silence that comes after you fail at the one thing you wanted most, and the {hero} was learning it now, at the bottom of the hill, in the last gold minutes of the longest day of the year.
+        audioTemplate: `The wind had spent the whole day rearranging {setting} to its own taste, and by dusk it had a great deal to answer for. All along the path, the little sprouts lay bent flat, leaf to ground, every last one. Worst of all, the {object_motif} — the {hero}'s favourite thing in the world that could not talk — was bowed over so low it looked folded. The {hero} stood over it, fists and heart both clenched.
 
-Everyone in {setting} knew about the Lantern Climb. Once a year, on midsummer's eve, the young climbers gathered at the foot of the tallest hill. At its summit stood the Old Arch, grey and patient, and above it hung the Climbers' Bell. The rule was simple and merciless: carry your own lit lantern to the top and ring the bell before the sun touched the horizon, and your name would be carved into the Climbers' Stone forever. Miss the sunset — even by a heartbeat — and the year was gone. You could not try again until the earth had gone all the way around the sun.
+Now, everyone knew the mystery of the windy days. It was one of those mysteries so old it had gone soft at the edges. However flat the wind left the sprouts, by morning they always stood straight again. Always. Somebody, therefore, must come in the night and lift them — somebody quick, quiet, endlessly kind, and never once seen. The grown-ups called them the Midnight Riser, and smiled a particular smile when they said it, which the {hero} had always taken for fondness and never once thought to examine.
 
-The {hero} had waited three years for this. Three years of watching older climbers ring the bell while standing too small at the back of the crowd. This year, at last, it was the {hero}'s turn, and the {hero} had trained for it with a seriousness that surprised even {companion_name} — the pre-dawn climbs, the aching legs, the careful study of every loose slope and hidden foothold on the mountain.
+"Tonight," the {hero} announced to the flattened path, "I catch the Riser. And the {object_motif} gets helped first."
 
-"You know this hill better than anyone," {companion_name} said quietly as they stood together at the starting line, the {object_motif} burning bright and steady in the {hero}'s hands. "You've earned this."
+Every great stakeout needs a plan, and the {hero}'s first plan was a hiding spot behind a leaf that turned out to be roughly forty percent the size of the {hero}. While reconsidering, the {hero} inhaled a quantity of path-dust. A-choo! The sneeze was so enormous it flattened a sprout the wind had missed. The {hero} apologised to it and moved on.
 
-The horn sounded. The {hero} climbed.
+The second plan was a proper lookout — sheltered, comfortable, commanding a view of the entire path. It commanded it beautifully for about an hour, at which point the watch developed a flaw, and the flaw was sleep. The {hero} woke with one cheek printed by moss to find three sprouts already standing serenely upright and no Riser anywhere. They had strolled directly past a snoring guard and got clean away with being kind.
 
-And for a while, it was perfect. Better than perfect. The {hero} moved up the slope like water finding its way downhill in reverse, past the boulders, through the pines, reading the mountain the way you read a story you have loved for years. The sun sank slowly and golden toward the far hills. The Arch drew nearer. The {hero} could see the bell now, could almost hear how it would sound. Close. So close.
+It was the sort of moment where an evening decides what it is going to be. The {hero} very nearly marched home. But a certain silent bell had taught a certain lesson, and the {hero} recited it to the dark instead of quitting: "When one way doesn't work, you don't do the same thing again, angrier. You try a different way." Watching everything had failed twice — once by sneeze, once by sleep. Very well. Watch one thing. The {hero} walked back to the {object_motif}, lay down flat on the cold ground beside it, nose to leaf, and went as still as the path.
 
-And then the mountain did the one thing the {hero} had not planned for. A slab of shale that had held firm through three years of practice climbs chose that exact evening to give way. It slid without warning. The {hero}'s foot went out into nothing, and there was that awful weightless instant of knowing — really knowing — that this was going to be bad. Then the fall took over. Down the long slope, over and over, the world spinning grass and sky and stone, until the {hero} came to rest, bruised and breathless, near the very bottom of the hill. The {object_motif} lay a little way off in the grass, its flame gone dark, a thread of smoke rising thin into the evening air.
+{companion_name} materialised alongside in that soundless way of theirs and settled in without one question, as if lying in the dirt at midnight were a perfectly ordinary appointment. After a long while, they whispered, "Hmm. Some helpers are very shy. Or very close."
 
-The {hero} got up onto hands and knees — and looked toward the west. The sun was already gone. Only a low band of fading rose remained where it had been. Somewhere above, faint and far away, the Climbers' Bell rang out for someone else. The year's chance had closed while the {hero} was still lying in the grass at the bottom.
+The moon climbed. The path lay silver. Nobody came. No footsteps, no hooded stranger, no lantern bobbing from sprout to sprout. Nothing — except. Eyes on the little sprout now. Absolutely still. Don't even blink. Is it... moving?
 
-That was when the true fall arrived — not the one down the slope, but the one on the inside. It was quiet and enormous. The {hero} did not cry out. The {hero} simply sat down in the cooling grass and felt the whole thing crumble: three years of waiting, weeks of climbing before dawn, the certainty of being ready. Gone, in the space of one loose stone.
+It was moving. Slower than slow, softer than falling dust, the {object_motif} was raising its own bowed head. Nothing touched it. Nothing helped it. It rose the way the moon rises, one invisible inch at a time, while the {hero} lay there not breathing.
 
-"I'm done," the {hero} said at last, and the words came out flat and final, without any drama in them at all. "Not just tonight. I mean I'm done. I did everything right. I trained harder than anyone. And it didn't matter. So what is the point of ever trying at anything again?"
+"Nobody comes," the {hero} whispered finally. "Nobody has ever come. That's the secret the grown-ups smile about. There is no Midnight Riser — or rather, there are thousands. Every growing thing carries its own. They rise themselves." And then the second half of the thought landed, quietly, like the last piece of a long puzzle: "That's what I've been doing all season. The flopped rolls at the arch. The honks at the echo stone. The spilled seeds. The bell that wouldn't ring. I fell over and over — and every single time, something in me stood back up. I was looking for the Riser out here. Falling was never the end of anything. The whole secret is rising once more."
 
-{companion_name} came and sat nearby in the dark. For a long time {companion_name} said nothing, which was somehow exactly the right thing. The first stars came out over {setting}, indifferent and beautiful.
+{companion_name} was quiet for a moment, and when they spoke their voice had gone soft and young. "I kept this same watch, you know. Three windy seasons, when I was small. I never solved it. It never once occurred to me to lie down next to the answer." They touched the rising sprout, gentler than the wind. "{refrain}."
 
-"I'm not going to pretend this is small," {companion_name} said finally. "It isn't. You lost something real tonight, and you're allowed to grieve it. Don't let anyone rush you out of that."
+At which point, because the night had a sense of humour, one final gust came romping down the path and bowled the {hero} clean over.
 
-So the {hero} grieved. And it was allowed. There is no version of getting back up that skips the part where you are down.
+The {hero} lay flat under the stars and laughed until the laughing wore itself out. Then — slowly, ceremonially, at the exact speed of a sprout — the {hero} rose once more, on purpose.
 
-But grief, if you sit with it honestly, eventually makes room for other things, and slowly — from somewhere far back in the long journey — the old lessons began to surface. The very first one, from what felt like a lifetime ago: that hard things are permitted to be hard, and that struggling does not make you a failure. Then the small, stubborn word — "yet." I have not rung the bell yet. Then the harder lesson, learned through a dozen scraped attempts: that a mistake is not the closing of a door but a teacher who only speaks to those willing to listen. And finally the one that had taken longest to believe — that when a path collapses beneath you, it does not mean there is no path; it means it is time to find another.
+The rest of the night was quiet work, the best kind. Down the moonlit path they went, the {hero} and {companion_name}, banking soft earth around the tiredest sprouts, steadying the halfway ones, rising alongside the rest. Not lifting them — that was never anybody's job — just keeping them company on the way up.
 
-The {hero} looked at these lessons the way you might look at old friends arriving quietly at exactly the moment you needed them. Then the {hero} reached across the cool grass and picked up the fallen {object_motif}. The wick was dark, but not ruined. Patiently, the way {companion_name} had once shown, the {hero} sheltered it and coaxed it and breathed life back into the small flame until it caught and steadied and glowed — a single point of warm gold in all that blue dark.
+By moonset the path stood tall and silver, end to end. All but one small sprout at the very last bend, still curled like a comma, taking its time. Every riser rises at its own speed. That, the {hero} understood now, was allowed.
 
-"I can't win it this year," the {hero} said slowly, turning the thought over, testing whether it was true and finding that it was. "That's really gone. I can't change it." A long breath. "But losing the year isn't the same as quitting forever. Those are two different things. I kept mixing them up."
-
-And, Rising once more, the {hero} stood — sore, unsteady, and entirely without an audience now, for the crowd had long since gone home to celebrate the winner. There was no bell left to ring tonight. No name to carve. Nothing to prove to anyone at all.
-
-The {hero} turned and looked up at the black shape of the hill against the stars. "I'm going to climb it anyway," the {hero} said. "Not for the bell. Just to finish what I started. And then I'm going to come back next year, and the year after that if I have to."
-
-{companion_name} rose too. "You know," {companion_name} said softly, "in three years of watching, I've seen a lot of climbers ring that bell. I've never once seen one do what you're about to do. Anyone can climb toward a prize. Climbing in the dark, after you've already lost it, with nobody watching — that's a different thing entirely."
-
-They climbed together, slowly, the {object_motif} lighting just enough of the path to find the next safe stone. Where the shale was loose the {hero} tested it first. Where the slope was cruel the {hero} rested and breathed and went on. It took a long time. And when at last they reached the Old Arch at the top, there was no crowd, no horn, no carving in the stone — only the quiet grey arch, the wide dark country of {setting} spread out below, and the enormous scatter of stars overhead.
-
-The {hero} stood beneath the Arch and did not ring the silent bell. There was no need. The feeling in the {hero}'s chest was not triumph — it was something quieter and far more durable, a steady warmth that no one had handed over and no one could take away.
-
-"I fell all the way to the bottom," the {hero} whispered to the dark and the stars, "and I lost the thing I wanted most. And I got up and climbed anyway."
-
-{companion_name} stood close as the night settled gentle over the hills. "Remember this," {companion_name} said. "Not the years you win. This. The night you had every reason to stay down, and you chose, instead, to rise."
-
-And the {hero} understood then that the whole long journey — every scraped knee, every "yet," every mistake and every second try — had been leading not to a bell or a carved name, but to this one hard-won, unshakeable truth, carried home in the dark like a small and steady flame:
+Tomorrow, that stubborn little one would get the first visit of the day.
 
 {refrain}.`,
-        scriptTemplate: `There is a particular kind of silence that comes after you fail at the one thing you wanted most, and {child_name} was learning it now, at the bottom of the hill, in the last gold minutes of the longest day of the year.
+        scriptTemplate: `The wind had spent the whole day rearranging {setting} to its own taste, and by dusk it had a great deal to answer for. All along the path, the little sprouts lay bent flat, leaf to ground, every last one. Worst of all, the {object_motif} — {child_name}'s favourite thing in the world that could not talk — was bowed over so low it looked folded. {child_name} the {hero} stood over it, fists and heart both clenched.
 
-Everyone in {setting} knew about the Lantern Climb. Once a year, on midsummer's eve, the young climbers gathered at the foot of the tallest hill. At its summit stood the Old Arch, grey and patient, and above it hung the Climbers' Bell. The rule was simple and merciless: carry your own lit lantern to the top and ring the bell before the sun touched the horizon, and your name would be carved into the Climbers' Stone forever. Miss the sunset — even by a heartbeat — and the year was gone. You could not try again until the earth had gone all the way around the sun.
+Now, everyone knew the mystery of the windy days. It was one of those mysteries so old it had gone soft at the edges. However flat the wind left the sprouts, by morning they always stood straight again. Always. Somebody, therefore, must come in the night and lift them — somebody quick, quiet, endlessly kind, and never once seen. The grown-ups called them the Midnight Riser, and smiled a particular smile when they said it, which {child_name} had always taken for fondness and never once thought to examine.
 
-{child_name} had waited three years for this. Three years of watching older climbers ring the bell while standing too small at the back of the crowd. This year, at last, it was {child_name}'s turn, and {child_name} had trained for it with a seriousness that surprised even {companion_name} — the pre-dawn climbs, the aching legs, the careful study of every loose slope and hidden foothold on the mountain.
+"Tonight," {child_name} announced to the flattened path, "I catch the Riser. And the {object_motif} gets helped first."
 
-"You know this hill better than anyone," {companion_name} said quietly as they stood together at the starting line, the {object_motif} burning bright and steady in {child_name}'s hands. "You've earned this."
+Every great stakeout needs a plan, and {child_name}'s first plan was a hiding spot behind a leaf that turned out to be roughly forty percent the size of {child_name}. While reconsidering, {child_name} inhaled a quantity of path-dust. A-choo! The sneeze was so enormous it flattened a sprout the wind had missed. {child_name} apologised to it and moved on.
 
-The horn sounded. {child_name} climbed.
+The second plan was a proper lookout — sheltered, comfortable, commanding a view of the entire path. It commanded it beautifully for about an hour, at which point the watch developed a flaw, and the flaw was sleep. {child_name} woke with one cheek printed by moss to find three sprouts already standing serenely upright and no Riser anywhere. They had strolled directly past a snoring guard and got clean away with being kind.
 
-And for a while, it was perfect. Better than perfect. {child_name} moved up the slope like water finding its way downhill in reverse, past the boulders, through the pines, reading the mountain the way you read a story you have loved for years. The sun sank slowly and golden toward the far hills. The Arch drew nearer. {child_name} could see the bell now, could almost hear how it would sound. Close. So close.
+It was the sort of moment where an evening decides what it is going to be. {child_name} very nearly marched home. But a certain silent bell had taught a certain lesson, and {child_name} recited it to the dark instead of quitting: "When one way doesn't work, you don't do the same thing again, angrier. You try a different way." Watching everything had failed twice — once by sneeze, once by sleep. Very well. Watch one thing. {child_name} walked back to the {object_motif}, lay down flat on the cold ground beside it, nose to leaf, and went as still as the path.
 
-And then the mountain did the one thing {child_name} had not planned for. A slab of shale that had held firm through three years of practice climbs chose that exact evening to give way. It slid without warning. {child_name}'s foot went out into nothing, and there was that awful weightless instant of knowing — really knowing — that this was going to be bad. Then the fall took over. Down the long slope, over and over, the world spinning grass and sky and stone, until {child_name} came to rest, bruised and breathless, near the very bottom of the hill. The {object_motif} lay a little way off in the grass, its flame gone dark, a thread of smoke rising thin into the evening air.
+{companion_name} materialised alongside in that soundless way of theirs and settled in without one question, as if lying in the dirt at midnight were a perfectly ordinary appointment. After a long while, they whispered, "Hmm. Some helpers are very shy. Or very close."
 
-{child_name} got up onto hands and knees — and looked toward the west. The sun was already gone. Only a low band of fading rose remained where it had been. Somewhere above, faint and far away, the Climbers' Bell rang out for someone else. The year's chance had closed while {child_name} was still lying in the grass at the bottom.
+The moon climbed. The path lay silver. Nobody came. No footsteps, no hooded stranger, no lantern bobbing from sprout to sprout. Nothing — except. Eyes on the little sprout now. Absolutely still. Don't even blink. Is it... moving?
 
-That was when the true fall arrived — not the one down the slope, but the one on the inside. It was quiet and enormous. {child_name} did not cry out. {child_name} simply sat down in the cooling grass and felt the whole thing crumble: three years of waiting, weeks of climbing before dawn, the certainty of being ready. Gone, in the space of one loose stone.
+It was moving. Slower than slow, softer than falling dust, the {object_motif} was raising its own bowed head. Nothing touched it. Nothing helped it. It rose the way the moon rises, one invisible inch at a time, while {child_name} lay there not breathing.
 
-"I'm done," {child_name} said at last, and the words came out flat and final, without any drama in them at all. "Not just tonight. I mean I'm done. I did everything right. I trained harder than anyone. And it didn't matter. So what is the point of ever trying at anything again?"
+"Nobody comes," {child_name} whispered finally. "Nobody has ever come. That's the secret the grown-ups smile about. There is no Midnight Riser — or rather, there are thousands. Every growing thing carries its own. They rise themselves." And then the second half of the thought landed, quietly, like the last piece of a long puzzle: "That's what I've been doing all season. The flopped rolls at the arch. The honks at the echo stone. The spilled seeds. The bell that wouldn't ring. I fell over and over — and every single time, something in me stood back up. I was looking for the Riser out here. Falling was never the end of anything. The whole secret is rising once more."
 
-{companion_name} came and sat nearby in the dark. For a long time {companion_name} said nothing, which was somehow exactly the right thing. The first stars came out over {setting}, indifferent and beautiful.
+{companion_name} was quiet for a moment, and when they spoke their voice had gone soft and young. "I kept this same watch, you know. Three windy seasons, when I was small. I never solved it. It never once occurred to me to lie down next to the answer." They touched the rising sprout, gentler than the wind. "{refrain}."
 
-"I'm not going to pretend this is small," {companion_name} said finally. "It isn't. You lost something real tonight, and you're allowed to grieve it. Don't let anyone rush you out of that."
+At which point, because the night had a sense of humour, one final gust came romping down the path and bowled {child_name} clean over.
 
-So {child_name} grieved. And it was allowed. There is no version of getting back up that skips the part where you are down.
+{child_name} lay flat under the stars and laughed until the laughing wore itself out. Then — slowly, ceremonially, at the exact speed of a sprout — {child_name} rose once more, on purpose.
 
-But grief, if you sit with it honestly, eventually makes room for other things, and slowly — from somewhere far back in the long journey — the old lessons began to surface. The very first one, from what felt like a lifetime ago: that hard things are permitted to be hard, and that struggling does not make you a failure. Then the small, stubborn word — "yet." I have not rung the bell yet. Then the harder lesson, learned through a dozen scraped attempts: that a mistake is not the closing of a door but a teacher who only speaks to those willing to listen. And finally the one that had taken longest to believe — that when a path collapses beneath you, it does not mean there is no path; it means it is time to find another.
+The rest of the night was quiet work, the best kind. Down the moonlit path they went, {child_name} and {companion_name}, banking soft earth around the tiredest sprouts, steadying the halfway ones, rising alongside the rest. Not lifting them — that was never anybody's job — just keeping them company on the way up.
 
-{child_name} looked at these lessons the way you might look at old friends arriving quietly at exactly the moment you needed them. Then {child_name} reached across the cool grass and picked up the fallen {object_motif}. The wick was dark, but not ruined. Patiently, the way {companion_name} had once shown, {child_name} sheltered it and coaxed it and breathed life back into the small flame until it caught and steadied and glowed — a single point of warm gold in all that blue dark.
+By moonset the path stood tall and silver, end to end. All but one small sprout at the very last bend, still curled like a comma, taking its time. Every riser rises at its own speed. That, {child_name} understood now, was allowed.
 
-"I can't win it this year," {child_name} said slowly, turning the thought over, testing whether it was true and finding that it was. "That's really gone. I can't change it." A long breath. "But losing the year isn't the same as quitting forever. Those are two different things. I kept mixing them up."
-
-And, Rising once more, {child_name} stood — sore, unsteady, and entirely without an audience now, for the crowd had long since gone home to celebrate the winner. There was no bell left to ring tonight. No name to carve. Nothing to prove to anyone at all.
-
-{child_name} turned and looked up at the black shape of the hill against the stars. "I'm going to climb it anyway," {child_name} said. "Not for the bell. Just to finish what I started. And then I'm going to come back next year, and the year after that if I have to."
-
-{companion_name} rose too. "You know," {companion_name} said softly, "in three years of watching, I've seen a lot of climbers ring that bell. I've never once seen one do what you're about to do. Anyone can climb toward a prize. Climbing in the dark, after you've already lost it, with nobody watching — that's a different thing entirely."
-
-They climbed together, slowly, the {object_motif} lighting just enough of the path to find the next safe stone. Where the shale was loose {child_name} tested it first. Where the slope was cruel {child_name} rested and breathed and went on. It took a long time. And when at last they reached the Old Arch at the top, there was no crowd, no horn, no carving in the stone — only the quiet grey arch, the wide dark country of {setting} spread out below, and the enormous scatter of stars overhead.
-
-{child_name} stood beneath the Arch and did not ring the silent bell. There was no need. The feeling in {child_name}'s chest was not triumph — it was something quieter and far more durable, a steady warmth that no one had handed over and no one could take away.
-
-"I fell all the way to the bottom," {child_name} whispered to the dark and the stars, "and I lost the thing I wanted most. And I got up and climbed anyway."
-
-{companion_name} stood close as the night settled gentle over the hills. "Remember this," {companion_name} said. "Not the years you win. This. The night you had every reason to stay down, and you chose, instead, to rise."
-
-And {child_name} understood then that the whole long journey — every scraped knee, every "yet," every mistake and every second try — had been leading not to a bell or a carved name, but to this one hard-won, unshakeable truth, carried home in the dark like a small and steady flame:
+Tomorrow, that stubborn little one would get the first visit of the day.
 
 {refrain}.`,
       },
     },
-    audioTemplate: `It had been a hard night in {setting}. The {hero} had fallen short of something that mattered, and sat very still beside the {object_motif}, which now stood tall and strong.
+    audioTemplate: `All day the wind had blustered through {setting}. By evening the little sprouts along the path lay bent right over. Even the {object_motif} was bowed flat, leaf to the ground.
 
-"I want to stop for good," the {hero} whispered.
+But here was the old mystery. After every windy day, the sprouts stood straight by morning. Someone must lift them in the night — and nobody had ever seen who.
 
-{companion_name} did not rush them. They simply waited, then said, "You are allowed to rest. And when you are ready, remember what you know."
+"Tonight I catch the Midnight Riser," said the {hero}. "And the {object_motif} gets helped first."
 
-The {hero} took a slow breath and remembered. Hard is meant to feel hard. I can't — yet. Mistakes show me the way. And when one path is blocked, I try a different one.
+The first hiding place was behind a leaf, which turned out to be smaller than the {hero}. Then dust tickled — a-choo! — a sneeze so mighty it bent a sprout the wind had missed.
 
-The {object_motif} had grown through all of it — every fall, every fresh start. And so, it turned out, had the {hero}.
+The second hiding place was cozy, with a view of the whole path. Too cozy. The {hero} woke later to find three sprouts already standing, and no Riser anywhere. Asleep on watch!
 
-Quietly, without needing to be perfect, the {hero} stood back up.
+The {hero} almost gave up. Then remembered the bell. "When one way doesn't work," the {hero} muttered, "you try a different way." Stop watching the whole path, then. Watch one sprout. The {hero} lay down flat beside the {object_motif}, nose to leaf, still as a stone.
 
-"That," said {companion_name}, eyes shining, "is the bravest thing there is. Not never falling. Rising once more."
+{companion_name} padded over and settled close. "Hmm," they whispered. "Some helpers are very shy. Or very close."
 
-The {hero} looked up at the strong {object_motif}, and at the stars, and felt ready to try again tomorrow.
+The moon climbed. Nobody came. No footsteps, no lantern, no Riser at all. But — keep your eyes on the little sprout. Don't blink. Is it... moving?
+
+It was. Slower than slow, softer than soft, the {object_motif} was lifting its own head. No hands helped it. It rose all by itself, slow as the moon.
+
+"Nobody comes," breathed the {hero}. "Nobody ever came. Growing things lift themselves — that's the whole secret. Falling down isn't the end of anything. The secret is rising once more."
+
+"I kept this same watch when I was young," whispered {companion_name}. "I never thought to lie down next to the answer. {refrain}."
+
+Then one last gust romped down the path and bowled the {hero} right over.
+
+The {hero} lay there a moment, laughing at the stars. Then, slow as a sprout, on purpose, the {hero} rose once more — then went down the path with {companion_name}, gently propping the tiredest sprouts.
+
+By moonset, the whole path stood tall. Except one small sprout, still curled, taking its time. Every riser rises at its own speed.
+
+Tomorrow, the {hero} would visit that one first.
 
 {refrain}.`,
-    scriptTemplate: `It had been a hard night in {setting}. {child_name} the {hero} had fallen short of something that mattered, and sat very still beside the {object_motif}, which now stood tall and strong.
+    scriptTemplate: `All day the wind had blustered through {setting}. By evening the little sprouts along the path lay bent right over. Even the {object_motif} was bowed flat, leaf to the ground.
 
-"I want to stop for good," {child_name} whispered.
+But here was the old mystery. After every windy day, the sprouts stood straight by morning. Someone must lift them in the night — and nobody had ever seen who.
 
-{companion_name} did not rush them. They simply waited, then said, "You are allowed to rest, {child_name}. And when you are ready, remember what you know."
+"Tonight I catch the Midnight Riser," said {child_name} the {hero}. "And the {object_motif} gets helped first."
 
-{child_name} took a slow breath and remembered. Hard is meant to feel hard. I can't — yet. Mistakes show me the way. And when one path is blocked, I try a different one.
+The first hiding place was behind a leaf, which turned out to be smaller than {child_name}. Then dust tickled — a-choo! — a sneeze so mighty it bent a sprout the wind had missed.
 
-The {object_motif} had grown through all of it — every fall, every fresh start. And so, it turned out, had {child_name}.
+The second hiding place was cozy, with a view of the whole path. Too cozy. {child_name} woke later to find three sprouts already standing, and no Riser anywhere. Asleep on watch!
 
-Quietly, without needing to be perfect, {child_name} stood back up.
+{child_name} almost gave up. Then remembered the bell. "When one way doesn't work," {child_name} muttered, "you try a different way." Stop watching the whole path, then. Watch one sprout. {child_name} lay down flat beside the {object_motif}, nose to leaf, still as a stone.
 
-"That," said {companion_name}, eyes shining, "is the bravest thing there is. Not never falling. Rising once more."
+{companion_name} padded over and settled close. "Hmm," they whispered. "Some helpers are very shy. Or very close."
 
-{child_name} looked up at the strong {object_motif}, and at the stars, and felt ready to try again tomorrow.
+The moon climbed. Nobody came. No footsteps, no lantern, no Riser at all. But — keep your eyes on the little sprout. Don't blink. Is it... moving?
+
+It was. Slower than slow, softer than soft, the {object_motif} was lifting its own head. No hands helped it. It rose all by itself, slow as the moon.
+
+"Nobody comes," breathed {child_name}. "Nobody ever came. Growing things lift themselves — that's the whole secret. Falling down isn't the end of anything. The secret is rising once more."
+
+"I kept this same watch when I was young," whispered {companion_name}. "I never thought to lie down next to the answer. {refrain}."
+
+Then one last gust romped down the path and bowled {child_name} right over.
+
+{child_name} lay there a moment, laughing at the stars. Then, slow as a sprout, on purpose, {child_name} rose once more — then went down the path with {companion_name}, gently propping the tiredest sprouts.
+
+By moonset, the whole path stood tall. Except one small sprout, still curled, taking its time. Every riser rises at its own speed.
+
+Tomorrow, {child_name} would visit that one first.
 
 {refrain}.`,
   },

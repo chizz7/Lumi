@@ -1109,717 +1109,725 @@ The light glowed low and steady. So did {child_name}.
   },
 
   {
-    ordinal: 4, title: 'Finishing What You Start',
-    concept: 'Staying with something all the way to the end', callback: 'A plan is a path (Level 2)', ageFloor: 5,
-    summary: "Near the end of something hard, the hero wants to stop — the exciting part is over and only the finishing is left. Their companion helps them take the last few steps of the plan. It calls back to Level 2: a path is only finished when you walk its final stones.",
-    teachingNote: 'The hardest part of a goal is often the last stretch — finishing is a skill, and it feels wonderful.',
-    learningBeat: 'Finishing has its own kind of joy',
+    ordinal: 4, title: "The Last Grey Pieces",
+    concept: "Staying with something all the way to the end", callback: "A plan is a path (Level 2)", ageFloor: 5,
+    summary: "For days the hero has been rebuilding an old scattered stone-picture, piece by piece — and tonight the full moon will finally land on it. Legend says a finished picture shows what it knows. But all that remains are the dull grey pieces, and 'done enough' turns out to fool nobody, least of all the moon. Then one grey piece catches the light: the plainest pieces were the sky all along, saved for last by makers who knew that finishing has its own kind of joy.",
+    teachingNote: "The hardest part of a goal is often the last dull stretch — and finishing is exactly where the best part was hiding.",
+    learningBeat: "Finishing has its own kind of joy",
     ageVariants: {
   '3-4': {
-    audioTemplate: `The {hero} was making a path. A long path of little stones. It went all the way across {setting}. Stone by stone. Day by day. The {hero} worked and worked. It was fun to build. The {hero} loved every stone.
+    audioTemplate: `In {setting}, an old stone picture lay tumbled into pieces. All week the {hero} had been putting it back together.
 
-The big part was done now. The path went far and long. It looked so nice. Only a few stones were left. Just the last little bit at the end.
+Boat piece — in! Bird piece — in! Flowers — in, in, in!
 
-But the {hero} was tired. The fun part was over. The last stones felt dull and slow. The {hero} sat down in the grass. Making things is fun. Finishing is not always fun. But the path was not done yet. "I am done," said the {hero}. "This is close enough for me."
+Tonight the full moon would shine on it. A finished picture, the old carving said, shows what it knows.
 
-{companion_name} sat down close by. {companion_name} looked at the long path. Then at the small gap at the end. "It is almost a path," said {companion_name}. "Almost. But a path is only finished when you walk its final stones."
+But the last pieces were grey. Plain, dull, boring grey!
 
-The {hero} looked at the gap. It was small. It was so small. "Just a few more," said {companion_name}. "I will stay right here with you."
+'Done enough,' said the {hero}.
 
-So the {hero} picked up the {object_motif}. The {hero} set one stone. Then one more. Then one more. Each stone clicked in place. The gap got smaller. And smaller. And then it was gone.
+The moon came. And... nothing. Just gaps.
 
-The very last stone was the biggest one. The {hero} lifted it up. The {hero} set it down soft. Click. It fit just right.
+The {hero} propped the {object_motif} up to help the moon. Still nothing!
 
-The path was done. All the way done. The {hero} could walk it end to end. So the {hero} did. Step, step, step. Right to the very last stone. The {hero} did not stop this time.
+'Hmm,' said {companion_name}. 'The makers cut even the dull ones on purpose.'
 
-"You did the whole thing," said {companion_name}. "Finishing has its own kind of joy."
+The {hero} held one up to the moon. Look deep inside. Can you see it too? Tiny sparks, fast asleep!
 
-The {hero} felt it too. A soft, glad feeling. Not loud at all. Just warm and quiet and true. It was a good, done feeling. The {hero} held the {object_motif} close.
+'The grey pieces are the sky!' said the {hero}. 'Finishing has its own kind of joy — the makers saved the best for last!'
 
-The path lay quiet across {setting}. Every stone in its place. The {hero} gave a big, sleepy yawn. The whole path was done. And it felt good.
+So the {hero} placed them. One. Two. Three. The last piece went snick!
+
+The whole sky woke up! Silver stars glowed over the boat and bird.
+
+'{refrain},' whispered {companion_name}.
+
+One little star was a brand-new colour. Something for tomorrow.
+
+Warm glow. Heavy eyes.
 
 {refrain}.`,
-    scriptTemplate: `{child_name} was making a path. A long path of little stones. It went all the way across {setting}. Stone by stone. Day by day. {child_name} worked and worked. It was fun to build. {child_name} loved every stone.
+    scriptTemplate: `In {setting}, an old stone picture lay tumbled into pieces. All week {child_name} the {hero} had been putting it back together.
 
-The big part was done now. The path went far and long. It looked so nice. Only a few stones were left. Just the last little bit at the end.
+Boat piece — in! Bird piece — in! Flowers — in, in, in!
 
-But {child_name} was tired. The fun part was over. The last stones felt dull and slow. {child_name} sat down in the grass. Making things is fun. Finishing is not always fun. But the path was not done yet. "I am done," said {child_name}. "This is close enough for me."
+Tonight the full moon would shine on it. A finished picture, the old carving said, shows what it knows.
 
-{companion_name} sat down close by. {companion_name} looked at the long path. Then at the small gap at the end. "It is almost a path," said {companion_name}. "Almost. But a path is only finished when you walk its final stones."
+But the last pieces were grey. Plain, dull, boring grey!
 
-{child_name} looked at the gap. It was small. It was so small. "Just a few more," said {companion_name}. "I will stay right here with you."
+'Done enough,' said {child_name}.
 
-So {child_name} picked up the {object_motif}. {child_name} set one stone. Then one more. Then one more. Each stone clicked in place. The gap got smaller. And smaller. And then it was gone.
+The moon came. And... nothing. Just gaps.
 
-The very last stone was the biggest one. {child_name} lifted it up. {child_name} set it down soft. Click. It fit just right.
+{child_name} propped the {object_motif} up to help the moon. Still nothing!
 
-The path was done. All the way done. {child_name} could walk it end to end. So {child_name} did. Step, step, step. Right to the very last stone. {child_name} did not stop this time.
+'Hmm,' said {companion_name}. 'The makers cut even the dull ones on purpose.'
 
-"You did the whole thing," said {companion_name}. "Finishing has its own kind of joy."
+{child_name} held one up to the moon. Look deep inside. Can you see it too? Tiny sparks, fast asleep!
 
-{child_name} felt it too. A soft, glad feeling. Not loud at all. Just warm and quiet and true. It was a good, done feeling. {child_name} held the {object_motif} close.
+'The grey pieces are the sky!' said {child_name}. 'Finishing has its own kind of joy — the makers saved the best for last!'
 
-The path lay quiet across {setting}. Every stone in its place. {child_name} gave a big, sleepy yawn. The whole path was done. And it felt good.
+So {child_name} placed them. One. Two. Three. The last piece went snick!
+
+The whole sky woke up! Silver stars glowed over the boat and bird.
+
+'{refrain},' whispered {companion_name}.
+
+One little star was a brand-new colour. Something for tomorrow.
+
+Warm glow. Heavy eyes.
 
 {refrain}.`
   },
   '5-6': {
-    audioTemplate: `All week, the {hero} had been building a path of stones across {setting}. It was a big idea, the biggest one the {hero} had ever tried. Stone by stone, the path grew longer, curving past the tall grass and around the little hill. Every morning the {hero} could not wait to add more.
+    audioTemplate: `In a mossy hollow in {setting} lay an old stone picture, tumbled into a hundred little pieces long ago. Beside it, a worn carving read: finished by moonlight, it shows what it knows.
 
-The first part was the best part. Choosing the stones. Fitting them together like puzzle pieces. Watching the path stretch farther and farther. The {hero} felt proud each time it grew. Friends walked by and said how good it looked. That felt wonderful. The {hero} imagined the finished path and could almost see it done.
+All week the {hero} had been putting it back together with a plan — corner first, then row by row, like stones on a path. And what a picture! A little boat. A bright bird. A whole hedge of flowers.
 
-But now the path was almost done. Only a short stretch was left, a small gap near the far end. And somehow, the fun had drained away. The exciting part was over. What was left was just plain, slow work — lifting the last heavy stones and pressing them into the dirt. The {hero} kept finding other things to do instead.
+Tonight the full moon would land right in the hollow. Only one part was left: the top. Dozens of pieces, every one plain, dull grey. No boats. No birds. Nothing.
 
-The {hero} sat down and sighed. "It is basically finished," the {hero} said. "You can already tell it is a path. Nobody would even notice the gap. I think I am done."
+'Done enough,' the {hero} declared. 'The moon will see the good parts. Who needs a grey sky?'
 
-{companion_name} came and stood beside the path, looking all the way down its long curve to the little empty space at the end. "It is a wonderful path," {companion_name} said. "Almost a whole one." "Almost is fine," said the {hero}. {companion_name} shook their head gently. "Remember what we learned? A plan is a path. And a path is only finished when you walk its final stones. Right now, it stops just short."
+The moon slid in. It touched the boat, the bird, the flowers... and nothing happened. No glow. No secret. Just a picture with a hole where its sky should be.
 
-The {hero} looked at the gap. It really was small. But the {hero}'s arms felt tired, and the last stones looked heavy. "It is the boring part now," the {hero} said quietly. "Then we will do the boring part together," said {companion_name}. "A few stones at a time. I will hand them to you."
+The {hero} tried helping. The bird got nudged to the middle. The {object_motif} got propped up to boost the moon. The boat got polished till it shone. Still nothing.
 
-So they began. {companion_name} rolled the {object_motif} over, and the {hero} lifted the first stone and set it down. It fit. Then another. Then another. They found a rhythm. {companion_name} passed a stone, the {hero} pressed it down. Pass, press. Pass, press. It was slow, but it was steady. Each one made a soft, solid click as it settled into place. The gap grew smaller. Smaller. The {hero} stopped noticing how tired the work was, because now the end was close enough to see.
+'Hmm,' said {companion_name}, turning one grey piece over and over. 'The makers cut every piece on purpose. Even the dull ones. Especially, maybe, the dull ones.'
 
-The very last stone was the widest of all. The {hero} carried it with both arms, knelt down, and set it carefully into the final space. It fit perfectly. The path was whole. Not almost whole. Whole.
+The {hero} picked up a grey piece to flick it away — and stopped. Hold it up to the moon and look deep inside. Can you see it too? Tiny sparks, fast asleep.
 
-The {hero} stood up and looked. The path ran all the way across {setting} now, one long unbroken line from the very start to the very end. It looked different, finished. A path that stopped halfway was just a pile of stones. A path that reached the end was a real path — one you could actually follow somewhere. Then the {hero} walked it, slowly, from one end to the other, without a single gap to step over.
+'Oh!' breathed the {hero}. 'The grey pieces are the sky! They only wake in moonlight. The makers hid the best part in the boring part — you only find it if you finish. Finishing has its own kind of joy, and they saved it for last!'
 
-"You took the last steps," said {companion_name}. "Most people stop when the fun runs out. You did not. Finishing has its own kind of joy."
+So the {hero} stayed with it, row by row, dull piece by dull piece, to the very end. The last one went in with a tiny snick.
 
-And the {hero} could feel it — a calm, settled gladness, different from the excited feeling at the start. Quieter. Deeper. The {hero} held the {object_motif} and looked back down the finished path one more time.
+And the sky woke up. Every grey piece kindled silver — a hundred small stars over the boat and the bird and the flowers. And in the corner of the picture, a little stone hollow held two small figures, sitting just like them.
 
-The wind moved softly over {setting}. Somewhere far off, everything was still. The {hero} gave a slow, happy yawn, tired in the good way you feel when a thing is truly done. Tomorrow, the {hero} could walk the whole path again, start to finish.
+'{refrain},' whispered {companion_name}.
+
+They sat in the glow a long, quiet time. One star in the stone sky was a colour the real sky did not have. Something to look for tomorrow night.
+
+The glow softened. The moss was warm.
 
 {refrain}.`,
-    scriptTemplate: `All week, {child_name} had been building a path of stones across {setting}. It was a big idea, the biggest one {child_name} had ever tried. Stone by stone, the path grew longer, curving past the tall grass and around the little hill. Every morning {child_name} could not wait to add more.
+    scriptTemplate: `In a mossy hollow in {setting} lay an old stone picture, tumbled into a hundred little pieces long ago. Beside it, a worn carving read: finished by moonlight, it shows what it knows.
 
-The first part was the best part. Choosing the stones. Fitting them together like puzzle pieces. Watching the path stretch farther and farther. {child_name} felt proud each time it grew. Friends walked by and said how good it looked. That felt wonderful. {child_name} imagined the finished path and could almost see it done.
+All week {child_name} the {hero} had been putting it back together with a plan — corner first, then row by row, like stones on a path. And what a picture! A little boat. A bright bird. A whole hedge of flowers.
 
-But now the path was almost done. Only a short stretch was left, a small gap near the far end. And somehow, the fun had drained away. The exciting part was over. What was left was just plain, slow work — lifting the last heavy stones and pressing them into the dirt. {child_name} kept finding other things to do instead.
+Tonight the full moon would land right in the hollow. Only one part was left: the top. Dozens of pieces, every one plain, dull grey. No boats. No birds. Nothing.
 
-{child_name} sat down and sighed. "It is basically finished," {child_name} said. "You can already tell it is a path. Nobody would even notice the gap. I think I am done."
+'Done enough,' {child_name} declared. 'The moon will see the good parts. Who needs a grey sky?'
 
-{companion_name} came and stood beside the path, looking all the way down its long curve to the little empty space at the end. "It is a wonderful path," {companion_name} said. "Almost a whole one." "Almost is fine," said {child_name}. {companion_name} shook their head gently. "Remember what we learned? A plan is a path. And a path is only finished when you walk its final stones. Right now, it stops just short."
+The moon slid in. It touched the boat, the bird, the flowers... and nothing happened. No glow. No secret. Just a picture with a hole where its sky should be.
 
-{child_name} looked at the gap. It really was small. But {child_name}'s arms felt tired, and the last stones looked heavy. "It is the boring part now," {child_name} said quietly. "Then we will do the boring part together," said {companion_name}. "A few stones at a time. I will hand them to you."
+{child_name} tried helping. The bird got nudged to the middle. The {object_motif} got propped up to boost the moon. The boat got polished till it shone. Still nothing.
 
-So they began. {companion_name} rolled the {object_motif} over, and {child_name} lifted the first stone and set it down. It fit. Then another. Then another. They found a rhythm. {companion_name} passed a stone, {child_name} pressed it down. Pass, press. Pass, press. It was slow, but it was steady. Each one made a soft, solid click as it settled into place. The gap grew smaller. Smaller. {child_name} stopped noticing how tired the work was, because now the end was close enough to see.
+'Hmm,' said {companion_name}, turning one grey piece over and over. 'The makers cut every piece on purpose. Even the dull ones. Especially, maybe, the dull ones.'
 
-The very last stone was the widest of all. {child_name} carried it with both arms, knelt down, and set it carefully into the final space. It fit perfectly. The path was whole. Not almost whole. Whole.
+{child_name} picked up a grey piece to flick it away — and stopped. Hold it up to the moon and look deep inside. Can you see it too? Tiny sparks, fast asleep.
 
-{child_name} stood up and looked. The path ran all the way across {setting} now, one long unbroken line from the very start to the very end. It looked different, finished. A path that stopped halfway was just a pile of stones. A path that reached the end was a real path — one you could actually follow somewhere. Then {child_name} walked it, slowly, from one end to the other, without a single gap to step over.
+'Oh!' breathed {child_name}. 'The grey pieces are the sky! They only wake in moonlight. The makers hid the best part in the boring part — you only find it if you finish. Finishing has its own kind of joy, and they saved it for last!'
 
-"You took the last steps," said {companion_name}. "Most people stop when the fun runs out. You did not. Finishing has its own kind of joy."
+So {child_name} stayed with it, row by row, dull piece by dull piece, to the very end. The last one went in with a tiny snick.
 
-And {child_name} could feel it — a calm, settled gladness, different from the excited feeling at the start. Quieter. Deeper. {child_name} held the {object_motif} and looked back down the finished path one more time.
+And the sky woke up. Every grey piece kindled silver — a hundred small stars over the boat and the bird and the flowers. And in the corner of the picture, a little stone hollow held two small figures, sitting just like them.
 
-The wind moved softly over {setting}. Somewhere far off, everything was still. {child_name} gave a slow, happy yawn, tired in the good way you feel when a thing is truly done. Tomorrow, {child_name} could walk the whole path again, start to finish.
+'{refrain},' whispered {companion_name}.
+
+They sat in the glow a long, quiet time. One star in the stone sky was a colour the real sky did not have. Something to look for tomorrow night.
+
+The glow softened. The moss was warm.
 
 {refrain}.`
   },
   '7-8': {
-    audioTemplate: `For eleven days, the {hero} had been building a stone path across {setting}, and it was nearly the best thing the {hero} had ever made. It began at the old wooden gate and wound between the tall grasses, curving exactly where the {hero} had planned it to curve, dipping and rising with the land. Anyone could see it was going to be beautiful.
+    audioTemplate: `The old stone picture had been lying in its mossy hollow in {setting} for longer than anyone could say — hundreds of small flat pieces, tumbled from their frame long ago and never put back. Beside the hollow, half swallowed by moss, a worn carving promised: finished by moonlight, it shows what it knows.
 
-Back at the start, the work had felt like magic. Every stone was a decision — this one flat, that one round, this one to fill the awkward corner. There was nothing quite like the moment a difficult stone finally dropped into place and sat there like it had always belonged. The path had grown a little longer each day, and each day the {hero} had run outside first thing to look at how far it had come. There was always something new to figure out, and figuring it out was the fun.
+Tonight the full moon would land squarely in that hollow, the first time all year. Which is why the {hero} had spent every evening of the week rebuilding the picture properly, with a plan, the way stairs get climbed: corner first, then row by row, one small stretch at a time.
 
-But now, near the end, the magic had quietly slipped away. Only a short stretch remained, maybe fifteen stones' worth, a stubborn little gap between the path and the far fencepost where it was meant to finish. And the {hero} did not want to lay those last fifteen stones. The shapes were all decided now. There were no more clever choices to make. There was only the heavy, dull, aching work of lifting and setting, lifting and setting, until the gap closed. Every time the {hero} thought about it, some other task suddenly seemed more interesting.
+And oh, the picture that had come out of the jumble! A little boat with a patched sail. A bright bird, wings wide. A whole hedge of flowers, and a winding path stitched through the middle of it all. Every evening the picture grew, and the {hero} loved it more.
 
-The {hero} flopped down in the grass and stared at the sky. "It's done enough," the {hero} announced to no one in particular. "You can tell exactly where it goes. Everyone already knows it's a path. Why does the last bit even matter?"
+Until tonight. Only one part remained: the top. And the top was nothing. Dozens of pieces, every last one plain, flat, dull grey. No boat. No bird. Not one interesting corner in the pile.
 
-A shadow fell across the grass. {companion_name} had come to sit nearby, following the line of the path with careful eyes — all the way down to the place where it simply stopped, a few steps short of the fence. "It's the best thing you've built," {companion_name} said. "Then it's fine to leave it," said the {hero} quickly. "Almost is basically the same as done." "Is it, though?" {companion_name} asked, not unkindly. "Walk it for me."
+'Done enough,' the {hero} announced to the hollow. 'All the good parts are in. The moon can skip the sky. Everyone skips the sky.'
 
-The {hero} groaned but got up and walked it — from the gate, along the whole long curve, right to the end. And there, at the last laid stone, the {hero} had to stop, because the path stopped, and there was nothing to step onto but bare dirt and the fence a few feet off.
+The moon arrived right on time, sliding silver into the hollow. It touched the boat. It touched the bird. It lay across the flowers and the winding path.
 
-"See?" said {companion_name}, coming to stand beside the gap. "You remember what we said before — that a plan is a path. Well, here's the other half of it. A path is only finished when you walk its final stones. Right now, it takes you almost somewhere. Almost somewhere isn't the same as somewhere."
+Nothing happened. No glow, no secret, no shows-what-it-knows. Just a beautiful picture with a big bare hole where its sky belonged, and moonlight pooling in the gap like a question.
 
-The {hero} looked at the gap. It was true. The path led all that way and then just quit, dropping whoever walked it into the weeds. "But the fun part is over," the {hero} admitted, and it felt like a real confession. "The good bit was the middle. This last part is just boring." "I know," said {companion_name}, sitting down and rolling the {object_motif} closer. "The end of a hard thing is almost always the dull part. That's exactly why so many people stop right here. But we're not going to. Fifteen stones. You and me. I'll pass, you place."
+The {hero} got to work — the wrong kind of work. The bird was nudged closer to the middle, where the moon could admire it better. The {object_motif} was propped up on a stone to lend the moonlight a hand. The boat was polished with a corner of moss until it fairly gleamed. The moon remained politely unimpressed.
 
-So that's what they did. {companion_name} slid each stone across, and the {hero} knelt and pressed it into the dirt, twisting it until it sat solid and level. Pass, place. Pass, place. It was not exciting. But it had its own quiet rhythm, and after a while the {hero} noticed something surprising: the closer the fence came, the more the {hero} wanted to reach it. The gap shrank from fifteen stones to ten, to five, to two.
+'Hmm,' said {companion_name}, who had picked up one of the grey pieces and was turning it slowly over and over. 'The makers cut every piece on purpose. Even the dull ones. Especially, maybe, the dull ones.'
 
-The very last stone was a wide, flat one, and the {hero} chose it on purpose — a good stone to finish on. The {hero} fitted it snug against the fencepost. It clicked into place. And that was it. There was no gap left anywhere. The path ran unbroken from the gate to the fence, one clean line across the whole of {setting}.
+The {hero} snatched up a grey piece, ready to argue — ready to flick the boring thing clear over the hedge — and the moonlight caught it mid-grump. Hold it up to the moon, tilted, just so. Look deep inside the grey. Can you see it too? Tiny sparks. Dozens of them. Fast asleep.
 
-The {hero} walked it again. This time, at the end, there was no stopping short. The last stone carried the {hero} right up to the fence, exactly where the path had always been meant to arrive. It felt completely different from the almost-finished version. It felt like arriving.
+The {hero} went very still.
 
-It was such a small thing, those last fifteen stones — and yet without them the whole path would have led nowhere, stopping short in the weeds after all that work. Somehow the dull ending had mattered most of all.
+'They're not dull,' the {hero} whispered. 'They were never dull. They're moon-stone — they only wake in moonlight. The grey pieces are the sky, and the sky is the whole secret. The makers hid the best part inside the boring part, so only a finisher would ever find it. Finishing has its own kind of joy — that is what they saved for last!'
 
-"You did the whole thing," {companion_name} said, and there was real warmth in it. "Most people quit when the fun runs out, and their paths end in the weeds. Yours goes all the way. Finishing has its own kind of joy — you can only feel it once the last stone is down."
+So the {hero} stayed with it. Row by row, the old faithful way, dull piece after dull piece after dull piece, no skipping, no flicking, all the way across the top of the picture while the moon held its place and waited. The second-to-last piece stuck, turned round, and fit. The very last piece went in with a small, satisfied snick.
 
-And the {hero} could feel it: not the loud excitement of the beginning, but something calmer and steadier, a satisfaction that sat quietly in the chest. The {hero} held the {object_motif} and looked back along the finished path, gate to fence, every stone in its place. The evening settled soft and blue over {setting}, and the {hero} let out a long, contented breath, tired in the very best way.
+And the sky woke up.
+
+Every grey piece kindled at once, silver and slow, a hundred small stars catching the moonlight and passing it piece to piece until the whole top of the picture shimmered. Stars over the boat. Stars over the bird. Stars raining gentle light down onto the flowers and the winding path. And in the lowest corner, where the path ended, the picture showed a little mossy hollow with two small figures sitting side by side in it, watching a sky full of stars — just exactly like theirs.
+
+'{refrain},' whispered {companion_name}, settling in closer.
+
+They sat inside the glow for a long, unhurried while, finding favourite stars. The {hero} kept coming back to one: a single star, low in the stone sky, shining a colour the real sky did not have at all. Not silver. Not gold. Something else, something new. Where do you look for a colour like that?
+
+Tomorrow night. That was where.
+
+The glow softened, piece by piece, like banked embers. The moss was warm, and the hollow held them like a hand.
 
 {refrain}.`,
-    scriptTemplate: `For eleven days, {child_name} had been building a stone path across {setting}, and it was nearly the best thing {child_name} had ever made. It began at the old wooden gate and wound between the tall grasses, curving exactly where {child_name} had planned it to curve, dipping and rising with the land. Anyone could see it was going to be beautiful.
+    scriptTemplate: `The old stone picture had been lying in its mossy hollow in {setting} for longer than anyone could say — hundreds of small flat pieces, tumbled from their frame long ago and never put back. Beside the hollow, half swallowed by moss, a worn carving promised: finished by moonlight, it shows what it knows.
 
-Back at the start, the work had felt like magic. Every stone was a decision — this one flat, that one round, this one to fill the awkward corner. There was nothing quite like the moment a difficult stone finally dropped into place and sat there like it had always belonged. The path had grown a little longer each day, and each day {child_name} had run outside first thing to look at how far it had come. There was always something new to figure out, and figuring it out was the fun.
+Tonight the full moon would land squarely in that hollow, the first time all year. Which is why {child_name} the {hero} had spent every evening of the week rebuilding the picture properly, with a plan, the way stairs get climbed: corner first, then row by row, one small stretch at a time.
 
-But now, near the end, the magic had quietly slipped away. Only a short stretch remained, maybe fifteen stones' worth, a stubborn little gap between the path and the far fencepost where it was meant to finish. And {child_name} did not want to lay those last fifteen stones. The shapes were all decided now. There were no more clever choices to make. There was only the heavy, dull, aching work of lifting and setting, lifting and setting, until the gap closed. Every time {child_name} thought about it, some other task suddenly seemed more interesting.
+And oh, the picture that had come out of the jumble! A little boat with a patched sail. A bright bird, wings wide. A whole hedge of flowers, and a winding path stitched through the middle of it all. Every evening the picture grew, and {child_name} loved it more.
 
-{child_name} flopped down in the grass and stared at the sky. "It's done enough," {child_name} announced to no one in particular. "You can tell exactly where it goes. Everyone already knows it's a path. Why does the last bit even matter?"
+Until tonight. Only one part remained: the top. And the top was nothing. Dozens of pieces, every last one plain, flat, dull grey. No boat. No bird. Not one interesting corner in the pile.
 
-A shadow fell across the grass. {companion_name} had come to sit nearby, following the line of the path with careful eyes — all the way down to the place where it simply stopped, a few steps short of the fence. "It's the best thing you've built," {companion_name} said. "Then it's fine to leave it," said {child_name} quickly. "Almost is basically the same as done." "Is it, though?" {companion_name} asked, not unkindly. "Walk it for me."
+'Done enough,' {child_name} announced to the hollow. 'All the good parts are in. The moon can skip the sky. Everyone skips the sky.'
 
-{child_name} groaned but got up and walked it — from the gate, along the whole long curve, right to the end. And there, at the last laid stone, {child_name} had to stop, because the path stopped, and there was nothing to step onto but bare dirt and the fence a few feet off.
+The moon arrived right on time, sliding silver into the hollow. It touched the boat. It touched the bird. It lay across the flowers and the winding path.
 
-"See?" said {companion_name}, coming to stand beside the gap. "You remember what we said before — that a plan is a path. Well, here's the other half of it. A path is only finished when you walk its final stones. Right now, it takes you almost somewhere. Almost somewhere isn't the same as somewhere."
+Nothing happened. No glow, no secret, no shows-what-it-knows. Just a beautiful picture with a big bare hole where its sky belonged, and moonlight pooling in the gap like a question.
 
-{child_name} looked at the gap. It was true. The path led all that way and then just quit, dropping whoever walked it into the weeds. "But the fun part is over," {child_name} admitted, and it felt like a real confession. "The good bit was the middle. This last part is just boring." "I know," said {companion_name}, sitting down and rolling the {object_motif} closer. "The end of a hard thing is almost always the dull part. That's exactly why so many people stop right here. But we're not going to. Fifteen stones. You and me. I'll pass, you place."
+{child_name} got to work — the wrong kind of work. The bird was nudged closer to the middle, where the moon could admire it better. The {object_motif} was propped up on a stone to lend the moonlight a hand. The boat was polished with a corner of moss until it fairly gleamed. The moon remained politely unimpressed.
 
-So that's what they did. {companion_name} slid each stone across, and {child_name} knelt and pressed it into the dirt, twisting it until it sat solid and level. Pass, place. Pass, place. It was not exciting. But it had its own quiet rhythm, and after a while {child_name} noticed something surprising: the closer the fence came, the more {child_name} wanted to reach it. The gap shrank from fifteen stones to ten, to five, to two.
+'Hmm,' said {companion_name}, who had picked up one of the grey pieces and was turning it slowly over and over. 'The makers cut every piece on purpose. Even the dull ones. Especially, maybe, the dull ones.'
 
-The very last stone was a wide, flat one, and {child_name} chose it on purpose — a good stone to finish on. {child_name} fitted it snug against the fencepost. It clicked into place. And that was it. There was no gap left anywhere. The path ran unbroken from the gate to the fence, one clean line across the whole of {setting}.
+{child_name} snatched up a grey piece, ready to argue — ready to flick the boring thing clear over the hedge — and the moonlight caught it mid-grump. Hold it up to the moon, tilted, just so. Look deep inside the grey. Can you see it too? Tiny sparks. Dozens of them. Fast asleep.
 
-{child_name} walked it again. This time, at the end, there was no stopping short. The last stone carried {child_name} right up to the fence, exactly where the path had always been meant to arrive. It felt completely different from the almost-finished version. It felt like arriving.
+{child_name} went very still.
 
-It was such a small thing, those last fifteen stones — and yet without them the whole path would have led nowhere, stopping short in the weeds after all that work. Somehow the dull ending had mattered most of all.
+'They're not dull,' {child_name} whispered. 'They were never dull. They're moon-stone — they only wake in moonlight. The grey pieces are the sky, and the sky is the whole secret. The makers hid the best part inside the boring part, so only a finisher would ever find it. Finishing has its own kind of joy — that is what they saved for last!'
 
-"You did the whole thing," {companion_name} said, and there was real warmth in it. "Most people quit when the fun runs out, and their paths end in the weeds. Yours goes all the way. Finishing has its own kind of joy — you can only feel it once the last stone is down."
+So {child_name} stayed with it. Row by row, the old faithful way, dull piece after dull piece after dull piece, no skipping, no flicking, all the way across the top of the picture while the moon held its place and waited. The second-to-last piece stuck, turned round, and fit. The very last piece went in with a small, satisfied snick.
 
-And {child_name} could feel it: not the loud excitement of the beginning, but something calmer and steadier, a satisfaction that sat quietly in the chest. {child_name} held the {object_motif} and looked back along the finished path, gate to fence, every stone in its place. The evening settled soft and blue over {setting}, and {child_name} let out a long, contented breath, tired in the very best way.
+And the sky woke up.
+
+Every grey piece kindled at once, silver and slow, a hundred small stars catching the moonlight and passing it piece to piece until the whole top of the picture shimmered. Stars over the boat. Stars over the bird. Stars raining gentle light down onto the flowers and the winding path. And in the lowest corner, where the path ended, the picture showed a little mossy hollow with two small figures sitting side by side in it, watching a sky full of stars — just exactly like theirs.
+
+'{refrain},' whispered {companion_name}, settling in closer.
+
+They sat inside the glow for a long, unhurried while, finding favourite stars. {child_name} kept coming back to one: a single star, low in the stone sky, shining a colour the real sky did not have at all. Not silver. Not gold. Something else, something new. Where do you look for a colour like that?
+
+Tomorrow night. That was where.
+
+The glow softened, piece by piece, like banked embers. The moss was warm, and the hollow held them like a hand.
 
 {refrain}.`
   },
   '9-11': {
-    audioTemplate: `The path had been the {hero}'s whole world for the better part of two weeks. It ran out from the old gate and threaded its way across {setting}, a winding ribbon of fitted stones that followed the exact route the {hero} had mapped out on the very first morning. Back then it had been nothing but a line scratched in the dirt and a heap of loose rock. Now it was real — long and graceful and almost, almost complete.
+    audioTemplate: `Everyone in {setting} knew the broken picture in the mossy hollow, the way you know things you have walked past your whole life: hundreds of small flat stones, jumbled and face-down, spilled from a frame set into the ground longer ago than anyone living could say. And everyone knew the worn carving beside it: finished by moonlight, it shows what it knows.
 
-For most of those two weeks, the building had been the finest kind of work there is: hard enough to matter, but full of problems worth solving. Every stone posed a small puzzle. Which face should sit up? Where would this odd triangular one finally fit? How do you make a curve out of things that only come in straight and crooked shapes? The {hero} had lost whole afternoons to it without once feeling bored, because there had always been a next decision waiting, a next small victory to chase.
+What almost nobody knew — because almost nobody had checked — was that tonight's full moon would land directly in that hollow, dead centre, for the first time in years. The {hero} had checked, and had spent seven straight evenings rebuilding the picture the way big things get built: with a plan. Corner first. Then row by row, one small stretch a night — the same trick that once turned an unclimbable ridge into a staircase.
 
-The {hero} still remembered the afternoon the curve had finally come together — the way three stubborn stones had suddenly agreed to sit in a smooth arc, and how the {hero} had sat back on both heels and grinned at it like a puzzle solved. That was the feeling the whole project had promised, over and over: a problem, a struggle, and then the small bright click of getting it right.
+And the picture had bloomed under all that patience. A little boat with a patched sail. A bright bird caught mid-turn. A hedge of flowers, a winding path, a distant hill. Piece by piece the jumble had become somewhere — somewhere the {hero} half wished they could walk into.
 
-But that was the trouble with the end. The decisions had run out. Everything interesting had already been figured. What remained was a short, unglamorous stretch — a couple of arm-lengths of gap between the last laid stone and the fencepost where the path was supposed to arrive. Fifteen stones, maybe. And the {hero} knew, with a sinking sort of certainty, exactly how those fifteen stones would go: lift, turn, seat, press. No mystery. No cleverness. Just the same tired motion over and over until the gap was gone.
+One region remained: the top. The sky. And the sky, it turned out, was a heap of nothing. Dozens upon dozens of pieces, each one plain, flat, dull grey. No sail-corners. No wingtips. An entire evening of blank.
 
-It was strange, the {hero} thought, how the last little bit of a thing could feel so much heavier than all the rest of it put together. The middle had flown by. This end just sat there, dull and immovable, daring the {hero} to bother. And the honest truth — the truth the {hero} was slightly ashamed of — was that it would be so easy not to bother. The path already looked finished from a distance. Who would ever notice a gap of two arm-lengths near the fence?
+'Done enough,' the {hero} declared, standing back. 'Every good piece is placed. The moon gets a boat, a bird, a garden and a road. Nobody ever looked at a picture and complained about the sky.'
 
-So the {hero} sat down in the cool grass, leaned back on both hands, and made a quiet decision to be done. Not finished — done. There is a difference, and somewhere underneath, the {hero} knew it.
+The moon came anyway, right on schedule, and poured itself into the hollow. It lay across the boat. It silvered the bird's wing. It followed the winding path to the empty top of the picture — and stopped, pooling in the bare gap like a sentence with no ending.
 
-That was how {companion_name} found the scene: the long, beautiful, unfinished path, and its builder sprawled in the grass pretending not to care. {companion_name} did not say anything at first. They simply walked the length of it, slow and considering, eyes tracing every curve, until they reached the raw end where the stones gave out and the bare dirt began.
+No glow. No secret. Nothing known, nothing shown.
 
-"It's very nearly the best thing you've ever made," {companion_name} said at last. The {hero} heard the word that mattered. "Nearly," the {hero} repeated, a little defensively. "It's basically done. Anyone can see where it's meant to go." "Anyone can see where it's meant to go," {companion_name} agreed. "That's not the same as it going there. Get up a moment. Walk it with me."
+What followed was a quietly ridiculous half hour. The bird was relocated toward the centre, for prominence. The {object_motif} was propped at a strategic angle, to reinforce the moonlight. The boat was buffed until it shone like a spoon. Three flower pieces were rearranged into a more artistic cluster, in case the picture was being judged on composition. The moon declined to comment.
 
-The {hero} sighed the enormous sigh of someone who knows they are about to lose an argument, and got up. Together they walked it, from the gate along the whole sweeping curve, and it was lovely, truly lovely — right up until the moment it wasn't a path anymore, and the {hero} had to step off the last stone into scuffed dirt and weeds, with the fence still standing there, unreached, a few steps beyond.
+'Hmm,' said {companion_name}, who all this while had been turning one grey piece over and over. 'The makers cut every piece on purpose. Even the dull ones. Especially, maybe, the dull ones.'
 
-They stood at the gap in silence. "Do you remember," {companion_name} said, "what we worked out a while ago — that a plan is a path? This is the rest of that idea. A path is only finished when you walk its final stones. Until then it's a promise you've half-kept. It carries you almost to where you were going, and then it tips you into the weeds and leaves you there." The {hero} looked down at the scuffed dirt. It was hard to argue with, standing in it.
+'The dull ones are filler,' said the {hero}, snatching one up to flick it into the hedge — and the moonlight caught it mid-flick, at an angle nobody had tried all week. Tilt it, slowly, and look deep into the grey. Can you see it too? Sparks. Dozens of tiny sparks, buried in the stone like embers under ash. Fast asleep.
 
-"But it's the boring part now," the {hero} said, and this time it came out less like an excuse and more like a genuine complaint. "The whole good bit — the figuring, the fitting — that's all behind me. All that's left is just... doing it." "I know exactly what you mean," said {companion_name}, and the surprising thing was that they clearly did. They sat down at the edge of the gap and rolled the {object_motif} over within reach. "The end of anything worth doing is nearly always the flat, dull part. The excitement burns off and leaves the plain work behind. That's the precise spot where most things get abandoned — not at the hard beginning, but at the boring end. So let's not abandon this one. Fifteen stones. I'll hand, you set."
+The {hero} lowered the piece and stood absolutely still, feeling the whole week rearrange itself.
 
-There did not seem to be a graceful way to refuse, so the {hero} knelt down and set the first stone. {companion_name} passed the next, and the next. Lift, turn, seat, press. It was every bit as dull as the {hero} had feared — for about the first six stones.
+'They're moon-stone,' the {hero} said slowly. 'They drink moonlight — they only wake when the moon is on them. The grey pieces aren't the filler. The grey pieces are the sky, and the sky is what the picture knows. The makers hid the treasure inside the tedious part, where only a finisher would ever find it. Quitters get the boat and the bird. Finishers get the stars. Finishing has its own kind of joy — they built that promise into the very last row.'
 
-And then something quietly shifted, so gradually the {hero} almost missed it. The work had not changed at all; it was still lift, turn, seat, press. But the fence was getting closer. Ten stones became six. Six became three. And with each one that clicked into place, the finish stopped being an abstract idea somewhere off in the distance and became a thing the {hero} could almost touch. The dullness was still there — but running underneath it now was a thin, growing current of something else. The {hero} started to want to reach the end, not out of duty, but because the end was suddenly, thrillingly near.
+So the {hero} finished. Properly, the plan's way: row by row across the top, grey piece after grey piece, each one blank as porridge and each one — the {hero} now knew — holding its own small ember. It was not exciting work. That was the point of it. The excitement was waiting on the far side, the way the top of a ridge waits above the last few stairs. The second-to-last piece refused twice, then turned and settled. The last piece went in with a small, conclusive snick.
 
-The last stone the {hero} chose deliberately: a broad, flat one, the kind you could plant a firm foot on. The {hero} worked it into the final space, snug against the base of the fencepost, and pressed until it sat without a wobble. And that was it. There was no gap left anywhere along the whole length of the path. It ran unbroken from the gate to the fence, one continuous line laid stone by stone across the whole of {setting}.
+The sky woke up.
 
-The {hero} stood and walked it one more time — and this walk was nothing like the first. There was no stepping off into the weeds at the end. The final stone carried the {hero} straight to the fence, precisely where the path had been intended to lead since that first line scratched in the dirt two weeks before. The difference between almost and done, which had seemed so small from the grass, turned out to be the whole difference in the world.
+It did not flash. It kindled — one piece catching the moon, handing the light to its neighbour, silver spreading piece by piece until the hollow was roofed in small slow stars. Stars over the boat. Stars over the bird. Star-light running down the winding path like rain down a window. And at the path's end, in the lowest corner, the picture quietly showed a mossy hollow with two small figures side by side beneath a finished sky. It had known them all along.
 
-It was such a small stretch of stones, in the end — the part that had felt so impossibly heavy from the grass. Fifteen ordinary rocks. And yet leaving them undone would have quietly undone everything else, turned two weeks of real work into a path that led nowhere in particular and gave up at the last moment. The {hero} understood that now in a way that no one could have simply explained.
+'{refrain},' whispered {companion_name}, settling in shoulder-close.
 
-"There," said {companion_name}, quietly, standing at the finished end. "Feel that?" And the {hero} did feel it. It was not the bright, restless excitement of starting something new. It was slower and heavier and far more satisfying — the particular, settled contentment of a thing carried all the way through to its end. "Most people never get to feel this," {companion_name} went on. "They quit while the quitting is easy, right when the fun wears off, and they never find out what's waiting on the other side of the boring part. Finishing has its own kind of joy. You just earned it."
+They stayed a long time, finding favourite stars. The {hero}'s favourite was a puzzle: one star, low in the stone sky, burning a colour the real sky has never offered — not silver, not gold, something with no name yet. A colour you could go looking for. Tomorrow night, perhaps. The search would need a plan, and the {hero} was good at those now.
 
-The {hero} said nothing, because nothing needed saying. They stood together at the fence as the light went long and golden and then soft, looking back down the whole unbroken length of the path. The {hero} turned the {object_motif} over slowly, feeling the ordinary weight of it, and let out a breath that had been two weeks in the making — tired all the way down, and glad in a way that only finishing could have made possible.
+The glow banked itself slowly, piece by piece, like embers settling for the night. The moss was warm. The hollow held them.
 
 {refrain}.`,
-    scriptTemplate: `The path had been {child_name}'s whole world for the better part of two weeks. It ran out from the old gate and threaded its way across {setting}, a winding ribbon of fitted stones that followed the exact route {child_name} had mapped out on the very first morning. Back then it had been nothing but a line scratched in the dirt and a heap of loose rock. Now it was real — long and graceful and almost, almost complete.
+    scriptTemplate: `Everyone in {setting} knew the broken picture in the mossy hollow, the way you know things you have walked past your whole life: hundreds of small flat stones, jumbled and face-down, spilled from a frame set into the ground longer ago than anyone living could say. And everyone knew the worn carving beside it: finished by moonlight, it shows what it knows.
 
-For most of those two weeks, the building had been the finest kind of work there is: hard enough to matter, but full of problems worth solving. Every stone posed a small puzzle. Which face should sit up? Where would this odd triangular one finally fit? How do you make a curve out of things that only come in straight and crooked shapes? {child_name} had lost whole afternoons to it without once feeling bored, because there had always been a next decision waiting, a next small victory to chase.
+What almost nobody knew — because almost nobody had checked — was that tonight's full moon would land directly in that hollow, dead centre, for the first time in years. {child_name} the {hero} had checked, and had spent seven straight evenings rebuilding the picture the way big things get built: with a plan. Corner first. Then row by row, one small stretch a night — the same trick that once turned an unclimbable ridge into a staircase.
 
-{child_name} still remembered the afternoon the curve had finally come together — the way three stubborn stones had suddenly agreed to sit in a smooth arc, and how {child_name} had sat back on both heels and grinned at it like a puzzle solved. That was the feeling the whole project had promised, over and over: a problem, a struggle, and then the small bright click of getting it right.
+And the picture had bloomed under all that patience. A little boat with a patched sail. A bright bird caught mid-turn. A hedge of flowers, a winding path, a distant hill. Piece by piece the jumble had become somewhere — somewhere {child_name} half wished they could walk into.
 
-But that was the trouble with the end. The decisions had run out. Everything interesting had already been figured. What remained was a short, unglamorous stretch — a couple of arm-lengths of gap between the last laid stone and the fencepost where the path was supposed to arrive. Fifteen stones, maybe. And {child_name} knew, with a sinking sort of certainty, exactly how those fifteen stones would go: lift, turn, seat, press. No mystery. No cleverness. Just the same tired motion over and over until the gap was gone.
+One region remained: the top. The sky. And the sky, it turned out, was a heap of nothing. Dozens upon dozens of pieces, each one plain, flat, dull grey. No sail-corners. No wingtips. An entire evening of blank.
 
-It was strange, {child_name} thought, how the last little bit of a thing could feel so much heavier than all the rest of it put together. The middle had flown by. This end just sat there, dull and immovable, daring {child_name} to bother. And the honest truth — the truth {child_name} was slightly ashamed of — was that it would be so easy not to bother. The path already looked finished from a distance. Who would ever notice a gap of two arm-lengths near the fence?
+'Done enough,' {child_name} declared, standing back. 'Every good piece is placed. The moon gets a boat, a bird, a garden and a road. Nobody ever looked at a picture and complained about the sky.'
 
-So {child_name} sat down in the cool grass, leaned back on both hands, and made a quiet decision to be done. Not finished — done. There is a difference, and somewhere underneath, {child_name} knew it.
+The moon came anyway, right on schedule, and poured itself into the hollow. It lay across the boat. It silvered the bird's wing. It followed the winding path to the empty top of the picture — and stopped, pooling in the bare gap like a sentence with no ending.
 
-That was how {companion_name} found the scene: the long, beautiful, unfinished path, and its builder sprawled in the grass pretending not to care. {companion_name} did not say anything at first. They simply walked the length of it, slow and considering, eyes tracing every curve, until they reached the raw end where the stones gave out and the bare dirt began.
+No glow. No secret. Nothing known, nothing shown.
 
-"It's very nearly the best thing you've ever made," {companion_name} said at last. {child_name} heard the word that mattered. "Nearly," {child_name} repeated, a little defensively. "It's basically done. Anyone can see where it's meant to go." "Anyone can see where it's meant to go," {companion_name} agreed. "That's not the same as it going there. Get up a moment. Walk it with me."
+What followed was a quietly ridiculous half hour. The bird was relocated toward the centre, for prominence. The {object_motif} was propped at a strategic angle, to reinforce the moonlight. The boat was buffed until it shone like a spoon. Three flower pieces were rearranged into a more artistic cluster, in case the picture was being judged on composition. The moon declined to comment.
 
-{child_name} sighed the enormous sigh of someone who knows they are about to lose an argument, and got up. Together they walked it, from the gate along the whole sweeping curve, and it was lovely, truly lovely — right up until the moment it wasn't a path anymore, and {child_name} had to step off the last stone into scuffed dirt and weeds, with the fence still standing there, unreached, a few steps beyond.
+'Hmm,' said {companion_name}, who all this while had been turning one grey piece over and over. 'The makers cut every piece on purpose. Even the dull ones. Especially, maybe, the dull ones.'
 
-They stood at the gap in silence. "Do you remember," {companion_name} said, "what we worked out a while ago — that a plan is a path? This is the rest of that idea. A path is only finished when you walk its final stones. Until then it's a promise you've half-kept. It carries you almost to where you were going, and then it tips you into the weeds and leaves you there." {child_name} looked down at the scuffed dirt. It was hard to argue with, standing in it.
+'The dull ones are filler,' said {child_name}, snatching one up to flick it into the hedge — and the moonlight caught it mid-flick, at an angle nobody had tried all week. Tilt it, slowly, and look deep into the grey. Can you see it too? Sparks. Dozens of tiny sparks, buried in the stone like embers under ash. Fast asleep.
 
-"But it's the boring part now," {child_name} said, and this time it came out less like an excuse and more like a genuine complaint. "The whole good bit — the figuring, the fitting — that's all behind me. All that's left is just... doing it." "I know exactly what you mean," said {companion_name}, and the surprising thing was that they clearly did. They sat down at the edge of the gap and rolled the {object_motif} over within reach. "The end of anything worth doing is nearly always the flat, dull part. The excitement burns off and leaves the plain work behind. That's the precise spot where most things get abandoned — not at the hard beginning, but at the boring end. So let's not abandon this one. Fifteen stones. I'll hand, you set."
+{child_name} lowered the piece and stood absolutely still, feeling the whole week rearrange itself.
 
-There did not seem to be a graceful way to refuse, so {child_name} knelt down and set the first stone. {companion_name} passed the next, and the next. Lift, turn, seat, press. It was every bit as dull as {child_name} had feared — for about the first six stones.
+'They're moon-stone,' {child_name} said slowly. 'They drink moonlight — they only wake when the moon is on them. The grey pieces aren't the filler. The grey pieces are the sky, and the sky is what the picture knows. The makers hid the treasure inside the tedious part, where only a finisher would ever find it. Quitters get the boat and the bird. Finishers get the stars. Finishing has its own kind of joy — they built that promise into the very last row.'
 
-And then something quietly shifted, so gradually {child_name} almost missed it. The work had not changed at all; it was still lift, turn, seat, press. But the fence was getting closer. Ten stones became six. Six became three. And with each one that clicked into place, the finish stopped being an abstract idea somewhere off in the distance and became a thing {child_name} could almost touch. The dullness was still there — but running underneath it now was a thin, growing current of something else. {child_name} started to want to reach the end, not out of duty, but because the end was suddenly, thrillingly near.
+So {child_name} finished. Properly, the plan's way: row by row across the top, grey piece after grey piece, each one blank as porridge and each one — {child_name} now knew — holding its own small ember. It was not exciting work. That was the point of it. The excitement was waiting on the far side, the way the top of a ridge waits above the last few stairs. The second-to-last piece refused twice, then turned and settled. The last piece went in with a small, conclusive snick.
 
-The last stone {child_name} chose deliberately: a broad, flat one, the kind you could plant a firm foot on. {child_name} worked it into the final space, snug against the base of the fencepost, and pressed until it sat without a wobble. And that was it. There was no gap left anywhere along the whole length of the path. It ran unbroken from the gate to the fence, one continuous line laid stone by stone across the whole of {setting}.
+The sky woke up.
 
-{child_name} stood and walked it one more time — and this walk was nothing like the first. There was no stepping off into the weeds at the end. The final stone carried {child_name} straight to the fence, precisely where the path had been intended to lead since that first line scratched in the dirt two weeks before. The difference between almost and done, which had seemed so small from the grass, turned out to be the whole difference in the world.
+It did not flash. It kindled — one piece catching the moon, handing the light to its neighbour, silver spreading piece by piece until the hollow was roofed in small slow stars. Stars over the boat. Stars over the bird. Star-light running down the winding path like rain down a window. And at the path's end, in the lowest corner, the picture quietly showed a mossy hollow with two small figures side by side beneath a finished sky. It had known them all along.
 
-It was such a small stretch of stones, in the end — the part that had felt so impossibly heavy from the grass. Fifteen ordinary rocks. And yet leaving them undone would have quietly undone everything else, turned two weeks of real work into a path that led nowhere in particular and gave up at the last moment. {child_name} understood that now in a way that no one could have simply explained.
+'{refrain},' whispered {companion_name}, settling in shoulder-close.
 
-"There," said {companion_name}, quietly, standing at the finished end. "Feel that?" And {child_name} did feel it. It was not the bright, restless excitement of starting something new. It was slower and heavier and far more satisfying — the particular, settled contentment of a thing carried all the way through to its end. "Most people never get to feel this," {companion_name} went on. "They quit while the quitting is easy, right when the fun wears off, and they never find out what's waiting on the other side of the boring part. Finishing has its own kind of joy. You just earned it."
+They stayed a long time, finding favourite stars. {child_name}'s favourite was a puzzle: one star, low in the stone sky, burning a colour the real sky has never offered — not silver, not gold, something with no name yet. A colour you could go looking for. Tomorrow night, perhaps. The search would need a plan, and {child_name} was good at those now.
 
-{child_name} said nothing, because nothing needed saying. They stood together at the fence as the light went long and golden and then soft, looking back down the whole unbroken length of the path. {child_name} turned the {object_motif} over slowly, feeling the ordinary weight of it, and let out a breath that had been two weeks in the making — tired all the way down, and glad in a way that only finishing could have made possible.
+The glow banked itself slowly, piece by piece, like embers settling for the night. The moss was warm. The hollow held them.
 
 {refrain}.`
-  },
+  }
 },
-    audioTemplate: `Most of the work was done. In {setting}, under the {object_motif}'s glow, the {hero} looked at the little that was left and sighed.
+    audioTemplate: `In a mossy hollow in {setting} lay an old stone picture, tumbled into a hundred little pieces long ago. Beside it, a worn carving read: finished by moonlight, it shows what it knows.
 
-"The fun part is over," said the {hero}. "Can I stop now?"
+All week the {hero} had been putting it back together with a plan — corner first, then row by row, like stones on a path. And what a picture! A little boat. A bright bird. A whole hedge of flowers.
 
-{companion_name} looked at the path they had walked — so many stones already behind them. "You laid this whole path," they said. "Only the last few stones remain. Would you like to feel how it feels to finish?"
+Tonight the full moon would land right in the hollow. Only one part was left: the top. Dozens of pieces, every one plain, dull grey. No boats. No birds. Nothing.
 
-The {hero} was tired, but curious. One more step. Then one more. The {object_motif} brightened with each, the way a sunrise grows.
+'Done enough,' the {hero} declared. 'The moon will see the good parts. Who needs a grey sky?'
 
-And then there were no stones left. It was done — truly, completely done.
+The moon slid in. It touched the boat, the bird, the flowers... and nothing happened. No glow. No secret. Just a picture with a hole where its sky should be.
 
-A warm, quiet feeling filled the {hero}, better than they expected. "I finished it," they breathed. "All the way."
+The {hero} tried helping. The bird got nudged to the middle. The {object_motif} got propped up to boost the moon. The boat got polished till it shone. Still nothing.
 
-"Finishing has its own kind of joy," said {companion_name}. "And now you know it."
+'Hmm,' said {companion_name}, turning one grey piece over and over. 'The makers cut every piece on purpose. Even the dull ones. Especially, maybe, the dull ones.'
 
-The {hero} rested, the {object_motif} steady and proud beside them.
+The {hero} picked up a grey piece to flick it away — and stopped. Hold it up to the moon and look deep inside. Can you see it too? Tiny sparks, fast asleep.
+
+'Oh!' breathed the {hero}. 'The grey pieces are the sky! They only wake in moonlight. The makers hid the best part in the boring part — you only find it if you finish. Finishing has its own kind of joy, and they saved it for last!'
+
+So the {hero} stayed with it, row by row, dull piece by dull piece, to the very end. The last one went in with a tiny snick.
+
+And the sky woke up. Every grey piece kindled silver — a hundred small stars over the boat and the bird and the flowers. And in the corner of the picture, a little stone hollow held two small figures, sitting just like them.
+
+'{refrain},' whispered {companion_name}.
+
+They sat in the glow a long, quiet time. One star in the stone sky was a colour the real sky did not have. Something to look for tomorrow night.
+
+The glow softened. The moss was warm.
 
 {refrain}.`,
-    scriptTemplate: `Most of the work was done. In {setting}, under the {object_motif}'s glow, {child_name} the {hero} looked at the little that was left and sighed.
+    scriptTemplate: `In a mossy hollow in {setting} lay an old stone picture, tumbled into a hundred little pieces long ago. Beside it, a worn carving read: finished by moonlight, it shows what it knows.
 
-"The fun part is over," said {child_name}. "Can I stop now?"
+All week {child_name} the {hero} had been putting it back together with a plan — corner first, then row by row, like stones on a path. And what a picture! A little boat. A bright bird. A whole hedge of flowers.
 
-{companion_name} looked at the path they had walked — so many stones already behind them. "You laid this whole path, {child_name}," they said. "Only the last few stones remain. Would you like to feel how it feels to finish?"
+Tonight the full moon would land right in the hollow. Only one part was left: the top. Dozens of pieces, every one plain, dull grey. No boats. No birds. Nothing.
 
-{child_name} was tired, but curious. One more step. Then one more. The {object_motif} brightened with each, the way a sunrise grows.
+'Done enough,' {child_name} declared. 'The moon will see the good parts. Who needs a grey sky?'
 
-And then there were no stones left. It was done — truly, completely done.
+The moon slid in. It touched the boat, the bird, the flowers... and nothing happened. No glow. No secret. Just a picture with a hole where its sky should be.
 
-A warm, quiet feeling filled {child_name}, better than they expected. "I finished it," {child_name} breathed. "All the way."
+{child_name} tried helping. The bird got nudged to the middle. The {object_motif} got propped up to boost the moon. The boat got polished till it shone. Still nothing.
 
-"Finishing has its own kind of joy," said {companion_name}. "And now you know it."
+'Hmm,' said {companion_name}, turning one grey piece over and over. 'The makers cut every piece on purpose. Even the dull ones. Especially, maybe, the dull ones.'
 
-{child_name} rested, the {object_motif} steady and proud beside them.
+{child_name} picked up a grey piece to flick it away — and stopped. Hold it up to the moon and look deep inside. Can you see it too? Tiny sparks, fast asleep.
+
+'Oh!' breathed {child_name}. 'The grey pieces are the sky! They only wake in moonlight. The makers hid the best part in the boring part — you only find it if you finish. Finishing has its own kind of joy, and they saved it for last!'
+
+So {child_name} stayed with it, row by row, dull piece by dull piece, to the very end. The last one went in with a tiny snick.
+
+And the sky woke up. Every grey piece kindled silver — a hundred small stars over the boat and the bird and the flowers. And in the corner of the picture, a little stone hollow held two small figures, sitting just like them.
+
+'{refrain},' whispered {companion_name}.
+
+They sat in the glow a long, quiet time. One star in the stone sky was a colour the real sky did not have. Something to look for tomorrow night.
+
+The glow softened. The moss was warm.
 
 {refrain}.`,
   },
 
   {
-    ordinal: 5, title: 'The Goal You Choose',
-    concept: 'Choosing your own goal and steadily working toward it', callback: 'Finishing what you start (Level 4)', ageFloor: 5,
-    summary: 'The capstone: the hero picks a goal that matters to them and uses everything they have learned — one thing at a time, a plan, coming back when they drift, finishing the last steps — to reach it themselves. It draws the whole path together around a goal the child chooses.',
-    teachingNote: 'When a child can choose a goal and steadily pursue it, every focus skill from the path is working together in something they truly want.',
-    learningBeat: 'mine to choose',
+    ordinal: 5, title: "The Corner That Waited",
+    concept: "Choosing your own goal and steadily working toward it", callback: "Finishing what you start (Level 4)", ageFloor: 5,
+    summary: "It is Choosing Night, when every young one picks a task and sees it through by moonhigh — and everyone has loud ideas about what the hero should pick. But the grand choices fit like someone else's boots, and the hero's eyes keep drifting to a tumbledown little corner seat labelled 'for whoever chooses it.' Choosing it, and steadily finishing it with every skill the path has taught, uncovers the old builder's secret: the prize was never hidden in the nook at all.",
+    teachingNote: "When a child can choose a goal for themselves and steadily carry it to the end, every focus skill they have learned is finally working together on something they truly want.",
+    learningBeat: "mine to choose",
     ageVariants: {
   '3-4': {
-    audioTemplate: `The {hero} woke up in {setting}. The sun was soft and pink. The birds were singing. The water was calm.
+    audioTemplate: `It was Choosing Night in {setting}! Everyone picked one job and did it, all the way to done.
 
-Today felt like a big day. The {hero} wanted to do one thing. One special thing. Not a thing anyone else said. A thing the {hero} truly wanted.
+'Pick the big shiny tower!' said the big ones. 'Pick the great bell!'
 
-"I want to build a little boat," said the {hero}. "All by myself."
+But the {hero}'s eyes kept going to the little broken corner seat, crooked and mossy. Its old sign said: for whoever chooses it.
 
-{companion_name} sat close. "You picked that goal. Not me. That is what makes it strong."
+Nobody ever chose it.
 
-The {hero} held the {object_motif} and thought.
+'This one is mine,' said the {hero}. 'Mine to choose!'
 
-"This goal is mine to choose," said the {hero}.
+The {hero} lifted the crooked stone. Creak! Underneath lay a tiny old note. Can you see it too? It said: finish me your way. The prize is not a thing.
 
-A goal is a thing you want to reach. The {hero} had a plan. A plan of small steps. One step at a time.
+The {hero} got to work. One stone straight. Two stones. Three! Then the mossy bits, even the boring ones. All the way to done.
 
-First step: find the sticks. The {hero} looked and looked. The {hero} found three good sticks. Not too long. Not too short. Just right.
+Last, the {hero} hung the {object_motif} on the seat's little hook. It glowed!
 
-Second step: tie them tight. The {hero} pulled the string. Slow and careful.
+And the moon rose right in front of the seat. The best moon-watching spot of all!
 
-A bigger kid ran by. "Come and play!" they called.
+'{refrain},' whispered {companion_name}, snuggling close.
 
-The {hero} wanted to run too. The feet wiggled. But the boat was not done.
+The note was right. The prize was the warm, proud feeling inside.
 
-The {hero} looked at {companion_name}. {companion_name} did not say much. {companion_name} just waited.
+The {hero} tucked a new note under the stone. For the next chooser. Shhh.
 
-The {hero} rubbed both eyes. Then the {hero} looked back at the little boat.
-
-"I will come soon," said the {hero}. "First I finish my boat."
-
-Third step: make a little sail. The {hero} used a leaf. The leaf stood up tall.
-
-Almost done. Just one more step.
-
-The last step is always the hardest. The {hero} was tired. One thing at a time, thought the {hero}. Just this one last thing.
-
-The {hero} pushed the last stick in place. And then the boat was done!
-
-The {hero} set the boat in the water. It floated! It bobbed and spun and floated. The boat was small. But it was the {hero}'s own.
-
-"You did it," said {companion_name}. "You chose the goal. You did every step. You."
-
-Every step was done by the {hero}. Every single one.
-
-The little boat sat in the calm water. It did not sink. It did not tip. It just floated.
-
-The moon came up over {setting}. Slow and round and kind.
-
-The {hero} held the {object_motif} close and gave a big, sleepy smile.
-
-One goal. Chosen. Finished.
+Sleepy moon. Cozy seat.
 
 {refrain}.`,
-    scriptTemplate: `{child_name} woke up in {setting}. The sun was soft and pink. The birds were singing. The water was calm.
+    scriptTemplate: `It was Choosing Night in {setting}! Everyone picked one job and did it, all the way to done.
 
-Today felt like a big day. {child_name} wanted to do one thing. One special thing. Not a thing anyone else said. A thing {child_name} truly wanted.
+'Pick the big shiny tower!' said the big ones. 'Pick the great bell!'
 
-"I want to build a little boat," said {child_name}. "All by myself."
+But {child_name} the {hero}'s eyes kept going to the little broken corner seat, crooked and mossy. Its old sign said: for whoever chooses it.
 
-{companion_name} sat close. "You picked that goal. Not me. That is what makes it strong."
+Nobody ever chose it.
 
-{child_name} held the {object_motif} and thought.
+'This one is mine,' said {child_name}. 'Mine to choose!'
 
-"This goal is mine to choose," said {child_name}.
+{child_name} lifted the crooked stone. Creak! Underneath lay a tiny old note. Can you see it too? It said: finish me your way. The prize is not a thing.
 
-A goal is a thing you want to reach. {child_name} had a plan. A plan of small steps. One step at a time.
+{child_name} got to work. One stone straight. Two stones. Three! Then the mossy bits, even the boring ones. All the way to done.
 
-First step: find the sticks. {child_name} looked and looked. {child_name} found three good sticks. Not too long. Not too short. Just right.
+Last, {child_name} hung the {object_motif} on the seat's little hook. It glowed!
 
-Second step: tie them tight. {child_name} pulled the string. Slow and careful.
+And the moon rose right in front of the seat. The best moon-watching spot of all!
 
-A bigger kid ran by. "Come and play!" they called.
+'{refrain},' whispered {companion_name}, snuggling close.
 
-{child_name} wanted to run too. The feet wiggled. But the boat was not done.
+The note was right. The prize was the warm, proud feeling inside.
 
-{child_name} looked at {companion_name}. {companion_name} did not say much. {companion_name} just waited.
+{child_name} tucked a new note under the stone. For the next chooser. Shhh.
 
-{child_name} rubbed both eyes. Then {child_name} looked back at the little boat.
-
-"I will come soon," said {child_name}. "First I finish my boat."
-
-Third step: make a little sail. {child_name} used a leaf. The leaf stood up tall.
-
-Almost done. Just one more step.
-
-The last step is always the hardest. {child_name} was tired. One thing at a time, thought {child_name}. Just this one last thing.
-
-{child_name} pushed the last stick in place. And then the boat was done!
-
-{child_name} set the boat in the water. It floated! It bobbed and spun and floated. The boat was small. But it was {child_name}'s own.
-
-"You did it," said {companion_name}. "You chose the goal. You did every step. You."
-
-Every step was done by {child_name}. Every single one.
-
-The little boat sat in the calm water. It did not sink. It did not tip. It just floated.
-
-The moon came up over {setting}. Slow and round and kind.
-
-{child_name} held the {object_motif} close and gave a big, sleepy smile.
-
-One goal. Chosen. Finished.
+Sleepy moon. Cozy seat.
 
 {refrain}.`
   },
   '5-6': {
-    audioTemplate: `The morning came slow and golden over {setting}, and the {hero} was already awake, because today was the day the {hero} had been waiting for all week.
+    audioTemplate: `Once a year in {setting} came Choosing Night: pick one task at sunset, carry it to done by moonhigh. Tonight was the {hero}'s first, and the {hero} wanted so much to choose right.
 
-For seven whole days, the {hero} had wanted to make a map. Not any map. A real map of the whole of {setting}, drawn by the {hero} and nobody else. No one had asked for it. No one had said the {hero} had to make it. That was exactly why it mattered so much.
+Everyone had ideas. 'Polish the great bell!' called the big ones. 'Stack the tallest tower! That is what we would pick!'
 
-"That's a big goal," said {companion_name}, walking up quietly and sitting down on the warm ground.
+So the {hero} tried. Three polishes into the bell, it felt like singing somebody else's song. Two stones into the tower, the same wrong feeling.
 
-"It's mine to choose," said the {hero}. "So I chose a big one."
+All the while, the {hero}'s eyes kept drifting to the quiet corner, where a little tumbledown seat sat crooked under the moss. Its worn sign said: for whoever chooses it. Nobody ever chose it.
 
-{companion_name} nodded slowly. "A goal you pick yourself pulls harder than one someone hands you. Now, remember: one thing at a time."
+'Hmm,' said {companion_name}. 'Nobody can hand you the right one. That is the only rule there is.'
 
-The {hero} held the {object_motif} and made a plan. Small steps, in order. Step one: walk the shore and mark every rock. Step two: draw the tall hill. Step three: find the hidden path and follow it. Step four: add all the names. Four steps. That was the whole plan.
+Up close, the little seat was not junk. Somebody long ago had started it with care, and never finished.
 
-Step one went well. The {hero} walked the shore slowly and counted seven rocks, drawing each one just where it sat, big and small, near and far.
+The {hero} lifted the crooked corner stone to straighten it. Creak! Underneath — look close. Something pale and folded. Can you see it too? Writing.
 
-But halfway through step two, a group of kids came by, laughing and rolling a hoop across the sand. "Come play with us!" one of them called out.
+The note said: I began this for whoever chooses it. Finish it any way you like. The prize is not under any stone.
 
-The {hero} looked up. The hill was only half drawn. The pencil suddenly felt heavy in the {hero}'s hand. For a moment, the {hero} almost put the map down in the sand and ran off to play.
+'Then this one is mine,' said the {hero}. 'Not the biggest. Not the loudest. Mine to choose.'
 
-{companion_name} did not scold, and did not say hurry up. {companion_name} only asked, in a calm voice, "Where were you before they called?"
+And the {hero} worked the way the whole path had taught. One thing at a time. Small steps: stones, then seat, then moss. When cheering tugged at the {hero}'s thoughts, the {hero} noticed, and came gently back. The last dull stretch got finished too, all the way — finishing is where the best part hides.
 
-The {hero} blinked. "The hill. I was drawing the hill."
+Last of all, the {hero} hung the {object_motif} on the seat's empty hook. Made to hold a light, all along.
 
-"Then that is where you go back to," said {companion_name}. "Noticing that you drifted is part of the work. You just did the hardest bit."
+Then the moon rose — right in front of the seat. The little corner faced the moonrise exactly. The finest moon-watching seat in {setting}, waiting to be chosen.
 
-So the {hero} came back to the hill. It was easier than it looked, once the {hero} started the line again. Little by little, the hill grew tall and rounded on the page, exactly like the real one.
+'{refrain},' whispered {companion_name}, climbing up beside the {hero}.
 
-Step three was harder. The hidden path kept curving in ways the {hero} could not guess from far away. The {hero} wanted to skip it and just draw a straight line instead. But skipping it would leave a hole in the map, and the {hero} would always know that hole was there.
+The note was right. The prize was not under any stone. It was the warm, steady feeling of a thing chosen, and carried, and done.
 
-"I'll follow it all the way," the {hero} decided. And the {hero} did, walking and drawing one bend at a time, until the whole winding path lay on the page.
+Before bed, the {hero} tucked a new note under the corner stone, for the next chooser. What it said was a secret for someone not yet come.
 
-Now only the last step was left. The names. The {hero}'s hand was tired and a little smudged. This was the part where a person might stop, so close to done, and call it good enough and wander away.
-
-The {hero} did not stop. Rock by rock, then the hill, the path, and the shore, the {hero} carefully wrote out every single name.
-
-And then, at last, the map was finished. The whole of {setting}, on one page, made from start to end by the {hero}.
-
-{companion_name} looked at it for a long, quiet time. "You picked this yourself. You planned it. When you wandered off, you noticed and came back. And you finished the last part when it would have been easy to quit. That was all you, start to finish."
-
-The {hero} looked down at the map and felt something steady and warm, like a small lamp lit somewhere inside.
-
-Far off, the first stars began to prick through the sky over {setting}. The {hero} rolled the map up gently and held the {object_motif} in one hand, far too pleased to feel sleepy, though sleep was quietly coming anyway.
-
-One goal, chosen and reached, step by careful step, by the {hero} alone.
+The moon climbed slow. The seat held them both.
 
 {refrain}.`,
-    scriptTemplate: `The morning came slow and golden over {setting}, and {child_name} was already awake, because today was the day {child_name} had been waiting for all week.
+    scriptTemplate: `Once a year in {setting} came Choosing Night: pick one task at sunset, carry it to done by moonhigh. Tonight was {child_name} the {hero}'s first, and {child_name} wanted so much to choose right.
 
-For seven whole days, {child_name} had wanted to make a map. Not any map. A real map of the whole of {setting}, drawn by {child_name} and nobody else. No one had asked for it. No one had said {child_name} had to make it. That was exactly why it mattered so much.
+Everyone had ideas. 'Polish the great bell!' called the big ones. 'Stack the tallest tower! That is what we would pick!'
 
-"That's a big goal," said {companion_name}, walking up quietly and sitting down on the warm ground.
+So {child_name} tried. Three polishes into the bell, it felt like singing somebody else's song. Two stones into the tower, the same wrong feeling.
 
-"It's mine to choose," said {child_name}. "So I chose a big one."
+All the while, {child_name}'s eyes kept drifting to the quiet corner, where a little tumbledown seat sat crooked under the moss. Its worn sign said: for whoever chooses it. Nobody ever chose it.
 
-{companion_name} nodded slowly. "A goal you pick yourself pulls harder than one someone hands you. Now, remember: one thing at a time."
+'Hmm,' said {companion_name}. 'Nobody can hand you the right one. That is the only rule there is.'
 
-{child_name} held the {object_motif} and made a plan. Small steps, in order. Step one: walk the shore and mark every rock. Step two: draw the tall hill. Step three: find the hidden path and follow it. Step four: add all the names. Four steps. That was the whole plan.
+Up close, the little seat was not junk. Somebody long ago had started it with care, and never finished.
 
-Step one went well. {child_name} walked the shore slowly and counted seven rocks, drawing each one just where it sat, big and small, near and far.
+{child_name} lifted the crooked corner stone to straighten it. Creak! Underneath — look close. Something pale and folded. Can you see it too? Writing.
 
-But halfway through step two, a group of kids came by, laughing and rolling a hoop across the sand. "Come play with us!" one of them called out.
+The note said: I began this for whoever chooses it. Finish it any way you like. The prize is not under any stone.
 
-{child_name} looked up. The hill was only half drawn. The pencil suddenly felt heavy in {child_name}'s hand. For a moment, {child_name} almost put the map down in the sand and ran off to play.
+'Then this one is mine,' said {child_name}. 'Not the biggest. Not the loudest. Mine to choose.'
 
-{companion_name} did not scold, and did not say hurry up. {companion_name} only asked, in a calm voice, "Where were you before they called?"
+And {child_name} worked the way the whole path had taught. One thing at a time. Small steps: stones, then seat, then moss. When cheering tugged at {child_name}'s thoughts, {child_name} noticed, and came gently back. The last dull stretch got finished too, all the way — finishing is where the best part hides.
 
-{child_name} blinked. "The hill. I was drawing the hill."
+Last of all, {child_name} hung the {object_motif} on the seat's empty hook. Made to hold a light, all along.
 
-"Then that is where you go back to," said {companion_name}. "Noticing that you drifted is part of the work. You just did the hardest bit."
+Then the moon rose — right in front of the seat. The little corner faced the moonrise exactly. The finest moon-watching seat in {setting}, waiting to be chosen.
 
-So {child_name} came back to the hill. It was easier than it looked, once {child_name} started the line again. Little by little, the hill grew tall and rounded on the page, exactly like the real one.
+'{refrain},' whispered {companion_name}, climbing up beside {child_name}.
 
-Step three was harder. The hidden path kept curving in ways {child_name} could not guess from far away. {child_name} wanted to skip it and just draw a straight line instead. But skipping it would leave a hole in the map, and {child_name} would always know that hole was there.
+The note was right. The prize was not under any stone. It was the warm, steady feeling of a thing chosen, and carried, and done.
 
-"I'll follow it all the way," {child_name} decided. And {child_name} did, walking and drawing one bend at a time, until the whole winding path lay on the page.
+Before bed, {child_name} tucked a new note under the corner stone, for the next chooser. What it said was a secret for someone not yet come.
 
-Now only the last step was left. The names. {child_name}'s hand was tired and a little smudged. This was the part where a person might stop, so close to done, and call it good enough and wander away.
-
-{child_name} did not stop. Rock by rock, then the hill, the path, and the shore, {child_name} carefully wrote out every single name.
-
-And then, at last, the map was finished. The whole of {setting}, on one page, made from start to end by {child_name}.
-
-{companion_name} looked at it for a long, quiet time. "You picked this yourself. You planned it. When you wandered off, you noticed and came back. And you finished the last part when it would have been easy to quit. That was all you, start to finish."
-
-{child_name} looked down at the map and felt something steady and warm, like a small lamp lit somewhere inside.
-
-Far off, the first stars began to prick through the sky over {setting}. {child_name} rolled the map up gently and held the {object_motif} in one hand, far too pleased to feel sleepy, though sleep was quietly coming anyway.
-
-One goal, chosen and reached, step by careful step, by {child_name} alone.
+The moon climbed slow. The seat held them both.
 
 {refrain}.`
   },
   '7-8': {
-    audioTemplate: `There was a flat grey stone at the edge of {setting} that the {hero} had walked past a hundred times. It was the perfect size for a bridge. On the far side of the little stream, where nobody ever went, there was a patch of the softest moss and a tree that leaned just right for climbing. The {hero} had wanted, for a long time, to build a bridge across to it, and to have the moss side be a place the {hero} could reach any day, dry-footed, on a bridge nobody else had thought to make.
+    audioTemplate: `Once a year, when the first frost-smelling wind came through {setting}, came Choosing Night. The rules were old and simple: at sunset, every young one chose a task — any task — and carried it to done by moonhigh. Not the biggest task. Just one, truly chosen, truly finished.
 
-Nobody had suggested the bridge. No grown-up had set it as a task. No one else even seemed to want the moss side the way the {hero} did. That was the whole point. It was the {hero}'s idea, start to finish, wanted for the {hero}'s own reasons.
+Tonight was the {hero}'s first, and the {hero} had been nervous for days. Because everyone had ideas.
 
-"You've got that look," said {companion_name}, appearing at the {hero}'s shoulder. "The one you get when you've decided something."
+'Polish the great bell!' said the big ones. 'The whole night cheers for the bell-shiner!'
 
-"I'm going to build a bridge," said the {hero}. "To the moss side. Today."
+'Stack the tallest stone tower!' said the clever ones. 'That is what we would pick.'
 
-{companion_name} studied the stream, then the {hero}. "That's your goal, then. Truly yours?"
+So the {hero}, wanting badly to choose right, tried on the choices everyone else held out. The great bell first: three polishes in, it felt exactly like wearing somebody else's boots. Heavy in the wrong places. The tower next: two stones up, the same wrong-boots feeling, plus a squashed toe.
 
-"Nobody gave it to me," said the {hero}. "It's mine to choose, and I choose this."
+And here was the odd thing. All evening, the {hero}'s eyes kept wandering off on their own — and always to the same place. The quiet corner. Where a little tumbledown seat slumped under years of moss, crooked as a bad tooth, with a worn sign on its post: for whoever chooses it.
 
-"Good," said {companion_name}. "A goal you own is one you'll actually finish. So don't try to do it all at once. What's the first small piece?"
+Nobody chose it. Nobody ever had, as far back as anyone could remember.
 
-The {hero} turned the {object_motif} over in one hand while thinking, the way some people think better with something to hold. "First, flat stones. Enough to step across. Then something to hold onto, so it's steady. Then a rail, maybe. One piece at a time."
+The {hero} noticed the drift — noticing was an old friend by now — and this time, instead of dragging their attention back to the bell, the {hero} followed it.
 
-"Then start with the stones," said {companion_name}, and settled down on the bank to watch, not to help.
+'Hmm,' said {companion_name}, falling in alongside. 'Nobody can hand you the right one. That is the only rule there is.'
 
-The first part was almost fun. The {hero} hunted along the shore for flat stones and carried them over one by one, fitting them into the stream bed like pieces of a puzzle. Splash, set, test with a foot. Splash, set, test. Some stones tipped and had to be pulled out and set again a little differently, and the {hero} learned to press each one down until it stopped rocking before trusting it. Four stones in, the {hero} could stand in the middle of the stream without wet feet, and it felt like proof that the whole thing might actually work.
+Up close, the little seat was not junk. It was almost something. Somebody, long ago, had begun it with real care — the joints were true under the moss, a small hook set by the headrest just so — and then stopped. It was a started thing, waiting to be finished.
 
-Then the middle got deep, and the work got slow, and something happened that always happens. The {hero} started to think about other things. A bird with a bright wing. What might be for supper. Whether the moss side was even as good as it looked from here. The {hero}'s hands slowed, and then stopped, and the {hero} just stood there in the shallows, staring at nothing.
+The {hero} lifted the crooked corner stone to set it straight. Creak. And there, underneath — look close, in the stone's shadow. Something pale, and folded, and older than old. Can you see it too? Writing.
 
-{companion_name} did not shout across a reminder. {companion_name} waited until the {hero} looked over, and then said only, "You went somewhere. Where'd you go?"
+The note said: I began this and left it for whoever chooses it. Finish it any way you like. The prize is not under any stone.
 
-The {hero} laughed, a little embarrassed. "I don't even know. I stopped thinking about the bridge."
+The {hero} read it twice, and something in the evening went quiet and certain.
 
-"That's not a failing," said {companion_name}. "Everybody drifts. The trick isn't never drifting. It's noticing you did, and coming back. You just came back. So — the next stone."
+'Then this one is mine,' said the {hero}. 'Not the biggest. Not the loudest. Nobody picked it for me — that is exactly the point. Mine to choose.'
 
-The {hero} nodded and looked at the stones already laid, and at the gap still left, and it helped to see it that way: not one enormous job, but one more stone, and then one more after that.
+And then the {hero} worked, and the working used everything the long path had taught. One thing at a time: stones first, only stones, until the base sat square. Then small steps in order, like a stair: seat, back, armrest, hook. When a huge cheer went up from the bell crowd and the {hero}'s thoughts ran off to see, the {hero} noticed, smiled, and came gently back. And the last stretch, the dull stretch, moss out of every crack — the {hero} stayed for all of it, because finishing is where the best part always hides.
 
-The next stone. The {hero} found the biggest flat one yet and wrestled it into the deep part, and it held. After that the far bank came closer with every stone, until at last the {hero} stepped up onto dry land on the moss side, having crossed on stones the {hero} had laid.
+Last of all, the {hero} hung the {object_motif} on the little hook. It fit as if measured. The seat had been built to hold a light, all along.
 
-But it wasn't done. It wobbled. Without something to hold, the little bridge was only half a bridge, and the {hero} knew it.
+Then the moon came up — and the {hero} understood the builder completely. The little corner faced the moonrise. Exactly. The crooked seat that nobody chose was the finest moon-watching seat in all of {setting}, waiting all those years for someone to choose it and find out.
 
-This was the part the {hero} wanted to skip. The crossing had felt like the finish, and the arms were tired, and it would have been easy to say the bridge was good enough and go play on the moss instead.
+'{refrain},' whispered {companion_name}, climbing up beside the {hero} as the moonlight filled the corner.
 
-The {hero} looked back at the wobbling stones and thought about how it would feel to cross tomorrow and feel them shift. "Not good enough yet," the {hero} said, mostly to nobody.
+One by one, quiet as moths, others drifted over from the bell and the tower, and the corner turned out to have room for everyone to sit near. The {hero} sat in the middle, tired in the best way, and understood the note at last. The prize was not under any stone. It was the steady, warm-all-through feeling of a thing chosen by your own heart, carried through every tug, and finished.
 
-So the {hero} did the last, least fun part. A long fallen branch, dragged over inch by inch and wedged low along the stones, made a rail to grip. It took three tries to get the branch to sit without rolling, and by the end the {hero}'s arms were shaking a little. But the {hero} tested it, hand sliding along the branch, feet sure on the stones, all the way across and all the way back. Steady. Finished. A whole bridge, not half of one.
+Before bed, the {hero} folded a new note and tucked it under the corner stone, for whichever chooser came next. What it said is a secret between the {hero} and someone not yet arrived.
 
-{companion_name} crossed it too, slow and careful, and stood on the moss side beside the {hero}. "You chose this yourself. You broke it into pieces. When your mind wandered off, you brought it back without me pulling you. And you did the boring last part instead of quitting on it. Every bit of that was you."
-
-The {hero} sat down on the soft moss, tired in the good way, and looked back across the bridge at the whole distance that had been crossed.
-
-A breeze moved through {setting}, cool and full of evening. The {hero} kept the {object_motif} close and watched the water slide under the bridge that had not existed this morning, and did now, because the {hero} had decided it would. Nothing about the stream had changed, and yet the whole shape of the evening felt different from this side.
+The moon climbed slow and easy. The seat held them all.
 
 {refrain}.`,
-    scriptTemplate: `There was a flat grey stone at the edge of {setting} that {child_name} had walked past a hundred times. It was the perfect size for a bridge. On the far side of the little stream, where nobody ever went, there was a patch of the softest moss and a tree that leaned just right for climbing. {child_name} had wanted, for a long time, to build a bridge across to it, and to have the moss side be a place {child_name} could reach any day, dry-footed, on a bridge nobody else had thought to make.
+    scriptTemplate: `Once a year, when the first frost-smelling wind came through {setting}, came Choosing Night. The rules were old and simple: at sunset, every young one chose a task — any task — and carried it to done by moonhigh. Not the biggest task. Just one, truly chosen, truly finished.
 
-Nobody had suggested the bridge. No grown-up had set it as a task. No one else even seemed to want the moss side the way {child_name} did. That was the whole point. It was {child_name}'s idea, start to finish, wanted for {child_name}'s own reasons.
+Tonight was {child_name} the {hero}'s first, and {child_name} had been nervous for days. Because everyone had ideas.
 
-"You've got that look," said {companion_name}, appearing at {child_name}'s shoulder. "The one you get when you've decided something."
+'Polish the great bell!' said the big ones. 'The whole night cheers for the bell-shiner!'
 
-"I'm going to build a bridge," said {child_name}. "To the moss side. Today."
+'Stack the tallest stone tower!' said the clever ones. 'That is what we would pick.'
 
-{companion_name} studied the stream, then {child_name}. "That's your goal, then. Truly yours?"
+So {child_name}, wanting badly to choose right, tried on the choices everyone else held out. The great bell first: three polishes in, it felt exactly like wearing somebody else's boots. Heavy in the wrong places. The tower next: two stones up, the same wrong-boots feeling, plus a squashed toe.
 
-"Nobody gave it to me," said {child_name}. "It's mine to choose, and I choose this."
+And here was the odd thing. All evening, {child_name}'s eyes kept wandering off on their own — and always to the same place. The quiet corner. Where a little tumbledown seat slumped under years of moss, crooked as a bad tooth, with a worn sign on its post: for whoever chooses it.
 
-"Good," said {companion_name}. "A goal you own is one you'll actually finish. So don't try to do it all at once. What's the first small piece?"
+Nobody chose it. Nobody ever had, as far back as anyone could remember.
 
-{child_name} turned the {object_motif} over in one hand while thinking, the way some people think better with something to hold. "First, flat stones. Enough to step across. Then something to hold onto, so it's steady. Then a rail, maybe. One piece at a time."
+{child_name} noticed the drift — noticing was an old friend by now — and this time, instead of dragging their attention back to the bell, {child_name} followed it.
 
-"Then start with the stones," said {companion_name}, and settled down on the bank to watch, not to help.
+'Hmm,' said {companion_name}, falling in alongside. 'Nobody can hand you the right one. That is the only rule there is.'
 
-The first part was almost fun. {child_name} hunted along the shore for flat stones and carried them over one by one, fitting them into the stream bed like pieces of a puzzle. Splash, set, test with a foot. Splash, set, test. Some stones tipped and had to be pulled out and set again a little differently, and {child_name} learned to press each one down until it stopped rocking before trusting it. Four stones in, {child_name} could stand in the middle of the stream without wet feet, and it felt like proof that the whole thing might actually work.
+Up close, the little seat was not junk. It was almost something. Somebody, long ago, had begun it with real care — the joints were true under the moss, a small hook set by the headrest just so — and then stopped. It was a started thing, waiting to be finished.
 
-Then the middle got deep, and the work got slow, and something happened that always happens. {child_name} started to think about other things. A bird with a bright wing. What might be for supper. Whether the moss side was even as good as it looked from here. {child_name}'s hands slowed, and then stopped, and {child_name} just stood there in the shallows, staring at nothing.
+{child_name} lifted the crooked corner stone to set it straight. Creak. And there, underneath — look close, in the stone's shadow. Something pale, and folded, and older than old. Can you see it too? Writing.
 
-{companion_name} did not shout across a reminder. {companion_name} waited until {child_name} looked over, and then said only, "You went somewhere. Where'd you go?"
+The note said: I began this and left it for whoever chooses it. Finish it any way you like. The prize is not under any stone.
 
-{child_name} laughed, a little embarrassed. "I don't even know. I stopped thinking about the bridge."
+{child_name} read it twice, and something in the evening went quiet and certain.
 
-"That's not a failing," said {companion_name}. "Everybody drifts. The trick isn't never drifting. It's noticing you did, and coming back. You just came back. So — the next stone."
+'Then this one is mine,' said {child_name}. 'Not the biggest. Not the loudest. Nobody picked it for me — that is exactly the point. Mine to choose.'
 
-{child_name} nodded and looked at the stones already laid, and at the gap still left, and it helped to see it that way: not one enormous job, but one more stone, and then one more after that.
+And then {child_name} worked, and the working used everything the long path had taught. One thing at a time: stones first, only stones, until the base sat square. Then small steps in order, like a stair: seat, back, armrest, hook. When a huge cheer went up from the bell crowd and {child_name}'s thoughts ran off to see, {child_name} noticed, smiled, and came gently back. And the last stretch, the dull stretch, moss out of every crack — {child_name} stayed for all of it, because finishing is where the best part always hides.
 
-The next stone. {child_name} found the biggest flat one yet and wrestled it into the deep part, and it held. After that the far bank came closer with every stone, until at last {child_name} stepped up onto dry land on the moss side, having crossed on stones {child_name} had laid.
+Last of all, {child_name} hung the {object_motif} on the little hook. It fit as if measured. The seat had been built to hold a light, all along.
 
-But it wasn't done. It wobbled. Without something to hold, the little bridge was only half a bridge, and {child_name} knew it.
+Then the moon came up — and {child_name} understood the builder completely. The little corner faced the moonrise. Exactly. The crooked seat that nobody chose was the finest moon-watching seat in all of {setting}, waiting all those years for someone to choose it and find out.
 
-This was the part {child_name} wanted to skip. The crossing had felt like the finish, and the arms were tired, and it would have been easy to say the bridge was good enough and go play on the moss instead.
+'{refrain},' whispered {companion_name}, climbing up beside {child_name} as the moonlight filled the corner.
 
-{child_name} looked back at the wobbling stones and thought about how it would feel to cross tomorrow and feel them shift. "Not good enough yet," {child_name} said, mostly to nobody.
+One by one, quiet as moths, others drifted over from the bell and the tower, and the corner turned out to have room for everyone to sit near. {child_name} sat in the middle, tired in the best way, and understood the note at last. The prize was not under any stone. It was the steady, warm-all-through feeling of a thing chosen by your own heart, carried through every tug, and finished.
 
-So {child_name} did the last, least fun part. A long fallen branch, dragged over inch by inch and wedged low along the stones, made a rail to grip. It took three tries to get the branch to sit without rolling, and by the end {child_name}'s arms were shaking a little. But {child_name} tested it, hand sliding along the branch, feet sure on the stones, all the way across and all the way back. Steady. Finished. A whole bridge, not half of one.
+Before bed, {child_name} folded a new note and tucked it under the corner stone, for whichever chooser came next. What it said is a secret between {child_name} and someone not yet arrived.
 
-{companion_name} crossed it too, slow and careful, and stood on the moss side beside {child_name}. "You chose this yourself. You broke it into pieces. When your mind wandered off, you brought it back without me pulling you. And you did the boring last part instead of quitting on it. Every bit of that was you."
-
-{child_name} sat down on the soft moss, tired in the good way, and looked back across the bridge at the whole distance that had been crossed.
-
-A breeze moved through {setting}, cool and full of evening. {child_name} kept the {object_motif} close and watched the water slide under the bridge that had not existed this morning, and did now, because {child_name} had decided it would. Nothing about the stream had changed, and yet the whole shape of the evening felt different from this side.
+The moon climbed slow and easy. The seat held them all.
 
 {refrain}.`
   },
   '9-11': {
-    audioTemplate: `There is a difference between a goal someone gives you and a goal you give yourself, and the {hero} had spent most of the year learning to tell the two apart. The chores, the lessons, the things grown-ups called important — those arrived from outside, already decided. This one had not. This one had been growing quietly in the {hero} for weeks, the way a real want does, until it was too big to keep ignoring.
+    audioTemplate: `Choosing Night came to {setting} once a year, on the first night that smelled of frost, and its rules had not changed in memory: at sunset you chose a task — any task — and by moonhigh you carried it to done. Nobody graded it. The night graded itself.
 
-The {hero} wanted to make a lantern that could stand at the edge of {setting} and be seen from the far bank at night. Not a toy. A real one, that held a steady light and did not tip in the wind. There was no reason anyone had asked for it. There was every reason the {hero} wanted it: on the darkest nights, the far bank felt very far away, and the {hero} had decided that a light there would make the whole of {setting} feel less lonely after dark. It was that simple, and that personal.
+It was the {hero}'s first, and they had been quietly dreading it for a week. Not the working — the choosing. Everyone had an opinion about what the {hero} should pick, and all the opinions were loud.
 
-The {hero} had noticed, over the year, that the goals worth anything were the ones you had to explain to yourself, not to somebody else. This was one of those. If someone had asked the {hero} to prove it was useful, the {hero} would have struggled — and it wouldn't have mattered, because usefulness had never been the point. Wanting it was the point. The {hero} had learned to trust that particular kind of wanting, the quiet steady kind that did not go away when you slept on it.
+'The great bell,' said the big ones. 'Polish it till it booms. The whole night cheers for the bell-shiner.'
 
-"You've been carrying something around all week," said {companion_name}, sitting down nearby without any fuss. "You want to say it out loud?"
+'The stone tower,' said the clever ones. 'Everyone sees a tower for years. That is what we would pick.'
 
-"I want to build a lantern," the {hero} said. Saying it out loud made it heavier and more real at once. "One that lasts. For the far bank."
+That is what we would pick. The {hero} heard it a dozen times, and every time it sounded reasonable, and fit like boots borrowed from somebody with different feet.
 
-{companion_name} did not ask why, which the {hero} was grateful for. Instead: "Whose idea was it?"
+The {hero} tried anyway. Three polishes into the great bell — surrounded by cheering, doing the unarguably right thing — the {hero} felt only the wish to be elsewhere. Two stones into the tower, same. The tasks belonged to the people who had offered them.
 
-"Mine," said the {hero}. "Nobody asked me to. That's kind of the whole thing. It's mine to choose, and this is what I chose."
+All the while, the {hero}'s attention kept slipping its rope. But this wandering was strange: it did not scatter. It went, every time, to the quiet corner, where a little tumbledown seat slumped under years of moss, crooked and ignored, with a worn sign everyone could quote and nobody had ever answered: for whoever chooses it.
 
-"Then it'll ask more of you than the easy kind," said {companion_name}. "The goals we pick ourselves are the ones we can't blame anyone else for. That cuts both ways. Where do you start?"
+This time, instead of hauling their attention back, the {hero} followed it. Attention, it occurred to the {hero}, might sometimes be a compass rather than a runaway.
 
-The {hero} had already been turning it over. "Not all at once. That's the mistake I always make — trying to picture the whole thing finished and getting scared of it." The {hero} held the {object_motif}, thumb moving over it while the plan came together. "First, a frame that stands on its own. Then a shield around the light so the wind can't reach it. Then a way to lift the light in and out. Last, make it steady enough to trust outside overnight. Four parts. One at a time."
+'Hmm,' said {companion_name}, falling in alongside, unsurprised. 'Nobody can hand you the right one. That is the only rule there is.'
 
-"Then the frame," said {companion_name}, and leaned back to watch, offering nothing more. That was the deal between them now, unspoken: {companion_name} would keep the {hero} company, but the {hero} would do the doing.
+Up close, the seat changed. Under the moss it was careful work: true joints, a seat-slab chosen for smoothness, a small iron hook set at exactly lantern height. Somebody had begun this with love — and, for reasons the moss had long since swallowed, stopped. Not a ruin. A started thing, holding its breath.
 
-The frame went well, which the {hero} had learned to be a little suspicious of. Easy beginnings had fooled the {hero} before. Four uprights, lashed at the corners, tested and retied where they gave. It stood, and when the {hero} nudged it, it stayed standing, which was not the same as looking like it would. The {hero} had ruined more than one project by trusting the look of a thing instead of the test of it. So the {hero} pushed it harder than seemed necessary, from every side, and only when it held did the {hero} let the frame count as done. The {hero} felt the first pull of pride and, right behind it, the temptation that always came with a good start — to race ahead, skip the careful parts, get to the finish before the excitement wore off.
+The {hero} lifted the crooked corner stone to square it. Creak. Underneath, pressed flat in the dry shadow — look close. Something pale, folded, older than old. Can you see it too? Writing.
 
-That was exactly when the excitement wore off.
+I began this and left it for whoever chooses it. Finish it any way you like. The prize is not under any stone.
 
-It happened in the middle of the second part, the wind-shield, which was fiddly and slow and asked for more patience than the frame had. The {hero}'s attention slid sideways, the way it does — to the way the light moved on the water, to a half-remembered song, to the vague and useless question of whether this was a stupid idea after all, whether anyone would even notice a light on the far bank, whether it was worth finishing. The {hero}'s hands had gone still. The shield sat half-made in the grass, and the {hero} sat beside it, gone somewhere else entirely.
+The {hero} read it twice and felt the whole nervous week settle, the way water settles when you stop stirring.
 
-{companion_name} let the silence run a while before speaking. "You're not here."
+'Then it is mine,' the {hero} said. 'Not the biggest. Not the loudest. Not what anyone would pick for me — that is the entire point. Mine to choose.'
 
-"No," the {hero} admitted. "I started wondering if the whole thing even matters."
+What followed was the best working hour of the {hero}'s life. Every skill the long path had built showed up on its own, like friends who had heard there was lifting to do. One thing at a time: stones first, only stones, until the base sat square. Then the steps in order, a plan like a small stair: seat, back, armrest, hook. When the bell crowd sent up a cheer that yanked the {hero}'s thoughts clean away, the {hero} noticed, let it pass like weather, and came home to the work. And the tedious final stretch, moss out of every seam — where every earlier version of the {hero} would have called it done enough — the {hero} stayed. All the way. Finishing is where the makers hide the best part.
 
-"That's the wondering that shows up right when a thing gets hard," said {companion_name}. "It dresses itself up as a good question. Mostly it's just the hard part, talking. You don't have to answer it tonight. You only have to pick the shield back up."
+The last act was the hook. The {hero} hung the {object_motif} on it, and it fit as if the hook had been forged around it. The seat had been built to hold a light. All along.
 
-The {hero} sat with that. It was true that the doubt had arrived precisely when the work turned dull, and not one moment before. That was worth noticing. When the frame had been going well, the {hero} had felt sure the lantern was a fine idea; the idea hadn't changed since then, only the difficulty had. So maybe the doubt wasn't really about the lantern at all. Maybe it was just what the hard, slow middle of anything felt like from the inside. The {hero} let the big, swampy question go — not answered, just set down — and reached instead for the one small real thing within arm's length: the half-made shield. One bend, then the next. The doubt did not vanish, but it quieted, the way noise does when you stop feeding it.
+Then the moon rose, and the builder's whole design came quietly clear. The little corner faced the moonrise — not roughly, but exactly, the way only somebody who had watched a great many moonrises could arrange. The seat nobody chose was the finest moon-watching place in all of {setting}. Its only price had ever been being chosen.
 
-The shield came together. Then the third part, the cradle to lift the light in and out, which took three failed tries and a genuinely frustrating hour before it worked. Twice the {hero} nearly settled for a version that mostly worked. Both times the {hero} thought about standing on the bank some future night, watching it fail, knowing it had been left half-right on purpose — and that was enough to keep going until it was actually right.
+'{refrain},' whispered {companion_name}, climbing up beside the {hero} as the light came flooding in.
 
-And then there was only the last part left, which is the part almost nobody talks about and almost everybody underestimates. The lantern stood, finished-looking, in the last of the light. It would have been so easy to call it done. It looked done. The {hero} was tired in the bones, and the difference between looks-done and is-done was exactly the boring, unglamorous work of making it steady: weighting the base, sealing the seams, testing it against a pushed breath and a shove of the hand, fixing what wobbled, testing again.
+The others drifted over in ones and twos, quiet as moths, bell-shiners and tower-stackers together, and the corner had room for all of them to gather near. The {hero} sat in the middle, pleasantly worn out, and finally understood the note. The prize was not under any stone, and it was not the seat either. It was what the evening had built inside the {hero} while they were busy building the seat: the steady, sure feeling of a goal chosen by your own heart and carried — through wrong boots and loud opinions — all the way to done. That, no one can hand you. You can only make it.
 
-The {hero} did the boring part. All of it. Weighted the base with flat stones until it sat like it had grown there. Went along every seam. Pushed a breath at the flame and watched it barely lean. Shoved the whole thing sideways, harder than any wind would, and caught the one corner that shifted and fixed it. Tested it again. Not because anyone would check, but because the {hero} would know, and because a goal you chose yourself is one you don't get to fake finishing.
+Before bed, the {hero} wrote a new note and tucked it under the corner stone for the next chooser, however many Choosing Nights from now. What it says is between the {hero} and them.
 
-When it was truly done, the {hero} carried it to the edge of {setting} and set it where the far bank could see it, and stepped back.
-
-{companion_name} came to stand alongside, quiet for a moment. "You chose this one yourself, for a reason that mattered to you. You broke it into parts. When your mind wandered — and it did, twice — you noticed and came back on your own. And you did the last, dull, invisible part instead of quitting on it while it still looked good enough. I watched all of it. Not one piece of it was mine."
-
-The {hero} didn't say anything right away. There wasn't a need to. The lantern held its light, steady, not tipping, exactly as intended, and across the water the far bank did not look quite so far. It was a small light, in the end, and it changed nothing about the size of the dark. But it was there, and it was the {hero}'s, and on some future night the {hero} would look across and know exactly how it had come to be standing there.
-
-The evening settled deep over {setting}, and the {hero} sat down beside the {object_motif} with the particular tiredness that only comes after finishing something real — heavier than sleepiness, and a great deal better.
+The moon climbed slow. The light glowed on its hook. The seat held everyone.
 
 {refrain}.`,
-    scriptTemplate: `There is a difference between a goal someone gives you and a goal you give yourself, and {child_name} had spent most of the year learning to tell the two apart. The chores, the lessons, the things grown-ups called important — those arrived from outside, already decided. This one had not. This one had been growing quietly in {child_name} for weeks, the way a real want does, until it was too big to keep ignoring.
+    scriptTemplate: `Choosing Night came to {setting} once a year, on the first night that smelled of frost, and its rules had not changed in memory: at sunset you chose a task — any task — and by moonhigh you carried it to done. Nobody graded it. The night graded itself.
 
-{child_name} wanted to make a lantern that could stand at the edge of {setting} and be seen from the far bank at night. Not a toy. A real one, that held a steady light and did not tip in the wind. There was no reason anyone had asked for it. There was every reason {child_name} wanted it: on the darkest nights, the far bank felt very far away, and {child_name} had decided that a light there would make the whole of {setting} feel less lonely after dark. It was that simple, and that personal.
+It was {child_name} the {hero}'s first, and they had been quietly dreading it for a week. Not the working — the choosing. Everyone had an opinion about what {child_name} should pick, and all the opinions were loud.
 
-{child_name} had noticed, over the year, that the goals worth anything were the ones you had to explain to yourself, not to somebody else. This was one of those. If someone had asked {child_name} to prove it was useful, {child_name} would have struggled — and it wouldn't have mattered, because usefulness had never been the point. Wanting it was the point. {child_name} had learned to trust that particular kind of wanting, the quiet steady kind that did not go away when you slept on it.
+'The great bell,' said the big ones. 'Polish it till it booms. The whole night cheers for the bell-shiner.'
 
-"You've been carrying something around all week," said {companion_name}, sitting down nearby without any fuss. "You want to say it out loud?"
+'The stone tower,' said the clever ones. 'Everyone sees a tower for years. That is what we would pick.'
 
-"I want to build a lantern," {child_name} said. Saying it out loud made it heavier and more real at once. "One that lasts. For the far bank."
+That is what we would pick. {child_name} heard it a dozen times, and every time it sounded reasonable, and fit like boots borrowed from somebody with different feet.
 
-{companion_name} did not ask why, which {child_name} was grateful for. Instead: "Whose idea was it?"
+{child_name} tried anyway. Three polishes into the great bell — surrounded by cheering, doing the unarguably right thing — {child_name} felt only the wish to be elsewhere. Two stones into the tower, same. The tasks belonged to the people who had offered them.
 
-"Mine," said {child_name}. "Nobody asked me to. That's kind of the whole thing. It's mine to choose, and this is what I chose."
+All the while, {child_name}'s attention kept slipping its rope. But this wandering was strange: it did not scatter. It went, every time, to the quiet corner, where a little tumbledown seat slumped under years of moss, crooked and ignored, with a worn sign everyone could quote and nobody had ever answered: for whoever chooses it.
 
-"Then it'll ask more of you than the easy kind," said {companion_name}. "The goals we pick ourselves are the ones we can't blame anyone else for. That cuts both ways. Where do you start?"
+This time, instead of hauling their attention back, {child_name} followed it. Attention, it occurred to {child_name}, might sometimes be a compass rather than a runaway.
 
-{child_name} had already been turning it over. "Not all at once. That's the mistake I always make — trying to picture the whole thing finished and getting scared of it." {child_name} held the {object_motif}, thumb moving over it while the plan came together. "First, a frame that stands on its own. Then a shield around the light so the wind can't reach it. Then a way to lift the light in and out. Last, make it steady enough to trust outside overnight. Four parts. One at a time."
+'Hmm,' said {companion_name}, falling in alongside, unsurprised. 'Nobody can hand you the right one. That is the only rule there is.'
 
-"Then the frame," said {companion_name}, and leaned back to watch, offering nothing more. That was the deal between them now, unspoken: {companion_name} would keep {child_name} company, but {child_name} would do the doing.
+Up close, the seat changed. Under the moss it was careful work: true joints, a seat-slab chosen for smoothness, a small iron hook set at exactly lantern height. Somebody had begun this with love — and, for reasons the moss had long since swallowed, stopped. Not a ruin. A started thing, holding its breath.
 
-The frame went well, which {child_name} had learned to be a little suspicious of. Easy beginnings had fooled {child_name} before. Four uprights, lashed at the corners, tested and retied where they gave. It stood, and when {child_name} nudged it, it stayed standing, which was not the same as looking like it would. {child_name} had ruined more than one project by trusting the look of a thing instead of the test of it. So {child_name} pushed it harder than seemed necessary, from every side, and only when it held did {child_name} let the frame count as done. {child_name} felt the first pull of pride and, right behind it, the temptation that always came with a good start — to race ahead, skip the careful parts, get to the finish before the excitement wore off.
+{child_name} lifted the crooked corner stone to square it. Creak. Underneath, pressed flat in the dry shadow — look close. Something pale, folded, older than old. Can you see it too? Writing.
 
-That was exactly when the excitement wore off.
+I began this and left it for whoever chooses it. Finish it any way you like. The prize is not under any stone.
 
-It happened in the middle of the second part, the wind-shield, which was fiddly and slow and asked for more patience than the frame had. {child_name}'s attention slid sideways, the way it does — to the way the light moved on the water, to a half-remembered song, to the vague and useless question of whether this was a stupid idea after all, whether anyone would even notice a light on the far bank, whether it was worth finishing. {child_name}'s hands had gone still. The shield sat half-made in the grass, and {child_name} sat beside it, gone somewhere else entirely.
+{child_name} read it twice and felt the whole nervous week settle, the way water settles when you stop stirring.
 
-{companion_name} let the silence run a while before speaking. "You're not here."
+'Then it is mine,' {child_name} said. 'Not the biggest. Not the loudest. Not what anyone would pick for me — that is the entire point. Mine to choose.'
 
-"No," {child_name} admitted. "I started wondering if the whole thing even matters."
+What followed was the best working hour of {child_name}'s life. Every skill the long path had built showed up on its own, like friends who had heard there was lifting to do. One thing at a time: stones first, only stones, until the base sat square. Then the steps in order, a plan like a small stair: seat, back, armrest, hook. When the bell crowd sent up a cheer that yanked {child_name}'s thoughts clean away, {child_name} noticed, let it pass like weather, and came home to the work. And the tedious final stretch, moss out of every seam — where every earlier version of {child_name} would have called it done enough — {child_name} stayed. All the way. Finishing is where the makers hide the best part.
 
-"That's the wondering that shows up right when a thing gets hard," said {companion_name}. "It dresses itself up as a good question. Mostly it's just the hard part, talking. You don't have to answer it tonight. You only have to pick the shield back up."
+The last act was the hook. {child_name} hung the {object_motif} on it, and it fit as if the hook had been forged around it. The seat had been built to hold a light. All along.
 
-{child_name} sat with that. It was true that the doubt had arrived precisely when the work turned dull, and not one moment before. That was worth noticing. When the frame had been going well, {child_name} had felt sure the lantern was a fine idea; the idea hadn't changed since then, only the difficulty had. So maybe the doubt wasn't really about the lantern at all. Maybe it was just what the hard, slow middle of anything felt like from the inside. {child_name} let the big, swampy question go — not answered, just set down — and reached instead for the one small real thing within arm's length: the half-made shield. One bend, then the next. The doubt did not vanish, but it quieted, the way noise does when you stop feeding it.
+Then the moon rose, and the builder's whole design came quietly clear. The little corner faced the moonrise — not roughly, but exactly, the way only somebody who had watched a great many moonrises could arrange. The seat nobody chose was the finest moon-watching place in all of {setting}. Its only price had ever been being chosen.
 
-The shield came together. Then the third part, the cradle to lift the light in and out, which took three failed tries and a genuinely frustrating hour before it worked. Twice {child_name} nearly settled for a version that mostly worked. Both times {child_name} thought about standing on the bank some future night, watching it fail, knowing it had been left half-right on purpose — and that was enough to keep going until it was actually right.
+'{refrain},' whispered {companion_name}, climbing up beside {child_name} as the light came flooding in.
 
-And then there was only the last part left, which is the part almost nobody talks about and almost everybody underestimates. The lantern stood, finished-looking, in the last of the light. It would have been so easy to call it done. It looked done. {child_name} was tired in the bones, and the difference between looks-done and is-done was exactly the boring, unglamorous work of making it steady: weighting the base, sealing the seams, testing it against a pushed breath and a shove of the hand, fixing what wobbled, testing again.
+The others drifted over in ones and twos, quiet as moths, bell-shiners and tower-stackers together, and the corner had room for all of them to gather near. {child_name} sat in the middle, pleasantly worn out, and finally understood the note. The prize was not under any stone, and it was not the seat either. It was what the evening had built inside {child_name} while they were busy building the seat: the steady, sure feeling of a goal chosen by your own heart and carried — through wrong boots and loud opinions — all the way to done. That, no one can hand you. You can only make it.
 
-{child_name} did the boring part. All of it. Weighted the base with flat stones until it sat like it had grown there. Went along every seam. Pushed a breath at the flame and watched it barely lean. Shoved the whole thing sideways, harder than any wind would, and caught the one corner that shifted and fixed it. Tested it again. Not because anyone would check, but because {child_name} would know, and because a goal you chose yourself is one you don't get to fake finishing.
+Before bed, {child_name} wrote a new note and tucked it under the corner stone for the next chooser, however many Choosing Nights from now. What it says is between {child_name} and them.
 
-When it was truly done, {child_name} carried it to the edge of {setting} and set it where the far bank could see it, and stepped back.
-
-{companion_name} came to stand alongside, quiet for a moment. "You chose this one yourself, for a reason that mattered to you. You broke it into parts. When your mind wandered — and it did, twice — you noticed and came back on your own. And you did the last, dull, invisible part instead of quitting on it while it still looked good enough. I watched all of it. Not one piece of it was mine."
-
-{child_name} didn't say anything right away. There wasn't a need to. The lantern held its light, steady, not tipping, exactly as intended, and across the water the far bank did not look quite so far. It was a small light, in the end, and it changed nothing about the size of the dark. But it was there, and it was {child_name}'s, and on some future night {child_name} would look across and know exactly how it had come to be standing there.
-
-The evening settled deep over {setting}, and {child_name} sat down beside the {object_motif} with the particular tiredness that only comes after finishing something real — heavier than sleepiness, and a great deal better.
+The moon climbed slow. The light glowed on its hook. The seat held everyone.
 
 {refrain}.`
-  },
+  }
 },
-    audioTemplate: `Under the {object_motif}, in the quiet of {setting}, the {hero} thought about something they truly wanted to do — a goal all their own.
+    audioTemplate: `Once a year in {setting} came Choosing Night: pick one task at sunset, carry it to done by moonhigh. Tonight was the {hero}'s first, and the {hero} wanted so much to choose right.
 
-"It is mine to choose," the {hero} said softly, "and mine to reach."
+Everyone had ideas. 'Polish the great bell!' called the big ones. 'Stack the tallest tower! That is what we would pick!'
 
-{companion_name} smiled. "You already know how. Tell me the way."
+So the {hero} tried. Three polishes into the bell, it felt like singing somebody else's song. Two stones into the tower, the same wrong feeling.
 
-And the {hero} did. "One thing at a time," they began. "A plan, like a path of stones. When my mind wanders, I notice and come back. And I stay with it — all the way to the finish."
+All the while, the {hero}'s eyes kept drifting to the quiet corner, where a little tumbledown seat sat crooked under the moss. Its worn sign said: for whoever chooses it. Nobody ever chose it.
 
-So that is what the {hero} did, night by night. One step, then the next. A drift, a gentle return. The last stones, walked with care.
+'Hmm,' said {companion_name}. 'Nobody can hand you the right one. That is the only rule there is.'
 
-And the goal they had chosen — they reached it. Not by luck, but by their own steady light.
+Up close, the little seat was not junk. Somebody long ago had started it with care, and never finished.
 
-"You did that," said {companion_name}, eyes shining.
+The {hero} lifted the crooked corner stone to straighten it. Creak! Underneath — look close. Something pale and folded. Can you see it too? Writing.
 
-"I did," said the {hero}, calm and certain, the {object_motif} glowing warm and full.
+The note said: I began this for whoever chooses it. Finish it any way you like. The prize is not under any stone.
+
+'Then this one is mine,' said the {hero}. 'Not the biggest. Not the loudest. Mine to choose.'
+
+And the {hero} worked the way the whole path had taught. One thing at a time. Small steps: stones, then seat, then moss. When cheering tugged at the {hero}'s thoughts, the {hero} noticed, and came gently back. The last dull stretch got finished too, all the way — finishing is where the best part hides.
+
+Last of all, the {hero} hung the {object_motif} on the seat's empty hook. Made to hold a light, all along.
+
+Then the moon rose — right in front of the seat. The little corner faced the moonrise exactly. The finest moon-watching seat in {setting}, waiting to be chosen.
+
+'{refrain},' whispered {companion_name}, climbing up beside the {hero}.
+
+The note was right. The prize was not under any stone. It was the warm, steady feeling of a thing chosen, and carried, and done.
+
+Before bed, the {hero} tucked a new note under the corner stone, for the next chooser. What it said was a secret for someone not yet come.
+
+The moon climbed slow. The seat held them both.
 
 {refrain}.`,
-    scriptTemplate: `Under the {object_motif}, in the quiet of {setting}, {child_name} the {hero} thought about something they truly wanted to do — a goal all their own.
+    scriptTemplate: `Once a year in {setting} came Choosing Night: pick one task at sunset, carry it to done by moonhigh. Tonight was {child_name} the {hero}'s first, and {child_name} wanted so much to choose right.
 
-"It is mine to choose," {child_name} said softly, "and mine to reach."
+Everyone had ideas. 'Polish the great bell!' called the big ones. 'Stack the tallest tower! That is what we would pick!'
 
-{companion_name} smiled. "You already know how. Tell me the way."
+So {child_name} tried. Three polishes into the bell, it felt like singing somebody else's song. Two stones into the tower, the same wrong feeling.
 
-And {child_name} did. "One thing at a time," they began. "A plan, like a path of stones. When my mind wanders, I notice and come back. And I stay with it — all the way to the finish."
+All the while, {child_name}'s eyes kept drifting to the quiet corner, where a little tumbledown seat sat crooked under the moss. Its worn sign said: for whoever chooses it. Nobody ever chose it.
 
-So that is what {child_name} did, night by night. One step, then the next. A drift, a gentle return. The last stones, walked with care.
+'Hmm,' said {companion_name}. 'Nobody can hand you the right one. That is the only rule there is.'
 
-And the goal they had chosen — {child_name} reached it. Not by luck, but by their own steady light.
+Up close, the little seat was not junk. Somebody long ago had started it with care, and never finished.
 
-"You did that," said {companion_name}, eyes shining.
+{child_name} lifted the crooked corner stone to straighten it. Creak! Underneath — look close. Something pale and folded. Can you see it too? Writing.
 
-"I did," said {child_name}, calm and certain, the {object_motif} glowing warm and full.
+The note said: I began this for whoever chooses it. Finish it any way you like. The prize is not under any stone.
+
+'Then this one is mine,' said {child_name}. 'Not the biggest. Not the loudest. Mine to choose.'
+
+And {child_name} worked the way the whole path had taught. One thing at a time. Small steps: stones, then seat, then moss. When cheering tugged at {child_name}'s thoughts, {child_name} noticed, and came gently back. The last dull stretch got finished too, all the way — finishing is where the best part hides.
+
+Last of all, {child_name} hung the {object_motif} on the seat's empty hook. Made to hold a light, all along.
+
+Then the moon rose — right in front of the seat. The little corner faced the moonrise exactly. The finest moon-watching seat in {setting}, waiting to be chosen.
+
+'{refrain},' whispered {companion_name}, climbing up beside {child_name}.
+
+The note was right. The prize was not under any stone. It was the warm, steady feeling of a thing chosen, and carried, and done.
+
+Before bed, {child_name} tucked a new note under the corner stone, for the next chooser. What it said was a secret for someone not yet come.
+
+The moon climbed slow. The seat held them both.
 
 {refrain}.`,
   },

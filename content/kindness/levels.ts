@@ -417,942 +417,931 @@ The champion said {child_name} had won the game. {child_name} said it was a tie.
 {refrain}.`,
   },
   {
-    ordinal: 2, title: 'A Small Kindness',
-    concept: 'Kindness does not have to be big to matter', callback: 'Noticing how others feel (Level 1)', ageFloor: 4,
-    summary: 'Having noticed a friend in need, the hero worries they must do something grand. Their companion shows them that the smallest kindness — sitting close, a gentle word — is often the one that matters most. It builds on Level 1: noticing leads to acting.',
-    teachingNote: 'Children often think kindness must be big; learning that small acts count makes kindness something they can always offer.',
-    learningBeat: 'A small kindness',
+    ordinal: 2, title: "The Mender's Door",
+    concept: "Kindness does not have to be big to matter", callback: "Noticing how others feel (Level 1)", ageFloor: 4,
+    summary: "The hero's song-chime snaps on the very night it is needed, and the one door in the world that is never shut — the mender's — is shut. Grand thank-you towers and big cheer-up songs get nowhere. What opens the door is what the mender has been teaching everyone all along without saying it: a kindness the size of a single stitch.",
+    teachingNote: "Children often think kindness must be big; learning that small acts count makes kindness something they can always offer.",
+    learningBeat: "A small kindness",
     ageVariants: {
   '3-4': {
-    audioTemplate: `The {hero} sat by {setting}. The evening was soft and slow. A friend sat close by. The friend looked sad. Very, very sad.
+    audioTemplate: `The {hero} had a song-chime. Every night it sang one silver note. Then came sleep.
 
-The {hero} noticed. The {hero} always noticed. But noticing made the {hero} worry. How could a small one help?
+But tonight the chime was broken.
 
-Maybe a big gift would help. Maybe a loud, happy song. Maybe a giant surprise with bells. The {hero} did not know what to do.
+The mender fixed everything in {setting}. The mender's door was never shut.
 
-{companion_name} came near and sat down. {companion_name} carried the {object_motif}.
+But tonight the door was shut.
 
-'You look worried,' {companion_name} said. 'What is wrong, little one?'
+Listen. What is missing? No humming. The mender always hums.
 
-'My friend is sad,' said the {hero}. 'I want to help. But I am so small. I cannot do big, grand things.'
+The {hero} made a big thank-you tower. One, two, three! Then a great big knock!
 
-{companion_name} smiled a warm smile. 'You do not need big things. A small kindness can be enough. Sit close. Say one kind word. Stay near.'
+Plop. Down fell the tower. The door stayed shut.
 
-The {hero} thought about that. Sit close. Say one kind word. Stay near. It sounded easy. It sounded good.
+'Hmm,' said {companion_name}. 'Maybe try small, little {hero}.'
 
-So the {hero} walked over softly. One small step. Then another. The {hero} sat right down. Right beside the friend. Close and quiet.
+The {hero} looked close. Cold tea on the step. No humming. The mender was sad in there.
 
-'I am here,' said the {hero}. 'I will stay with you.'
+How did the mender fix things? Small things! One stitch. One knot.
 
-The friend looked up slowly. The friend blinked. A tiny smile began to grow.
+'A small kindness!' said the {hero}. 'That is what the door needs.'
 
-The {hero} did not sing a loud song. The {hero} did not bring a giant gift. The {hero} just stayed. Warm and near and calm.
+So the {hero} said softly, 'Thank you for fixing my things. I like you.'
 
-They sat together by {setting}. They watched the evening settle. The friend's shoulders felt less tight. The quiet was a kind quiet. They did not need many words at all.
+Click. The door opened.
 
-After a while, the friend leaned over. 'Thank you for staying,' the friend said. 'I do not feel so alone now. I feel much better.'
+'You knocked just for me,' smiled the mender.
 
-The {hero} held the {object_motif} and felt glad. Such a small thing to do. Such a big, warm feeling inside.
+The mender showed the {hero} one small knot. The {hero} tied it. The chime sang!
 
-Soon it was time to rest. The friend was smiling now. The {hero} was smiling too. Two friends, side by side.
+'{refrain},' whispered {companion_name}.
 
-{companion_name} gave a soft, sleepy nod. The {setting} grew quiet and dim.
+The {object_motif} glowed warm.
 
-The {hero} closed both eyes. Warm. Safe. Kind. And near a friend.
+'Come tomorrow,' said the mender. 'I will show you my smallest tool.'
+
+One small note. One small kindness. Just right.
 
 {refrain}.`,
-    scriptTemplate: `{child_name} sat by {setting}. The evening was soft and slow. A friend sat close by. The friend looked sad. Very, very sad.
+    scriptTemplate: `{child_name} had a song-chime. Every night it sang one silver note. Then came sleep.
 
-{child_name} noticed. {child_name} always noticed. But noticing made {child_name} worry. How could a small one help?
+But tonight the chime was broken.
 
-Maybe a big gift would help. Maybe a loud, happy song. Maybe a giant surprise with bells. {child_name} did not know what to do.
+The mender fixed everything in {setting}. The mender's door was never shut.
 
-{companion_name} came near and sat down. {companion_name} carried the {object_motif}.
+But tonight the door was shut.
 
-'You look worried,' {companion_name} said. 'What is wrong, little one?'
+Listen. What is missing? No humming. The mender always hums.
 
-'My friend is sad,' said {child_name}. 'I want to help. But I am so small. I cannot do big, grand things.'
+{child_name} made a big thank-you tower. One, two, three! Then a great big knock!
 
-{companion_name} smiled a warm smile. 'You do not need big things. A small kindness can be enough. Sit close. Say one kind word. Stay near.'
+Plop. Down fell the tower. The door stayed shut.
 
-{child_name} thought about that. Sit close. Say one kind word. Stay near. It sounded easy. It sounded good.
+'Hmm,' said {companion_name}. 'Maybe try small, little {hero}.'
 
-So {child_name} walked over softly. One small step. Then another. {child_name} sat right down. Right beside the friend. Close and quiet.
+{child_name} looked close. Cold tea on the step. No humming. The mender was sad in there.
 
-'I am here,' said {child_name}. 'I will stay with you.'
+How did the mender fix things? Small things! One stitch. One knot.
 
-The friend looked up slowly. The friend blinked. A tiny smile began to grow.
+'A small kindness!' said {child_name}. 'That is what the door needs.'
 
-{child_name} did not sing a loud song. {child_name} did not bring a giant gift. {child_name} just stayed. Warm and near and calm.
+So {child_name} said softly, 'Thank you for fixing my things. I like you.'
 
-They sat together by {setting}. They watched the evening settle. The friend's shoulders felt less tight. The quiet was a kind quiet. They did not need many words at all.
+Click. The door opened.
 
-After a while, the friend leaned over. 'Thank you for staying,' the friend said. 'I do not feel so alone now. I feel much better.'
+'You knocked just for me,' smiled the mender.
 
-{child_name} held the {object_motif} and felt glad. Such a small thing to do. Such a big, warm feeling inside.
+The mender showed {child_name} one small knot. {child_name} tied it. The chime sang!
 
-Soon it was time to rest. The friend was smiling now. {child_name} was smiling too. Two friends, side by side.
+'{refrain},' whispered {companion_name}.
 
-{companion_name} gave a soft, sleepy nod. The {setting} grew quiet and dim.
+The {object_motif} glowed warm.
 
-{child_name} closed both eyes. Warm. Safe. Kind. And near a friend.
+'Come tomorrow,' said the mender. 'I will show you my smallest tool.'
+
+One small note. One small kindness. Just right.
 
 {refrain}.`
   },
   '5-6': {
-    audioTemplate: `The {hero} sat at the edge of {setting}, watching the evening grow soft and gold. Nearby, a friend sat all alone, and something about them looked heavy and sad. Their head was down. Their hands were still.
+    audioTemplate: `The {hero} had a song-chime, and tonight it would not sing.
 
-The {hero} noticed right away. Noticing was easy. Knowing what to do was the hard part.
+It hung by the {hero}'s sleeping place in {setting} and sang one silver note to end each day. But today a string had snapped.
 
-'I should help,' the {hero} thought. 'But how? Sad is such a big, heavy thing. Surely it needs a big, heavy fix — something grand enough to chase all that sadness away.'
+Only the mender could fix it. The mender mended everything for everyone — a stitch, a knot, one dab of glue — and the mender's door was never, ever shut.
 
-The {hero} began to imagine grand ideas. A surprise party with lanterns. A basket piled high with treats. A song so loud and cheerful that the whole of {setting} would hear it. Each idea felt too big. Each one felt impossible. The {hero}'s shoulders sank lower and lower.
+But tonight the door was shut.
 
-That was when {companion_name} wandered over, carrying the {object_motif}.
+Listen at the door. Can you hear what is missing? No humming. The mender always hums.
 
-'You have your thinking face on,' {companion_name} said. 'A worried one. What is turning around in there?'
+The {hero} decided a shut door needed something big. So the {hero} stacked the shiniest pebbles and the biggest flower into a thank-you tower, and knocked the grandest knock —
 
-'My friend is sad,' the {hero} said. 'I want to make it better. But everything I think of is too big for me. I am not big enough to help.'
+Plop. The tower fell over. The door stayed shut.
 
-{companion_name} set the {object_motif} down and sat beside the {hero}.
+'Hmm,' said {companion_name}. 'When your chime broke today, did you want a parade, little {hero}?'
 
-'Helping is not about being big,' {companion_name} said gently. 'A small kindness can matter more than a grand one. Sit beside your friend. Say a warm word. Stay when it would be easier to leave. That is often the thing that helps most.'
+The {hero} sat down on the step and began to notice. Small things. A cup of tea, gone cold. The mending basket out in the damp. The quiet where the humming should be. The mender was not busy in there — the mender was sad in there.
 
-The {hero} frowned a little. It seemed too easy. Too plain. Could something so small really do anything?
+And how did the mender fix the whole of {setting}? With small things. One stitch. One knot. One dab.
 
-But the {hero} trusted {companion_name}. It felt strange to do something so small, but the {hero} decided to try. So, slowly, the {hero} stood up and walked across the soft ground to where the friend was sitting. Then, without a big speech, the {hero} simply sat down close beside them.
+'Oh,' said the {hero} softly. 'A small kindness. That is what the mender gives everyone. Maybe that is what a shut door needs too.'
 
-'I saw you were sad,' the {hero} said quietly. 'I did not want you to be by yourself. So I came to sit with you.'
+So this time the {hero} did not knock. The {hero} sat close and said, quietly, 'You mended my sail last spring. It still flies. I think of you every time it does. You do not have to open the door.'
 
-The friend looked up, surprised. For a moment they said nothing. Then their eyes grew shiny, and they let out a long, slow breath, as if they had been holding it for a while.
+Quiet. Then a click. The door opened just a crack, and the mender peeped out.
 
-'I did not think anyone had noticed,' the friend whispered. 'I felt so alone.'
+'All day, everyone brings me broken things,' the mender said. 'You are the first who ever knocked just for me.'
 
-'You are not alone,' the {hero} said. 'I am right here. I will stay.'
+'{refrain},' whispered {companion_name}.
 
-And that is what the {hero} did. No party. No basket. No loud song. The {hero} just stayed, shoulder to shoulder, while the evening settled around them. Sometimes they talked. Mostly they were quiet together. The quiet did not feel empty; it felt like company. And slowly, softly, the heavy look on the friend's face began to lift.
+The mender looked at the crooked chime — but did not fix it. They showed the {hero} the one small knot it needed, and the {hero} tied it. The chime sang its silver note.
 
-Time passed slowly and kindly. A small breeze moved across {setting}. The {hero} did not fill the silence with chatter. The {hero} only stayed close, so the friend would know, deep down, that someone cared enough to stay.
+'Small things, done with care,' said the mender. 'That is my whole secret.'
 
-After a while, the friend gave a small, real smile. 'Thank you,' they said. 'I thought I needed something huge to feel better. But you sitting here is the thing that helped.'
+The {object_motif} glowed between them.
 
-The {hero} felt a warm glow spread all the way to their fingertips. It was such a small thing to do, sitting close and staying near. Yet it had done so much.
+'Come back tomorrow,' the mender said, 'and I will show you the smallest tool in my shop. It fixes the biggest things.'
 
-{companion_name} watched from a little way off and gave a slow, proud nod. The last of the daylight slipped away behind {setting}, soft and slow.
-
-The friend leaned their head gently against the {hero}'s shoulder. 'Will you stay a little longer?' they asked.
-
-'As long as you like,' the {hero} said.
-
-And so the two friends sat together while {setting} grew calm and sleepy, and the worry drifted away like a leaf on quiet water.
+The {hero} carried the chime home. One small note. One small kindness. Both exactly big enough.
 
 {refrain}.`,
-    scriptTemplate: `{child_name} sat at the edge of {setting}, watching the evening grow soft and gold. Nearby, a friend sat all alone, and something about them looked heavy and sad. Their head was down. Their hands were still.
+    scriptTemplate: `{child_name} had a song-chime, and tonight it would not sing.
 
-{child_name} noticed right away. Noticing was easy. Knowing what to do was the hard part.
+It hung by {child_name}'s sleeping place in {setting} and sang one silver note to end each day. But today a string had snapped.
 
-'I should help,' {child_name} thought. 'But how? Sad is such a big, heavy thing. Surely it needs a big, heavy fix — something grand enough to chase all that sadness away.'
+Only the mender could fix it. The mender mended everything for everyone — a stitch, a knot, one dab of glue — and the mender's door was never, ever shut.
 
-{child_name} began to imagine grand ideas. A surprise party with lanterns. A basket piled high with treats. A song so loud and cheerful that the whole of {setting} would hear it. Each idea felt too big. Each one felt impossible. {child_name}'s shoulders sank lower and lower.
+But tonight the door was shut.
 
-That was when {companion_name} wandered over, carrying the {object_motif}.
+Listen at the door. Can you hear what is missing? No humming. The mender always hums.
 
-'You have your thinking face on,' {companion_name} said. 'A worried one. What is turning around in there?'
+{child_name} decided a shut door needed something big. So {child_name} stacked the shiniest pebbles and the biggest flower into a thank-you tower, and knocked the grandest knock —
 
-'My friend is sad,' {child_name} said. 'I want to make it better. But everything I think of is too big for me. I am not big enough to help.'
+Plop. The tower fell over. The door stayed shut.
 
-{companion_name} set the {object_motif} down and sat beside {child_name}.
+'Hmm,' said {companion_name}. 'When your chime broke today, did you want a parade, little {hero}?'
 
-'Helping is not about being big,' {companion_name} said gently. 'A small kindness can matter more than a grand one. Sit beside your friend. Say a warm word. Stay when it would be easier to leave. That is often the thing that helps most.'
+{child_name} sat down on the step and began to notice. Small things. A cup of tea, gone cold. The mending basket out in the damp. The quiet where the humming should be. The mender was not busy in there — the mender was sad in there.
 
-{child_name} frowned a little. It seemed too easy. Too plain. Could something so small really do anything?
+And how did the mender fix the whole of {setting}? With small things. One stitch. One knot. One dab.
 
-But {child_name} trusted {companion_name}. It felt strange to do something so small, but {child_name} decided to try. So, slowly, {child_name} stood up and walked across the soft ground to where the friend was sitting. Then, without a big speech, {child_name} simply sat down close beside them.
+'Oh,' said {child_name} softly. 'A small kindness. That is what the mender gives everyone. Maybe that is what a shut door needs too.'
 
-'I saw you were sad,' {child_name} said quietly. 'I did not want you to be by yourself. So I came to sit with you.'
+So this time {child_name} did not knock. {child_name} sat close and said, quietly, 'You mended my sail last spring. It still flies. I think of you every time it does. You do not have to open the door.'
 
-The friend looked up, surprised. For a moment they said nothing. Then their eyes grew shiny, and they let out a long, slow breath, as if they had been holding it for a while.
+Quiet. Then a click. The door opened just a crack, and the mender peeped out.
 
-'I did not think anyone had noticed,' the friend whispered. 'I felt so alone.'
+'All day, everyone brings me broken things,' the mender said. 'You are the first who ever knocked just for me.'
 
-'You are not alone,' {child_name} said. 'I am right here. I will stay.'
+'{refrain},' whispered {companion_name}.
 
-And that is what {child_name} did. No party. No basket. No loud song. {child_name} just stayed, shoulder to shoulder, while the evening settled around them. Sometimes they talked. Mostly they were quiet together. The quiet did not feel empty; it felt like company. And slowly, softly, the heavy look on the friend's face began to lift.
+The mender looked at the crooked chime — but did not fix it. They showed {child_name} the one small knot it needed, and {child_name} tied it. The chime sang its silver note.
 
-Time passed slowly and kindly. A small breeze moved across {setting}. {child_name} did not fill the silence with chatter. {child_name} only stayed close, so the friend would know, deep down, that someone cared enough to stay.
+'Small things, done with care,' said the mender. 'That is my whole secret.'
 
-After a while, the friend gave a small, real smile. 'Thank you,' they said. 'I thought I needed something huge to feel better. But you sitting here is the thing that helped.'
+The {object_motif} glowed between them.
 
-{child_name} felt a warm glow spread all the way to their fingertips. It was such a small thing to do, sitting close and staying near. Yet it had done so much.
+'Come back tomorrow,' the mender said, 'and I will show you the smallest tool in my shop. It fixes the biggest things.'
 
-{companion_name} watched from a little way off and gave a slow, proud nod. The last of the daylight slipped away behind {setting}, soft and slow.
-
-The friend leaned their head gently against {child_name}'s shoulder. 'Will you stay a little longer?' they asked.
-
-'As long as you like,' {child_name} said.
-
-And so the two friends sat together while {setting} grew calm and sleepy, and the worry drifted away like a leaf on quiet water.
+{child_name} carried the chime home. One small note. One small kindness. Both exactly big enough.
 
 {refrain}.`
   },
   '7-8': {
-    audioTemplate: `The day had been a long one at {setting}, and now the light was turning the colour of honey. The {hero} was on the way home when a small movement caught the {hero}'s eye. Off to the side, half hidden behind a rise, sat a friend — knees pulled up, chin resting on them, staring at nothing at all.
+    audioTemplate: `In {setting} there was a door that was never shut, and behind it lived the mender.
 
-The {hero} stopped. Something was wrong. The friend had lost the afternoon's game, the {hero} remembered, and had gone quiet afterward — the kind of quiet that means a person is trying very hard not to cry.
+Nobody remembered a time before the mender. Torn things went to the door. So did wobbly things, leaky things, squeaky things. The mender would turn each one over twice, hum a low mending sort of hum, and make it whole with something tiny — one stitch, one knot, one dab of glue.
 
-The {hero} knew that feeling. Losing in front of everyone, then having to walk away as if it did not matter, when really it mattered a lot. The friend had not said a word since. That silence was the loudest part.
+Tonight, the {hero} needed that door. The {hero}'s song-chime — which hung by the sleeping place and sang one silver note at the end of every day, the note that meant now you can sleep — had snapped a string that afternoon and gone crooked and silent. A whole night without the note was not to be imagined.
 
-I should do something, the {hero} thought. But what? A worry crept in right behind the wish to help. Helping felt like it needed to be big. Maybe the {hero} should organize a rematch, or gather everyone to cheer the friend up, or find the perfect words that would make all the sadness vanish at once. Perhaps a gift would do it, or a joke funny enough to break the mood, or a promise to practise together every single day. Every idea felt enormous, and the {hero} did not have a single one that seemed good enough.
+But the door was shut.
 
-The {hero} took one step forward, then stopped. What if the wrong words made it worse? What if sitting there just felt awkward? The bigger the {hero} tried to make the help, the more impossible it became.
+The {hero} stood before it, broken chime in hand, feeling the floor rearrange. 'It is never shut,' the {hero} said. 'That is the whole thing about it.'
 
-So the {hero} just stood there, stuck, until a familiar voice spoke from nearby.
+Come close and listen with me. Do you notice what is missing? No humming. The mender hums the way rain rains. And tonight, behind the shut door: nothing.
 
-'You have been standing very still for a while now,' said {companion_name}, stepping up beside the {hero} with the {object_motif} tucked close. 'I can almost hear you thinking.'
+The {hero} decided big problems — everyone knew — needed big answers. So the {hero} built one: a thank-you tower of the roundest pebbles and the grandest flower in {setting}, stacked taller than the {hero}'s own head. Then a knock to match, a knock with importance in it.
 
-'It is my friend,' the {hero} admitted. 'They lost today, and now they are sitting all alone, and they look so sad. I want to help. But I cannot think of anything big enough. Everything I imagine is either too much or not enough.'
+The knock had too much importance. The tower swayed, bowed, and came down entirely. Plop. The door did not move.
 
-{companion_name} was quiet for a breath, looking over at the lonely shape on the hill.
+Next the {hero} tried a cheering-up song, loud, with actions. Somewhere inside, very gently, a shutter closed.
 
-'When I feel like that,' {companion_name} said slowly, 'I do not want a crowd or a clever plan. I just want to know I am not alone. A small kindness can reach a person when a grand gesture would only crowd them. Go and sit with your friend. That is enough.'
+'Hmm,' said {companion_name}, from the edge of the step. 'This afternoon, when your chime snapped — did you want someone to sing at you, little {hero}?'
 
-The {hero} looked doubtful. 'Just sit there? That does not feel like doing anything.'
+The {hero} opened their mouth to say yes, obviously, and found the word would not come out.
 
-'Sitting with someone is doing something,' {companion_name} said. 'Try it, and watch.'
+So the {hero} sat down on the step instead, and did the thing that should have come first: looked. Small things. The cup of tea by the mat, full, gone cold. The mending basket sitting out in the damp, which the mender would never allow. The quiet where the humming lived. Whoever was behind that door was not busy. They were sad — sad in the particular way of somebody who spends every day being the helper, and never once gets helped.
 
-So the {hero} climbed the little rise, the grass whispering underfoot, and sat down beside the friend without a word. For a moment the {hero} said nothing at all. Then, softly: 'I saw you sitting here. I did not want you to be by yourself, so I came to sit too.'
+And the {hero} thought about how the mender actually fixed things. Not one grand gesture in all those years. Ten thousand tiny ones. One stitch. One knot. One dab.
 
-The friend did not answer straight away. But the {hero} noticed something: the friend's shoulders, which had been up near their ears, came down just a little. After a long moment, the friend spoke in a small voice.
+'Oh,' the {hero} said slowly. 'I have been knocking with the wrong size. A small kindness — that is what the mender has given every single one of us. Maybe it is what the mender is missing.'
 
-'I thought everyone had already forgotten about me,' the friend said. 'I thought I would have to sit here by myself until it got dark. It felt like the game was the only thing anyone would remember about me.'
+So the {hero} leaned near the door and said, in a voice made for one listener only: 'You mended my sail last spring. It still flies. I think of you every time it does. That is all I came to say. You do not have to open the door.'
 
-'You do not have to sit here by yourself,' the {hero} said. 'I am not going anywhere.'
+Silence. Then, from inside, a small click.
 
-For a while they just sat. The {hero} did not try to fix anything or explain the game away. When the friend picked at a blade of grass, the {hero} picked one too. When the friend sighed, the {hero} stayed steady and near.
+The door opened a crack, and the mender looked out, blinking.
 
-'It is silly to be this upset over a game,' the friend said at last. The {hero} shook their head. 'It is not silly. You wanted to do well. That matters.' The friend was quiet, then nodded, as if those few plain words had loosened something tight.
+'All day long, they bring me broken things,' the mender said. 'Torn sails, cracked bowls, wobbling carts. In forty years, you are the first to knock about something that was not broken.'
 
-And that was the whole of it. No rematch. No crowd. No perfect speech. Just the two of them on the rise, side by side, while {setting} settled into evening. They talked a little — about the game, and then about nothing much — and in between they were simply quiet together. Bit by bit, the friend's voice grew lighter, and once, near the end, they even laughed.
+'Your door was,' said the {hero}. 'Sort of.'
 
-'Do you want to walk back together?' the {hero} asked after a while. The friend thought about it. 'In a minute,' they said. 'I like it here for now.' So they stayed a minute more, and then another, in no rush at all.
+'{refrain},' murmured {companion_name}, and the mender laughed — one small surprised laugh, like a hinge remembering how.
 
-'Thank you for staying,' the friend said as the first cool air of night drifted in. 'I kept thinking I needed some big cheering-up. But this was better. You just being here made the whole thing feel smaller. I am glad it was you who came,' they added. 'You did not make a big fuss. You just stayed.'
+Inside, the mender warmed the tea and looked at the crooked chime, and did not fix it. Instead, the mender pointed out the one small knot it needed, folded their arms, and watched the {hero} tie it. The chime swung straight, and the silver note rang out hours early, sounding like it had missed everyone.
 
-The {hero} held the {object_motif} loosely and felt something settle inside — a quiet, glad steadiness, like a knot coming undone.
+'Small things, done with care,' the mender said. 'That is the entire trade. You worked it out on my doorstep tonight.'
 
-Down the hill, {companion_name} was watching, and gave the smallest nod, the kind that says: you did well. Above {setting}, the sky deepened from gold to blue, and neither friend felt any hurry to move. Somewhere down below, a night bird called once and then went quiet, and the evening held them both.
+They drank the tea while the {object_motif} glowed warm between them and the evening leaned down over {setting}.
+
+'Come back tomorrow,' the mender said. 'I will show you the smallest tool in the shop. It fixes the biggest things, and I have never once shown it to anybody.'
+
+The {hero} carried the chime home slow, its note swinging quietly with each step.
+
+One small knot. One small kindness. Both exactly the right size.
 
 {refrain}.`,
-    scriptTemplate: `The day had been a long one at {setting}, and now the light was turning the colour of honey. {child_name} was on the way home when a small movement caught {child_name}'s eye. Off to the side, half hidden behind a rise, sat a friend — knees pulled up, chin resting on them, staring at nothing at all.
+    scriptTemplate: `In {setting} there was a door that was never shut, and behind it lived the mender.
 
-{child_name} stopped. Something was wrong. The friend had lost the afternoon's game, {child_name} remembered, and had gone quiet afterward — the kind of quiet that means a person is trying very hard not to cry.
+Nobody remembered a time before the mender. Torn things went to the door. So did wobbly things, leaky things, squeaky things. The mender would turn each one over twice, hum a low mending sort of hum, and make it whole with something tiny — one stitch, one knot, one dab of glue.
 
-{child_name} knew that feeling. Losing in front of everyone, then having to walk away as if it did not matter, when really it mattered a lot. The friend had not said a word since. That silence was the loudest part.
+Tonight, {child_name} needed that door. {child_name}'s song-chime — which hung by the sleeping place and sang one silver note at the end of every day, the note that meant now you can sleep — had snapped a string that afternoon and gone crooked and silent. A whole night without the note was not to be imagined.
 
-I should do something, {child_name} thought. But what? A worry crept in right behind the wish to help. Helping felt like it needed to be big. Maybe {child_name} should organize a rematch, or gather everyone to cheer the friend up, or find the perfect words that would make all the sadness vanish at once. Perhaps a gift would do it, or a joke funny enough to break the mood, or a promise to practise together every single day. Every idea felt enormous, and {child_name} did not have a single one that seemed good enough.
+But the door was shut.
 
-{child_name} took one step forward, then stopped. What if the wrong words made it worse? What if sitting there just felt awkward? The bigger {child_name} tried to make the help, the more impossible it became.
+{child_name} stood before it, broken chime in hand, feeling the floor rearrange. 'It is never shut,' {child_name} said. 'That is the whole thing about it.'
 
-So {child_name} just stood there, stuck, until a familiar voice spoke from nearby.
+Come close and listen with me. Do you notice what is missing? No humming. The mender hums the way rain rains. And tonight, behind the shut door: nothing.
 
-'You have been standing very still for a while now,' said {companion_name}, stepping up beside {child_name} with the {object_motif} tucked close. 'I can almost hear you thinking.'
+{child_name} decided big problems — everyone knew — needed big answers. So {child_name} built one: a thank-you tower of the roundest pebbles and the grandest flower in {setting}, stacked taller than {child_name}'s own head. Then a knock to match, a knock with importance in it.
 
-'It is my friend,' {child_name} admitted. 'They lost today, and now they are sitting all alone, and they look so sad. I want to help. But I cannot think of anything big enough. Everything I imagine is either too much or not enough.'
+The knock had too much importance. The tower swayed, bowed, and came down entirely. Plop. The door did not move.
 
-{companion_name} was quiet for a breath, looking over at the lonely shape on the hill.
+Next {child_name} tried a cheering-up song, loud, with actions. Somewhere inside, very gently, a shutter closed.
 
-'When I feel like that,' {companion_name} said slowly, 'I do not want a crowd or a clever plan. I just want to know I am not alone. A small kindness can reach a person when a grand gesture would only crowd them. Go and sit with your friend. That is enough.'
+'Hmm,' said {companion_name}, from the edge of the step. 'This afternoon, when your chime snapped — did you want someone to sing at you, little {hero}?'
 
-{child_name} looked doubtful. 'Just sit there? That does not feel like doing anything.'
+{child_name} opened their mouth to say yes, obviously, and found the word would not come out.
 
-'Sitting with someone is doing something,' {companion_name} said. 'Try it, and watch.'
+So {child_name} sat down on the step instead, and did the thing that should have come first: looked. Small things. The cup of tea by the mat, full, gone cold. The mending basket sitting out in the damp, which the mender would never allow. The quiet where the humming lived. Whoever was behind that door was not busy. They were sad — sad in the particular way of somebody who spends every day being the helper, and never once gets helped.
 
-So {child_name} climbed the little rise, the grass whispering underfoot, and sat down beside the friend without a word. For a moment {child_name} said nothing at all. Then, softly: 'I saw you sitting here. I did not want you to be by yourself, so I came to sit too.'
+And {child_name} thought about how the mender actually fixed things. Not one grand gesture in all those years. Ten thousand tiny ones. One stitch. One knot. One dab.
 
-The friend did not answer straight away. But {child_name} noticed something: the friend's shoulders, which had been up near their ears, came down just a little. After a long moment, the friend spoke in a small voice.
+'Oh,' {child_name} said slowly. 'I have been knocking with the wrong size. A small kindness — that is what the mender has given every single one of us. Maybe it is what the mender is missing.'
 
-'I thought everyone had already forgotten about me,' the friend said. 'I thought I would have to sit here by myself until it got dark. It felt like the game was the only thing anyone would remember about me.'
+So {child_name} leaned near the door and said, in a voice made for one listener only: 'You mended my sail last spring. It still flies. I think of you every time it does. That is all I came to say. You do not have to open the door.'
 
-'You do not have to sit here by yourself,' {child_name} said. 'I am not going anywhere.'
+Silence. Then, from inside, a small click.
 
-For a while they just sat. {child_name} did not try to fix anything or explain the game away. When the friend picked at a blade of grass, {child_name} picked one too. When the friend sighed, {child_name} stayed steady and near.
+The door opened a crack, and the mender looked out, blinking.
 
-'It is silly to be this upset over a game,' the friend said at last. {child_name} shook their head. 'It is not silly. You wanted to do well. That matters.' The friend was quiet, then nodded, as if those few plain words had loosened something tight.
+'All day long, they bring me broken things,' the mender said. 'Torn sails, cracked bowls, wobbling carts. In forty years, you are the first to knock about something that was not broken.'
 
-And that was the whole of it. No rematch. No crowd. No perfect speech. Just the two of them on the rise, side by side, while {setting} settled into evening. They talked a little — about the game, and then about nothing much — and in between they were simply quiet together. Bit by bit, the friend's voice grew lighter, and once, near the end, they even laughed.
+'Your door was,' said {child_name}. 'Sort of.'
 
-'Do you want to walk back together?' {child_name} asked after a while. The friend thought about it. 'In a minute,' they said. 'I like it here for now.' So they stayed a minute more, and then another, in no rush at all.
+'{refrain},' murmured {companion_name}, and the mender laughed — one small surprised laugh, like a hinge remembering how.
 
-'Thank you for staying,' the friend said as the first cool air of night drifted in. 'I kept thinking I needed some big cheering-up. But this was better. You just being here made the whole thing feel smaller. I am glad it was you who came,' they added. 'You did not make a big fuss. You just stayed.'
+Inside, the mender warmed the tea and looked at the crooked chime, and did not fix it. Instead, the mender pointed out the one small knot it needed, folded their arms, and watched {child_name} tie it. The chime swung straight, and the silver note rang out hours early, sounding like it had missed everyone.
 
-{child_name} held the {object_motif} loosely and felt something settle inside — a quiet, glad steadiness, like a knot coming undone.
+'Small things, done with care,' the mender said. 'That is the entire trade. You worked it out on my doorstep tonight.'
 
-Down the hill, {companion_name} was watching, and gave the smallest nod, the kind that says: you did well. Above {setting}, the sky deepened from gold to blue, and neither friend felt any hurry to move. Somewhere down below, a night bird called once and then went quiet, and the evening held them both.
+They drank the tea while the {object_motif} glowed warm between them and the evening leaned down over {setting}.
+
+'Come back tomorrow,' the mender said. 'I will show you the smallest tool in the shop. It fixes the biggest things, and I have never once shown it to anybody.'
+
+{child_name} carried the chime home slow, its note swinging quietly with each step.
+
+One small knot. One small kindness. Both exactly the right size.
 
 {refrain}.`
   },
   '9-11': {
-    audioTemplate: `There is a particular kind of quiet that means someone is not all right, and the {hero} had learned to hear it. So when the {hero} came over the last rise toward {setting} that evening and saw a friend sitting apart from everyone, half turned away, that quiet reached the {hero} before a single word did.
+    audioTemplate: `Every place has one door that is never shut, and in {setting} that door belonged to the mender.
 
-The {hero} already knew why. All week the friend had talked about the thing they were hoping for — a chance they had wanted badly, had practised for, had let themselves believe in. And today the answer had come, and it had been no. Not cruelly. Just no. The friend had smiled a thin smile and said it was fine, and then, when they thought no one was looking, had drifted off to sit alone.
+Nobody could remember a time before the mender. Torn things, wobbling things, leaking things — all went to that door, and all came back whole. The strange magic of the trade was this: the mender never fixed anything with anything big. You could bring an enormous disaster; the mender would turn it over twice, hum a low mending hum, and defeat the whole catastrophe with one stitch, or one knot, or one dab of glue, leaving you feeling you had watched a mountain moved with a teaspoon.
 
-What made it worse was that the friend had been so brave about it. That thin, careful smile — the {hero} recognised it. It was the smile people wear when they are holding themselves together with both hands, and it was somehow harder to watch than tears would have been.
+Tonight the {hero} needed that door. By the {hero}'s sleeping place hung a song-chime that sang one silver note each night — the note that meant the day is done, you did enough, now sleep — and that afternoon a string had snapped, and the chime hung crooked and mute. But the door was shut.
 
-The {hero} wanted, more than anything, to make it better. But wanting it so much was exactly the problem. The stronger the wish grew, the bigger the help seemed to need to be — as if only something grand could match how much the friend was hurting. The {hero} began, almost without meaning to, to build enormous plans.
+The {hero} stood in front of it, chime in hand, feeling the evening tilt. A shut door was not a thing this door did. Rain fell down; the mender's door stood open; that was simply how {setting} worked.
 
-A speech, maybe — the perfect string of words that would turn the whole day around. Or a grand surprise, something so generous the friend could not possibly stay sad. Or a promise to fix the situation entirely, to somehow make the no become a yes. Each plan rose up shining and then collapsed, because none of them were things the {hero} could actually do. And underneath the plans ran a colder thought: if the {hero} could not do something big, then maybe the {hero} was not a good enough friend at all. It was a familiar, unfair little voice, and this evening it was very loud.
+Stand on the step and listen. Can you tell what is missing? No humming. The mender hums the way rain rains. Behind the shut door, there is only quiet.
 
-For a moment the {hero} actually took a step in the friend's direction, then hesitated. What if going over there empty-handed, with no plan and no gift and no clever words, only made the friend feel more alone? The fear of doing the wrong thing was quietly talking the {hero} out of doing anything at all.
+A shut door was a big problem, and big problems, as everyone knows, demand big solutions. The {hero} was extremely good at big solutions. First came the thank-you tower: the roundest pebbles and the grandest flower in {setting}, stacked into a monument taller than the {hero}. Then the knock to match — a knock with real ceremony in it. The ceremony proved too much for the monument, which swayed once and came down in ruins. Plop. The door did not so much as shiver.
 
-'That is a very heavy silence you are carrying.' {companion_name} had come up beside the {hero} without a sound, the {object_motif} held loosely in one hand. 'I have been watching you not-quite-walk over there for a while now.'
+Next came the speech, delivered to the door itself, on the theme of how valued the mender was. Halfway through, somewhere inside, a shutter closed. Gently. The gentleness was somehow worse.
 
-'I do not know what to do,' the {hero} admitted, and it was a relief to say it out loud. 'They wanted this so much, and they did not get it, and now they are sitting over there feeling awful. I keep trying to think of something big enough to make it right. But everything I come up with is either impossible or not nearly enough. And if I cannot do anything big, what use am I?'
+'Hmm,' said {companion_name}. 'This afternoon, when your chime snapped — did you want a monument, little {hero}? A speech?'
 
-{companion_name} did not answer right away. They looked over at the friend on the hill, and then back at the {hero}, with an expression that was gentle but very serious.
+The {hero} began to say yes, obviously, and discovered halfway that the word had quietly left. What the {hero} had wanted that afternoon was somebody to sit down next to the wreckage and say: that matters to me too.
 
-'Here is the part that is hard to believe, so I will just tell you plainly. The big gestures you are dreaming up are mostly for you — they would prove you tried hard. But the thing your friend actually needs is smaller and quieter. A small kindness, offered without any show, often reaches deeper than the grandest gesture, because it asks nothing back. Go and sit with them. Do not fix it. Do not perform. Just be someone who stayed.'
+So the {hero} sat down on the step and finally did what should have come first: noticed. Small things — the kind you only find when you stop performing and start looking. The cup of tea by the mat, full, stone cold. The mending basket out in the damp, which the mender would never in forty years allow. The silence where the humming lived. The {hero} read the signs the way you read weather. The one behind that door was not busy. They were sad — sad in the particular way of someone who has spent a lifetime being the helper, and has begun to wonder whether anyone would ever ask the return question. Who mends the mender?
 
-The {hero} turned the idea over, and found it strangely difficult — not because it was complicated, but because it was so simple it felt like cheating. 'Just sitting there,' the {hero} said slowly, 'feels like giving up. Like admitting I could not think of anything better.'
+And there on the step, the {hero} finally understood the trade. The mender had never once solved anything with a monument. Ten thousand tiny mends — that was the whole career. One stitch. One knot. One dab.
 
-{companion_name} smiled, just slightly. 'I know it does. Try it anyway, and pay attention to your friend's face.'
+'I have been knocking in the wrong size,' the {hero} said slowly. 'A small kindness — that is what the mender has handed out every day, to everyone, forever. And it is exactly the thing nobody ever thought to hand back.'
 
-So the {hero} went. Each step up the slope felt heavier than it should have, weighed down by the certainty that this was not enough. When the {hero} reached the friend, there was no grand speech ready, no perfect plan — only a person who had decided to come over. So the {hero} sat down on the grass beside them, close but not crowding, and for a little while said nothing at all.
+The {hero} leaned close to the shut door and spoke in a voice built for a single listener.
 
-When the {hero} finally spoke, it was not a speech. It was just the truth. 'I know how much you wanted it,' the {hero} said quietly. 'I am really sorry it went the way it did. I did not want you sitting up here on your own, so I came to sit with you.'
+'You mended my sail last spring. It still flies. I think of you every time it does. That is all I came to say. You do not have to open the door.'
 
-For a moment the friend did not respond, and the {hero} felt the old worry flare — maybe this really was not enough, maybe the {hero} should have done more. But then the friend's shoulders dropped, all at once, as though a held breath had finally been let go. When they spoke, their voice was rough at the edges.
+A long silence. Then a click, and the door opened a careful crack, and the mender looked out, blinking.
 
-'Everyone kept telling me it was fine,' the friend said. 'That there would be other chances. And maybe there will. But I did not want to be told it was fine. I just wanted someone to sit here and let it not be fine for a minute.'
+'Forty years,' the mender said. 'They bring me torn sails and cracked bowls and wobbling carts. But you are the first one who ever knocked about a thing that was not broken.'
 
-The {hero} nodded, and did not argue, and did not rush to promise that everything would be okay. That was hard, in its way — the {hero} could feel all the reassuring words pressing to get out, all the it-will-get-betters and you-will-have-other-chances. But the friend had just said, plainly, that those were not the words they needed. So the {hero} swallowed them and stayed quiet instead, which turned out to be its own kind of gift.
+'Your door was,' the {hero} said. 'Sort of. The broken part was just on the inside.'
 
-'Then we can do that,' the {hero} said. 'We can let it not be fine for as long as you want.' And so they did. They sat together while the light drained slowly out of the sky and {setting} went soft and dim around them. The {hero} did not try to cheer the friend up or explain away the disappointment. Now and then they talked; mostly they were quiet. At one point the {hero} passed the friend the {object_motif} to hold, simply because it was a comforting thing to hold, and the friend turned it over in their hands and held on.
+The mender laughed — one small, surprised laugh, like a hinge remembering what it was for. '{refrain},' murmured {companion_name}.
 
-Time stretched out, unhurried. A breeze came and went across {setting}. The {hero} noticed small things — the way the friend's breathing slowly evened out, the way their grip on the {object_motif} loosened as the minutes passed. None of it was dramatic. None of it would have made a good story to tell later. And yet the {hero} understood, sitting there, that something was quietly mending.
+Inside, the tea was warmed. And when the mender took the crooked chime, they did not fix it. They set it on the bench, pointed to the one small knot it needed, and folded their arms — and the {hero}, in the warm glow of the {object_motif}, tied it themselves. The chime swung straight, and the silver note rang out hours early, sounding enormously pleased with itself.
 
-Somewhere in that quiet, without any announcement, the worst of the ache seemed to loosen its grip. Not because it was fixed — the answer was still no, and would still be no tomorrow — but because the friend no longer had to carry it alone.
+'Small things, done with care,' the mender said. 'That is the entire secret of my trade, and you worked it out on my own doorstep.'
 
-Later, when the friend finally spoke again, there was something steadier in their voice. 'Thank you for not making a big deal of it,' they said. 'If you had thrown some huge cheering-up thing at me, I think I would have had to pretend to feel better before I actually did. You just sitting here let me feel exactly as bad as I felt. That helped more than you know.'
+They drank the tea down slow while the evening settled over {setting}.
 
-After a while, the friend let out a breath that was almost a laugh — not because anything was funny, but because something had eased. 'I probably needed this more than I needed to win,' they said, and then, quieter, 'do not tell anyone I said that.' The {hero} smiled and promised they would not.
+'Come back tomorrow,' the mender said. 'I will show you the smallest tool in the shop — the one that fixes the biggest things. Forty years, and I have never shown it to a single soul.'
 
-The {hero} did not say anything clever back. There was nothing that needed adding. The {hero} simply stayed, shoulder warm against the friend's shoulder, and felt something quiet and certain take root inside — a sense of being exactly where they were meant to be.
+The {hero} walked home slow and warm, the chime chiming faintly at each step.
 
-Down below, {companion_name} watched the two friends sitting together against the darkening {setting}, and did not call them in. Some things were better left unhurried. The evening folded gently around the hill, and neither friend moved to break it. One by one, the first stars found their places overhead, patient and unremarkable, and the two friends stayed beneath them, in no hurry to be anywhere else.
+One small knot. One small kindness. Both, in the end, exactly the right size.
 
 {refrain}.`,
-    scriptTemplate: `There is a particular kind of quiet that means someone is not all right, and {child_name} had learned to hear it. So when {child_name} came over the last rise toward {setting} that evening and saw a friend sitting apart from everyone, half turned away, that quiet reached {child_name} before a single word did.
+    scriptTemplate: `Every place has one door that is never shut, and in {setting} that door belonged to the mender.
 
-{child_name} already knew why. All week the friend had talked about the thing they were hoping for — a chance they had wanted badly, had practised for, had let themselves believe in. And today the answer had come, and it had been no. Not cruelly. Just no. The friend had smiled a thin smile and said it was fine, and then, when they thought no one was looking, had drifted off to sit alone.
+Nobody could remember a time before the mender. Torn things, wobbling things, leaking things — all went to that door, and all came back whole. The strange magic of the trade was this: the mender never fixed anything with anything big. You could bring an enormous disaster; the mender would turn it over twice, hum a low mending hum, and defeat the whole catastrophe with one stitch, or one knot, or one dab of glue, leaving you feeling you had watched a mountain moved with a teaspoon.
 
-What made it worse was that the friend had been so brave about it. That thin, careful smile — {child_name} recognised it. It was the smile people wear when they are holding themselves together with both hands, and it was somehow harder to watch than tears would have been.
+Tonight {child_name} needed that door. By {child_name}'s sleeping place hung a song-chime that sang one silver note each night — the note that meant the day is done, you did enough, now sleep — and that afternoon a string had snapped, and the chime hung crooked and mute. But the door was shut.
 
-{child_name} wanted, more than anything, to make it better. But wanting it so much was exactly the problem. The stronger the wish grew, the bigger the help seemed to need to be — as if only something grand could match how much the friend was hurting. {child_name} began, almost without meaning to, to build enormous plans.
+{child_name} stood in front of it, chime in hand, feeling the evening tilt. A shut door was not a thing this door did. Rain fell down; the mender's door stood open; that was simply how {setting} worked.
 
-A speech, maybe — the perfect string of words that would
-turn the whole day around. Or a grand surprise, something so generous the friend could not possibly stay sad. Or a promise to fix the situation entirely, to somehow make the no become a yes. Each plan rose up shining and then collapsed, because none of them were things {child_name} could actually do. And underneath the plans ran a colder thought: if {child_name} could not do something big, then maybe {child_name} was not a good enough friend at all. It was a familiar, unfair little voice, and this evening it was very loud.
+Stand on the step and listen. Can you tell what is missing? No humming. The mender hums the way rain rains. Behind the shut door, there is only quiet.
 
-For a moment {child_name} actually took a step in the friend's direction, then hesitated. What if going over there empty-handed, with no plan and no gift and no clever words, only made the friend feel more alone? The fear of doing the wrong thing was quietly talking {child_name} out of doing anything at all.
+A shut door was a big problem, and big problems, as everyone knows, demand big solutions. {child_name} was extremely good at big solutions. First came the thank-you tower: the roundest pebbles and the grandest flower in {setting}, stacked into a monument taller than {child_name}. Then the knock to match — a knock with real ceremony in it. The ceremony proved too much for the monument, which swayed once and came down in ruins. Plop. The door did not so much as shiver.
 
-'That is a very heavy silence you are carrying.' {companion_name} had come up beside {child_name} without a sound, the {object_motif} held loosely in one hand. 'I have been watching you not-quite-walk over there for a while now.'
+Next came the speech, delivered to the door itself, on the theme of how valued the mender was. Halfway through, somewhere inside, a shutter closed. Gently. The gentleness was somehow worse.
 
-'I do not know what to do,' {child_name} admitted, and it was a relief to say it out loud. 'They wanted this so much, and they did not get it, and now they are sitting over there feeling awful. I keep trying to think of something big enough to make it right. But everything I come up with is either impossible or not nearly enough. And if I cannot do anything big, what use am I?'
+'Hmm,' said {companion_name}. 'This afternoon, when your chime snapped — did you want a monument, little {hero}? A speech?'
 
-{companion_name} did not answer right away. They looked over at the friend on the hill, and then back at {child_name}, with an expression that was gentle but very serious.
+{child_name} began to say yes, obviously, and discovered halfway that the word had quietly left. What {child_name} had wanted that afternoon was somebody to sit down next to the wreckage and say: that matters to me too.
 
-'Here is the part that is hard to believe, so I will just tell you plainly. The big gestures you are dreaming up are mostly for you — they would prove you tried hard. But the thing your friend actually needs is smaller and quieter. A small kindness, offered without any show, often reaches deeper than the grandest gesture, because it asks nothing back. Go and sit with them. Do not fix it. Do not perform. Just be someone who stayed.'
+So {child_name} sat down on the step and finally did what should have come first: noticed. Small things — the kind you only find when you stop performing and start looking. The cup of tea by the mat, full, stone cold. The mending basket out in the damp, which the mender would never in forty years allow. The silence where the humming lived. {child_name} read the signs the way you read weather. The one behind that door was not busy. They were sad — sad in the particular way of someone who has spent a lifetime being the helper, and has begun to wonder whether anyone would ever ask the return question. Who mends the mender?
 
-{child_name} turned the idea over, and found it strangely difficult — not because it was complicated, but because it was so simple it felt like cheating. 'Just sitting there,' {child_name} said slowly, 'feels like giving up. Like admitting I could not think of anything better.'
+And there on the step, {child_name} finally understood the trade. The mender had never once solved anything with a monument. Ten thousand tiny mends — that was the whole career. One stitch. One knot. One dab.
 
-{companion_name} smiled, just slightly. 'I know it does. Try it anyway, and pay attention to your friend's face.'
+'I have been knocking in the wrong size,' {child_name} said slowly. 'A small kindness — that is what the mender has handed out every day, to everyone, forever. And it is exactly the thing nobody ever thought to hand back.'
 
-So {child_name} went. Each step up the slope felt heavier than it should have, weighed down by the certainty that this was not enough. When {child_name} reached the friend, there was no grand speech ready, no perfect plan — only a person who had decided to come over. So {child_name} sat down on the grass beside them, close but not crowding, and for a little while said nothing at all.
+{child_name} leaned close to the shut door and spoke in a voice built for a single listener.
 
-When {child_name} finally spoke, it was not a speech. It was just the truth. 'I know how much you wanted it,' {child_name} said quietly. 'I am really sorry it went the way it did. I did not want you sitting up here on your own, so I came to sit with you.'
+'You mended my sail last spring. It still flies. I think of you every time it does. That is all I came to say. You do not have to open the door.'
 
-For a moment the friend did not respond, and {child_name} felt the old worry flare — maybe this really was not enough, maybe {child_name} should have done more. But then the friend's shoulders dropped, all at once, as though a held breath had finally been let go. When they spoke, their voice was rough at the edges.
+A long silence. Then a click, and the door opened a careful crack, and the mender looked out, blinking.
 
-'Everyone kept telling me it was fine,' the friend said. 'That there would be other chances. And maybe there will. But I did not want to be told it was fine. I just wanted someone to sit here and let it not be fine for a minute.'
+'Forty years,' the mender said. 'They bring me torn sails and cracked bowls and wobbling carts. But you are the first one who ever knocked about a thing that was not broken.'
 
-{child_name} nodded, and did not argue, and did not rush to promise that everything would be okay. That was hard, in its way — {child_name} could feel all the reassuring words pressing to get out, all the it-will-get-betters and you-will-have-other-chances. But the friend had just said, plainly, that those were not the words they needed. So {child_name} swallowed them and stayed quiet instead, which turned out to be its own kind of gift.
+'Your door was,' {child_name} said. 'Sort of. The broken part was just on the inside.'
 
-'Then we can do that,' {child_name} said. 'We can let it not be fine for as long as you want.' And so they did. They sat together while the light drained slowly out of the sky and {setting} went soft and dim around them. {child_name} did not try to cheer the friend up or explain away the disappointment. Now and then they talked; mostly they were quiet. At one point {child_name} passed the friend the {object_motif} to hold, simply because it was a comforting thing to hold, and the friend turned it over in their hands and held on.
+The mender laughed — one small, surprised laugh, like a hinge remembering what it was for. '{refrain},' murmured {companion_name}.
 
-Time stretched out, unhurried. A breeze came and went across {setting}. {child_name} noticed small things — the way the friend's breathing slowly evened out, the way their grip on the {object_motif} loosened as the minutes passed. None of it was dramatic. None of it would have made a good story to tell later. And yet {child_name} understood, sitting there, that something was quietly mending.
+Inside, the tea was warmed. And when the mender took the crooked chime, they did not fix it. They set it on the bench, pointed to the one small knot it needed, and folded their arms — and {child_name}, in the warm glow of the {object_motif}, tied it themselves. The chime swung straight, and the silver note rang out hours early, sounding enormously pleased with itself.
 
-Somewhere in that quiet, without any announcement, the worst of the ache seemed to loosen its grip. Not because it was fixed — the answer was still no, and would still be no tomorrow — but because the friend no longer had to carry it alone.
+'Small things, done with care,' the mender said. 'That is the entire secret of my trade, and you worked it out on my own doorstep.'
 
-Later, when the friend finally spoke again, there was something steadier in their voice. 'Thank you for not making a big deal of it,' they said. 'If you had thrown some huge cheering-up thing at me, I think I would have had to pretend to feel better before I actually did. You just sitting here let me feel exactly as bad as I felt. That helped more than you know.'
+They drank the tea down slow while the evening settled over {setting}.
 
-After a while, the friend let out a breath that was almost a laugh — not because anything was funny, but because something had eased. 'I probably needed this more than I needed to win,' they said, and then, quieter, 'do not tell anyone I said that.' {child_name} smiled and promised they would not.
+'Come back tomorrow,' the mender said. 'I will show you the smallest tool in the shop — the one that fixes the biggest things. Forty years, and I have never shown it to a single soul.'
 
-{child_name} did not say anything clever back. There was nothing that needed adding. {child_name} simply stayed, shoulder warm against the friend's shoulder, and felt something quiet and certain take root inside — a sense of being exactly where they were meant to be.
+{child_name} walked home slow and warm, the chime chiming faintly at each step.
 
-Down below, {companion_name} watched the two friends sitting together against the darkening {setting}, and did not call them in. Some things were better left unhurried. The evening folded gently around the hill, and neither friend moved to break it. One by one, the first stars found their places overhead, patient and unremarkable, and the two friends stayed beneath them, in no hurry to be anywhere else.
+One small knot. One small kindness. Both, in the end, exactly the right size.
 
 {refrain}.`
   }
 },
-    audioTemplate: `The {object_motif} glowed steadily in {setting}, and the {hero} remembered the quiet, sad friend from before.
+    audioTemplate: `The {hero} had a song-chime, and tonight it would not sing.
 
-"I want to help," said the {hero}, "but I do not have anything big to give."
+It hung by the {hero}'s sleeping place in {setting} and sang one silver note to end each day. But today a string had snapped.
 
-{companion_name} smiled. "Who told you kindness must be big? Watch what small can do."
+Only the mender could fix it. The mender mended everything for everyone — a stitch, a knot, one dab of glue — and the mender's door was never, ever shut.
 
-So the {hero} simply went and sat beside the sad friend. Said a soft hello. Stayed a while, quietly, so they would not be alone.
+But tonight the door was shut.
 
-And slowly, the friend's shoulders lifted. A tiny smile returned.
+Listen at the door. Can you hear what is missing? No humming. The mender always hums.
 
-"That was not big," said the {hero}, surprised.
+The {hero} decided a shut door needed something big. So the {hero} stacked the shiniest pebbles and the biggest flower into a thank-you tower, and knocked the grandest knock —
 
-"It was exactly the right size," said {companion_name}. "A small kindness, given when it is noticed, is the warmest thing there is. You do not need more than that."
+Plop. The tower fell over. The door stayed shut.
 
-The {object_motif} brightened, and so did the night.
+'Hmm,' said {companion_name}. 'When your chime broke today, did you want a parade, little {hero}?'
 
-The {hero} understood now: kindness was never about how big. It was about being there.
+The {hero} sat down on the step and began to notice. Small things. A cup of tea, gone cold. The mending basket out in the damp. The quiet where the humming should be. The mender was not busy in there — the mender was sad in there.
+
+And how did the mender fix the whole of {setting}? With small things. One stitch. One knot. One dab.
+
+'Oh,' said the {hero} softly. 'A small kindness. That is what the mender gives everyone. Maybe that is what a shut door needs too.'
+
+So this time the {hero} did not knock. The {hero} sat close and said, quietly, 'You mended my sail last spring. It still flies. I think of you every time it does. You do not have to open the door.'
+
+Quiet. Then a click. The door opened just a crack, and the mender peeped out.
+
+'All day, everyone brings me broken things,' the mender said. 'You are the first who ever knocked just for me.'
+
+'{refrain},' whispered {companion_name}.
+
+The mender looked at the crooked chime — but did not fix it. They showed the {hero} the one small knot it needed, and the {hero} tied it. The chime sang its silver note.
+
+'Small things, done with care,' said the mender. 'That is my whole secret.'
+
+The {object_motif} glowed between them.
+
+'Come back tomorrow,' the mender said, 'and I will show you the smallest tool in my shop. It fixes the biggest things.'
+
+The {hero} carried the chime home. One small note. One small kindness. Both exactly big enough.
 
 {refrain}.`,
-    scriptTemplate: `The {object_motif} glowed steadily in {setting}, and {child_name} the {hero} remembered the quiet, sad friend from before.
+    scriptTemplate: `{child_name} had a song-chime, and tonight it would not sing.
 
-"I want to help," said {child_name}, "but I do not have anything big to give."
+It hung by {child_name}'s sleeping place in {setting} and sang one silver note to end each day. But today a string had snapped.
 
-{companion_name} smiled. "Who told you kindness must be big, {child_name}? Watch what small can do."
+Only the mender could fix it. The mender mended everything for everyone — a stitch, a knot, one dab of glue — and the mender's door was never, ever shut.
 
-So {child_name} simply went and sat beside the sad friend. Said a soft hello. Stayed a while, quietly, so they would not be alone.
+But tonight the door was shut.
 
-And slowly, the friend's shoulders lifted. A tiny smile returned.
+Listen at the door. Can you hear what is missing? No humming. The mender always hums.
 
-"That was not big," said {child_name}, surprised.
+{child_name} decided a shut door needed something big. So {child_name} stacked the shiniest pebbles and the biggest flower into a thank-you tower, and knocked the grandest knock —
 
-"It was exactly the right size," said {companion_name}. "A small kindness, given when it is noticed, is the warmest thing there is. You do not need more than that."
+Plop. The tower fell over. The door stayed shut.
 
-The {object_motif} brightened, and so did the night.
+'Hmm,' said {companion_name}. 'When your chime broke today, did you want a parade, little {hero}?'
 
-{child_name} understood now: kindness was never about how big. It was about being there.
+{child_name} sat down on the step and began to notice. Small things. A cup of tea, gone cold. The mending basket out in the damp. The quiet where the humming should be. The mender was not busy in there — the mender was sad in there.
+
+And how did the mender fix the whole of {setting}? With small things. One stitch. One knot. One dab.
+
+'Oh,' said {child_name} softly. 'A small kindness. That is what the mender gives everyone. Maybe that is what a shut door needs too.'
+
+So this time {child_name} did not knock. {child_name} sat close and said, quietly, 'You mended my sail last spring. It still flies. I think of you every time it does. You do not have to open the door.'
+
+Quiet. Then a click. The door opened just a crack, and the mender peeped out.
+
+'All day, everyone brings me broken things,' the mender said. 'You are the first who ever knocked just for me.'
+
+'{refrain},' whispered {companion_name}.
+
+The mender looked at the crooked chime — but did not fix it. They showed {child_name} the one small knot it needed, and {child_name} tied it. The chime sang its silver note.
+
+'Small things, done with care,' said the mender. 'That is my whole secret.'
+
+The {object_motif} glowed between them.
+
+'Come back tomorrow,' the mender said, 'and I will show you the smallest tool in my shop. It fixes the biggest things.'
+
+{child_name} carried the chime home. One small note. One small kindness. Both exactly big enough.
 
 {refrain}.`,
   },
-
   {
-    ordinal: 3, title: "Walking in Someone's Shoes",
-    concept: 'Imagining how another person feels', callback: 'Noticing how others feel (Level 1)', ageFloor: 4,
-    summary: 'When the hero does not understand why a friend acted unkindly, their companion teaches them to imagine being that friend — to walk in their shoes. It revisits Level 1: noticing the outside, then imagining the inside.',
-    teachingNote: 'Perspective-taking — imagining another\'s inner world — is the heart of empathy and the antidote to quick judgement.',
+    ordinal: 3, title: "The Friend Who Hurried Past",
+    concept: "Imagining how another person feels", callback: "Noticing how others feel (Level 1)", ageFloor: 4,
+    summary: "Two mysteries in one week: the softest things keep vanishing, and the hero's best friend rushes past the meeting rock without stopping. Chasing fails and the stakeout ends in a nap — the case only cracks when the hero walks the friend's exact path, imagining the friend's worry, and both mysteries turn out to share one small, peeping answer.",
+    teachingNote: "Perspective-taking — imagining another's inner world — is the heart of empathy and the antidote to quick judgement.",
     learningBeat: "walking in someone's shoes",
     ageVariants: {
   '3-4': {
-    audioTemplate: `The {hero} played by {setting}. The sky was soft. The day was slow and warm.
+    audioTemplate: `The {hero} had a best friend. Every night they played by the meeting rock in {setting}.
 
-A bigger kid was there too. The bigger kid stood alone. The bigger kid did not smile.
+Tonight the friend ran right past! 'Not now — sorry!' Into the reeds.
 
-The {hero} waved. "Hello!" said the {hero}. "Hello, hello!"
+Soft things kept going missing! Moss. Seed-down. A feather. Only soft things!
 
-The bigger kid turned away. The bigger kid said nothing. Not one word.
+The {hero} chased. Too fast. Gone! Then pounced on a rustle. Oops! Only a leaf.
 
-The {hero} felt sad. The {hero} felt small. Why was the bigger kid so cold?
+'Hmm,' said {companion_name}. 'What did your friend feel, little {hero}?'
 
-The {hero} sat down alone. The {hero} looked at the ground. It did not feel fair.
+The {hero} thought. The friend's eyes looked worried. Not mean. Worried.
 
-The {hero} went to {companion_name}. {companion_name} was kind. {companion_name} was calm.
+So the {hero} walked the friend's walk. Step, step. Arms full. Hurry, hurry.
 
-"I said hello," said the {hero}. "The bigger kid walked away. That felt cold."
+'It is like walking in someone's shoes!' said the {hero}. 'My friend was not mean. Just worried about something small!'
 
-{companion_name} sat down close. "Let us try something," said {companion_name}. "Close your eyes. Think about walking in someone's shoes."
+Listen! Can you hear it too? Peep! Who says peep?
 
-The {hero} closed both eyes. The {hero} thought and thought.
+The {hero} fetched their softest blanket-scrap and went into the reeds.
 
-What if the bigger kid was new? What if the bigger kid was scared? What if the bigger kid missed home? What if the bigger kid felt small too? What if the bigger kid was shy? What if the bigger kid wanted a friend?
+There was the friend, with a nest of moss. And inside — a tiny lost bird!
 
-The {hero} opened both eyes. "Maybe they feel sad," said the {hero}. "Maybe they feel scared."
+'Its family comes back at sunrise,' whispered the friend.
 
-{companion_name} smiled soft and slow. "First we see the outside. Then we feel the inside."
+The {hero} tucked the blanket-scrap in. The peeping stopped. The little bird slept.
 
-The {hero} held the {object_motif}. The {hero} felt warm. The {hero} felt brave.
+'{refrain},' whispered {companion_name}. The {object_motif} glowed over the nest.
 
-The {hero} walked back. Slow steps. Soft steps. The {hero} sat near the bigger kid.
+'Watch the family come with me?' asked the friend.
 
-"Do you want to play?" said the {hero}. "You can hold the {object_motif}. We can share it."
+'Yes!' said the {hero}.
 
-The bigger kid looked up. The bigger kid was quiet. Then the bigger kid gave a tiny nod.
-
-"I am new here," said the bigger kid. "I did not know anyone. Not one friend."
-
-"Now you know me," said the {hero}. "Now you have a friend."
-
-The bigger kid smiled. A small smile. Then a big smile.
-
-They played by {setting}. They shared the {object_motif}. They ran. They laughed. They dug in the sand. They chased each other. They played and played.
-
-The sky turned pink. Then orange. Then soft and dark.
-
-The moon came up over {setting}. Round and soft and silver. The {hero} gave a big, happy yawn. The bigger kid yawned too.
+Two friends. One nest. Sleepy now.
 
 {refrain}.`,
-    scriptTemplate: `{child_name} played by {setting}. The sky was soft. The day was slow and warm.
+    scriptTemplate: `{child_name} had a best friend. Every night they played by the meeting rock in {setting}.
 
-A bigger kid was there too. The bigger kid stood alone. The bigger kid did not smile.
+Tonight the friend ran right past! 'Not now — sorry!' Into the reeds.
 
-{child_name} waved. "Hello!" said {child_name}. "Hello, hello!"
+Soft things kept going missing! Moss. Seed-down. A feather. Only soft things!
 
-The bigger kid turned away. The bigger kid said nothing. Not one word.
+{child_name} chased. Too fast. Gone! Then pounced on a rustle. Oops! Only a leaf.
 
-{child_name} felt sad. {child_name} felt small. Why was the bigger kid so cold?
+'Hmm,' said {companion_name}. 'What did your friend feel, little {hero}?'
 
-{child_name} sat down alone. {child_name} looked at the ground. It did not feel fair.
+{child_name} thought. The friend's eyes looked worried. Not mean. Worried.
 
-{child_name} went to {companion_name}. {companion_name} was kind. {companion_name} was calm.
+So {child_name} walked the friend's walk. Step, step. Arms full. Hurry, hurry.
 
-"I said hello," said {child_name}. "The bigger kid walked away. That felt cold."
+'It is like walking in someone's shoes!' said {child_name}. 'My friend was not mean. Just worried about something small!'
 
-{companion_name} sat down close. "Let us try something," said {companion_name}. "Close your eyes. Think about walking in someone's shoes."
+Listen! Can you hear it too? Peep! Who says peep?
 
-{child_name} closed both eyes. {child_name} thought and thought.
+{child_name} fetched their softest blanket-scrap and went into the reeds.
 
-What if the bigger kid was new? What if the bigger kid was scared? What if the bigger kid missed home? What if the bigger kid felt small too? What if the bigger kid was shy? What if the bigger kid wanted a friend?
+There was the friend, with a nest of moss. And inside — a tiny lost bird!
 
-{child_name} opened both eyes. "Maybe they feel sad," said {child_name}. "Maybe they feel scared."
+'Its family comes back at sunrise,' whispered the friend.
 
-{companion_name} smiled soft and slow. "First we see the outside. Then we feel the inside."
+{child_name} tucked the blanket-scrap in. The peeping stopped. The little bird slept.
 
-{child_name} held the {object_motif}. {child_name} felt warm. {child_name} felt brave.
+'{refrain},' whispered {companion_name}. The {object_motif} glowed over the nest.
 
-{child_name} walked back. Slow steps. Soft steps. {child_name} sat near the bigger kid.
+'Watch the family come with me?' asked the friend.
 
-"Do you want to play?" said {child_name}. "You can hold the {object_motif}. We can share it."
+'Yes!' said {child_name}.
 
-The bigger kid looked up. The bigger kid was quiet. Then the bigger kid gave a tiny nod.
-
-"I am new here," said the bigger kid. "I did not know anyone. Not one friend."
-
-"Now you know me," said {child_name}. "Now you have a friend."
-
-The bigger kid smiled. A small smile. Then a big smile.
-
-They played by {setting}. They shared the {object_motif}. They ran. They laughed. They dug in the sand. They chased each other. They played and played.
-
-The sky turned pink. Then orange. Then soft and dark.
-
-The moon came up over {setting}. Round and soft and silver. {child_name} gave a big, happy yawn. The bigger kid yawned too.
+Two friends. One nest. Sleepy now.
 
 {refrain}.`
   },
   '5-6': {
-    audioTemplate: `The {hero} loved mornings by {setting}. The air was cool and the light was new, and there was always someone to play with.
+    audioTemplate: `The {hero} and their best friend met every evening at the meeting rock in {setting}. Without fail.
 
-That day, a new kid had set up nearby, someone the {hero} had never seen before. The {hero} liked meeting new people, so they walked right over.
+But tonight the friend came hurrying along the path, arms full — and hurried straight past. 'Not now — sorry!' they called, and vanished into the tall reeds.
 
-"Hello!" called the {hero}, waving both hands. "Do you want to play?"
+The {hero} stood at the meeting rock, alone.
 
-The new kid barely looked up. They frowned, turned their shoulder, and said nothing at all. Then they moved a few steps farther away, as if the {hero} was not even there.
+And that was not the only mystery. All week, the softest things had been going missing. Moss from the {hero}'s step. The fluffiest seed-down. A feather. Only soft things.
 
-The {hero} stood very still. Their cheeks went hot and their tummy felt funny. That was rude. That was cold. Why would anyone act like that when you were only being friendly?
+The {hero} tried chasing. But the friend was quicker, and the reeds closed behind them.
 
-Cross and confused, the {hero} went to find {companion_name}, who was resting nearby and had seen the whole thing.
+So the {hero} set a trap: the fluffiest feather ever found. The {hero} hid, and watched — and fell asleep watching. When the {hero} woke, the feather was gone.
 
-"They ignored me," the {hero} said, sitting down with a thump. "I only said hello. I did not do anything wrong."
+'Hmm,' said {companion_name}. 'You know what your friend did. Do you know what your friend felt, little {hero}?'
 
-{companion_name} patted the ground. "Sit here a moment. When someone hurts our feelings, we make up a reason very fast. Usually the reason we pick is, they are just mean. But before you decide that, try walking in someone's shoes."
+Felt? The {hero} thought back and noticed, the way the {hero} had learned to notice. Worried eyes. A kind voice. Not a mean rush. A worried rush.
 
-"What does that mean?" asked the {hero}.
+So the {hero} tried something new: standing where the friend had stood, walking where the friend had walked. Arms full. Heart hurrying. Somewhere to be.
 
-"It means you pretend to be them," said {companion_name}. "Close your eyes. Pretend you woke up this morning as that new kid. What might your whole day have felt like?"
+'It is like walking in someone's shoes,' said the {hero} slowly. 'If I walk where they walked and feel what they felt... they were not being unkind. They were being careful, and worried, and hurrying back to something —'
 
-The {hero} closed their eyes and really tried to imagine it. What if the new kid did not know a single face here? What if everyone already had their friends, and nobody had one spare for them? What if they had left every single friend behind when they came to this new place? What if their tummy was in knots because everything looked strange and big?
+Listen. Can you hear it too? Peep. A tiny sound from the reeds. What sort of someone says peep?
 
-Slowly, the hot, cross feeling turned into something softer and kinder.
+'— something very small!' finished the {hero}.
 
-"Maybe they are not mean at all," the {hero} said, opening their eyes. "Maybe they are just scared. New places are scary. I would be scared too."
+Two mysteries. One answer. The {hero} fetched the softest thing they owned — their blanket-scrap — and carried it into the reeds.
 
-{companion_name} nodded warmly. "Remember, in Level One you learned to notice how others feel just by looking at them. This is the next step. Imagine the inside."
+There sat the friend, beside a nest of moss and seed-down and one feather. In the nest: a tiny lost bird, peeping.
 
-The {hero} held the {object_motif} and thought hard about what to do. Then they got up and walked over, slow and gentle this time, and sat down a little way off, not too close.
+'It fell behind when its family flew on,' the friend whispered. 'They circle back at sunrise. I wanted to tell you — but every time I put it down, it peeped so sadly!'
 
-"I get nervous in new places too," said the {hero} softly. "You do not have to play if you do not want. I can just sit here with you."
+'You do not have to be sorry,' said the {hero}, tucking the blanket-scrap in. 'I walked your walk. I know.'
 
-The new kid glanced sideways. For a long moment they said nothing. Then their shoulders dropped, just a little, like they were letting go of something heavy.
+The peeping stopped. The little bird slept.
 
-"I do not know how anything works here," they mumbled. "Everyone already has a friend but me."
+'{refrain},' murmured {companion_name}, and the {object_motif} glowed gently over the nest.
 
-"I can show you how it works," the {hero} said gently. "And you can borrow the {object_motif} if you like."
+'Sunrise,' whispered the friend. 'Will you watch its family come?'
 
-The new kid took it carefully, turning it over in their hands, and something in their face opened up, like a window that had been stuck.
+'I would not miss it,' whispered the {hero}.
 
-"I thought nobody would want a stranger around," they said, very quiet.
-
-"I almost walked away too," the {hero} admitted. "I am really glad I came back."
-
-So they played together by {setting} until the light turned soft and gold. They built things and knocked them down and built them again. The new kid laughed once, then twice, then too many times to count. By the end, they had shuffled so close that they sat side by side, shoulder to shoulder.
-
-"Thank you for trying again," the new kid said. "Most people just walk off and leave me."
-
-The {hero} smiled. Behind them, a lantern flicked on, warm and yellow against the dusk, and the water went calm and quiet and dark.
+One nest, finished. One friend, found again. Two mysteries, fast asleep.
 
 {refrain}.`,
-    scriptTemplate: `{child_name} loved mornings by {setting}. The air was cool and the light was new, and there was always someone to play with.
+    scriptTemplate: `{child_name} and their best friend met every evening at the meeting rock in {setting}. Without fail.
 
-That day, a new kid had set up nearby, someone {child_name} had never seen before. {child_name} liked meeting new people, so they walked right over.
+But tonight the friend came hurrying along the path, arms full — and hurried straight past. 'Not now — sorry!' they called, and vanished into the tall reeds.
 
-"Hello!" called {child_name}, waving both hands. "Do you want to play?"
+{child_name} stood at the meeting rock, alone.
 
-The new kid barely looked up. They frowned, turned their shoulder, and said nothing at all. Then they moved a few steps farther away, as if {child_name} was not even there.
+And that was not the only mystery. All week, the softest things had been going missing. Moss from {child_name}'s step. The fluffiest seed-down. A feather. Only soft things.
 
-{child_name} stood very still. Their cheeks went hot and their tummy felt funny. That was rude. That was cold. Why would anyone act like that when you were only being friendly?
+{child_name} tried chasing. But the friend was quicker, and the reeds closed behind them.
 
-Cross and confused, {child_name} went to find {companion_name}, who was resting nearby and had seen the whole thing.
+So {child_name} set a trap: the fluffiest feather ever found. {child_name} hid, and watched — and fell asleep watching. When {child_name} woke, the feather was gone.
 
-"They ignored me," {child_name} said, sitting down with a thump. "I only said hello. I did not do anything wrong."
+'Hmm,' said {companion_name}. 'You know what your friend did. Do you know what your friend felt, little {hero}?'
 
-{companion_name} patted the ground. "Sit here a moment. When someone hurts our feelings, we make up a reason very fast. Usually the reason we pick is, they are just mean. But before you decide that, try walking in someone's shoes."
+Felt? {child_name} thought back and noticed, the way {child_name} had learned to notice. Worried eyes. A kind voice. Not a mean rush. A worried rush.
 
-"What does that mean?" asked {child_name}.
+So {child_name} tried something new: standing where the friend had stood, walking where the friend had walked. Arms full. Heart hurrying. Somewhere to be.
 
-"It means you pretend to be them," said {companion_name}. "Close your eyes. Pretend you woke up this morning as that new kid. What might your whole day have felt like?"
+'It is like walking in someone's shoes,' said {child_name} slowly. 'If I walk where they walked and feel what they felt... they were not being unkind. They were being careful, and worried, and hurrying back to something —'
 
-{child_name} closed their eyes and really tried to imagine it. What if the new kid did not know a single face here? What if everyone already had their friends, and nobody had one spare for them? What if they had left every single friend behind when they came to this new place? What if their tummy was in knots because everything looked strange and big?
+Listen. Can you hear it too? Peep. A tiny sound from the reeds. What sort of someone says peep?
 
-Slowly, the hot, cross feeling turned into something softer and kinder.
+'— something very small!' finished {child_name}.
 
-"Maybe they are not mean at all," {child_name} said, opening their eyes. "Maybe they are just scared. New places are scary. I would be scared too."
+Two mysteries. One answer. {child_name} fetched the softest thing they owned — their blanket-scrap — and carried it into the reeds.
 
-{companion_name} nodded warmly. "Remember, in Level One you learned to notice how others feel just by looking at them. This is the next step. Imagine the inside."
+There sat the friend, beside a nest of moss and seed-down and one feather. In the nest: a tiny lost bird, peeping.
 
-{child_name} held the {object_motif} and thought hard about what to do. Then they got up and walked over, slow and gentle this time, and sat down a little way off, not too close.
+'It fell behind when its family flew on,' the friend whispered. 'They circle back at sunrise. I wanted to tell you — but every time I put it down, it peeped so sadly!'
 
-"I get nervous in new places too," said {child_name} softly. "You do not have to play if you do not want. I can just sit here with you."
+'You do not have to be sorry,' said {child_name}, tucking the blanket-scrap in. 'I walked your walk. I know.'
 
-The new kid glanced sideways. For a long moment they said nothing. Then their shoulders dropped, just a little, like they were letting go of something heavy.
+The peeping stopped. The little bird slept.
 
-"I do not know how anything works here," they mumbled. "Everyone already has a friend but me."
+'{refrain},' murmured {companion_name}, and the {object_motif} glowed gently over the nest.
 
-"I can show you how it works," {child_name} said gently. "And you can borrow the {object_motif} if you like."
+'Sunrise,' whispered the friend. 'Will you watch its family come?'
 
-The new kid took it carefully, turning it over in their hands, and something in their face opened up, like a window that had been stuck.
+'I would not miss it,' whispered {child_name}.
 
-"I thought nobody would want a stranger around," they said, very quiet.
-
-"I almost walked away too," {child_name} admitted. "I am really glad I came back."
-
-So they played together by {setting} until the light turned soft and gold. They built things and knocked them down and built them again. The new kid laughed once, then twice, then too many times to count. By the end, they had shuffled so close that they sat side by side, shoulder to shoulder.
-
-"Thank you for trying again," the new kid said. "Most people just walk off and leave me."
-
-{child_name} smiled. Behind them, a lantern flicked on, warm and yellow against the dusk, and the water went calm and quiet and dark.
+One nest, finished. One friend, found again. Two mysteries, fast asleep.
 
 {refrain}.`
   },
   '7-8': {
-    audioTemplate: `The {hero} had been looking forward to the fair by {setting} all week long. There would be games, and trading tables, and best of all, a chance to meet a kid the {hero} had been hoping to befriend for ages, someone everyone said was the cleverest builder for miles around.
+    audioTemplate: `The {hero} kept two mysteries that week, and by tonight both had grown too big to ignore.
 
-When the {hero} finally spotted them, sitting behind a table of half-finished creations, they hurried straight over, grinning from ear to ear.
+Mystery one: the missing soft things. It had started small — a tuft of moss gone from the {hero}'s step. Then the fluffiest seed-down vanished from the hollow. Then a feather, the good one. Nothing shiny was ever taken, nothing sweet. Only the softest things in {setting}, disappearing one by one.
 
-"Hi! I have heard so much about you," said the {hero}. "Do you want to build something together? I have loads of ideas."
+Mystery two arrived tonight, and it was worse. The {hero}'s best friend — the friend of the meeting rock, of every single evening — came hurrying down the path with their arms full and their face set, and rushed straight past. 'Not now — sorry!' they called over one shoulder, and the tall reeds swallowed them whole.
 
-The other kid did not even turn around. "No," they said flatly. "I work alone."
+The {hero} stood at the meeting rock feeling like a door had closed with no click.
 
-The {hero} blinked, caught off guard. "Oh. Okay. Well, maybe I could just watch, then?"
+'Right,' said the {hero}, rolling up imaginary sleeves. 'Detective time.'
 
-"I would rather you did not," the kid said, and shifted so their back was fully turned, like a door closing in the {hero}'s face.
+The {hero} chased first — but the friend knew the paths better, and the reeds kept their secret. Next came the stakeout: the {hero} laid the fluffiest feather left in {setting} out in the open, then hid to watch the trap. The watching was thrilling for ten whole minutes. Then it was less thrilling. Then the {hero} was asleep with one eye technically open. When the {hero} woke, the feather was gone.
 
-Heat crept up the {hero}'s neck and prickled behind their eyes. They mumbled something and walked away fast, weaving between the stalls, not stopping until they reached the far end of {setting}, where {companion_name} was calmly untangling a long length of rope.
+'I have been burgled,' the {hero} announced. 'During my own stakeout.'
 
-"What is wrong?" {companion_name} asked, setting the rope down at once.
+'Hmm,' said {companion_name}, trying not to smile. 'You keep asking what your friend did, little {hero}. Have you asked what your friend felt?'
 
-"I tried to be friendly and they were horrible to me," the {hero} said, and the words came out wobbly. "I did not do a single thing to them. Why would somebody be so mean for no reason at all?"
+Felt. The {hero} stopped. And the {hero} went back over the evening the way you go back over a path looking for something dropped — noticing, properly this time. The friend's arms: full. The friend's voice: not cold. Kind, and stretched thin. The friend's eyes: not sneaky. Worried. And they had said sorry. Rude people do not say sorry over their shoulder. Worried people do.
 
-{companion_name} did not answer right away. They thought for a moment, then asked, "Do you remember Level One, learning to notice how someone feels just by looking at them?"
+So the {hero} tried the strangest detective trick of all. The {hero} walked to where the friend had first appeared, stood the way the friend had stood, and set off along the friend's exact route — hurrying, arms curled around an imaginary bundle, heart going quick. Not mean-quick. Worried-quick. What hurries like this? What will not stop even for a best friend?
 
-The {hero} sniffed. "Their face was closed up tight," they admitted. "Kind of like a door slamming shut."
+'It is like walking in someone's shoes,' the {hero} murmured. 'Walk where they walked, feel what they felt. And this feels like looking after something. Something that cannot wait. Something small enough to carry and too important to put down —'
 
-"That is good noticing," said {companion_name}. "Now comes the harder part. I want you to try walking in someone's shoes. Do not guess what they think about you. Instead, imagine their whole morning, from the inside."
+Stop. Hold your breath and listen. There — can you hear it too? Peep. The smallest sound in {setting}, coming from the reeds. What sort of someone says peep?
 
-The {hero} frowned, uncertain, then shut their eyes and gave it a proper try. They pictured being the clever builder. They pictured being famous for one single thing. They pictured everyone crowding around every single day, expecting something amazing, over and over. They pictured never being quite sure whether people liked you, or only liked the things you could make for them. They pictured how it might feel to have friends who wandered off the very moment you had nothing left to give them.
+'— something with feathers!' said the {hero}, and both mysteries fell together into one answer, the way two halves of a shell close.
 
-When the {hero} opened their eyes, the hot, angry feeling had quietly drained away.
+Soft things, gathered one by one. A friend who could not stop, could not explain, could not put the something down. The {hero} ran home and fetched the softest thing they owned — the old scrap of blanket they had slept with since forever — and carried it into the reeds.
 
-"If everyone only ever wanted my building," the {hero} said slowly, "and nobody ever wanted just me, then I think I might be scared to let anyone get close. In case they only wanted that too."
+And there it all was. The friend, sitting very still. A nest, built from a week of missing softness: the moss, the seed-down, the good feather. And in the nest, a tiny lost bird, no bigger than a plum, peeping at the night.
 
-{companion_name} nodded. "That is real work you just did, and it is not at all easy."
+'It fell behind when its family flew on,' the friend whispered. 'They circle back at sunrise. I have been meaning to tell you all week. But every time I put it down, it peeped so sadly that I picked it right back up.'
 
-The {hero} turned the {object_motif} over and over in their hands, thinking it through. For a moment they almost did not go. It would be easier to stay cross, easier to decide the builder was simply horrible and forget the whole thing. But the picture in their head would not leave them alone. Then they made up their mind.
+'You do not have to explain,' said the {hero}, kneeling and tucking the blanket-scrap gently around the little bird. 'I walked your walk tonight. I felt about one-tenth of your worry, and even that was heavy.'
 
-They walked back across the fair, not fast and not grinning this time, and sat down a respectful distance from the builder. They did not ask to build anything. They did not ask for a single thing.
+The peeping slowed. The peeping stopped. The little bird slept, wrapped in the softest collection in {setting}.
 
-"You do not have to talk to me," the {hero} said quietly. "I just think it looks nice and peaceful over on this side."
+'{refrain},' murmured {companion_name}, and the {object_motif} spread its warm glow over the nest like one more blanket.
 
-For a long while the builder ignored them completely, hands busy, eyes down. The {hero} did not push. They simply waited, calm, watching the clouds drift over {setting}.
+The two friends sat shoulder to shoulder while the stars came out.
 
-At last the builder spoke, without looking up. "Everyone always wants me to make them something. Every day. All the time."
+'I thought you did not want to see me,' the {hero} admitted.
 
-"I bet that gets really tiring," said the {hero}.
+'I thought about you every day,' said the friend. 'I just had my arms full.'
 
-The builder's hands went still. "It does," they said, so quietly it was almost a whisper. "Nobody ever just, sits. Nobody ever wants the plain old me." A breeze moved across the tables, and somewhere behind them a bell rang for the next game.
+'Sunrise,' said the {hero}. 'We watch the family come back together. Deal?'
 
-"I can sit," said the {hero}. "You can hold the {object_motif} for a while if you like. No building required, I promise."
+'Deal,' said the friend.
 
-The builder took it and turned it slowly, and bit by bit some of the tightness went out of their shoulders.
-
-"Sorry I was so sharp with you before," they said. "I thought you wanted me to make you something clever for free. People usually do. It gets lonely."
-
-"I almost decided you were just plain mean," the {hero} admitted. "I am really glad I waited instead."
-
-So they sat together as the fair glittered and hummed all around {setting}. After a while, without anyone asking at all, the builder began, shyly, to show the {hero} exactly how the little pieces fit together, not because they had to, but because, for once, they wanted to. The {hero} watched the careful, clever way the builder's hands moved, and understood that the sharp words at the very start had been a kind of wall, thrown up in a hurry, to keep out one more person who might only want something from them.
-
-By the time the lanterns began to dim, the two of them had made a plan to meet again the very next day.
-
-The {hero} walked home tired and full, the kind of full that has nothing at all to do with dinner.
+One nest, finished. One friendship, fuller than before. Two mysteries, sound asleep.
 
 {refrain}.`,
-    scriptTemplate: `{child_name} had been looking forward to the fair by {setting} all week long. There would be games, and trading tables, and best of all, a chance to meet a kid {child_name} had been hoping to befriend for ages, someone everyone said was the cleverest builder for miles around.
+    scriptTemplate: `{child_name} kept two mysteries that week, and by tonight both had grown too big to ignore.
 
-When {child_name} finally spotted them, sitting behind a table of half-finished creations, they hurried straight over, grinning from ear to ear.
+Mystery one: the missing soft things. It had started small — a tuft of moss gone from {child_name}'s step. Then the fluffiest seed-down vanished from the hollow. Then a feather, the good one. Nothing shiny was ever taken, nothing sweet. Only the softest things in {setting}, disappearing one by one.
 
-"Hi! I have heard so much about you," said {child_name}. "Do you want to build something together? I have loads of ideas."
+Mystery two arrived tonight, and it was worse. {child_name}'s best friend — the friend of the meeting rock, of every single evening — came hurrying down the path with their arms full and their face set, and rushed straight past. 'Not now — sorry!' they called over one shoulder, and the tall reeds swallowed them whole.
 
-The other kid did not even turn around. "No," they said flatly. "I work alone."
+{child_name} stood at the meeting rock feeling like a door had closed with no click.
 
-{child_name} blinked, caught off guard. "Oh. Okay. Well, maybe I could just watch, then?"
+'Right,' said {child_name}, rolling up imaginary sleeves. 'Detective time.'
 
-"I would rather you did not," the kid said, and shifted so their back was fully turned, like a door closing in {child_name}'s face.
+{child_name} chased first — but the friend knew the paths better, and the reeds kept their secret. Next came the stakeout: {child_name} laid the fluffiest feather left in {setting} out in the open, then hid to watch the trap. The watching was thrilling for ten whole minutes. Then it was less thrilling. Then {child_name} was asleep with one eye technically open. When {child_name} woke, the feather was gone.
 
-Heat crept up {child_name}'s neck and prickled behind their eyes. They mumbled something and walked away fast, weaving between the stalls, not stopping until they reached the far end of {setting}, where {companion_name} was calmly untangling a long length of rope.
+'I have been burgled,' {child_name} announced. 'During my own stakeout.'
 
-"What is wrong?" {companion_name} asked, setting the rope down at once.
+'Hmm,' said {companion_name}, trying not to smile. 'You keep asking what your friend did, little {hero}. Have you asked what your friend felt?'
 
-"I tried to be friendly and they were horrible to me," {child_name} said, and the words came out wobbly. "I did not do a single thing to them. Why would somebody be so mean for no reason at all?"
+Felt. {child_name} stopped. And {child_name} went back over the evening the way you go back over a path looking for something dropped — noticing, properly this time. The friend's arms: full. The friend's voice: not cold. Kind, and stretched thin. The friend's eyes: not sneaky. Worried. And they had said sorry. Rude people do not say sorry over their shoulder. Worried people do.
 
-{companion_name} did not answer right away. They thought for a moment, then asked, "Do you remember Level One, learning to notice how someone feels just by looking at them?"
+So {child_name} tried the strangest detective trick of all. {child_name} walked to where the friend had first appeared, stood the way the friend had stood, and set off along the friend's exact route — hurrying, arms curled around an imaginary bundle, heart going quick. Not mean-quick. Worried-quick. What hurries like this? What will not stop even for a best friend?
 
-{child_name} sniffed. "Their face was closed up tight," they admitted. "Kind of like a door slamming shut."
+'It is like walking in someone's shoes,' {child_name} murmured. 'Walk where they walked, feel what they felt. And this feels like looking after something. Something that cannot wait. Something small enough to carry and too important to put down —'
 
-"That is good noticing," said {companion_name}. "Now comes the harder part. I want you to try walking in someone's shoes. Do not guess what they think about you. Instead, imagine their whole morning, from the inside."
+Stop. Hold your breath and listen. There — can you hear it too? Peep. The smallest sound in {setting}, coming from the reeds. What sort of someone says peep?
 
-{child_name} frowned, uncertain, then shut their eyes and gave it a proper try. They pictured being the clever builder. They pictured being famous for one single thing. They pictured everyone crowding around every single day, expecting something amazing, over and over. They pictured never being quite sure whether people liked you, or only liked the things you could make for them. They pictured how it might feel to have friends who wandered off the very moment you had nothing left to give them.
+'— something with feathers!' said {child_name}, and both mysteries fell together into one answer, the way two halves of a shell close.
 
-When {child_name} opened their eyes, the hot, angry feeling had quietly drained away.
+Soft things, gathered one by one. A friend who could not stop, could not explain, could not put the something down. {child_name} ran home and fetched the softest thing they owned — the old scrap of blanket they had slept with since forever — and carried it into the reeds.
 
-"If everyone only ever wanted my building," {child_name} said slowly, "and nobody ever wanted just me, then I think I might be scared to let anyone get close. In case they only wanted that too."
+And there it all was. The friend, sitting very still. A nest, built from a week of missing softness: the moss, the seed-down, the good feather. And in the nest, a tiny lost bird, no bigger than a plum, peeping at the night.
 
-{companion_name} nodded. "That is real work you just did, and it is not at all easy."
+'It fell behind when its family flew on,' the friend whispered. 'They circle back at sunrise. I have been meaning to tell you all week. But every time I put it down, it peeped so sadly that I picked it right back up.'
 
-{child_name} turned the {object_motif} over and over in their hands, thinking it through. For a moment they almost did not go. It would be easier to stay cross, easier to decide the builder was simply horrible and forget the whole thing. But the picture in their head would not leave them alone. Then they made up their mind.
+'You do not have to explain,' said {child_name}, kneeling and tucking the blanket-scrap gently around the little bird. 'I walked your walk tonight. I felt about one-tenth of your worry, and even that was heavy.'
 
-They walked back across the fair, not fast and not grinning this time, and sat down a respectful distance from the builder. They did not ask to build anything. They did not ask for a single thing.
+The peeping slowed. The peeping stopped. The little bird slept, wrapped in the softest collection in {setting}.
 
-"You do not have to talk to me," {child_name} said quietly. "I just think it looks nice and peaceful over on this side."
+'{refrain},' murmured {companion_name}, and the {object_motif} spread its warm glow over the nest like one more blanket.
 
-For a long while the builder ignored them completely, hands busy, eyes down. {child_name} did not push. They simply waited, calm, watching the clouds drift over {setting}.
+The two friends sat shoulder to shoulder while the stars came out.
 
-At last the builder spoke, without looking up. "Everyone always wants me to make them something. Every day. All the time."
+'I thought you did not want to see me,' {child_name} admitted.
 
-"I bet that gets really tiring," said {child_name}.
+'I thought about you every day,' said the friend. 'I just had my arms full.'
 
-The builder's hands went still. "It does," they said, so quietly it was almost a whisper. "Nobody ever just, sits. Nobody ever wants the plain old me." A breeze moved across the tables, and somewhere behind them a bell rang for the next game.
+'Sunrise,' said {child_name}. 'We watch the family come back together. Deal?'
 
-"I can sit," said {child_name}. "You can hold the {object_motif} for a while if you like. No building required, I promise."
+'Deal,' said the friend.
 
-The builder took it and turned it slowly, and bit by bit some of the tightness went out of their shoulders.
-
-"Sorry I was so sharp with you before," they said. "I thought you wanted me to make you something clever for free. People usually do. It gets lonely."
-
-"I almost decided you were just plain mean," {child_name} admitted. "I am really glad I waited instead."
-
-So they sat together as the fair glittered and hummed all around {setting}. After a while, without anyone asking at all, the builder began, shyly, to show {child_name} exactly how the little pieces fit together, not because they had to, but because, for once, they wanted to. {child_name} watched the careful, clever way the builder's hands moved, and understood that the sharp words at the very start had been a kind of wall, thrown up in a hurry, to keep out one more person who might only want something from them.
-
-By the time the lanterns began to dim, the two of them had made a plan to meet again the very next day.
-
-{child_name} walked home tired and full, the kind of full that has nothing at all to do with dinner.
+One nest, finished. One friendship, fuller than before. Two mysteries, sound asleep.
 
 {refrain}.`
   },
   '9-11': {
-    audioTemplate: `The {hero} had spent two whole days working up the courage to talk to the newcomer at {setting}.
+    audioTemplate: `That week, the {hero} was keeping a list of mysteries, and the list had two things on it.
 
-Everyone had a theory about them. They had arrived alone at the start of the week, spoken to almost no one, and answered every question in single clipped words before drifting away again. Some of the kids had already decided the newcomer was stuck-up, too good for the rest of them. The {hero} was not so sure. Besides, the {hero} knew exactly what it felt like to be the last one picked for anything, so somewhere over those two days they had quietly made up their mind to be friendly, whatever anyone else thought.
+The first was the affair of the missing soft things. A tuft of moss, gone from the {hero}'s step. The fluffiest seed-down in {setting}, gone. A feather — the good feather — gone. Nothing shiny was ever taken, nothing sweet, nothing valuable. Only softness. It was the politest burglary imaginable, and it was happening every single day.
 
-The chance finally came at the trading tables. The newcomer was standing right at the edge of the crowd, arms folded tight, watching everyone else swap and haggle and laugh without ever joining in.
+The second mystery arrived tonight, and it hurt. The {hero}'s best friend — the friend of the meeting rock, the friend of every evening — came hurrying down the path with their arms curled around something and their face set like a closed door, and went straight past. 'Not now — sorry!' they called over one shoulder, and the tall reeds swallowed them whole.
 
-"Hi," said the {hero}, stepping up beside them before the nerve could drain away. "I am usually here on market days. If you ever want to know how the trading works around here, I could show you the ropes."
+The {hero} stood at the meeting rock for a while, being very reasonable about it, and then stopped being reasonable. Best friends did not rush past. That was practically the definition of best friends.
 
-The newcomer's eyes flicked over, cool and unreadable. "I do not need help," they said. "Especially not from someone like you."
+'Fine,' said the {hero}. 'Then this becomes a case.'
 
-The words landed like a slap. Someone like you. The {hero} did not even know what that was supposed to mean, which somehow made it sting worse, not better. A few kids nearby had heard, and the {hero} felt their whole face go scalding hot. They managed a stiff little shrug and turned and walked off before their eyes could give them away, weaving through the stalls until the noise of the market faded behind them and they reached the quiet slope where {companion_name} liked to sit and watch the day go by.
+The case did not go well. Chasing failed first: the friend knew the reed-paths better, and the reeds kept their secrets. The stakeout failed second, and more embarrassingly. The {hero} laid out bait — the fluffiest feather remaining in {setting} — and the watching was gripping for ten minutes, tolerable for five more, and then it was morning-style sleep in the middle of the evening. The {hero} woke to find the feather gone and, insultingly, a soft corner missing from their own bedding.
 
-{companion_name} took one look at the {hero}'s face and shifted over to make room without a word.
+'Burgled,' said the {hero}, with dignity. 'During my own stakeout.'
 
-"Go on," they said gently.
+'Hmm,' said {companion_name}, who had watched the entire thing and would clearly be retelling it for years. 'Your case is all abouts and wheres, little {hero}. You have not asked a single what-did-it-feel-like.'
 
-"I was nice to them," the {hero} burst out, dropping down beside them. "Genuinely, properly nice. And they looked at me like I was something stuck to the bottom of their shoe. Someone like you. What is that even supposed to mean? I did not do anything." The {hero} scrubbed hard at their eyes, furious and embarrassed all at the same time. "Some people just enjoy being cruel. That is the truth of it."
+It was an odd thing to say to a detective, and it worked. When the {hero} stopped listing what the friend had done and started noticing how the friend had been — really noticing, the old way, the first-kindness way — the whole picture changed colour. The arms: full, held the way you hold things that matter. The voice: not cold. Kind, and stretched thin. The eyes: not sneaky, not cross. Worried. And there was the apology, thrown back over one shoulder like a rope. Rude people do not throw ropes.
 
-{companion_name} let the storm blow itself out before answering.
+So the {hero} tried the strangest trick of all. The {hero} went to where the friend had first appeared, stood exactly as the friend had stood — and then walked the friend's route, step for step, arms curled around an imaginary bundle, hurrying the same hurry. And somewhere along that walk the {hero} stopped being a detective following a suspect and became, briefly, the friend: arms full, heart going quick, no room to stop, not even for the person you most wanted to stop for.
 
-"That is the story that hurts the least right now," they said at last. "They are cruel, I am innocent, end of story. It is tidy, and it lets you off the hook. But you are usually far more curious than that."
+'It is like walking in someone's shoes,' the {hero} said, half aloud. 'You walk where they walked and you start to feel what they felt. And this feels like looking after something. Something that cannot wait, and cannot be put down, and cannot be explained fast enough to be worth stopping —'
 
-The {hero} said nothing, jaw set tight, staring down at the grass.
+Wait. Stand still. Listen — under the wind, under the reeds. Can you hear it too? Peep. The smallest sound in {setting}. Ask yourself, detective: what sort of someone says peep?
 
-"Back in Level One," {companion_name} went on, unhurried, "you got good at reading the outside. The folded arms. The flat little voice. So read them properly now, before you decide what it all meant. What did the outside actually look like?"
+'— something with feathers,' the {hero} finished, and the two mysteries collapsed into one answer, neat as two halves of a shell closing. A week of vanished softness. A friend who would not stop. One cause, small and warm and peeping in the dark.
 
-The {hero} made themselves go back and remember. "Arms crossed," they said reluctantly. "Standing apart from everybody. Watching, but never once joining in." A pause. "Kind of the way I stand, actually, when I do not want anyone to see that I am nervous."
+The {hero} ran home for the softest thing they owned — the old blanket-scrap nobody was allowed to mention — and carried it into the reeds.
 
-"There it is," said {companion_name} softly. "Now for the harder thing. Stop imagining how they made you feel for a moment, and try walking in someone's shoes instead. Be them. Arriving here completely alone. What is that morning actually like?"
+And there it was, all of it. The friend, sitting perfectly still. A nest built from a week of missing softness — the moss, the down, the good feather, the corner of bedding. And in the nest, a tiny lost bird, peeping up at the night.
 
-The {hero} closed their eyes and, reluctantly at first, began to build the picture. Waking up somewhere unfamiliar, in a place with none of your own things in it. Knowing not one single face for miles. Walking into somewhere where everyone already had their friends, their private jokes, their whole history stitched together long before you ever turned up. Feeling every pair of eyes on you and being certain, absolutely certain, that all of them were deciding something about you before you had even opened your mouth.
+'It fell behind when its family flew on,' the friend whispered. 'They circle back at sunrise. They always do. I meant to tell you a hundred times. But every time I set it down to come and find you, it peeped so sadly that I picked it straight back up.'
 
-And then someone kind and easy and confident walks straight up, clearly belonging exactly where they stand, and offers, out of nowhere, to help. Someone who makes the enormous gap between you feel even wider than it already did. The {hero} let the whole picture settle, and it was not a comfortable place to stand, even for a borrowed moment.
+'You do not have to explain,' said the {hero}, kneeling and tucking the blanket-scrap around the little bird. 'I walked your walk tonight. I carried your invisible bundle for about forty steps, and even the imaginary version was heavy.'
 
-The {hero}'s eyes opened.
+The peeping slowed, and softened, and stopped. The little bird slept, wrapped in the entire soft collection of {setting}.
 
-"If I felt that small," they said slowly, "and somebody who fit in perfectly offered to teach me the ropes in front of everyone, I think I might push them away first. Hard. So that they could not do it to me. Someone like you, someone who belongs here." The anger had gone strange and quiet inside them. "It was not really about me at all, was it? Not really."
+'{refrain},' murmured {companion_name}, and the {object_motif} laid its warm glow over the nest like one blanket more.
 
-{companion_name} did not congratulate them or make a fuss. They simply nodded, the way you nod at something you already know to be true.
+The two friends sat shoulder to shoulder while the stars arrived.
 
-The {hero} sat with it for a while, turning the {object_motif} over and over in their hands. Being right about someone's meanness would have been so much simpler, so much more satisfying. This was more uncomfortable, and yet, somehow, at the very same time, it loosened the tight, hurt knot that had been sitting in their chest since the trading tables.
+'I thought you did not want to see me,' the {hero} admitted.
 
-"I do not have to be their friend, though," the {hero} said at last. "They were still rude to me."
+'I thought about you every day,' the friend said. 'My arms were just full.'
 
-"No, you certainly do not," {companion_name} agreed. "Understanding someone is not the same as excusing them. You still get to choose exactly what you do next. You only get to choose it knowing a great deal more than you did before."
+'Sunrise, then,' said the {hero}. 'We watch the family come back together. Both mysteries officially closed.'
 
-The {hero} turned that over. It would have been easier, they realised, to simply stay angry. Anger asked nothing of you and let you feel entirely in the right. This asked them to get up and walk back across the whole market and try a second time, with no promise at all that it would work.
+'Closed,' agreed the friend, and yawned, and the yawn hopped from one to the other like a small bird itself.
 
-The {hero} thought that over for a long moment, then got to their feet.
-
-They found the newcomer near the far stalls, alone once again, pretending to study a rack of nothing very much. The {hero} did not put on a big bright smile this time. They stopped a little way off and gave them room to breathe.
-
-"You were sharp with me before," the {hero} said, evenly. "That stung, honestly. But I think I understand it a bit better now, being new here, with everyone already sorted neatly into their little groups. I have felt on the outside of things too, more than you would guess."
-
-The newcomer's cool expression wavered. For a second they looked as though they might say something cutting all over again, and then the whole effort of it seemed to simply collapse.
-
-"I did not really mean the someone like you thing," they muttered, staring hard at the ground. "You just looked so comfortable. Like you had never once in your life had to wonder whether people actually wanted you around. I hated you for it, just for a second."
-
-"I wonder it all the time," said the {hero} simply. "I just hide it a lot better than you think."
-
-The newcomer studied them for a moment, as though checking whether the words were actually true, and whatever they found there seemed to be enough.
-
-The newcomer huffed out a small, surprised breath, almost a laugh, as though it had escaped before they could stop it.
-
-"You can hold the {object_motif} for a bit, if you want," the {hero} offered. "No trading, no strings. I will just tell you who everybody is and how it all works."
-
-This time, after a pause, the newcomer took it.
-
-They stayed there together at the edge of the market as the light thinned to gold and then to grey over {setting}, and the traders began, one by one, to fold up their cloths and pack their tables away. The newcomer did not suddenly turn warm and easy and chatty. But their arms unfolded at last, and they asked the {hero} a real question, and then another one after that, and the {hero} answered every single one of them. Once, the newcomer even nodded at a lopsided stall and said something that was almost a joke, and the {hero} laughed for real, and the newcomer looked pleased and slightly startled to have made anyone laugh at all.
-
-Walking home in the settling dark, the {hero} felt older than they had that same morning. Not tired, exactly, but stretched somehow, the way you feel after carrying something a good deal heavier than you ever thought you could.
+One nest, finished. One friendship, fuller than it started. Two mysteries, sound asleep in the reeds.
 
 {refrain}.`,
-    scriptTemplate: `{child_name} had spent two whole days working up the courage to talk to the newcomer at {setting}.
+    scriptTemplate: `That week, {child_name} was keeping a list of mysteries, and the list had two things on it.
 
-Everyone had a theory about them. They had arrived alone at the start of the week, spoken to almost no one, and answered every question in single clipped words before drifting away again. Some of the kids had already decided the newcomer was stuck-up, too good for the rest of them. {child_name} was not so sure. Besides, {child_name} knew exactly what it felt like to be the last one picked for anything, so somewhere over those two days they had quietly made up their mind to be friendly, whatever anyone else thought.
+The first was the affair of the missing soft things. A tuft of moss, gone from {child_name}'s step. The fluffiest seed-down in {setting}, gone. A feather — the good feather — gone. Nothing shiny was ever taken, nothing sweet, nothing valuable. Only softness. It was the politest burglary imaginable, and it was happening every single day.
 
-The chance finally came at the trading tables. The newcomer was standing right at the edge of the crowd, arms folded tight, watching everyone else swap and haggle and laugh without ever joining in.
+The second mystery arrived tonight, and it hurt. {child_name}'s best friend — the friend of the meeting rock, the friend of every evening — came hurrying down the path with their arms curled around something and their face set like a closed door, and went straight past. 'Not now — sorry!' they called over one shoulder, and the tall reeds swallowed them whole.
 
-"Hi," said {child_name}, stepping up beside them before the nerve could drain away. "I am usually here on market days. If you ever want to know how the trading works around here, I could show you the ropes."
+{child_name} stood at the meeting rock for a while, being very reasonable about it, and then stopped being reasonable. Best friends did not rush past. That was practically the definition of best friends.
 
-The newcomer's eyes flicked over, cool and unreadable. "I do not need help," they said. "Especially not from someone like you."
+'Fine,' said {child_name}. 'Then this becomes a case.'
 
-The words landed like a slap. Someone like you. {child_name} did not even know what that was supposed to mean, which somehow made it sting worse, not better. A few kids nearby had heard, and {child_name} felt their whole face go scalding hot. They managed a stiff little shrug and turned and walked off before their eyes could give them away, weaving through the stalls until the noise of the market faded behind them and they reached the quiet slope where {companion_name} liked to sit and watch the day go by.
+The case did not go well. Chasing failed first: the friend knew the reed-paths better, and the reeds kept their secrets. The stakeout failed second, and more embarrassingly. {child_name} laid out bait — the fluffiest feather remaining in {setting} — and the watching was gripping for ten minutes, tolerable for five more, and then it was morning-style sleep in the middle of the evening. {child_name} woke to find the feather gone and, insultingly, a soft corner missing from their own bedding.
 
-{companion_name} took one look at {child_name}'s face and shifted over to make room without a word.
+'Burgled,' said {child_name}, with dignity. 'During my own stakeout.'
 
-"Go on," they said gently.
+'Hmm,' said {companion_name}, who had watched the entire thing and would clearly be retelling it for years. 'Your case is all abouts and wheres, little {hero}. You have not asked a single what-did-it-feel-like.'
 
-"I was nice to them," {child_name} burst out, dropping down beside them. "Genuinely, properly nice. And they looked at me like I was something stuck to the bottom of their shoe. Someone like you. What is that even supposed to mean? I did not do anything." {child_name} scrubbed hard at their eyes, furious and embarrassed all at the same time. "Some people just enjoy being cruel. That is the truth of it."
+It was an odd thing to say to a detective, and it worked. When {child_name} stopped listing what the friend had done and started noticing how the friend had been — really noticing, the old way, the first-kindness way — the whole picture changed colour. The arms: full, held the way you hold things that matter. The voice: not cold. Kind, and stretched thin. The eyes: not sneaky, not cross. Worried. And there was the apology, thrown back over one shoulder like a rope. Rude people do not throw ropes.
 
-{companion_name} let the storm blow itself out before answering.
+So {child_name} tried the strangest trick of all. {child_name} went to where the friend had first appeared, stood exactly as the friend had stood — and then walked the friend's route, step for step, arms curled around an imaginary bundle, hurrying the same hurry. And somewhere along that walk {child_name} stopped being a detective following a suspect and became, briefly, the friend: arms full, heart going quick, no room to stop, not even for the person you most wanted to stop for.
 
-"That is the story that hurts the least right now," they said at last. "They are cruel, I am innocent, end of story. It is tidy, and it lets you off the hook. But you are usually far more curious than that."
+'It is like walking in someone's shoes,' {child_name} said, half aloud. 'You walk where they walked and you start to feel what they felt. And this feels like looking after something. Something that cannot wait, and cannot be put down, and cannot be explained fast enough to be worth stopping —'
 
-{child_name} said nothing, jaw set tight, staring down at the grass.
+Wait. Stand still. Listen — under the wind, under the reeds. Can you hear it too? Peep. The smallest sound in {setting}. Ask yourself, detective: what sort of someone says peep?
 
-"Back in Level One," {companion_name} went on, unhurried, "you got good at reading the outside. The folded arms. The flat little voice. So read them properly now, before you decide what it all meant. What did the outside actually look like?"
+'— something with feathers,' {child_name} finished, and the two mysteries collapsed into one answer, neat as two halves of a shell closing. A week of vanished softness. A friend who would not stop. One cause, small and warm and peeping in the dark.
 
-{child_name} made themselves go back and remember. "Arms crossed," they said reluctantly. "Standing apart from everybody. Watching, but never once joining in." A pause. "Kind of the way I stand, actually, when I do not want anyone to see that I am nervous."
+{child_name} ran home for the softest thing they owned — the old blanket-scrap nobody was allowed to mention — and carried it into the reeds.
 
-"There it is," said {companion_name} softly. "Now for the harder thing. Stop imagining how they made you feel for a moment, and try walking in someone's shoes instead. Be them. Arriving here completely alone. What is that morning actually like?"
+And there it was, all of it. The friend, sitting perfectly still. A nest built from a week of missing softness — the moss, the down, the good feather, the corner of bedding. And in the nest, a tiny lost bird, peeping up at the night.
 
-{child_name} closed their eyes and, reluctantly at first, began to build the picture. Waking up somewhere unfamiliar, in a place with none of your own things in it. Knowing not one single face for miles. Walking into somewhere where everyone already had their friends, their private jokes, their whole history stitched together long before you ever turned up. Feeling every pair of eyes on you and being certain, absolutely certain, that all of them were deciding something about you before you had even opened your mouth.
+'It fell behind when its family flew on,' the friend whispered. 'They circle back at sunrise. They always do. I meant to tell you a hundred times. But every time I set it down to come and find you, it peeped so sadly that I picked it straight back up.'
 
-And then someone kind and easy and confident walks straight up, clearly belonging exactly where they stand, and offers, out of nowhere, to help. Someone who makes the enormous gap between you feel even wider than it already did. {child_name} let the whole picture settle, and it was not a comfortable place to stand, even for a borrowed moment.
+'You do not have to explain,' said {child_name}, kneeling and tucking the blanket-scrap around the little bird. 'I walked your walk tonight. I carried your invisible bundle for about forty steps, and even the imaginary version was heavy.'
 
-{child_name}'s eyes opened.
+The peeping slowed, and softened, and stopped. The little bird slept, wrapped in the entire soft collection of {setting}.
 
-"If I felt that small," they said slowly, "and somebody who fit in perfectly offered to teach me the ropes in front of everyone, I think I might push them away first. Hard. So that they could not do it to me. Someone like you, someone who belongs here." The anger had gone strange and quiet inside them. "It was not really about me at all, was it? Not really."
+'{refrain},' murmured {companion_name}, and the {object_motif} laid its warm glow over the nest like one blanket more.
 
-{companion_name} did not congratulate them or make a fuss. They simply nodded, the way you nod at something you already know to be true.
+The two friends sat shoulder to shoulder while the stars arrived.
 
-{child_name} sat with it for a while, turning the {object_motif} over and over in their hands. Being right about someone's meanness would have been so much simpler, so much more satisfying. This was more uncomfortable, and yet, somehow, at the very same time, it loosened the tight, hurt knot that had been sitting in their chest since the trading tables.
+'I thought you did not want to see me,' {child_name} admitted.
 
-"I do not have to be their friend, though," {child_name} said at last. "They were still rude to me."
+'I thought about you every day,' the friend said. 'My arms were just full.'
 
-"No, you certainly do not," {companion_name} agreed. "Understanding someone is not the same as excusing them. You still get to choose exactly what you do next. You only get to choose it knowing a great deal more than you did before."
+'Sunrise, then,' said {child_name}. 'We watch the family come back together. Both mysteries officially closed.'
 
-{child_name} turned that over. It would have been easier, they realised, to simply stay angry. Anger asked nothing of you and let you feel entirely in the right. This asked them to get up and walk back across the whole market and try a second time, with no promise at all that it would work.
+'Closed,' agreed the friend, and yawned, and the yawn hopped from one to the other like a small bird itself.
 
-{child_name} thought that over for a long moment, then got to their feet.
-
-They found the newcomer near the far stalls, alone once again, pretending to study a rack of nothing very much. {child_name} did not put on a big bright smile this time. They stopped a little way off and gave them room to breathe.
-
-"You were sharp with me before," {child_name} said, evenly. "That stung, honestly. But I think I understand it a bit better now, being new here, with everyone already sorted neatly into their little groups. I have felt on the outside of things too, more than you would guess."
-
-The newcomer's cool expression wavered. For a second they looked as though they might say something cutting all over again, and then the whole effort of it seemed to simply collapse.
-
-"I did not really mean the someone like you thing," they muttered, staring hard at the ground. "You just looked so comfortable. Like you had never once in your life had to wonder whether people actually wanted you around. I hated you for it, just for a second."
-
-"I wonder it all the time," said {child_name} simply. "I just hide it a lot better than you think."
-
-The newcomer studied them for a moment, as though checking whether the words were actually true, and whatever they found there seemed to be enough.
-
-The newcomer huffed out a small, surprised breath, almost a laugh, as though it had escaped before they could stop it.
-
-"You can hold the {object_motif} for a bit, if you want," {child_name} offered. "No trading, no strings. I will just tell you who everybody is and how it all works."
-
-This time, after a pause, the newcomer took it.
-
-They stayed there together at the edge of the market as the light thinned to gold and then to grey over {setting}, and the traders began, one by one, to fold up their cloths and pack their tables away. The newcomer did not suddenly turn warm and easy and chatty. But their arms unfolded at last, and they asked {child_name} a real question, and then another one after that, and {child_name} answered every single one of them. Once, the newcomer even nodded at a lopsided stall and said something that was almost a joke, and {child_name} laughed for real, and the newcomer looked pleased and slightly startled to have made anyone laugh at all.
-
-Walking home in the settling dark, {child_name} felt older than they had that same morning. Not tired, exactly, but stretched somehow, the way you feel after carrying something a good deal heavier than you ever thought you could.
+One nest, finished. One friendship, fuller than it started. Two mysteries, sound asleep in the reeds.
 
 {refrain}.`
   }
 },
-    audioTemplate: `Beneath the glow of the {object_motif} in {setting}, the {hero} felt hurt. A friend had been short with them, almost unkind.
+    audioTemplate: `The {hero} and their best friend met every evening at the meeting rock in {setting}. Without fail.
 
-"Why would they do that?" the {hero} said.
+But tonight the friend came hurrying along the path, arms full — and hurried straight past. 'Not now — sorry!' they called, and vanished into the tall reeds.
 
-{companion_name} settled close. "Let us try something. Close your eyes and imagine you are them. What might their day have been like?"
+The {hero} stood at the meeting rock, alone.
 
-The {hero} imagined. Perhaps that friend had been tired. Perhaps something had gone wrong for them, long before this moment.
+And that was not the only mystery. All week, the softest things had been going missing. Moss from the {hero}'s step. The fluffiest seed-down. A feather. Only soft things.
 
-And the hurt softened into something gentler — understanding.
+The {hero} tried chasing. But the friend was quicker, and the reeds closed behind them.
 
-"They might be carrying something I cannot see," said the {hero} slowly.
+So the {hero} set a trap: the fluffiest feather ever found. The {hero} hid, and watched — and fell asleep watching. When the {hero} woke, the feather was gone.
 
-"That is walking in someone's shoes," said {companion_name}. "You noticed how they seemed. Then you imagined how they felt. Now your kindness has somewhere true to go."
+'Hmm,' said {companion_name}. 'You know what your friend did. Do you know what your friend felt, little {hero}?'
 
-The {object_motif} warmed between them.
+Felt? The {hero} thought back and noticed, the way the {hero} had learned to notice. Worried eyes. A kind voice. Not a mean rush. A worried rush.
 
-The {hero} decided to be gentle with that friend tomorrow — not because they had earned it, but because everyone is carrying something.
+So the {hero} tried something new: standing where the friend had stood, walking where the friend had walked. Arms full. Heart hurrying. Somewhere to be.
+
+'It is like walking in someone's shoes,' said the {hero} slowly. 'If I walk where they walked and feel what they felt... they were not being unkind. They were being careful, and worried, and hurrying back to something —'
+
+Listen. Can you hear it too? Peep. A tiny sound from the reeds. What sort of someone says peep?
+
+'— something very small!' finished the {hero}.
+
+Two mysteries. One answer. The {hero} fetched the softest thing they owned — their blanket-scrap — and carried it into the reeds.
+
+There sat the friend, beside a nest of moss and seed-down and one feather. In the nest: a tiny lost bird, peeping.
+
+'It fell behind when its family flew on,' the friend whispered. 'They circle back at sunrise. I wanted to tell you — but every time I put it down, it peeped so sadly!'
+
+'You do not have to be sorry,' said the {hero}, tucking the blanket-scrap in. 'I walked your walk. I know.'
+
+The peeping stopped. The little bird slept.
+
+'{refrain},' murmured {companion_name}, and the {object_motif} glowed gently over the nest.
+
+'Sunrise,' whispered the friend. 'Will you watch its family come?'
+
+'I would not miss it,' whispered the {hero}.
+
+One nest, finished. One friend, found again. Two mysteries, fast asleep.
 
 {refrain}.`,
-    scriptTemplate: `Beneath the glow of the {object_motif} in {setting}, {child_name} the {hero} felt hurt. A friend had been short with them, almost unkind.
+    scriptTemplate: `{child_name} and their best friend met every evening at the meeting rock in {setting}. Without fail.
 
-"Why would they do that?" {child_name} said.
+But tonight the friend came hurrying along the path, arms full — and hurried straight past. 'Not now — sorry!' they called, and vanished into the tall reeds.
 
-{companion_name} settled close. "Let us try something, {child_name}. Close your eyes and imagine you are them. What might their day have been like?"
+{child_name} stood at the meeting rock, alone.
 
-{child_name} imagined. Perhaps that friend had been tired. Perhaps something had gone wrong for them, long before this moment.
+And that was not the only mystery. All week, the softest things had been going missing. Moss from {child_name}'s step. The fluffiest seed-down. A feather. Only soft things.
 
-And the hurt softened into something gentler — understanding.
+{child_name} tried chasing. But the friend was quicker, and the reeds closed behind them.
 
-"They might be carrying something I cannot see," said {child_name} slowly.
+So {child_name} set a trap: the fluffiest feather ever found. {child_name} hid, and watched — and fell asleep watching. When {child_name} woke, the feather was gone.
 
-"That is walking in someone's shoes," said {companion_name}. "You noticed how they seemed. Then you imagined how they felt. Now your kindness has somewhere true to go."
+'Hmm,' said {companion_name}. 'You know what your friend did. Do you know what your friend felt, little {hero}?'
 
-The {object_motif} warmed between them.
+Felt? {child_name} thought back and noticed, the way {child_name} had learned to notice. Worried eyes. A kind voice. Not a mean rush. A worried rush.
 
-{child_name} decided to be gentle with that friend tomorrow — not because they had earned it, but because everyone is carrying something.
+So {child_name} tried something new: standing where the friend had stood, walking where the friend had walked. Arms full. Heart hurrying. Somewhere to be.
+
+'It is like walking in someone's shoes,' said {child_name} slowly. 'If I walk where they walked and feel what they felt... they were not being unkind. They were being careful, and worried, and hurrying back to something —'
+
+Listen. Can you hear it too? Peep. A tiny sound from the reeds. What sort of someone says peep?
+
+'— something very small!' finished {child_name}.
+
+Two mysteries. One answer. {child_name} fetched the softest thing they owned — their blanket-scrap — and carried it into the reeds.
+
+There sat the friend, beside a nest of moss and seed-down and one feather. In the nest: a tiny lost bird, peeping.
+
+'It fell behind when its family flew on,' the friend whispered. 'They circle back at sunrise. I wanted to tell you — but every time I put it down, it peeped so sadly!'
+
+'You do not have to be sorry,' said {child_name}, tucking the blanket-scrap in. 'I walked your walk. I know.'
+
+The peeping stopped. The little bird slept.
+
+'{refrain},' murmured {companion_name}, and the {object_motif} glowed gently over the nest.
+
+'Sunrise,' whispered the friend. 'Will you watch its family come?'
+
+'I would not miss it,' whispered {child_name}.
+
+One nest, finished. One friend, found again. Two mysteries, fast asleep.
 
 {refrain}.`,
   },
-
   {
     ordinal: 4, title: 'Kindness Comes Back',
     concept: 'Kindness spreads from one to the next', callback: 'A small kindness (Level 2)', ageFloor: 5,
