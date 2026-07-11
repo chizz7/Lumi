@@ -856,19 +856,19 @@ The blanket was warm. The night was soft. {child_name}'s eyes closed on their ow
     learningBeat: 'That is called change',
     ageVariants: {
   '3-4': {
-    audioTemplate: `Tonight was picnic night! The {hero} and {companion_name} spread a picnic blanket in {setting}. The {object_motif} sat on one corner, holding it down.
+    audioTemplate: `Picnic night! The {hero} and {companion_name} spread a blanket in {setting}. The {object_motif} held down one corner.
 
-One thing was missing. The moon-loaf! The baker made just one each night, round and golden and warm.
+One thing was missing. The moon-loaf! The baker made just one each night, golden and warm.
 
-The {hero} had one small coin. Little, but the {hero} knew its marks. It was worth five!
+The {hero} had one little coin. But the {hero} knew its marks. It was worth five!
 
 The moon-loaf cost three. Count with me. One, two, three.
 
-But five is more than three! "If I pay five for three," said the {hero}, "I lose two!"
+"But if I pay five for three," said the {hero}, "I lose two!"
 
-At the stall hung a small sign: "Change given, always." Change? What was change?
+On the stall hung a sign: "Change given, always." What was change?
 
-The {hero} had an idea. "Please cut my coin in three pieces, like a loaf!"
+The {hero} had an idea. "Please cut my coin in three, like a loaf!"
 
 The baker laughed. "Coins don't slice, little {hero}."
 
@@ -889,19 +889,19 @@ What shape? Morning knows.
 Warm bread. Full tummies. Slow, sleepy blinks.
 
 {refrain}.`,
-    scriptTemplate: `Tonight was picnic night! {child_name} and {companion_name} spread a picnic blanket in {setting}. The {object_motif} sat on one corner, holding it down.
+    scriptTemplate: `Picnic night! {child_name} and {companion_name} spread a blanket in {setting}. The {object_motif} held down one corner.
 
-One thing was missing. The moon-loaf! The baker made just one each night, round and golden and warm.
+One thing was missing. The moon-loaf! The baker made just one each night, golden and warm.
 
-{child_name} had one small coin. Little, but {child_name} knew its marks. It was worth five!
+{child_name} had one little coin. But {child_name} knew its marks. It was worth five!
 
 The moon-loaf cost three. Count with me. One, two, three.
 
-But five is more than three! "If I pay five for three," said {child_name}, "I lose two!"
+"But if I pay five for three," said {child_name}, "I lose two!"
 
-At the stall hung a small sign: "Change given, always." Change? What was change?
+On the stall hung a sign: "Change given, always." What was change?
 
-{child_name} had an idea. "Please cut my coin in three pieces, like a loaf!"
+{child_name} had an idea. "Please cut my coin in three, like a loaf!"
 
 The baker laughed. "Coins don't slice, little {hero}."
 
@@ -924,19 +924,19 @@ Warm bread. Full tummies. Slow, sleepy blinks.
 {refrain}.`
   },
   '5-6': {
-    audioTemplate: `Tonight was picnic night. The {hero} and {companion_name} had picked the spot days ago — the mossy rise in {setting} where the moon comes up first — and the {object_motif} was already sitting on the picnic blanket, holding down one corner.
+    audioTemplate: `Picnic night. The {hero} and {companion_name} had picked the spot days ago — the mossy rise in {setting} where the moon comes up first — and the {object_motif} already sat on the blanket, holding down one corner.
 
-Only one thing was missing: the moon-loaf. Every evening the baker made exactly one, round and golden with a swirl on top, and tonight it was still there, filling the whole market with its warm smell.
+Only one thing was missing: the moon-loaf. Every evening the baker made exactly one, golden with a swirl on top, and tonight it was still there, filling the market with its warm smell.
 
-The {hero} had exactly one coin, and it was a good one. It was small, but the {hero} had read its marks the way coins should be read, and it was worth five. The moon-loaf cost three.
+The {hero} had one coin. It was small, but the {hero} had read its marks, and it was worth five. The moon-loaf cost three.
 
-And that was the trouble. "If I pay five for a three-coin loaf," said the {hero}, "I lose two. That's not fair trading. That's just losing."
+And that was the trouble. "If I pay five for a three-coin loaf," said the {hero}, "I lose two. That's just losing."
 
-Above the stall hung a little chalk sign: "Change given, always." The {hero} had wondered about that sign all week. Change? Change into what?
+Above the stall hung a chalk sign: "Change given, always." The {hero} had puzzled over it all week. Change into what?
 
-So the {hero} made a plan. First, the {hero} asked the baker to slice the coin in three, like a loaf. The baker laughed so hard that flour puffed off her apron. "Coins don't slice, little {hero}."
+First plan: the {hero} asked the baker to slice the coin in three, like a loaf. The baker laughed so hard that flour puffed off her apron. "Coins don't slice, little {hero}."
 
-Next, the {hero} went hunting for a swap: one five-coin for three ones. The toy-seller had no little coins, only whistles. The fruit-seller offered a button. A very nice button, but a button.
+Second plan: swap one five for three ones. The toy-seller had only whistles. The fruit-seller offered a button. A nice button, but a button.
 
 The moon was nearly up. The loaf was getting cool.
 
@@ -950,32 +950,32 @@ The {hero} stared. "You gave back the extra! The sign! That is called change!"
 
 "Always," said the baker.
 
-And here was the funny thing. If the swapping plan had worked, there would be nothing left over — but now a coin came back, and it bought a pat of honey-butter for the top of the loaf. The failed plan had turned into a better one.
+Here was the funny thing. If the swapping plan had worked, there would be nothing left over — but now a coin came back, and it bought a pat of honey-butter for the top of the loaf. The failed plan had turned into a better one.
 
 They ate on the blanket while the moon climbed, warm bread and melting honey-butter, and the last coin went safe into the {hero}'s pocket for another day.
 
 "{refrain}," said {companion_name}, with honey-butter on the tip of their nose.
 
-"Come tomorrow," called the baker, packing up. "Tomorrow's loaf is a new shape. A secret one. It's something that flies."
+"Tomorrow's loaf," called the baker, packing up, "is a new shape. A secret one. Something that flies."
 
 Something that flies! But that was a puzzle for the morning.
 
 The market lights went out one by one. The bread was warm. The night was slow.
 
 {refrain}.`,
-    scriptTemplate: `Tonight was picnic night. {child_name} and {companion_name} had picked the spot days ago — the mossy rise in {setting} where the moon comes up first — and the {object_motif} was already sitting on the picnic blanket, holding down one corner.
+    scriptTemplate: `Picnic night. {child_name} and {companion_name} had picked the spot days ago — the mossy rise in {setting} where the moon comes up first — and the {object_motif} already sat on the blanket, holding down one corner.
 
-Only one thing was missing: the moon-loaf. Every evening the baker made exactly one, round and golden with a swirl on top, and tonight it was still there, filling the whole market with its warm smell.
+Only one thing was missing: the moon-loaf. Every evening the baker made exactly one, golden with a swirl on top, and tonight it was still there, filling the market with its warm smell.
 
-{child_name} had exactly one coin, and it was a good one. It was small, but {child_name} had read its marks the way coins should be read, and it was worth five. The moon-loaf cost three.
+{child_name} had one coin. It was small, but {child_name} had read its marks, and it was worth five. The moon-loaf cost three.
 
-And that was the trouble. "If I pay five for a three-coin loaf," said {child_name}, "I lose two. That's not fair trading. That's just losing."
+And that was the trouble. "If I pay five for a three-coin loaf," said {child_name}, "I lose two. That's just losing."
 
-Above the stall hung a little chalk sign: "Change given, always." {child_name} had wondered about that sign all week. Change? Change into what?
+Above the stall hung a chalk sign: "Change given, always." {child_name} had puzzled over it all week. Change into what?
 
-So {child_name} made a plan. First, {child_name} asked the baker to slice the coin in three, like a loaf. The baker laughed so hard that flour puffed off her apron. "Coins don't slice, little {hero}."
+First plan: {child_name} asked the baker to slice the coin in three, like a loaf. The baker laughed so hard that flour puffed off her apron. "Coins don't slice, little {hero}."
 
-Next, {child_name} went hunting for a swap: one five-coin for three ones. The toy-seller had no little coins, only whistles. The fruit-seller offered a button. A very nice button, but a button.
+Second plan: swap one five for three ones. The toy-seller had only whistles. The fruit-seller offered a button. A nice button, but a button.
 
 The moon was nearly up. The loaf was getting cool.
 
@@ -989,13 +989,13 @@ The baker smiled and handed over the warm loaf. Then — watch the baker's hands
 
 "Always," said the baker.
 
-And here was the funny thing. If the swapping plan had worked, there would be nothing left over — but now a coin came back, and it bought a pat of honey-butter for the top of the loaf. The failed plan had turned into a better one.
+Here was the funny thing. If the swapping plan had worked, there would be nothing left over — but now a coin came back, and it bought a pat of honey-butter for the top of the loaf. The failed plan had turned into a better one.
 
 They ate on the blanket while the moon climbed, warm bread and melting honey-butter, and the last coin went safe into {child_name}'s pocket for another day.
 
 "{refrain}," said {companion_name}, with honey-butter on the tip of their nose.
 
-"Come tomorrow," called the baker, packing up. "Tomorrow's loaf is a new shape. A secret one. It's something that flies."
+"Tomorrow's loaf," called the baker, packing up, "is a new shape. A secret one. Something that flies."
 
 Something that flies! But that was a puzzle for the morning.
 
@@ -1008,17 +1008,17 @@ The market lights went out one by one. The bread was warm. The night was slow.
 
 All that was missing was the middle of the picnic — the moon-loaf. Every evening the baker made exactly one: round, golden, with a swirl on top like a shell, and famous for three streets in every direction. Tonight it was still on the stall, sending its warm smell out over the market like an announcement.
 
-The {hero} had one coin, and knew precisely what it was. That was the thing about coins now — since the business with the box and the business with the little sun, the {hero} read them the way other people read signs. Name, face, edge. This one was small, worn smooth at the rim, and worth five.
+The {hero} had one coin, and knew precisely what it was. Since the business with the box and the little sun, the {hero} read coins the way other people read signs. Name, face, edge. This one was small, worn smooth at the rim, and worth five.
 
 The moon-loaf cost three.
 
-Most people would call that good news. The {hero} stood in front of the stall doing unhappy arithmetic. "Five for a three-coin loaf," muttered the {hero}. "That's paying five and getting three. That's losing two coins into thin air. I didn't learn to read coins just to throw two of them away."
+Most people would call that good news. The {hero} stood in front of the stall doing unhappy arithmetic. "Five for a three-coin loaf," muttered the {hero}. "That's losing two coins into thin air. I didn't learn to read coins just to throw two of them away."
 
-Above the stall, swinging gently, hung a small chalk-written sign the {hero} had never understood: "Change given, always." All week that sign had been an itch. Change? Change into what? Loaves into birds? Bakers into boats?
+Above the stall hung a small chalk-written sign the {hero} had never understood: "Change given, always." All week that sign had been an itch. Change? Change into what? Loaves into birds?
 
 There was nothing for it but cleverness. The {hero}'s first plan was surgical: ask the baker to slice the coin into three fair pieces, the way you slice a loaf. The baker laughed so warmly that flour rose off her apron in a small cloud. "Coins don't slice, little {hero}. Not even for you."
 
-The second plan was trade. Somewhere in this market, surely, someone would swap one five for three ones. The toy-seller turned out his pockets: whistles. The fruit-seller offered a large friendly button and seemed genuinely sorry when it was declined. The potter had two little coins but needed them for her own loaf tomorrow, which was fair, and said so.
+The second plan was trade. Somewhere in this market, surely, someone would swap one five for three ones. The toy-seller turned out his pockets: whistles. The fruit-seller offered a large friendly button. The potter had two little coins but needed them for her own loaf tomorrow, which was fair, and said so.
 
 The moon had one eyebrow over the edge of the world now. The loaf was cooling. {companion_name}, who had been watching all this from the blanket with the patience of a stone, said only: "Hmm. I don't think that sign is finished with you yet."
 
@@ -1032,7 +1032,7 @@ The {hero} looked at the coins, at the sign, at the coins again, and the whole w
 
 "Always has been," said the baker, dusting her hands.
 
-And then the evening did the thing good evenings do: it turned out better than the plan. Because if the slicing plan had worked, or the swapping plan had worked, the {hero} would have paid three exact coins and walked away with bread and nothing else. Instead there were two coins back, and one of them bought a pat of honey-butter, golden as the loaf itself, which the failed plans could never have paid for. The last coin went deep into the pocket for another day.
+And then the evening did the thing good evenings do: it turned out better than the plan. If either clever plan had worked, the {hero} would have paid three exact coins and walked away with bread and nothing else. Instead there were two coins back, and one of them bought a pat of honey-butter, which the failed plans could never have paid for. The last coin went deep into the pocket for another day.
 
 The picnic was, by unanimous vote of everyone present, the best one yet. Warm bread, honey-butter melting into the swirl, the moon fully up and looking pleased with itself.
 
@@ -1042,24 +1042,24 @@ As the market packed up behind them, the baker called across: "Come tomorrow! To
 
 Something that flies. A bird? A kite? A question for the morning, and a good one to fall asleep on.
 
-The lamps went out one by one. The blanket grew warmer. The {hero}'s eyes closed between one slow bite of moonlight and the next.
+The lamps went out one by one. The blanket grew warmer. The {hero}'s eyes closed between one slow breath and the next.
 
 {refrain}.`,
     scriptTemplate: `Picnic night came once a week, and {child_name} took it as seriously as some folk take birthdays. The spot was chosen days in advance: the mossy rise in {setting} where the moon shows up first, before it has finished combing its hair. By sunset the picnic blanket was spread, and the {object_motif} sat on one corner to keep the breeze from stealing it.
 
 All that was missing was the middle of the picnic — the moon-loaf. Every evening the baker made exactly one: round, golden, with a swirl on top like a shell, and famous for three streets in every direction. Tonight it was still on the stall, sending its warm smell out over the market like an announcement.
 
-{child_name} had one coin, and knew precisely what it was. That was the thing about coins now — since the business with the box and the business with the little sun, {child_name} read them the way other people read signs. Name, face, edge. This one was small, worn smooth at the rim, and worth five.
+{child_name} had one coin, and knew precisely what it was. Since the business with the box and the little sun, {child_name} read coins the way other people read signs. Name, face, edge. This one was small, worn smooth at the rim, and worth five.
 
 The moon-loaf cost three.
 
-Most people would call that good news. {child_name} stood in front of the stall doing unhappy arithmetic. "Five for a three-coin loaf," muttered {child_name}. "That's paying five and getting three. That's losing two coins into thin air. I didn't learn to read coins just to throw two of them away."
+Most people would call that good news. {child_name} stood in front of the stall doing unhappy arithmetic. "Five for a three-coin loaf," muttered {child_name}. "That's losing two coins into thin air. I didn't learn to read coins just to throw two of them away."
 
-Above the stall, swinging gently, hung a small chalk-written sign {child_name} had never understood: "Change given, always." All week that sign had been an itch. Change? Change into what? Loaves into birds? Bakers into boats?
+Above the stall hung a small chalk-written sign {child_name} had never understood: "Change given, always." All week that sign had been an itch. Change? Change into what? Loaves into birds?
 
 There was nothing for it but cleverness. {child_name}'s first plan was surgical: ask the baker to slice the coin into three fair pieces, the way you slice a loaf. The baker laughed so warmly that flour rose off her apron in a small cloud. "Coins don't slice, little {hero}. Not even for you."
 
-The second plan was trade. Somewhere in this market, surely, someone would swap one five for three ones. The toy-seller turned out his pockets: whistles. The fruit-seller offered a large friendly button and seemed genuinely sorry when it was declined. The potter had two little coins but needed them for her own loaf tomorrow, which was fair, and said so.
+The second plan was trade. Somewhere in this market, surely, someone would swap one five for three ones. The toy-seller turned out his pockets: whistles. The fruit-seller offered a large friendly button. The potter had two little coins but needed them for her own loaf tomorrow, which was fair, and said so.
 
 The moon had one eyebrow over the edge of the world now. The loaf was cooling. {companion_name}, who had been watching all this from the blanket with the patience of a stone, said only: "Hmm. I don't think that sign is finished with you yet."
 
@@ -1073,7 +1073,7 @@ The baker did not take it anyway. The baker took it exactly. She handed across t
 
 "Always has been," said the baker, dusting her hands.
 
-And then the evening did the thing good evenings do: it turned out better than the plan. Because if the slicing plan had worked, or the swapping plan had worked, {child_name} would have paid three exact coins and walked away with bread and nothing else. Instead there were two coins back, and one of them bought a pat of honey-butter, golden as the loaf itself, which the failed plans could never have paid for. The last coin went deep into the pocket for another day.
+And then the evening did the thing good evenings do: it turned out better than the plan. If either clever plan had worked, {child_name} would have paid three exact coins and walked away with bread and nothing else. Instead there were two coins back, and one of them bought a pat of honey-butter, which the failed plans could never have paid for. The last coin went deep into the pocket for another day.
 
 The picnic was, by unanimous vote of everyone present, the best one yet. Warm bread, honey-butter melting into the swirl, the moon fully up and looking pleased with itself.
 
@@ -1083,7 +1083,7 @@ As the market packed up behind them, the baker called across: "Come tomorrow! To
 
 Something that flies. A bird? A kite? A question for the morning, and a good one to fall asleep on.
 
-The lamps went out one by one. The blanket grew warmer. {child_name}'s eyes closed between one slow bite of moonlight and the next.
+The lamps went out one by one. The blanket grew warmer. {child_name}'s eyes closed between one slow breath and the next.
 
 {refrain}.`
   },
@@ -1098,7 +1098,7 @@ The {hero} had one coin and knew it completely. Since the business with the lock
 
 Anyone else would have skipped to the stall. The {hero} stood still, doing arithmetic with a frown. Five paid for three received meant two coins gone, vanished, evaporated. It felt less like buying bread and more like being quietly robbed by mathematics. "I did not learn to read coins," said the {hero} with feeling, "in order to feed two of them to a bread stall."
 
-There was also the sign. It had been bothering the {hero} for days: a small chalk-lettered board swinging above the stall. "Change given, always." Change. Change into what? It sounded half like a promise and half like a magic trick, and no one ever explained it, the way grown folk never explain the things they think everyone knows.
+There was also the sign. It had been bothering the {hero} for days: a small chalk-lettered board swinging above the stall. "Change given, always." Change. Change into what? It sounded half like a promise and half like a magic trick, and no one ever explained it.
 
 The first plan was surgical. The {hero} presented the coin and asked, politely, whether the baker might slice it into three fair pieces, the way one slices a loaf. The baker laughed until flour lifted off her apron. "Coins don't slice, little {hero}. Not for kings, and not even for you."
 
@@ -1139,7 +1139,7 @@ All that was missing was the middle of the picnic: the moon-loaf. The baker made
 
 Anyone else would have skipped to the stall. {child_name} stood still, doing arithmetic with a frown. Five paid for three received meant two coins gone, vanished, evaporated. It felt less like buying bread and more like being quietly robbed by mathematics. "I did not learn to read coins," said {child_name} with feeling, "in order to feed two of them to a bread stall."
 
-There was also the sign. It had been bothering {child_name} for days: a small chalk-lettered board swinging above the stall. "Change given, always." Change. Change into what? It sounded half like a promise and half like a magic trick, and no one ever explained it, the way grown folk never explain the things they think everyone knows.
+There was also the sign. It had been bothering {child_name} for days: a small chalk-lettered board swinging above the stall. "Change given, always." Change. Change into what? It sounded half like a promise and half like a magic trick, and no one ever explained it.
 
 The first plan was surgical. {child_name} presented the coin and asked, politely, whether the baker might slice it into three fair pieces, the way one slices a loaf. The baker laughed until flour lifted off her apron. "Coins don't slice, little {hero}. Not for kings, and not even for you."
 
@@ -1173,19 +1173,19 @@ The lamps went out one by one. The night leaned back. The blanket held its warmt
   }
 },
     callback: 'Some coins are worth more than they look (Level 2)', ageFloor: 4,
-    audioTemplate: `Tonight was picnic night. The {hero} and {companion_name} had picked the spot days ago — the mossy rise in {setting} where the moon comes up first — and the {object_motif} was already sitting on the picnic blanket, holding down one corner.
+    audioTemplate: `Picnic night. The {hero} and {companion_name} had picked the spot days ago — the mossy rise in {setting} where the moon comes up first — and the {object_motif} already sat on the blanket, holding down one corner.
 
-Only one thing was missing: the moon-loaf. Every evening the baker made exactly one, round and golden with a swirl on top, and tonight it was still there, filling the whole market with its warm smell.
+Only one thing was missing: the moon-loaf. Every evening the baker made exactly one, golden with a swirl on top, and tonight it was still there, filling the market with its warm smell.
 
-The {hero} had exactly one coin, and it was a good one. It was small, but the {hero} had read its marks the way coins should be read, and it was worth five. The moon-loaf cost three.
+The {hero} had one coin. It was small, but the {hero} had read its marks, and it was worth five. The moon-loaf cost three.
 
-And that was the trouble. "If I pay five for a three-coin loaf," said the {hero}, "I lose two. That's not fair trading. That's just losing."
+And that was the trouble. "If I pay five for a three-coin loaf," said the {hero}, "I lose two. That's just losing."
 
-Above the stall hung a little chalk sign: "Change given, always." The {hero} had wondered about that sign all week. Change? Change into what?
+Above the stall hung a chalk sign: "Change given, always." The {hero} had puzzled over it all week. Change into what?
 
-So the {hero} made a plan. First, the {hero} asked the baker to slice the coin in three, like a loaf. The baker laughed so hard that flour puffed off her apron. "Coins don't slice, little {hero}."
+First plan: the {hero} asked the baker to slice the coin in three, like a loaf. The baker laughed so hard that flour puffed off her apron. "Coins don't slice, little {hero}."
 
-Next, the {hero} went hunting for a swap: one five-coin for three ones. The toy-seller had no little coins, only whistles. The fruit-seller offered a button. A very nice button, but a button.
+Second plan: swap one five for three ones. The toy-seller had only whistles. The fruit-seller offered a button. A nice button, but a button.
 
 The moon was nearly up. The loaf was getting cool.
 
@@ -1199,32 +1199,32 @@ The {hero} stared. "You gave back the extra! The sign! That is called change!"
 
 "Always," said the baker.
 
-And here was the funny thing. If the swapping plan had worked, there would be nothing left over — but now a coin came back, and it bought a pat of honey-butter for the top of the loaf. The failed plan had turned into a better one.
+Here was the funny thing. If the swapping plan had worked, there would be nothing left over — but now a coin came back, and it bought a pat of honey-butter for the top of the loaf. The failed plan had turned into a better one.
 
 They ate on the blanket while the moon climbed, warm bread and melting honey-butter, and the last coin went safe into the {hero}'s pocket for another day.
 
 "{refrain}," said {companion_name}, with honey-butter on the tip of their nose.
 
-"Come tomorrow," called the baker, packing up. "Tomorrow's loaf is a new shape. A secret one. It's something that flies."
+"Tomorrow's loaf," called the baker, packing up, "is a new shape. A secret one. Something that flies."
 
 Something that flies! But that was a puzzle for the morning.
 
 The market lights went out one by one. The bread was warm. The night was slow.
 
 {refrain}.`,
-    scriptTemplate: `Tonight was picnic night. {child_name} and {companion_name} had picked the spot days ago — the mossy rise in {setting} where the moon comes up first — and the {object_motif} was already sitting on the picnic blanket, holding down one corner.
+    scriptTemplate: `Picnic night. {child_name} and {companion_name} had picked the spot days ago — the mossy rise in {setting} where the moon comes up first — and the {object_motif} already sat on the blanket, holding down one corner.
 
-Only one thing was missing: the moon-loaf. Every evening the baker made exactly one, round and golden with a swirl on top, and tonight it was still there, filling the whole market with its warm smell.
+Only one thing was missing: the moon-loaf. Every evening the baker made exactly one, golden with a swirl on top, and tonight it was still there, filling the market with its warm smell.
 
-{child_name} had exactly one coin, and it was a good one. It was small, but {child_name} had read its marks the way coins should be read, and it was worth five. The moon-loaf cost three.
+{child_name} had one coin. It was small, but {child_name} had read its marks, and it was worth five. The moon-loaf cost three.
 
-And that was the trouble. "If I pay five for a three-coin loaf," said {child_name}, "I lose two. That's not fair trading. That's just losing."
+And that was the trouble. "If I pay five for a three-coin loaf," said {child_name}, "I lose two. That's just losing."
 
-Above the stall hung a little chalk sign: "Change given, always." {child_name} had wondered about that sign all week. Change? Change into what?
+Above the stall hung a chalk sign: "Change given, always." {child_name} had puzzled over it all week. Change into what?
 
-So {child_name} made a plan. First, {child_name} asked the baker to slice the coin in three, like a loaf. The baker laughed so hard that flour puffed off her apron. "Coins don't slice, little {hero}."
+First plan: {child_name} asked the baker to slice the coin in three, like a loaf. The baker laughed so hard that flour puffed off her apron. "Coins don't slice, little {hero}."
 
-Next, {child_name} went hunting for a swap: one five-coin for three ones. The toy-seller had no little coins, only whistles. The fruit-seller offered a button. A very nice button, but a button.
+Second plan: swap one five for three ones. The toy-seller had only whistles. The fruit-seller offered a button. A nice button, but a button.
 
 The moon was nearly up. The loaf was getting cool.
 
@@ -1238,13 +1238,13 @@ The baker smiled and handed over the warm loaf. Then — watch the baker's hands
 
 "Always," said the baker.
 
-And here was the funny thing. If the swapping plan had worked, there would be nothing left over — but now a coin came back, and it bought a pat of honey-butter for the top of the loaf. The failed plan had turned into a better one.
+Here was the funny thing. If the swapping plan had worked, there would be nothing left over — but now a coin came back, and it bought a pat of honey-butter for the top of the loaf. The failed plan had turned into a better one.
 
 They ate on the blanket while the moon climbed, warm bread and melting honey-butter, and the last coin went safe into {child_name}'s pocket for another day.
 
 "{refrain}," said {companion_name}, with honey-butter on the tip of their nose.
 
-"Come tomorrow," called the baker, packing up. "Tomorrow's loaf is a new shape. A secret one. It's something that flies."
+"Tomorrow's loaf," called the baker, packing up, "is a new shape. A secret one. Something that flies."
 
 Something that flies! But that was a puzzle for the morning.
 
@@ -1253,662 +1253,862 @@ The market lights went out one by one. The bread was warm. The night was slow.
 {refrain}.`,
   },
   {
-    ordinal: 4, title: 'Saving for the Big Thing',
+    ordinal: 4, title: 'The Jar That Waited',
     concept: 'Saving small amounts over time leads to something bigger',
-    summary: 'The hero wants a silver lantern that costs ten coins but only has one. Night after night they search and save — and their companion counts alongside without helping find the coins. By the eighth night they have ten, and the lantern is finally theirs. The story draws a direct line back to coin values learned in Level 2.',
+    summary: 'The moon-spyglass at the fair costs ten coins, and the hero has one. Their companion lends them a strange old jar that only opens when it is full — a jar no trick of pebbles or big stones can fool. Night by night, choice by choice, the hero fills it, and finds waiting under the coins a treasure older than any of them.',
     teachingNote: 'Delayed gratification is hardest to teach directly — this story makes a child feel the satisfaction of waiting, which is the whole lesson.',
     learningBeat: 'Saving is just choosing tomorrow over today',
     ageVariants: {
   '3-4': {
-    audioTemplate: `In the {setting}, the {hero} found the big thing. It sat up high on the top shelf of the market, and it was the loveliest thing the {hero} had ever seen. But it cost ten whole coins.
+    audioTemplate: `The Moon Fair was coming to {setting}! At the fair was a moon-spyglass. It brings the moon close!
 
-The {hero} had just one coin — a single {object_motif}, cool and round in one paw. Just one. Ten felt as far away as the moon.
+It cost ten coins. The {hero} had one.
 
-That night {companion_name} curled up close. 'Ten is a lot,' {companion_name} said softly. 'But we can count our way there, you and me. One tonight, and then we wait for tomorrow.'
+{companion_name} brought out an old clay jar. "It opens only when it is full, little {hero}," they said. "I never filled it."
 
-The {hero} tucked the coin into a little cup beside the bed. {companion_name} peeked inside and counted. 'One. Saving is just choosing tomorrow over today.'
+The {hero} tried a trick. Pebbles! In they went.
 
-So the {hero} began to look. Under smooth stones. Behind old doors. In every quiet corner of the {setting}. Each night, one more coin went clink into the cup.
+The lid stayed shut. "Pebbles are not coins," sighed the {hero}. "The jar knows."
 
-'Two,' counted {companion_name}. 'Three.' But {companion_name} never once dropped a coin in for the {hero}. {companion_name} only counted. The finding was the {hero}'s own job to do.
+In went a real coin. Plink! But the next day it came out — and became a sugar-fig. Yum. Empty jar.
 
-Some coins were fat and some were thin. The {hero} remembered a coin's size is not the same as what a coin is worth, so the little ones went in the cup too.
+Sweet fig today. No spyglass tomorrow.
 
-Some nights the {hero} searched and searched and found nothing at all. The cup stayed just the same. Waiting was the hardest part. Every day the big thing still sat up on the shelf.
+Then the {hero} understood. "Saving is just choosing tomorrow over today!"
 
-'Four. Five. Six,' the nights went by. 'Seven.' The cup grew heavier and heavier.
+Now every day a coin went in. Plink! One. Two. Three... ten!
 
-On the eighth night, the {hero} slipped the {object_motif} in — the very last one. {companion_name} leaned right over the cup and counted, slow and sure. 'Eight. Nine. Ten.'
+The lid opened all by itself, with a little sigh.
 
-Ten!
+Look under the coins. Can you see it too? The {object_motif}! And a tiny note: "For the one who fills it."
 
-In the morning the {hero} carried the heavy cup to the market and reached up high. The big thing came down off the shelf and into two happy paws at last. It had been worth every single waiting night.
+"My teacher's treasure," whispered {companion_name}. "{refrain}."
 
-{companion_name} gave a proud, sleepy yawn. And as the {hero} snuggled down with the big thing held close, {companion_name} whispered it one more time, soft as the {setting} at night.
+At the fair, ten coins bought the spyglass. The moon came close as a friend. On its edge, one tiny sparkly dot. Name it tomorrow.
+
+The {object_motif} went back in the jar, for the next saver.
+
+Warm jar. Bright moon. Heavy eyes.
 
 {refrain}.`,
-    scriptTemplate: `In the {setting}, {child_name} found the big thing. It sat up high on the top shelf of the market, and it was the loveliest thing {child_name} had ever seen. But it cost ten whole coins.
+    scriptTemplate: `The Moon Fair was coming to {setting}! At the fair was a moon-spyglass. It brings the moon close!
 
-{child_name} had just one coin — a single {object_motif}, cool and round in one paw. Just one. Ten felt as far away as the moon.
+It cost ten coins. {child_name} had one.
 
-That night {companion_name} curled up close. 'Ten is a lot,' {companion_name} said softly. 'But we can count our way there, you and me. One tonight, and then we wait for tomorrow.'
+{companion_name} brought out an old clay jar. "It opens only when it is full, little {hero}," they said. "I never filled it."
 
-{child_name} tucked the coin into a little cup beside the bed. {companion_name} peeked inside and counted. 'One. Saving is just choosing tomorrow over today.'
+{child_name} tried a trick. Pebbles! In they went.
 
-So {child_name} began to look. Under smooth stones. Behind old doors. In every quiet corner of the {setting}. Each night, one more coin went clink into the cup.
+The lid stayed shut. "Pebbles are not coins," sighed {child_name}. "The jar knows."
 
-'Two,' counted {companion_name}. 'Three.' But {companion_name} never once dropped a coin in for {child_name}. {companion_name} only counted. The finding was {child_name}'s own job to do.
+In went a real coin. Plink! But the next day it came out — and became a sugar-fig. Yum. Empty jar.
 
-Some coins were fat and some were thin. {child_name} remembered a coin's size is not the same as what a coin is worth, so the little ones went in the cup too.
+Sweet fig today. No spyglass tomorrow.
 
-Some nights {child_name} searched and searched and found nothing at all. The cup stayed just the same. Waiting was the hardest part. Every day the big thing still sat up on the shelf.
+Then {child_name} understood. "Saving is just choosing tomorrow over today!"
 
-'Four. Five. Six,' the nights went by. 'Seven.' The cup grew heavier and heavier.
+Now every day a coin went in. Plink! One. Two. Three... ten!
 
-On the eighth night, {child_name} slipped the {object_motif} in — the very last one. {companion_name} leaned right over the cup and counted, slow and sure. 'Eight. Nine. Ten.'
+The lid opened all by itself, with a little sigh.
 
-Ten!
+Look under the coins. Can you see it too? The {object_motif}! And a tiny note: "For the one who fills it."
 
-In the morning {child_name} carried the heavy cup to the market and reached up high. The big thing came down off the shelf and into two happy paws at last. It had been worth every single waiting night.
+"My teacher's treasure," whispered {companion_name}. "{refrain}."
 
-{companion_name} gave a proud, sleepy yawn. And as {child_name} snuggled down with the big thing held close, {companion_name} whispered it one more time, soft as the {setting} at night.
+At the fair, ten coins bought the spyglass. The moon came close as a friend. On its edge, one tiny sparkly dot. Name it tomorrow.
+
+The {object_motif} went back in the jar, for the next saver.
+
+Warm jar. Bright moon. Heavy eyes.
 
 {refrain}.`
   },
   '5-6': {
-    audioTemplate: `The big thing sat on the highest shelf in the market at the edge of the {setting}. The {hero} had wanted it for as long as anyone could remember. The trouble was the price: ten coins, chalked on a little wooden tag. And the {hero} had exactly one.
+    audioTemplate: `When the moon was next full, the Moon Fair would come to {setting} — a night of lanterns and toffee smells. And on the finest stall: the moon-spyglass. Look through it, and the moon comes so close you can count its freckles.
 
-Just one coin: a single {object_motif}, cool in one paw. The {hero} turned it over and over. Ten seemed less like a number and more like a faraway country.
+The {hero} wanted to count those freckles more than anything. The spyglass cost ten coins. The {hero} had one.
 
-That night, {companion_name} settled onto the end of the bed, tail tucked, eyes bright. 'Ten coins,' {companion_name} said. 'That's a mountain when you're standing at the bottom. But mountains get climbed one small step at a time. Drop what you have into a jar, and let's begin.'
+That evening, {companion_name} brought down an old clay jar. Its lid was sealed smooth all the way round.
 
-The {hero} found an empty jar and let the first coin fall. Clink. {companion_name} watched it settle. 'One. Saving is just choosing tomorrow over today.'
+"This jar opens only when it is full, little {hero}," they said. "I never filled it."
 
-'Tomorrow?' The {hero} thought of all the small things one coin could buy right now — a sweet from the stall, a ribbon, a paper whistle. Any of them would be fun tonight.
+A jar with a rule! That night, the {hero} tried to sneak around it. Ten round pebbles, coin-shaped and hopeful, went in.
 
-'Any of them,' {companion_name} agreed gently. 'And then the jar would be empty again, and the big thing still up on its shelf. Your choice, every night.'
+The lid did not move. Of course not. The {hero} knew this lesson already: worth comes from what a thing is, not what it looks like. "Pebbles," the {hero} admitted, tipping them out. "The jar knows what things are."
 
-So the {hero} chose the jar. And then the searching began. Each evening, before the {setting} went dark, the {hero} hunted — under stones, along the paths, in the folds of forgotten corners. Sometimes a coin turned up. Sometimes none did.
+The next day a real coin, earned at the market, went in. Plink!
 
-The first find came in a crack between two stones — the {object_motif} so small the {hero} nearly missed it. The next hid inside a folded leaf. Some nights the {setting} gave up a coin easily; other nights it gave nothing, and the {hero} came home with empty paws and a heavy heart. On those nights {companion_name} only said the number already in the jar, and that number had to be enough for now.
+But the day after, a sugar-fig smelled too sweet, and the coin came back out. The fig was delicious for exactly four bites. Then it was gone.
 
-Every night, {companion_name} counted what was there, and only counted. 'Two.' 'Three.' Never once did {companion_name} slip a coin into the jar to help it along. 'These have to be yours,' {companion_name} said. 'Counting I can do. Finding is yours.'
+A week went by like that. Coin in, coin out. The jar stayed light as a whisper.
 
-The coins were all different. Some were broad as buttons, some no bigger than a seed. The {hero} almost left the tiny ones behind — until remembering, from not so long ago, that a coin's size and a coin's worth are two different things. The smallest one might count as much as the largest. In they all went.
+Then one evening, at the sweet stall, coin in hand, the {hero} stopped. A fig lasts four bites. The moon lasts every night, forever.
 
-'Four.' 'Five.' The waiting was the hard part. On the fifth night the {hero} passed the sweet stall and nearly, nearly spent a coin. But the jar was so close to something bigger now. The paw closed. The stall smells followed the {hero} all the way home.
+"Oh," said the {hero} slowly. "That's the whole trick. Saving is just choosing tomorrow over today."
 
-'Six.' 'Seven.' The jar grew heavy enough to feel it lift.
+Plink. And the next night, plink. Coin after coin, the jar grew heavier and, somehow, happier.
 
-On the eighth night, the {hero} came home with one last coin and let the {object_motif} fall. {companion_name} leaned over the rim and counted slowly, so there could be no mistake. 'Eight. Nine. Ten.'
+On the tenth night, the lid turned all by itself, with a soft old sigh.
 
-Ten. Not found all at once, not handed over, but gathered — a whole mountain climbed, one small step at a time.
+Ten coins shone inside. And look right under them. Can you see it too? The {object_motif} — and a tiny note: "For the one who fills it. A jar like this never kept coins. It keeps choosings."
 
-In the morning the {hero} carried the jar to the market, heavier than it had ever been, and set every coin on the counter, one by one. The keeper reached up to the highest shelf and brought the big thing down. It felt even better than the {hero} had imagined, because eight patient nights were folded up inside it. Nothing bought in a hurry could have felt like that.
+{companion_name} went very quiet. "This belonged to the one who taught me to save," they whispered. "I never found it. You did. {refrain}."
 
-{companion_name} gave a slow, satisfied blink. As the {hero} carried the big thing home through the quiet {setting}, {companion_name} said it once more, softly, just to seal the day.
+At the fair, ten coins bought the spyglass. The moon leapt close, and yes — freckles. Hundreds. And on its bright edge, one tiny extra gleam with no name yet. Naming it could wait for tomorrow.
+
+The {object_motif} went back into the empty jar, for the next one who fills it.
+
+The music slowed. The lanterns dimmed. The {hero}'s eyes grew heavy, in the best way.
 
 {refrain}.`,
-    scriptTemplate: `The big thing sat on the highest shelf in the market at the edge of the {setting}. {child_name} had wanted it for as long as anyone could remember. The trouble was the price: ten coins, chalked on a little wooden tag. And {child_name} had exactly one.
+    scriptTemplate: `When the moon was next full, the Moon Fair would come to {setting} — a night of lanterns and toffee smells. And on the finest stall: the moon-spyglass. Look through it, and the moon comes so close you can count its freckles.
 
-Just one coin: a single {object_motif}, cool in one paw. {child_name} turned it over and over. Ten seemed less like a number and more like a faraway country.
+{child_name} wanted to count those freckles more than anything. The spyglass cost ten coins. {child_name} had one.
 
-That night, {companion_name} settled onto the end of the bed, tail tucked, eyes bright. 'Ten coins,' {companion_name} said. 'That's a mountain when you're standing at the bottom. But mountains get climbed one small step at a time. Drop what you have into a jar, and let's begin.'
+That evening, {companion_name} brought down an old clay jar. Its lid was sealed smooth all the way round.
 
-{child_name} found an empty jar and let the first coin fall. Clink. {companion_name} watched it settle. 'One. Saving is just choosing tomorrow over today.'
+"This jar opens only when it is full, little {hero}," they said. "I never filled it."
 
-'Tomorrow?' {child_name} thought of all the small things one coin could buy right now — a sweet from the stall, a ribbon, a paper whistle. Any of them would be fun tonight.
+A jar with a rule! That night, {child_name} tried to sneak around it. Ten round pebbles, coin-shaped and hopeful, went in.
 
-'Any of them,' {companion_name} agreed gently. 'And then the jar would be empty again, and the big thing still up on its shelf. Your choice, every night.'
+The lid did not move. Of course not. {child_name} knew this lesson already: worth comes from what a thing is, not what it looks like. "Pebbles," {child_name} admitted, tipping them out. "The jar knows what things are."
 
-So {child_name} chose the jar. And then the searching began. Each evening, before the {setting} went dark, {child_name} hunted — under stones, along the paths, in the folds of forgotten corners. Sometimes a coin turned up. Sometimes none did.
+The next day a real coin, earned at the market, went in. Plink!
 
-The first find came in a crack between two stones — the {object_motif} so small {child_name} nearly missed it. The next hid inside a folded leaf. Some nights the {setting} gave up a coin easily; other nights it gave nothing, and {child_name} came home with empty paws and a heavy heart. On those nights {companion_name} only said the number already in the jar, and that number had to be enough for now.
+But the day after, a sugar-fig smelled too sweet, and the coin came back out. The fig was delicious for exactly four bites. Then it was gone.
 
-Every night, {companion_name} counted what was there, and only counted. 'Two.' 'Three.' Never once did {companion_name} slip a coin into the jar to help it along. 'These have to be yours,' {companion_name} said. 'Counting I can do. Finding is yours.'
+A week went by like that. Coin in, coin out. The jar stayed light as a whisper.
 
-The coins were all different. Some were broad as buttons, some no bigger than a seed. {child_name} almost left the tiny ones behind — until remembering, from not so long ago, that a coin's size and a coin's worth are two different things. The smallest one might count as much as the largest. In they all went.
+Then one evening, at the sweet stall, coin in hand, {child_name} stopped. A fig lasts four bites. The moon lasts every night, forever.
 
-'Four.' 'Five.' The waiting was the hard part. On the fifth night {child_name} passed the sweet stall and nearly, nearly spent a coin. But the jar was so close to something bigger now. The paw closed. The stall smells followed {child_name} all the way home.
+"Oh," said {child_name} slowly. "That's the whole trick. Saving is just choosing tomorrow over today."
 
-'Six.' 'Seven.' The jar grew heavy enough to feel it lift.
+Plink. And the next night, plink. Coin after coin, the jar grew heavier and, somehow, happier.
 
-On the eighth night, {child_name} came home with one last coin and let the {object_motif} fall. {companion_name} leaned over the rim and counted slowly, so there could be no mistake. 'Eight. Nine. Ten.'
+On the tenth night, the lid turned all by itself, with a soft old sigh.
 
-Ten. Not found all at once, not handed over, but gathered — a whole mountain climbed, one small step at a time.
+Ten coins shone inside. And look right under them. Can you see it too? The {object_motif} — and a tiny note: "For the one who fills it. A jar like this never kept coins. It keeps choosings."
 
-In the morning {child_name} carried the jar to the market, heavier than it had ever been, and set every coin on the counter, one by one. The keeper reached up to the highest shelf and brought the big thing down. It felt even better than {child_name} had imagined, because eight patient nights were folded up inside it. Nothing bought in a hurry could have felt like that.
+{companion_name} went very quiet. "This belonged to the one who taught me to save," they whispered. "I never found it. You did. {refrain}."
 
-{companion_name} gave a slow, satisfied blink. As {child_name} carried the big thing home through the quiet {setting}, {companion_name} said it once more, softly, just to seal the day.
+At the fair, ten coins bought the spyglass. The moon leapt close, and yes — freckles. Hundreds. And on its bright edge, one tiny extra gleam with no name yet. Naming it could wait for tomorrow.
+
+The {object_motif} went back into the empty jar, for the next one who fills it.
+
+The music slowed. The lanterns dimmed. {child_name}'s eyes grew heavy, in the best way.
 
 {refrain}.`
   },
   '7-8': {
-    audioTemplate: `At the top of the market, on a shelf too high to reach without the keeper's ladder, sat the big thing. The {hero} had stopped in front of it every single day that summer. It cost ten coins. That was the number chalked beside it, and it might as well have been a hundred, because the {hero} owned exactly one coin — a single {object_motif}, worn smooth from being turned over so many times.
+    audioTemplate: `Everyone in {setting} agreed on two things about the Moon Fair. It came only when the moon was perfectly full — one night of lanterns and toffee smoke. And the best thing at it, every year, was the moon-spyglass: polished brass, so sharp that through it the moon stopped being a light and became a place. Mountains. Valleys. Freckles.
 
-One coin. Ten needed. The {hero} did the sum on both paws and came up short every way it could be done.
+The {hero} had looked through it for one free second last year, before the stall-keeper wanted it back, and had thought about that second ever since.
 
-It was not that the {hero} wanted just anything. It was this one thing, the big thing, that had lived in the {hero}'s imagination since the first day of summer. Wanting it was easy. Wanting it was the whole problem. Wanting did not put coins in a jar.
+The spyglass cost ten coins. The {hero} had exactly one.
 
-That night, {companion_name} hopped up onto the windowsill where the {setting} spread out dark and wide. 'Here is the thing about ten,' {companion_name} said. 'You will never have it all at once. You will only ever have it the way you get everything worth having — a little at a time, and then a little more.' {companion_name} nudged an empty jar across the sill. 'Put your one coin in. That is not nothing. That is the beginning of ten.'
+That evening, {companion_name} climbed to the dustiest shelf in the house and came down with a clay jar, its lid sealed so smoothly it might have been born shut.
 
-The {hero} dropped the {object_motif} into the jar. It sounded very small and very alone at the bottom. {companion_name} peered in and counted. 'One. Saving is just choosing tomorrow over today.'
+"This jar opens only when it is full, little {hero}," said {companion_name}. "That is its one rule. It was given to me when I was young. I never filled it."
 
-The choosing turned out to be the hard part. The very next evening, the {hero} found a second coin wedged under a doorstep — and passed a stall selling warm, twisted pastries that smelled like the best idea in the world. One coin. One pastry. It would be gone in four bites and the jar would be back to one.
+A jar with a rule. The {hero} took this, immediately, as a challenge.
 
-The {hero} stood there a long time. Then walked home with both coins still in paw and added the second to the jar. 'Two,' said {companion_name}, and nothing more. {companion_name} did not clap or make a fuss. {companion_name} simply counted what the {hero} had chosen to keep.
+The first campaign was fought with pebbles. Ten of them, round, grey, quite coin-shaped, dropped in one by one. The lid did not so much as tremble. Then the {hero} remembered something learned at a trader's cart not so long ago: worth comes from what a thing is, not what it looks like. A coin-shaped pebble is a pebble with good posture.
 
-That became the shape of the nights. The {hero} searched — under the boards of the old pier, in the seams of the {setting}, wherever a coin might have slipped and been forgotten. {companion_name} came along on every hunt, eyes just as sharp, and never once picked up a coin and dropped it in the jar. 'If I found them for you,' {companion_name} said, 'they would not be yours. You would just be holding my ten. This has to be your ten.'
+"Fine," said the {hero}, tipping them out. "The jar knows what things are."
 
-Some coins were broad as a saucer. Some were tiny, barely a chip. The {hero} nearly tossed the small ones aside — then remembered something learned not long ago: a coin's size and a coin's worth are not the same thing. The littlest coin might be worth more than the widest. So every coin went into the jar, big and small alike.
+The second campaign was honest but leaky. A coin earned running market errands went in — plink, a lovely round sound — and the {hero} felt magnificent for a day. Then a sugar-fig happened. The coin came out, the fig went in, and was wonderful for four bites. The next coin lasted until a toffee-apple. The one after that fell to a paper windmill that broke by bedtime.
 
-There were nights that tested the whole plan. One evening the {hero} searched from dusk until the lamps were lit and found nothing at all — not one coin anywhere. The jar sat on the sill exactly as full as the night before, which felt, for a moment, like going backward. {companion_name} only said the same number as the last time, gently, as if to say the number had not shrunk. It had simply waited, the way the {hero} was learning to wait.
+After a week of this the jar contained one coin and the faint, accusing smell of figs.
 
-'Three.' 'Four.' 'Five.' The jar filled slowly, one night at a time. And each night the market tried to talk the {hero} out of it. A ribbon the color of the evening sky. A whistle that trilled like a bird. A bag of sugared nuts. Each cost a coin. Each would have been wonderful for an evening. And each would have set the jar back to where it had been days before.
+"It's a hungry sort of jar," said the {hero}, glumly.
 
-On the fifth night, the {hero} came very close. The sugared nuts smelled so good, and five nights of waiting felt so long. The paw actually went into the jar. Then it stopped. Five coins was halfway. Halfway was too far to fall back from. The {hero} closed the jar and walked past the stall without looking twice.
+"Mm," said {companion_name}, who had once filled exactly as much of it themselves.
 
-'Six.' 'Seven.' The jar had real weight to it now. The {hero} could shake it and hear the coins jostle, a thick and satisfying sound. Eight was so close it was hard to sleep.
+The turn came on an ordinary evening, at the sweet stall, with the day's coin already halfway out of the {hero}'s pocket. The fig in the tray gleamed. And the {hero} suddenly thought: a fig is four bites long. The moon is every night long, for the rest of my life.
 
-On the eighth night, the {hero} found the last coin caught in the roots of an old tree at the edge of the {setting}. Home in a hurry, into the jar it went. {companion_name} leaned over the rim and counted, slow and careful, so there could be no doubt at all. 'Eight. Nine. Ten.'
+The coin stopped, turned around, and went home.
 
-Ten. Not lucky, not given, not found all in one place — earned, one patient night after another.
+"That's the whole trick, isn't it," said the {hero}, dropping it into the jar. "It isn't about being good at coins. Saving is just choosing tomorrow over today."
 
-In the morning the {hero} carried the heavy jar to the market and poured all ten coins onto the counter. The keeper counted them, smiled, and climbed the ladder. The big thing came down at last and settled into the {hero}'s arms, and it was better than every daydream — heavier, realer, and stitched all through with eight nights of not giving up. The {hero} held it a moment before anything else, just to feel that it was finally, truly there.
+Plink.
 
-{companion_name} watched from the doorway with a slow, pleased blink. And walking home through the waking {setting}, the big thing held tight, the {hero} heard {companion_name} say it one last time, quiet and sure.
+And after that, the strangest thing: it got easier. The second night, plink, was simpler than the first. The rainy-day coin went in still cold. Some nights the choosing pinched a little — toffee-apples do not stop existing just because you have a jar — but the jar grew heavier, and shaking it gently became the {hero}'s favourite bedtime music.
+
+On the tenth night, the tenth coin dropped. Plink.
+
+The lid turned by itself, slow as a sunrise, and opened with a soft old sigh — the sigh of something finally doing its only job.
+
+Ten coins shone inside. But lean in past them, right at the bottom. Can you see it too? Something wrapped in a scrap of cloth. The {object_motif} — and under it a note, small and faded: "For the one who fills it. A jar like this never kept coins. It keeps choosings."
+
+{companion_name} sat down slowly. "This belonged to the one who taught me to save," they said at last. "They always told me there was a surprise at the bottom, and I always chose today, and I never found out. You found out. {refrain}."
+
+The Moon Fair arrived with the full moon, and the ten coins became the moon-spyglass at last. The stall-keeper bowed a little, handing it over.
+
+The moon leapt close. Mountains. Valleys. Freckles beyond counting. And there, right on the bright edge, one tiny extra gleam that had no name in any book at the fair.
+
+"Tomorrow," said the {hero}, yawning. "We'll name it tomorrow."
+
+Back home, the {object_motif} went softly into the empty jar, to wait for the next one who fills it. The jar went back to its shelf, lighter and prouder.
+
+The fair music faded. The spyglass rested by the pillow, cool and patient.
+
+Ten choosings. One moon. Fair trade.
 
 {refrain}.`,
-    scriptTemplate: `At the top of the market, on a shelf too high to reach without the keeper's ladder, sat the big thing. {child_name} had stopped in front of it every single day that summer. It cost ten coins. That was the number chalked beside it, and it might as well have been a hundred, because {child_name} owned exactly one coin — a single {object_motif}, worn smooth from being turned over so many times.
+    scriptTemplate: `Everyone in {setting} agreed on two things about the Moon Fair. It came only when the moon was perfectly full — one night of lanterns and toffee smoke. And the best thing at it, every year, was the moon-spyglass: polished brass, so sharp that through it the moon stopped being a light and became a place. Mountains. Valleys. Freckles.
 
-One coin. Ten needed. {child_name} did the sum on both paws and came up short every way it could be done.
+{child_name} had looked through it for one free second last year, before the stall-keeper wanted it back, and had thought about that second ever since.
 
-It was not that {child_name} wanted just anything. It was this one thing, the big thing, that had lived in {child_name}'s imagination since the first day of summer. Wanting it was easy. Wanting it was the whole problem. Wanting did not put coins in a jar.
+The spyglass cost ten coins. {child_name} had exactly one.
 
-That night, {companion_name} hopped up onto the windowsill where the {setting} spread out dark and wide. 'Here is the thing about ten,' {companion_name} said. 'You will never have it all at once. You will only ever have it the way you get everything worth having — a little at a time, and then a little more.' {companion_name} nudged an empty jar across the sill. 'Put your one coin in. That is not nothing. That is the beginning of ten.'
+That evening, {companion_name} climbed to the dustiest shelf in the house and came down with a clay jar, its lid sealed so smoothly it might have been born shut.
 
-{child_name} dropped the {object_motif} into the jar. It sounded very small and very alone at the bottom. {companion_name} peered in and counted. 'One. Saving is just choosing tomorrow over today.'
+"This jar opens only when it is full, little {hero}," said {companion_name}. "That is its one rule. It was given to me when I was young. I never filled it."
 
-The choosing turned out to be the hard part. The very next evening, {child_name} found a second coin wedged under a doorstep — and passed a stall selling warm, twisted pastries that smelled like the best idea in the world. One coin. One pastry. It would be gone in four bites and the jar would be back to one.
+A jar with a rule. {child_name} took this, immediately, as a challenge.
 
-{child_name} stood there a long time. Then walked home with both coins still in paw and added the second to the jar. 'Two,' said {companion_name}, and nothing more. {companion_name} did not clap or make a fuss. {companion_name} simply counted what {child_name} had chosen to keep.
+The first campaign was fought with pebbles. Ten of them, round, grey, quite coin-shaped, dropped in one by one. The lid did not so much as tremble. Then {child_name} remembered something learned at a trader's cart not so long ago: worth comes from what a thing is, not what it looks like. A coin-shaped pebble is a pebble with good posture.
 
-That became the shape of the nights. {child_name} searched — under the boards of the old pier, in the seams of the {setting}, wherever a coin might have slipped and been forgotten. {companion_name} came along on every hunt, eyes just as sharp, and never once picked up a coin and dropped it in the jar. 'If I found them for you,' {companion_name} said, 'they would not be yours. You would just be holding my ten. This has to be your ten.'
+"Fine," said {child_name}, tipping them out. "The jar knows what things are."
 
-Some coins were broad as a saucer. Some were tiny, barely a chip. {child_name} nearly tossed the small ones aside — then remembered something learned not long ago: a coin's size and a coin's worth are not the same thing. The littlest coin might be worth more than the widest. So every coin went into the jar, big and small alike.
+The second campaign was honest but leaky. A coin earned running market errands went in — plink, a lovely round sound — and {child_name} felt magnificent for a day. Then a sugar-fig happened. The coin came out, the fig went in, and was wonderful for four bites. The next coin lasted until a toffee-apple. The one after that fell to a paper windmill that broke by bedtime.
 
-There were nights that tested the whole plan. One evening {child_name} searched from dusk until the lamps were lit and found nothing at all — not one coin anywhere. The jar sat on the sill exactly as full as the night before, which felt, for a moment, like going backward. {companion_name} only said the same number as the last time, gently, as if to say the number had not shrunk. It had simply waited, the way {child_name} was learning to wait.
+After a week of this the jar contained one coin and the faint, accusing smell of figs.
 
-'Three.' 'Four.' 'Five.' The jar filled slowly, one night at a time. And each night the market tried to talk {child_name} out of it. A ribbon the color of the evening sky. A whistle that trilled like a bird. A bag of sugared nuts. Each cost a coin. Each would have been wonderful for an evening. And each would have set the jar back to where it had been days before.
+"It's a hungry sort of jar," said {child_name}, glumly.
 
-On the fifth night, {child_name} came very close. The sugared nuts smelled so good, and five nights of waiting felt so long. The paw actually went into the jar. Then it stopped. Five coins was halfway. Halfway was too far to fall back from. {child_name} closed the jar and walked past the stall without looking twice.
+"Mm," said {companion_name}, who had once filled exactly as much of it themselves.
 
-'Six.' 'Seven.' The jar had real weight to it now. {child_name} could shake it and hear the coins jostle, a thick and satisfying sound. Eight was so close it was hard to sleep.
+The turn came on an ordinary evening, at the sweet stall, with the day's coin already halfway out of {child_name}'s pocket. The fig in the tray gleamed. And {child_name} suddenly thought: a fig is four bites long. The moon is every night long, for the rest of my life.
 
-On the eighth night, {child_name} found the last coin caught in the roots of an old tree at the edge of the {setting}. Home in a hurry, into the jar it went. {companion_name} leaned over the rim and counted, slow and careful, so there could be no doubt at all. 'Eight. Nine. Ten.'
+The coin stopped, turned around, and went home.
 
-Ten. Not lucky, not given, not found all in one place — earned, one patient night after another.
+"That's the whole trick, isn't it," said {child_name}, dropping it into the jar. "It isn't about being good at coins. Saving is just choosing tomorrow over today."
 
-In the morning {child_name} carried the heavy jar to the market and poured all ten coins onto the counter. The keeper counted them, smiled, and climbed the ladder. The big thing came down at last and settled into {child_name}'s arms, and it was better than every daydream — heavier, realer, and stitched all through with eight nights of not giving up. {child_name} held it a moment before anything else, just to feel that it was finally, truly there.
+Plink.
 
-{companion_name} watched from the doorway with a slow, pleased blink. And walking home through the waking {setting}, the big thing held tight, {child_name} heard {companion_name} say it one last time, quiet and sure.
+And after that, the strangest thing: it got easier. The second night, plink, was simpler than the first. The rainy-day coin went in still cold. Some nights the choosing pinched a little — toffee-apples do not stop existing just because you have a jar — but the jar grew heavier, and shaking it gently became {child_name}'s favourite bedtime music.
+
+On the tenth night, the tenth coin dropped. Plink.
+
+The lid turned by itself, slow as a sunrise, and opened with a soft old sigh — the sigh of something finally doing its only job.
+
+Ten coins shone inside. But lean in past them, right at the bottom. Can you see it too? Something wrapped in a scrap of cloth. The {object_motif} — and under it a note, small and faded: "For the one who fills it. A jar like this never kept coins. It keeps choosings."
+
+{companion_name} sat down slowly. "This belonged to the one who taught me to save," they said at last. "They always told me there was a surprise at the bottom, and I always chose today, and I never found out. You found out. {refrain}."
+
+The Moon Fair arrived with the full moon, and the ten coins became the moon-spyglass at last. The stall-keeper bowed a little, handing it over.
+
+The moon leapt close. Mountains. Valleys. Freckles beyond counting. And there, right on the bright edge, one tiny extra gleam that had no name in any book at the fair.
+
+"Tomorrow," said {child_name}, yawning. "We'll name it tomorrow."
+
+Back home, the {object_motif} went softly into the empty jar, to wait for the next one who fills it. The jar went back to its shelf, lighter and prouder.
+
+The fair music faded. The spyglass rested by the pillow, cool and patient.
+
+Ten choosings. One moon. Fair trade.
 
 {refrain}.`
   },
   '9-11': {
-    audioTemplate: `The big thing had sat on the highest shelf of the market for as long as the {hero} could remember, and for most of that time it had simply been part of the scenery — a thing that existed, the way the tide existed, without any particular claim on anyone. Then one grey afternoon the {hero} really looked at it, and after that it was impossible to un-want. It cost ten coins. The keeper had chalked the number on a little slate, and the number did not move, did not soften, did not care in the slightest that the {hero} had exactly one coin to its name.
+    audioTemplate: `The trouble with the moon-spyglass was that the {hero} had already looked through it once.
 
-One coin: a single {object_motif}, worn smooth from being carried in a pocket and taken out and turned over on all the long walks home. The {hero} could make one coin do a great many things in the imagination. It could not, no matter how the {hero} arranged the arithmetic, become ten.
+Last year, at the Moon Fair, the stall-keeper had allowed one free second — a single blink of brass and glass — and in that second the moon had stopped being a light and become a place. Mountains with shadows. Seas with shores. A whole silver country, hanging up there every night, unvisited. The stall-keeper had taken the spyglass back gently, the way you take something from someone who has just fallen in love with it.
 
-The {hero} said none of this out loud, but {companion_name} had a way of noticing. That night {companion_name} came and sat on the windowsill, where the whole {setting} lay out under the early stars, and let the quiet stretch for a while before speaking. 'Ten is not a wall,' {companion_name} said at last. 'It only looks like a wall from here. Up close it is ten separate ones, and you already have the first. Find a jar. Put the coin in. Then we will see about the rest.'
+Now the fair was coming back to {setting}, when the moon came round to full. The spyglass cost ten coins. The {hero} had one.
 
-So the {hero} found a jar — an old one, with a chip in the rim — and dropped the coin inside. It struck the glass bottom with a thin, lonely sound. {companion_name} looked in over the edge and counted, without ceremony. 'One. Saving is just choosing tomorrow over today.'
+It was {companion_name} who changed the mathematics. That evening they climbed to the dustiest shelf in the house — the shelf where things live when they are done being tried — and came down with a clay jar, its lid sealed so smoothly it might have been born shut.
 
-It was a small sentence, and the {hero} did not think much of it until the choosing actually began, which it did the very next evening. The {hero} found a second coin — pried it out from between two paving stones — and on the walk home passed the row of stalls where the market kept all its small, immediate pleasures. There was a paper kite. There was a twist of hot bread. There was a whistle carved from reed that made a sound like a bird deciding something. Any one of them cost a single coin, and any one of them could be had tonight, warm and real and finished, while the big thing stayed exactly where it was, high and distant and eight coins away.
+"It has one rule, little {hero}," said {companion_name}. "It opens when it is full, and not one moment before. It was given to me when I was about your age. I never filled it."
 
-That was the pull, and it was stronger than the {hero} had expected. Tomorrow was an idea. The kite was right there. The {hero} stood in front of the stalls longer than made sense, one coin growing warm in a closed paw, and understood for the first time that saving was not one decision made once. It was the same decision made again and again, on nights when nobody was watching and the reward was very far away.
+"What's inside?"
 
-The {hero} walked home with both coins and added the second to the jar. 'Two,' said {companion_name}, and left it at that — no praise, no fuss, only the count. It was clear by now that {companion_name} would never do more than count. On the hunts that followed, {companion_name} came along every time, eyes as quick as the {hero}'s, and would spot a coin glinting in the dark and say nothing, wait, let the {hero} be the one to reach down and pick it up. 'If these were my coins I dropped in your jar,' {companion_name} said once, 'the jar would fill just as fast, and it would mean nothing at all. The waiting is the part that makes it yours.'
+"That," said {companion_name}, "was always the question."
 
-So the nights took on a shape. The {hero} searched the places coins go to be forgotten — the gaps under the old pier, the roots at the edge of the {setting}, the soft seams where the paths met the walls. Some nights turned up a coin. Some nights turned up two. And some nights, after hours of looking, turned up nothing at all, and the {hero} came home with empty paws and set the same jar on the same sill, no fuller than before. Those were the nights that tested the plan, more than any stall ever did.
+A jar with a rule and a question in it. The {hero} accepted the challenge before knowing it was one.
 
-One of those empty nights, the {hero} sat on the sill a long while, wondering whether the whole idea had been foolish — whether the big thing would sell before the tenth coin ever came, whether ten was simply more than a small pocket could hold. {companion_name} said nothing wise. {companion_name} only settled close, warm against the {hero}'s side, and after a time the doubt loosened its grip the way doubts do in the dark, and the {hero} decided to look again the next night, and the night after that.
+The first attempt was, frankly, cheating. Ten pebbles, round and grey, chosen for their coin-like manners, dropped in one after another. The lid did not tremble. The {hero} was not even surprised — a certain trader's cart had taught this lesson already. Worth comes from what a thing is, not what it looks like. A coin-shaped pebble is a pebble putting on airs.
 
-The coins themselves were a lesson the {hero} had already half-learned. Some were broad as a shell, heavy in the paw and impressive to look at. Others were no bigger than a fingernail, easy to overlook and easy to dismiss. The {hero} nearly left the small ones lying more than once — until remembering what turned out to be true not so long ago: a coin's size and a coin's worth are two entirely different things, and the plainest, smallest coin might carry more than the grandest. After that, every coin went into the jar, and the {hero} stopped judging them by how they looked.
+"The jar knows what things are," the {hero} admitted, tipping the impostors out. It was an unsettling quality in a jar.
 
-'Three.' 'Four.' 'Five.' The jar filled the only way it could, which was slowly, and the market never once stopped making its offers. The kite reappeared in new colors.There were sugared nuts that smelled, on a cold evening, like the single best thing in the world. There was a little brass top that spun for a full minute without wobbling. Each cost a coin. Each was wonderful. And each, the {hero} had come to understand, would have quietly undone whole nights of patience in the time it took to hand a coin across a counter.
+The second attempt was honest, and it leaked. A coin earned running errands went in with a satisfying plink — and came out again two days later, when a sugar-fig smelled like a small warm sunset. The fig was perfect for four bites. Then it was over. The next coin surrendered to a toffee-apple; the one after that to a paper windmill, broken by bedtime.
 
-The fifth night was the hardest. The {hero} had five coins by then — halfway, exactly — and halfway is a strange, difficult place, close enough to see the far shore and far enough that the far shore still looks impossible. The sugared nuts were right there. Five nights felt like a very long time to a paw that wanted something now. The {hero} actually opened the jar. Actually counted three coins out into a palm. And then sat with them a moment, feeling their small weight, and thought about the eighth night, and what it would feel like to have crossed all the way over instead of turning back at the middle. The coins went back in the jar. The lid went on. The {hero} walked home the long way, past no stalls at all.
+At the end of a full week, the {hero} shook the jar and heard one lonely coin and, somehow, the smell of figs.
 
-'Six.' 'Seven.' The jar had a real heft to it now, a proper sound when it was lifted and set down. The {hero} took to holding it in the dark before sleep, not to spend it, just to feel how far one coin had come. Eight coins. Then nine, on the seventh night, found in the lining of an old coat that had been hanging by the door the whole time.
+"Mm," said {companion_name}, from the doorway. They had, after all, once filled the jar exactly this far themselves.
 
-On the eighth night, the {hero} went out already almost sure it would happen, and found the last coin caught in the roots of the old tree at the far edge of the {setting}, as though it had been waiting there the entire while. Home, quickly, up the stairs, the {object_motif} into the jar. {companion_name} leaned over the chipped rim and counted the way {companion_name} always had — slowly, carefully, giving each number its full weight, so there could be no mistake and no rushing past the end of it. 'Eight. Nine. Ten.'
+What changed everything was not a speech. It was an ordinary evening at the sweet stall, the day's coin already halfway out of the pocket, the fig gleaming in its tray. And the {hero} did a small piece of arithmetic that no one had ever assigned: a fig is four bites long. The spyglass is every night long. The moon would still be there when the fig was forgotten — and the fig would be forgotten by Thursday.
 
-Ten. Not luck, not a gift, not one bright afternoon that changed everything — just a chipped glass jar that had been filled the slow way, one night at a time, until it held exactly enough.
+The coin stopped. Turned. Went home.
 
-In the morning the {hero} carried the jar down to the market, heavier now than it had felt in weeks, and poured all ten coins across the counter in a single bright clatter. The keeper counted them without hurry, nodded, and set the ladder against the shelf. And then the big thing came down out of the high place where it had lived for so long, and settled into the {hero}'s arms, and it was — this was the surprising part — better than the wanting had been. Not because it was grander than imagined. Because every one of those eight nights was somehow inside it now, and a thing you have waited for and chosen and earned sits differently in your arms than a thing simply handed over.
+"That's the entire trick," the {hero} said out loud, dropping it in. "Nobody tells you because it sounds too small to be the answer. Saving is just choosing tomorrow over today."
 
-{companion_name} watched from the top of the stairs, tail curled, and gave one slow, satisfied blink, as if the ending had never once been in doubt. And as the {hero} carried the big thing up into the last of the morning quiet, {companion_name} said it a final time, low and certain, the way you say a thing that has just been proven true.
+Plink.
+
+After that it was not easy, but it was simple, and those turn out to be different things. One night the choosing pinched hard — there was a caramel situation — and the {hero} stood outside the sweet stall for a long minute, then walked home and paid tomorrow instead. The jar grew heavier. Shaking it softly became the last sound of every day.
+
+On the tenth night, the tenth coin fell. Plink.
+
+And the lid turned. By itself, slow as a sunrise, with a long sigh of old air — the sound of something finishing a sentence it had started a lifetime ago.
+
+Ten coins shone inside. But past them, at the very bottom, wrapped in a scrap of sailcloth — lean close, can you see it too? — lay the {object_motif}, and beneath it a note in small, faded ink:
+
+"For the one who fills it. A jar like this never kept coins. It keeps choosings."
+
+{companion_name} sat down, slowly, the way you sit when a question from your childhood finally answers itself. "They told me there was a surprise at the bottom," they said. "I chose today, and then today, and then today, and I never found out. You found out for both of us. {refrain}."
+
+The Moon Fair came in on the full moon like a bright ship. The ten coins became the moon-spyglass at last; the stall-keeper, who remembered last year's one free second, gave a small bow with it.
+
+The moon leapt close. The silver country was all still there — mountains, shadowed valleys, seas without water — and on its bright edge, one tiny gleam that appeared on no chart at the fair. It needed a name, and names, they agreed, are morning work.
+
+At home, the {object_motif} went back to the bottom of the empty jar — for the next one who fills it — and the jar went back to its shelf, no longer a thing that was done being tried.
+
+The fair music thinned to one far fiddle, then to none. The spyglass lay by the pillow, cool and patient, holding the moon for the morning.
+
+Ten choosings. One silver country. A fair trade, fairly won.
 
 {refrain}.`,
-    scriptTemplate: `The big thing had sat on the highest shelf of the market for as long as {child_name} could remember, and for most of that time it had simply been part of the scenery — a thing that existed, the way the tide existed, without any particular claim on anyone. Then one grey afternoon {child_name} really looked at it, and after that it was impossible to un-want. It cost ten coins. The keeper had chalked the number on a little slate, and the number did not move, did not soften, did not care in the slightest that {child_name} had exactly one coin to its name.
+    scriptTemplate: `The trouble with the moon-spyglass was that {child_name} had already looked through it once.
 
-One coin: a single {object_motif}, worn smooth from being carried in a pocket and taken out and turned over on all the long walks home. {child_name} could make one coin do a great many things in the imagination. It could not, no matter how {child_name} arranged the arithmetic, become ten.
+Last year, at the Moon Fair, the stall-keeper had allowed one free second — a single blink of brass and glass — and in that second the moon had stopped being a light and become a place. Mountains with shadows. Seas with shores. A whole silver country, hanging up there every night, unvisited. The stall-keeper had taken the spyglass back gently, the way you take something from someone who has just fallen in love with it.
 
-{child_name} said none of this out loud, but {companion_name} had a way of noticing. That night {companion_name} came and sat on the windowsill, where the whole {setting} lay out under the early stars, and let the quiet stretch for a while before speaking. 'Ten is not a wall,' {companion_name} said at last. 'It only looks like a wall from here. Up close it is ten separate ones, and you already have the first. Find a jar. Put the coin in. Then we will see about the rest.'
+Now the fair was coming back to {setting}, when the moon came round to full. The spyglass cost ten coins. {child_name} had one.
 
-So {child_name} found a jar — an old one, with a chip in the rim — and dropped the coin inside. It struck the glass bottom with a thin, lonely sound. {companion_name} looked in over the edge and counted, without ceremony. 'One. Saving is just choosing tomorrow over today.'
+It was {companion_name} who changed the mathematics. That evening they climbed to the dustiest shelf in the house — the shelf where things live when they are done being tried — and came down with a clay jar, its lid sealed so smoothly it might have been born shut.
 
-It was a small sentence, and {child_name} did not think much of it until the choosing actually began, which it did the very next evening. {child_name} found a second coin — pried it out from between two paving stones — and on the walk home passed the row of stalls where the market kept all its small, immediate pleasures. There was a paper kite. There was a twist of hot bread. There was a whistle carved from reed that made a sound like a bird deciding something. Any one of them cost a single coin, and any one of them could be had tonight, warm and real and finished, while the big thing stayed exactly where it was, high and distant and eight coins away.
+"It has one rule, little {hero}," said {companion_name}. "It opens when it is full, and not one moment before. It was given to me when I was about your age. I never filled it."
 
-That was the pull, and it was stronger than {child_name} had expected. Tomorrow was an idea. The kite was right there. {child_name} stood in front of the stalls longer than made sense, one coin growing warm in a closed paw, and understood for the first time that saving was not one decision made once. It was the same decision made again and again, on nights when nobody was watching and the reward was very far away.
+"What's inside?"
 
-{child_name} walked home with both coins and added the second to the jar. 'Two,' said {companion_name}, and left it at that — no praise, no fuss, only the count. It was clear by now that {companion_name} would never do more than count. On the hunts that followed, {companion_name} came along every time, eyes as quick as {child_name}'s, and would spot a coin glinting in the dark and say nothing, wait, let {child_name} be the one to reach down and pick it up. 'If these were my coins I dropped in your jar,' {companion_name} said once, 'the jar would fill just as fast, and it would mean nothing at all. The waiting is the part that makes it yours.'
+"That," said {companion_name}, "was always the question."
 
-So the nights took on a shape. {child_name} searched the places coins go to be forgotten — the gaps under the old pier, the roots at the edge of the {setting}, the soft seams where the paths met the walls. Some nights turned up a coin. Some nights turned up two. And some nights, after hours of looking, turned up nothing at all, and {child_name} came home with empty paws and set the same jar on the same sill, no fuller than before. Those were the nights that tested the plan, more than any stall ever did.
+A jar with a rule and a question in it. {child_name} accepted the challenge before knowing it was one.
 
-One of those empty nights, {child_name} sat on the sill a long while, wondering whether the whole idea had been foolish — whether the big thing would sell before the tenth coin ever came, whether ten was simply more than a small pocket could hold. {companion_name} said nothing wise. {companion_name} only settled close, warm against {child_name}'s side, and after a time the doubt loosened its grip the way doubts do in the dark, and {child_name} decided to look again the next night, and the night after that.
+The first attempt was, frankly, cheating. Ten pebbles, round and grey, chosen for their coin-like manners, dropped in one after another. The lid did not tremble. {child_name} was not even surprised — a certain trader's cart had taught this lesson already. Worth comes from what a thing is, not what it looks like. A coin-shaped pebble is a pebble putting on airs.
 
-The coins themselves were a lesson {child_name} had already half-learned. Some were broad as a shell, heavy in the paw and impressive to look at. Others were no bigger than a fingernail, easy to overlook and easy to dismiss. {child_name} nearly left the small ones lying more than once — until remembering what turned out to be true not so long ago: a coin's size and a coin's worth are two entirely different things, and the plainest, smallest coin might carry more than the grandest. After that, every coin went into the jar, and {child_name} stopped judging them by how they looked.
+"The jar knows what things are," {child_name} admitted, tipping the impostors out. It was an unsettling quality in a jar.
 
-'Three.' 'Four.' 'Five.' The jar filled the only way it could, which was slowly, and the market never once stopped making its offers. The kite reappeared in new colors. There were sugared nuts that smelled, on a cold evening, like the single best thing in the world. There was a little brass top that spun for a full minute without wobbling. Each cost a coin. Each was wonderful. And each, {child_name} had come to understand, would have quietly undone whole nights of patience in the time it took to hand a coin across a counter.
+The second attempt was honest, and it leaked. A coin earned running errands went in with a satisfying plink — and came out again two days later, when a sugar-fig smelled like a small warm sunset. The fig was perfect for four bites. Then it was over. The next coin surrendered to a toffee-apple; the one after that to a paper windmill, broken by bedtime.
 
-The fifth night was the hardest. {child_name} had five coins by then — halfway, exactly — and halfway is a strange, difficult place, close enough to see the far shore and far enough that the far shore still looks impossible. The sugared nuts were right there. Five nights felt like a very long time to a paw that wanted something now. {child_name} actually opened the jar. Actually counted three coins out into a palm. And then sat with them a moment, feeling their small weight, and thought about the eighth night, and what it would feel like to have crossed all the way over instead of turning back at the middle. The coins went back in the jar. The lid went on. {child_name} walked home the long way, past no stalls at all.
+At the end of a full week, {child_name} shook the jar and heard one lonely coin and, somehow, the smell of figs.
 
-'Six.' 'Seven.' The jar had a real heft to it now, a proper sound when it was lifted and set down. {child_name} took to holding it in the dark before sleep, not to spend it, just to feel how far one coin had come. Eight coins. Then nine, on the seventh night, found in the lining of an old coat that had been hanging by the door the whole time.
+"Mm," said {companion_name}, from the doorway. They had, after all, once filled the jar exactly this far themselves.
 
-On the eighth night, {child_name} went out already almost sure it would happen, and found the last coin caught in the roots of the old tree at the far edge of the {setting}, as though it had been waiting there the entire while. Home, quickly, up the stairs, the {object_motif} into the jar. {companion_name} leaned over the chipped rim and counted the way {companion_name} always had — slowly, carefully, giving each number its full weight, so there could be no mistake and no rushing past the end of it. 'Eight. Nine. Ten.'
+What changed everything was not a speech. It was an ordinary evening at the sweet stall, the day's coin already halfway out of the pocket, the fig gleaming in its tray. And {child_name} did a small piece of arithmetic that no one had ever assigned: a fig is four bites long. The spyglass is every night long. The moon would still be there when the fig was forgotten — and the fig would be forgotten by Thursday.
 
-Ten. Not luck, not a gift, not one bright afternoon that changed everything — just a chipped glass jar that had been filled the slow way, one night at a time, until it held exactly enough.
+The coin stopped. Turned. Went home.
 
-In the morning {child_name} carried the jar down to the market, heavier now than it had felt in weeks, and poured all ten coins across the counter in a single bright clatter. The keeper counted them without hurry, nodded, and set the ladder against the shelf. And then the big thing came down out of the high place where it had lived for so long, and settled into {child_name}'s arms, and it was — this was the surprising part — better than the wanting had been. Not because it was grander than imagined. Because every one of those eight nights was somehow inside it now, and a thing you have waited for and chosen and earned sits differently in your arms than a thing simply handed over.
+"That's the entire trick," {child_name} said out loud, dropping it in. "Nobody tells you because it sounds too small to be the answer. Saving is just choosing tomorrow over today."
 
-{companion_name} watched from the top of the stairs, tail curled, and gave one slow, satisfied blink, as if the ending had never once been in doubt. And as {child_name} carried the big thing up into the last of the morning quiet, {companion_name} said it a final time, low and certain, the way you say a thing that has just been proven true.
+Plink.
+
+After that it was not easy, but it was simple, and those turn out to be different things. One night the choosing pinched hard — there was a caramel situation — and {child_name} stood outside the sweet stall for a long minute, then walked home and paid tomorrow instead. The jar grew heavier. Shaking it softly became the last sound of every day.
+
+On the tenth night, the tenth coin fell. Plink.
+
+And the lid turned. By itself, slow as a sunrise, with a long sigh of old air — the sound of something finishing a sentence it had started a lifetime ago.
+
+Ten coins shone inside. But past them, at the very bottom, wrapped in a scrap of sailcloth — lean close, can you see it too? — lay the {object_motif}, and beneath it a note in small, faded ink:
+
+"For the one who fills it. A jar like this never kept coins. It keeps choosings."
+
+{companion_name} sat down, slowly, the way you sit when a question from your childhood finally answers itself. "They told me there was a surprise at the bottom," they said. "I chose today, and then today, and then today, and I never found out. You found out for both of us. {refrain}."
+
+The Moon Fair came in on the full moon like a bright ship. The ten coins became the moon-spyglass at last; the stall-keeper, who remembered last year's one free second, gave a small bow with it.
+
+The moon leapt close. The silver country was all still there — mountains, shadowed valleys, seas without water — and on its bright edge, one tiny gleam that appeared on no chart at the fair. It needed a name, and names, they agreed, are morning work.
+
+At home, the {object_motif} went back to the bottom of the empty jar — for the next one who fills it — and the jar went back to its shelf, no longer a thing that was done being tried.
+
+The fair music thinned to one far fiddle, then to none. The spyglass lay by the pillow, cool and patient, holding the moon for the morning.
+
+Ten choosings. One silver country. A fair trade, fairly won.
 
 {refrain}.`
   }
 },
     callback: "A coin's value and its size are different things (Level 2)", ageFloor: 4,
-    audioTemplate: `A small {hero} had found one {object_motif} in {setting}, and there was something they wanted very much: the silver lantern at the far end of the market. It would light up the whole corner of the room.
+    audioTemplate: `When the moon was next full, the Moon Fair would come to {setting} — a night of lanterns and toffee smells. And on the finest stall: the moon-spyglass. Look through it, and the moon comes so close you can count its freckles.
 
-The lantern cost ten.
+The {hero} wanted to count those freckles more than anything. The spyglass cost ten coins. The {hero} had one.
 
-The {hero} counted. One.
+That evening, {companion_name} brought down an old clay jar. Its lid was sealed smooth all the way round.
 
-"That is not enough yet," said {companion_name} kindly. "But it is a beginning."
+"This jar opens only when it is full, little {hero}," they said. "I never filled it."
 
-Every evening that week, the {hero} looked carefully and saved one more. And each night, {companion_name} was there — not to help find them, but to count alongside.
+A jar with a rule! That night, the {hero} tried to sneak around it. Ten round pebbles, coin-shaped and hopeful, went in.
 
-By the fifth night there were six. By the seventh, nine.
+The lid did not move. Of course not. The {hero} knew this lesson already: worth comes from what a thing is, not what it looks like. "Pebbles," the {hero} admitted, tipping them out. "The jar knows what things are."
 
-"Saving is just choosing tomorrow over today," said {companion_name} one evening. "One coin at a time. Do you remember how we learned that some coins are worth more than others? Every one you put aside is working harder than it looks."
+The next day a real coin, earned at the market, went in. Plink!
 
-On the eighth night, the {hero} counted ten. The lantern was theirs.
+But the day after, a sugar-fig smelled too sweet, and the coin came back out. The fig was delicious for exactly four bites. Then it was gone.
 
-That night it lit {setting} with a warm and steady glow — the glow of something waited for.
+A week went by like that. Coin in, coin out. The jar stayed light as a whisper.
+
+Then one evening, at the sweet stall, coin in hand, the {hero} stopped. A fig lasts four bites. The moon lasts every night, forever.
+
+"Oh," said the {hero} slowly. "That's the whole trick. Saving is just choosing tomorrow over today."
+
+Plink. And the next night, plink. Coin after coin, the jar grew heavier and, somehow, happier.
+
+On the tenth night, the lid turned all by itself, with a soft old sigh.
+
+Ten coins shone inside. And look right under them. Can you see it too? The {object_motif} — and a tiny note: "For the one who fills it. A jar like this never kept coins. It keeps choosings."
+
+{companion_name} went very quiet. "This belonged to the one who taught me to save," they whispered. "I never found it. You did. {refrain}."
+
+At the fair, ten coins bought the spyglass. The moon leapt close, and yes — freckles. Hundreds. And on its bright edge, one tiny extra gleam with no name yet. Naming it could wait for tomorrow.
+
+The {object_motif} went back into the empty jar, for the next one who fills it.
+
+The music slowed. The lanterns dimmed. The {hero}'s eyes grew heavy, in the best way.
 
 {refrain}.`,
-    scriptTemplate: `{child_name} the {hero} had found one {object_motif} in {setting}, and there was something they wanted very much: the silver lantern at the far end of the market.
+    scriptTemplate: `When the moon was next full, the Moon Fair would come to {setting} — a night of lanterns and toffee smells. And on the finest stall: the moon-spyglass. Look through it, and the moon comes so close you can count its freckles.
 
-The lantern cost ten.
+{child_name} wanted to count those freckles more than anything. The spyglass cost ten coins. {child_name} had one.
 
-{child_name} counted. One.
+That evening, {companion_name} brought down an old clay jar. Its lid was sealed smooth all the way round.
 
-"That is not enough yet," said {companion_name} kindly. "But it is a beginning."
+"This jar opens only when it is full, little {hero}," they said. "I never filled it."
 
-Every evening that week, {child_name} looked carefully and saved one more. And each night, {companion_name} was there — not to help find them, but to count alongside.
+A jar with a rule! That night, {child_name} tried to sneak around it. Ten round pebbles, coin-shaped and hopeful, went in.
 
-By the fifth night there were six. By the seventh, nine.
+The lid did not move. Of course not. {child_name} knew this lesson already: worth comes from what a thing is, not what it looks like. "Pebbles," {child_name} admitted, tipping them out. "The jar knows what things are."
 
-"Saving is just choosing tomorrow over today," said {companion_name} one evening. "One coin at a time. Do you remember how we learned that some coins are worth more than others? Every one you put aside is working harder than it looks."
+The next day a real coin, earned at the market, went in. Plink!
 
-On the eighth night, {child_name} counted ten. The lantern was theirs.
+But the day after, a sugar-fig smelled too sweet, and the coin came back out. The fig was delicious for exactly four bites. Then it was gone.
 
-That night it lit {setting} with a warm and steady glow — the glow of something waited for.
+A week went by like that. Coin in, coin out. The jar stayed light as a whisper.
+
+Then one evening, at the sweet stall, coin in hand, {child_name} stopped. A fig lasts four bites. The moon lasts every night, forever.
+
+"Oh," said {child_name} slowly. "That's the whole trick. Saving is just choosing tomorrow over today."
+
+Plink. And the next night, plink. Coin after coin, the jar grew heavier and, somehow, happier.
+
+On the tenth night, the lid turned all by itself, with a soft old sigh.
+
+Ten coins shone inside. And look right under them. Can you see it too? The {object_motif} — and a tiny note: "For the one who fills it. A jar like this never kept coins. It keeps choosings."
+
+{companion_name} went very quiet. "This belonged to the one who taught me to save," they whispered. "I never found it. You did. {refrain}."
+
+At the fair, ten coins bought the spyglass. The moon leapt close, and yes — freckles. Hundreds. And on its bright edge, one tiny extra gleam with no name yet. Naming it could wait for tomorrow.
+
+The {object_motif} went back into the empty jar, for the next one who fills it.
+
+The music slowed. The lanterns dimmed. {child_name}'s eyes grew heavy, in the best way.
 
 {refrain}.`,
   },
   {
-    ordinal: 5, title: 'Wants and Needs',
+    ordinal: 5, title: 'The Helper Who Needed Help',
     concept: 'Some things we need; some we want. Knowing the difference is a skill.',
-    summary: "With exactly enough coins for either a sparkly toy or a warm meal, the hero must choose. Their companion doesn't tell them what to pick — they ask one quiet question: is this a want, or a need? The hero thinks it through and decides. The story calls back directly to the saving journey in Level 4.",
+    summary: "The hero has saved for the humming top, and tonight is the night — but their companion, who always knows everything, is hiding behind their door and sighing. The secret: enough coins for either the scarf they have dreamed of all year or the creaky door that lets the cold in, and no idea how to choose. This time it is the hero who knows the way through.",
     teachingNote: 'This level is the capstone: a child who can distinguish wants from needs has every concept from the path — identification, value, exchange, saving — working together in a real decision.',
     learningBeat: 'Wanting things is not wrong',
     ageVariants: {
-  '3-4': { audioTemplate: `The night was quiet, and the {hero} walked through {setting} with a small pouch of coins.
+  '3-4': {
+    audioTemplate: `Market night in {setting}! The {hero} had saved coin after coin. Tonight there was enough for the humming top!
 
-For many days the {hero} had saved. One coin, then another, dropped softly into the pouch, day after day, until at last it was heavy and full. The long saving was done, and it had not been easy.
+But where was {companion_name}?
 
-Now, out of the whole heavy pouch, there was just enough for one thing. Only one, and not a coin more.
+Shut inside their little house. Through the door came big, sad sighs.
 
-At the little stall, two things waited side by side. A warm bowl of soup, steaming and good. And a small toy that spun and whistled and hopped.
+The {hero} told a joke through the door. No laugh. Just sighs.
 
-The {hero} looked at the toy. Oh, the toy was fun! The {hero} had dreamed of a toy just like it, and one hand reached out toward it.
+Peek through the crack. Can you see it too? A little drawing of a scarf.
 
-Then the {hero} looked at the soup, and the tummy inside gave a soft, empty rumble.
+The door opened. Creak! What a creaky, drafty door!
 
-"I have enough coins for the soup, or for the toy," said the {hero}. "But not for both. I have to pick just one."
+"I have twelve coins," said {companion_name}. "I need to mend my door before the cold. But I want the scarf with the {object_motif} pattern. Silly old me."
 
-{companion_name} sat close by in the quiet and asked one small question. "Is that a want, or a need?"
+"Wanting things is not wrong!" said the {hero}. "But which one keeps you warm and safe? The door! The scarf comes next, coin by coin."
 
-The {hero} stopped and thought hard. The toy would be fun for a while. But the night was long and cold, and only the soup could fill the empty tummy and keep the {hero} warm until morning.
+So the door was mended. Creak? No creak. Not one.
 
-"The soup is a need," said the {hero} slowly. "The toy is only a want. Tonight I will take the soup."
+They started a scarf jar. One coin in now. Two after market day.
 
-"Wanting things is not wrong," said {companion_name} softly. "The toy is lovely. The trick is knowing which is which, and you knew all by yourself."
+Then the {hero} bought the humming top. It spun and hummed, slower and slower.
 
-The {hero} held the {object_motif} tight for one more moment. Then, with a slow breath, the {hero} set the coins on the counter and reached for the warm bowl.
+"When did you grow so wise, little {hero}?" smiled {companion_name}. "{refrain}."
 
-The soup was good and hot. It filled the {hero} right up, and the hollow feeling melted away, and the cold night did not feel so cold.
+The top stopped. The night hummed on, soft and low.
 
-The toy still spun on the stall. Another day, when the pouch was full again, there could be a night for wants. But tonight the {hero} had chosen well.
-
-{refrain}.`, scriptTemplate: `The night was quiet, and {child_name} walked through {setting} with a small pouch of coins.
-
-For many days {child_name} had saved. One coin, then another, dropped softly into the pouch, day after day, until at last it was heavy and full. The long saving was done, and it had not been easy.
-
-Now, out of the whole heavy pouch, there was just enough for one thing. Only one, and not a coin more.
-
-At the little stall, two things waited side by side. A warm bowl of soup, steaming and good. And a small toy that spun and whistled and hopped.
-
-{child_name} looked at the toy. Oh, the toy was fun! {child_name} had dreamed of a toy just like it, and one hand reached out toward it.
-
-Then {child_name} looked at the soup, and the tummy inside gave a soft, empty rumble.
-
-"I have enough coins for the soup, or for the toy," said {child_name}. "But not for both. I have to pick just one."
-
-{companion_name} sat close by in the quiet and asked one small question. "Is that a want, or a need?"
-
-{child_name} stopped and thought hard. The toy would be fun for a while. But the night was long and cold, and only the soup could fill the empty tummy and keep {child_name} warm until morning.
-
-"The soup is a need," said {child_name} slowly. "The toy is only a want. Tonight I will take the soup."
-
-"Wanting things is not wrong," said {companion_name} softly. "The toy is lovely. The trick is knowing which is which, and you knew all by yourself."
-
-{child_name} held the {object_motif} tight for one more moment. Then, with a slow breath, {child_name} set the coins on the counter and reached for the warm bowl.
-
-The soup was good and hot. It filled {child_name} right up, and the hollow feeling melted away, and the cold night did not feel so cold.
-
-The toy still spun on the stall. Another day, when the pouch was full again, there could be a night for wants. But tonight {child_name} had chosen well.
-
-{refrain}.` },
-  '5-6': { audioTemplate: `The evening had turned cool, and the {hero} came into {setting} with a small pouch that jingled at every step.
-
-It had taken a long time to fill that pouch. The {hero} remembered the goal from before, the one worth saving for, and all the days of setting aside a single coin and not spending it, even when spending would have been easy. Coin by coin, the pouch had grown heavy, and now, at last, it was time to spend. That alone felt like something to be proud of.
-
-But there was a problem the {hero} had not expected. In the whole pouch there was just enough for one thing. Exactly one, and not a coin more.
-
-At the far stall, two things sat side by side under the evening light. On the left, a bowl of thick, warm soup, steaming gently, the kind that fills you up on a cold night. On the right, a clever little toy that spun on its point, whistled a tune, and hopped when you wound its spring.
-
-The {hero} stared at the toy. It was wonderful. It was exactly the sort of thing the {hero} had been picturing while dropping coin after coin into the pouch, and one hand crept toward it almost on its own.
-
-Then the {hero}'s stomach gave a low, hollow grumble, a reminder of how little there had been to eat that day. The two feelings pulled in different directions at once, the bright pull of the toy and the deep, quiet pull of hunger, and for a moment the {hero} did not know which was stronger.
-
-The seller waited kindly and said nothing at all, leaving the choice where it belonged.
-
-"I have enough for the soup, or enough for the toy," the {hero} said quietly, almost to no one. "But I cannot have both. Whatever I choose, the coins will be gone."
-
-{companion_name}, who had come along the whole way, settled nearby and did not say which to pick. Instead {companion_name} asked one quiet question.
-
-"Is that a want, or a need?"
-
-The {hero} went still and turned the question over. The toy was a want. It would be fun tonight, and maybe fun tomorrow, and then it might sit forgotten in a corner. The soup was different. The night was long and cold, and the empty stomach would not settle on its own. Without the soup, the {hero} would go to sleep hungry.
-
-"The toy is a want," the {hero} said slowly. "The soup is a need. And tonight I need the soup more than I want the toy."
-
-The {hero} looked up, half expecting to be told whether that was right or wrong. But {companion_name} only smiled.
-
-"Wanting things is not wrong," {companion_name} said. "The toy is lovely, and it was fair to want it. The skill is telling the two apart, and you just did that all by yourself."
-
-The {hero} held the {object_motif} in a closed hand for a moment longer, feeling its small weight, feeling everything it could have bought. Then the {hero} breathed out, laid the coins on the counter, and took the warm bowl in both hands.
-
-The soup was even better than it looked. It warmed the {hero} from the inside, spoonful by spoonful, and the hollow feeling faded, and the long night did not seem so long anymore. It was strange, but choosing the thing the {hero} truly needed felt good in a way the quick fun of the toy might not have, a warm and settled sort of good that seemed likely to last.
-
-The toy still spun and whistled on the stall, and it was still lovely. Perhaps, when the pouch was full again, there would be a night for wants, and the {hero} could come back for it then. But tonight the {hero} had chosen well, and knew it, and that felt better than any toy.
-
-{refrain}.`, scriptTemplate: `The evening had turned cool, and {child_name} came into {setting} with a small pouch that jingled at every step.
-
-It had taken a long time to fill that pouch. {child_name} remembered the goal from before, the one worth saving for, and all the days of setting aside a single coin and not spending it, even when spending would have been easy. Coin by coin, the pouch had grown heavy, and now, at last, it was time to spend. That alone felt like something to be proud of.
-
-But there was a problem {child_name} had not expected. In the whole pouch there was just enough for one thing. Exactly one, and not a coin more.
-
-At the far stall, two things sat side by side under the evening light. On the left, a bowl of thick, warm soup, steaming gently, the kind that fills you up on a cold night. On the right, a clever little toy that spun on its point, whistled a tune, and hopped when you wound its spring.
-
-{child_name} stared at the toy. It was wonderful. It was exactly the sort of thing {child_name} had been picturing while dropping coin after coin into the pouch, and one hand crept toward it almost on its own.
-
-Then {child_name}'s stomach gave a low, hollow grumble, a reminder of how little there had been to eat that day. The two feelings pulled in different directions at once, the bright pull of the toy and the deep, quiet pull of hunger, and for a moment {child_name} did not know which was stronger.
-
-The seller waited kindly and said nothing at all, leaving the choice where it belonged.
-
-"I have enough for the soup, or enough for the toy," {child_name} said quietly, almost to no one. "But I cannot have both. Whatever I choose, the coins will be gone."
-
-{companion_name}, who had come along the whole way, settled nearby and did not say which to pick. Instead {companion_name} asked one quiet question.
-
-"Is that a want, or a need?"
-
-{child_name} went still and turned the question over. The toy was a want. It would be fun tonight, and maybe fun tomorrow, and then it might sit forgotten in a corner. The soup was different. The night was long and cold, and the empty stomach would not settle on its own. Without the soup, {child_name} would go to sleep hungry.
-
-"The toy is a want," {child_name} said slowly. "The soup is a need. And tonight I need the soup more than I want the toy."
-
-{child_name} looked up, half expecting to be told whether that was right or wrong. But {companion_name} only smiled.
-
-"Wanting things is not wrong," {companion_name} said. "The toy is lovely, and it was fair to want it. The skill is telling the two apart, and you just did that all by yourself."
-
-{child_name} held the {object_motif} in a closed hand for a moment longer, feeling its small weight, feeling everything it could have bought. Then {child_name} breathed out, laid the coins on the counter, and took the warm bowl in both hands.
-
-The soup was even better than it looked. It warmed {child_name} from the inside, spoonful by spoonful, and the hollow feeling faded, and the long night did not seem so long anymore. It was strange, but choosing the thing {child_name} truly needed felt good in a way the quick fun of the toy might not have, a warm and settled sort of good that seemed likely to last.
-
-The toy still spun and whistled on the stall, and it was still lovely. Perhaps, when the pouch was full again, there would be a night for wants, and {child_name} could come back for it then. But tonight {child_name} had chosen well, and knew it, and that felt better than any toy.
-
-{refrain}.` },
-  '7-8': { audioTemplate: `The evening air had turned cool by the time the {hero} reached {setting}, and the small pouch of coins swung and clinked with every step.
-
-It had taken a long while to fill that pouch. The {hero} still remembered the goal from before, the thing worth saving for, and all the days of setting aside one coin at a time and not touching it, even when spending would have been the easy thing to do. Day after day the pouch had grown heavier, and now, finally, there was enough inside to spend. That thought by itself felt wonderful, like the end of a long climb.
-
-All the way here, the {hero} had imagined this moment, the walking-up-to-the-stall moment, the picking-something-out moment. There had even been a picture in the {hero}'s head of exactly what the coins would buy, and how good it would feel to finally hand them over. It was supposed to be simple.
-
-But there was something the {hero} had not planned for. When the coins were counted, there was only enough for a single thing. Exactly one, and not a coin left over.
-
-At the last stall, two things sat side by side beneath the evening light. On one side, a deep bowl of thick soup, steam curling off the top, dotted with soft vegetables, the kind of warm meal that fills you all the way up on a cold night. On the other, a small wooden toy that spun on its tip, whistled a bright little tune, and jumped and clattered when you wound its spring, so cleverly made that the {hero} laughed out loud just watching it go.
-
-The {hero} could not stop looking at the toy. It was clever and cheerful and completely delightful, exactly the sort of thing the {hero} had pictured while dropping coin after coin into the pouch. This was the reward, wasn't it? The thing all that patience had been for. Almost without meaning to, the {hero} reached for it.
-
-Then a slow, hollow feeling stirred in the {hero}'s stomach, a reminder that there had been very little to eat all day. The hand stopped in the air.
-
-The seller stood quietly behind the stall and offered no opinion, letting the {hero} be the one to decide. Somewhere down the row a lamp was lit, and then another, and the market settled into its evening hush, as if it too were waiting to see what the {hero} would do. The pouch felt suddenly heavier than before, the way a thing does the moment you have to spend it.
-
-"I have enough for the soup," the {hero} said softly, half to the pouch and half to the night, "or enough for the toy. But not for both. Whichever I pick, the rest of the coins are spent."
-
-{companion_name} had walked the whole way at the {hero}'s side and did not say which to choose. Instead {companion_name} asked a single quiet question.
-
-"Is that a want, or a need?"
-
-The {hero} grew still and really thought about it. It would be so easy to take the toy. The meal could be skipped just this once, couldn't it? It was only one night, and the hunger would fade by morning, and then the toy would be the {hero}'s to keep for good. The thought was tempting, and the {hero} let it linger a while, turning it over honestly.
-
-But then the {hero} looked again at the long, cold dark ahead, and at the warm bowl, and understood something plainly. The toy would be fun tonight and maybe tomorrow, and after that it would rest in a corner. The soup was not like that. The soup was for the body, for the cold, for the ache in the stomach that would not quiet on its own. One of these two things the {hero} could do without. The other, tonight, the {hero} could not.
-
-It helped to remember how the saving had felt, all those careful days. The {hero} had not saved just to spend on the very first bright thing that caught the eye. The whole point had been to have a choice at all, and here was the choice, waiting to be made well.
-
-"The toy is a want," the {hero} said at last, slow and sure. "The soup is a need. Tonight the need comes first."
-
-The {hero} glanced up, half hoping to hear that this was the right answer.
-
-"Wanting things is not wrong," {companion_name} said, with a warmth that settled the whole moment. "The toy is lovely, and it was fair to want it as much as you did. The real skill is telling a want from a need, and that part you did entirely on your own."
-
-For a moment more the {hero} kept the {object_motif} closed inside one hand, feeling its small weight and everything it might have bought. Then the {hero} let out a long breath, laid the coins on the counter, and lifted the warm bowl in both hands.
-
-The soup was even better than it had looked. It spread its heat through the {hero} from the inside, and the hollow feeling eased, and the long night no longer seemed quite so long. There was a quiet, steady kind of gladness in it, different from the quick thrill the toy would have given, and somehow it lasted longer.
-
-The little toy still turned and whistled on the stall. Maybe, when the pouch was heavy again, there would be an evening made for wants, and the {hero} would come back and buy it without a second thought. But tonight the {hero} had weighed the two and chosen well, and knowing that felt steadier and better than any toy could have.
-
-{refrain}.`, scriptTemplate: `The evening air had turned cool by the time {child_name} reached {setting}, and the small pouch of coins swung and clinked with every step.
-
-It had taken a long while to fill that pouch. {child_name} still remembered the goal from before, the thing worth saving for, and all the days of setting aside one coin at a time and not touching it, even when spending would have been the easy thing to do. Day after day the pouch had grown heavier, and now, finally, there was enough inside to spend. That thought by itself felt wonderful, like the end of a long climb.
-
-All the way here, {child_name} had imagined this moment, the walking-up-to-the-stall moment, the picking-something-out moment. There had even been a picture in {child_name}'s head of exactly what the coins would buy, and how good it would feel to finally hand them over. It was supposed to be simple.
-
-But there was something {child_name} had not planned for. When the coins were counted, there was only enough for a single thing. Exactly one, and not a coin left over.
-
-At the last stall, two things sat side by side beneath the evening light. On one side, a deep bowl of thick soup, steam curling off the top, dotted with soft vegetables, the kind of warm meal that fills you all the way up on a cold night. On the other, a small wooden toy that spun on its tip, whistled a bright little tune, and jumped and clattered when you wound its spring, so cleverly made that {child_name} laughed out loud just watching it go.
-
-{child_name} could not stop looking at the toy. It was clever and cheerful and completely delightful, exactly the sort of thing {child_name} had pictured while dropping coin after coin into the pouch. This was the reward, wasn't it? The thing all that patience had been for. Almost without meaning to, {child_name} reached for it.
-
-Then a slow, hollow feeling stirred in {child_name}'s stomach, a reminder that there had been very little to eat all day. The hand stopped in the air.
-
-The seller stood quietly behind the stall and offered no opinion, letting {child_name} be the one to decide. Somewhere down the row a lamp was lit, and then another, and the market settled into its evening hush, as if it too were waiting to see what {child_name} would do. The pouch felt suddenly heavier than before, the way a thing does the moment you have to spend it.
-
-"I have enough for the soup," {child_name} said softly, half to the pouch and half to the night, "or enough for the toy. But not for both. Whichever I pick, the rest of the coins are spent."
-
-{companion_name} had walked the whole way at {child_name}'s side and did not say which to choose. Instead {companion_name} asked a single quiet question.
-
-"Is that a want, or a need?"
-
-{child_name} grew still and really thought about it. It would be so easy to take the toy. The meal could be skipped just this once, couldn't it? It was only one night, and the hunger would fade by morning, and then the toy would be {child_name}'s to keep for good. The thought was tempting, and {child_name} let it linger a while, turning it over honestly.
-
-But then {child_name} looked again at the long, cold dark ahead, and at the warm bowl, and understood something plainly. The toy would be fun tonight and maybe tomorrow, and after that it would rest in a corner. The soup was not like that. The soup was for the body, for the cold, for the ache in the stomach that would not quiet on its own. One of these two things {child_name} could do without. The other, tonight, {child_name} could not.
-
-It helped to remember how the saving had felt, all those careful days. {child_name} had not saved just to spend on the very first bright thing that caught the eye. The whole point had been to have a choice at all, and here was the choice, waiting to be made well.
-
-"The toy is a want," {child_name} said at last, slow and sure. "The soup is a need. Tonight the need comes first."
-
-{child_name} glanced up, half hoping to hear that this was the right answer.
-
-"Wanting things is not wrong," {companion_name} said, with a warmth that settled the whole moment. "The toy is lovely, and it was fair to want it as much as you did. The real skill is telling a want from a need, and that part you did entirely on your own."
-
-For a moment more {child_name} kept the {object_motif} closed inside one hand, feeling its small weight and everything it might have bought. Then {child_name} let out a long breath, laid the coins on the counter, and lifted the warm bowl in both hands.
-
-The soup was even better than it had looked. It spread its heat through {child_name} from the inside, and the hollow feeling eased, and the long night no longer seemed quite so long. There was a quiet, steady kind of gladness in it, different from the quick thrill the toy would have given, and somehow it lasted longer.
-
-The little toy still turned and whistled on the stall. Maybe, when the pouch was heavy again, there would be an evening made for wants, and {child_name} would come back and buy it without a second thought. But tonight {child_name} had weighed the two and chosen well, and knowing that felt steadier and better than any toy could have.
-
-{refrain}.` },
-  '9-11': { audioTemplate: `By the time the {hero} came into {setting}, the day had folded itself down into that soft blue hour just before dark, when the stalls light their lamps and the air smells of woodsmoke and something cooking. The small pouch of coins hung heavy at the {hero}'s side, and it swung with a satisfying weight at every step.
-
-That weight had been a long time coming. The {hero} remembered the goal from before, the very first day of it, the deciding what was worth saving for and then the slow, patient work of keeping to it. There had been so many easy chances to spend along the way, so many small bright things that whispered buy me, and the {hero} had walked past every one. Coin after coin had gone into the pouch instead, until the counting of it became a kind of quiet pride. Tonight, at last, the saving was finished. Tonight the pouch was meant to be opened.
-
-There is a particular feeling to arriving somewhere you have worked a long time to reach. Part of it is triumph and part of it is a strange nervousness, because the reaching is over now and the choosing is about to begin, and choosing is always harder than saving. Saving only asks you to say not yet. Spending asks you to say yes to one thing and, in the same breath, no to everything else. The {hero} had not thought about that part until the pouch was actually in hand and the stalls were actually there, lamplit and waiting.
-
-What the {hero} had not counted on was arithmetic. Sitting down on the low wall by the last stall, the coins spread out across one palm, the {hero} added them up twice to be sure. There was enough for exactly one thing. Not two. Not one and a little over. One, and then an empty pouch.
-
-And there were, of course, exactly two things worth wanting, set out side by side on the same stall as if the world were making a point of it.
-
-The first was a bowl of soup, deep and thick, steam rising off it in slow ribbons, chunks of vegetable and barley turning under the surface. It was the kind of meal that reaches all the way down and warms the parts of you the cold has been gnawing at. The {hero} had eaten almost nothing all day, and the smell of it alone made the stomach tighten and ask.
-
-The second was a toy, and it was, honestly, magnificent. Carved from pale wood, it spun on a single fine point, and when you wound the spring it whistled a bright looping tune and hopped in little circles as though it were dancing. The {hero} had seen nothing like it, and something in the chest gave a sharp, bright pull at the sight of it. This, whispered a voice inside, this is the reward. This is the whole reason you saved. You earned it. Take it.
-
-And the terrible, tempting thing was that the voice made a kind of sense. The {hero} turned the argument over, looking for the flaw in it, and did not find one right away. One night without dinner was not so much. The {hero} had gone to bed hungry before and woken up fine. The soup would be gone by morning either way, eaten and forgotten, nothing to show for the coins. But the toy would last. The toy could be picked up again tomorrow, and the day after, a small dancing proof that all that patience had been worth something you could hold. Skip one meal, the voice reasoned, and keep something forever. It sounded almost wise.
-
-The {hero}'s hand had drifted toward the toy while the thinking went on, fingers nearly closing around it. It would have been the easiest thing in the world to let them close the rest of the way, to hand over the coins fast, before the quieter part of the mind could get a word in. That was how most quick choices got made, the {hero} suspected, by moving before the other side could speak.
-
-The seller behind the stall watched all of this without a word, arms folded, in no hurry, plainly of the view that a person's coins were a person's own business. No help was coming from there, and the {hero} was oddly glad of it.
-
-{companion_name} had walked the whole way and now stood a little apart, near enough to be there and far enough not to lean on the choice. {companion_name} did not say take the soup. {companion_name} did not say the toy is silly. There was only one question, offered gently into the quiet, as if setting a lantern down between them.
-
-"Is that a want, or a need?"
-
-It was such a small question, and it changed the shape of everything. The {hero} let the hand fall still and made itself be honest, the way you can only be honest when nobody is arguing with you.
-
-The toy was a want. There was no getting around it, however clever the reasons dressed it up. It would be a delight tonight and a smaller delight tomorrow and then, in a week, it would sit on a shelf gathering the same dust as everything else that had once seemed like the only thing in the world. Wonderful, yes. Necessary, no.
-
-The soup was a need. Not a grand or interesting one, just the plain, unglamorous kind, the sort of thing a body asks for so it can carry you through a long cold night and be ready for the morning. It would vanish without a trace, and that was exactly the point of it. Needs were like that. They didn't leave souvenirs.
-
-And the clever argument, the one about keeping something forever, the {hero} could see now where it bent the truth. It had quietly swapped the question. It had stopped asking which do I need tonight and started asking which lasts longer, as if lasting were the only thing that counted. But a toy that lasts a year is no use to a body that needs feeding today. The reasons had sounded wise because they were the reasons the wanting wanted to hear.
-
-The strange part, the {hero} realised, was that the wanting hadn't been a mistake at all. The pull toward the toy had been real and fair. It was only that wanting a thing and needing a thing were two different measurements, and the {hero} had almost let the louder one drown out the quieter one.
-
-"The toy is a want," the {hero} said at last, and the words came out steady, chosen rather than forced. "The soup is a need. Tonight I'm going to take the one I need."
-
-The {hero} looked over, half expecting the usual thing, the nod that tells you that you passed some test.
-
-"Wanting things is not wrong," {companion_name} said instead, and there was no lesson in the voice, only something like respect. "That toy is beautiful, and it was right to want it as much as you did. Knowing a want from a need, and choosing with your eyes open, that's the hard part. You just did it yourself, and nobody made you."
-
-For a breath or two more the {hero} kept the {object_motif} closed inside one fist, feeling its cool weight, feeling the small ghost of the toy it might have paid for. Then, without any grand ceremony, the {hero} unclosed the hand, counted the coins onto the counter, and took the warm bowl in both palms.
-
-It was better than the smell had promised. The heat of it went down and outward until the shivery, hollow feeling loosened its grip and let go, and the long night ahead stopped looking quite so long. It was not the sharp thrill the toy would have given, that quick firework of having. It was slower and quieter than that, and it had the odd, solid quality of a thing that would still feel right tomorrow.
-
-The toy went on spinning and whistling at the edge of the stall, and it was still lovely, and the {hero} did not pretend otherwise. Some other evening, when the pouch was heavy again and the stomach was full, there might be a night made entirely for wants, and the {hero} would come back and buy it and not think twice. But that was for another time. Tonight the {hero} had held two true things in one hand, weighed them honestly, and chosen the one that mattered most right now, and that quiet certainty was worth carrying home.
-
-{refrain}.`, scriptTemplate: `By the time {child_name} came into {setting}, the day had folded itself down into that soft blue hour just before dark, when the stalls light their lamps and the air smells of woodsmoke and something cooking. The small pouch of coins hung heavy at {child_name}'s side, and it swung with a satisfying weight at every step.
-
-That weight had been a long time coming. {child_name} remembered the goal from before, the very first day of it, the deciding what was worth saving for and then the slow, patient work of keeping to it. There had been so many easy chances to spend along the way, so many small bright things that whispered buy me, and {child_name} had walked past every one. Coin after coin had gone into the pouch instead, until the counting of it became a kind of quiet pride. Tonight, at last, the saving was finished. Tonight the pouch was meant to be opened.
-
-There is a particular feeling to arriving somewhere you have worked a long time to reach. Part of it is triumph and part of it is a strange nervousness, because the reaching is over now and the choosing is about to begin, and choosing is always harder than saving. Saving only asks you to say not yet. Spending asks you to say yes to one thing and, in the same breath, no to everything else. {child_name} had not thought about that part until the pouch was actually in hand and the stalls were actually there, lamplit and waiting.
-
-What {child_name} had not counted on was arithmetic. Sitting down on the low wall by the last stall, the coins spread out across one palm, {child_name} added them up twice to be sure. There was enough for exactly one thing. Not two. Not one and a little over. One, and then an empty pouch.
-
-And there were, of course, exactly two things worth wanting, set out side by side on the same stall as if the world were making a point of it.
-
-The first was a bowl of soup, deep and thick, steam rising off it in slow ribbons, chunks of vegetable and barley turning under the surface. It was the kind of meal that reaches all the way down and warms the parts of you the cold has been gnawing at. {child_name} had eaten almost nothing all day, and the smell of it alone made the stomach tighten and ask.
-
-The second was a toy, and it was, honestly, magnificent. Carved from pale wood, it spun on a single fine point, and when you wound the spring it whistled a bright looping tune and hopped in little circles as though it were dancing. {child_name} had seen nothing like it, and something in the chest gave a sharp, bright pull at the sight of it. This, whispered a voice inside, this is the reward. This is the whole reason you saved. You earned it. Take it.
-
-And the terrible, tempting thing was that the voice made a kind of sense. {child_name} turned the argument over, looking for the flaw in it, and did not find one right away. One night without dinner was not so much. {child_name} had gone to bed hungry before and woken up fine. The soup would be gone by morning either way, eaten and forgotten, nothing to show for the coins. But the toy would last. The toy could be picked up again tomorrow, and the day after, a small dancing proof that all that patience had been worth something you could hold. Skip one meal, the voice reasoned, and keep something forever. It sounded almost wise.
-
-{child_name}'s hand had drifted toward the toy while the thinking went on, fingers nearly closing around it. It would have been the easiest thing in the world to let them close the rest of the way, to hand over the coins fast, before the quieter part of the mind could get a word in. That was how most quick choices got made, {child_name} suspected, by moving before the other side could speak.
-
-The seller behind the stall watched all of this without a word, arms folded, in no hurry, plainly of the view that a person's coins were a person's own business. No help was coming from there, and {child_name} was oddly glad of it.
-
-{companion_name} had walked the whole way and now stood a little apart, near enough to be there and far enough not to lean on the choice. {companion_name} did not say take the soup. {companion_name} did not say the toy is silly. There was only one question, offered gently into the quiet, as if setting a lantern down between them.
-
-"Is that a want, or a need?"
-
-It was such a small question, and it changed the shape of everything. {child_name} let the hand fall still and made itself be honest, the way you can only be honest when nobody is arguing with you.
-
-The toy was a want. There was no getting around it, however clever the reasons dressed it up. It would be a delight tonight and a smaller delight tomorrow and then, in a week, it would sit on a shelf gathering the same dust as everything else that had once seemed like the only thing in the world. Wonderful, yes. Necessary, no.
-
-The soup was a need. Not a grand or interesting one, just the plain, unglamorous kind, the sort of thing a body asks for so it can carry you through a long cold night and be ready for the morning. It would vanish without a trace, and that was exactly the point of it. Needs were like that. They didn't leave souvenirs.
-
-And the clever argument, the one about keeping something forever, {child_name} could see now where it bent the truth. It had quietly swapped the question. It had stopped asking which do I need tonight and started asking which lasts longer, as if lasting were the only thing that counted. But a toy that lasts a year is no use to a body that needs feeding today. The reasons had sounded wise because they were the reasons the wanting wanted to hear.
-
-The strange part, {child_name} realised, was that the wanting hadn't been a mistake at all. The pull toward the toy had been real and fair. It was only that wanting a thing and needing a thing were two different measurements, and {child_name} had almost let the louder one drown out the quieter one.
-
-"The toy is a want," {child_name} said at last, and the words came out steady, chosen rather than forced. "The soup is a need. Tonight I'm going to take the one I need."
-
-{child_name} looked over, half expecting the usual thing, the nod that tells you that you passed some test.
-
-"Wanting things is not wrong," {companion_name} said instead, and there was no lesson in the voice, only something like respect. "That toy is beautiful, and it was right to want it as much as you did. Knowing a want from a need, and choosing with your eyes open, that's the hard part. You just did it yourself, and nobody made you."
-
-For a breath or two more {child_name} kept the {object_motif} closed inside one fist, feeling its cool weight, feeling the small ghost of the toy it might have paid for. Then, without any grand ceremony, {child_name} unclosed the hand, counted the coins onto the counter, and took the warm bowl in both palms.
-
-It was better than the smell had promised. The heat of it went down and outward until the shivery, hollow feeling loosened its grip and let go, and the long night ahead stopped looking quite so long. It was not the sharp thrill the toy would have given, that quick firework of having. It was slower and quieter than that, and it had the odd, solid quality of a thing that would still feel right tomorrow.
-
-The toy went on spinning and whistling at the edge of the stall, and it was still lovely, and {child_name} did not pretend otherwise. Some other evening, when the pouch was heavy again and the stomach was full, there might be a night made entirely for wants, and {child_name} would come back and buy it and not think twice. But that was for another time. Tonight {child_name} had held two true things in one hand, weighed them honestly, and chosen the one that mattered most right now, and that quiet certainty was worth carrying home.
-
-{refrain}.` }
-},
-    callback: 'Saving for a goal (Level 4)', ageFloor: 5,
-    audioTemplate: `A small {hero} had ten {object_motif}s — exactly enough for either thing.
-
-On one side of the market: a beautiful toy that spun and sparkled in the light. On the other: a warm meal and a dry place to rest for the journey home.
-
-"I want the toy," said the {hero} honestly.
-
-{companion_name} sat beside them without rushing. "Wanting things is not wrong. But before you choose — do you need the toy, or do you want it?"
-
-The {hero} thought carefully. There had been a time, not long ago, when they had saved and saved for something truly wanted. And that had been right. But tonight was cold, and home was far.
-
-"I need the meal," said the {hero} at last. "I want the toy. But I need the meal more tonight."
-
-"That," said {companion_name} quietly, "is one of the wisest things I have ever heard a {hero} say."
-
-The toy could wait. Some nights, knowing the difference was the whole adventure.
+By winter the jar will be full. Warm scarf. Snug door. Good things coming.
 
 {refrain}.`,
-    scriptTemplate: `{child_name} the {hero} had ten {object_motif}s — exactly enough for either thing.
+    scriptTemplate: `Market night in {setting}! {child_name} had saved coin after coin. Tonight there was enough for the humming top!
 
-On one side of the market: a beautiful toy that spun and sparkled in the light. On the other: a warm meal and a dry place to rest for the journey home.
+But where was {companion_name}?
 
-"I want the toy," said {child_name} honestly.
+Shut inside their little house. Through the door came big, sad sighs.
 
-{companion_name} sat beside them without rushing. "Wanting things is not wrong. But before you choose — do you need the toy, or do you want it?"
+{child_name} told a joke through the door. No laugh. Just sighs.
 
-{child_name} thought carefully. There had been a time, not long ago, when they had saved and saved for the lantern because they truly wanted it. And that had been right. But tonight was cold, and home was far.
+Peek through the crack. Can you see it too? A little drawing of a scarf.
 
-"I need the meal," said {child_name} at last. "I want the toy. But I need the meal more tonight."
+The door opened. Creak! What a creaky, drafty door!
 
-"That," said {companion_name} quietly, "is one of the wisest things I have ever heard a {hero} say."
+"I have twelve coins," said {companion_name}. "I need to mend my door before the cold. But I want the scarf with the {object_motif} pattern. Silly old me."
 
-The toy could wait. Some nights, knowing the difference was the whole adventure.
+"Wanting things is not wrong!" said {child_name}. "But which one keeps you warm and safe? The door! The scarf comes next, coin by coin."
+
+So the door was mended. Creak? No creak. Not one.
+
+They started a scarf jar. One coin in now. Two after market day.
+
+Then {child_name} bought the humming top. It spun and hummed, slower and slower.
+
+"When did you grow so wise, little {hero}?" smiled {companion_name}. "{refrain}."
+
+The top stopped. The night hummed on, soft and low.
+
+By winter the jar will be full. Warm scarf. Snug door. Good things coming.
+
+{refrain}.`
+  },
+  '5-6': {
+    audioTemplate: `Market night in {setting}, and the {hero} was rich. Top-rich. Coin by coin, the {hero} had saved a jarful, and tonight it was finally enough for the humming top: the one that spun and sang a low, wobbly song.
+
+Only one thing was missing: {companion_name}.
+
+{companion_name}, who always knew everything, had not come out of their little house all day. Through the door came the slow chink of counted coins, a sigh, then counting again.
+
+The {hero} tried the usual medicine. A joke through the door — the moon-with-hiccups one. Silence. A honey-fig pushed underneath. It got stuck halfway. The counting just started over.
+
+Then the {hero} peeked through the crack. Lean close. Can you see it too? A little drawing of a scarf, folded small from much unfolding.
+
+The door opened at last. Creak! A long, cold, drafty creak.
+
+"Twelve coins," said {companion_name} quietly. "I need to mend this door before the cold nights come. But there is a scarf at the market — woolly, with a {object_motif} pattern. I have wanted it all year. Wise old me, wanting a scarf. It's foolish."
+
+The one who always helped was stuck.
+
+The {hero} found the exact right piece. "Wanting things is not wrong," said the {hero}. "Wanting is allowed. Here's the trick: which one keeps you warm and safe this month?"
+
+{companion_name} looked at the door. "That one," they admitted. "The door. It's a need."
+
+"Then the door comes first. And the scarf isn't lost — it's just later! We'll start a scarf jar and fill it coin by coin. Saving works. You watched me learn it."
+
+So the door was mended that evening. They swung it to test it. The door said nothing at all.
+
+The scarf jar went up on the sill, and the {hero} dropped in the first coin as a gift.
+
+And because the {hero}'s tummy was full and the {hero}'s door didn't creak, the humming top was a happy want. The {hero} bought it with open eyes.
+
+The top spun and sang its low, wobbly song, slower and slower, while the lamps went out across the market.
+
+"When did you grow so wise, little {hero}?" said {companion_name}. "{refrain}."
+
+The top wobbled, and settled, and stopped.
+
+On the sill, the scarf jar held one coin. Two after market day. By the first cold moon it would be full — and the best part of the scarf story would arrive with winter.
+
+{refrain}.`,
+    scriptTemplate: `Market night in {setting}, and {child_name} was rich. Top-rich. Coin by coin, {child_name} had saved a jarful, and tonight it was finally enough for the humming top: the one that spun and sang a low, wobbly song.
+
+Only one thing was missing: {companion_name}.
+
+{companion_name}, who always knew everything, had not come out of their little house all day. Through the door came the slow chink of counted coins, a sigh, then counting again.
+
+{child_name} tried the usual medicine. A joke through the door — the moon-with-hiccups one. Silence. A honey-fig pushed underneath. It got stuck halfway. The counting just started over.
+
+Then {child_name} peeked through the crack. Lean close. Can you see it too? A little drawing of a scarf, folded small from much unfolding.
+
+The door opened at last. Creak! A long, cold, drafty creak.
+
+"Twelve coins," said {companion_name} quietly. "I need to mend this door before the cold nights come. But there is a scarf at the market — woolly, with a {object_motif} pattern. I have wanted it all year. Wise old me, wanting a scarf. It's foolish."
+
+The one who always helped was stuck.
+
+{child_name} found the exact right piece. "Wanting things is not wrong," said {child_name}. "Wanting is allowed. Here's the trick: which one keeps you warm and safe this month?"
+
+{companion_name} looked at the door. "That one," they admitted. "The door. It's a need."
+
+"Then the door comes first. And the scarf isn't lost — it's just later! We'll start a scarf jar and fill it coin by coin. Saving works. You watched me learn it."
+
+So the door was mended that evening. They swung it to test it. The door said nothing at all.
+
+The scarf jar went up on the sill, and {child_name} dropped in the first coin as a gift.
+
+And because {child_name}'s tummy was full and {child_name}'s door didn't creak, the humming top was a happy want. {child_name} bought it with open eyes.
+
+The top spun and sang its low, wobbly song, slower and slower, while the lamps went out across the market.
+
+"When did you grow so wise, little {hero}?" said {companion_name}. "{refrain}."
+
+The top wobbled, and settled, and stopped.
+
+On the sill, the scarf jar held one coin. Two after market day. By the first cold moon it would be full — and the best part of the scarf story would arrive with winter.
+
+{refrain}.`
+  },
+  '7-8': {
+    audioTemplate: `{companion_name} had helped the {hero} out of a hundred corners. It was {companion_name} who had hummed at the locked box, {companion_name} who had nodded at the baker's sign, {companion_name} who had fetched down the stubborn jar. Helping was simply what they did, the way lamps glow.
+
+Which is why market night felt wrong from the start.
+
+Lanterns were going up all over {setting}, stalls unfolding, and in the {hero}'s pocket sat a jarful of savings, gathered coin by coin the way the old jar had taught. Tonight they were for the humming top: the one that spun on its point and sang a low, wobbly song until it fell over. The {hero} was nearly bursting with it.
+
+But {companion_name} had not come out of their little house all day. From behind the door came the slow chink of coins being counted. Then a sigh. Then the counting started over, as if the coins might add up differently the fourth time.
+
+The {hero} deployed the usual medicine. The joke about the moon with hiccups, through the keyhole: nothing. A honey-fig, pushed under as emergency supplies: it got stuck halfway and sat there awkwardly.
+
+{companion_name} fixed things. {companion_name} did not need fixing.
+
+The {hero} leaned close to the door crack. Look through it, just there. Can you see it too? A small drawing of a scarf, folded soft from much unfolding, smoothed out like something precious.
+
+At last, the door opened. Creak — a long, cold, drafty creak, the kind a door makes when it is apologising for the wind it lets in.
+
+"Twelve coins," said {companion_name}, without even a hello. "That is everything I have, counted four times. This door must be mended before the cold nights; that is plain. But the weaver's stall has a scarf — woolly, deep green, with a {object_motif} pattern along the ends. I have wanted it all year. All year!" They laughed, but it came out crooked. "Wanting a scarf, at my age. It's foolish, and I can't stop, and I don't know what to do."
+
+And there it was, the strangest sight of the whole path: the one who always knew, not knowing. The helper, needing help.
+
+The {hero} stood very still. Then all the learning lined up like coins in a row, and the right piece came forward on its own.
+
+"Wanting things is not wrong," said the {hero}. "It isn't foolish and it isn't small. Everyone wants things — I want the humming top so much my teeth hum. The trick isn't to stop wanting. The trick is one question: which one keeps you warm and safe this month?"
+
+{companion_name} was quiet for a moment. "The door," they said at last. "The door is a need. The scarf is a want."
+
+"Then the door goes first," said the {hero}. "And the scarf isn't lost — it's just later. We'll put a scarf jar on your sill and fill it coin by coin. Saving isn't magic, you know. You watched me do it with the spyglass. Ten plinks and a moon."
+
+So that evening the mender came, and the twelve coins did their proper work, and the door was hung snug and true. They swung it to test it — and the door said nothing at all, which from that door was a speech.
+
+The scarf jar went up on the sill. The {hero} dropped in the first coin as a gift, and it rang against the glass like a small promise.
+
+And then, at last, the humming top. The {hero} paused at the stall — checked, honestly: warm? Fed? Door quiet? All yes. A want, then, chosen with open eyes, which is the happiest kind of buying there is.
+
+They walked home under the lanterns, and the top spun on the table while the market packed up outside, singing its low, wobbly song, slower and slower.
+
+"When did you grow so wise, little {hero}?" murmured {companion_name}, watching it turn. "{refrain}."
+
+The top wobbled, bowed, and lay down.
+
+On the sill, the scarf jar held one coin and a whole plan. Two coins after market day. Full by the first cold moon — and then the best chapter of the scarf story would arrive with the winter.
+
+The lamps went out, one street at a time. The door held the cold outside, where it belonged.
+
+{refrain}.`,
+    scriptTemplate: `{companion_name} had helped {child_name} out of a hundred corners. It was {companion_name} who had hummed at the locked box, {companion_name} who had nodded at the baker's sign, {companion_name} who had fetched down the stubborn jar. Helping was simply what they did, the way lamps glow.
+
+Which is why market night felt wrong from the start.
+
+Lanterns were going up all over {setting}, stalls unfolding, and in {child_name}'s pocket sat a jarful of savings, gathered coin by coin the way the old jar had taught. Tonight they were for the humming top: the one that spun on its point and sang a low, wobbly song until it fell over. {child_name} was nearly bursting with it.
+
+But {companion_name} had not come out of their little house all day. From behind the door came the slow chink of coins being counted. Then a sigh. Then the counting started over, as if the coins might add up differently the fourth time.
+
+{child_name} deployed the usual medicine. The joke about the moon with hiccups, through the keyhole: nothing. A honey-fig, pushed under as emergency supplies: it got stuck halfway and sat there awkwardly.
+
+{companion_name} fixed things. {companion_name} did not need fixing.
+
+{child_name} leaned close to the door crack. Look through it, just there. Can you see it too? A small drawing of a scarf, folded soft from much unfolding, smoothed out like something precious.
+
+At last, the door opened. Creak — a long, cold, drafty creak, the kind a door makes when it is apologising for the wind it lets in.
+
+"Twelve coins," said {companion_name}, without even a hello. "That is everything I have, counted four times. This door must be mended before the cold nights; that is plain. But the weaver's stall has a scarf — woolly, deep green, with a {object_motif} pattern along the ends. I have wanted it all year. All year!" They laughed, but it came out crooked. "Wanting a scarf, at my age. It's foolish, and I can't stop, and I don't know what to do."
+
+And there it was, the strangest sight of the whole path: the one who always knew, not knowing. The helper, needing help.
+
+{child_name} stood very still. Then all the learning lined up like coins in a row, and the right piece came forward on its own.
+
+"Wanting things is not wrong," said {child_name}. "It isn't foolish and it isn't small. Everyone wants things — I want the humming top so much my teeth hum. The trick isn't to stop wanting. The trick is one question: which one keeps you warm and safe this month?"
+
+{companion_name} was quiet for a moment. "The door," they said at last. "The door is a need. The scarf is a want."
+
+"Then the door goes first," said {child_name}. "And the scarf isn't lost — it's just later. We'll put a scarf jar on your sill and fill it coin by coin. Saving isn't magic, you know. You watched me do it with the spyglass. Ten plinks and a moon."
+
+So that evening the mender came, and the twelve coins did their proper work, and the door was hung snug and true. They swung it to test it — and the door said nothing at all, which from that door was a speech.
+
+The scarf jar went up on the sill. {child_name} dropped in the first coin as a gift, and it rang against the glass like a small promise.
+
+And then, at last, the humming top. {child_name} paused at the stall — checked, honestly: warm? Fed? Door quiet? All yes. A want, then, chosen with open eyes, which is the happiest kind of buying there is.
+
+They walked home under the lanterns, and the top spun on the table while the market packed up outside, singing its low, wobbly song, slower and slower.
+
+"When did you grow so wise, little {hero}?" murmured {companion_name}, watching it turn. "{refrain}."
+
+The top wobbled, bowed, and lay down.
+
+On the sill, the scarf jar held one coin and a whole plan. Two coins after market day. Full by the first cold moon — and then the best chapter of the scarf story would arrive with the winter.
+
+The lamps went out, one street at a time. The door held the cold outside, where it belonged.
+
+{refrain}.`
+  },
+  '9-11': {
+    audioTemplate: `Every story the {hero} could tell about money had {companion_name} standing quietly in the corner of it. The locked box, the little sun, the baker's sign, the stubborn jar — every time, it was {companion_name} who hummed at the right moment and let the {hero} find the answer alone. Helping without helping. Their whole art.
+
+Which is why this particular market night began so strangely.
+
+The lanterns were going up all over {setting}. The {hero} arrived at {companion_name}'s little house top-rich — a jarful of savings in one pocket, gathered coin by coin the way the old jar had taught, earmarked for the humming top, the one that spun on its point and sang a low, wobbly song until it toppled. Tonight was the night.
+
+But the door stayed shut. From behind it came the slow chink of coins being counted. A pause. A sigh, deep enough to sail on. Then the counting began again, as though twelve coins might agree to become twenty if approached politely.
+
+The {hero} tried the standard remedies. The joke about the moon with hiccups, through the keyhole: silence. The backwards-river one: silence. A honey-fig slid under the door as humanitarian aid: it jammed halfway and stayed there, a small embarrassed flag.
+
+Something was truly wrong. It had never once been this way around.
+
+Lean close to the door crack, just there. Can you see it too? On the table inside: a small drawing of a scarf, folded soft from much unfolding, smoothed flat like something that gets looked at every night and shown to no one.
+
+The door opened at last. Creak — a long, cold, drafty creak, the sound of a door that has been letting winter in for years and knows it.
+
+"Twelve coins," said {companion_name}, skipping hello entirely. "Everything I have. Counted four times, in case counting was the problem. The door must be mended before the cold nights come — twelve coins, the mender says. But the weaver's stall has a scarf. Woolly. Deep green. A {object_motif} pattern along the ends." They stopped, and then said the true thing. "I have wanted it all year. I walk past it slowly on purpose. Wise old me — wanting a scarf like a youngster wants a toy. It is foolish, and I cannot make it stop, and I am ashamed of it, and now you know."
+
+The {hero} stood in the doorway and felt the world tilt gently on its axis. The helper, stuck. The teacher, waiting for the student.
+
+And everything the path had taught came forward at once, and the {hero} knew exactly which piece went first.
+
+"Wanting things is not wrong," said the {hero}, and said it like a fact, not a comfort. "It isn't foolish, and it isn't childish, and it doesn't stop being true just because you're wise. I want the humming top so badly my teeth hum. Wanting is allowed. The skill isn't to stop wanting — it's to tell your wants from your needs and let the needs go first. So: which of the two keeps you warm and safe this month?"
+
+Silence. Then, slowly, the eyebrows the {hero} knew so well unknotted themselves.
+
+"The door," said {companion_name}. "The door is a need. The scarf is a want. I have been standing all week in front of two piles, calling them the same thing."
+
+"They were never the same thing," said the {hero}. "And the want isn't lost. It's just later. We start a scarf jar tonight, and it fills coin by coin. Saving is not a mystery, you know. You stood right there while I learned it. Ten plinks and a moon."
+
+The mender came that evening, and the twelve coins did honest work, and the door was hung snug and true. They swung it to test it — and it said nothing at all, which from that particular door amounted to a formal apology.
+
+The scarf jar took its place on the sill, and the {hero} dropped in the first coin as a gift. It rang softly against the glass, the sound of a plan beginning.
+
+Then, at last, the toymaker's stall. The {hero} paused before paying — ran the check honestly, because skills you only use on other people aren't skills yet. Fed? Yes. Warm? Yes. Door quiet, jar begun? Yes. A want, then — an allowed one. The {hero} bought the humming top with open eyes, which is the happiest kind of buying there is.
+
+They sat together in the mended house while the market folded up outside, and the top spun on the table, singing its low, wobbly song. It slowed the way evenings slow. Nobody hurried it.
+
+"When did you grow so wise, little {hero}?" said {companion_name}, watching it turn. "{refrain}."
+
+The top wobbled, bowed like a tiny performer, and lay down.
+
+On the sill, the scarf jar held one coin and a whole plan. Two coins after market day. Full by the first cold moon. And then would come the best chapter of the scarf story — the winter one, where the helper who spent a lifetime warming everyone else finally gets handed something warm.
+
+The lamps went out street by street. The new door held the cold exactly where it belonged.
+
+{refrain}.`,
+    scriptTemplate: `Every story {child_name} could tell about money had {companion_name} standing quietly in the corner of it. The locked box, the little sun, the baker's sign, the stubborn jar — every time, it was {companion_name} who hummed at the right moment and let {child_name} find the answer alone. Helping without helping. Their whole art.
+
+Which is why this particular market night began so strangely.
+
+The lanterns were going up all over {setting}. {child_name} arrived at {companion_name}'s little house top-rich — a jarful of savings in one pocket, gathered coin by coin the way the old jar had taught, earmarked for the humming top, the one that spun on its point and sang a low, wobbly song until it toppled. Tonight was the night.
+
+But the door stayed shut. From behind it came the slow chink of coins being counted. A pause. A sigh, deep enough to sail on. Then the counting began again, as though twelve coins might agree to become twenty if approached politely.
+
+{child_name} tried the standard remedies. The joke about the moon with hiccups, through the keyhole: silence. The backwards-river one: silence. A honey-fig slid under the door as humanitarian aid: it jammed halfway and stayed there, a small embarrassed flag.
+
+Something was truly wrong. It had never once been this way around.
+
+Lean close to the door crack, just there. Can you see it too? On the table inside: a small drawing of a scarf, folded soft from much unfolding, smoothed flat like something that gets looked at every night and shown to no one.
+
+The door opened at last. Creak — a long, cold, drafty creak, the sound of a door that has been letting winter in for years and knows it.
+
+"Twelve coins," said {companion_name}, skipping hello entirely. "Everything I have. Counted four times, in case counting was the problem. The door must be mended before the cold nights come — twelve coins, the mender says. But the weaver's stall has a scarf. Woolly. Deep green. A {object_motif} pattern along the ends." They stopped, and then said the true thing. "I have wanted it all year. I walk past it slowly on purpose. Wise old me — wanting a scarf like a youngster wants a toy. It is foolish, and I cannot make it stop, and I am ashamed of it, and now you know."
+
+{child_name} stood in the doorway and felt the world tilt gently on its axis. The helper, stuck. The teacher, waiting for the student.
+
+And everything the path had taught came forward at once, and {child_name} knew exactly which piece went first.
+
+"Wanting things is not wrong," said {child_name}, and said it like a fact, not a comfort. "It isn't foolish, and it isn't childish, and it doesn't stop being true just because you're wise. I want the humming top so badly my teeth hum. Wanting is allowed. The skill isn't to stop wanting — it's to tell your wants from your needs and let the needs go first. So: which of the two keeps you warm and safe this month?"
+
+Silence. Then, slowly, the eyebrows {child_name} knew so well unknotted themselves.
+
+"The door," said {companion_name}. "The door is a need. The scarf is a want. I have been standing all week in front of two piles, calling them the same thing."
+
+"They were never the same thing," said {child_name}. "And the want isn't lost. It's just later. We start a scarf jar tonight, and it fills coin by coin. Saving is not a mystery, you know. You stood right there while I learned it. Ten plinks and a moon."
+
+The mender came that evening, and the twelve coins did honest work, and the door was hung snug and true. They swung it to test it — and it said nothing at all, which from that particular door amounted to a formal apology.
+
+The scarf jar took its place on the sill, and {child_name} dropped in the first coin as a gift. It rang softly against the glass, the sound of a plan beginning.
+
+Then, at last, the toymaker's stall. {child_name} paused before paying — ran the check honestly, because skills you only use on other people aren't skills yet. Fed? Yes. Warm? Yes. Door quiet, jar begun? Yes. A want, then — an allowed one. {child_name} bought the humming top with open eyes, which is the happiest kind of buying there is.
+
+They sat together in the mended house while the market folded up outside, and the top spun on the table, singing its low, wobbly song. It slowed the way evenings slow. Nobody hurried it.
+
+"When did you grow so wise, little {hero}?" said {companion_name}, watching it turn. "{refrain}."
+
+The top wobbled, bowed like a tiny performer, and lay down.
+
+On the sill, the scarf jar held one coin and a whole plan. Two coins after market day. Full by the first cold moon. And then would come the best chapter of the scarf story — the winter one, where the helper who spent a lifetime warming everyone else finally gets handed something warm.
+
+The lamps went out street by street. The new door held the cold exactly where it belonged.
+
+{refrain}.`
+  }
+},
+    callback: 'Saving for a goal (Level 4)', ageFloor: 5,
+    audioTemplate: `Market night in {setting}, and the {hero} was rich. Top-rich. Coin by coin, the {hero} had saved a jarful, and tonight it was finally enough for the humming top: the one that spun and sang a low, wobbly song.
+
+Only one thing was missing: {companion_name}.
+
+{companion_name}, who always knew everything, had not come out of their little house all day. Through the door came the slow chink of counted coins, a sigh, then counting again.
+
+The {hero} tried the usual medicine. A joke through the door — the moon-with-hiccups one. Silence. A honey-fig pushed underneath. It got stuck halfway. The counting just started over.
+
+Then the {hero} peeked through the crack. Lean close. Can you see it too? A little drawing of a scarf, folded small from much unfolding.
+
+The door opened at last. Creak! A long, cold, drafty creak.
+
+"Twelve coins," said {companion_name} quietly. "I need to mend this door before the cold nights come. But there is a scarf at the market — woolly, with a {object_motif} pattern. I have wanted it all year. Wise old me, wanting a scarf. It's foolish."
+
+The one who always helped was stuck.
+
+The {hero} found the exact right piece. "Wanting things is not wrong," said the {hero}. "Wanting is allowed. Here's the trick: which one keeps you warm and safe this month?"
+
+{companion_name} looked at the door. "That one," they admitted. "The door. It's a need."
+
+"Then the door comes first. And the scarf isn't lost — it's just later! We'll start a scarf jar and fill it coin by coin. Saving works. You watched me learn it."
+
+So the door was mended that evening. They swung it to test it. The door said nothing at all.
+
+The scarf jar went up on the sill, and the {hero} dropped in the first coin as a gift.
+
+And because the {hero}'s tummy was full and the {hero}'s door didn't creak, the humming top was a happy want. The {hero} bought it with open eyes.
+
+The top spun and sang its low, wobbly song, slower and slower, while the lamps went out across the market.
+
+"When did you grow so wise, little {hero}?" said {companion_name}. "{refrain}."
+
+The top wobbled, and settled, and stopped.
+
+On the sill, the scarf jar held one coin. Two after market day. By the first cold moon it would be full — and the best part of the scarf story would arrive with winter.
+
+{refrain}.`,
+    scriptTemplate: `Market night in {setting}, and {child_name} was rich. Top-rich. Coin by coin, {child_name} had saved a jarful, and tonight it was finally enough for the humming top: the one that spun and sang a low, wobbly song.
+
+Only one thing was missing: {companion_name}.
+
+{companion_name}, who always knew everything, had not come out of their little house all day. Through the door came the slow chink of counted coins, a sigh, then counting again.
+
+{child_name} tried the usual medicine. A joke through the door — the moon-with-hiccups one. Silence. A honey-fig pushed underneath. It got stuck halfway. The counting just started over.
+
+Then {child_name} peeked through the crack. Lean close. Can you see it too? A little drawing of a scarf, folded small from much unfolding.
+
+The door opened at last. Creak! A long, cold, drafty creak.
+
+"Twelve coins," said {companion_name} quietly. "I need to mend this door before the cold nights come. But there is a scarf at the market — woolly, with a {object_motif} pattern. I have wanted it all year. Wise old me, wanting a scarf. It's foolish."
+
+The one who always helped was stuck.
+
+{child_name} found the exact right piece. "Wanting things is not wrong," said {child_name}. "Wanting is allowed. Here's the trick: which one keeps you warm and safe this month?"
+
+{companion_name} looked at the door. "That one," they admitted. "The door. It's a need."
+
+"Then the door comes first. And the scarf isn't lost — it's just later! We'll start a scarf jar and fill it coin by coin. Saving works. You watched me learn it."
+
+So the door was mended that evening. They swung it to test it. The door said nothing at all.
+
+The scarf jar went up on the sill, and {child_name} dropped in the first coin as a gift.
+
+And because {child_name}'s tummy was full and {child_name}'s door didn't creak, the humming top was a happy want. {child_name} bought it with open eyes.
+
+The top spun and sang its low, wobbly song, slower and slower, while the lamps went out across the market.
+
+"When did you grow so wise, little {hero}?" said {companion_name}. "{refrain}."
+
+The top wobbled, and settled, and stopped.
+
+On the sill, the scarf jar held one coin. Two after market day. By the first cold moon it would be full — and the best part of the scarf story would arrive with winter.
 
 {refrain}.`,
   },
