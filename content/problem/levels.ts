@@ -105,70 +105,90 @@ All done. Everything done. {child_name} felt so good.
 {refrain}.`
   },
   '5-6': {
-    audioTemplate: `The {hero} lived in {setting}, where there was always something to do. All day the {hero} had run about, and now the sky was going soft. On this evening, the {hero} was busy with the {object_motif}, getting it ready before bed.
+    audioTemplate: `The {hero} lived in {setting} and had a pile of small troubles, all waiting at once. Three tangled things sat by the door: the {object_motif} needed mending, the path had stones that needed sorting, and the corner room had not been swept in days.
 
-But the {object_motif} had a knot in it. A small, tight knot, right in the middle. The {hero} frowned. The {hero} had wanted everything ready and neat, and a knot was not part of the plan. A knot was a problem, and problems were meant to be fixed fast.
+The {hero} looked at all three and felt the weight of them — not heavy exactly, just... much. All at once.
 
-So the {hero} grabbed the two ends and pulled. Nothing happened. The {hero} pulled harder, with both hands, leaning back. "Come on," the {hero} said. "Come loose!" Surely a good pull would fix it. That is what the {hero} always did with a stuck thing: push it, pull it, make it move.
+"I will fix them all today," the {hero} decided, and dashed to the corner room. Sweep, sweep, sweep. But then the {hero} looked at the {object_motif} and remembered — that was urgent too. So the {hero} dropped the broom and ran to the mending.
 
-The knot did not come loose. It did the opposite. Every time the {hero} yanked, the knot pulled itself smaller and tighter, until it was hard as a pebble. Now it would not budge at all. The {hero} tried using teeth. That did not work either. The {hero} tried picking at it with a fingernail, fast and cross, but the knot only seemed to laugh back.
+Stitch, stitch, stitch — halfway through a seam, the {hero} glanced out and thought of the stones. Were they still scattered? Yes. The {hero} set down the needle and went to sort the stones. One pile for big. One for small.
 
-The {hero} felt hot behind the eyes. The {hero} wanted to throw the whole thing across {setting}. It was not fair. The harder the {hero} tried, the worse it got. The {hero}'s hands were shaking a little now. Everything felt loud and rushed inside.
+Halfway through the sorting, the {hero} realized the room was still unswept. Back to sweep again. Then back to stitch again. Then the mind wandered to the stones. The {hero} felt the knot tightening in their chest.
 
-That was when {companion_name} wandered over and sat down nearby, watching quietly for a moment.
+An hour had passed. Three things had been begun. Zero had been finished. The {hero} sat down in the middle of the mess and felt something between tired and cross.
 
-"You are pulling awfully hard," {companion_name} said. "Try this first. Put it down. Take one slow breath. Then just look at it before you touch it again."
+{companion_name} arrived and took in the scene — a half-swept room, an unfinished seam, and scattered stones everywhere.
 
-The {hero} did not want to stop. Stopping felt like doing nothing. But the {hero} put the {object_motif} down anyway and took a slow breath, in through the nose and out through the mouth. Slowly, the noise inside began to settle.
+"You have three problems," {companion_name} said gently. "But your mind is trying to solve all three at once. No wonder it is confused."
 
-"Every good answer begins with a pause," said {companion_name}. "Your hands were so busy that your eyes never got a turn."
+The {hero} looked up. "What should I do?"
 
-So the {hero} looked. Really looked, the way you look for a lost shoe. The {hero} turned the {object_motif} one way, then the other, following the knot around and around. The {hero} noticed things now that hurrying had hidden. Which strand went over. Which strand went under. Where the loops crossed.
+"Work through one problem at a time," said {companion_name}. "Pick one. Do it all the way through, start to finish. Then pick the next. Then the last. One at a time, big jobs become small."
 
-And there it was. On one side, the tight part. But on the other side, hiding under a fold, was a loose loop the {hero} had never seen. Pulling the ends only made the tight part tighter. But that loop... that loop could open. The tight part and the loose loop were part of the very same knot; the {hero} had only ever tugged the wrong end.
+The {hero} felt something settle. One at a time. That felt possible.
 
-Gently now, the {hero} slipped a finger into the loop and eased it wide. The knot softened. It loosened. With one small tug in the right place, it slid apart and fell open.
+The {hero} pointed to the room. "This one first."
 
-The {object_motif} was loose and free again. The {hero} stared at it, then laughed out loud. All that pulling, and the answer had been sitting there the whole time, waiting to be seen. The {hero} could hardly believe it had ever felt stuck.
+So the {hero} swept the corner room. Carefully, thoroughly, every corner clean. The broom never left the hand. Sweep until done. The room gleamed.
 
-"You found it yourself," {companion_name} said. "You only had to stop long enough to look."
+"Done," said {companion_name}. "Now the next."
 
-The {hero} let out a big yawn. Outside, {setting} was growing quiet, the light turning slow and low. The {hero} folded the {object_motif} up neat and set it down for the night. The {hero} was calm now, calm all the way down.
+The {hero} picked up the {object_motif} and stitched the seam from beginning to end. Every stitch neat, the whole mending finished. The {object_motif} was whole again.
 
-Next time a problem came, the {hero} decided, there would be no yanking first. First a stop. First a breath. First a good, long look.
+"One more," said {companion_name}.
+
+The {hero} sorted the stones without distraction. Each one placed in the right pile. All sorted, all organized. Finished.
+
+Three things. Three times done.
+
+The {hero} looked around at the clean room, the mended {object_motif}, the ordered stones, and felt something untangle inside.
+
+"Work through one problem at a time," the {hero} said softly. "That is how it all gets done."
+
+Over {setting}, the light was turning slow and low. The {hero} sat with the {object_motif} close, and the tired feeling had changed to peaceful. Ready for sleep now, knowing the work was behind, not piling up ahead.
 
 {refrain}.`,
-    scriptTemplate: `{child_name} lived in {setting}, where there was always something to do. All day {child_name} had run about, and now the sky was going soft. On this evening, {child_name} was busy with the {object_motif}, getting it ready before bed.
+    scriptTemplate: `{child_name} lived in {setting} and had a pile of small troubles, all waiting at once. Three tangled things sat by the door: the {object_motif} needed mending, the path had stones that needed sorting, and the corner room had not been swept in days.
 
-But the {object_motif} had a knot in it. A small, tight knot, right in the middle. {child_name} frowned. {child_name} had wanted everything ready and neat, and a knot was not part of the plan. A knot was a problem, and problems were meant to be fixed fast.
+{child_name} looked at all three and felt the weight of them — not heavy exactly, just... much. All at once.
 
-So {child_name} grabbed the two ends and pulled. Nothing happened. {child_name} pulled harder, with both hands, leaning back. "Come on," {child_name} said. "Come loose!" Surely a good pull would fix it. That is what {child_name} always did with a stuck thing: push it, pull it, make it move.
+"I will fix them all today," {child_name} decided, and dashed to the corner room. Sweep, sweep, sweep. But then {child_name} looked at the {object_motif} and remembered — that was urgent too. So {child_name} dropped the broom and ran to the mending.
 
-The knot did not come loose. It did the opposite. Every time {child_name} yanked, the knot pulled itself smaller and tighter, until it was hard as a pebble. Now it would not budge at all. {child_name} tried using teeth. That did not work either. {child_name} tried picking at it with a fingernail, fast and cross, but the knot only seemed to laugh back.
+Stitch, stitch, stitch — halfway through a seam, {child_name} glanced out and thought of the stones. Were they still scattered? Yes. {child_name} set down the needle and went to sort the stones. One pile for big. One for small.
 
-{child_name} felt hot behind the eyes. {child_name} wanted to throw the whole thing across {setting}. It was not fair. The harder {child_name} tried, the worse it got. {child_name}'s hands were shaking a little now. Everything felt loud and rushed inside.
+Halfway through the sorting, {child_name} realized the room was still unswept. Back to sweep again. Then back to stitch again. Then the mind wandered to the stones. {child_name} felt the knot tightening in their chest.
 
-That was when {companion_name} wandered over and sat down nearby, watching quietly for a moment.
+An hour had passed. Three things had been begun. Zero had been finished. {child_name} sat down in the middle of the mess and felt something between tired and cross.
 
-"You are pulling awfully hard," {companion_name} said. "Try this first. Put it down. Take one slow breath. Then just look at it before you touch it again."
+{companion_name} arrived and took in the scene — a half-swept room, an unfinished seam, and scattered stones everywhere.
 
-{child_name} did not want to stop. Stopping felt like doing nothing. But {child_name} put the {object_motif} down anyway and took a slow breath, in through the nose and out through the mouth. Slowly, the noise inside began to settle.
+"You have three problems," {companion_name} said gently. "But your mind is trying to solve all three at once. No wonder it is confused."
 
-"Every good answer begins with a pause," said {companion_name}. "Your hands were so busy that your eyes never got a turn."
+{child_name} looked up. "What should I do?"
 
-So {child_name} looked. Really looked, the way you look for a lost shoe. {child_name} turned the {object_motif} one way, then the other, following the knot around and around. {child_name} noticed things now that hurrying had hidden. Which strand went over. Which strand went under. Where the loops crossed.
+"Work through one problem at a time," said {companion_name}. "Pick one. Do it all the way through, start to finish. Then pick the next. Then the last. One at a time, big jobs become small."
 
-And there it was. On one side, the tight part. But on the other side, hiding under a fold, was a loose loop {child_name} had never seen. Pulling the ends only made the tight part tighter. But that loop... that loop could open. The tight part and the loose loop were part of the very same knot; {child_name} had only ever tugged the wrong end.
+{child_name} felt something settle. One at a time. That felt possible.
 
-Gently now, {child_name} slipped a finger into the loop and eased it wide. The knot softened. It loosened. With one small tug in the right place, it slid apart and fell open.
+{child_name} pointed to the room. "This one first."
 
-The {object_motif} was loose and free again. {child_name} stared at it, then laughed out loud. All that pulling, and the answer had been sitting there the whole time, waiting to be seen. {child_name} could hardly believe it had ever felt stuck.
+So {child_name} swept the corner room. Carefully, thoroughly, every corner clean. The broom never left the hand. Sweep until done. The room gleamed.
 
-"You found it yourself," {companion_name} said. "You only had to stop long enough to look."
+"Done," said {companion_name}. "Now the next."
 
-{child_name} let out a big yawn. Outside, {setting} was growing quiet, the light turning slow and low. {child_name} folded the {object_motif} up neat and set it down for the night. {child_name} was calm now, calm all the way down.
+{child_name} picked up the {object_motif} and stitched the seam from beginning to end. Every stitch neat, the whole mending finished. The {object_motif} was whole again.
 
-Next time a problem came, {child_name} decided, there would be no yanking first. First a stop. First a breath. First a good, long look.
+"One more," said {companion_name}.
+
+{child_name} sorted the stones without distraction. Each one placed in the right pile. All sorted, all organized. Finished.
+
+Three things. Three times done.
+
+{child_name} looked around at the clean room, the mended {object_motif}, the ordered stones, and felt something untangle inside.
+
+"Work through one problem at a time," {child_name} said softly. "That is how it all gets done."
+
+Over {setting}, the light was turning slow and low. {child_name} sat with the {object_motif} close, and the tired feeling had changed to peaceful. Ready for sleep now, knowing the work was behind, not piling up ahead.
 
 {refrain}.`
   },
