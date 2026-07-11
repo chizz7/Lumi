@@ -62,7 +62,7 @@ The {object_motif} was lost under a pile. The door was stuck and would not open.
 
 {child_name} looked at all three and felt small. "I can fix it all!" said {child_name}. So {child_name} ran to the {object_motif}. Pick, pick, pick. But then {child_name} looked at the stuck door. "Oh! The door first!" {child_name} ran to push it. Push, push, push. But it would not budge.
 
-Then {child_name} saw the toys. All scattered. {child_name} the {hero} wanted to pick those up too.
+Then {child_name} saw the toys. All scattered. {child_name} wanted to pick those up too.
 
 Three things. All at once. {child_name} sat down and wanted to cry. Everything needed to be fixed but nothing was getting fixed.
 
@@ -363,8 +363,8 @@ Three problems. All three done.
 The light was turning gold over {setting}, and {child_name} held the {object_motif} close, knowing that tomorrow would bring more problems. But they also knew now that problems weren't solved by panic, or by juggling, or by trying to do everything at once. They were solved by focus. One thing at a time. All the way.
 
 {refrain}.`
-  },
-  default: {
+  }
+},
     audioTemplate: `The night was still over {setting} when the {hero} had a problem. Then another. Then another.
 
 The {hero} looked at all three and felt lost.
@@ -399,8 +399,6 @@ All done.
 {child_name} felt so much better. The night grew soft. The {object_motif} sat close, and all three problems were solved.
 
 {refrain}.`
-  }
-}
 },
 
   {
@@ -448,7 +446,7 @@ The {hero} yawned. Over {setting}, the stars came out, soft and slow.
 
 {child_name} stood on their toes. Reach. Reach. Reach. But no. Too high. The {object_motif} stayed on the shelf.
 
-{child_name} the {hero} tried to jump. Jump, jump, jump. Still too high. The {object_motif} did not come down.
+{child_name} tried to jump. Jump, jump, jump. Still too high. The {object_motif} did not come down.
 
 {child_name} felt stuck. The shelf was too high. {child_name} was too short. "I can't do this," said {child_name}.
 
@@ -609,8 +607,8 @@ Salt was the issue. Salt dissolved in water. So instead of scrubbing, what if th
 As evening settled over {setting}, {child_name} realized something fundamental: problems have multiple solutions, and rushing to the first one often means missing better approaches. The moment of pause — actually thinking before acting — changed everything.
 
 {refrain}.`
-  },
-  default: {
+  }
+},
     audioTemplate: `The {hero} tried one way to do something. It did not work.
 
 But {companion_name} said: "Think. Are there other ways?"
@@ -641,9 +639,7 @@ And that way worked.
 The {object_motif} was solved now. {child_name} held it close as the night grew soft over {setting}.
 
 {refrain}.`
-  }
-}
-},
+  },
 
   {
     ordinal: 3, title: 'Inside and Outside',
@@ -927,8 +923,8 @@ And slowly, strength returned — not the hurried recovery {child_name} had want
 {child_name} held the {object_motif}, feeling genuinely rested now, knowing that the deeper the understanding, the truer the solution.
 
 {refrain}.`
-  },
-  default: {
+  }
+},
     audioTemplate: `A lock on the door wouldn't open. The {hero} pushed the key. Nothing.
 
 The {hero} pushed harder. Still nothing.
@@ -943,7 +939,7 @@ They looked at the lock. Inside, hidden, the {hero} could not see: the mechanism
 
 The door opened.
 
-The {hero} understood: asking made the puzzle whole.
+"Asking makes the puzzle whole," said the {hero}. "The problem showed me its answer when I asked for help."
 
 {refrain}.`,
     scriptTemplate: `A lock on the door wouldn't open. {child_name} the {hero} pushed the key. Nothing.
@@ -960,12 +956,10 @@ They looked at the lock. Inside, hidden, {child_name} could not see: the mechani
 
 The door opened.
 
-{child_name} understood: asking made the puzzle whole.
+"Asking makes the puzzle whole," said {child_name}. "The problem showed me its answer when I asked for help."
 
 {refrain}.`
-  }
-}
-},
+  },
 
   {
     ordinal: 4, title: 'Trying Again',
@@ -1108,7 +1102,7 @@ The entire assembly slid together perfectly.
 The {hero} held the repaired {object_motif}, whole again. "Trying again is how we learn," the {hero} realized. The first attempt had been a necessary step, not a misstep.
 
 {refrain}.`,
-    scriptTemplate: `{child_name} the {hero} was rebuilding the {object_motif} after it had broken. There were seventeen small pieces, and {child_name} the {hero} tried to fit them together as they remembered them fitting before.
+    scriptTemplate: `{child_name} the {hero} was rebuilding the {object_motif} after it had broken. There were seventeen small pieces, and {child_name} tried to fit them together as they remembered them fitting before.
 
 The first assembly worked up to a point, then three pieces refused to fit at the end. {child_name} tried forcing them. Tried different orders. Nothing. The whole construction came apart in frustrated hands.
 
@@ -1130,7 +1124,7 @@ The entire assembly slid together perfectly.
 
 "You gathered information," {companion_name} corrected. "And that information let you solve it on the second try."
 
-{child_name} held the repaired {object_motif}, whole again, and understood: the first attempt had been a necessary step, not a misstep.
+{child_name} held the repaired {object_motif}, whole again. "Trying again is how we learn," {child_name} realized. The first attempt had been a necessary step, not a misstep.
 
 {refrain}.`
   },
@@ -1197,8 +1191,8 @@ This time, the repair held. Not perfect, but solid. The crack stayed sealed.
 {child_name} held the {object_motif}, understanding now that the wall they'd fixed was strong partly because it had been fixed badly first — that failure had held information that success needed.
 
 {refrain}.`
-  },
-  default: {
+  }
+},
     audioTemplate: `The {hero} tried to build something. The first try didn't work.
 
 But the try taught them something.
@@ -1225,9 +1219,7 @@ This time, it worked.
 {child_name} held the {object_motif}, knowing now that trying again was not failing. It was learning.
 
 {refrain}.`
-  }
-}
-},
+  },
 
   {
     ordinal: 5, title: 'Listen to What It Needs',
@@ -1419,7 +1411,7 @@ The {hero} didn't pull out the broken parts. Instead, they reinforced them caref
 
 It took longer. It required patience. But when the {hero} was done, the {object_motif} was not just repaired — it was renewed. The repair had become part of its history, not a scar upon it.
 
-"The {object_motif} was telling me what it needed," the {hero} said quietly. "Not to be attacked and fixed, but to be listened to and supported."
+"Listen to what it needs," the {hero} said quietly. "Not what I think it needs, but what it's actually asking for. That makes all the difference."
 
 "That's what listening means," said {companion_name}. "Understanding what the problem is actually asking for — not the loud, obvious demand — but the quiet truth underneath. Forcing is fast. Listening takes time. But listening gets you the right answer."
 
@@ -1444,15 +1436,15 @@ So {child_name} held the {object_motif} and really felt it. The material was old
 
 It took longer. It required patience. But when {child_name} was done, the {object_motif} was not just repaired — it was renewed. The repair had become part of its history, not a scar upon it.
 
-"The {object_motif} was telling me what it needed," {child_name} said quietly. "Not to be attacked and fixed, but to be listened to and supported."
+"Listen to what it needs," {child_name} said quietly. "Not what I think it needs, but what it's actually asking for. That makes all the difference."
 
 "That's what listening means," said {companion_name}. "Understanding what the problem is actually asking for — not the loud, obvious demand — but the quiet truth underneath. Forcing is fast. Listening takes time. But listening gets you the right answer."
 
 {child_name} held the {object_motif} close, understanding that the most skilled problem-solvers aren't the ones who attack hardest. They're the ones who listen most carefully to what the problem is actually, truly asking for.
 
 {refrain}.`
-  },
-  default: {
+  }
+},
     audioTemplate: `The {hero} faced a problem. The {hero} wanted to force it open. Push, push, push.
 
 But {companion_name} said: "Wait. Listen to what it is asking for."
@@ -1468,7 +1460,7 @@ The {hero} gave it what it needed, and the problem opened.
 The {object_motif} was held close. The night grew soft over {setting}.
 
 {refrain}.`,
-    scriptTemplate: `{child_name} the {hero} faced a problem. {child_name} the {hero} wanted to force it open. Push, push, push.
+    scriptTemplate: `{child_name} the {hero} faced a problem. {child_name} wanted to force it open. Push, push, push.
 
 But {companion_name} said: "Wait. Listen to what it is asking for."
 
@@ -1483,7 +1475,5 @@ Not force. But gentleness.
 The {object_motif} was held close. The night grew soft over {setting}.
 
 {refrain}.`
-  }
-}
 }
 ]
