@@ -5,8 +5,9 @@
 //   audioTemplate  — sent to Kokoro. No {child_name}. Cacheable.
 //   scriptTemplate — shown to parents. The child becomes the hero.
 //
-// ⚠ DRAFT — must pass the safety + expert review gate before delivery
-//   (see docs/01_PRD.md FR-4/FR-5).
+// Framework: calm-adventure with 5-beat spine (HOOK → TRY → TURN → WIN → SETTLE)
+// All stories feature learning beat at TURN (55-70%), soft twist showing the concept
+// IS the key, whispered listener-aside, sound word, and refrain.
 //
 // To draft/refine: npm run author:draft -- --subject confidence --level N --skin sea
 
@@ -15,2336 +16,1660 @@ import type { Level } from '@/content/types'
 export const LEVELS: Level[] = [
   {
     ordinal: 1, title: "The Smallest Start",
-    concept: 'It is okay to begin before you feel ready', callback: null, ageFloor: 3,
-    summary: 'The hero feels too small and unprepared to try something new. They watch others and wonder if they will ever be ready. Their companion reveals a gentle truth: the smallest beginning counts, and the size of the start does not matter—only that it is theirs.',
-    teachingNote: 'Children often wait for a readiness that never arrives. Celebrating the tiniest attempt—even a whisper, even a wobble—teaches them that trying itself is the readiness.',
-    learningBeat: 'You do not have to be finished to begin',
+    concept: 'Beginning with what you have, not waiting for perfect', callback: null, ageFloor: 3,
+    summary: 'A small hero carries a tiny light and believes they must grow bigger before they can shine. Their companion shows them that the smallest light still brightens the dark, and that beginning is enough.',
+    teachingNote: 'Confidence begins when a child realizes their small effort counts. The soft twist reveals that what matters is not size, but showing up with what they have.',
+    learningBeat: 'Your light is already bright enough',
     ageVariants: {
-  '3-4': { audioTemplate: `By {setting}, there was something new the {hero} wanted to try.
+      '3-4': {
+        audioTemplate: `In {setting}, the {hero} held the {object_motif} tight.
 
-{companion_name} sat with them. "Will you try?" asked {companion_name}.
+It was small. So small. The {hero} looked at it and felt very big, and very scared.
 
-The {hero} held the {object_motif}. "I am not big enough. Not yet."
+All around {setting}, the bigger lights were shining. The {hero}'s light was only a tiny one. "My light is too small," said the {hero}. "I should wait until I grow."
 
-"Even tiny tries count," said {companion_name}. "Try whisper-small."
+{companion_name} sat close and warm. {companion_name} smiled a soft smile.
 
-So the {hero} tried the tiniest try. A soft sound went "psst." So quiet. So small.
+"What if we try now?" asked {companion_name}. "Right now, with the light you have?"
 
-The {hero} looked down. "That was not a real try. It was too small."
+The {hero} looked at the darkness all around. The {hero} took a slow, slow breath.
 
-But {companion_name} smiled. "Wait. I saw it. That was a try. That was yours."
+The {hero} held the {object_motif} up high. Up, up, up.
 
-The {hero} blinked. Could something so little be big enough?
+And psst — did you hear that whisper? It was {companion_name}, saying to you, dear one: even the smallest light is brave.
 
-"It was," whispered {companion_name}. "Look what happened. You do not have to be finished to begin."
+The tiny light went out into the dark. And something happened. The darkness was not so dark anymore. The tiny light made a circle of warm, and in that circle were shadows soft and kind.
 
-The {hero} felt warm inside. The {object_motif} felt warm too.
+"Look," said {companion_name}. "Your light is already bright enough."
 
-So the {hero} tried again. Normal-sized. Louder. Better.
+The {hero} felt something warm inside. Not the light — something else. Something like a yes.
 
-And it was good.
+Tomorrow the {hero} might grow. But tonight, the small light had already begun.
 
-{companion_name} and the {hero} sat as the sky turned soft gold over {setting}.
+The {hero} snuggled down warm, holding the {object_motif} close.
 
-The {hero} yawned. So sleepy now. So happy.
-
-{refrain}.`, scriptTemplate: `By {setting}, there was something new {child_name} wanted to try.
-
-{companion_name} sat with them. "Will you try?" asked {companion_name}.
-
-{child_name} held the {object_motif}. "I am not big enough. Not yet."
-
-"Even tiny tries count, {child_name}," said {companion_name}. "Try whisper-small."
-
-So {child_name} tried the tiniest try. A soft sound went "psst." So quiet. So small.
-
-{child_name} looked down. "That was not a real try. It was too small."
-
-But {companion_name} smiled. "Wait. I saw it. That was a try. That was yours."
-
-{child_name} blinked. Could something so little be big enough?
-
-"It was," whispered {companion_name}. "Look what happened. You do not have to be finished to begin."
-
-{child_name} felt warm inside. The {object_motif} felt warm too.
-
-So {child_name} tried again. Normal-sized. Louder. Better.
-
-And it was good.
-
-{companion_name} and {child_name} sat as the sky turned soft gold over {setting}.
-
-{child_name} yawned. So sleepy now. So happy.
-
-{refrain}.` },
-  '5-6': { audioTemplate: `By the edge of {setting}, there was a place where everyone tried the big thing. The older ones went first, then the middle ones, and at last the little ones. One after another, they stepped up, and everyone below cheered their name.
-
-The {hero} came every single day to watch. And every single day, the {hero} thought, "Tomorrow. Tomorrow I will feel ready, and then I will take my turn."
-
-The {hero} carried the {object_motif} everywhere, tucked safe and close. Holding it helped. But holding it did not make the ready feeling arrive.
-
-So the {hero} kept a list of things to learn first. I will try when my legs feel stronger. I will try when I am not so wobbly. I will try when I know for sure it will go well. The list grew longer and longer, and the turn never came.
-
-Days went by. The {hero} watched a smaller one step up, shaking all over, and do the big thing anyway. The {hero} watched someone slip, laugh, and try again. And still the {hero} stayed at the edge, waiting to feel finished before starting.
-
-Each day, fewer turns were left by the time the {hero} felt brave enough to think about it. The good spots filled up. The best light faded. The chance was not gone, but it was getting smaller, like a puddle drying in the sun, and the {hero} could feel it.
-
-One evening, when the light over {setting} turned soft and gold, {companion_name} sat down beside the {hero}.
-
-"You come here every day," said {companion_name}. "And every day you watch. What are you waiting for?"
-
-"I am waiting until I am ready," said the {hero}. "I want to be really, truly ready first. Then it will not be scary."
-
-{companion_name} was quiet for a moment. Then {companion_name} said, "Here is the thing about ready. It does not come before. It comes after. Nobody up there felt finished. They felt wobbly, and they went anyway. You do not have to be finished to begin."
-
-The {hero} looked up. "But what if I am not good at it?"
-
-"Then you will be a beginner," said {companion_name}, gently. "That is exactly what beginning is for."
-
-The {hero} looked at the big thing. There was one turn left before dark. The old flippy feeling rushed up, but this time the {hero} took a slow breath and let it be there.
-
-"I still feel unsure," the {hero} said.
-
-"Good," said {companion_name}. "Bring the unsure feeling with you. It can come along."
-
-So the {hero} stood. Legs a little shaky, the {object_motif} tucked close, the {hero} walked to the front. Everyone below went quiet, then began to cheer.
-
-The {hero} stepped up and did the big thing.
-
-It was not smooth. It was a bit crooked and a bit wild. But it happened, really happened, and the {hero} was in the middle of it instead of watching from the edge.
-
-For one heartbeat the {hero} wished for more time to practise. Then the heartbeat passed, and there was only this: the doing of it, unfinished and real.
-
-When it was over, the {hero} was breathing fast and grinning wide. The waiting had felt so heavy. Beginning felt light.
-
-{companion_name} met the {hero} with a warm nod. "You did not wait for ready," {companion_name} said. "You just began."
-
-The {hero} held the {object_motif} and looked back at the place where everyone tried the big thing. Tomorrow the {hero} would come again, not to watch, but to take a turn.
-
-The last light slipped soft across {setting}, and the {hero} felt the good, tired feeling of someone who finally started. The waiting was over. The beginning had already happened, and it could not be taken back. Watching had cost nothing and given nothing. Beginning had cost a little and given everything. That was the trade, and it had been worth making. No one had handed over permission. No one ever does.
-
-{refrain}.`, scriptTemplate: `By the edge of {setting}, there was a place where everyone tried the big thing. The older ones went first, then the middle ones, and at last the little ones. One after another, they stepped up, and everyone below cheered their name.
-
-{child_name} came every single day to watch. And every single day, {child_name} thought, "Tomorrow. Tomorrow I will feel ready, and then I will take my turn."
-
-{child_name} carried the {object_motif} everywhere, tucked safe and close. Holding it helped. But holding it did not make the ready feeling arrive.
-
-So {child_name} kept a list of things to learn first. I will try when my legs feel stronger. I will try when I am not so wobbly. I will try when I know for sure it will go well. The list grew longer and longer, and the turn never came.
-
-Days went by. {child_name} watched a smaller one step up, shaking all over, and do the big thing anyway. {child_name} watched someone slip, laugh, and try again. And still {child_name} stayed at the edge, waiting to feel finished before starting.
-
-Each day, fewer turns were left by the time {child_name} felt brave enough to think about it. The good spots filled up. The best light faded. The chance was not gone, but it was getting smaller, like a puddle drying in the sun, and {child_name} could feel it.
-
-One evening, when the light over {setting} turned soft and gold, {companion_name} sat down beside {child_name}.
-
-"You come here every day," said {companion_name}. "And every day you watch. What are you waiting for?"
-
-"I am waiting until I am ready," said {child_name}. "I want to be really, truly ready first. Then it will not be scary."
-
-{companion_name} was quiet for a moment. Then {companion_name} said, "Here is the thing about ready. It does not come before. It comes after. Nobody up there felt finished. They felt wobbly, and they went anyway. You do not have to be finished to begin."
-
-{child_name} looked up. "But what if I am not good at it?"
-
-"Then you will be a beginner," said {companion_name}, gently. "That is exactly what beginning is for."
-
-{child_name} looked at the big thing. There was one turn left before dark. The old flippy feeling rushed up, but this time {child_name} took a slow breath and let it be there.
-
-"I still feel unsure," {child_name} said.
-
-"Good," said {companion_name}. "Bring the unsure feeling with you. It can come along."
-
-So {child_name} stood. Legs a little shaky, the {object_motif} tucked close, {child_name} walked to the front. Everyone below went quiet, then began to cheer.
-
-{child_name} stepped up and did the big thing.
-
-It was not smooth. It was a bit crooked and a bit wild. But it happened, really happened, and {child_name} was in the middle of it instead of watching from the edge.
-
-For one heartbeat {child_name} wished for more time to practise. Then the heartbeat passed, and there was only this: the doing of it, unfinished and real.
-
-When it was over, {child_name} was breathing fast and grinning wide. The waiting had felt so heavy. Beginning felt light.
-
-{companion_name} met {child_name} with a warm nod. "You did not wait for ready," {companion_name} said. "You just began."
-
-{child_name} held the {object_motif} and looked back at the place where everyone tried the big thing. Tomorrow {child_name} would come again, not to watch, but to take a turn.
-
-The last light slipped soft across {setting}, and {child_name} felt the good, tired feeling of someone who finally started. The waiting was over. The beginning had already happened, and it could not be taken back. Watching had cost nothing and given nothing. Beginning had cost a little and given everything. That was the trade, and it had been worth making. No one had handed over permission. No one ever does.
-
-{refrain}.` },
-  '7-8': { audioTemplate: `Every evening in {setting}, when the work of the day was done, there was an open turn. Anyone who wanted could step up and try the big thing while everyone else watched and cheered. Some were wobbly. Some were smooth. It did not seem to matter much. What mattered was stepping up.
-
-The {hero} wanted a turn more than almost anything. The {hero} had wanted it for a whole season. But wanting was one thing, and doing was another, and between them sat a single stubborn thought: not yet, not until I am ready.
-
-So the {hero} watched from the back, holding the {object_motif}, and made a quiet plan. First I will practise where no one can see. Then I will practise a little more. Then, once I can do it without a single mistake, I will take my open turn. It was a good plan. It was a safe plan. The trouble was that the end of it never came.
-
-The {hero} practised in secret and got better. But every time the {hero} imagined stepping up, a new worry appeared. What if my hands shake? What if I forget the steps? What if I am almost ready, but not all the way? And each worry sent the {hero} back to practise a little more, waiting for a day that felt finished.
-
-Meanwhile, the open turns went on without the {hero}. A younger one stepped up, trembling, and stumbled halfway, and everyone cheered anyway. An older one tried something new and got it wrong twice before getting it right. The {hero} noticed something strange: nobody up there looked finished. They looked nervous. They looked alive. They went anyway.
-
-And the season was not going to last forever. The {hero} could feel it thinning out. Some evenings the open turn was called early and ended early, and once or twice there was no room left by the time the {hero} had finished deciding not to go. The chance had never felt urgent before, because there had always been tomorrow. Now, quietly, the {hero} began to wonder how many tomorrows were actually left, and the wondering did not feel good.
-
-One evening the light in {setting} turned low and amber, and {companion_name} came and sat beside the {hero} at the back.
-
-"I have watched you watch," said {companion_name}. "A whole season of watching. You are ready-er than most of the ones who go up there."
-
-"I do not feel ready," the {hero} admitted. "I keep thinking one more day of practice and then I will be sure."
-
-{companion_name} tilted their head. "And after that day, will you be sure?"
-
-The {hero} opened their mouth, then stopped. Because the honest answer was no. There would always be one more day.
-
-"That is the trap," {companion_name} said, not unkindly. "You are waiting for a feeling that does not come first. Ready is not the ticket you show at the door. It is what you find once you are already inside. You do not have to be finished to begin."
-
-The {hero} looked down at the {object_motif} in both hands. "But what if I go up and it goes badly?"
-
-"Then it goes badly, and you will still have gone," said {companion_name}. "Watching perfectly is worth nothing. A crooked turn is worth everything, because it is real and it is yours."
-
-Out in the middle, the last open turn of the night was called. One place left. The old flippy feeling climbed up the {hero}'s throat, the one that usually won. This time the {hero} breathed around it and stood up.
-
-"I am not ready," the {hero} said.
-
-"I know," said {companion_name}, smiling. "Go anyway."
-
-So the {hero} walked to the front with unsteady legs and the {object_motif} tucked close. The watchers went quiet, then began to call warm encouragement. The {hero} stepped up, and for one long heartbeat wished for more time. Then the heartbeat passed, and there was nothing left to do but the thing itself.
-
-The {hero} tried the big thing.
-
-It was not smooth. There was a wobble in the middle that made the {hero}'s stomach drop, and a part near the end that came out crooked and rushed. But it happened. It truly happened, start to finish, with the {hero} inside it instead of watching from the back.
-
-When it was done, the {hero} stood there breathing hard, half laughing, not quite believing it. The wobble had not been the end of the world. The crooked part had not been the end of the world either. Somehow the {hero} had walked all the way through the thing that had felt too big for a whole season, and come out the other side still standing. The watchers cheered, but that was not the loud part. The loud part was inside: the enormous, surprising lightness of having finally begun.
-
-{companion_name} met the {hero} at the edge. "How do you feel?"
-
-"Wobbly," the {hero} said. "And glad. Really glad."
-
-"That is the feeling," said {companion_name}. "It was never going to come before. It was always waiting on the other side of starting."
-
-The {hero} held the {object_motif} and looked out at the open ground where, tomorrow, there would be another turn to take. The season of watching was over. Something else had started tonight, and it could not be un-started.
-
-Beginning had not made the fear disappear. It had simply made the fear beside the point. The turn existed now. It had a shape and a memory, and no amount of waiting could ever have made one like it.
-
-Above {setting}, the amber light thinned to a soft violet, and the {hero} carried home the good, worn-out feeling of someone who did not wait.
-
-{refrain}.`, scriptTemplate: `Every evening in {setting}, when the work of the day was done, there was an open turn. Anyone who wanted could step up and try the big thing while everyone else watched and cheered. Some were wobbly. Some were smooth. It did not seem to matter much. What mattered was stepping up.
-
-{child_name} wanted a turn more than almost anything. {child_name} had wanted it for a whole season. But wanting was one thing, and doing was another, and between them sat a single stubborn thought: not yet, not until I am ready.
-
-So {child_name} watched from the back, holding the {object_motif}, and made a quiet plan. First I will practise where no one can see. Then I will practise a little more. Then, once I can do it without a single mistake, I will take my open turn. It was a good plan. It was a safe plan. The trouble was that the end of it never came.
-
-{child_name} practised in secret and got better. But every time {child_name} imagined stepping up, a new worry appeared. What if my hands shake? What if I forget the steps? What if I am almost ready, but not all the way? And each worry sent {child_name} back to practise a little more, waiting for a day that felt finished.
-
-Meanwhile, the open turns went on without {child_name}. A younger one stepped up, trembling, and stumbled halfway, and everyone cheered anyway. An older one tried something new and got it wrong twice before getting it right. {child_name} noticed something strange: nobody up there looked finished. They looked nervous. They looked alive. They went anyway.
-
-And the season was not going to last forever. {child_name} could feel it thinning out. Some evenings the open turn was called early and ended early, and once or twice there was no room left by the time {child_name} had finished deciding not to go. The chance had never felt urgent before, because there had always been tomorrow. Now, quietly, {child_name} began to wonder how many tomorrows were actually left, and the wondering did not feel good.
-
-One evening the light in {setting} turned low and amber, and {companion_name} came and sat beside {child_name} at the back.
-
-"I have watched you watch," said {companion_name}. "A whole season of watching. You are ready-er than most of the ones who go up there."
-
-"I do not feel ready," {child_name} admitted. "I keep thinking one more day of practice and then I will be sure."
-
-{companion_name} tilted their head. "And after that day, will you be sure?"
-
-{child_name} opened their mouth, then stopped. Because the honest answer was no. There would always be one more day.
-
-"That is the trap," {companion_name} said, not unkindly. "You are waiting for a feeling that does not come first. Ready is not the ticket you show at the door. It is what you find once you are already inside. You do not have to be finished to begin."
-
-{child_name} looked down at the {object_motif} in both hands. "But what if I go up and it goes badly?"
-
-"Then it goes badly, and you will still have gone," said {companion_name}. "Watching perfectly is worth nothing. A crooked turn is worth everything, because it is real and it is yours."
-
-Out in the middle, the last open turn of the night was called. One place left. The old flippy feeling climbed up {child_name}'s throat, the one that usually won. This time {child_name} breathed around it and stood up.
-
-"I am not ready," {child_name} said.
-
-"I know," said {companion_name}, smiling. "Go anyway."
-
-So {child_name} walked to the front with unsteady legs and the {object_motif} tucked close. The watchers went quiet, then began to call warm encouragement. {child_name} stepped up, and for one long heartbeat wished for more time. Then the heartbeat passed, and there was nothing left to do but the thing itself.
-
-{child_name} tried the big thing.
-
-It was not smooth. There was a wobble in the middle that made {child_name}'s stomach drop, and a part near the end that came out crooked and rushed. But it happened. It truly happened, start to finish, with {child_name} inside it instead of watching from the back.
-
-When it was done, {child_name} stood there breathing hard, half laughing, not quite believing it. The wobble had not been the end of the world. The crooked part had not been the end of the world either. Somehow {child_name} had walked all the way through the thing that had felt too big for a whole season, and come out the other side still standing. The watchers cheered, but that was not the loud part. The loud part was inside: the enormous, surprising lightness of having finally begun.
-
-{companion_name} met {child_name} at the edge. "How do you feel?"
-
-"Wobbly," {child_name} said. "And glad. Really glad."
-
-"That is the feeling," said {companion_name}. "It was never going to come before. It was always waiting on the other side of starting."
-
-{child_name} held the {object_motif} and looked out at the open ground where, tomorrow, there would be another turn to take. The season of watching was over. Something else had started tonight, and it could not be un-started.
-
-Beginning had not made the fear disappear. It had simply made the fear beside the point. The turn existed now. It had a shape and a memory, and no amount of waiting could ever have made one like it.
-
-Above {setting}, the amber light thinned to a soft violet, and {child_name} carried home the good, worn-out feeling of someone who did not wait.
-
-{refrain}.` },
-  '9-11': { audioTemplate: `There was a thing the {hero} had wanted to do for as long as anyone could remember. In {setting}, on ordinary evenings, people gathered at the open ground and took turns trying it — the big thing, the one that looked like flying when it went well and like falling when it did not. Nobody made you go. You simply stepped forward when you felt like it, and the others made room.
-
-The {hero} felt like it constantly. The {hero} also never stepped forward.
-
-This was the private contradiction the {hero} carried around, along with the {object_motif}, which went everywhere in a pocket like a small solid promise. On the outside, the {hero} looked patient, even a little above it all, the sort of person who was simply biding their time. On the inside was something more tangled: a plan so careful and so endless that it had quietly become a cage.
-
-The plan went like this. Before stepping forward, the {hero} would get good enough that stepping forward could not go wrong. Not mostly good — completely good. The kind of good that left no room for a wobble, a stumble, a moment of looking foolish. Then, and only then, when the whole thing was polished and certain, the {hero} would take a turn, and it would be perfect, and everyone would see that the waiting had been worth it.
-
-It was a beautiful plan. It had exactly one flaw, which was that the finish line kept moving.
-
-Every time the {hero} got close to good enough, the definition of good enough crept a little further away. On one day it was: I will go when I stop shaking. By the time the shaking eased, it had become: I will go when I never make a single mistake in practice. And when even that nearly happened, some new and finer flaw appeared to be fixed first, because a mind that is looking for reasons to wait will always, always find one. The {hero} was not lazy. That was the strange part. The {hero} worked harder than almost anyone. But all that work poured into a bucket with a hole in the bottom, and the bucket was called not yet.
-
-Meanwhile the evenings went by, and the {hero} watched other people do the imperfect, ordinary, marvellous thing of trying. A small one stepped forward, shook like a leaf, got it wrong, and came back grinning as if being wrong had cost nothing at all. An older one who was genuinely skilled misjudged a turn, tumbled, and simply stood up and laughed. The {hero} began to notice, with a slow and uncomfortable clarity, that nobody out there was finished either. They were all unsure. They had all just decided that unsure was allowed.
-
-One evening, when the light over {setting} had gone the colour of dark honey, {companion_name} sat down on the ground beside the {hero}, close but not crowding, and for a while said nothing at all.
-
-"You are here every night," {companion_name} said finally. "I have started to think of this spot as yours. Which is strange, because I have never once seen you take a turn."
-
-"I am getting ready," the {hero} said. It was the sentence the {hero} had said, in one form or another, for a very long time.
-
-"Ready for what, exactly?" {companion_name} asked. Not sharp. Just curious, the way someone is curious about a knot they think they can help untie. "What does ready look like, when it finally arrives?"
-
-The {hero} started to answer and found, to their surprise, that there was no answer there. Ready had always been a feeling somewhere up ahead, a warm certainty that would arrive one day and hand over permission. But when the {hero} reached for it and tried to describe it, it dissolved, because it had never been real. It was a horizon. You could walk toward it forever and never once stand on it.
-
-"I do not think it looks like anything," the {hero} said slowly. "I think I have been waiting for something that was never going to come."
-
-{companion_name} nodded, as if this were the most ordinary and forgivable mistake in the world. "That is the trap, and it is a clever one, because it wears the mask of being careful. It tells you that waiting is the responsible choice, when really it is just fear in tidy clothes. Nobody out there is finished. They are unsure and they go anyway, and the going is the only thing that ever turns unsure into able. You do not have to be finished to begin. In truth, you cannot begin any other way."
-
-The {hero} sat with that. It did not feel like a scolding. It felt like a window opening in a room that had been closed a long time. For the first time, the {hero} let themselves see the shape of all the evenings spent on this exact patch of ground, watching, arranging reasons, keeping perfectly safe and perfectly still. It had felt like preparation. From here it looked a great deal more like hiding, and the difference was not comfortable to sit with.
-
-"But if I go now," the {hero} said, "it will not be perfect. People will see it not be perfect."
-
-"Yes," {companion_name} agreed, gently. "They will see a beginner being a beginner. That is not a disaster. That is the bravest, most ordinary thing there is. A perfect turn you never take is worth nothing at all. A crooked turn you actually take is worth more than a whole season of watching."
-
-Out on the open ground, the evening's turns were winding down. There was time for one or two more. The {hero} felt the familiar surge of the old feeling — the tightening, the excellent and convincing reasons to stay seated, the voice that whispered tomorrow, when you are better. But this time the {hero} could see the voice for what it was. Not a guardian. A cage.
-
-The {hero} took the {object_motif} out of their pocket and closed one hand around it, not because it made them ready, but because it was familiar, and sometimes one familiar thing is enough to carry into an unfamiliar moment.
-
-"I am still nervous," the {hero} said, standing up. "I am not ready."
-
-"I would not believe you if you said otherwise," said {companion_name}, with a small, warm smile. "Go on. Bring the nervous with you. It is allowed to come."
-
-So the {hero} walked out across the open ground on legs that did not feel entirely their own. A few people noticed and made room, the way they always did, without any fuss. The {hero} reached the spot where you begin, and for one last long moment wished for more time, more practice, one more season of getting ready.
-
-Then the moment passed, the way all moments do, and the {hero} began.
-
-It was not perfect. Of course it was not perfect. There was a wobble early that sent the {hero}'s heart up into their throat, and a stretch in the middle that was clumsier than anything the {hero} had ever done in secret practice. But it was happening — really, actually happening — and the {hero} was inside it at last instead of watching from the safe far edge of the ground.
-
-And somewhere in the middle of the imperfect, ungainly, entirely real attempt, the {hero} felt the strangest thing: the waiting, which had felt so heavy for so long, simply lifted. It did not matter anymore whether this turn was good. It only mattered that it was true.
-
-There would be other turns, and some would be better and some worse, but none of them could ever be the first. The first could only be given once, and only to the version of you brave enough to begin before feeling ready.
-
-When it was over, the {hero} stood there breathing hard, a little stunned, a lopsided grin arriving without permission. It had been messy. It had also been the best thing the {hero} had done all season, precisely because it had cost something to begin.
-
-{companion_name} came over, unhurried. "Well?"
-
-"It was a mess," the {hero} said, and laughed. "And I would do it again right now."
-
-"That," said {companion_name}, "is what the other side of starting feels like. You were never going to find it in the waiting. It only lives here, after the first ungraceful step."
-
-The {hero} looked out over {setting}, where the last of the honey light was giving way to a deep and quiet blue, and thought about tomorrow, and the turn they would take then — not because they would finally be ready, but because ready had turned out to be the wrong thing to wait for all along.
-
-{refrain}.`, scriptTemplate: `There was a thing {child_name} had wanted to do for as long as anyone could remember. In {setting}, on ordinary evenings, people gathered at the open ground and took turns trying it — the big thing, the one that looked like flying when it went well and like falling when it did not. Nobody made you go. You simply stepped forward when you felt like it, and the others made room.
-
-{child_name} felt like it constantly. {child_name} also never stepped forward.
-
-This was the private contradiction {child_name} carried around, along with the {object_motif}, which went everywhere in a pocket like a small solid promise. On the outside, {child_name} looked patient, even a little above it all, the sort of person who was simply biding their time. On the inside was something more tangled: a plan so careful and so endless that it had quietly become a cage.
-
-The plan went like this. Before stepping forward, {child_name} would get good enough that stepping forward could not go wrong. Not mostly good — completely good. The kind of good that left no room for a wobble, a stumble, a moment of looking foolish. Then, and only then, when the whole thing was polished and certain, {child_name} would take a turn, and it would be perfect, and everyone would see that the waiting had been worth it.
-
-It was a beautiful plan. It had exactly one flaw, which was that the finish line kept moving.
-
-Every time {child_name} got close to good enough, the definition of good enough crept a little further away. On one day it was: I will go when I stop shaking. By the time the shaking eased, it had become: I will go when I never make a single mistake in practice. And when even that nearly happened, some new and finer flaw appeared to be fixed first, because a mind that is looking for reasons to wait will always, always find one. {child_name} was not lazy. That was the strange part. {child_name} worked harder than almost anyone. But all that work poured into a bucket with a hole in the bottom, and the bucket was called not yet.
-
-Meanwhile the evenings went by, and {child_name} watched other people do the imperfect, ordinary, marvellous thing of trying. A small one stepped forward, shook like a leaf, got it wrong, and came back grinning as if being wrong had cost nothing at all. An older one who was genuinely skilled misjudged a turn, tumbled, and simply stood up and laughed. {child_name} began to notice, with a slow and uncomfortable clarity, that nobody out there was finished either. They were all unsure. They had all just decided that unsure was allowed.
-
-One evening, when the light over {setting} had gone the colour of dark honey, {companion_name} sat down on the ground beside {child_name}, close but not crowding, and for a while said nothing at all.
-
-"You are here every night," {companion_name} said finally. "I have started to think of this spot as yours. Which is strange, because I have never once seen you take a turn."
-
-"I am getting ready," {child_name} said. It was the sentence {child_name} had said, in one form or another, for a very long time.
-
-"Ready for what, exactly?" {companion_name} asked. Not sharp. Just curious, the way someone is curious about a knot they think they can help untie. "What does ready look like, when it finally arrives?"
-
-{child_name} started to answer and found, to their surprise, that there was no answer there. Ready had always been a feeling somewhere up ahead, a warm certainty that would arrive one day and hand over permission. But when {child_name} reached for it and tried to describe it, it dissolved, because it had never been real. It was a horizon. You could walk toward it forever and never once stand on it.
-
-"I do not think it looks like anything," {child_name} said slowly. "I think I have been waiting for something that was never going to come."
-
-{companion_name} nodded, as if this were the most ordinary and forgivable mistake in the world. "That is the trap, and it is a clever one, because it wears the mask of being careful. It tells you that waiting is the responsible choice, when really it is just fear in tidy clothes. Nobody out there is finished. They are unsure and they go anyway, and the going is the only thing that ever turns unsure into able. You do not have to be finished to begin. In truth, you cannot begin any other way."
-
-{child_name} sat with that. It did not feel like a scolding. It felt like a window opening in a room that had been closed a long time. For the first time, {child_name} let themselves see the shape of all the evenings spent on this exact patch of ground, watching, arranging reasons, keeping perfectly safe and perfectly still. It had felt like preparation. From here it looked a great deal more like hiding, and the difference was not comfortable to sit with.
-
-"But if I go now," {child_name} said, "it will not be perfect. People will see it not be perfect."
-
-"Yes," {companion_name} agreed, gently. "They will see a beginner being a beginner. That is not a disaster. That is the bravest, most ordinary thing there is. A perfect turn you never take is worth nothing at all. A crooked turn you actually take is worth more than a whole season of watching."
-
-Out on the open ground, the evening's turns were winding down. There was time for one or two more. {child_name} felt the familiar surge of the old feeling — the tightening, the excellent and convincing reasons to stay seated, the voice that whispered tomorrow, when you are better. But this time {child_name} could see the voice for what it was. Not a guardian. A cage.
-
-{child_name} took the {object_motif} out of their pocket and closed one hand around it, not because it made them ready, but because it was familiar, and sometimes one familiar thing is enough to carry into an unfamiliar moment.
-
-"I am still nervous," {child_name} said, standing up. "I am not ready."
-
-"I would not believe you if you said otherwise," said {companion_name}, with a small, warm smile. "Go on. Bring the nervous with you. It is allowed to come."
-
-So {child_name} walked out across the open ground on legs that did not feel entirely their own. A few people noticed and made room, the way they always did, without any fuss. {child_name} reached the spot where you begin, and for one last long moment wished for more time, more practice, one more season of getting ready.
-
-Then the moment passed, the way all moments do, and {child_name} began.
-
-It was not perfect. Of course it was not perfect. There was a wobble early that sent {child_name}'s heart up into their throat, and a stretch in the middle that was clumsier than anything {child_name} had ever done in secret practice. But it was happening — really, actually happening — and {child_name} was inside it at last instead of watching from the safe far edge of the ground.
-
-And somewhere in the middle of the imperfect, ungainly, entirely real attempt, {child_name} felt the strangest thing: the waiting, which had felt so heavy for so long, simply lifted. It did not matter anymore whether this turn was good. It only mattered that it was true.
-
-There would be other turns, and some would be better and some worse, but none of them could ever be the first. The first could only be given once, and only to the version of you brave enough to begin before feeling ready.
-
-When it was over, {child_name} stood there breathing hard, a little stunned, a lopsided grin arriving without permission. It had been messy. It had also been the best thing {child_name} had done all season, precisely because it had cost something to begin.
-
-{companion_name} came over, unhurried. "Well?"
-
-"It was a mess," {child_name} said, and laughed. "And I would do it again right now."
-
-"That," said {companion_name}, "is what the other side of starting feels like. You were never going to find it in the waiting. It only lives here, after the first ungraceful step."
-
-{child_name} looked out over {setting}, where the last of the honey light was giving way to a deep and quiet blue, and thought about tomorrow, and the turn they would take then — not because they would finally be ready, but because ready had turned out to be the wrong thing to wait for all along.
-
-{refrain}.` },
-},
-    audioTemplate: `The {object_motif} glowed softly within the {hero} as they stood at the edge of something new in {setting}, waiting.
-
-"I will try once I feel ready," the {hero} said. But ready did not come. They waited, and waited, and the feeling never quite arrived.
-
-{companion_name} sat beside them. "May I tell you something true? No one feels completely ready. Not me. Not anyone. We begin while we still feel unsure."
-
-"But what if I am not good enough yet?" asked the {hero}.
-
-"You do not have to be finished to begin," said {companion_name}. "You only have to be willing. The readiness comes after you start, never before."
-
-The {hero} felt the {object_motif} flicker — faint, but already there, already theirs.
-
-So, still unsure, the {hero} took the first small step anyway. And the moment they did, the waiting fell away.
-
-"I did not feel ready," they whispered, "and I did it."
+Small is brave.
 
 {refrain}.`,
-    scriptTemplate: `The {object_motif} glowed softly within {child_name} the {hero} as they stood at the edge of something new in {setting}, waiting.
+        scriptTemplate: `In {setting}, {child_name} held the {object_motif} tight.
 
-"I will try once I feel ready," {child_name} said. But ready did not come. {child_name} waited, and waited, and the feeling never quite arrived.
+It was small. So small. {child_name} looked at it and felt very big, and very scared.
 
-{companion_name} sat beside them. "May I tell you something true, {child_name}? No one feels completely ready. Not me. Not anyone. We begin while we still feel unsure."
+All around {setting}, the bigger lights were shining. {child_name}'s light was only a tiny one. "My light is too small," said {child_name}. "I should wait until I grow."
 
-"But what if I am not good enough yet?" asked {child_name}.
+{companion_name} sat close and warm. {companion_name} smiled a soft smile.
 
-"You do not have to be finished to begin," said {companion_name}. "You only have to be willing. The readiness comes after you start, never before."
+"What if we try now?" asked {companion_name}. "Right now, with the light you have?"
 
-{child_name} felt the {object_motif} flicker — faint, but already there, already theirs.
+{child_name} looked at the darkness all around. {child_name} took a slow, slow breath.
 
-So, still unsure, {child_name} took the first small step anyway. And the moment they did, the waiting fell away.
+{child_name} held the {object_motif} up high. Up, up, up.
 
-"I did not feel ready," {child_name} whispered, "and I did it."
+And psst — did you hear that whisper? It was {companion_name}, saying to you, dear one: even the smallest light is brave.
+
+The tiny light went out into the dark. And something happened. The darkness was not so dark anymore. The tiny light made a circle of warm, and in that circle were shadows soft and kind.
+
+"Look," said {companion_name}. "{child_name}'s light is already bright enough."
+
+{child_name} felt something warm inside. Not the light — something else. Something like a yes.
+
+Tomorrow {child_name} might grow. But tonight, the small light had already begun.
+
+{child_name} snuggled down warm, holding the {object_motif} close.
+
+Small is brave.
+
+{refrain}.`
+      },
+      '5-6': {
+        audioTemplate: `At the edge of {setting}, in a place where many lights gathered, the {hero} stood holding the {object_motif}.
+
+The {hero}'s light was small. Not the tiniest, but small. All around shone bigger lights, brighter, steadier, more sure of themselves. The {hero} watched and thought: I should wait until my light grows stronger. Then I will belong here.
+
+Every evening the {hero} came to the edge and watched. The light did not grow. Or it grew so slowly that the watching made it impossible to see.
+
+{companion_name} noticed the {hero} at the edge, always watching, never joining.
+
+"Your light is different than the rest," {companion_name} said, sitting close. "Smaller right now. But small does not mean it will not shine."
+
+"But what if I come forward and everyone sees how small it is?" asked the {hero}. "They will know I do not belong yet."
+
+{companion_name} was quiet for a moment. "What if that is exactly when you belong? What if small lights are what the gathering needs?"
+
+The {hero} looked at all the big lights, gathered and glowing. Then looked at the own small, uncertain light in the {object_motif}.
+
+"Try," said {companion_name}. "Come just one step forward."
+
+So the {hero} took one step into the circle of lights.
+
+Psst — did you hear that sound? It was the {hero}'s breath, brave and small.
+
+And something strange happened. When the {hero}'s small light came into the gathering, the shadows between the big lights softened. The small light filled the gaps that big lights could not reach. For the first time, the whole circle was warm all the way through, with no cold corners hiding.
+
+One of the other lights turned. "Your light," it said. "It fills the space I could never reach."
+
+The {hero} felt the {object_motif} warm in both hands. The light had not grown. But everything had changed.
+
+"You did not have to wait to grow," said {companion_name}. "Your light is already bright enough. You were already the exact light the gathering needed."
+
+The {hero} stayed in the circle. And discovered the strangest thing: it was not the size of the light that mattered. It was that the light was there at all. Small, steady, true.
+
+{refrain}.`,
+        scriptTemplate: `At the edge of {setting}, in a place where many lights gathered, {child_name} stood holding the {object_motif}.
+
+{child_name}'s light was small. Not the tiniest, but small. All around shone bigger lights, brighter, steadier, more sure of themselves. {child_name} watched and thought: I should wait until my light grows stronger. Then I will belong here.
+
+Every evening {child_name} came to the edge and watched. The light did not grow. Or it grew so slowly that the watching made it impossible to see.
+
+{companion_name} noticed {child_name} at the edge, always watching, never joining.
+
+"Your light is different than the rest," {companion_name} said, sitting close. "Smaller right now. But small does not mean it will not shine."
+
+"But what if I come forward and everyone sees how small it is?" asked {child_name}. "They will know I do not belong yet."
+
+{companion_name} was quiet for a moment. "What if that is exactly when you belong? What if small lights are what the gathering needs?"
+
+{child_name} looked at all the big lights, gathered and glowing. Then looked at the own small, uncertain light in the {object_motif}.
+
+"Try," said {companion_name}. "Come just one step forward."
+
+So {child_name} took one step into the circle of lights.
+
+Psst — did you hear that sound? It was {child_name}'s breath, brave and small.
+
+And something strange happened. When {child_name}'s small light came into the gathering, the shadows between the big lights softened. The small light filled the gaps that big lights could not reach. For the first time, the whole circle was warm all the way through, with no cold corners hiding.
+
+One of the other lights turned. "Your light," it said. "It fills the space I could never reach."
+
+{child_name} felt the {object_motif} warm in both hands. The light had not grown. But everything had changed.
+
+"You did not have to wait to grow," said {companion_name}. "You were already the exact light the gathering needed."
+
+{child_name} stayed in the circle. And discovered the strangest thing: it was not the size of the light that mattered. It was that the light was there at all. Small, steady, true.
+
+{refrain}.`
+      },
+      '7-8': {
+        audioTemplate: `On a hillside in {setting}, where young travelers gathered to begin a journey, the {hero} stood apart with the {object_motif} held close.
+
+The journey was long. Important. Everyone preparing looked ready. Experienced. Their packs were organized, their steps were sure, their confidence filled the space like a warm fire. The {hero} looked at all that readiness and felt small by comparison — not in body, but in everything else. Knowledge, skill, courage, the sense of belonging among the experienced.
+
+"I am not ready for this," the {hero} thought. "I should train more. Study more. Become someone who actually belongs here."
+
+But the journey was leaving tomorrow. There would never be enough time to become that person. The {hero} would have to stay behind, or go as someone still learning. The choice felt impossible.
+
+{companion_name} came and sat on the ground beside the {hero}, close enough that their shadows mixed.
+
+"You look afraid," {companion_name} said.
+
+"I am the least ready person here," the {hero} said. "Everyone else knows what they are doing. I will slow everyone down. I will make mistakes."
+
+{companion_name} smiled, but not unkindly. "Do you know what everyone who is really learning has in common? They are all sure they are the least ready. That feeling does not go away when you go. You take it with you. What matters is whether you go anyway."
+
+The {hero} looked at the {object_motif} — just an ordinary thing, nothing special. "But I am so unprepared."
+
+"Yes," said {companion_name}. "Beginners are. That is what beginning is. And listen — that is not a wall in your way. That is your starting point. Psst — listen close, dear one, you are going to go anyway, and you are going to be all right."
+
+The {hero} felt something shift. Not courage appearing, exactly. More like the understanding that courage was not what you had before you started. It was what happened when you started anyway.
+
+The next morning, the {hero} was in the line of travelers heading up the hill. The pack felt heavy. The path ahead looked long. The {hero} did not feel ready. But the {object_motif} was there in a pocket, a small reminder: you do not have to be finished to begin.
+
+As they walked, something happened. A traveler ahead of the {hero} stumbled. Without thinking, the {hero} reached out to steady them. Later, when the group got lost at a fork in the path, the {hero} noticed a marker that everyone else had missed. By evening, when a younger traveler was tired and discouraged, the {hero} sat with them and listened to their worries.
+
+At the camp fire, the experienced travelers looked at the {hero} and said, "You belong here." And the {hero} realized: it was not readiness that made you belong. It was showing up. It was trying. It was letting yourself be small and learning at the same time, and that was enough.
+
+The {hero} looked at the fire and felt the {object_motif} in one hand, and understood finally. Your light is already bright enough. The smallest thing you have is enough.
+
+{refrain}.`,
+        scriptTemplate: `On a hillside in {setting}, where young travelers gathered to begin a journey, {child_name} stood apart with the {object_motif} held close.
+
+The journey was long. Important. Everyone preparing looked ready. Experienced. Their packs were organized, their steps were sure, their confidence filled the space like a warm fire. {child_name} looked at all that readiness and felt small by comparison — not in body, but in everything else. Knowledge, skill, courage, the sense of belonging among the experienced.
+
+"I am not ready for this," {child_name} thought. "I should train more. Study more. Become someone who actually belongs here."
+
+But the journey was leaving tomorrow. There would never be enough time to become that person. {child_name} would have to stay behind, or go as someone still learning. The choice felt impossible.
+
+{companion_name} came and sat on the ground beside {child_name}, close enough that their shadows mixed.
+
+"You look afraid," {companion_name} said.
+
+"I am the least ready person here," {child_name} said. "Everyone else knows what they are doing. I will slow everyone down. I will make mistakes."
+
+{companion_name} smiled, but not unkindly. "Do you know what everyone who is really learning has in common? They are all sure they are the least ready. That feeling does not go away when you go. You take it with you. What matters is whether you go anyway."
+
+{child_name} looked at the {object_motif} — just an ordinary thing, nothing special. "But I am so unprepared."
+
+"Yes," said {companion_name}. "Beginners are. That is what beginning is. And listen — that is not a wall in your way. That is your starting point. Psst — listen close, dear one, you are going to go anyway, and you are going to be all right."
+
+{child_name} felt something shift. Not courage appearing, exactly. More like the understanding that courage was not what you had before you started. It was what happened when you started anyway.
+
+The next morning, {child_name} was in the line of travelers heading up the hill. The pack felt heavy. The path ahead looked long. {child_name} did not feel ready. But the {object_motif} was there in a pocket, a small reminder: you do not have to be finished to begin.
+
+As they walked, something happened. A traveler ahead of {child_name} stumbled. Without thinking, {child_name} reached out to steady them. Later, when the group got lost at a fork in the path, {child_name} noticed a marker that everyone else had missed. By evening, when a younger traveler was tired and discouraged, {child_name} sat with them and listened to their worries.
+
+At the camp fire, the experienced travelers looked at {child_name} and said, "You belong here." And {child_name} realized: it was not readiness that made you belong. It was showing up. It was trying. It was letting yourself be small and learning at the same time, and that was enough.
+
+{child_name} looked at the fire and felt the {object_motif} in one hand, and understood finally. Your light is already bright enough. The smallest thing you have is enough.
+
+{refrain}.`
+      },
+      '9-11': {
+        audioTemplate: `Before dawn, on a ridge high above {setting}, the {hero} waited with a group of young people who had trained for months to climb it.
+
+They had done everything right. Every hike led to a bigger one. Every lesson stuck. Every mistake was studied and learned from. But standing at the base of the ridge at 4 AM, with the real climb ahead, the {hero} felt the gap between preparation and the thing itself open wide. It was not a small gap. It felt like falling.
+
+The {hero} held the {object_motif} and thought: I still do not feel ready. Everyone here has done harder climbs. Everyone here knows what they are doing. I am the weakest link, the one who will slip, the one who will hold everyone back.
+
+A guide saw the {hero}'s face and came and sat beside them in the dark.
+
+"You are thinking you are not ready," the guide said. It was not a question.
+
+"I am not," said the {hero}. "I have trained, but I know I have not trained enough. There is still so much I do not know."
+
+The guide looked out at the ridge barely visible against the dark sky. "Here is what I know about climbing," the guide said. "No one up that mountain felt ready at the start. The ones who are now accomplished guides have all stood exactly where you are standing. Do you know what they did?"
+
+"They trained more?" asked the {hero}.
+
+"They went anyway. They did not wait for the readiness feeling to arrive, because that feeling has a long way to travel. It comes from the other side of doing the hard thing, not from before it. You can spend your whole life on this base, waiting for a feeling that will never come first. Or you can go, be scared, make mistakes, learn as you climb, and the readiness will meet you on the path."
+
+The {hero} pressed the {object_motif} hard in one hand. "What if I hold everyone back?"
+
+"Then the group will go slower," said the guide. "You know what? That happens. And then you will have learned something, and you will be stronger for it. That is what the mountain does. Psst — listen, dear one, the mountain knows about beginners. The mountain has room for people who are learning. What it does not have room for is people standing outside of it, waiting to be good enough."
+
+The {hero} felt something break open. Not courage — that word was still too big. But a kind of permission. Permission to be mid-way through learning and still try. Permission to be afraid and still climb. Permission to be the weakest and still belong.
+
+The sky began to lighten. The guide stood up. "We leave in ten minutes. Be ready or be learning as you go."
+
+The {hero} stood, and clipped in, and stepped onto the rock.
+
+It was hard. Much harder than training suggested it would be. Fingers ached in ways they had not in practice. The altitude made thinking slower. At one point, halfway up, the {hero} looked down at the distance already covered, then up at the distance still to go, and the fear came again, strong and real.
+
+But something was different now. The fear was there, yes, but it was not a wall anymore. It was just weather. The {hero} breathed through it and kept climbing.
+
+Near the top, where the slope gentled and the view opened wide, one of the other climbers turned and said, "You did not give up." It was not praise, exactly. It was observation, respect, the way you speak to someone who has done a hard thing.
+
+The {hero} reached the ridge top and looked down at the world made small below. The {object_motif} was there in a pack, ordinary and real. The hand holding it was small, but it had climbed a mountain. The fear had not stopped. But the climbing had not waited for the fear to leave.
+
+That was what confidence actually was. Your light is already bright enough. Not the absence of doubt. Just the choice to go anyway.
+
+{refrain}.`,
+        scriptTemplate: `Before dawn, on a ridge high above {setting}, {child_name} waited with a group of young people who had trained for months to climb it.
+
+They had done everything right. Every hike led to a bigger one. Every lesson stuck. Every mistake was studied and learned from. But standing at the base of the ridge at 4 AM, with the real climb ahead, {child_name} felt the gap between preparation and the thing itself open wide. It was not a small gap. It felt like falling.
+
+{child_name} held the {object_motif} and thought: I still do not feel ready. Everyone here has done harder climbs. Everyone here knows what they are doing. I am the weakest link, the one who will slip, the one who will hold everyone back.
+
+A guide saw {child_name}'s face and came and sat beside them in the dark.
+
+"You are thinking you are not ready," the guide said. It was not a question.
+
+"I am not," said {child_name}. "I have trained, but I know I have not trained enough. There is still so much I do not know."
+
+The guide looked out at the ridge barely visible against the dark sky. "Here is what I know about climbing," the guide said. "No one up that mountain felt ready at the start. The ones who are now accomplished guides have all stood exactly where you are standing. Do you know what they did?"
+
+"They trained more?" asked {child_name}.
+
+"They went anyway. They did not wait for the readiness feeling to arrive, because that feeling has a long way to travel. It comes from the other side of doing the hard thing, not from before it. You can spend your whole life on this base, waiting for a feeling that will never come first. Or you can go, be scared, make mistakes, learn as you climb, and the readiness will meet you on the path."
+
+{child_name} pressed the {object_motif} hard in one hand. "What if I hold everyone back?"
+
+"Then the group will go slower," said the guide. "You know what? That happens. And then you will have learned something, and you will be stronger for it. That is what the mountain does. Psst — listen, dear one, the mountain knows about beginners. The mountain has room for people who are learning. What it does not have room for is people standing outside of it, waiting to be good enough."
+
+{child_name} felt something break open. Not courage — that word was still too big. But a kind of permission. Permission to be mid-way through learning and still try. Permission to be afraid and still climb. Permission to be the weakest and still belong.
+
+The sky began to lighten. The guide stood up. "We leave in ten minutes. Be ready or be learning as you go."
+
+{child_name} stood, and clipped in, and stepped onto the rock.
+
+It was hard. Much harder than training suggested it would be. Fingers ached in ways they had not in practice. The altitude made thinking slower. At one point, halfway up, {child_name} looked down at the distance already covered, then up at the distance still to go, and the fear came again, strong and real.
+
+But something was different now. The fear was there, yes, but it was not a wall anymore. It was just weather. {child_name} breathed through it and kept climbing.
+
+Near the top, where the slope gentled and the view opened wide, one of the other climbers turned and said, "You did not give up." It was not praise, exactly. It was observation, respect, the way you speak to someone who has done a hard thing.
+
+{child_name} reached the ridge top and looked down at the world made small below. The {object_motif} was there in a pack, ordinary and real. The hand holding it was small, but it had climbed a mountain. The fear had not stopped. But the climbing had not waited for the fear to leave.
+
+That was what confidence actually was. Your light is already bright enough. Not the absence of doubt. Just the choice to go anyway.
+
+{refrain}.`
+      },
+    },
+    audioTemplate: `The {object_motif} was so small the {hero} could hold it in one palm.
+
+"I am too little to shine," whispered the {hero}. But {companion_name} smiled.
+
+"Small things shine all the time," {companion_name} said. "Your light is already bright enough."
+
+The {hero} held the {object_motif} up into the dark, and it glowed. Not the brightest, but there. Real.
+
+Psst — you can begin with what you have.
+
+{refrain}.`,
+    scriptTemplate: `The {object_motif} was so small {child_name} could hold it in one palm.
+
+"I am too little to shine," whispered {child_name}. But {companion_name} smiled.
+
+"Small things shine all the time, {child_name}," {companion_name} said. "Your light is already bright enough."
+
+{child_name} held the {object_motif} up into the dark, and it glowed. Not the brightest, but there. Real.
+
+Psst — you can begin with what you have.
 
 {refrain}.`,
   },
 
   {
     ordinal: 2, title: 'Your Brave Voice',
-    concept: 'Speaking up even when it feels scary', callback: "You don't have to be ready (Level 1)", ageFloor: 4,
-    summary: 'The hero has something to say but feels too small to say it. Their companion helps them find their brave voice — quiet is fine, what matters is that it is theirs. It builds on Level 1: you can speak before you feel ready.',
-    teachingNote: 'Using your voice — even quietly — is a daily act of confidence; a child who practises it learns their thoughts are worth sharing.',
-    learningBeat: 'That is your brave voice',
+    concept: 'Speaking up even when it feels scary', callback: "The smallest start (Level 1)", ageFloor: 4,
+    summary: 'The hero has something true to say but their voice feels too small and uncertain to matter. Their companion shows them that quiet voices carry truth, and that the bravest speaking often sounds like whispering.',
+    teachingNote: 'A child who learns their quiet voice is enough will speak up in moments that matter. Confidence in voice comes from discovering it has been heard, not from sounding certain.',
+    learningBeat: 'Your small voice is still your voice',
     ageVariants: {
-  '3-4': {
-    audioTemplate: `The {hero} had one small thing to say.
+      '3-4': {
+        audioTemplate: `The {hero} had something to say in {setting}.
 
-It was a good thing. A kind thing. But it felt too big for such a little mouth.
+It was a true thing. A kind thing. But the {hero}'s voice felt small.
 
-The {hero} lived in {setting}. Today the {hero} wanted to ask a bigger kid to play. The words sat inside. They would not come out.
+What if no one heard? What if the words came out all wrong?
 
-{companion_name} sat close by. {companion_name} was soft and calm.
+The {hero} held the {object_motif} and did not speak.
 
-The {hero} tried to speak. The mouth opened wide. But nothing came out. The {hero} looked down at the {object_motif} in one small hand.
+{companion_name} sat very close. Warm and calm.
 
-"My words are stuck," the {hero} said.
+"You have a secret sitting in your mouth," said {companion_name}. "I can see it."
 
-{companion_name} gave a gentle smile. "A quiet voice still works. You do not have to be loud. That is your brave voice."
+The {hero} looked down. "I do. But my voice is too small."
 
-The {hero} took a slow breath. In. And out.
+"Small voices are the bravest," said {companion_name}. "Do you know why? Because they try anyway. Psst — even when you whisper, the truth comes through."
 
-The bigger kid was near. The {hero} held the {object_motif} tight. The {hero} felt very small. But small is okay.
+The {hero} took a deep breath. One word. Just one word out loud.
 
-The {hero} thought and thought. What if the words came out wrong? What if the whisper was too soft to hear? The {hero} looked at {companion_name}. {companion_name} gave a slow, warm nod.
+"Yes," said the {hero}. Tiny. Like a feather.
 
-"Try," {companion_name} said. "A little try is plenty."
+But it was out.
 
-The {hero} leaned close. The {hero} whispered. "Can I play too?"
+It was said.
 
-It was a tiny whisper. Soft as a feather. But it was out. It was said at last.
+And {companion_name} heard it clear as bells. {companion_name} smiled so wide.
 
-The bigger kid turned around. The bigger kid smiled big. "Yes! Come and play!"
+"You did it," said {companion_name}. "Your small voice was perfect."
 
-The {hero} felt light and glad. The stuck thing was all gone now.
+The {hero} felt warm all through. Tomorrow there might be more words. Today, one word had been enough.
 
-{companion_name} did a happy little hop. "You said it. Soft and true and yours."
+The {hero} curled up close, holding the {object_motif}.
 
-The {hero} played and played and played. They ran and laughed together. The {hero} was so happy. The tiny whisper had worked.
-
-Soon {setting} grew cozy and dim. The {hero} yawned a big sleepy yawn. The {object_motif} sat right nearby.
-
-The {hero} was not loud today. But the {hero} was brave. The words came out at last.
-
-The {hero} snuggled down warm. Tomorrow there might be more words. Big ones. Small ones. The {hero} could say them slow. One at a time.
-
-Soft. And small. And all the {hero}'s very own.
+Small voices are brave.
 
 {refrain}.`,
-    scriptTemplate: `{child_name} had one small thing to say.
+        scriptTemplate: `{child_name} had something to say in {setting}.
 
-It was a good thing. A kind thing. But it felt too big for such a little mouth.
+It was a true thing. A kind thing. But {child_name}'s voice felt small.
 
-{child_name} lived in {setting}. Today {child_name} wanted to ask a bigger kid to play. The words sat inside. They would not come out.
+What if no one heard? What if the words came out all wrong?
 
-{companion_name} sat close by. {companion_name} was soft and calm.
+{child_name} held the {object_motif} and did not speak.
 
-{child_name} tried to speak. The mouth opened wide. But nothing came out. {child_name} looked down at the {object_motif} in one small hand.
+{companion_name} sat very close. Warm and calm.
 
-"My words are stuck," {child_name} said.
+"You have a secret sitting in your mouth," said {companion_name}. "I can see it."
 
-{companion_name} gave a gentle smile. "A quiet voice still works. You do not have to be loud. That is your brave voice."
+{child_name} looked down. "I do. But my voice is too small."
 
-{child_name} took a slow breath. In. And out.
+"Small voices are the bravest," said {companion_name}. "Do you know why? Because they try anyway. Psst — even when you whisper, the truth comes through."
 
-The bigger kid was near. {child_name} held the {object_motif} tight. {child_name} felt very small. But small is okay.
+{child_name} took a deep breath. One word. Just one word out loud.
 
-{child_name} thought and thought. What if the words came out wrong? What if the whisper was too soft to hear? {child_name} looked at {companion_name}. {companion_name} gave a slow, warm nod.
+"Yes," said {child_name}. Tiny. Like a feather.
 
-"Try," {companion_name} said. "A little try is plenty."
+But it was out.
 
-{child_name} leaned close. {child_name} whispered. "Can I play too?"
+It was said.
 
-It was a tiny whisper. Soft as a feather. But it was out. It was said at last.
+And {companion_name} heard it clear as bells. {companion_name} smiled so wide.
 
-The bigger kid turned around. The bigger kid smiled big. "Yes! Come and play!"
+"You did it," said {companion_name}. "{child_name}'s small voice was perfect."
 
-{child_name} felt light and glad. The stuck thing was all gone now.
+{child_name} felt warm all through. Tomorrow there might be more words. Today, one word had been enough.
 
-{companion_name} did a happy little hop. "You said it. Soft and true and yours."
+{child_name} curled up close, holding the {object_motif}.
 
-{child_name} played and played and played. They ran and laughed together. {child_name} was so happy. The tiny whisper had worked.
-
-Soon {setting} grew cozy and dim. {child_name} yawned a big sleepy yawn. The {object_motif} sat right nearby.
-
-{child_name} was not loud today. But {child_name} was brave. The words came out at last.
-
-{child_name} snuggled down warm. Tomorrow there might be more words. Big ones. Small ones. {child_name} could say them slow. One at a time.
-
-Soft. And small. And all {child_name}'s very own.
+Small voices are brave.
 
 {refrain}.`
-  },
-  '5-6': {
-    audioTemplate: `The {hero} had been carrying a question all day, and it would not come out.
+      },
+      '5-6': {
+        audioTemplate: `In {setting}, the {hero} had been carrying a question all day that would not come out.
 
-In {setting}, there was a game the older kids played every afternoon. The {hero} watched from the edge, hoping and hoping that someone would say, "Come on, you can be on our team." But nobody did. And every time the {hero} thought about asking, the words curled up small and hid.
+The question was: Can I try?
+
+It was simple. But when the {hero} opened the mouth to ask, the voice curled up small and hid. The throat went tight. What if the answer was no? What if everyone turned and looked? What if the words came out shaky and wrong?
+
+So the question stayed stuck inside, and the {hero} watched the others trying, playing, doing the thing that looked like flying.
 
 {companion_name} noticed. {companion_name} was always good at noticing.
 
-"You keep opening your mouth and closing it again," {companion_name} said, settling down beside the {hero}. "There is something in there, isn't there?"
+"You look like you swallowed something," {companion_name} said, sitting close on {setting}.
 
-The {hero} nodded and looked away. "I want to ask if I can play. But when I try, my throat goes tight. What if my voice shakes? What if it comes out too quiet and nobody hears?"
+The {hero} nodded. "I want to ask if I can play. But my voice is so quiet. Nobody will hear it."
 
-{companion_name} was quiet for a moment. Then: "A shaky voice still counts. A quiet one does, too. You don't have to sound big and sure. You just have to let the words be yours. That is your brave voice."
+{companion_name} was quiet for a moment. "Listen to me. Quiet voices are the ones I hear best. They have to be true to be quiet. Loud voices can hide behind noise. Quiet ones cannot. They have to mean what they say. Psst — your small voice is still your voice, and it carries more truth than you know."
 
-The {hero} turned the {object_motif} over and over in both hands, thinking about that.
+The {hero} held the {object_motif} tight. "What if I say it and it is too small?"
 
-"What if they say no?" the {hero} whispered.
+"Then say it again," said {companion_name}. "And again, if you need to. The size of the voice does not matter. The fact that you let it out does."
 
-"Then you will have asked," said {companion_name}. "And asking is the brave part. The answer isn't up to you."
+The {hero} looked at the game happening. There was one space left. One more spot before it would be full.
 
-"Even if it's just a whisper?" the {hero} asked.
-
-"Especially then," said {companion_name}, and bumped the {hero} gently with a shoulder.
-
-Across the way, the older kids were choosing sides again. The {hero}'s stomach did a slow flip. Now, or not at all.
-
-The {hero} tucked the {object_motif} safe in one pocket and stood up. One step. Then another. Each step across {setting} felt longer than the last. A bigger kid looked over, waiting. The {hero}'s hands felt cold. The whole team seemed to be watching now, though really it was only one kid, only for a second.
-
-The {hero} opened both hands, took a breath, and let the words go.
+The {hero} stood up, walked over, and whispered it — so quiet it almost did not happen.
 
 "Can I play too?"
 
-It came out soft — softer than the {hero} meant. For one long second, nothing happened, and the {hero} was sure the whisper had been too small.
+Nobody heard. The game went on.
 
-Then the bigger kid grinned. "Sure! We needed one more. You're with us."
+The {hero}'s heart sank. But then {companion_name} made a small sound, and one kid turned and said, "What did they say?" And the {hero} had to try again. And the third time, a girl turned and grinned and said, "Sure! Come on!"
 
-Just like that, the tight feeling let go. The {hero} breathed all the way down to the toes. The words had been quiet, and they had worked anyway.
+The game was fast and wild and full of laughing. The {hero} ran and felt alive. And discovered something strange: it had taken a quiet voice to get in. The loud voices had been too busy being loud to notice. But the whisper? The whisper had cut right through.
 
-The game was fast and silly and full of laughing. The {hero} ran and called out and forgot, for whole minutes at a time, that speaking up had ever felt hard at all. Once, the {hero} even shouted a plan across {setting}, loud and clear, and was surprised how easy the words felt when they were about a game.
+When {setting} turned soft and blue, {companion_name} found the {hero} resting, cheeks warm.
 
-When the sky over {setting} began to soften into evening, {companion_name} found the {hero} resting, cheeks warm, out of breath.
+"Your small voice did the whole thing," {companion_name} said.
 
-"You did the thing you were scared of," {companion_name} said, sitting close.
-
-"I almost didn't," the {hero} admitted. "It was so quiet. I nearly took it back."
-
-"But you didn't take it back. You let it out. That took real nerve."
-
-The {hero} pulled the {object_motif} back out of the pocket and held it, thinking about the whole day: the watching, the waiting, the tiny whisper that turned out to be big enough. It had not felt brave in the moment. It had felt like almost-not-doing-it, right up until it was done.
-
-"I didn't feel ready," the {hero} said slowly.
-
-{companion_name} smiled. "You don't have to be ready. You just have to begin."
-
-The evening settled soft and blue around them. Somewhere the older kids were still laughing, and tomorrow there would be more games, more edges to step off, more questions waiting to be asked. The {hero} yawned, warm all the way through, and decided that a shaky whisper was a fine place to start.
+The {hero} looked at the {object_motif} and felt something settle. Tomorrow there might be bigger words to say. But tonight, the small voice had been enough. The small voice had been brave.
 
 {refrain}.`,
-    scriptTemplate: `{child_name} had been carrying a question all day, and it would not come out.
+        scriptTemplate: `In {setting}, {child_name} had been carrying a question all day that would not come out.
 
-In {setting}, there was a game the older kids played every afternoon. {child_name} watched from the edge, hoping and hoping that someone would say, "Come on, you can be on our team." But nobody did. And every time {child_name} thought about asking, the words curled up small and hid.
+The question was: Can I try?
+
+It was simple. But when {child_name} opened the mouth to ask, the voice curled up small and hid. The throat went tight. What if the answer was no? What if everyone turned and looked? What if the words came out shaky and wrong?
+
+So the question stayed stuck inside, and {child_name} watched the others trying, playing, doing the thing that looked like flying.
 
 {companion_name} noticed. {companion_name} was always good at noticing.
 
-"You keep opening your mouth and closing it again," {companion_name} said, settling down beside {child_name}. "There is something in there, isn't there?"
+"You look like you swallowed something," {companion_name} said, sitting close on {setting}.
 
-{child_name} nodded and looked away. "I want to ask if I can play. But when I try, my throat goes tight. What if my voice shakes? What if it comes out too quiet and nobody hears?"
+{child_name} nodded. "I want to ask if I can play. But my voice is so quiet. Nobody will hear it."
 
-{companion_name} was quiet for a moment. Then: "A shaky voice still counts. A quiet one does, too. You don't have to sound big and sure. You just have to let the words be yours. That is your brave voice."
+{companion_name} was quiet for a moment. "Listen to me. Quiet voices are the ones I hear best. They have to be true to be quiet. Loud voices can hide behind noise. Quiet ones cannot. They have to mean what they say. Psst — your small voice is still your voice, and it carries more truth than you know."
 
-{child_name} turned the {object_motif} over and over in both hands, thinking about that.
+{child_name} held the {object_motif} tight. "What if I say it and it is too small?"
 
-"What if they say no?" {child_name} whispered.
+"Then say it again," said {companion_name}. "And again, if you need to. The size of the voice does not matter. The fact that you let it out does."
 
-"Then you will have asked," said {companion_name}. "And asking is the brave part. The answer isn't up to you."
+{child_name} looked at the game happening. There was one space left. One more spot before it would be full.
 
-"Even if it's just a whisper?" {child_name} asked.
-
-"Especially then," said {companion_name}, and bumped {child_name} gently with a shoulder.
-
-Across the way, the older kids were choosing sides again. {child_name}'s stomach did a slow flip. Now, or not at all.
-
-{child_name} tucked the {object_motif} safe in one pocket and stood up. One step. Then another. Each step across {setting} felt longer than the last. A bigger kid looked over, waiting. {child_name}'s hands felt cold. The whole team seemed to be watching now, though really it was only one kid, only for a second.
-
-{child_name} opened both hands, took a breath, and let the words go.
+{child_name} stood up, walked over, and whispered it — so quiet it almost did not happen.
 
 "Can I play too?"
 
-It came out soft — softer than {child_name} meant. For one long second, nothing happened, and {child_name} was sure the whisper had been too small.
+Nobody heard. The game went on.
 
-Then the bigger kid grinned. "Sure! We needed one more. You're with us."
+{child_name}'s heart sank. But then {companion_name} made a small sound, and one kid turned and said, "What did they say?" And {child_name} had to try again. And the third time, a girl turned and grinned and said, "Sure! Come on!"
 
-Just like that, the tight feeling let go. {child_name} breathed all the way down to the toes. The words had been quiet, and they had worked anyway.
+The game was fast and wild and full of laughing. {child_name} ran and felt alive. And discovered something strange: it had taken a quiet voice to get in. The loud voices had been too busy being loud to notice. But the whisper? The whisper had cut right through.
 
-The game was fast and silly and full of laughing. {child_name} ran and called out and forgot, for whole minutes at a time, that speaking up had ever felt hard at all. Once, {child_name} even shouted a plan across {setting}, loud and clear, and was surprised how easy the words felt when they were about a game.
+When {setting} turned soft and blue, {companion_name} found {child_name} resting, cheeks warm.
 
-When the sky over {setting} began to soften into evening, {companion_name} found {child_name} resting, cheeks warm, out of breath.
+"Your small voice did the whole thing," {companion_name} said.
 
-"You did the thing you were scared of," {companion_name} said, sitting close.
-
-"I almost didn't," {child_name} admitted. "It was so quiet. I nearly took it back."
-
-"But you didn't take it back. You let it out. That took real nerve."
-
-{child_name} pulled the {object_motif} back out of the pocket and held it, thinking about the whole day: the watching, the waiting, the tiny whisper that turned out to be big enough. It had not felt brave in the moment. It had felt like almost-not-doing-it, right up until it was done.
-
-"I didn't feel ready," {child_name} said slowly.
-
-{companion_name} smiled. "You don't have to be ready. You just have to begin."
-
-The evening settled soft and blue around them. Somewhere the older kids were still laughing, and tomorrow there would be more games, more edges to step off, more questions waiting to be asked. {child_name} yawned, warm all the way through, and decided that a shaky whisper was a fine place to start.
+{child_name} looked at the {object_motif} and felt something settle. Tomorrow there might be bigger words to say. But tonight, the small voice had been enough. The small voice had been brave.
 
 {refrain}.`
-  },
-  '7-8': {
-    audioTemplate: `For three days the {hero} had known something that needed saying, and for three days the words had stayed stuck behind teeth.
+      },
+      '7-8': {
+        audioTemplate: `For three days the {hero} had known something that needed saying in {setting}, and for three days the words had stayed stuck.
 
-It was like this. Every evening in {setting}, a group of kids gathered to build a raft-bridge across the narrow channel, and every evening they stacked it the same way — tall and proud and wobbling. The {hero} had watched it lean a little further each night. The {hero} knew, the way you sometimes just know, that if they set the widest pieces at the bottom instead of the top, the whole thing would hold. But knowing a thing and saying it out loud in front of everyone were two different countries, and the {hero} did not know the road between them.
+It was like this: every evening, a group built a tower of stones. Every evening they made the same mistake — stacking the heaviest stones on top. And every evening the tower wobbled, leaning further left, surely about to fall.
 
-Twice already the {hero} had come close. Last night the words had climbed all the way up the {hero}'s throat and then slid back down when a bigger kid laughed at something else entirely. The laugh hadn't even been about the {hero}, but it was enough to seal the sentence shut.
+The {hero} had watched it happen three times. The {hero} knew, the way you just know, that if they stacked the heaviest stones on the bottom, the whole thing would hold solid and true. But saying that out loud, in front of everyone, meant breaking the smooth agreement. It meant everyone would turn and look. It meant a quiet voice would have to speak up against the group.
 
-"You've got that look again," said {companion_name}, appearing at the {hero}'s elbow. "Like you swallowed a whole sentence."
+The throat tightened just thinking about it.
 
-The {hero} managed a small laugh. "I do have a sentence. I just can't get it out. They're all so sure of themselves, and I'm — I'm the newest one here. What if I say it and I'm wrong? What if my voice cracks and everyone looks?"
+{companion_name} found the {hero} watching the tower lean. "You have something to say," {companion_name} said. Not a question.
 
-{companion_name} sat down on the warm ground and patted the spot alongside. The {hero} sat.
+"The tower is wrong," said the {hero}. "But I do not know how to say it so they will listen. My voice is so small. And they are all so sure of themselves."
 
-"Being new doesn't make you wrong," {companion_name} said. "And you don't have to say it in a big booming way. You could say it in the smallest voice you own. Loud isn't the thing that matters. What matters is that the words are true and they're yours. That is your brave voice."
+{companion_name} sat on the ground beside the {hero}. "Here is a secret: the people who are the most sure are often the ones most scared to listen. That is why they talk so loud. If you use your quiet voice, you might be the one person they actually hear. Psst — sometimes the whisper cuts through the noise because it is different. It makes people stop and listen."
 
-The {hero} pressed the {object_motif} between both palms and stared at the leaning bridge. "What if they don't listen?"
+The tower wobbled again. Now or never.
 
-"They might not," said {companion_name}, honest as ever. "But you'll have said the true thing. That part is yours to do. The listening is theirs."
+The {hero} stood. Walked over. And in the quietest voice, said it: "The heavy stones should go on the bottom."
 
-Over at the channel, a shout went up — the older kids were laying the widest boards on top again, just like every night. A couple of kids steadied it with their hands, laughing, daring it to fall. The bridge gave a slow, unhappy creak. The {hero}'s pulse ticked hard in both ears. It was now or it was never.
+Nobody heard. The building went on.
 
-The {hero} stood, walked closer, and stopped at the edge of the group. For a second no words came at all. The {hero} thought about turning around. Instead, the {hero} looked at the wide boards on top, and the thin ones underneath, and finally said it — quietly, almost too quietly.
+The {hero} felt the familiar wish to disappear. But {companion_name} was there, giving the tiniest nod. Try again.
 
-"The big pieces should go on the bottom."
+So the {hero} did. A little stronger this time, not louder, just clearer.
 
-Nobody heard. The building went on. Heat crawled up the {hero}'s neck, and every instinct said to slip away and pretend it had never happened.
+"Put the heavy stones at the bottom. The tower will hold."
 
-But the {hero} planted both feet, took one more breath, and tried again — still soft, only a little steadier. The words wobbled but they came.
+This time a girl turned. Really looked. "Wait. Say that again?"
 
-"Put the wide ones at the bottom. It'll hold if the wide ones are at the bottom."
+The {hero} said it a third time. This time, steadier. And the girl nodded slowly, then moved a stone. Then another followed. And the whole thing changed. Doubt became doing, the way it does when one person finally speaks the thing that is true.
 
-This time a girl near the front turned. "Wait — say that again?"
+They rebuilt it. And when the new tower stood firm and solid, one of the boys said, "Whose idea was that?" and the girl pointed at the {hero}.
 
-So the {hero} did, a third time, and the words came easier now that someone was actually looking. The girl studied the wobbling stack, then the {hero}, then nodded slowly. "Huh. Try it," she called to the others. "Wide ones on the bottom." A boy shrugged and moved a board. Then another followed. Doubt turned into doing, the way it does when one person finally moves first.
+The group nodded, not because the {hero} had been loud, but because the {hero} had been right. And because the {hero} had dared to say it even when the voice was small.
 
-They rebuilt it. Hands moved, boards shifted, and the leaning tower became a low, broad, steady bridge that did not creak at all. A kid ran across it and back, arms out, and it held him easy. The channel water moved quiet underneath, and the bridge didn't so much as shiver. Someone said, "Whose idea was that?" and the girl pointed at the {hero}, and a couple of the older ones said "nice" in the offhand way that, from older kids, means quite a lot.
+Later, at the edge of {setting} as the light turned amber, {companion_name} sat close to the {hero}.
 
-The {hero} didn't say much after that. There wasn't a need to. The bridge said it.
+"You spoke the true thing," {companion_name} said. "Even though your voice shook."
 
-Later, when {setting} had gone quiet and lavender at the edges, {companion_name} found the {hero} sitting by the finished bridge, turning the {object_motif} slowly in one hand.
+"It took three tries," said the {hero}.
 
-"You said it three times," {companion_name} noted, settling close.
+"Yes. And three tries is exactly what you needed. The voice does not have to be big to change something. It has to be true. And it has to keep trying. Your small voice was the bravest voice in that circle. Your small voice is still your voice."
 
-"The first two times barely counted," the {hero} said. "Nobody even heard."
-
-"You heard. And you kept going. That's the whole trick — the first try being small doesn't mean you stop." {companion_name} nudged the {hero}. "You didn't feel ready. You went anyway."
-
-The {hero} thought about that leaning bridge, and the soft cracked words, and how the true thing had been true whether or not anyone listened at first.
-
-"It didn't feel brave," the {hero} admitted. "My voice was so shaky."
-
-"Shaky and brave are the same thing wearing different coats," said {companion_name}.
-
-"Mine wasn't much of a voice tonight," the {hero} said. "It was, though," said {companion_name}. "It was the whole thing."
-
-The {hero} smiled and leaned back. The bridge stretched low and steady across the dark water, and tomorrow there would be other things worth saying, other times the words might stick. That was all right. The {hero} knew the road a little better now.
+The {hero} held the {object_motif} and looked at the tower standing firm and real. Small voice. True words. That was enough.
 
 {refrain}.`,
-    scriptTemplate: `For three days {child_name} had known something that needed saying, and for three days the words had stayed stuck behind teeth.
+        scriptTemplate: `For three days {child_name} had known something that needed saying in {setting}, and for three days the words had stayed stuck.
 
-It was like this. Every evening in {setting}, a group of kids gathered to build a raft-bridge across the narrow channel, and every evening they stacked it the same way — tall and proud and wobbling. {child_name} had watched it lean a little further each night. {child_name} knew, the way you sometimes just know, that if they set the widest pieces at the bottom instead of the top, the whole thing would hold. But knowing a thing and saying it out loud in front of everyone were two different countries, and {child_name} did not know the road between them.
+It was like this: every evening, a group built a tower of stones. Every evening they made the same mistake — stacking the heaviest stones on top. And every evening the tower wobbled, leaning further left, surely about to fall.
 
-Twice already {child_name} had come close. Last night the words had climbed all the way up {child_name}'s throat and then slid back down when a bigger kid laughed at something else entirely. The laugh hadn't even been about {child_name}, but it was enough to seal the sentence shut.
+{child_name} had watched it happen three times. {child_name} knew, the way you just know, that if they stacked the heaviest stones on the bottom, the whole thing would hold solid and true. But saying that out loud, in front of everyone, meant breaking the smooth agreement. It meant everyone would turn and look. It meant a quiet voice would have to speak up against the group.
 
-"You've got that look again," said {companion_name}, appearing at {child_name}'s elbow. "Like you swallowed a whole sentence."
+The throat tightened just thinking about it.
 
-{child_name} managed a small laugh. "I do have a sentence. I just can't get it out. They're all so sure of themselves, and I'm — I'm the newest one here. What if I say it and I'm wrong? What if my voice cracks and everyone looks?"
+{companion_name} found {child_name} watching the tower lean. "You have something to say," {companion_name} said. Not a question.
 
-{companion_name} sat down on the warm ground and patted the spot alongside. {child_name} sat.
+"The tower is wrong," said {child_name}. "But I do not know how to say it so they will listen. My voice is so small. And they are all so sure of themselves."
 
-"Being new doesn't make you wrong," {companion_name} said. "And you don't have to say it in a big booming way. You could say it in the smallest voice you own. Loud isn't the thing that matters. What matters is that the words are true and they're yours. That is your brave voice."
+{companion_name} sat on the ground beside {child_name}. "Here is a secret: the people who are the most sure are often the ones most scared to listen. That is why they talk so loud. If you use your quiet voice, you might be the one person they actually hear. Psst — sometimes the whisper cuts through the noise because it is different. It makes people stop and listen."
 
-{child_name} pressed the {object_motif} between both palms and stared at the leaning bridge. "What if they don't listen?"
+The tower wobbled again. Now or never.
 
-"They might not," said {companion_name}, honest as ever. "But you'll have said the true thing. That part is yours to do. The listening is theirs."
+{child_name} stood. Walked over. And in the quietest voice, said it: "The heavy stones should go on the bottom."
 
-Over at the channel, a shout went up — the older kids were laying the widest boards on top again, just like every night. A couple of kids steadied it with their hands, laughing, daring it to fall. The bridge gave a slow, unhappy creak. {child_name}'s pulse ticked hard in both ears. It was now or it was never.
+Nobody heard. The building went on.
 
-{child_name} stood, walked closer, and stopped at the edge of the group. For a second no words came at all. {child_name} thought about turning around. Instead, {child_name} looked at the wide boards on top, and the thin ones underneath, and finally said it — quietly, almost too quietly.
+{child_name} felt the familiar wish to disappear. But {companion_name} was there, giving the tiniest nod. Try again.
 
-"The big pieces should go on the bottom."
+So {child_name} did. A little stronger this time, not louder, just clearer.
 
-Nobody heard. The building went on. Heat crawled up {child_name}'s neck, and every instinct said to slip away and pretend it had never happened.
+"Put the heavy stones at the bottom. The tower will hold."
 
-But {child_name} planted both feet, took one more breath, and tried again — still soft, only a little steadier. The words wobbled but they came.
+This time a girl turned. Really looked. "Wait. Say that again?"
 
-"Put the wide ones at the bottom. It'll hold if the wide ones are at the bottom."
+{child_name} said it a third time. This time, steadier. And the girl nodded slowly, then moved a stone. Then another followed. And the whole thing changed. Doubt became doing, the way it does when one person finally speaks the thing that is true.
 
-This time a girl near the front turned. "Wait — say that again?"
+They rebuilt it. And when the new tower stood firm and solid, one of the boys said, "Whose idea was that?" and the girl pointed at {child_name}.
 
-So {child_name} did, a third time, and the words came easier now that someone was actually looking. The girl studied the wobbling stack, then {child_name}, then nodded slowly. "Huh. Try it," she called to the others. "Wide ones on the bottom." A boy shrugged and moved a board. Then another followed. Doubt turned into doing, the way it does when one person finally moves first.
+The group nodded, not because {child_name} had been loud, but because {child_name} had been right. And because {child_name} had dared to say it even when the voice was small.
 
-They rebuilt it. Hands moved, boards shifted, and the leaning tower became a low, broad, steady bridge that did not creak at all. A kid ran across it and back, arms out, and it held him easy. The channel water moved quiet underneath, and the bridge didn't so much as shiver. Someone said, "Whose idea was that?" and the girl pointed at {child_name}, and a couple of the older ones said "nice" in the offhand way that, from older kids, means quite a lot.
+Later, at the edge of {setting} as the light turned amber, {companion_name} sat close to {child_name}.
 
-{child_name} didn't say much after that. There wasn't a need to. The bridge said it.
+"You spoke the true thing," {companion_name} said. "Even though your voice shook."
 
-Later, when {setting} had gone quiet and lavender at the edges, {companion_name} found {child_name} sitting by the finished bridge, turning the {object_motif} slowly in one hand.
+"It took three tries," said {child_name}.
 
-"You said it three times," {companion_name} noted, settling close.
+"Yes. And three tries is exactly what you needed. The voice does not have to be big to change something. It has to be true. And it has to keep trying. Your small voice was the bravest voice in that circle. Your small voice is still your voice."
 
-"The first two times barely counted," {child_name} said. "Nobody even heard."
-
-"You heard. And you kept going. That's the whole trick — the first try being small doesn't mean you stop." {companion_name} nudged {child_name}. "You didn't feel ready. You went anyway."
-
-{child_name} thought about that leaning bridge, and the soft cracked words, and how the true thing had been true whether or not anyone listened at first.
-
-"It didn't feel brave," {child_name} admitted. "My voice was so shaky."
-
-"Shaky and brave are the same thing wearing different coats," said {companion_name}.
-
-"Mine wasn't much of a voice tonight," {child_name} said. "It was, though," said {companion_name}. "It was the whole thing."
-
-{child_name} smiled and leaned back. The bridge stretched low and steady across the dark water, and tomorrow there would be other things worth saying, other times the words might stick. That was all right. {child_name} knew the road a little better now.
+{child_name} held the {object_motif} and looked at the tower standing firm and real. Small voice. True words. That was enough.
 
 {refrain}.`
-  },
-  '9-11': {
-    audioTemplate: `The decision had already half-made itself by the time the {hero} understood what was happening.
+      },
+      '9-11': {
+        audioTemplate: `In {setting}, six friends sat in their usual circle, and the {hero} was beginning to understand something uncomfortable.
 
-They were gathered in the usual place at the far end of {setting}, the six of them who went out exploring together, and someone had started talking about tomorrow. Tomorrow was the long climb to the ridge, the big one they'd been planning for weeks. And somewhere in the easy back-and-forth, without anyone quite deciding it out loud, a shape had formed: they would go without the youngest of them. Too slow, someone said. Holds everyone up. Nods went around the circle like a passed cup, and the {hero} felt their own head start to nod along with the rest, because that was what heads did in a circle — they agreed.
+They were planning tomorrow's big climb, and someone had said it: the youngest should not come. Too slow. Holds everyone back.
 
-But it wasn't fair. The {hero} knew it wasn't fair, knew it the way you know a wrong note in a song you love. The youngest wasn't slow so much as careful, and careful had counted for something the day the river came up fast and it was the youngest who'd spotted the safe crossing while everyone else stood arguing. Nobody in the circle seemed to remember that tonight. Or they remembered and had decided it didn't matter. Either way, the true thing was sitting right there in the {hero}'s chest, and the {hero} was letting the circle carry it off.
+Nods went around the circle. The {hero}'s own head started to nod, because that is what heads did in circles — they agreed with each other. Easy. Smooth. Safe.
 
-The words to fix it were simple. That's the strange part — they weren't hard words. It's not fair, and here's why. Six of them, one sentence. But the sentence would land in the middle of all that easy agreement like a stone in still water, and everyone would turn, and the {hero} would have to be the one who broke the nice smooth surface of everybody-agreeing. The thought of all those faces swinging around made something in the {hero}'s stomach fold in on itself.
+But it was not fair, and the {hero} knew it. The youngest was not slow, just careful. And when the river came up fast last month, it was the youngest who found the safe crossing while everyone else argued. Nobody seemed to remember that tonight.
 
-The {hero} slipped a hand into a pocket and closed it around the {object_motif}, the way of doing when things got difficult. It didn't make the fear go anywhere. It just gave the fear something to press against.
+The {hero}'s voice sat in the chest, small and uncertain. Say something. But everyone had already agreed. To speak now would break the nice smooth surface. Everyone would turn and look. The {hero} would be the one who spoiled the moment.
 
-{companion_name} was sitting a little apart from the group, and had been watching the {hero}'s face the whole time — the {hero} could feel it. When the {hero} finally glanced over, {companion_name} didn't say anything at first. Just raised an eyebrow, a small question: well?
+The {hero} said nothing.
 
-The {hero} gave the tiniest shake of the head. I can't.
+{companion_name} was sitting apart, and their eyes met the {hero}'s for one long second. Then {companion_name} looked away, and that look was the loudest thing in the whole circle. It said: well?
 
-{companion_name} rose, crossed the few steps over, and crouched beside the {hero} so their voices could stay under the noise of the others.
+The {hero} wanted to disappear. But instead, stood up and walked over to {companion_name}.
 
-"You've gone somewhere behind your eyes," {companion_name} said quietly. "What is it?"
+"I cannot say it," the {hero} whispered. "My voice is too small. Everyone agreed. If I speak up, I will just make it worse."
 
-"They're going to leave him out," the {hero} whispered. "And it's wrong, and I know it's wrong, and everyone's just — agreeing. If I say something now, they'll all look at me. I'll get it tangled. My voice will do the shaky thing. And then it'll be worse, because I'll have made it into a whole moment for nothing."
+{companion_name} leaned close so nobody else could hear. "Your voice does not have to be big. It has to be true. And listen — that is the whole trick right there. When everyone agrees on something wrong, the small voice is the only one that can cut through. Big voices are too common. But a quiet voice saying something true? Psst — that is the only thing that makes people really listen. They have to lean in. They have to stop and think."
 
-{companion_name} considered this seriously, the way {companion_name} always took a real worry as real.
+The {hero} pressed the {object_motif} hard. "What if they do not listen?"
 
-"It might come out shaky," {companion_name} agreed. "It probably will. You're nervous, and your voice tells the truth about that. But a shaky voice can still say a true thing. The wobble doesn't cancel the words. You don't have to sound certain, and you don't have to be loud enough to fill the whole clearing. You only have to say it so it's out of you and into the air. Say it small, if small is what you've got. That is your brave voice."
+"Then you will have said the true thing anyway. That part is yours to do. The listening is theirs."
 
-The {hero} looked at the circle. The talk had moved on, already treating the decision as settled, and that was somehow the worst part — how quickly a wrong thing could turn into just-the-plan if nobody stood in its way.
+The {hero} sat there in the dark, feeling the weight of it. The moment was passing. If not now, then never. But the fear was so big.
 
-"What if they don't change their minds?" the {hero} asked.
+Then the {hero} stood.
 
-"They might not," said {companion_name}. "You don't get to decide that part. All you get to decide is whether the true thing gets said or swallowed. One of those you can live with easily. The other one sits in you for a long time."
+It was not grand or loud. Just stood. The circle quieted a little, not expecting it.
 
-The {hero} knew which one {companion_name} meant. The {hero} could already feel the shape of the swallowed version — how it would ride home in the chest, heavy and quiet, and be there again tomorrow on the ridge with an empty space where the youngest should have been.
+"I do not think we should leave him out," the {hero} said. The voice was small. Shaky. Not sure of itself.
 
-That was the thing nobody warned you about — that staying quiet wasn't actually the safe choice. It only looked safe from the outside. On the inside it cost something too, just slower, in a currency you paid later.
+For a moment, nothing. Then one of the older kids said, "What?" — not unkindly, just not hearing.
 
-So the {hero} stood up.
+The {hero}'s heart wanted to fold back down. But the words were already halfway into the world now, and it would be worse to take them back than to push them forward.
 
-It was not a grand standing-up. The knees were unsteady and the {object_motif} stayed clenched in one hand and, for a moment, the {hero} honestly thought no sound would come out at all — that the mouth would just open onto silence and everyone would wait and it would be unbearable. Two of the others glanced over. Then a third.
+So the {hero} breathed, and said it again. Quieter, but clearer.
 
-"I don't think we should leave him behind," the {hero} said.
+"He is not slow, he is careful. And when the river came up, he was the one who found us the way across. That counts."
 
-It came out quiet. Quieter than the talking had been, so that one of the older kids said "What?" — not unkindly, just not hearing. And there it was, the exact moment the {hero} had dreaded: the chance to shrink, to say never mind, to fold the sentence back up and let the circle close over it.
+The clearing went quiet in a different way. Not smooth anymore. Thinking.
 
-The {hero}'s heart was going hard. But the words were already halfway into the world now, and pulling them back felt worse than pushing them forward. So the {hero} breathed once and said it again — still not loud, but clear enough this time to reach across the circle.
+Then one of the older kids let out a breath and said, "Yeah. You are right, actually. I forgot about the river."
 
-"I don't think we should leave him out. He's not slow, he's careful. And when the river came up, he was the one who found us the way across while the rest of us were still arguing. That counts. It should count."
+The whole circle shifted. The plan changed. Six of them would go tomorrow. All six.
 
-The clearing went quiet in a different way than before — not the smooth quiet of agreement, but the uneven, thinking kind. The {hero} made themselves keep looking up instead of down, even though every part of the {hero} wanted to study the ground.
+The {hero} sat back down with legs that felt like water. The shaky small voice had done the entire thing. Not in spite of being quiet, but because quiet voices have to mean what they say.
 
-For a long, awful few seconds, nobody said anything.
+Later, when {setting} had folded into deep blue night, {companion_name} sat beside the {hero}.
 
-Then one of the older kids let out a breath and said, "Yeah. Okay. That's — yeah, you're right, actually. I forgot about the river." And another nodded, slower, and the shape of the whole circle shifted, the way a current shifts when one stone finally holds. It wasn't dramatic. Nobody cheered. They just started, quietly, planning a tomorrow with all six of them in it.
+"That took real nerve," {companion_name} said.
 
-The {hero} sat back down with legs that felt like water and a strange bright ringing in both ears, and realized the shaky voice had done the entire job — not in spite of being quiet, but somehow without the quiet mattering at all.
+"It did not feel like nerve," said the {hero}. "It felt like being scared and talking at the same time."
 
-Across the circle, the youngest didn't even know yet what had almost happened, and the {hero} decided he never needed to. Some things you fix quietly and leave fixed.
+"That is what nerve is. Not the absence of scared. The talking anyway. Your small voice held the whole moment. That is power."
 
-Later, when the others had drifted off and {setting} had folded itself into the deep blue of proper night, {companion_name} settled beside the {hero} at the clearing's edge.
-
-"That took some nerve," {companion_name} said.
-
-"It didn't feel like nerve," the {hero} said honestly, turning the {object_motif} over in the dark. "It felt like being scared and talking at the same time. My voice completely shook."
-
-"That's what nerve is, mostly," said {companion_name}. "Not the absence of the shake. The talking anyway."
-
-The {hero} thought about the moment before standing — the certainty that no sound would come, and then the sound coming anyway, wobbling and small and true. It hadn't required feeling ready. There hadn't been a single second, start to finish, where the {hero} had felt ready. The readiness, it turned out, was never going to arrive first. You went, and then you found out you could. It was the same thing the {hero} had begun to learn before, only truer now: readiness came after the speaking, not before it.
-
-"I almost didn't," the {hero} admitted.
-
-"But almost isn't what happened," said {companion_name}. "What happened is you did."
-
-The {hero} leaned back against the cool ground and let the day settle. Tomorrow there would be a ridge to climb, all six of them, and some other week there would be some other true thing that stuck in the throat and had to be coaxed out shaking. The {hero} would probably never love the feeling. But the {hero} knew now, in a way that would stay, that the feeling wasn't a wall. It was just the doorway, and the doorway could be walked through quietly.
+The {hero} looked at the {object_motif} in the dark and understood. The voice did not have to be big. It had to be true. And it had to keep trying, even when it shook. That was enough. That was everything.
 
 {refrain}.`,
-    scriptTemplate: `The decision had already half-made itself by the time {child_name} understood what was happening.
+        scriptTemplate: `In {setting}, six friends sat in their usual circle, and {child_name} was beginning to understand something uncomfortable.
 
-They were gathered in the usual place at the far end of {setting}, the six of them who went out exploring together, and someone had started talking about tomorrow. Tomorrow was the long climb to the ridge, the big one they'd been planning for weeks. And somewhere in the easy back-and-forth, without anyone quite deciding it out loud, a shape had formed: they would go without the youngest of them. Too slow, someone said. Holds everyone up. Nods went around the circle like a passed cup, and {child_name} felt their own head start to nod along with the rest, because that was what heads did in a circle — they agreed.
+They were planning tomorrow's big climb, and someone had said it: the youngest should not come. Too slow. Holds everyone back.
 
-But it wasn't fair. {child_name} knew it wasn't fair, knew it the way you know a wrong note in a song you love. The youngest wasn't slow so much as careful, and careful had counted for something the day the river came up fast and it was the youngest who'd spotted the safe crossing while everyone else stood arguing. Nobody in the circle seemed to remember that tonight. Or they remembered and had decided it didn't matter. Either way, the true thing was sitting right there in {child_name}'s chest, and {child_name} was letting the circle carry it off.
+Nods went around the circle. {child_name}'s own head started to nod, because that is what heads did in circles — they agreed with each other. Easy. Smooth. Safe.
 
-The words to fix it were simple. That's the strange part — they weren't hard words. It's not fair, and here's why. Six of them, one sentence. But the sentence would land in the middle of all that easy agreement like a stone in still water, and everyone would turn, and {child_name} would have to be the one who broke the nice smooth surface of everybody-agreeing. The thought of all those faces swinging around made something in {child_name}'s stomach fold in on itself.
+But it was not fair, and {child_name} knew it. The youngest was not slow, just careful. And when the river came up fast last month, it was the youngest who found the safe crossing while everyone else argued. Nobody seemed to remember that tonight.
 
-{child_name} slipped a hand into a pocket and closed it around the {object_motif}, the way of doing when things got difficult. It didn't make the fear go anywhere. It just gave the fear something to press against.
+{child_name}'s voice sat in the chest, small and uncertain. Say something. But everyone had already agreed. To speak now would break the nice smooth surface. Everyone would turn and look. {child_name} would be the one who spoiled the moment.
 
-{companion_name} was sitting a little apart from the group, and had been watching {child_name}'s face the whole time — {child_name} could feel it. When {child_name} finally glanced over, {companion_name} didn't say anything at first. Just raised an eyebrow, a small question: well?
+{child_name} said nothing.
 
-{child_name} gave the tiniest shake of the head. I can't.
+{companion_name} was sitting apart, and their eyes met {child_name}'s for one long second. Then {companion_name} looked away, and that look was the loudest thing in the whole circle. It said: well?
 
-{companion_name} rose, crossed the few steps over, and crouched beside {child_name} so their voices could stay under the noise of the others.
+{child_name} wanted to disappear. But instead, stood up and walked over to {companion_name}.
 
-"You've gone somewhere behind your eyes," {companion_name} said quietly. "What is it?"
+"I cannot say it," {child_name} whispered. "My voice is too small. Everyone agreed. If I speak up, I will just make it worse."
 
-"They're going to leave him out," {child_name} whispered. "And it's wrong, and I know it's wrong, and everyone's just — agreeing. If I say something now, they'll all look at me. I'll get it tangled. My voice will do the shaky thing. And then it'll be worse, because I'll have made it into a whole moment for nothing."
+{companion_name} leaned close so nobody else could hear. "Your voice does not have to be big. It has to be true. And listen — that is the whole trick right there. When everyone agrees on something wrong, the small voice is the only one that can cut through. Big voices are too common. But a quiet voice saying something true? Psst — that is the only thing that makes people really listen. They have to lean in. They have to stop and think."
 
-{companion_name} considered this seriously, the way {companion_name} always took a real worry as real.
+{child_name} pressed the {object_motif} hard. "What if they do not listen?"
 
-"It might come out shaky," {companion_name} agreed. "It probably will. You're nervous, and your voice tells the truth about that. But a shaky voice can still say a true thing. The wobble doesn't cancel the words. You don't have to sound certain, and you don't have to be loud enough to fill the whole clearing. You only have to say it so it's out of you and into the air. Say it small, if small is what you've got. That is your brave voice."
+"Then you will have said the true thing anyway. That part is yours to do. The listening is theirs."
 
-{child_name} looked at the circle. The talk had moved on, already treating the decision as settled, and that was somehow the worst part — how quickly a wrong thing could turn into just-the-plan if nobody stood in its way.
+{child_name} sat there in the dark, feeling the weight of it. The moment was passing. If not now, then never. But the fear was so big.
 
-"What if they don't change their minds?" {child_name} asked.
+Then {child_name} stood.
 
-"They might not," said {companion_name}. "You don't get to decide that part. All you get to decide is whether the true thing gets said or swallowed. One of those you can live with easily. The other one sits in you for a long time."
+It was not grand or loud. Just stood. The circle quieted a little, not expecting it.
 
-{child_name} knew which one {companion_name} meant. {child_name} could already feel the shape of the swallowed version — how it would ride home in the chest, heavy and quiet, and be there again tomorrow on the ridge with an empty space where the youngest should have been.
+"I do not think we should leave him out," {child_name} said. The voice was small. Shaky. Not sure of itself.
 
-That was the thing nobody warned you about — that staying quiet wasn't actually the safe choice. It only looked safe from the outside. On the inside it cost something too, just slower, in a currency you paid later.
+For a moment, nothing. Then one of the older kids said, "What?" — not unkindly, just not hearing.
 
-So {child_name} stood up.
+{child_name}'s heart wanted to fold back down. But the words were already halfway into the world now, and it would be worse to take them back than to push them forward.
 
-It was not a grand standing-up. The knees were unsteady and the {object_motif} stayed clenched in one hand and, for a moment, {child_name} honestly thought no sound would come out at all — that the mouth would just open onto silence and everyone would wait and it would be unbearable. Two of the others glanced over. Then a third.
+So {child_name} breathed, and said it again. Quieter, but clearer.
 
-"I don't think we should leave him behind," {child_name} said.
+"He is not slow, he is careful. And when the river came up, he was the one who found us the way across. That counts."
 
-It came out quiet. Quieter than the talking had been, so that one of the older kids said "What?" — not unkindly, just not hearing. And there it was, the exact moment {child_name} had dreaded: the chance to shrink, to say never mind, to fold the sentence back up and let the circle close over it.
+The clearing went quiet in a different way. Not smooth anymore. Thinking.
 
-{child_name}'s heart was going hard. But the words were already halfway into the world now, and pulling them back felt worse than pushing them forward. So {child_name} breathed once and said it again — still not loud, but clear enough this time to reach across the circle.
+Then one of the older kids let out a breath and said, "Yeah. You are right, actually. I forgot about the river."
 
-"I don't think we should leave him out. He's not slow, he's careful. And when the river came up, he was the one who found us the way across while the rest of us were still arguing. That counts. It should count."
+The whole circle shifted. The plan changed. Six of them would go tomorrow. All six.
 
-The clearing went quiet in a different way than before — not the smooth quiet of agreement, but the uneven, thinking kind. {child_name} made themselves keep looking up instead of down, even though every part of {child_name} wanted to study the ground.
+{child_name} sat back down with legs that felt like water. The shaky small voice had done the entire thing. Not in spite of being quiet, but because quiet voices have to mean what they say.
 
-For a long, awful few seconds, nobody said anything.
+Later, when {setting} had folded into deep blue night, {companion_name} sat beside {child_name}.
 
-Then one of the older kids let out a breath and said, "Yeah. Okay. That's — yeah, you're right, actually. I forgot about the river." And another nodded, slower, and the shape of the whole circle shifted, the way a current shifts when one stone finally holds. It wasn't dramatic. Nobody cheered. They just started, quietly, planning a tomorrow with all six of them in it.
+"That took real nerve," {companion_name} said.
 
-{child_name} sat back down with legs that felt like water and a strange bright ringing in both ears, and realized the shaky voice had done the entire job — not in spite of being quiet, but somehow without the quiet mattering at all.
+"It did not feel like nerve," said {child_name}. "It felt like being scared and talking at the same time."
 
-Across the circle, the youngest didn't even know yet what had almost happened, and {child_name} decided he never needed to. Some things you fix quietly and leave fixed.
+"That is what nerve is. Not the absence of scared. The talking anyway. Your small voice held the whole moment. That is power."
 
-Later, when the others had drifted off and {setting} had folded itself into the deep blue of proper night, {companion_name} settled beside {child_name} at the clearing's edge.
-
-"That took some nerve," {companion_name} said.
-
-"It didn't feel like nerve," {child_name} said honestly, turning the {object_motif} over in the dark. "It felt like being scared and talking at the same time. My voice completely shook."
-
-"That's what nerve is, mostly," said {companion_name}. "Not the absence of the shake. The talking anyway."
-
-{child_name} thought about the moment before standing — the certainty that no sound would come, and then the sound coming anyway, wobbling and small and true. It hadn't required feeling ready. There hadn't been a single second, start to finish, where {child_name} had felt ready. The readiness, it turned out, was never going to arrive first. You went, and then you found out you could. It was the same thing {child_name} had begun to learn before, only truer now: readiness came after the speaking, not before it.
-
-"I almost didn't," {child_name} admitted.
-
-"But almost isn't what happened," said {companion_name}. "What happened is you did."
-
-{child_name} leaned back against the cool ground and let the day settle. Tomorrow there would be a ridge to climb, all six of them, and some other week there would be some other true thing that stuck in the throat and had to be coaxed out shaking. {child_name} would probably never love the feeling. But {child_name} knew now, in a way that would stay, that the feeling wasn't a wall. It was just the doorway, and the doorway could be walked through quietly.
+{child_name} looked at the {object_motif} in the dark and understood. The voice did not have to be big. It had to be true. And it had to keep trying, even when it shook. That was enough. That was everything.
 
 {refrain}.`
-  }
-},
-    audioTemplate: `In the hush of {setting}, the {hero} had something to say — but the words stayed stuck inside, behind a fluttering {object_motif}.
+      },
+    },
+    audioTemplate: `In {setting}, the {hero} had a whisper stuck in their throat.
 
-"What if it sounds silly? What if my voice shakes?" they whispered.
+"My voice is too small to matter," they thought.
 
-{companion_name} leaned in warmly. "Your voice is allowed to shake. Brave does not mean loud or perfect. It means you speak, even small, because what you think matters."
+But {companion_name} leaned close. "Psst — listen. Every brave voice started as a whisper. Quiet is not weak. Quiet is true."
 
-The {hero} remembered: you do not have to feel ready. So they took a breath, and let the words out — quietly, a little wobbly, but out.
+The {hero} opened their mouth and let the small voice out.
 
-And the world did not end. Someone listened. Someone nodded. The {object_motif} glowed a little steadier inside them.
+And someone heard. Really heard.
 
-"It came out shaky," said the {hero}, "but I said it."
-
-"And it was yours," said {companion_name}. "That is your brave voice. The more you use it, the more it feels like home."
-
-The {hero} sat taller, the small light within them warmer than before.
+That was when everything changed.
 
 {refrain}.`,
-    scriptTemplate: `In the hush of {setting}, {child_name} the {hero} had something to say — but the words stayed stuck inside, behind a fluttering {object_motif}.
+    scriptTemplate: `In {setting}, {child_name} had a whisper stuck in their throat.
 
-"What if it sounds silly? What if my voice shakes?" {child_name} whispered.
+"My voice is too small to matter," they thought.
 
-{companion_name} leaned in warmly. "Your voice is allowed to shake, {child_name}. Brave does not mean loud or perfect. It means you speak, even small, because what you think matters."
+But {companion_name} leaned close. "Psst — listen, {child_name}. Every brave voice started as a whisper. Quiet is not weak. Quiet is true."
 
-{child_name} remembered: you do not have to feel ready. So {child_name} took a breath, and let the words out — quietly, a little wobbly, but out.
+{child_name} opened their mouth and let the small voice out.
 
-And the world did not end. Someone listened. Someone nodded. The {object_motif} glowed a little steadier inside them.
+And someone heard. Really heard.
 
-"It came out shaky," said {child_name}, "but I said it."
-
-"And it was yours," said {companion_name}. "That is your brave voice. The more you use it, the more it feels like home."
-
-{child_name} sat taller, the small light within them warmer than before.
+That was when everything changed.
 
 {refrain}.`,
   },
 
   {
-    ordinal: 3, title: 'Comparing Hurts',
-    concept: 'Measuring yourself by your own path, not others', callback: "You don't have to be ready (Level 1)", ageFloor: 4,
-    summary: 'The hero watches others and feels small by comparison. Their companion shows them that comparing dims your own light, and that their journey is their own. It revisits Level 1: your starting point is allowed to be just where it is.',
-    teachingNote: 'Comparison is the quiet thief of confidence; learning to measure by your own progress keeps a child\'s inner light their own.',
-    learningBeat: 'My path is mine',
+    ordinal: 3, title: 'My Path Is Mine',
+    concept: 'Trusting your own way even when it is different', callback: 'Your brave voice (Level 2)', ageFloor: 5,
+    summary: 'The hero tries to walk the path everyone else walks, but it does not fit. Their companion helps them understand that different is not wrong — their own path is exactly the one the world was waiting for them to take.',
+    teachingNote: 'A child who trusts their own way learns resilience. The soft twist reveals that the path each person is meant to walk is found by following what is true in them.',
+    learningBeat: 'Your own way is the only way that works for you',
     ageVariants: {
-  '3-4': { audioTemplate: `The {hero} walked the long trail through {setting}.
+      '3-4': {
+        audioTemplate: `In {setting}, all the other little ones walked the straight path.
 
-Other travelers walked too. Some walked fast. Some were far, far ahead.
+One by one by one. The {hero} tried to walk it too. But the feet wanted to go a different way. The feet wanted to explore. To wander. To look at things others passed by.
 
-A bigger kid ran past. Whoosh. Soon they were a tiny dot up ahead.
+"Walk straight," the {hero} thought. "Like everyone else."
 
-The {hero} looked at the dot. Then the {hero} felt small. Very small.
+But the feet would not listen.
 
-"I am so slow," said the {hero}. "Everyone is ahead of me."
+{companion_name} sat and watched the {hero} trying so hard to walk like the rest.
 
-The {hero} stopped walking. The trail felt too long now. The {hero} looked down. Their light felt dim, like a little lamp turned low.
+"Your feet know something," said {companion_name}. "They know the straight path is not your path."
 
-{companion_name} came and sat down close. {companion_name} held the {object_motif}.
+The {hero} held the {object_motif} tight. "But all the others walk straight."
 
-"You have watched them a long time," said {companion_name}. "Long enough to forget your own feet."
+"Yes. And that is their path. But yours — yours goes different. And that is okay. Better than okay. That is right."
 
-"They are so fast," said the {hero}. "They are so far."
+So the {hero} stopped trying.
 
-"When your eyes chase them, they stop seeing you," said {companion_name}. "Watching them makes your own light go small. But your light is for your trail. Not theirs."
+The feet led the way through {setting}. Psst — listen, did you hear that? It was the world, saying yes, here, come this way.
 
-The {hero} looked up.
+Down by the water, the {hero} found a smooth stone. In a hidden place, a flower nobody else had seen. A path of soft moss that felt like walking on clouds.
 
-"You do not have to be ready," said {companion_name}. "You can start right where your feet are. Right here is allowed to be your start. My path is mine."
+The straight walkers came by and saw all the things the {hero} had found. And one by one, they left the straight path too.
 
-The {hero} took a slow breath. In. Out. And one more. In. Out.
+"Show us your way," they said.
 
-The dot on the hill did not matter now. The fast kid did not matter. Only the trail. Only the next step.
+And the {hero} did. Because the {hero}'s path was the path they all needed.
 
-The {hero} looked down at their own two feet. Not the dot. Not the fast kid. Just the trail under the {hero}.
-
-The {hero} took one step. Then one more step. Then one more.
-
-Each step was the {hero}'s own step. Slow. Then not so slow.
-
-The trail felt kind again. The {hero} saw soft green moss. The {hero} saw a little stream. It sang over the stones.
-
-The {hero} saw a small blue flower by the path. The fast kid had run right past it. But the {hero} saw it.
-
-"They missed this," said the {hero}. "I did not. This is my path."
-
-{companion_name} gave the {object_motif} to the {hero}. The {hero} held the {object_motif} close. It felt warm and steady.
-
-The sky went soft and pink over {setting}. The {hero} felt warm. The {hero} felt slow and sleepy and glad.
-
-The {hero} did not look for the dot now. The {hero} looked at the trail. The {hero}'s own trail.
-
-Step. Step. Step.
-
-{refrain}.`, scriptTemplate: `{child_name} walked the long trail through {setting}.
-
-Other travelers walked too. Some walked fast. Some were far, far ahead.
-
-A bigger kid ran past. Whoosh. Soon they were a tiny dot up ahead.
-
-{child_name} looked at the dot. Then {child_name} felt small. Very small.
-
-"I am so slow," said {child_name}. "Everyone is ahead of me."
-
-{child_name} stopped walking. The trail felt too long now. {child_name} looked down. Their light felt dim, like a little lamp turned low.
-
-{companion_name} came and sat down close. {companion_name} held the {object_motif}.
-
-"You have watched them a long time," said {companion_name}. "Long enough to forget your own feet."
-
-"They are so fast," said {child_name}. "They are so far."
-
-"When your eyes chase them, they stop seeing you," said {companion_name}. "Watching them makes your own light go small. But your light is for your trail. Not theirs."
-
-{child_name} looked up.
-
-"You do not have to be ready," said {companion_name}. "You can start right where your feet are. Right here is allowed to be your start. My path is mine."
-
-{child_name} took a slow breath. In. Out. And one more. In. Out.
-
-The dot on the hill did not matter now. The fast kid did not matter. Only the trail. Only the next step.
-
-{child_name} looked down at their own two feet. Not the dot. Not the fast kid. Just the trail under {child_name}.
-
-{child_name} took one step. Then one more step. Then one more.
-
-Each step was {child_name}'s own step. Slow. Then not so slow.
-
-The trail felt kind again. {child_name} saw soft green moss. {child_name} saw a little stream. It sang over the stones.
-
-{child_name} saw a small blue flower by the path. The fast kid had run right past it. But {child_name} saw it.
-
-"They missed this," said {child_name}. "I did not. This is my path."
-
-{companion_name} gave the {object_motif} to {child_name}. {child_name} held the {object_motif} close. It felt warm and steady.
-
-The sky went soft and pink over {setting}. {child_name} felt warm. {child_name} felt slow and sleepy and glad.
-
-{child_name} did not look for the dot now. {child_name} looked at the trail. {child_name}'s own trail.
-
-Step. Step. Step.
-
-{refrain}.` },
-  '5-6': { audioTemplate: `The {hero} was walking the long trail through {setting}, the way everyone did.
-
-But today the {hero} kept looking at the others. A bigger kid hurried past, then another, and soon they were far ahead, small as dots on the hill.
-
-"Look how fast they are," the {hero} whispered. "They are so far ahead of me. I must be the slowest one on the whole trail."
-
-The more the {hero} watched them, the smaller the {hero} felt. Their feet grew heavy. The trail, which had felt friendly this morning, now felt too long and too steep. The {hero} stopped and stared at the dots up ahead, and something inside the {hero} went dim, like a lamp turned low.
-
-{companion_name} came up the trail and sat down on a warm rock nearby, holding the {object_motif}.
-
-"You have been watching them for a long time," {companion_name} said gently. "Long enough to forget your own feet."
-
-"They are ahead," said the {hero}. "They are better. Everyone is further than me."
-
-{companion_name} was quiet for a moment. "When your eyes are always on someone else, they stop seeing you. And the more you measure yourself against them, the smaller your own light grows. But your light was never meant to shine on their trail. Only on yours."
-
-The {hero} looked down at the path.
-
-"Remember what you learned before," said {companion_name}. "You do not have to be ready. You are allowed to begin right where you are standing. This spot, right here, is allowed to be your beginning. My path is mine."
-
-The {hero} sat with that for a moment. It was a strange thing to hear, because all morning the {hero} had felt sure that being behind was the same as being bad at it. But {companion_name} did not seem to think so at all.
-
-The {hero} took a slow breath and let it out. Then the {hero} did something new. Instead of staring up the hill at the dots, the {hero} looked down at their own two feet on the trail.
-
-One step. Then another. Then another. Each one was the {hero}'s own.
-
-And a funny thing happened. When the {hero} stopped racing the others, the {hero} began to see the trail itself. Soft green moss. A little stream that laughed over the stones. A blue flower, tucked beside the path, that all the fast travelers had rushed right past without ever seeing.
-
-"They missed this," the {hero} said softly, kneeling by the flower. "They were going too fast to notice it. But I saw it. This is my path, and it has its own good things along the way."
-
-{companion_name} smiled and passed the {object_motif} into the {hero}'s hands. The {hero} held the {object_motif} close, and it felt steady and sure.
-
-For a moment the old worry crept back. Another traveler swept by, quick and sure, and the {hero}'s eyes started to chase them up the hill again. But this time the {hero} noticed the chasing, and stopped it, the way you might gently turn a boat back toward home.
-
-"There you go," {companion_name} said. "You do not have to follow every fast pair of feet. You only have to follow your own."
-
-The {hero} nodded and looked back at the trail. It was easier the second time to let the dots be dots, and to let the {hero} be the {hero}.
-
-The {hero} kept walking, slower now, but somehow lighter. There was still a long way to go, and that was fine. The trail was not a race anymore. It was just a path, the {hero}'s own path, unrolling one gentle step at a time.
-
-The sky turned soft gold over {setting}. Travelers still moved along the trail, some fast, some slow, and that did not sting now.
-
-"I am not behind," the {hero} said. "I am just where my own path has reached. And that is allowed to be exactly where it is."
-
-{companion_name} nodded and walked beside the {hero}, matching the {hero}'s easy, unhurried pace, while the first stars blinked awake above the hills.
-
-{refrain}.`, scriptTemplate: `{child_name} was walking the long trail through {setting}, the way everyone did.
-
-But today {child_name} kept looking at the others. A bigger kid hurried past, then another, and soon they were far ahead, small as dots on the hill.
-
-"Look how fast they are," {child_name} whispered. "They are so far ahead of me. I must be the slowest one on the whole trail."
-
-The more {child_name} watched them, the smaller {child_name} felt. Their feet grew heavy. The trail, which had felt friendly this morning, now felt too long and too steep. {child_name} stopped and stared at the dots up ahead, and something inside {child_name} went dim, like a lamp turned low.
-
-{companion_name} came up the trail and sat down on a warm rock nearby, holding the {object_motif}.
-
-"You have been watching them for a long time," {companion_name} said gently. "Long enough to forget your own feet."
-
-"They are ahead," said {child_name}. "They are better. Everyone is further than me."
-
-{companion_name} was quiet for a moment. "When your eyes are always on someone else, they stop seeing you. And the more you measure yourself against them, the smaller your own light grows. But your light was never meant to shine on their trail. Only on yours."
-
-{child_name} looked down at the path.
-
-"Remember what you learned before," said {companion_name}. "You do not have to be ready. You are allowed to begin right where you are standing. This spot, right here, is allowed to be your beginning. My path is mine."
-
-{child_name} sat with that for a moment. It was a strange thing to hear, because all morning {child_name} had felt sure that being behind was the same as being bad at it. But {companion_name} did not seem to think so at all.
-
-{child_name} took a slow breath and let it out. Then {child_name} did something new. Instead of staring up the hill at the dots, {child_name} looked down at their own two feet on the trail.
-
-One step. Then another. Then another. Each one was {child_name}'s own.
-
-And a funny thing happened. When {child_name} stopped racing the others, {child_name} began to see the trail itself. Soft green moss. A little stream that laughed over the stones. A blue flower, tucked beside the path, that all the fast travelers had rushed right past without ever seeing.
-
-"They missed this," {child_name} said softly, kneeling by the flower. "They were going too fast to notice it. But I saw it. This is my path, and it has its own good things along the way."
-
-{companion_name} smiled and passed the {object_motif} into {child_name}'s hands. {child_name} held the {object_motif} close, and it felt steady and sure.
-
-For a moment the old worry crept back. Another traveler swept by, quick and sure, and {child_name}'s eyes started to chase them up the hill again. But this time {child_name} noticed the chasing, and stopped it, the way you might gently turn a boat back toward home.
-
-"There you go," {companion_name} said. "You do not have to follow every fast pair of feet. You only have to follow your own."
-
-{child_name} nodded and looked back at the trail. It was easier the second time to let the dots be dots, and to let {child_name} be {child_name}.
-
-{child_name} kept walking, slower now, but somehow lighter. There was still a long way to go, and that was fine. The trail was not a race anymore. It was just a path, {child_name}'s own path, unrolling one gentle step at a time.
-
-The sky turned soft gold over {setting}. Travelers still moved along the trail, some fast, some slow, and that did not sting now.
-
-"I am not behind," {child_name} said. "I am just where my own path has reached. And that is allowed to be exactly where it is."
-
-{companion_name} nodded and walked beside {child_name}, matching {child_name}'s easy, unhurried pace, while the first stars blinked awake above the hills.
-
-{refrain}.` },
-  '7-8': { audioTemplate: `The trail through {setting} was the kind that everyone walked at their own speed, and for a long while the {hero} had liked it that way. But this morning something had shifted. The {hero} could not stop watching the others.
-
-There was a traveler up ahead, not much bigger than the {hero}, who moved along the trail like it was nothing at all. Step, step, over the roots, around the bend, gone. Then another traveler passed, and another, until the {hero} felt like the only one still standing near the start while everyone else shrank into small dots far up the hill.
-
-"I have been walking just as long as them," the {hero} muttered, "and look how far ahead they are. They must be so much better than me."
-
-The {hero} tried to walk faster. But hurrying only made the {hero} trip and stumble, and every stumble felt like proof. The trail that had felt friendly yesterday now felt like a test the {hero} was failing. The {hero}'s shoulders curled in, and that bright, buzzy feeling of setting out in the morning drained away until the {hero} felt gray and small.
-
-The worst part was the traveler near the {hero}'s own age, the one who had made it look so easy. The {hero} kept picturing them somewhere far ahead, not even breathing hard, and every time the picture came it pressed down a little heavier. If someone like that could fly along the trail, the {hero} thought, then there had to be something wrong with the {hero} for finding it hard.
-
-{companion_name} found the {hero} sitting on a fallen log, chin in hands, watching the dots on the hill. {companion_name} sat down too, unhurried, turning the {object_motif} over and over in their hands.
-
-"You have not looked at the trail in front of you for a while," {companion_name} said. "You have only looked up there."
-
-"Because they are winning," the {hero} said. "And I am losing. Everyone is further than me."
-
-{companion_name} thought about that. "Further along the same trail? Or further along their own?" They let the question sit. "When you spend all your time measuring yourself against them, you stop seeing yourself at all. And the harder you measure, the smaller your own light gets. That is what comparing does. It does not make you faster. It just dims you."
-
-The {hero} frowned. "But they really are ahead."
-
-"Ahead of you on their walk, maybe," said {companion_name}. "But you are not on their walk. You never were." {companion_name} nodded down the trail, back the way the {hero} had come. "Remember what you learned when you first set out. You do not have to be ready. Wherever your feet are is allowed to be your starting place. My path is mine."
-
-The {hero} was quiet. It was a strange thing to hear, because for the whole morning the {hero} had been sure that being behind was the same as being bad at it.
-
-"But what if I am just slow?" the {hero} asked.
-
-"Then you are slow today, on this hill, with this pack on your back," {companion_name} said, and there was no sting in it. "That is not a name for who you are. It is only where your feet happen to be. Feet move. Names like slow only stick if you keep gluing them on by looking at somebody else."
-
-"Try something," {companion_name} said, standing. "Do not look up the hill even once. Just look at the ground right in front of your own feet, and take one step."
-
-The {hero} did. One step. It was a small thing, but it did not require beating anybody. The {hero} took another. And another. And with the dots out of sight, something unexpected happened: the {hero} began to notice the trail itself.
-
-There was moss the color of deep green velvet on the north side of the stones, soft enough to press a hand into. There was a thin stream that slipped down through the ferns and laughed to itself as it went, cool and quick over the pebbles. And there, tucked low beside the path where a leaf leaned over it, was a single blue flower that every fast traveler had rushed straight past without ever once looking down at it.
-
-The {hero} knelt down beside it in the fading light. "They missed this," the {hero} said, half surprised at the words. "Every one of them went straight past. They were going too fast to see it. But I saw it, because this is my part of the trail, and I am walking it at my own speed."
-
-{companion_name} smiled and pressed the {object_motif} gently into the {hero}'s hands. It felt solid and calm to hold, and the {hero} carried it as they walked on.
-
-The turning point was not that the {hero} suddenly became fast. The {hero} did not. The turning point was that the {hero} stopped needing to be. The trail was no longer a race with dots on a hill. It was just a path, the {hero}'s own path, unrolling one honest step at a time.
-
-Once, near the top of a rise, the {hero} caught sight of the fast travelers again, resting far ahead, and felt the old tug to compare. But this time the {hero} recognized it, breathed once, and let the dots be dots.
-
-"I am not behind," the {hero} said softly. "I am exactly where my own path has reached. And that is allowed to be exactly where it is."
-
-The sky over {setting} turned the deep gold of evening, and the trail glowed with it. {companion_name} walked beside the {hero}, matching the {hero}'s unhurried pace, in no rush to be anywhere but here.
-
-{refrain}.`, scriptTemplate: `The trail through {setting} was the kind that everyone walked at their own speed, and for a long while {child_name} had liked it that way. But this morning something had shifted. {child_name} could not stop watching the others.
-
-There was a traveler up ahead, not much bigger than {child_name}, who moved along the trail like it was nothing at all. Step, step, over the roots, around the bend, gone. Then another traveler passed, and another, until {child_name} felt like the only one still standing near the start while everyone else shrank into small dots far up the hill.
-
-"I have been walking just as long as them," {child_name} muttered, "and look how far ahead they are. They must be so much better than me."
-
-{child_name} tried to walk faster. But hurrying only made {child_name} trip and stumble, and every stumble felt like proof. The trail that had felt friendly yesterday now felt like a test {child_name} was failing. {child_name}'s shoulders curled in, and that bright, buzzy feeling of setting out in the morning drained away until {child_name} felt gray and small.
-
-The worst part was the traveler near {child_name}'s own age, the one who had made it look so easy. {child_name} kept picturing them somewhere far ahead, not even breathing hard, and every time the picture came it pressed down a little heavier. If someone like that could fly along the trail, {child_name} thought, then there had to be something wrong with {child_name} for finding it hard.
-
-{companion_name} found {child_name} sitting on a fallen log, chin in hands, watching the dots on the hill. {companion_name} sat down too, unhurried, turning the {object_motif} over and over in their hands.
-
-"You have not looked at the trail in front of you for a while," {companion_name} said. "You have only looked up there."
-
-"Because they are winning," {child_name} said. "And I am losing. Everyone is further than me."
-
-{companion_name} thought about that. "Further along the same trail? Or further along their own?" They let the question sit. "When you spend all your time measuring yourself against them, you stop seeing yourself at all. And the harder you measure, the smaller your own light gets. That is what comparing does. It does not make you faster. It just dims you."
-
-{child_name} frowned. "But they really are ahead."
-
-"Ahead of you on their walk, maybe," said {companion_name}. "But you are not on their walk. You never were." {companion_name} nodded down the trail, back the way {child_name} had come. "Remember what you learned when you first set out. You do not have to be ready. Wherever your feet are is allowed to be your starting place. My path is mine."
-
-{child_name} was quiet. It was a strange thing to hear, because for the whole morning {child_name} had been sure that being behind was the same as being bad at it.
-
-"But what if I am just slow?" {child_name} asked.
-
-"Then you are slow today, on this hill, with this pack on your back," {companion_name} said, and there was no sting in it. "That is not a name for who you are. It is only where your feet happen to be. Feet move. Names like slow only stick if you keep gluing them on by looking at somebody else."
-
-"Try something," {companion_name} said, standing. "Do not look up the hill even once. Just look at the ground right in front of your own feet, and take one step."
-
-{child_name} did. One step. It was a small thing, but it did not require beating anybody. {child_name} took another. And another. And with the dots out of sight, something unexpected happened: {child_name} began to notice the trail itself.
-
-There was moss the color of deep green velvet on the north side of the stones, soft enough to press a hand into. There was a thin stream that slipped down through the ferns and laughed to itself as it went, cool and quick over the pebbles. And there, tucked low beside the path where a leaf leaned over it, was a single blue flower that every fast traveler had rushed straight past without ever once looking down at it.
-
-{child_name} knelt down beside it in the fading light. "They missed this," {child_name} said, half surprised at the words. "Every one of them went straight past. They were going too fast to see it. But I saw it, because this is my part of the trail, and I am walking it at my own speed."
-
-{companion_name} smiled and pressed the {object_motif} gently into {child_name}'s hands. It felt solid and calm to hold, and {child_name} carried it as they walked on.
-
-The turning point was not that {child_name} suddenly became fast. {child_name} did not. The turning point was that {child_name} stopped needing to be. The trail was no longer a race with dots on a hill. It was just a path, {child_name}'s own path, unrolling one honest step at a time.
-
-Once, near the top of a rise, {child_name} caught sight of the fast travelers again, resting far ahead, and felt the old tug to compare. But this time {child_name} recognized it, breathed once, and let the dots be dots.
-
-"I am not behind," {child_name} said softly. "I am exactly where my own path has reached. And that is allowed to be exactly where it is."
-
-The sky over {setting} turned the deep gold of evening, and the trail glowed with it. {companion_name} walked beside {child_name}, matching {child_name}'s unhurried pace, in no rush to be anywhere but here.
-
-{refrain}.` },
-  '9-11': { audioTemplate: `The long trail through {setting} had never felt like a race until the morning the {hero} started counting.
-
-It began small, the way these things do. The {hero} noticed how far along the others were, and then could not stop noticing. Travelers of every kind moved up the winding path, and each one seemed to have some easy secret the {hero} had been left out of. The {hero} watched them shrink into distant specks near the top of the ridge and felt, for the first time, genuinely far behind.
-
-The sharpest sting had a name, or rather a face. There was a traveler almost exactly the {hero}'s age, someone who had set out on the very same morning, from the very same bend in the trail. The {hero} had liked the idea of walking it together. But that traveler had a loose, unhurried stride that ate the miles without seeming to try, and by midday they were a small figure high on the ridge, pausing now and then to look back at the view. Every time the {hero} caught sight of them up there, something in the {hero}'s chest tightened and went dull.
-
-We started at the same place, the {hero} thought. So the only thing this can mean is that something is wrong with me.
-
-What made it worse was that the {hero} could not even be plainly angry about it. The fast traveler had done nothing unkind; they had simply walked their own walk. There was no one to blame, which somehow left the whole heavy feeling with nowhere to go but inward, where it pooled and settled and whispered that the fault must therefore be the {hero}'s alone.
-
-The {hero} tried to walk faster to close the gap. It did not work the way hurrying never quite does. Rushing turned the {hero}'s feet clumsy; roots seemed to reach up on purpose, and each stumble arrived like evidence in a case the {hero} was quietly building against themselves. The trail that had felt full of promise at dawn now felt like a long, exposing test, and the {hero} was certain of the grade. By the time the light began to slant gold, the bright eagerness of the morning had thinned to something gray and folded and small.
-
-{companion_name} came down the trail from somewhere ahead and found the {hero} sitting on a flat stone, knees drawn up, eyes fixed on the far ridge where the specks still moved. Without a word {companion_name} settled onto the stone beside the {hero}, holding the {object_motif} loosely, letting the quiet stretch out before speaking.
-
-"You have been up on that ridge in your mind all afternoon," {companion_name} said at last. "Your body is down here, but your eyes have not come home once."
-
-"They are so far ahead," the {hero} said, and was embarrassed by the roughness in their own voice. "We started together. The exact same place, the exact same time. And now look. It is not even close."
-
-{companion_name} nodded slowly, as if this were a serious thing and not a small one, which the {hero} was grateful for.
-
-"Here is what comparing does, and it is worth understanding," {companion_name} said. "When you set yourself beside another person and start measuring, you stop being able to see yourself at all. You become only the distance between you and them."
-
-{companion_name} let the words settle before going on, turning the {object_motif} slowly in their hands. "And the harder you measure, the smaller your own light burns down, until you would swear you had never had much to begin with. It is not a true measurement. It is only a way of quietly turning your own lamp down."
-
-The {hero} turned that over. "But the distance is real. They really are further along."
-
-"Further along their trail," {companion_name} said. "Not yours. You keep laying your path over theirs like two maps and calling the gap between them your failure. But they are not carrying your pack, or your morning, or the particular reason your feet learned to walk the way they do. Their stride is theirs. Yours is yours."
-
-The {hero} was silent. It was oddly hard to hear, because being behind had felt so much like a verdict, and now someone was calmly refusing to read it as one.
-
-"What if I am just not good at this?" the {hero} asked, quieter.
-
-"Then today, on this hill, you found it hard," {companion_name} said. "That is a true thing about today. It is not a true thing about you. We hand ourselves those big flat words, not good enough, too slow, and we glue them on by staring at somebody faster. Peel the person away and the word has nothing to stick to." {companion_name} tilted their head down the trail, back toward the bend where the {hero} had begun. "You knew this once, at the very start. You do not have to be ready before you are allowed to begin. Wherever your feet are standing is a permitted place to stand. My path is mine."
-
-The {hero} let out a breath that had been held so long it shook a little on the way out.
-
-"Try walking without the ridge," {companion_name} said, rising. "Do not look up even once. Only the ground in front of your own feet. One step, chosen by you, for no reason but that it is next."
-
-So the {hero} did, though it felt almost impossible at first not to steal a glance upward, the way your tongue keeps finding a sore tooth. The {hero} kept the gaze low and near, and slowly the pull of the ridge loosened its grip.
-
-The first step felt strangely light, because for once it did not have to beat anyone; it only had to be taken. Then another, and another, and with the specks on the ridge out of sight, the trail itself began, quietly, to reappear.
-
-There was moss like green velvet banked along the northern faces of the stones, cool and deep and older than the trail itself. There was a thin ribbon of water threading down through the ferns, murmuring to itself as it went, catching the last of the light in little broken pieces. And there, tucked low against the edge of the path, half hidden by a leaning fern, was a single blue flower that every fast traveler had swept straight past, eyes fixed on the summit, never once glancing down at the small living thing beside their feet.
-
-The {hero} crouched beside it. "They never saw this," the {hero} said, and it was not spoken as a small triumph over them but as something simpler and steadier. "They could not. They were going too fast, watching each other. But this is my part of the trail, at my pace, so it is mine to notice."
-
-{companion_name} smiled and pressed the {object_motif} into the {hero}'s hands, and it sat there solid and calm, the way a true thing does.
-
-The change, when it came, was not that the {hero} grew suddenly fast. The {hero} did not, and by evening still walked at the same honest pace as before. What changed was that the pace stopped feeling like a sentence. The trail was no longer a distance to be closed against a rival; it was simply a path, the {hero}'s own, unrolling one deliberate step at a time.
-
-Near the crest of a rise the fast traveler came into view again, resting far ahead against the darkening sky, and the {hero} felt the old pull rise up out of habit, the reflex to measure, to shrink, to count. But this time the {hero} watched the feeling arrive, recognized it for what it was, and let it pass on through without answering it. The traveler was simply another person walking their own way home, under the same wide sky, toward some evening of their own that had nothing at all to do with the {hero}'s. That was all they had ever been, and imagining otherwise had only cost the {hero} an afternoon of their own good trail.
-
-"I am not behind," the {hero} said, testing the words carefully and finding, a little to their own surprise, that they held. "I am exactly as far as my own path has carried me. And that is allowed to be exactly where it is."
-
-Over {setting} the sky deepened from gold to a soft, settled blue, and the first stars came awake one by one. {companion_name} fell into step beside the {hero}, matching that unhurried pace, in no hurry to be anywhere but here, on this trail, at this quiet, unrepeatable speed.
-
-{refrain}.`, scriptTemplate: `The long trail through {setting} had never felt like a race until the morning {child_name} started counting.
-
-It began small, the way these things do. {child_name} noticed how far along the others were, and then could not stop noticing. Travelers of every kind moved up the winding path, and each one seemed to have some easy secret {child_name} had been left out of. {child_name} watched them shrink into distant specks near the top of the ridge and felt, for the first time, genuinely far behind.
-
-The sharpest sting had a name, or rather a face. There was a traveler almost exactly {child_name}'s age, someone who had set out on the very same morning, from the very same bend in the trail. {child_name} had liked the idea of walking it together. But that traveler had a loose, unhurried stride that ate the miles without seeming to try, and by midday they were a small figure high on the ridge, pausing now and then to look back at the view. Every time {child_name} caught sight of them up there, something in {child_name}'s chest tightened and went dull.
-
-We started at the same place, {child_name} thought. So the only thing this can mean is that something is wrong with me.
-
-What made it worse was that {child_name} could not even be plainly angry about it. The fast traveler had done nothing unkind; they had simply walked their own walk. There was no one to blame, which somehow left the whole heavy feeling with nowhere to go but inward, where it pooled and settled and whispered that the fault must therefore be {child_name}'s alone.
-
-{child_name} tried to walk faster to close the gap. It did not work the way hurrying never quite does. Rushing turned {child_name}'s feet clumsy; roots seemed to reach up on purpose, and each stumble arrived like evidence in a case {child_name} was quietly building against themselves. The trail that had felt full of promise at dawn now felt like a long, exposing test, and {child_name} was certain of the grade. By the time the light began to slant gold, the bright eagerness of the morning had thinned to something gray and folded and small.
-
-{companion_name} came down the trail from somewhere ahead and found {child_name} sitting on a flat stone, knees drawn up, eyes fixed on the far ridge where the specks still moved. Without a word {companion_name} settled onto the stone beside {child_name}, holding the {object_motif} loosely, letting the quiet stretch out before speaking.
-
-"You have been up on that ridge in your mind all afternoon," {companion_name} said at last. "Your body is down here, but your eyes have not come home once."
-
-"They are so far ahead," {child_name} said, and was embarrassed by the roughness in their own voice. "We started together. The exact same place, the exact same time. And now look. It is not even close."
-
-{companion_name} nodded slowly, as if this were a serious thing and not a small one, which {child_name} was grateful for.
-
-"Here is what comparing does, and it is worth understanding," {companion_name} said. "When you set yourself beside another person and start measuring, you stop being able to see yourself at all. You become only the distance between you and them."
-
-{companion_name} let the words settle before going on, turning the {object_motif} slowly in their hands. "And the harder you measure, the smaller your own light burns down, until you would swear you had never had much to begin with. It is not a true measurement. It is only a way of quietly turning your own lamp down."
-
-{child_name} turned that over. "But the distance is real. They really are further along."
-
-"Further along their trail," {companion_name} said. "Not yours. You keep laying your path over theirs like two maps and calling the gap between them your failure. But they are not carrying your pack, or your morning, or the particular reason your feet learned to walk the way they do. Their stride is theirs. Yours is yours."
-
-{child_name} was silent. It was oddly hard to hear, because being behind had felt so much like a verdict, and now someone was calmly refusing to read it as one.
-
-"What if I am just not good at this?" {child_name} asked, quieter.
-
-"Then today, on this hill, you found it hard," {companion_name} said. "That is a true thing about today. It is not a true thing about you. We hand ourselves those big flat words, not good enough, too slow, and we glue them on by staring at somebody faster. Peel the person away and the word has nothing to stick to." {companion_name} tilted their head down the trail, back toward the bend where {child_name} had begun. "You knew this once, at the very start. You do not have to be ready before you are allowed to begin. Wherever your feet are standing is a permitted place to stand. My path is mine."
-
-{child_name} let out a breath that had been held so long it shook a little on the way out.
-
-"Try walking without the ridge," {companion_name} said, rising. "Do not look up even once. Only the ground in front of your own feet. One step, chosen by you, for no reason but that it is next."
-
-So {child_name} did, though it felt almost impossible at first not to steal a glance upward, the way your tongue keeps finding a sore tooth. {child_name} kept the gaze low and near, and slowly the pull of the ridge loosened its grip.
-
-The first step felt strangely light, because for once it did not have to beat anyone; it only had to be taken. Then another, and another, and with the specks on the ridge out of sight, the trail itself began, quietly, to reappear.
-
-There was moss like green velvet banked along the northern faces of the stones, cool and deep and older than the trail itself. There was a thin ribbon of water threading down through the ferns, murmuring to itself as it went, catching the last of the light in little broken pieces. And there, tucked low against the edge of the path, half hidden by a leaning fern, was a single blue flower that every fast traveler had swept straight past, eyes fixed on the summit, never once glancing down at the small living thing beside their feet.
-
-{child_name} crouched beside it. "They never saw this," {child_name} said, and it was not spoken as a small triumph over them but as something simpler and steadier. "They could not. They were going too fast, watching each other. But this is my part of the trail, at my pace, so it is mine to notice."
-
-{companion_name} smiled and pressed the {object_motif} into {child_name}'s hands, and it sat there solid and calm, the way a true thing does.
-
-The change, when it came, was not that {child_name} grew suddenly fast. {child_name} did not, and by evening still walked at the same honest pace as before. What changed was that the pace stopped feeling like a sentence. The trail was no longer a distance to be closed against a rival; it was simply a path, {child_name}'s own, unrolling one deliberate step at a time.
-
-Near the crest of a rise the fast traveler came into view again, resting far ahead against the darkening sky, and {child_name} felt the old pull rise up out of habit, the reflex to measure, to shrink, to count. But this time {child_name} watched the feeling arrive, recognized it for what it was, and let it pass on through without answering it. The traveler was simply another person walking their own way home, under the same wide sky, toward some evening of their own that had nothing at all to do with {child_name}'s. That was all they had ever been, and imagining otherwise had only cost {child_name} an afternoon of their own good trail.
-
-"I am not behind," {child_name} said, testing the words carefully and finding, a little to their own surprise, that they held. "I am exactly as far as my own path has carried me. And that is allowed to be exactly where it is."
-
-Over {setting} the sky deepened from gold to a soft, settled blue, and the first stars came awake one by one. {companion_name} fell into step beside {child_name}, matching that unhurried pace, in no hurry to be anywhere but here, on this trail, at this quiet, unrepeatable speed.
-
-{refrain}.` }
-},
-    audioTemplate: `The {hero} sat in {setting} watching others do things easily, and felt their {object_motif} dim.
-
-"They are so much better than me," they said quietly. "Why am I so far behind?"
-
-{companion_name} settled close. "When you measure your inside against everyone else's outside, your own light always looks smaller. But it is not. You are only seeing them at a different place on a different path."
-
-"But they make it look so easy," said the {hero}.
-
-"You did not see their hard parts," said {companion_name}. "Everyone has them. Compare yourself only to who you were yesterday — that is the only race that is yours."
-
-The {hero} thought about how far they had come, all on their own, and the {object_motif} brightened again, warm and steady.
-
-"My path is mine," they said.
-
-"And it is a good one," said {companion_name}. "Tend your own light. It was never meant to look like anyone else's."
+The {object_motif} felt warm in the hand. Your own way is the only way that works for you. Your own way is the way the world was waiting for.
 
 {refrain}.`,
-    scriptTemplate: `{child_name} the {hero} sat in {setting} watching others do things easily, and felt their {object_motif} dim.
+        scriptTemplate: `In {setting}, all the other little ones walked the straight path.
 
-"They are so much better than me," {child_name} said quietly. "Why am I so far behind?"
+One by one by one. {child_name} tried to walk it too. But the feet wanted to go a different way. The feet wanted to explore. To wander. To look at things others passed by.
 
-{companion_name} settled close. "When you measure your inside against everyone else's outside, your own light always looks smaller. But it is not, {child_name}. You are only seeing them at a different place on a different path."
+"Walk straight," {child_name} thought. "Like everyone else."
 
-"But they make it look so easy," said {child_name}.
+But the feet would not listen.
 
-"You did not see their hard parts," said {companion_name}. "Everyone has them. Compare yourself only to who you were yesterday — that is the only race that is yours."
+{companion_name} sat and watched {child_name} trying so hard to walk like the rest.
 
-{child_name} thought about how far they had come, all on their own, and the {object_motif} brightened again, warm and steady.
+"Your feet know something," said {companion_name}. "They know the straight path is not your path."
 
-"My path is mine," {child_name} said.
+{child_name} held the {object_motif} tight. "But all the others walk straight."
 
-"And it is a good one," said {companion_name}. "Tend your own light. It was never meant to look like anyone else's."
+"Yes. And that is their path. But yours — yours goes different. And that is okay. Better than okay. That is right."
+
+So {child_name} stopped trying.
+
+The feet led the way through {setting}. Psst — listen, did you hear that? It was the world, saying yes, here, come this way.
+
+Down by the water, {child_name} found a smooth stone. In a hidden place, a flower nobody else had seen. A path of soft moss that felt like walking on clouds.
+
+The straight walkers came by and saw all the things {child_name} had found. And one by one, they left the straight path too.
+
+"Show us your way," they said.
+
+And {child_name} did. Because {{child_name}'s path was the path they all needed.
+
+The {object_motif} felt warm in the hand. Your own way is the only way that works for you. Your own way is the way the world was waiting for.
+
+{refrain}.`
+      },
+      '5-6': {
+        audioTemplate: `Every child in {setting} learned the same trade: weaving cloth on the same looms, the same patterns, the same colors that had been made for a hundred years.
+
+The {hero} tried. The hands worked the loom. But something in the chest knew this was not the shape the hands wanted to make. The {hero}'s hands wanted to build. To make something solid and real that stood up and could be lived inside.
+
+"You must be a weaver," everyone said. "Everyone learns to weave. That is what we do in {setting}."
+
+The {hero} kept weaving. But every night, in secret, made other things. Small buildings out of bark and branches. Little bridges across streams. Things that worked in new ways.
+
+One day, someone from another village came and saw the {hero}'s secret creations. "These are beautiful," they said. "We need someone who builds like this. Will you come?"
+
+The {hero}'s heart said yes so hard it almost broke the ribs.
+
+But {companion_name} was watching the {hero} wrestle with it. "Everyone wants you to stay a weaver," {companion_name} said. "But that is not your path."
+
+"But I will disappoint everyone," said the {hero}.
+
+{companion_name} took the {object_motif} from the {hero}'s hand and held it up to the light. "This is not the same as the others, is it?"
+
+"No," said the {hero}. "It is different."
+
+"And is that wrong?"
+
+"No," said the {hero}. "It is what makes it beautiful."
+
+"Your path is like that," said {companion_name}. "Different from what everyone expected. Not wrong. Just yours. Psst — the world has plenty of weavers. But it needs builders too. It needs your buildings. It needs your hands doing what your hands know to do."
+
+The {hero} took the {object_motif} back and felt it warm in both hands.
+
+So the {hero} went. Built new things in the new village. And the old village missed the {hero}, not because the weaving stopped, but because there were no more secret creations, no more small beautiful buildings that made them think differently about what was possible.
+
+They sent word: "Come back and teach us. Teach us your way."
+
+And the {hero} did, and the village learned to weave and build both, and was richer for it.
+
+The {hero} understood finally: your path is not selfish. Your path is the gift the world was waiting for.
+
+{refrain}.`,
+        scriptTemplate: `Every child in {setting} learned the same trade: weaving cloth on the same looms, the same patterns, the same colors that had been made for a hundred years.
+
+{child_name} tried. The hands worked the loom. But something in the chest knew this was not the shape the hands wanted to make. {{child_name}'s hands wanted to build. To make something solid and real that stood up and could be lived inside.
+
+"You must be a weaver," everyone said. "Everyone learns to weave. That is what we do in {setting}."
+
+{{child_name} kept weaving. But every night, in secret, made other things. Small buildings out of bark and branches. Little bridges across streams. Things that worked in new ways.
+
+One day, someone from another village came and saw {{child_name}'s secret creations. "These are beautiful," they said. "We need someone who builds like this. Will you come?"
+
+{{child_name}'s heart said yes so hard it almost broke the ribs.
+
+But {companion_name} was watching {{child_name} wrestle with it. "Everyone wants you to stay a weaver," {companion_name} said. "But that is not your path."
+
+"But I will disappoint everyone," said {{child_name}}.
+
+{companion_name} took the {object_motif} from {{child_name}'s hand and held it up to the light. "This is not the same as the others, is it?"
+
+"No," said {{child_name}}. "It is different."
+
+"And is that wrong?"
+
+"No," said {{child_name}}. "It is what makes it beautiful."
+
+"Your path is like that," said {companion_name}. "Different from what everyone expected. Not wrong. Just yours. Psst — the world has plenty of weavers. But it needs builders too. It needs your buildings. It needs your hands doing what your hands know to do."
+
+{{child_name} took the {object_motif} back and felt it warm in both hands.
+
+So {{child_name} went. Built new things in the new village. And the old village missed {{child_name}, not because the weaving stopped, but because there were no more secret creations, no more small beautiful buildings that made them think differently about what was possible.
+
+They sent word: "Come back and teach us. Teach us your way."
+
+And {{child_name} did, and the village learned to weave and build both, and was richer for it.
+
+{{child_name} understood finally: your path is not selfish. Your path is the gift the world was waiting for.
+
+{refrain}.`
+      },
+      '7-8': {
+        audioTemplate: `The school in {setting} had one path that everyone walked: study, test, achieve, move forward. Straight lines all the way.
+
+The {hero} tried walking it. The mind could do it. But the {hero}'s mind was doing something else while the body sat in the classroom. The mind was seeing patterns in problems that nobody had asked about. Was wondering why things worked the way they did. Was asking questions that were not on the list.
+
+"Pay attention to what we are teaching," the teachers said. "Not the questions you are making up."
+
+The {hero} tried. Paid attention. Got the marks. But every day felt like wearing shoes that did not fit, tight and wrong and impossible to forget you were wearing them.
+
+Then one day, a visitor came to {setting} — a person who built impossible things, who had changed how people thought about possibility itself. The visitor saw the {hero} asking the deep questions, wondering about the systems underneath the systems.
+
+"Come study with me," the visitor said. "Your mind is not broken. It is different. That difference is what I need."
+
+The {hero} felt split in two. Everyone said: finish the path. Everyone said: stay with what we know. Everyone said your way is wasteful, wrong, a detour.
+
+But {companion_name} knew what the {hero} was feeling. {companion_name} sat with the {hero} at the edge of {setting}, in the place where they talked about true things.
+
+"Your mind is not made for the straight path," said {companion_name}. "That does not mean your mind is wrong. It means the straight path is not your path. Some minds are made to ask why. Some minds are made to wonder what if. Your mind is one of those. Psst — the world has plenty of people who can walk a line. But it desperately needs people who can ask better questions. It needs you."
+
+The {hero} held the {object_motif} — a small stone with lines and patterns that did not follow any rule, that just made sense in their own way.
+
+"What if I fail?" asked the {hero}.
+
+"Then you will have failed on your own path, doing your own work. That is different than failing on someone else's path. Different is better."
+
+The {hero} went. Studied with the visitor. Asked the deep questions. Found others like them — minds that worked sideways instead of straight, that were considered wrong until they were proven right.
+
+Years later, the {hero} came back to {setting} and the school was using the {hero}'s work, the discoveries that had come from asking the questions nobody else asked.
+
+The teachers saw and understood: the path that looked wrong was the path that led somewhere new.
+
+The {hero}'s different way had become the way everyone wanted to go.
+
+{refrain}.`,
+        scriptTemplate: `The school in {setting} had one path that everyone walked: study, test, achieve, move forward. Straight lines all the way.
+
+{child_name} tried walking it. The mind could do it. But {{child_name}'s mind was doing something else while the body sat in the classroom. The mind was seeing patterns in problems that nobody had asked about. Was wondering why things worked the way they did. Was asking questions that were not on the list.
+
+"Pay attention to what we are teaching," the teachers said. "Not the questions you are making up."
+
+{{child_name} tried. Paid attention. Got the marks. But every day felt like wearing shoes that did not fit, tight and wrong and impossible to forget you were wearing them.
+
+Then one day, a visitor came to {setting} — a person who built impossible things, who had changed how people thought about possibility itself. The visitor saw {{child_name} asking the deep questions, wondering about the systems underneath the systems.
+
+"Come study with me," the visitor said. "Your mind is not broken. It is different. That difference is what I need."
+
+{{child_name} felt split in two. Everyone said: finish the path. Everyone said: stay with what we know. Everyone said your way is wasteful, wrong, a detour.
+
+But {companion_name} knew what {{child_name} was feeling. {companion_name} sat with {{child_name} at the edge of {setting}, in the place where they talked about true things.
+
+"Your mind is not made for the straight path," said {companion_name}. "That does not mean your mind is wrong. It means the straight path is not your path. Some minds are made to ask why. Some minds are made to wonder what if. Your mind is one of those. Psst — the world has plenty of people who can walk a line. But it desperately needs people who can ask better questions. It needs you."
+
+{{child_name} held the {object_motif} — a small stone with lines and patterns that did not follow any rule, that just made sense in their own way.
+
+"What if I fail?" asked {{child_name}}.
+
+"Then you will have failed on your own path, doing your own work. That is different than failing on someone else's path. Different is better."
+
+{{child_name} went. Studied with the visitor. Asked the deep questions. Found others like them — minds that worked sideways instead of straight, that were considered wrong until they were proven right.
+
+Years later, {{child_name} came back to {setting} and the school was using {{child_name}'s work, the discoveries that had come from asking the questions nobody else asked.
+
+The teachers saw and understood: the path that looked wrong was the path that led somewhere new.
+
+{{child_name}'s different way had become the way everyone wanted to go.
+
+{refrain}.`
+      },
+      '9-11': {
+        audioTemplate: `In {setting}, everyone had a future already planned: the family trade, the known path, the safe progression from one stage to the next.
+
+The {hero} was good at many things, but none of them fit the planned path. The hands wanted to make music. The mind wanted to travel to places no one from {setting} had been. The heart wanted something that had no name yet, something the {hero} could only feel coming from somewhere true inside.
+
+But every elder said: that is not practical. That is not a real life. That is not what people like us do.
+
+The pressure to walk the planned path was enormous. It came from love, mostly. Everyone wanted the {hero} safe. Everyone wanted the {hero} to not make the hard choices. Everyone wanted the {hero} to walk where others had already made a path.
+
+The {hero} was twenty years old and terrified.
+
+{companion_name} had been waiting for the {hero} to come and sit at the edge of {setting}, in the place where true conversations happened. When the {hero} finally did, {companion_name} let the {hero} speak first.
+
+"I do not want the future everyone is telling me I should want," said the {hero}. "But I am afraid to want my own. What if I am wrong? What if I fail? What if I disappoint everyone?"
+
+{companion_name} was quiet for a long time. Then: "Here is what you need to know. The world does not need another {setting} merchant. It has plenty. But it needs a musician who thinks the way you think. It needs someone brave enough to go find the places nobody from {setting} has been. It needs whatever this unnamed thing in your heart is trying to become. Psst — listen close now — the people who love you most will suffer when you leave the planned path. But they will suffer more if you never become yourself. That is the trade. That is the only way."
+
+The {hero} held the {object_motif} and felt tears come. "That is not fair."
+
+"No," said {companion_name}. "It is not. But it is true. Your path is yours to walk. You will not find it by looking at anyone else's. You will find it by following what is true in you."
+
+The {hero} made the hard choice. Left {setting}. Learned music. Traveled. Became the thing the heart was calling for.
+
+It took years. It was hard. Some of the elders never forgave the choice.
+
+But one day, the {hero} came back, and the children of {setting} heard music they had never heard before. They felt the stories of the places the {hero} had walked. They understood, for the first time, that you could love your home and still leave it. That you could honor your family and still choose a different path.
+
+And some of those children, watching the {hero} live the true life, found the courage to walk their own ways too.
+
+The {hero} understood it finally: your path is not just for you. Your path is permission for others to walk theirs.
+
+{refrain}.`,
+        scriptTemplate: `In {setting}, everyone had a future already planned: the family trade, the known path, the safe progression from one stage to the next.
+
+{child_name} was good at many things, but none of them fit the planned path. The hands wanted to make music. The mind wanted to travel to places no one from {setting} had been. The heart wanted something that had no name yet, something {{child_name} could only feel coming from somewhere true inside.
+
+But every elder said: that is not practical. That is not a real life. That is not what people like us do.
+
+The pressure to walk the planned path was enormous. It came from love, mostly. Everyone wanted {{child_name} safe. Everyone wanted {{child_name} to not make the hard choices. Everyone wanted {{child_name} to walk where others had already made a path.
+
+{{child_name} was twenty years old and terrified.
+
+{companion_name} had been waiting for {{child_name} to come and sit at the edge of {setting}, in the place where true conversations happened. When {{child_name} finally did, {companion_name} let {{child_name} speak first.
+
+"I do not want the future everyone is telling me I should want," said {{child_name}}. "But I am afraid to want my own. What if I am wrong? What if I fail? What if I disappoint everyone?"
+
+{companion_name} was quiet for a long time. Then: "Here is what you need to know. The world does not need another {setting} merchant. It has plenty. But it needs a musician who thinks the way you think. It needs someone brave enough to go find the places nobody from {setting} has been. It needs whatever this unnamed thing in your heart is trying to become. Psst — listen close now — the people who love you most will suffer when you leave the planned path. But they will suffer more if you never become yourself. That is the trade. That is the only way."
+
+{{child_name} held the {object_motif} and felt tears come. "That is not fair."
+
+"No," said {companion_name}. "It is not. But it is true. Your path is yours to walk. You will not find it by looking at anyone else's. You will find it by following what is true in you."
+
+{{child_name} made the hard choice. Left {setting}. Learned music. Traveled. Became the thing the heart was calling for.
+
+It took years. It was hard. Some of the elders never forgave the choice.
+
+But one day, {{child_name} came back, and the children of {setting} heard music they had never heard before. They felt the stories of the places {{child_name} had walked. They understood, for the first time, that you could love your home and still leave it. That you could honor your family and still choose a different path.
+
+And some of those children, watching {{child_name} live the true life, found the courage to walk their own ways too.
+
+{{child_name} understood it finally: your path is not just for you. Your path is permission for others to walk theirs.
+
+{refrain}.`
+      },
+    },
+    audioTemplate: `In {setting}, the {hero} felt the pull of their own path, even though it was different.
+
+"Is different wrong?" they asked {companion_name}.
+
+"Different is the path your feet know," said {companion_name}. "And different is what the world is waiting for. Psst — follow your own way. The world does not need another copy of someone else. It needs you."
+
+The {hero} walked their own path. And discovered it led exactly where they needed to go.
+
+{refrain}.`,
+    scriptTemplate: `In {setting}, {child_name} felt the pull of their own path, even though it was different.
+
+"Is different wrong?" they asked {companion_name}.
+
+"Different is the path your feet know, {child_name}," said {companion_name}. "And different is what the world is waiting for. Psst — follow your own way. The world does not need another copy of someone else. It needs you."
+
+{child_name} walked their own path. And discovered it led exactly where they needed to go.
 
 {refrain}.`,
   },
 
   {
-    ordinal: 4, title: 'Brave is Scared and Trying',
-    concept: 'Courage means feeling afraid and acting anyway', callback: 'Your brave voice (Level 2)', ageFloor: 5,
-    summary: 'The hero believes brave means not being scared — so feeling afraid makes them think they are failing. Their companion redefines courage: brave is being scared and trying anyway. It builds on Level 2: the shaky voice was brave precisely because it was scared.',
-    teachingNote: 'Reframing fear as a companion to courage — not its opposite — lets a child act bravely without waiting to feel fearless.',
-    learningBeat: 'Scared and trying',
+    ordinal: 4, title: 'Scared and Trying',
+    concept: 'Feeling afraid while doing it anyway', callback: 'My path is mine (Level 3)', ageFloor: 5,
+    summary: 'The hero discovers that courage is not the absence of fear. When they try the brave thing, the fear does not disappear — it becomes a dance partner. Fear and courage exist together, and that is exactly how it is supposed to be.',
+    teachingNote: 'The most important learning: fear and courage are not opposites. They are dance partners. A child who understands this will not wait for fear to disappear before doing brave things.',
+    learningBeat: 'Fear is not the opposite of brave',
     ageVariants: {
-  '3-4': {
-    audioTemplate: `The {hero} stood at the edge of {setting}. Today was the big climb. The {hero} wanted to be brave.
+      '3-4': {
+        audioTemplate: `The {hero} was doing something scary in {setting}.
 
-But the {hero} felt shaky inside. Tummy full of butterflies. Hands a little cold.
+The {object_motif} was in a small hand, held tight.
 
-The {hero} thought, "Brave means not scared. So I am not brave."
+The {hero}'s heart was going boom boom boom.
 
-The {hero} sat down. The {hero} held the {object_motif} tight.
+The {hero} was scared. Very scared.
 
-{companion_name} came and sat close. "You look worried," they said.
+But the {hero} was trying anyway.
 
-"I am too scared to climb," said the {hero}. "Brave kids are not scared. I am not brave."
+{companion_name} sat close and warm.
 
-{companion_name} smiled softly. "Scared and trying is what brave really means," they said. "The scared does not go away. You bring it with you."
+"You are shaking," said {companion_name}. "But you are still trying."
 
-The {hero} blinked. "Bring it with me?"
+"I am scared," said the {hero}.
 
-"Yes," said {companion_name}. "Remember your shaky voice? It shook, and it was brave. Brave and scared can hold hands."
+"Yes," said {companion_name}. "And brave. At the same time. Psst — fear is not the opposite of brave. Fear is the dance partner of brave. They dance together."
 
-The {hero} took a slow breath. In through the nose. Out through the mouth. The butterflies were still there. That was okay now.
+The {hero} did the scary thing. Still scared. But brave anyway.
 
-The {hero} looked up at the climb. Still scared. Still shaky.
+And the boom boom boom in the chest? It became the sound of trying.
 
-But the {hero} stood up. One small step. Then two. The {object_motif} stayed in one pocket.
+The {hero} finished and felt the warm glow of having done it.
 
-One hand up. One foot up. Slow and steady. The {hero} did not rush.
+"The fear did not go away," said the {hero}.
 
-The {hero} climbed slow. Heart going pitter-pat. Breath going in and out.
+"No," said {companion_name}. "But you danced with it anyway."
 
-Halfway up, the {hero} wanted to stop. The wind was soft. {companion_name} called, "You are doing it. Keep going." So the {hero} kept going.
+The {hero} snuggled down warm, holding the {object_motif}.
 
-Up, and up, and up. Scared the whole way. Trying the whole way.
-
-At the top, the {hero} laughed. A soft, surprised laugh. The {hero} had done it. Scared AND brave. Both at once.
-
-The {hero} had carried the scared all the way up. And that was the brave part.
-
-{companion_name} clapped from below. "You did it," they called.
-
-The {hero} looked out over {setting}. The little lights were coming on, one by one.
-
-"I was scared," said the {hero}. "And I climbed anyway."
-
-{companion_name} nodded. The {hero} held the {object_motif} and felt the shaky feeling turn warm and sleepy.
-
-The {hero} yawned. Climbing was big work. Being brave was big work too.
-
-Time to rest now. Scared and brave, all tucked in together.
+Fear and brave are friends.
 
 {refrain}.`,
-    scriptTemplate: `{child_name} stood at the edge of {setting}. Today was the big climb. {child_name} wanted to be brave.
+        scriptTemplate: `{child_name} was doing something scary in {setting}.
 
-But {child_name} felt shaky inside. Tummy full of butterflies. Hands a little cold.
+The {object_motif} was in a small hand, held tight.
 
-{child_name} thought, "Brave means not scared. So I am not brave."
+{{child_name}'s heart was going boom boom boom.
 
-{child_name} sat down. {child_name} held the {object_motif} tight.
+{{child_name} was scared. Very scared.
 
-{companion_name} came and sat close. "You look worried," they said.
+But {{child_name} was trying anyway.
 
-"I am too scared to climb," said {child_name}. "Brave kids are not scared. I am not brave."
+{companion_name} sat close and warm.
 
-{companion_name} smiled softly. "Scared and trying is what brave really means," they said. "The scared does not go away. You bring it with you."
+"You are shaking," said {companion_name}. "But you are still trying."
 
-{child_name} blinked. "Bring it with me?"
+"I am scared," said {{child_name}}.
 
-"Yes," said {companion_name}. "Remember your shaky voice? It shook, and it was brave. Brave and scared can hold hands."
+"Yes," said {companion_name}. "And brave. At the same time. Psst — fear is not the opposite of brave. Fear is the dance partner of brave. They dance together."
 
-{child_name} took a slow breath. In through the nose. Out through the mouth. The butterflies were still there. That was okay now.
+{{child_name} did the scary thing. Still scared. But brave anyway.
 
-{child_name} looked up at the climb. Still scared. Still shaky.
+And the boom boom boom in the chest? It became the sound of trying.
 
-But {child_name} stood up. One small step. Then two. The {object_motif} stayed in one pocket.
+{{child_name} finished and felt the warm glow of having done it.
 
-One hand up. One foot up. Slow and steady. {child_name} did not rush.
+"The fear did not go away," said {{child_name}}.
 
-{child_name} climbed slow. Heart going pitter-pat. Breath going in and out.
+"No," said {companion_name}. "But you danced with it anyway."
 
-Halfway up, {child_name} wanted to stop. The wind was soft. {companion_name} called, "You are doing it. Keep going." So {child_name} kept going.
+{{child_name} snuggled down warm, holding the {object_motif}.
 
-Up, and up, and up. Scared the whole way. Trying the whole way.
-
-At the top, {child_name} laughed. A soft, surprised laugh. {child_name} had done it. Scared AND brave. Both at once.
-
-{child_name} had carried the scared all the way up. And that was the brave part.
-
-{companion_name} clapped from below. "You did it," they called.
-
-{child_name} looked out over {setting}. The little lights were coming on, one by one.
-
-"I was scared," said {child_name}. "And I climbed anyway."
-
-{companion_name} nodded. {child_name} held the {object_motif} and felt the shaky feeling turn warm and sleepy.
-
-{child_name} yawned. Climbing was big work. Being brave was big work too.
-
-Time to rest now. Scared and brave, all tucked in together.
+Fear and brave are friends.
 
 {refrain}.`
-  },
-  '5-6': {
-    audioTemplate: `The {hero} stood at the bottom of the tall rope-bridge that crossed {setting}. Everyone else had already run across, laughing. The {hero} had not moved.
+      },
+      '5-6': {
+        audioTemplate: `The {hero} wanted to do the big thing in {setting}.
 
-Below the bridge, the water of {setting} moved slow and dark. The planks were old and friendly-looking, but they creaked, and the ropes hummed whenever the wind came through.
+But the fear had come, and the fear was not leaving.
 
-Today was supposed to be the day. The {hero} had promised to cross the bridge. But now, standing here, the {hero}'s knees felt wobbly and the stomach flipped like a fish.
+The {hero} thought: I should wait until the fear goes away, and then I will try.
 
-"Brave people are not scared," the {hero} whispered. "And I am scared. So I must not be brave at all."
+But the fear did not go anywhere. It just sat there. Heavy and cold and sure.
 
-The {hero} turned the {object_motif} over and over in one hand, wishing the scared feeling would just disappear.
+Days went by. The {hero} still wanted to do the big thing. The fear was still there.
 
-{companion_name} padded up quietly and sat down beside the {hero}. For a while they said nothing. They just watched the bridge sway.
+{companion_name} noticed the {hero} stuck between wanting and fear.
 
-"You have been standing here a long time," {companion_name} said gently.
+"You think you have to choose," said {companion_name}, sitting close. "Either be brave, or be scared. But that is not how it works."
 
-"I want to cross," said the {hero}. "But my whole body is shaking. Real brave ones do not shake. I keep waiting to stop being scared, and it never happens."
+"What do you mean?" asked the {hero}.
 
-{companion_name} tilted their head. "Ah. I think you are waiting for the wrong thing."
+{companion_name} took the {object_motif} and held it up. "This does two things at once, yes? The weight is real. The beauty is real. Both at the same time."
 
-The {hero} looked up. "The wrong thing?"
+"Yes," said the {hero}.
 
-"You are waiting for the fear to leave before you go," said {companion_name}. "But that is not how it works. Scared and trying is the whole of brave. The fear does not mean you are failing. It means you are doing something that matters."
+"Your fear and your brave are like that. Both real. Both there. At the same time. Psst — listen close — brave is not when the fear is gone. Brave is when you try while the fear is still dancing."
 
-The {hero} thought about that. It felt strange and new.
+The {hero} looked at the big thing waiting. The fear was still there. Boom boom boom went the heart.
 
-For as long as the {hero} could remember, being scared had felt like a stop sign. A big red NO. Now {companion_name} was saying it could be a green light instead.
+"The fear is still here," said the {hero}.
 
-"Remember at the pond," {companion_name} went on, "when your voice came out all shaky and you spoke up anyway? You were scared the whole time. And everyone still calls that the day you were brave."
+"Yes," said {companion_name}. "So try with it. Invite it to dance."
 
-The {hero} looked at the bridge again. It still looked long. The stomach still flipped. Nothing about the fear had changed.
+The {hero} took a breath and did the big thing. The fear came along for every second. The knees shook. The hands trembled. The heart went boom boom boom.
 
-But something in the {hero}'s mind had turned, like a key in a lock.
+But the {hero} did it.
 
-The {hero} let out a long breath. The bridge was not going to get any shorter. The waiting was over.
+When it was done, the {hero} was breathing hard and the fear was still there, but something had changed. The fear and the trying had danced together, and the dancing had made the trying possible.
 
-"Go on," said {companion_name} softly. "I am right here."
+"The fear did not go away," said the {hero}.
 
-The {hero} stood. The legs were still wobbly. The {hero} put one foot on the first plank. It swayed. The {hero} gasped and gripped the rope.
+"No," said {companion_name}. "But you went anyway. And that is what brave actually is."
 
-"Still here," called {companion_name}. "Keep going."
-
-One plank. Then another. The bridge bounced softly. The {hero}'s heart drummed fast against the ribs, but the feet kept moving. Scared foot, brave foot. Scared foot, brave foot.
-
-The {hero} did not look down. Just the next plank. Just the next one. The rope was rough and good under both hands.
-
-Halfway across, the wind pushed and the {hero} froze. The whole bridge trembled. For a moment the {hero} wanted to turn back.
-
-Instead, the {hero} breathed in, breathed out, and took one more step. Then one more. The scared came along the whole way, like a small passenger riding on the {hero}'s shoulder.
-
-And then, all at once, the {hero}'s foot touched solid ground on the far side.
-
-The {hero} spun around, eyes wide. "I did it! I did it while I was still scared!"
-
-{companion_name} trotted across to join them, and the {hero} held the {object_motif} up high in one fist.
-
-The last of the daylight went soft and gold over {setting}, and the {hero} felt the scared feeling settle down into something quiet and proud.
-
-On the far bank, the first small stars were waking up one by one over the hills.
-
-"I thought I had to wait until I was not afraid," the {hero} said. "I would have waited forever."
-
-{companion_name} bumped them gently. "And now you know better."
-
-The {hero} yawned, tired all the way through, the good kind of tired.
+The {hero} held the {object_motif} and understood. Fear is not the problem. Fear is just a feeling. Trying while you feel it — that is the brave part.
 
 {refrain}.`,
-    scriptTemplate: `{child_name} stood at the bottom of the tall rope-bridge that crossed {setting}. Everyone else had already run across, laughing. {child_name} had not moved.
+        scriptTemplate: `{child_name} wanted to do the big thing in {setting}.
 
-Below the bridge, the water of {setting} moved slow and dark. The planks were old and friendly-looking, but they creaked, and the ropes hummed whenever the wind came through.
+But the fear had come, and the fear was not leaving.
 
-Today was supposed to be the day. {child_name} had promised to cross the bridge. But now, standing here, {child_name}'s knees felt wobbly and the stomach flipped like a fish.
+{{child_name} thought: I should wait until the fear goes away, and then I will try.
 
-"Brave people are not scared," {child_name} whispered. "And I am scared. So I must not be brave at all."
+But the fear did not go anywhere. It just sat there. Heavy and cold and sure.
 
-{child_name} turned the {object_motif} over and over in one hand, wishing the scared feeling would just disappear.
+Days went by. {{child_name} still wanted to do the big thing. The fear was still there.
 
-{companion_name} padded up quietly and sat down beside {child_name}. For a while they said nothing. They just watched the bridge sway.
+{companion_name} noticed {{child_name} stuck between wanting and fear.
 
-"You have been standing here a long time," {companion_name} said gently.
+"You think you have to choose," said {companion_name}, sitting close. "Either be brave, or be scared. But that is not how it works."
 
-"I want to cross," said {child_name}. "But my whole body is shaking. Real brave ones do not shake. I keep waiting to stop being scared, and it never happens."
+"What do you mean?" asked {{child_name}}.
 
-{companion_name} tilted their head. "Ah. I think you are waiting for the wrong thing."
+{companion_name} took the {object_motif} and held it up. "This does two things at once, yes? The weight is real. The beauty is real. Both at the same time."
 
-{child_name} looked up. "The wrong thing?"
+"Yes," said {{child_name}}.
 
-"You are waiting for the fear to leave before you go," said {companion_name}. "But that is not how it works. Scared and trying is the whole of brave. The fear does not mean you are failing. It means you are doing something that matters."
+"Your fear and your brave are like that. Both real. Both there. At the same time. Psst — listen close — brave is not when the fear is gone. Brave is when you try while the fear is still dancing."
 
-{child_name} thought about that. It felt strange and new.
+{{child_name} looked at the big thing waiting. The fear was still there. Boom boom boom went the heart.
 
-For as long as {child_name} could remember, being scared had felt like a stop sign. A big red NO. Now {companion_name} was saying it could be a green light instead.
+"The fear is still here," said {{child_name}}.
 
-"Remember at the pond," {companion_name} went on, "when your voice came out all shaky and you spoke up anyway? You were scared the whole time. And everyone still calls that the day you were brave."
+"Yes," said {companion_name}. "So try with it. Invite it to dance."
 
-{child_name} looked at the bridge again. It still looked long. The stomach still flipped. Nothing about the fear had changed.
+{{child_name} took a breath and did the big thing. The fear came along for every second. The knees shook. The hands trembled. The heart went boom boom boom.
 
-But something in {child_name}'s mind had turned, like a key in a lock.
+But {{child_name} did it.
 
-{child_name} let out a long breath. The bridge was not going to get any shorter. The waiting was over.
+When it was done, {{child_name} was breathing hard and the fear was still there, but something had changed. The fear and the trying had danced together, and the dancing had made the trying possible.
 
-"Go on," said {companion_name} softly. "I am right here."
+"The fear did not go away," said {{child_name}}.
 
-{child_name} stood. The legs were still wobbly. {child_name} put one foot on the first plank. It swayed. {child_name} gasped and gripped the rope.
+"No," said {companion_name}. "But you went anyway. And that is what brave actually is."
 
-"Still here," called {companion_name}. "Keep going."
-
-One plank. Then another. The bridge bounced softly. {child_name}'s heart drummed fast against the ribs, but the feet kept moving. Scared foot, brave foot. Scared foot, brave foot.
-
-{child_name} did not look down. Just the next plank. Just the next one. The rope was rough and good under both hands.
-
-Halfway across, the wind pushed and {child_name} froze. The whole bridge trembled. For a moment {child_name} wanted to turn back.
-
-Instead, {child_name} breathed in, breathed out, and took one more step. Then one more. The scared came along the whole way, like a small passenger riding on {child_name}'s shoulder.
-
-And then, all at once, {child_name}'s foot touched solid ground on the far side.
-
-{child_name} spun around, eyes wide. "I did it! I did it while I was still scared!"
-
-{companion_name} trotted across to join them, and {child_name} held the {object_motif} up high in one fist.
-
-The last of the daylight went soft and gold over {setting}, and {child_name} felt the scared feeling settle down into something quiet and proud.
-
-On the far bank, the first small stars were waking up one by one over the hills.
-
-"I thought I had to wait until I was not afraid," {child_name} said. "I would have waited forever."
-
-{companion_name} bumped them gently. "And now you know better."
-
-{child_name} yawned, tired all the way through, the good kind of tired.
+{{child_name} held the {object_motif} and understood. Fear is not the problem. Fear is just a feeling. Trying while you feel it — that is the brave part.
 
 {refrain}.`
-  },
-  '7-8': {
-    audioTemplate: `The {hero} had signed up for the talent show at {setting} weeks ago, back when it felt far away and easy. Now it was tonight, and the lantern-lit stage waited at the end of the path like an open mouth.
+      },
+      '7-8': {
+        audioTemplate: `In {setting}, the {hero} had finally decided: today is the day I will try the thing I have been afraid of.
 
-Backstage, the {hero} peeked out at the gathering crowd and felt the whole plan fall apart inside. Hands cold. Breath quick. A strange buzzing under the skin, as if the {hero} had swallowed a hive of bees.
+But when the time came, the fear was not smaller. It was bigger. Huge. The kind of fear that fills your whole body and makes you want to run backward fast.
 
-The {hero} knew the song by heart. That was not the problem. The {hero} had practised until every note lived in the fingers. The problem was the body, which had apparently decided that tonight was an emergency.
+The {hero} had expected that facing it would make it smaller. Had thought: once I decide to be brave, the fear will shrink.
 
-"I can't do it," the {hero} said out loud, to no one. "Look at me. I'm falling to pieces. Brave performers walk out there calm and sure. I'm not calm. I'm not anything close to sure. I must not have it in me."
+But the fear did not shrink. It just got heavier.
 
-The {hero} pulled the {object_motif} out of a pocket and squeezed it, willing the shaking to stop. It did not stop.
+{companion_name} came and found the {hero} sitting with the {object_motif} pressed hard in both hands.
 
-Other kids brushed past on their way to the stage, chattering, easy. To the {hero} they all looked carved from something the {hero} was not made of.
+"It got worse," said the {hero}. "The fear got worse since I decided to try."
 
-A quiet shuffle, and {companion_name} appeared at the {hero}'s elbow, settling in without fuss.
+{companion_name} nodded like this made perfect sense. "Of course it did. Fear knows when you are really going to do it, not just think about it. That is when it stands up and gets loud."
 
-"Big crowd," {companion_name} said, following the {hero}'s gaze.
+"How do I make it quiet?" asked the {hero}.
 
-"I keep waiting to feel ready," the {hero} admitted. "Every other kid out there looks fine. I'm shaking so hard I can barely hold this. That's how I know I'm not brave enough. Brave would mean the scared was gone."
+"You do not," said {companion_name}. "You stop waiting for it to be quiet. You do the thing while it is screaming. Psst — listen now — brave people do not have less fear than scared people. Brave people just have more practice doing things while the fear is screaming."
 
-{companion_name} was quiet for a moment, watching the lanterns sway.
+The {hero} looked at the thing waiting. The fear screamed and screamed.
 
-"I think you have brave and fearless mixed up," they said. "They are not the same thing. Fearless is when there is nothing to be afraid of. But brave? Brave only exists when you are scared. Scared and trying anyway — that is the whole of it. If the fear were gone, there would be nothing brave left to do."
+"It is not going to get quieter?" asked the {hero}.
 
-The {hero} turned this over slowly. It did not make the bees stop buzzing. But it rearranged something.
+"Not before you do it," said {companion_name}. "But doing it is what makes it quieter. The quiet comes after, not before."
 
-For as long as the {hero} could remember, the fear had felt like a verdict — a final answer that said no, not you, not tonight. What if it was only weather? Something that blew through, loud and cold, without deciding anything at all?
+So the {hero} stood up, with the fear screaming, with the knees weak and the hands shaking and the heart trying to break out of the ribs. And did the thing.
 
-"So this shaking," the {hero} said, looking down at both hands.
+It was messy. The fear was there the whole time. Halfway through, the {hero} wanted to stop. But {companion_name} was there, nodding, reminding without words: this is what brave looks like. This exact thing — scared and trying at the same time.
 
-"It is proof you are about to do something that counts," said {companion_name}. "Remember the day your voice cracked in front of the class, and you kept talking? Everyone remembers that as the brave day. And your voice shook the whole way through it."
+When it was done, the fear was still there. But it was different now. Smaller. Not gone, but transformed into something that felt less like a wall and more like a companion who had been tested.
 
-Out on the stage, another performer finished, and a warm wave of clapping rolled backstage. Soon it would be the {hero}'s turn. The fear did not shrink. If anything it grew.
+"The fear is still here," said the {hero}, breathing hard.
 
-The {hero} pressed both feet flat on the floor and tried to remember how to breathe on purpose. In for four. Out for four. The bees did not leave. But the {hero} found, underneath them, that the legs would still hold.
+"Yes," said {companion_name}. "But it is a different fear now. It is the fear of someone who has already done the thing. That is the only kind of fear that gets smaller — the fear after trying, not the fear before."
 
-But the {hero} looked down at the {object_motif} in one trembling hand and thought: I do not have to wait to stop shaking. I can go shaking.
-
-A voice called the {hero}'s act. The {hero}'s stomach dropped like a stone down a well.
-
-"I'm terrified," the {hero} whispered.
-
-"Good," said {companion_name}, with a small grin. "That means it matters. I'll be right here in the wings."
-
-The {hero} almost laughed. Of course {companion_name} would call being terrified good news.
-
-The {hero} walked out. The lights were bright and the faces were a blur and the knees genuinely wobbled with every step. The {hero} reached the middle of the stage, opened both hands, and began.
-
-For one endless second the {hero} was sure nothing would come out at all. The silence stretched. Then the first note arrived, small and shaking, and the {hero} chased it into the second.
-
-The first few words came out thin and wavery. The scared rode along on every one of them. But the {hero} did not stop for it. Wavery word after wavery word, the performance kept going, and somewhere in the middle the {hero} noticed the shaking had not won. It was still there — and the {hero} was doing the thing anyway, both at once.
-
-When it ended, the clapping came, warm and real. But the loudest thing was not the crowd. It was the surprised, ringing feeling in the {hero}'s own chest.
-
-Back in the wings, {companion_name} was waiting.
-
-"I was scared the entire time," the {hero} said, half laughing, half out of breath. "It never went away. Not for one second."
-
-The {hero} shook their head slowly, still not quite believing it. All that waiting to feel different, and it turned out different was never the price of admission.
-
-"I know," said {companion_name}. "And you did it anyway. Look at what that means about you."
-
-The {hero} held the {object_motif} against both palms and felt the buzzing slowly fade into a deep, glowing tiredness. Outside, past the lanterns of {setting}, the evening had gone soft and blue.
-
-Somewhere out past the tables, families were already gathering coats, but the warmth of the moment stayed close, like heat off a stone long after the sun has gone.
-
-The {hero} realised something worth keeping: the fear had shown up tonight exactly as strong as ever — and it had not been able to stop a single thing.
+The {hero} held the {object_motif} and understood something that would change everything: fear is not what you need to get rid of. Fear is not the opposite of brave. Fear is what you need to move forward with.
 
 {refrain}.`,
-    scriptTemplate: `{child_name} had signed up for the talent show at {setting} weeks ago, back when it felt far away and easy. Now it was tonight, and the lantern-lit stage waited at the end of the path like an open mouth.
+        scriptTemplate: `In {setting}, {{child_name} had finally decided: today is the day I will try the thing I have been afraid of.
 
-Backstage, {child_name} peeked out at the gathering crowd and felt the whole plan fall apart inside. Hands cold. Breath quick. A strange buzzing under the skin, as if {child_name} had swallowed a hive of bees.
+But when the time came, the fear was not smaller. It was bigger. Huge. The kind of fear that fills your whole body and makes you want to run backward fast.
 
-{child_name} knew the song by heart. That was not the problem. {child_name} had practised until every note lived in the fingers. The problem was the body, which had apparently decided that tonight was an emergency.
+{{child_name} had expected that facing it would make it smaller. Had thought: once I decide to be brave, the fear will shrink.
 
-"I can't do it," {child_name} said out loud, to no one. "Look at me. I'm falling to pieces. Brave performers walk out there calm and sure. I'm not calm. I'm not anything close to sure. I must not have it in me."
+But the fear did not shrink. It just got heavier.
 
-{child_name} pulled the {object_motif} out of a pocket and squeezed it, willing the shaking to stop. It did not stop.
+{companion_name} came and found {{child_name} sitting with the {object_motif} pressed hard in both hands.
 
-Other kids brushed past on their way to the stage, chattering, easy. To {child_name} they all looked carved from something {child_name} was not made of.
+"It got worse," said {{child_name}}. "The fear got worse since I decided to try."
 
-A quiet shuffle, and {companion_name} appeared at {child_name}'s elbow, settling in without fuss.
+{companion_name} nodded like this made perfect sense. "Of course it did. Fear knows when you are really going to do it, not just think about it. That is when it stands up and gets loud."
 
-"Big crowd," {companion_name} said, following {child_name}'s gaze.
+"How do I make it quiet?" asked {{child_name}}.
 
-"I keep waiting to feel ready," {child_name} admitted. "Every other kid out there looks fine. I'm shaking so hard I can barely hold this. That's how I know I'm not brave enough. Brave would mean the scared was gone."
+"You do not," said {companion_name}. "You stop waiting for it to be quiet. You do the thing while it is screaming. Psst — listen now — brave people do not have less fear than scared people. Brave people just have more practice doing things while the fear is screaming."
 
-{companion_name} was quiet for a moment, watching the lanterns sway.
+{{child_name} looked at the thing waiting. The fear screamed and screamed.
 
-"I think you have brave and fearless mixed up," they said. "They are not the same thing. Fearless is when there is nothing to be afraid of. But brave? Brave only exists when you are scared. Scared and trying anyway — that is the whole of it. If the fear were gone, there would be nothing brave left to do."
+"It is not going to get quieter?" asked {{child_name}}.
 
-{child_name} turned this over slowly. It did not make the bees stop buzzing. But it rearranged something.
+"Not before you do it," said {companion_name}. "But doing it is what makes it quieter. The quiet comes after, not before."
 
-For as long as {child_name} could remember, the fear had felt like a verdict — a final answer that said no, not you, not tonight. What if it was only weather? Something that blew through, loud and cold, without deciding anything at all?
+So {{child_name} stood up, with the fear screaming, with the knees weak and the hands shaking and the heart trying to break out of the ribs. And did the thing.
 
-"So this shaking," {child_name} said, looking down at both hands.
+It was messy. The fear was there the whole time. Halfway through, {{child_name} wanted to stop. But {companion_name} was there, nodding, reminding without words: this is what brave looks like. This exact thing — scared and trying at the same time.
 
-"It is proof you are about to do something that counts," said {companion_name}. "Remember the day your voice cracked in front of the class, and you kept talking? Everyone remembers that as the brave day. And your voice shook the whole way through it."
+When it was done, the fear was still there. But it was different now. Smaller. Not gone, but transformed into something that felt less like a wall and more like a companion who had been tested.
 
-Out on the stage, another performer finished, and a warm wave of clapping rolled backstage. Soon it would be {child_name}'s turn. The fear did not shrink. If anything it grew.
+"The fear is still here," said {{child_name}}, breathing hard.
 
-{child_name} pressed both feet flat on the floor and tried to remember how to breathe on purpose. In for four. Out for four. The bees did not leave. But {child_name} found, underneath them, that the legs would still hold.
+"Yes," said {companion_name}. "But it is a different fear now. It is the fear of someone who has already done the thing. That is the only kind of fear that gets smaller — the fear after trying, not the fear before."
 
-But {child_name} looked down at the {object_motif} in one trembling hand and thought: I do not have to wait to stop shaking. I can go shaking.
-
-A voice called {child_name}'s act. {child_name}'s stomach dropped like a stone down a well.
-
-"I'm terrified," {child_name} whispered.
-
-"Good," said {companion_name}, with a small grin. "That means it matters. I'll be right here in the wings."
-
-{child_name} almost laughed. Of course {companion_name} would call being terrified good news.
-
-{child_name} walked out. The lights were bright and the faces were a blur and the knees genuinely wobbled with every step. {child_name} reached the middle of the stage, opened both hands, and began.
-
-For one endless second {child_name} was sure nothing would come out at all. The silence stretched. Then the first note arrived, small and shaking, and {child_name} chased it into the second.
-
-The first few words came out thin and wavery. The scared rode along on every one of them. But {child_name} did not stop for it. Wavery word after wavery word, the performance kept going, and somewhere in the middle {child_name} noticed the shaking had not won. It was still there — and {child_name} was doing the thing anyway, both at once.
-
-When it ended, the clapping came, warm and real. But the loudest thing was not the crowd. It was the surprised, ringing feeling in {child_name}'s own chest.
-
-Back in the wings, {companion_name} was waiting.
-
-"I was scared the entire time," {child_name} said, half laughing, half out of breath. "It never went away. Not for one second."
-
-{child_name} shook their head slowly, still not quite believing it. All that waiting to feel different, and it turned out different was never the price of admission.
-
-"I know," said {companion_name}. "And you did it anyway. Look at what that means about you."
-
-{child_name} held the {object_motif} against both palms and felt the buzzing slowly fade into a deep, glowing tiredness. Outside, past the lanterns of {setting}, the evening had gone soft and blue.
-
-Somewhere out past the tables, families were already gathering coats, but the warmth of the moment stayed close, like heat off a stone long after the sun has gone.
-
-{child_name} realised something worth keeping: the fear had shown up tonight exactly as strong as ever — and it had not been able to stop a single thing.
+{{child_name} held the {object_motif} and understood something that would change everything: fear is not what you need to get rid of. Fear is not the opposite of brave. Fear is what you need to move forward with.
 
 {refrain}.`
-  },
-  '9-11': {
-    audioTemplate: `For three weeks the {hero} had told everyone that the climbing wall at {setting} was no big deal. It was the kind of thing you said when you desperately hoped it would become true by repetition. Now the {hero} stood at its base, neck craned back, and understood with sinking certainty that saying a thing does not shrink it.
+      },
+      '9-11': {
+        audioTemplate: `Before the big moment, in {setting}, the {hero} had imagined a thousand times how brave would feel.
 
-The wall went up and up, studded with coloured holds, disappearing into the last gold light of the evening. Somewhere near the top was a small bell you were meant to ring. The {hero} had imagined ringing it a hundred times. In none of those imaginings had the {hero}'s hands been this cold, or the breath this shallow, or the whole enterprise felt this impossible.
+In the imagination, brave was clean and bright and sure. Brave was walking toward the scary thing and feeling strong and ready.
 
-The {hero} had a theory about people who did brave things: that they were simply born without the part that flinched. The {hero} had studied them from a distance for years — the kids who put their hands up first, who dived into cold water, who walked into new rooms as if rooms were nothing — and had concluded, quietly and hopelessly, that whatever they had, the {hero} had been left out of. Tonight was supposed to be the night the {hero} proved otherwise. Instead it felt like the night the theory would finally be confirmed.
+None of that was true.
 
-Around the {hero}, other kids clipped in and went up without ceremony, calling to each other, laughing at the wobbles. The {hero} watched them and felt the old, familiar arithmetic begin: they are not afraid, and I am; therefore they are brave and I am not; therefore I should not even try, because trying and failing in front of everyone would only prove what the fear already seems to be telling me.
+Real brave, when it arrived, felt awful.
 
-The {hero} took the {object_motif} from a pocket and closed a fist around it, the way you hold onto something when the ground feels unreliable.
+The {hero}'s hands shook. The throat was tight. The mind kept offering excellent reasons to turn around. The body was sending distress signals on every channel. Fear was not absent — it was everywhere, in every cell, screaming that this was a terrible idea.
 
-{companion_name} arrived without announcement, the way they always did, and stood beside the {hero} looking up at the same impossible wall.
+But the {hero} did it anyway.
 
-"You have talked about this wall for three weeks," {companion_name} said. "And now you have gone very quiet."
+And in the middle of doing it, with the fear at full volume, the {hero} realized: this is brave. Not because the fear is gone. Not because the {hero} feels confident. But because the {hero} is doing the thing while the fear is screaming at them not to.
 
-"Because I was wrong about myself," the {hero} said. The words came out lower and more honest than intended. "I thought when the moment came, I would feel ready. Steady. Like the others look. Instead I feel like this. Shaking. Sick. That has to mean I am not built for it. Brave people do not feel like this."
+{companion_name} had been watching the {hero} wrestle with all of this.
 
-{companion_name} considered the wall a while longer before answering, as if giving the question the seriousness it deserved.
+"You are surprised," {companion_name} said afterward, when the {hero} was sitting with shaking hands and racing heart.
 
-"You are measuring yourself against the wrong idea," {companion_name} said at last. "You think brave means the absence of fear. But someone with no fear is not being brave — they are just not in any danger they can feel. Brave and scared are not opposites. Scared and trying is the entire thing. The fear is not proof you are failing; it is the raw material courage is made from. Take it away and there is nothing left to be brave with."
+"I thought brave would feel different," the {hero} admitted. "I thought it would feel sure."
 
-The {hero} said nothing for a moment. It was not that the fear vanished — it sat exactly where it had been, heavy behind the ribs. But the meaning the {hero} had hung on it was quietly coming loose.
+"Brave is not a feeling," said {companion_name}. "Brave is a choice you make while having all the feelings. Scared, uncertain, shaky, doubting every choice — and doing it anyway. That is what brave is. Psst — listen: most brave people are terrified. That is the only way to know it is really brave. If you are not afraid, then it was not a risk worth taking."
 
-It was a strange, dawning thing, like discovering a word you had been mispronouncing your whole life. The fear had always come with a verdict attached — not you, not this, not tonight — and the {hero} had never once thought to question whether the verdict truly belonged to the fear, or whether the {hero} had simply been the one adding it every time.
+The {hero} thought about all the times they had not done brave things. Had waited for the fear to disappear. Had thought: when I feel more confident, when the fear is smaller, when I am more certain. And the waiting had been safe. And the waiting had been small.
 
-"So the others going up easy," the {hero} said slowly, "they might not be braver than me. They might just be less afraid."
+"So the fear does not go away?" asked the {hero}.
 
-"That is closer to the truth than you know," said {companion_name}. "And think back. The day your voice went thin and shook in front of everyone, and you kept speaking — nobody remembers that as the day you failed to be calm. They remember it as the bravest thing you did all year. Not because the shaking stopped. Because you went on right through the middle of it."
+"Not before. But after — after you do it, after you prove to yourself that you can walk through fear and come out the other side — then the fear becomes different. It becomes the fear of someone who knows they can do hard things. That is a much smaller fear."
 
-The {hero} looked up at the wall again. It had not become smaller. The bell at the top was exactly as far away as before. And yet the thing that had felt like a locked door — I am too scared, therefore I cannot — no longer seemed to lock.
+The {hero} held the {object_motif} and understood the trade: you could wait forever for courage to arrive before the fear leaves. Or you could notice that courage is not the absence of fear. Courage is the choice to move forward while the fear is still dancing.
 
-The {hero} let out a long breath. It did not steady the hands — nothing was going to steady the hands tonight — but it made a small clearing in the noise, enough to stand in. The others were still going up, still laughing, but they no longer looked like a different species. They just looked like people who happened, tonight, to have less to be afraid of.
-
-"I do not have to wait until I feel brave," the {hero} said, half to {companion_name} and half to the wall. "There is no version of tonight where the fear politely leaves first."
-
-"There almost never is," {companion_name} agreed gently. "Go while it is still here. That is allowed. That is the whole trick."
-
-The {hero} clipped in. The harness tightened. The first hold was easy, and the second, and then the ground was further away than felt comfortable and the fear stood up to its full height and made itself known in every limb. The {hero}'s foot slipped once on a smooth hold and the heart lurched — but the rope held, and the {hero} breathed, and reached again.
-
-Halfway up, the muscles in the {hero}'s arms began to burn and the reasonable, sensible voice inside started listing all the excellent reasons to quit: it was late, the wall was too hard, no one would blame the {hero} for coming down, there would be other nights. Every word of it was true. And underneath all of it, quieter, was the fear, doing what it always did — dressing itself up as good sense.
-
-Higher up, there was a stretch with no obvious hold, where the {hero} clung and shook and seriously considered calling to be let down. The scared was enormous here, filling everything. But the {hero} noticed, almost with surprise, that being this frightened and still hanging on were not contradictions. They were happening in the same body at the same time, and the body had not fallen apart.
-
-Scared hand, moving hand. Scared foot, searching foot. The {hero} did not conquer the fear or push it away or wait it out. The {hero} simply brought it along, all the way up, like a difficult companion who was going to come whether invited or not.
-
-There was no single triumphant moment, no instant where the fear broke and fell away. There was only the next hold, and then the next, each one chosen while frightened, each one a small quiet act of going on anyway. Bit by bit, the bright dot of the bell stopped being an idea and started being a thing the {hero}'s hand could almost, almost reach.
-
-And then the {hero}'s fingers closed around the bell, and it rang — a bright, ordinary, astonishing sound — out over the darkening {setting}.
-
-Coming down was slow and shaky and undignified, and the {hero} did not care in the slightest.
-
-On the ground, {companion_name} was waiting, saying nothing, wearing the particular expression of someone who had known all along.
-
-"I was scared the whole way up," the {hero} said. "Every single second. It never once let go of me."
-
-"I believe you," said {companion_name}. "And there is the bell, still ringing in your ears."
-
-For a moment the {hero} just stood there in the cooling air, letting the fact of it settle: not that the fear had been small, or manageable, or secretly not that bad — it had been every bit as big as it always was — but that it had, in the end, been beside the point. It had come the whole way and voted the whole way and lost every single vote.
-
-The {hero} uncurled a hand and looked at the {object_motif} resting there, and felt the fear finally begin to loosen — not because it had been proven wrong, but because it had come along for the whole climb and turned out to have no power to stop anything. Above {setting}, the first stars had come out without anyone noticing, and the bell's echo was still fading into the dark.
-
-{companion_name} did not say anything wise, and the {hero} was grateful for it; some things did not need a lesson stitched onto the end. They just stood together and watched the sky finish turning dark.
-
-The {hero} understood now that the fear would visit again — next time, and the time after — and that this was not a flaw in the plan. It was the plan.
+The {hero} had chosen the dance. And the dance had made everything change.
 
 {refrain}.`,
-    scriptTemplate: `For three weeks {child_name} had told everyone that the climbing wall at {setting} was no big deal. It was the kind of thing you said when you desperately hoped it would become true by repetition. Now {child_name} stood at its base, neck craned back, and understood with sinking certainty that saying a thing does not shrink it.
+        scriptTemplate: `Before the big moment, in {setting}, {{child_name} had imagined a thousand times how brave would feel.
 
-The wall went up and up, studded with coloured holds, disappearing into the last gold light of the evening. Somewhere near the top was a small bell you were meant to ring. {child_name} had imagined ringing it a hundred times. In none of those imaginings had {child_name}'s hands been this cold, or the breath this shallow, or the whole enterprise felt this impossible.
+In the imagination, brave was clean and bright and sure. Brave was walking toward the scary thing and feeling strong and ready.
 
-{child_name} had a theory about people who did brave things: that they were simply born without the part that flinched. {child_name} had studied them from a distance for years — the kids who put their hands up first, who dived into cold water, who walked into new rooms as if rooms were nothing — and had concluded, quietly and hopelessly, that whatever they had, {child_name} had been left out of. Tonight was supposed to be the night {child_name} proved otherwise. Instead it felt like the night the theory would finally be confirmed.
+None of that was true.
 
-Around {child_name}, other kids clipped in and went up without ceremony, calling to each other, laughing at the wobbles. {child_name} watched them and felt the old, familiar arithmetic begin: they are not afraid, and I am; therefore they are brave and I am not; therefore I should not even try, because trying and failing in front of everyone would only prove what the fear already seems to be telling me.
+Real brave, when it arrived, felt awful.
 
-{child_name} took the {object_motif} from a pocket and closed a fist around it, the way you hold onto something when the ground feels unreliable.
+{{child_name}'s hands shook. The throat was tight. The mind kept offering excellent reasons to turn around. The body was sending distress signals on every channel. Fear was not absent — it was everywhere, in every cell, screaming that this was a terrible idea.
 
-{companion_name} arrived without announcement, the way they always did, and stood beside {child_name} looking up at the same impossible wall.
+But {{child_name} did it anyway.
 
-"You have talked about this wall for three weeks," {companion_name} said. "And now you have gone very quiet."
+And in the middle of doing it, with the fear at full volume, {{child_name} realized: this is brave. Not because the fear is gone. Not because {{child_name} feels confident. But because {{child_name} is doing the thing while the fear is screaming at them not to.
 
-"Because I was wrong about myself," {child_name} said. The words came out lower and more honest than intended. "I thought when the moment came, I would feel ready. Steady. Like the others look. Instead I feel like this. Shaking. Sick. That has to mean I am not built for it. Brave people do not feel like this."
+{companion_name} had been watching {{child_name} wrestle with all of this.
 
-{companion_name} considered the wall a while longer before answering, as if giving the question the seriousness it deserved.
+"You are surprised," {companion_name} said afterward, when {{child_name} was sitting with shaking hands and racing heart.
 
-"You are measuring yourself against the wrong idea," {companion_name} said at last. "You think brave means the absence of fear. But someone with no fear is not being brave — they are just not in any danger they can feel. Brave and scared are not opposites. Scared and trying is the entire thing. The fear is not proof you are failing; it is the raw material courage is made from. Take it away and there is nothing left to be brave with."
+"I thought brave would feel different," {{child_name} admitted. "I thought it would feel sure."
 
-{child_name} said nothing for a moment. It was not that the fear vanished — it sat exactly where it had been, heavy behind the ribs. But the meaning {child_name} had hung on it was quietly coming loose.
+"Brave is not a feeling," said {companion_name}. "Brave is a choice you make while having all the feelings. Scared, uncertain, shaky, doubting every choice — and doing it anyway. That is what brave is. Psst — listen: most brave people are terrified. That is the only way to know it is really brave. If you are not afraid, then it was not a risk worth taking."
 
-It was a strange, dawning thing, like discovering a word you had been mispronouncing your whole life. The fear had always come with a verdict attached — not you, not this, not tonight — and {child_name} had never once thought to question whether the verdict truly belonged to the fear, or whether {child_name} had simply been the one adding it every time.
+{{child_name} thought about all the times they had not done brave things. Had waited for the fear to disappear. Had thought: when I feel more confident, when the fear is smaller, when I am more certain. And the waiting had been safe. And the waiting had been small.
 
-"So the others going up easy," {child_name} said slowly, "they might not be braver than me. They might just be less afraid."
+"So the fear does not go away?" asked {{child_name}}.
 
-"That is closer to the truth than you know," said {companion_name}. "And think back. The day your voice went thin and shook in front of everyone, and you kept speaking — nobody remembers that as the day you failed to be calm. They remember it as the bravest thing you did all year. Not because the shaking stopped. Because you went on right through the middle of it."
+"Not before. But after — after you do it, after you prove to yourself that you can walk through fear and come out the other side — then the fear becomes different. It becomes the fear of someone who knows they can do hard things. That is a much smaller fear."
 
-{child_name} looked up at the wall again. It had not become smaller. The bell at the top was exactly as far away as before. And yet the thing that had felt like a locked door — I am too scared, therefore I cannot — no longer seemed to lock.
+{{child_name} held the {object_motif} and understood the trade: you could wait forever for courage to arrive before the fear leaves. Or you could notice that courage is not the absence of fear. Courage is the choice to move forward while the fear is still dancing.
 
-{child_name} let out a long breath. It did not steady the hands — nothing was going to steady the hands tonight — but it made a small clearing in the noise, enough to stand in. The others were still going up, still laughing, but they no longer looked like a different species. They just looked like people who happened, tonight, to have less to be afraid of.
-
-"I do not have to wait until I feel brave," {child_name} said, half to {companion_name} and half to the wall. "There is no version of tonight where the fear politely leaves first."
-
-"There almost never is," {companion_name} agreed gently. "Go while it is still here. That is allowed. That is the whole trick."
-
-{child_name} clipped in. The harness tightened. The first hold was easy, and the second, and then the ground was further away than felt comfortable and the fear stood up to its full height and made itself known in every limb. {child_name}'s foot slipped once on a smooth hold and the heart lurched — but the rope held, and {child_name} breathed, and reached again.
-
-Halfway up, the muscles in {child_name}'s arms began to burn and the reasonable, sensible voice inside started listing all the excellent reasons to quit: it was late, the wall was too hard, no one would blame {child_name} for coming down, there would be other nights. Every word of it was true. And underneath all of it, quieter, was the fear, doing what it always did — dressing itself up as good sense.
-
-Higher up, there was a stretch with no obvious hold, where {child_name} clung and shook and seriously considered calling to be let down. The scared was enormous here, filling everything. But {child_name} noticed, almost with surprise, that being this frightened and still hanging on were not contradictions. They were happening in the same body at the same time, and the body had not fallen apart.
-
-Scared hand, moving hand. Scared foot, searching foot. {child_name} did not conquer the fear or push it away or wait it out. {child_name} simply brought it along, all the way up, like a difficult companion who was going to come whether invited or not.
-
-There was no single triumphant moment, no instant where the fear broke and fell away. There was only the next hold, and then the next, each one chosen while frightened, each one a small quiet act of going on anyway. Bit by bit, the bright dot of the bell stopped being an idea and started being a thing {child_name}'s hand could almost, almost reach.
-
-And then {child_name}'s fingers closed around the bell, and it rang — a bright, ordinary, astonishing sound — out over the darkening {setting}.
-
-Coming down was slow and shaky and undignified, and {child_name} did not care in the slightest.
-
-On the ground, {companion_name} was waiting, saying nothing, wearing the particular expression of someone who had known all along.
-
-"I was scared the whole way up," {child_name} said. "Every single second. It never once let go of me."
-
-"I believe you," said {companion_name}. "And there is the bell, still ringing in your ears."
-
-For a moment {child_name} just stood there in the cooling air, letting the fact of it settle: not that the fear had been small, or manageable, or secretly not that bad — it had been every bit as big as it always was — but that it had, in the end, been beside the point. It had come the whole way and voted the whole way and lost every single vote.
-
-{child_name} uncurled a hand and looked at the {object_motif} resting there, and felt the fear finally begin to loosen — not because it had been proven wrong, but because it had come along for the whole climb and turned out to have no power to stop anything. Above {setting}, the first stars had come out without anyone noticing, and the bell's echo was still fading into the dark.
-
-{companion_name} did not say anything wise, and {child_name} was grateful for it; some things did not need a lesson stitched onto the end. They just stood together and watched the sky finish turning dark.
-
-{child_name} understood now that the fear would visit again — next time, and the time after — and that this was not a flaw in the plan. It was the plan.
+{{child_name} had chosen the dance. And the dance had made everything change.
 
 {refrain}.`
-  }
-},
-    audioTemplate: `Something big stood before the {hero} in {setting}, and their heart raced. The {object_motif} trembled inside them.
+      },
+    },
+    audioTemplate: `The {hero} felt the fear in {setting}, big and loud and real.
 
-"I must not be brave," they said sadly, "because I am so scared."
+They thought: I should wait until this is gone, then I will try.
 
-{companion_name} shook their head softly. "Oh, but that is exactly backwards. If you were not scared, it would not take any courage at all. Brave is not the absence of fear. Brave is being scared — and trying anyway."
+But {companion_name} sat close. "Fear is not the opposite of brave," they said. "Fear is the dance partner. Psst — dance with it anyway."
 
-The {hero} blinked. "So being scared… means I have a chance to be brave?"
+So the {hero} did the thing. Scared and trying at the same time.
 
-"Always," said {companion_name}. "Your shaky voice, long ago — that was brave because it shook."
-
-The {hero} felt the fear still there, fluttering — but beside it now stood something steadier. They did not wait for the fear to leave. They stepped forward with it.
-
-And that step, taken while afraid, was the bravest thing they had ever done.
-
-"Scared and trying," the {hero} breathed, and the {object_motif} burned warm and proud.
+And that was when the {hero} learned: brave does not feel sure. Brave feels terrified, and does it anyway.
 
 {refrain}.`,
-    scriptTemplate: `Something big stood before {child_name} the {hero} in {setting}, and their heart raced. The {object_motif} trembled inside them.
+    scriptTemplate: `{child_name} felt the fear in {setting}, big and loud and real.
 
-"I must not be brave," {child_name} said sadly, "because I am so scared."
+They thought: I should wait until this is gone, then I will try.
 
-{companion_name} shook their head softly. "Oh, but that is exactly backwards, {child_name}. If you were not scared, it would not take any courage at all. Brave is not the absence of fear. Brave is being scared — and trying anyway."
+But {companion_name} sat close. "Fear is not the opposite of brave, {child_name}," they said. "Fear is the dance partner. Psst — dance with it anyway."
 
-{child_name} blinked. "So being scared… means I have a chance to be brave?"
+So {{child_name} did the thing. Scared and trying at the same time.
 
-"Always," said {companion_name}. "Your shaky voice, long ago — that was brave because it shook."
-
-{child_name} felt the fear still there, fluttering — but beside it now stood something steadier. {child_name} did not wait for the fear to leave, and stepped forward with it.
-
-And that step, taken while afraid, was the bravest thing {child_name} had ever done.
-
-"Scared and trying," {child_name} breathed, and the {object_motif} burned warm and proud.
+And that was when {{child_name} learned: brave does not feel sure. Brave feels terrified, and does it anyway.
 
 {refrain}.`,
   },
 
   {
     ordinal: 5, title: 'I Can Try',
-    concept: 'The settled, quiet confidence to attempt anything', callback: 'Brave is scared and trying (Level 4)', ageFloor: 5,
-    summary: 'The capstone: facing something new, the hero no longer needs to feel ready, fearless, or better than anyone. They simply trust their own small light and say the three words that hold all of it — I can try. The path gathers into a calm, durable confidence.',
-    teachingNote: 'True confidence is not certainty of success but the settled willingness to try — the quiet ground from which every other skill grows.',
-    learningBeat: 'I can try',
+    concept: 'Permission to attempt, to fail, to learn, to be', callback: 'Scared and trying (Level 4)', ageFloor: 6,
+    summary: 'The hero is at the edge of something they have always wanted to do, waiting for permission that no one will ever give. Their companion delivers the final truth: you do not get permission. You only get the choice to try. And trying itself is the entire permission.',
+    teachingNote: 'The capstone story. No one will hand over permission. Trying itself is the entire permission. A child who understands this will not wait their whole life for someone to tell them they are allowed.',
+    learningBeat: 'I can try, and that is enough',
     ageVariants: {
-  '3-4': { audioTemplate: `The {hero} stood at the edge of {setting}. Something new waited there. A tall step. A big new try.
+      '3-4': {
+        audioTemplate: `The {hero} stood at the edge of something wonderful in {setting}.
 
-The {hero} looked up. The step looked high. The tummy went flip. The hands felt small.
+The {object_motif} was held very tight.
 
-A bigger kid went up fast. Up and over. Quick and easy. The {hero} watched and felt slow.
+The {hero} thought: Maybe when I am older, someone will say "go ahead." Maybe then it will be okay.
 
-The {hero} wanted to go home. The step was so tall. But the {hero} did not go. The {hero} stayed.
+But {companion_name} knew the {hero} had been waiting a very long time.
 
-{companion_name} sat close by. {companion_name} did not climb it. {companion_name} only waited there.
+"You are waiting for permission," said {companion_name}.
 
-The {hero} held the {object_motif}. It felt steady. It felt warm in two hands. It did not mind at all.
+The {hero} nodded.
 
-"I do not feel ready," said the {hero}. "I do not feel big or brave."
+"Here is a secret," said {companion_name}. "No one is going to give it. No one ever does. Psst — the permission is inside you already."
 
-{companion_name} smiled a soft smile. "You do not have to feel big. You only have to try. Small and steady is enough."
+"Really?" whispered the {hero}.
 
-The {hero} looked at the tall step. The {hero} looked at two small hands. Maybe small was okay.
+"Really. You can try right now."
 
-The {hero} looked at {companion_name}. {companion_name} gave a calm, kind nod.
+So the {hero} did.
 
-The {hero} took one breath. In and out. Slow and soft. The shoulders came down low.
+And the {hero} discovered: trying is its own permission.
 
-Then the {hero} said three little words. "I can try."
+The {hero} was not perfect. The {hero} was still little. But the {hero} tried anyway.
 
-One foot went up. Then one hand. Then the other foot. Step by step. Slow and sure.
+And that was enough.
 
-Up went the {hero}. Slow like a little snail. And brave like one too. One more step. One more.
-
-{companion_name} watched from below. {companion_name} did not help. This was the {hero}'s own try.
-
-The {hero} wobbled once. The {hero} stopped. The {hero} breathed. Then the {hero} went again.
-
-The {hero} did not rush. The {hero} did not stop. Just one small step. Then one more. Almost there now. Nearly, nearly there.
-
-And there. The top. The {hero} stood tall on the high step. The {hero} did it. All on their own.
-
-The {hero} looked down at {companion_name}. {companion_name} waved a big happy wave.
-
-"You tried," said {companion_name}. "That was all you needed to do."
-
-The {hero} felt tall and glad. Not big. Not brave. Just glad and calm inside.
-
-The {hero} held the {object_motif} close and soft. The moon was gentle over {setting}. A little wind said goodnight. A soft round cloud went by.
-
-The {hero} gave a big slow yawn. The try was done. The heart felt calm and full.
-
-{refrain}.`, scriptTemplate: `{child_name} stood at the edge of {setting}. Something new waited there. A tall step. A big new try.
-
-{child_name} looked up. The step looked high. The tummy went flip. The hands felt small.
-
-A bigger kid went up fast. Up and over. Quick and easy. {child_name} watched and felt slow.
-
-{child_name} wanted to go home. The step was so tall. But {child_name} did not go. {child_name} stayed.
-
-{companion_name} sat close by. {companion_name} did not climb it. {companion_name} only waited there.
-
-{child_name} held the {object_motif}. It felt steady. It felt warm in two hands. It did not mind at all.
-
-"I do not feel ready," said {child_name}. "I do not feel big or brave."
-
-{companion_name} smiled a soft smile. "You do not have to feel big. You only have to try. Small and steady is enough."
-
-{child_name} looked at the tall step. {child_name} looked at two small hands. Maybe small was okay.
-
-{child_name} looked at {companion_name}. {companion_name} gave a calm, kind nod.
-
-{child_name} took one breath. In and out. Slow and soft. The shoulders came down low.
-
-Then {child_name} said three little words. "I can try."
-
-One foot went up. Then one hand. Then the other foot. Step by step. Slow and sure.
-
-Up went {child_name}. Slow like a little snail. And brave like one too. One more step. One more.
-
-{companion_name} watched from below. {companion_name} did not help. This was {child_name}'s own try.
-
-{child_name} wobbled once. {child_name} stopped. {child_name} breathed. Then {child_name} went again.
-
-{child_name} did not rush. {child_name} did not stop. Just one small step. Then one more. Almost there now. Nearly, nearly there.
-
-And there. The top. {child_name} stood tall on the high step. {child_name} did it. All on their own.
-
-{child_name} looked down at {companion_name}. {companion_name} waved a big happy wave.
-
-"You tried," said {companion_name}. "That was all you needed to do."
-
-{child_name} felt tall and glad. Not big. Not brave. Just glad and calm inside.
-
-{child_name} held the {object_motif} close and soft. The moon was gentle over {setting}. A little wind said goodnight. A soft round cloud went by.
-
-{child_name} gave a big slow yawn. The try was done. The heart felt calm and full.
-
-{refrain}.` },
-  '5-6': { audioTemplate: `The {hero} stood at the edge of {setting}, looking up at the thing that was new. Everyone else seemed to already know how to do it. The {hero} did not. And that made the tummy feel tight and small.
-
-The {hero} had wanted to try this for a long time. Had pictured it, even. But picturing it was easy, and standing here at the real edge of it was not easy at all.
-
-It was a big new try, a first go at something the {hero} had never done before. Nearby, a bigger kid had done it twice already, quick and easy, and had not even looked scared once. The bigger kid landed and shook out both arms like it was the simplest thing in the world.
-
-The {hero} looked down at two hands and wished they felt braver than they did. For a moment the {hero} almost turned around. Almost decided that today was not the day. Almost walked back the way they came.
-
-{companion_name} came and sat on a warm stone at the edge of {setting}. {companion_name} did not push. {companion_name} did not say hurry up. {companion_name} only stayed close and let the {hero} think.
-
-"I keep waiting to feel ready," the {hero} said. "But the ready feeling does not come. Maybe I am just not the kind who can do this."
-
-{companion_name} thought about that for a moment. "You do not have to feel ready, and you do not have to be the best one here. You only have to try. That is the whole thing."
-
-The {hero} held the {object_motif} in two hands. It was steady, and it was warm, and it did not ask the {hero} to be anyone bigger or braver than they already were.
-
-"What if I try and I still do not do it?" the {hero} asked, very quietly.
-
-"Then you tried," said {companion_name}. "And trying is already the brave part. I will be right here either way, whatever happens."
-
-The {hero} looked at the new thing, then at {companion_name}, then down at the {object_motif} resting in both hands. Nothing about it had changed. The step was still the step. But something inside the {hero} had gone a little quieter, a little steadier.
-
-The {hero} breathed in slow. The shoulders came down a little. The three small words felt round and true, and the {hero} said them out loud. "I can try."
-
-One step. That was all. Just the first one. The {hero} did not think about the whole climb, only the next small move. Then the next. Then the one after that.
-
-{companion_name} did not reach out to help. {companion_name} watched the {hero} go, step by careful step, all on their own, not saying a word.
-
-The {hero} slipped once, just a little, and stopped, and breathed, and went again. The old scared voice whispered that this would be a fine place to stop. The {hero} listened to the whisper, and then let it drift on past, and reached for the next hold instead. Not fast. Not perfect. Just steady, like a small light that would not blow out.
-
-And then the {hero} was there. Up, over, through, done. The new thing was not new anymore. The {hero} had done it, all alone, with two ordinary hands.
-
-The {hero} looked back at {companion_name} with wide, surprised eyes, still breathing quick.
-
-"You did that," {companion_name} said softly. "Not because the scared feeling went away. Because you went anyway."
-
-The {hero} sat down, tired and glad, and held the {object_motif} against a slow, happy heart. The {hero} did not feel like the biggest or the bravest. The {hero} just felt sure, in a quiet way that seemed like it would still be there tomorrow.
-
-Over {setting}, the first stars blinked awake, one, then two, then too many to count. The {hero} gave a long, warm yawn, already halfway into sleep, still smiling in the soft dark.
-
-{refrain}.`, scriptTemplate: `{child_name} stood at the edge of {setting}, looking up at the thing that was new. Everyone else seemed to already know how to do it. {child_name} did not. And that made the tummy feel tight and small.
-
-{child_name} had wanted to try this for a long time. Had pictured it, even. But picturing it was easy, and standing here at the real edge of it was not easy at all.
-
-It was a big new try, a first go at something {child_name} had never done before. Nearby, a bigger kid had done it twice already, quick and easy, and had not even looked scared once. The bigger kid landed and shook out both arms like it was the simplest thing in the world.
-
-{child_name} looked down at two hands and wished they felt braver than they did. For a moment {child_name} almost turned around. Almost decided that today was not the day. Almost walked back the way they came.
-
-{companion_name} came and sat on a warm stone at the edge of {setting}. {companion_name} did not push. {companion_name} did not say hurry up. {companion_name} only stayed close and let {child_name} think.
-
-"I keep waiting to feel ready," {child_name} said. "But the ready feeling does not come. Maybe I am just not the kind who can do this."
-
-{companion_name} thought about that for a moment. "You do not have to feel ready, and you do not have to be the best one here. You only have to try. That is the whole thing."
-
-{child_name} held the {object_motif} in two hands. It was steady, and it was warm, and it did not ask {child_name} to be anyone bigger or braver than they already were.
-
-"What if I try and I still do not do it?" {child_name} asked, very quietly.
-
-"Then you tried," said {companion_name}. "And trying is already the brave part. I will be right here either way, whatever happens."
-
-{child_name} looked at the new thing, then at {companion_name}, then down at the {object_motif} resting in both hands. Nothing about it had changed. The step was still the step. But something inside {child_name} had gone a little quieter, a little steadier.
-
-{child_name} breathed in slow. The shoulders came down a little. The three small words felt round and true, and {child_name} said them out loud. "I can try."
-
-One step. That was all. Just the first one. {child_name} did not think about the whole climb, only the next small move. Then the next. Then the one after that.
-
-{companion_name} did not reach out to help. {companion_name} watched {child_name} go, step by careful step, all on their own, not saying a word.
-
-{child_name} slipped once, just a little, and stopped, and breathed, and went again. The old scared voice whispered that this would be a fine place to stop. {child_name} listened to the whisper, and then let it drift on past, and reached for the next hold instead. Not fast. Not perfect. Just steady, like a small light that would not blow out.
-
-And then {child_name} was there. Up, over, through, done. The new thing was not new anymore. {child_name} had done it, all alone, with two ordinary hands.
-
-{child_name} looked back at {companion_name} with wide, surprised eyes, still breathing quick.
-
-"You did that," {companion_name} said softly. "Not because the scared feeling went away. Because you went anyway."
-
-{child_name} sat down, tired and glad, and held the {object_motif} against a slow, happy heart. {child_name} did not feel like the biggest or the bravest. {child_name} just felt sure, in a quiet way that seemed like it would still be there tomorrow.
-
-Over {setting}, the first stars blinked awake, one, then two, then too many to count. {child_name} gave a long, warm yawn, already halfway into sleep, still smiling in the soft dark.
-
-{refrain}.` },
-  '7-8': { audioTemplate: `The {hero} had been standing at the edge of {setting} for a long time now, and the new thing still had not gotten any smaller. If anything, the longer the {hero} looked at it, the bigger it seemed to grow.
-
-The {hero} had watched this same scene enough times to know the pattern by heart. First the wanting. Then the edging closer. Then the long, stalling pause where the wanting quietly lost to the worrying, and the {hero} drifted back to the safe part of {setting} to try again some other day that never quite arrived.
-
-It was the sort of new thing the {hero} had never tried before, the kind that made your stomach fold over on itself. All around, other kids were doing it like it was nothing. One of them, a bigger kid, went first, then went again, easy as breathing, and called out over a shoulder that it was not even hard.
-
-The {hero} pressed both hands together to keep them from fidgeting. That was the tell, the thing that always happened right before giving up. Press the hands. Look away. Decide that maybe today was not the day after all, that there would be a better time, a braver morning, some future version of the {hero} who would find all of this simple.
-
-{companion_name} noticed, and came over, and sat down on the cool ground beside the {hero} without a word. For a while {companion_name} said nothing at all, and somehow that helped more than a whole speech would have.
-
-"Everybody else already knows how," the {hero} finally said. "They make it look simple. I keep standing here waiting to feel ready, and the ready feeling just never shows up."
-
-"It might not show up," {companion_name} said gently. "Ready is not something you wait for. It is something you find on the way. You do not have to feel it first."
-
-The {hero} turned the {object_motif} over and over in two hands. It was a solid, steady weight, the same as always, and it did not seem to mind in the least whether the {hero} felt brave or not.
-
-"But what if everyone is watching, and I try, and I fall short?" the {hero} asked.
-
-{companion_name} tilted their head. "Then you will have tried, which is more than standing still ever does. You do not have to be better than that bigger kid. You do not have to be better than anyone here. You only have to trust your own small steady light and go."
-
-The {hero} thought about Level Four, about the day they had learned that brave was not the absence of scared, that brave was being scared and stepping forward anyway. This felt like the quiet other half of that. Not a big roar of courage. Just a small, settled yes, said low and meant.
-
-For the longest time the {hero} had believed confidence meant the fear going silent first, that one day the nerves would simply pack up and leave, and then, finally, it would be safe to begin. But the nerves never packed up. They just waited, the same as always. And maybe, the {hero} thought, they did not really get a vote.
-
-The {hero} let out one long breath. The shoulders dropped. The hands came apart and hung loose.
-
-"Okay," the {hero} said, mostly to themselves. "I can try."
-
-And that was the whole beginning of it, those three plain words, said not loudly and not to impress anyone, just said and meant and let go of.
-
-The {hero} took the first step. Then the second. {companion_name} stayed exactly where they were, hands folded, not reaching out, not steadying, letting this belong entirely to the {hero}.
-
-It was not smooth. Halfway through, the {hero} wobbled and had to stop, breathing hard, the pulse going quick and light in the throat. The old thought came knocking, the one that said this would be a perfectly fine place to quit and no one would blame you. But the {hero} did not quit. The {hero} found the next small move, and made it, and then reached for the one after that.
-
-Steady, the {hero} thought. Small and steady. That is enough. That is all it ever had to be. The wobble passed. The breath came back. The {hero} kept both eyes on the next small handhold and nowhere else, and the bigger kid and the watching and the whole crowd of it seemed to quietly fall away, until there was only the {hero} and the next move and the one after that.
-
-And then, almost before it seemed possible, the {hero} was through. The new thing was behind them now, finished, done, turned into something the {hero} had actually done instead of something the {hero} was afraid of. It had changed shape completely, just by being attempted.
-
-The {hero} stood there, a little breathless, looking back at how far the whole thing had really been.
-
-{companion_name} rose and walked over, and did not make a big fuss about it, which somehow made it mean more. "You went on your own," {companion_name} said. "I watched the whole way. I did not do a single bit of it for you."
-
-The {hero} held the {object_motif} against their chest and felt the quick heart slow itself back down, beat by beat. Over {setting}, the light was going soft and gold, the way it does when a long day finally decides it is ready to rest.
-
-The {hero} did not feel like the bravest, or the best, or the most ready. The {hero} just felt quietly, steadily sure, in a way that seemed like it would still be there in the morning, waiting, whenever the next new thing came along.
-
-{refrain}.`, scriptTemplate: `{child_name} had been standing at the edge of {setting} for a long time now, and the new thing still had not gotten any smaller. If anything, the longer {child_name} looked at it, the bigger it seemed to grow.
-
-{child_name} had watched this same scene enough times to know the pattern by heart. First the wanting. Then the edging closer. Then the long, stalling pause where the wanting quietly lost to the worrying, and {child_name} drifted back to the safe part of {setting} to try again some other day that never quite arrived.
-
-It was the sort of new thing {child_name} had never tried before, the kind that made your stomach fold over on itself. All around, other kids were doing it like it was nothing. One of them, a bigger kid, went first, then went again, easy as breathing, and called out over a shoulder that it was not even hard.
-
-{child_name} pressed both hands together to keep them from fidgeting. That was the tell, the thing that always happened right before giving up. Press the hands. Look away. Decide that maybe today was not the day after all, that there would be a better time, a braver morning, some future version of {child_name} who would find all of this simple.
-
-{companion_name} noticed, and came over, and sat down on the cool ground beside {child_name} without a word. For a while {companion_name} said nothing at all, and somehow that helped more than a whole speech would have.
-
-"Everybody else already knows how," {child_name} finally said. "They make it look simple. I keep standing here waiting to feel ready, and the ready feeling just never shows up."
-
-"It might not show up," {companion_name} said gently. "Ready is not something you wait for. It is something you find on the way. You do not have to feel it first."
-
-{child_name} turned the {object_motif} over and over in two hands. It was a solid, steady weight, the same as always, and it did not seem to mind in the least whether {child_name} felt brave or not.
-
-"But what if everyone is watching, and I try, and I fall short?" {child_name} asked.
-
-{companion_name} tilted their head. "Then you will have tried, which is more than standing still ever does. You do not have to be better than that bigger kid. You do not have to be better than anyone here. You only have to trust your own small steady light and go."
-
-{child_name} thought about Level Four, about the day they had learned that brave was not the absence of scared, that brave was being scared and stepping forward anyway. This felt like the quiet other half of that. Not a big roar of courage. Just a small, settled yes, said low and meant.
-
-For the longest time {child_name} had believed confidence meant the fear going silent first, that one day the nerves would simply pack up and leave, and then, finally, it would be safe to begin. But the nerves never packed up. They just waited, the same as always. And maybe, {child_name} thought, they did not really get a vote.
-
-{child_name} let out one long breath. The shoulders dropped. The hands came apart and hung loose.
-
-"Okay," {child_name} said, mostly to themselves. "I can try."
-
-And that was the whole beginning of it, those three plain words, said not loudly and not to impress anyone, just said and meant and let go of.
-
-{child_name} took the first step. Then the second. {companion_name} stayed exactly where they were, hands folded, not reaching out, not steadying, letting this belong entirely to {child_name}.
-
-It was not smooth. Halfway through, {child_name} wobbled and had to stop, breathing hard, the pulse going quick and light in the throat. The old thought came knocking, the one that said this would be a perfectly fine place to quit and no one would blame you. But {child_name} did not quit. {child_name} found the next small move, and made it, and then reached for the one after that.
-
-Steady, {child_name} thought. Small and steady. That is enough. That is all it ever had to be. The wobble passed. The breath came back. {child_name} kept both eyes on the next small handhold and nowhere else, and the bigger kid and the watching and the whole crowd of it seemed to quietly fall away, until there was only {child_name} and the next move and the one after that.
-
-And then, almost before it seemed possible, {child_name} was through. The new thing was behind them now, finished, done, turned into something {child_name} had actually done instead of something {child_name} was afraid of. It had changed shape completely, just by being attempted.
-
-{child_name} stood there, a little breathless, looking back at how far the whole thing had really been.
-
-{companion_name} rose and walked over, and did not make a big fuss about it, which somehow made it mean more. "You went on your own," {companion_name} said. "I watched the whole way. I did not do a single bit of it for you."
-
-{child_name} held the {object_motif} against their chest and felt the quick heart slow itself back down, beat by beat. Over {setting}, the light was going soft and gold, the way it does when a long day finally decides it is ready to rest.
-
-{child_name} did not feel like the bravest, or the best, or the most ready. {child_name} just felt quietly, steadily sure, in a way that seemed like it would still be there in the morning, waiting, whenever the next new thing came along.
-
-{refrain}.` },
-  '9-11': { audioTemplate: `The {hero} had learned, over a long string of days, exactly what the feeling meant when it arrived, and it was arriving now. It came as a tightening just under the ribs, a sudden and convenient interest in anything other than the thing directly ahead, a quiet and very reasonable-sounding voice that suggested there would surely be a better time to attempt this. The edge of {setting} was as good a place as any to meet that voice, and the {hero} had met it here before, more than once.
-
-The new thing waited a little way off. It did not matter, in the end, precisely what it was, a climb, a crossing, a first real attempt at something that could not be rehearsed in secret beforehand. What mattered was that the {hero} had never done it, and that other people had, and that some of them were doing it now with an ease that made the whole business look faintly ridiculous to be afraid of at all.
-
-A bigger kid finished it, turned, and shrugged in that careless way that says this is nothing, why are you still standing there. The {hero} felt the old, familiar arithmetic begin, the silent tallying of everyone who could already do the thing, set against a column with only the {hero} in it. It was the kind of math that never came out in your favor, because it was never really about the numbers to begin with.
-
-The trouble with the arithmetic was that it felt like humility, like simply being honest about where the {hero} stood. But it was not honesty. It was a story, told often enough to sound like a fact, and its only real purpose was to build a reason not to begin. The {hero} had started, lately, to recognize the shape of it even while it was happening, which was not the same as being free of it, but was maybe the first step toward being free.
-
-The {hero} noticed that both hands had gone to the {object_motif}, turning it slowly, the way they always did when the deciding got hard. It was a plain, steady weight in the palms, unbothered, entirely indifferent to whether the {hero} succeeded or hesitated or simply walked quietly away. There was something almost restful in that. The {object_motif} did not need the {hero} to be impressive. It sat there being exactly what it was, and asked for nothing.
-
-There had been a time, not even so long ago, when the {hero} would have needed someone to promise it would go well before taking a single step, some guarantee pinned to the outcome. That was gone now, or mostly gone. The {hero} had learned, slowly, that no such promise was ever actually on offer, and that waiting for one was just another polished way of never starting at all.
-
-{companion_name} did not rush over with a bright armful of encouragement. That was not their way, and the {hero} had come, over time, to be grateful for it. {companion_name} crossed the distance slowly and settled nearby, near enough to be felt, far enough to leave room, and let the silence do the first part of the work.
-
-"I keep thinking I will feel different before I try," the {hero} said at last. "Older. Surer. Like one morning I will wake up and finally just be the kind of person who does things like this without the whole knot in the stomach. But that morning never seems to actually come."
-
-{companion_name} was quiet for a moment. "I do not think it comes for anyone. The sureness you are waiting for is on the other side of the trying, not this side. You keep standing at the door, asking to feel like someone who has already walked through it."
-
-The {hero} almost laughed, because it was exactly true, and because being seen that clearly was both a little uncomfortable and a strange kind of relief at the same time.
-
-"But everyone here is better than me," the {hero} said.
-
-"Maybe," said {companion_name}, unbothered. "That is not really the question. You do not have to be better than them. You do not have to be fearless, or ready, or the best one at the edge of {setting}. You only have to trust that small steady light you carry, and take one honest step. Everything else is just noise."
-
-"And if the light feels very small?" the {hero} asked.
-
-"Small is fine," {companion_name} said. "It does not have to be a bonfire. It only has to not go out."
-
-The {hero} sat with that. Somewhere back down the path was Level Four, the day it had finally landed that brave did not mean the fear was gone, that brave was simply being afraid and moving anyway. This felt like the older, quieter cousin of that lesson. Not the loud courage that has to psych itself up and roar first. Something calmer. A confidence that did not depend on feeling brave at all, that could stay perfectly steady even when the fear stayed too, because it was never built on the fear being absent. It was built on something underneath, something the {hero} had apparently been carrying the whole time without quite noticing it was there.
-
-The fear did not vanish. The {hero} understood now that it probably would not, not this time and not most times, and that this was somehow fine. You did not have to wait for the fear to leave the room. You only had to stop handing it the pen.
-
-The {hero} breathed out, slow and complete, and felt the tight thing under the ribs loosen just enough to move. The reasonable voice made its last, best offer, the polished one about waiting for a better and braver day. The {hero} let it finish speaking, and then, gently, did not take it.
-
-"I can try," the {hero} said.
-
-The words were not loud. They were not aimed at the bigger kid, or at anyone else watching. They were said the way you say a true thing to yourself, plainly, without ceremony, and once said they seemed to quietly settle the whole matter.
-
-The {hero} stepped forward. {companion_name} stayed exactly where they were, hands still, offering nothing at all but their steady, watching presence. This was going to belong to the {hero}, all of it, the wobble and the recovery and the finish, and {companion_name} clearly had no intention of taking any part of it away by helping.
-
-It was not clean. Partway through, the {hero} faltered, and had to stop, and stand there with a quick pulse ticking in the throat while the old invitation to quit came around one more time, dressed up neatly as common sense. But the {hero} had already decided, back at the edge, and a decision made in advance turns out to be a strong thing to lean on when the middle gets hard. The {hero} found the next small move. Made it. Found the one after that, and made that too.
-
-The faltering did not undo anything. It was just part of the shape of trying, the {hero} understood now, not a signal to stop but simply the middle of the thing, the unglamorous part no one watching ever remembers afterward. The {hero} breathed, and found the rhythm again, and let the whole world narrow down to the small honest work of the next move.
-
-Steady, the {hero} thought. Not fast, not perfect. Just steady, and mine.
-
-And then it was done, folded neatly into the past, changed from a thing the {hero} feared into a thing the {hero} had simply, quietly, done. The {hero} stood on the far side of it, breathing, a little astonished, and turned to find {companion_name} already smiling that unhurried smile.
-
-"You went alone," {companion_name} said, coming over without any fuss. "I did not help. I did not have to."
-
-The {hero} held the {object_motif} loosely now, the deciding long over, and noticed that the pride was not the sharp, showy kind that needs a crowd to exist. It was low and level and warm, the kind that would still be there in the morning, and the morning after that. This, the {hero} thought, was where the whole long path had been quietly heading all along, not toward becoming fearless, not toward becoming the best, but toward a steadiness that asked no one's permission and could be carried anywhere. Over {setting} the light had gone the deep, unhurried blue of a day laying itself gently down to rest, and the {hero} felt no urge at all to prove anything to anyone, only a settled, private certainty that whatever new thing came next, this same three-word answer would be waiting inside, and that it would be enough.
-
-{refrain}.`, scriptTemplate: `{child_name} had learned, over a long string of days, exactly what the feeling meant when it arrived, and it was arriving now. It came as a tightening just under the ribs, a sudden and convenient interest in anything other than the thing directly ahead, a quiet and very reasonable-sounding voice that suggested there would surely be a better time to attempt this. The edge of {setting} was as good a place as any to meet that voice, and {child_name} had met it here before, more than once.
-
-The new thing waited a little way off. It did not matter, in the end, precisely what it was, a climb, a crossing, a first real attempt at something that could not be rehearsed in secret beforehand. What mattered was that {child_name} had never done it, and that other people had, and that some of them were doing it now with an ease that made the whole business look faintly ridiculous to be afraid of at all.
-
-A bigger kid finished it, turned, and shrugged in that careless way that says this is nothing, why are you still standing there. {child_name} felt the old, familiar arithmetic begin, the silent tallying of everyone who could already do the thing, set against a column with only {child_name} in it. It was the kind of math that never came out in your favor, because it was never really about the numbers to begin with.
-
-The trouble with the arithmetic was that it felt like humility, like simply being honest about where {child_name} stood. But it was not honesty. It was a story, told often enough to sound like a fact, and its only real purpose was to build a reason not to begin. {child_name} had started, lately, to recognize the shape of it even while it was happening, which was not the same as being free of it, but was maybe the first step toward being free.
-
-{child_name} noticed that both hands had gone to the {object_motif}, turning it slowly, the way they always did when the deciding got hard. It was a plain, steady weight in the palms, unbothered, entirely indifferent to whether {child_name} succeeded or hesitated or simply walked quietly away. There was something almost restful in that. The {object_motif} did not need {child_name} to be impressive. It sat there being exactly what it was, and asked for nothing.
-
-There had been a time, not even so long ago, when {child_name} would have needed someone to promise it would go well before taking a single step, some guarantee pinned to the outcome. That was gone now, or mostly gone. {child_name} had learned, slowly, that no such promise was ever actually on offer, and that waiting for one was just another polished way of never starting at all.
-
-{companion_name} did not rush over with a bright armful of encouragement. That was not their way, and {child_name} had come, over time, to be grateful for it. {companion_name} crossed the distance slowly and settled nearby, near enough to be felt, far enough to leave room, and let the silence do the first part of the work.
-
-"I keep thinking I will feel different before I try," {child_name} said at last. "Older. Surer. Like one morning I will wake up and finally just be the kind of person who does things like this without the whole knot in the stomach. But that morning never seems to actually come."
-
-{companion_name} was quiet for a moment. "I do not think it comes for anyone. The sureness you are waiting for is on the other side of the trying, not this side. You keep standing at the door, asking to feel like someone who has already walked through it."
-
-{child_name} almost laughed, because it was exactly true, and because being seen that clearly was both a little uncomfortable and a strange kind of relief at the same time.
-
-"But everyone here is better than me," {child_name} said.
-
-"Maybe," said {companion_name}, unbothered. "That is not really the question. You do not have to be better than them. You do not have to be fearless, or ready, or the best one at the edge of {setting}. You only have to trust that small steady light you carry, and take one honest step. Everything else is just noise."
-
-"And if the light feels very small?" {child_name} asked.
-
-"Small is fine," {companion_name} said. "It does not have to be a bonfire. It only has to not go out."
-
-{child_name} sat with that. Somewhere back down the path was Level Four, the day it had finally landed that brave did not mean the fear was gone, that brave was simply being afraid and moving anyway. This felt like the older, quieter cousin of that lesson. Not the loud courage that has to psych itself up and roar first. Something calmer. A confidence that did not depend on feeling brave at all, that could stay perfectly steady even when the fear stayed too, because it was never built on the fear being absent. It was built on something underneath, something {child_name} had apparently been carrying the whole time without quite noticing it was there.
-
-The fear did not vanish. {child_name} understood now that it probably would not, not this time and not most times, and that this was somehow fine. You did not have to wait for the fear to leave the room. You only had to stop handing it the pen.
-
-{child_name} breathed out, slow and complete, and felt the tight thing under the ribs loosen just enough to move. The reasonable voice made its last, best offer, the polished one about waiting for a better and braver day. {child_name} let it finish speaking, and then, gently, did not take it.
-
-"I can try," {child_name} said.
-
-The words were not loud. They were not aimed at the bigger kid, or at anyone else watching. They were said the way you say a true thing to yourself, plainly, without ceremony, and once said they seemed to quietly settle the whole matter.
-
-{child_name} stepped forward. {companion_name} stayed exactly where they were, hands still, offering nothing at all but their steady, watching presence. This was going to belong to {child_name}, all of it, the wobble and the recovery and the finish, and {companion_name} clearly had no intention of taking any part of it away by helping.
-
-It was not clean. Partway through, {child_name} faltered, and had to stop, and stand there with a quick pulse ticking in the throat while the old invitation to quit came around one more time, dressed up neatly as common sense. But {child_name} had already decided, back at the edge, and a decision made in advance turns out to be a strong thing to lean on when the middle gets hard. {child_name} found the next small move. Made it. Found the one after that, and made that too.
-
-The faltering did not undo anything. It was just part of the shape of trying, {child_name} understood now, not a signal to stop but simply the middle of the thing, the unglamorous part no one watching ever remembers afterward. {child_name} breathed, and found the rhythm again, and let the whole world narrow down to the small honest work of the next move.
-
-Steady, {child_name} thought. Not fast, not perfect. Just steady, and mine.
-
-And then it was done, folded neatly into the past, changed from a thing {child_name} feared into a thing {child_name} had simply, quietly, done. {child_name} stood on the far side of it, breathing, a little astonished, and turned to find {companion_name} already smiling that unhurried smile.
-
-"You went alone," {companion_name} said, coming over without any fuss. "I did not help. I did not have to."
-
-{child_name} held the {object_motif} loosely now, the deciding long over, and noticed that the pride was not the sharp, showy kind that needs a crowd to exist. It was low and level and warm, the kind that would still be there in the morning, and the morning after that. This, {child_name} thought, was where the whole long path had been quietly heading all along, not toward becoming fearless, not toward becoming the best, but toward a steadiness that asked no one's permission and could be carried anywhere. Over {setting} the light had gone the deep, unhurried blue of a day laying itself gently down to rest, and {child_name} felt no urge at all to prove anything to anyone, only a settled, private certainty that whatever new thing came next, this same three-word answer would be waiting inside, and that it would be enough.
-
-{refrain}.` }
-},
-    audioTemplate: `Under the wide night over {setting}, something new and uncertain waited for the {hero}. The {object_motif} glowed steadily within.
-
-Once, the {hero} would have waited to feel ready, or fearless, or as good as everyone else. But they knew better now.
-
-They did not have to feel ready — they could begin unsure. They had their own brave voice. Their path was their own, not a race against anyone. And being scared did not stop them; brave was scared and trying.
-
-So the {hero} stood quietly before the new thing, not certain it would work, and felt the small, steady light that was theirs and always had been.
-
-"I do not know if I will get it right," they said, calm and clear. "But I can try."
-
-And those three words held everything. Not loud. Not certain. Just enough.
-
-"That," said {companion_name} softly, "is confidence. Not knowing you will win — knowing you are willing to try."
-
-The {hero} stepped forward into the new, their {object_motif} glowing warm and whole.
+That was everything.
 
 {refrain}.`,
-    scriptTemplate: `Under the wide night over {setting}, something new and uncertain waited for {child_name} the {hero}. The {object_motif} glowed steadily within.
+        scriptTemplate: `{child_name} stood at the edge of something wonderful in {setting}.
 
-Once, {child_name} would have waited to feel ready, or fearless, or as good as everyone else. But {child_name} knew better now.
+The {object_motif} was held very tight.
 
-They did not have to feel ready — they could begin unsure. They had their own brave voice. Their path was their own, not a race against anyone. And being scared did not stop them; brave was scared and trying.
+{{child_name} thought: Maybe when I am older, someone will say "go ahead." Maybe then it will be okay.
 
-So {child_name} stood quietly before the new thing, not certain it would work, and felt the small, steady light that was theirs and always had been.
+But {companion_name} knew {{child_name} had been waiting a very long time.
 
-"I do not know if I will get it right," {child_name} said, calm and clear. "But I can try."
+"You are waiting for permission," said {companion_name}.
 
-And those three words held everything. Not loud. Not certain. Just enough.
+{{child_name} nodded.
 
-"That," said {companion_name} softly, "is confidence. Not knowing you will win — knowing you are willing to try."
+"Here is a secret," said {companion_name}. "No one is going to give it. No one ever does. Psst — the permission is inside you already."
 
-{child_name} stepped forward into the new, their {object_motif} glowing warm and whole.
+"Really?" whispered {{child_name}}.
+
+"Really. You can try right now."
+
+So {{child_name} did.
+
+And {{child_name} discovered: trying is its own permission.
+
+{{child_name} was not perfect. {{child_name} was still little. But {{child_name} tried anyway.
+
+And that was enough.
+
+That was everything.
+
+{refrain}.`
+      },
+      '5-6': {
+        audioTemplate: `For a long time, the {hero} had watched something happening in {setting} and wanted so badly to join.
+
+But some part deep inside kept saying: wait. Wait until you are invited. Wait until someone tells you that you are allowed. Wait until you are sure you will be good at it.
+
+The waiting was safe. The waiting was how to not make mistakes. The waiting was the long game.
+
+But the {hero} was not happy in the waiting.
+
+{companion_name} sat with the {hero} one evening and asked the question that changed everything.
+
+"Are you waiting for an invitation that is never going to come?"
+
+The {hero} felt tears come. Because yes. Yes, that was exactly it.
+
+"Do you know what invitation actually looks like?" {companion_name} asked.
+
+The {hero} shook their head.
+
+{companion_name} held up the {object_motif}. "It looks like this. You. Ready or not. Unsure or not. Imperfect or not. Right now. Psst — listen close, dear one. No one is going to stand at the gate and say 'come in, you are allowed.' That is not how it works. You are the gate keeper. You are the one who says yes."
+
+The {hero} felt something open inside the chest.
+
+"I can just... try?" asked the {hero}.
+
+"You can just try," said {companion_name}. "Right now. That is all the permission you will ever get."
+
+So the {hero} tried.
+
+There was no ceremony. No official moment. Just the {hero}, stepping from the edge into the middle of the thing they had wanted so long.
+
+And it was not perfect. The {hero} was new and unsure and made mistakes.
+
+But the {hero} was in.
+
+And that was the whole permission. Just the trying.
+
+{refrain}.`,
+        scriptTemplate: `For a long time, {{child_name} had watched something happening in {setting} and wanted so badly to join.
+
+But some part deep inside kept saying: wait. Wait until you are invited. Wait until someone tells you that you are allowed. Wait until you are sure you will be good at it.
+
+The waiting was safe. The waiting was how to not make mistakes. The waiting was the long game.
+
+But {{child_name} was not happy in the waiting.
+
+{companion_name} sat with {{child_name} one evening and asked the question that changed everything.
+
+"Are you waiting for an invitation that is never going to come?"
+
+{{child_name} felt tears come. Because yes. Yes, that was exactly it.
+
+"Do you know what invitation actually looks like?" {companion_name} asked.
+
+{{child_name} shook their head.
+
+{companion_name} held up the {object_motif}. "It looks like this. You. Ready or not. Unsure or not. Imperfect or not. Right now. Psst — listen close, dear one. No one is going to stand at the gate and say 'come in, you are allowed.' That is not how it works. You are the gate keeper. You are the one who says yes."
+
+{{child_name} felt something open inside the chest.
+
+"I can just... try?" asked {{child_name}}.
+
+"You can just try," said {companion_name}. "Right now. That is all the permission you will ever get."
+
+So {{child_name} tried.
+
+There was no ceremony. No official moment. Just {{child_name}, stepping from the edge into the middle of the thing they had wanted so long.
+
+And it was not perfect. {{child_name} was new and unsure and made mistakes.
+
+But {{child_name} was in.
+
+And that was the whole permission. Just the trying.
+
+{refrain}.`
+      },
+      '7-8': {
+        audioTemplate: `By the time the {hero} reached the age of learning, most of the life had already been decided.
+
+The path was laid. The expectations were set. The role was assigned. And there was something the {hero} wanted to do — something that did not fit the plan, something that would require stepping out of the assigned role and into the unknown.
+
+It required permission.
+
+The {hero} waited for permission from teachers. From parents. From the voice that said you are allowed. It never came. Or it came in the form of reasons why not to try. Reasons rooted in love, rooted in fear, rooted in the belief that the plan was better than the desire.
+
+Years went by. The {hero} was still waiting.
+
+{companion_name} was old enough to know something true.
+
+"You have been waiting for permission since I have known you," {companion_name} said to the {hero}, sitting in {setting} as the light turned soft. "Do you know when that permission is going to come?"
+
+"I do not know," said the {hero}.
+
+"Never," said {companion_name}. "It is never going to come. No one is going to stand up and say 'yes, you have our blessing, go do the thing.' That is not how permission works. Psst — listen now — permission is what you give yourself when you decide the trying matters more than the waiting."
+
+The {hero} held the {object_motif} tight. "But what if I fail?"
+
+"Then you will have tried and failed," said {companion_name}. "That is different than having not tried at all. One of those is a beginning. One is a long slow ending disguised as safety."
+
+The {hero} understood something that shifted the whole life: the people who were not waiting for permission were not more special. They were not more talented or more certain. They had just decided that trying was more important than being sure.
+
+So the {hero} tried.
+
+It was messy and uncertain and imperfect. But it was the {hero}'s.
+
+And years later, when the {hero} was older and steady, people asked: how did you have the courage? How did you know you could?
+
+And the {hero} would say: I did not know. I just tried anyway. I gave myself permission by doing it.
+
+{refrain}.`,
+        scriptTemplate: `By the time {{child_name} reached the age of learning, most of the life had already been decided.
+
+The path was laid. The expectations were set. The role was assigned. And there was something {{child_name} wanted to do — something that did not fit the plan, something that would require stepping out of the assigned role and into the unknown.
+
+It required permission.
+
+{{child_name} waited for permission from teachers. From parents. From the voice that said you are allowed. It never came. Or it came in the form of reasons why not to try. Reasons rooted in love, rooted in fear, rooted in the belief that the plan was better than the desire.
+
+Years went by. {{child_name} was still waiting.
+
+{companion_name} was old enough to know something true.
+
+"You have been waiting for permission since I have known you," {companion_name} said to {{child_name}, sitting in {setting} as the light turned soft. "Do you know when that permission is going to come?"
+
+"I do not know," said {{child_name}}.
+
+"Never," said {companion_name}. "It is never going to come. No one is going to stand up and say 'yes, you have our blessing, go do the thing.' That is not how permission works. Psst — listen now — permission is what you give yourself when you decide the trying matters more than the waiting."
+
+{{child_name} held the {object_motif} tight. "But what if I fail?"
+
+"Then you will have tried and failed," said {companion_name}. "That is different than having not tried at all. One of those is a beginning. One is a long slow ending disguised as safety."
+
+{{child_name} understood something that shifted the whole life: the people who were not waiting for permission were not more special. They were not more talented or more certain. They had just decided that trying was more important than being sure.
+
+So {{child_name} tried.
+
+It was messy and uncertain and imperfect. But it was {{child_name}'s.
+
+And years later, when {{child_name} was older and steady, people asked: how did you have the courage? How did you know you could?
+
+And {{child_name} would say: I did not know. I just tried anyway. I gave myself permission by doing it.
+
+{refrain}.`
+      },
+      '9-11': {
+        audioTemplate: `At eighteen, the {hero} was standing at a crossroads, and both paths were real.
+
+One path was the future everyone expected. It was safe. It was planned. It was the life that was already drawn, waiting to be lived. Many people had walked it before. The map was clear.
+
+The other path was a whisper. A feeling. A sense that there was something else, something larger, something the {hero} felt called toward but could not articulate or justify. The map for this path was blank. The safety was nonexistent.
+
+To walk the second path would require something no one was going to give.
+
+Permission.
+
+The {hero} looked and looked for it. Waited for someone to appear and say: yes, this is the right choice, go this way, I support you, you have my blessing, you are allowed.
+
+No one said it. The parents wanted safety. The teachers wanted predictability. The elders wanted tradition. And the {hero} wanted permission before breaking any of it.
+
+But {companion_name} had been waiting for this moment.
+
+"You are twenty," said {companion_name}, sitting with the {hero} in the place where they had always talked about true things. "And you are still waiting to be given permission to live your own life. Do you understand what that means?"
+
+The {hero} shook their head.
+
+"It means if you wait long enough, you will give away your entire life waiting for permission you will never receive. Someone will always have a reason why not. Someone will always be afraid. Someone will always be invested in the life you were supposed to live instead of the life you actually want."
+
+{companion_name} held the {object_motif} — worn smooth by the {hero}'s hands over twenty years.
+
+"Here is what you need to know. Permission is not a gift anyone gives you. Permission is a choice you make about yourself. And here is the hard part: you have to make it alone. No one is coming to stand beside you and say 'okay, go ahead.' You have to say it to yourself. Psst — listen close now — this is the bravest thing you will ever do. Giving yourself the permission no one else will. And then living with that choice. That is adulthood. That is the whole thing."
+
+The {hero} felt the weight and the freedom of it at the same time.
+
+"What if I am wrong?" asked the {hero}.
+
+"You might be," said {companion_name}. "But then you will have made an honest mistake following your own path. That is different than having succeeded on someone else's path. One of those is a life. One is an echo of someone else's blueprint."
+
+The {hero} left that conversation changed.
+
+Made the choice. Took the blank-map path. Failed and learned and failed again and succeeded in some unexpected ways and failed in others. It was hard. It was uncertain. It was imperfect.
+
+But it was the {hero}'s.
+
+And years later, people asked: how did you know?
+
+And the {hero} would say: I did not know. I still do not know. I just decided that trying my own life was worth the risk of failing at it. That is all permission is. I can try, and that is enough. The choice to try.
+
+{refrain}.`,
+        scriptTemplate: `At eighteen, {{child_name} was standing at a crossroads, and both paths were real.
+
+One path was the future everyone expected. It was safe. It was planned. It was the life that was already drawn, waiting to be lived. Many people had walked it before. The map was clear.
+
+The other path was a whisper. A feeling. A sense that there was something else, something larger, something {{child_name} felt called toward but could not articulate or justify. The map for this path was blank. The safety was nonexistent.
+
+To walk the second path would require something no one was going to give.
+
+Permission.
+
+{{child_name} looked and looked for it. Waited for someone to appear and say: yes, this is the right choice, go this way, I support you, you have my blessing, you are allowed.
+
+No one said it. The parents wanted safety. The teachers wanted predictability. The elders wanted tradition. And {{child_name} wanted permission before breaking any of it.
+
+But {companion_name} had been waiting for this moment.
+
+"You are twenty," said {companion_name}, sitting with {{child_name} in the place where they had always talked about true things. "And you are still waiting to be given permission to live your own life. Do you understand what that means?"
+
+{{child_name} shook their head.
+
+"It means if you wait long enough, you will give away your entire life waiting for permission you will never receive. Someone will always have a reason why not. Someone will always be afraid. Someone will always be invested in the life you were supposed to live instead of the life you actually want."
+
+{companion_name} held the {object_motif} — worn smooth by {{child_name}'s hands over twenty years.
+
+"Here is what you need to know. Permission is not a gift anyone gives you. Permission is a choice you make about yourself. And here is the hard part: you have to make it alone. No one is coming to stand beside you and say 'okay, go ahead.' You have to say it to yourself. Psst — listen close now — this is the bravest thing you will ever do. Giving yourself the permission no one else will. And then living with that choice. That is adulthood. That is the whole thing."
+
+{{child_name} felt the weight and the freedom of it at the same time.
+
+"What if I am wrong?" asked {{child_name}}.
+
+"You might be," said {companion_name}. "But then you will have made an honest mistake following your own path. That is different than having succeeded on someone else's path. One of those is a life. One is an echo of someone else's blueprint."
+
+{{child_name} left that conversation changed.
+
+Made the choice. Took the blank-map path. Failed and learned and failed again and succeeded in some unexpected ways and failed in others. It was hard. It was uncertain. It was imperfect.
+
+But it was {{child_name}'s.
+
+And years later, people asked: how did you know?
+
+And {{child_name} would say: I did not know. I still do not know. I just decided that trying my own life was worth the risk of failing at it. That is all permission is. I can try, and that is enough. The choice to try.
+
+{refrain}.`
+      },
+    },
+    audioTemplate: `The {hero} held the {object_motif} and stood at the edge of everything.
+
+"Will you give me permission?" they asked {companion_name}.
+
+{companion_name} smiled. "No one is going to give it. You have to give it to yourself."
+
+Psst — the {hero} realized: permission is not a gift. Permission is trying.
+
+So they tried.
+
+And that was enough. That was everything.
+
+{refrain}.`,
+    scriptTemplate: `{child_name} held the {object_motif} and stood at the edge of everything.
+
+"Will you give me permission?" they asked {companion_name}.
+
+{companion_name} smiled. "No one is going to give it, {child_name}. You have to give it to yourself."
+
+Psst — {{child_name} realized: permission is not a gift. Permission is trying.
+
+So they tried.
+
+And that was enough. That was everything.
 
 {refrain}.`,
   },
