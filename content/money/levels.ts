@@ -14,457 +14,409 @@ import type { Level } from '@/content/types'
 
 export const LEVELS: Level[] = [
   {
-    ordinal: 1, title: 'Coins Look Different',
+    ordinal: 1, title: 'The Keyhole Coin',
     concept: 'Coins have different names, sizes and colours', callback: null, ageFloor: 3,
-    summary: 'A small animal discovers three different coins lying in the sand and notices for the first time that they look nothing like each other. With the help of a wise companion, they learn each coin has its own name and its own set of clues — size, colour, and the picture on its face — that tell you exactly what it is.',
-    teachingNote: 'The skill of noticing small differences is the foundation everything else in this path builds on.',
+    summary: "An old music box has been shut for as long as anyone remembers — it opens for exactly one coin in all the world, and every big, shiny coin has failed. Tonight the hero discovers why: coins aren't all one thing. Each has its own size, colour, picture and name, and reading those clues is what finally makes the music play.",
+    teachingNote: 'Noticing the small differences between coins — name, size, colour, picture — is the foundation the whole path builds on.',
     learningBeat: 'Each one has its own name',
     ageVariants: {
   '3-4': {
-    audioTemplate: `The {hero} sat in {setting}. The sky was soft and pink. It was almost time to rest.
+    audioTemplate: `The {hero} came home to {setting} with a little pile of found coins. Clink. Clink. Clink.
 
-Then the {hero} saw something small. It was the {object_motif}. The {hero} picked it up. It was the first one.
+{companion_name} was sitting beside a small wooden box. The box had one tiny round hole in its lid. A coin-shaped hole.
 
-The {hero} looked down again. There were more! Little round coins in the sand. One. Two. Three. Four.
+"This box plays a sleepy song," said {companion_name}. "But it only opens for one special coin. I never found the right one."
 
-The {hero} lined them up on a flat stone. A little row of cool coins.
+The {hero} smiled. Easy! There were lots of coins right here.
 
-The {hero} held them close. But wait. They did not look the same.
+The {hero} pushed the big coin at the hole. Too big.
 
-One coin was big. One coin was small. One was dark. One was bright.
+The {hero} tried the shiny coin. It did not fit. The box went pfft.
 
-The {hero} turned them over, one at a time. Slow and soft.
+"But a coin is a coin!" said the {hero}.
 
-{companion_name} came to sit beside the {hero}. "You found coins," they said. "Look. This one is big and thick. This one is thin and light."
+Was it, though? The {hero} looked close.
 
-The {hero} nodded slow. The coins were not the same at all.
+One coin was big. One was small. One had a bird. One had a leaf. And one had a tiny boat.
 
-"See the little picture on each face?" said {companion_name}. "A bird. A leaf. A boat. A tree."
+Now look at the box. Right next to the hole. Can you see it too? A tiny carved boat!
 
-The {hero} looked at the bird. The {hero} looked at the leaf. Each little face was new.
+"Oh!" said the {hero}. "The coins are not all the same. Each one has its own name! The box wants the boat coin!"
 
-The {hero} touched each one. Big. Small. Dark. Bright.
+The boat coin was the smallest one of all. The {hero} slid it in. Click!
 
-"Coins are like friends," said {companion_name}. "Each one has its own name."
+The lid opened, and out came a slow, silvery sleepy song.
 
-The {hero} smiled wide. Each coin had a name!
+"My song," whispered {companion_name}. "From when I was small."
 
-{companion_name} pointed to the big coin. "This one is heavy," they said. The {hero} felt it. Heavy and big.
+The song got slower. And slower. The {hero} lay back to listen.
 
-{companion_name} pointed to the small coin. "This one is light," they said. The {hero} felt it. Light and small.
-
-The {hero} said the names slow. One by one. The big coin. The small coin. The dark coin. The bright coin.
-
-The {object_motif} had a name too. The {hero} held it up.
-
-Now the {hero} could tell them apart. Easy as can be.
-
-{companion_name} gave a soft yawn. "You know your coins now," they said.
-
-The {hero} put the coins in a little row. Big to small. Dark to bright.
-
-The moon came up over {setting}. Round and calm.
-
-The {hero} tucked the coins in a safe spot. One by one by one.
-
-Rest now, little coins. Rest now.
-
-The {hero} closed both eyes. The coins were safe. The names were learned.
+Beside the box sat the {object_motif}. It had a tiny picture too. A new name to learn tomorrow.
 
 {refrain}.`,
-    scriptTemplate: `{child_name} sat in {setting}. The sky was soft and pink. It was almost time to rest.
+    scriptTemplate: `{child_name} came home to {setting} with a little pile of found coins. Clink. Clink. Clink.
 
-Then {child_name} saw something small. It was the {object_motif}. {child_name} picked it up. It was the first one.
+{companion_name} was sitting beside a small wooden box. The box had one tiny round hole in its lid. A coin-shaped hole.
 
-{child_name} looked down again. There were more! Little round coins in the sand. One. Two. Three. Four.
+"This box plays a sleepy song," said {companion_name}. "But it only opens for one special coin. I never found the right one."
 
-{child_name} lined them up on a flat stone. A little row of cool coins.
+{child_name} smiled. Easy! There were lots of coins right here.
 
-{child_name} held them close. But wait. They did not look the same.
+{child_name} pushed the big coin at the hole. Too big.
 
-One coin was big. One coin was small. One was dark. One was bright.
+{child_name} tried the shiny coin. It did not fit. The box went pfft.
 
-{child_name} turned them over, one at a time. Slow and soft.
+"But a coin is a coin!" said {child_name}.
 
-{companion_name} came to sit beside {child_name}. "You found coins," they said. "Look. This one is big and thick. This one is thin and light."
+Was it, though? {child_name} looked close.
 
-{child_name} nodded slow. The coins were not the same at all.
+One coin was big. One was small. One had a bird. One had a leaf. And one had a tiny boat.
 
-"See the little picture on each face?" said {companion_name}. "A bird. A leaf. A boat. A tree."
+Now look at the box. Right next to the hole. Can you see it too? A tiny carved boat!
 
-{child_name} looked at the bird. {child_name} looked at the leaf. Each little face was new.
+"Oh!" said {child_name}. "The coins are not all the same. Each one has its own name! The box wants the boat coin!"
 
-{child_name} touched each one. Big. Small. Dark. Bright.
+The boat coin was the smallest one of all. {child_name} slid it in. Click!
 
-"Coins are like friends," said {companion_name}. "Each one has its own name."
+The lid opened, and out came a slow, silvery sleepy song.
 
-{child_name} smiled wide. Each coin had a name!
+"My song," whispered {companion_name}. "From when I was small."
 
-{companion_name} pointed to the big coin. "This one is heavy," they said. {child_name} felt it. Heavy and big.
+The song got slower. And slower. {child_name} lay back to listen.
 
-{companion_name} pointed to the small coin. "This one is light," they said. {child_name} felt it. Light and small.
-
-{child_name} said the names slow. One by one. The big coin. The small coin. The dark coin. The bright coin.
-
-The {object_motif} had a name too. {child_name} held it up.
-
-Now {child_name} could tell them apart. Easy as can be.
-
-{companion_name} gave a soft yawn. "You know your coins now," they said.
-
-{child_name} put the coins in a little row. Big to small. Dark to bright.
-
-The moon came up over {setting}. Round and calm.
-
-{child_name} tucked the coins in a safe spot. One by one by one.
-
-Rest now, little coins. Rest now.
-
-{child_name} closed both eyes. The coins were safe. The names were learned.
+Beside the box sat the {object_motif}. It had a tiny picture too. A new name to learn tomorrow.
 
 {refrain}.`
   },
   '5-6': {
-    audioTemplate: `The {hero} had spent all afternoon in {setting}, and now the light was turning gold and low. Soon it would be time to sleep. But the {hero} was not sleepy yet, because of what was tucked inside one hand.
+    audioTemplate: `The {hero} came home to {setting} with a pocketful of clinking. All afternoon there had been coins to find, under leaves, between stones, seven at least, and the first and best was the {object_motif}, polished on a sleeve until it winked.
 
-It was the {object_motif}. The {hero} had found it near a quiet corner, half hidden, waiting. And it was not alone. Beside it lay a small heap of coins, more than the {hero} could hold in one palm.
+But {companion_name} was not looking at the coins. {companion_name} sat beside a small wooden box with a little round keyhole in its lid. A keyhole shaped exactly like a coin.
 
-The {hero} carried them carefully to a flat rock and laid them out. And that was when something strange happened. The {hero} looked at the coins, really looked, and noticed for the very first time that they did not match.
+"This box plays the sweetest going-to-sleep song ever made," said {companion_name}. "But it has been shut since I was young. It opens for one coin in all the world, and I never learned which one. I have tried every coin I ever met."
 
-One coin was wide and heavy. One was tiny, no bigger than a fingernail. One was the colour of warm bread. One was pale like the moon. Some had smooth edges. Some had little bumps all the way around, like tiny teeth.
+The {hero} grinned. One coin? There were seven right here!
 
-"How can they all be coins," the {hero} whispered, "if none of them are the same?"
+The biggest coin went first. Too wide. The shiniest went next; it spun on the lid and fell over, tap. The heaviest slid in halfway and stopped, and the box made a small polite sound, like a sneeze. Pfft.
 
-"Because that is exactly how coins are."
+"But a coin is a coin!" said the {hero}. "Money is money. Why won't any of them work?"
 
-It was {companion_name}, settling down nearby with a soft sigh. They nodded at the little pile.
+"Hmm," said {companion_name}, who knew that some doors you have to find for yourself.
 
-"May I?" {companion_name} picked up the widest coin and turned it in the light. "People think money is all one thing. It isn't. Look closely. This one is big and brown. Now find the smallest one."
+So the {hero} laid all seven coins in a row under the rising moon, and for the first time ever, really looked.
 
-The {hero} found it right away, a thin silver disc, light as a seed.
+One coin was wide and brown, like warm bread. One was thin and pale as the moon. Some had smooth edges, and one had tiny bumps all the way around, like little teeth. And on every face there was a picture. A bird. A leaf. A tall tree. A boat.
 
-"Good," said {companion_name}. "Now, the pictures. Turn each coin over. What do you see?"
+Now, here is the secret the {hero} almost missed. Lean close and look at the lid. Right beside the keyhole, carved small as a freckle. Can you see it too? A boat.
 
-The {hero} bent close. A bird on one. A leaf on another. A little boat. A curl of waves. A tall tree with spreading branches.
+The {hero}'s eyes went wide. "They're not all the same coin at all! Each one has its own name. And the box is asking for one of them by name!"
 
-"They tell you which coin is which," said {companion_name}. "The size, the colour, the picture, the edge. Those are the clues. Coins are not a muddle. Each one has its own name."
+The boat coin was the smallest, quietest coin in the row, the one the {hero} had nearly left in the mud. It slid into the keyhole like it was coming home. Click.
 
-The {hero} sat very still, holding that thought. Suddenly the pile did not look like a muddle at all. It looked like a row of small, quiet strangers, each waiting to be known.
+The lid breathed open, and the song spilled out slow and silvery, note by note, like stars being set out one at a time.
 
-"This big brown one," said {companion_name}, "has a name. This little silver one has a different name. Once you learn them, you never mix them up again."
+{companion_name} went very still. "There it is," they whispered. "{refrain}. My mother used to say that, right before this song."
 
-The {hero} began to sort. Big coins here. Small coins there. Brown to one side, pale to the other. The {object_motif} the {hero} set apart, on its own, because it had been first.
+The song played itself slower and slower, the way songs do when they are ready to sleep. The {hero} said goodnight to the coins one by one, by their clues. The wide brown one. The bird one. The little boat one, the hero of the night.
 
-"Say them back to me," said {companion_name} gently. "Point and tell me what you notice."
+Only the {object_motif} kept its secret, a tiny picture no one could name yet. "Tomorrow," said {companion_name}. "Some names are worth the wait."
 
-"Big and brown," said the {hero}, touching one. "Small and silver. This one has a boat. This one has bumpy edges." The {hero} went along the row, naming each clue, and the coins seemed to settle under the naming, like birds folding their wings.
-
-By the time the {hero} reached the end of the row, the sky over {setting} had gone deep and soft, and the first stars were pricking through.
-
-{companion_name} stood and stretched. "You will know them anywhere now," they said. "In the dark, even, just by the weight."
-
-The {hero} gathered the coins into a careful stack, the {object_motif} balanced on top, and held them for a moment in both hands. They were not a muddle. They were a small family of names, learned and kept.
-
-The {hero} tucked them away safe and lay back against the cool ground, the day going quiet all around.
+The {hero} closed both eyes and let the last note land.
 
 {refrain}.`,
-    scriptTemplate: `{child_name} had spent all afternoon in {setting}, and now the light was turning gold and low. Soon it would be time to sleep. But {child_name} was not sleepy yet, because of what was tucked inside one hand.
+    scriptTemplate: `{child_name} came home to {setting} with a pocketful of clinking. All afternoon there had been coins to find, under leaves, between stones, seven at least, and the first and best was the {object_motif}, polished on a sleeve until it winked.
 
-It was the {object_motif}. {child_name} had found it near a quiet corner, half hidden, waiting. And it was not alone. Beside it lay a small heap of coins, more than {child_name} could hold in one palm.
+But {companion_name} was not looking at the coins. {companion_name} sat beside a small wooden box with a little round keyhole in its lid. A keyhole shaped exactly like a coin.
 
-{child_name} carried them carefully to a flat rock and laid them out. And that was when something strange happened. {child_name} looked at the coins, really looked, and noticed for the very first time that they did not match.
+"This box plays the sweetest going-to-sleep song ever made," said {companion_name}. "But it has been shut since I was young. It opens for one coin in all the world, and I never learned which one. I have tried every coin I ever met."
 
-One coin was wide and heavy. One was tiny, no bigger than a fingernail. One was the colour of warm bread. One was pale like the moon. Some had smooth edges. Some had little bumps all the way around, like tiny teeth.
+{child_name} grinned. One coin? There were seven right here!
 
-"How can they all be coins," {child_name} whispered, "if none of them are the same?"
+The biggest coin went first. Too wide. The shiniest went next; it spun on the lid and fell over, tap. The heaviest slid in halfway and stopped, and the box made a small polite sound, like a sneeze. Pfft.
 
-"Because that is exactly how coins are."
+"But a coin is a coin!" said {child_name}. "Money is money. Why won't any of them work?"
 
-It was {companion_name}, settling down nearby with a soft sigh. They nodded at the little pile.
+"Hmm," said {companion_name}, who knew that some doors you have to find for yourself.
 
-"May I?" {companion_name} picked up the widest coin and turned it in the light. "People think money is all one thing. It isn't. Look closely. This one is big and brown. Now find the smallest one."
+So {child_name} laid all seven coins in a row under the rising moon, and for the first time ever, really looked.
 
-{child_name} found it right away, a thin silver disc, light as a seed.
+One coin was wide and brown, like warm bread. One was thin and pale as the moon. Some had smooth edges, and one had tiny bumps all the way around, like little teeth. And on every face there was a picture. A bird. A leaf. A tall tree. A boat.
 
-"Good," said {companion_name}. "Now, the pictures. Turn each coin over. What do you see?"
+Now, here is the secret {child_name} almost missed. Lean close and look at the lid. Right beside the keyhole, carved small as a freckle. Can you see it too? A boat.
 
-{child_name} bent close. A bird on one. A leaf on another. A little boat. A curl of waves. A tall tree with spreading branches.
+{child_name}'s eyes went wide. "They're not all the same coin at all! Each one has its own name. And the box is asking for one of them by name!"
 
-"They tell you which coin is which," said {companion_name}. "The size, the colour, the picture, the edge. Those are the clues. Coins are not a muddle. Each one has its own name."
+The boat coin was the smallest, quietest coin in the row, the one {child_name} had nearly left in the mud. It slid into the keyhole like it was coming home. Click.
 
-{child_name} sat very still, holding that thought. Suddenly the pile did not look like a muddle at all. It looked like a row of small, quiet strangers, each waiting to be known.
+The lid breathed open, and the song spilled out slow and silvery, note by note, like stars being set out one at a time.
 
-"This big brown one," said {companion_name}, "has a name. This little silver one has a different name. Once you learn them, you never mix them up again."
+{companion_name} went very still. "There it is," they whispered. "{refrain}. My mother used to say that, right before this song."
 
-{child_name} began to sort. Big coins here. Small coins there. Brown to one side, pale to the other. The {object_motif} {child_name} set apart, on its own, because it had been first.
+The song played itself slower and slower, the way songs do when they are ready to sleep. {child_name} said goodnight to the coins one by one, by their clues. The wide brown one. The bird one. The little boat one, the hero of the night.
 
-"Say them back to me," said {companion_name} gently. "Point and tell me what you notice."
+Only the {object_motif} kept its secret, a tiny picture no one could name yet. "Tomorrow," said {companion_name}. "Some names are worth the wait."
 
-"Big and brown," said {child_name}, touching one. "Small and silver. This one has a boat. This one has bumpy edges." {child_name} went along the row, naming each clue, and the coins seemed to settle under the naming, like birds folding their wings.
-
-By the time {child_name} reached the end of the row, the sky over {setting} had gone deep and soft, and the first stars were pricking through.
-
-{companion_name} stood and stretched. "You will know them anywhere now," they said. "In the dark, even, just by the weight."
-
-{child_name} gathered the coins into a careful stack, the {object_motif} balanced on top, and held them for a moment in both hands. They were not a muddle. They were a small family of names, learned and kept.
-
-{child_name} tucked them away safe and lay back against the cool ground, the day going quiet all around.
+{child_name} closed both eyes and let the last note land.
 
 {refrain}.`
   },
   '7-8': {
-    audioTemplate: `The market in {setting} was closing up for the day, and the {hero} was supposed to be heading home. But there, wedged in the gap between two old paving stones, something had caught the last of the light.
+    audioTemplate: `The market in {setting} was folding up for the night, stall by stall, and the {hero} was counting a day's worth of found coins into one palm. Eleven of them, warm from the pocket. The best was the {object_motif}, discovered that morning in a gap between two paving stones, and the {hero} had big plans for the lot. Plans that lasted right up until {companion_name} set the box on the wall between them.
 
-The {hero} crouched and worked it loose. It was the {object_motif}, cool in the palm. And when the {hero} looked into the gap again, there were others, a whole scattered handful of coins that someone, somewhere, had dropped and never come back for.
+It was a small wooden box, older than it looked, with worn corners and a lid that did not open. No latch, no hinge you could see. What it had, dead centre, was a little round keyhole. A keyhole the exact shape of a coin.
 
-The {hero} scooped them up and hurried to the edge of the square, to the low wall where {companion_name} was resting after the long market day.
+"I bought it for one button and a favour, half my life ago," said {companion_name}. "The maker told me it plays the finest going-to-sleep song on this side of the sky, and that it opens for exactly one coin. One coin in all the world. I have tried coins from every market I ever walked through. It has said no to all of them."
 
-"Look what I found," the {hero} said, opening both hands. "Coins. Lots of them."
+The {hero} felt the pleasant crack of a challenge opening up. Eleven coins. Surely the box just hadn't met the right pocket yet.
 
-{companion_name} peered at the pile. "So you did. And what do you make of them?"
+The widest coin was too wide, and sat on the keyhole like a hat. The thickest went in a little way and stuck, and the box made a soft, unimpressed sound. Pfft. The coin with the ridged edge slid in beautifully, turned a quarter of the way, and stopped, its little teeth grinding on something inside.
 
-The {hero} started to say they were just coins, money was money, but the words stopped halfway. Because now, up close, the coins were doing something odd. They would not sit still in the mind as one single thing. One was fat and heavy and the colour of old copper. Another was slim and pale, hardly there at all. A third had a hole clean through its middle. The edges were different too: some smooth, some ridged like a tiny cog.
+"It nearly turned!" said the {hero}.
 
-"They're all different," the {hero} said slowly, and it came out almost like a question. "How can they be? They're all coins."
+"They always nearly turn," said {companion_name}, in the voice of someone who had been saying it for years.
 
-"Ah." {companion_name} shifted to make room on the wall. "Sit. That question is worth more than the whole handful."
+The {hero} sat back, frowning at the pile. "But money is money. A coin's a coin. If one fits, they should all..."
 
-The {hero} sat, spreading the coins along the top of the wall in a wobbly line.
+The sentence trailed off, because up close, in the last orange light, the coins had stopped looking like one thing. One was broad and heavy, the colour of old copper. One was slim and pale, hardly there at all. Some had smooth rims and some had ridged ones, dozens of tiny teeth all the way round. And every single face carried its own small picture: a bird, a leaf, a curl of waves, a tall tree, a boat.
 
-"Pick up the heaviest," said {companion_name}.
+The {hero} picked up the ridged coin that had almost turned, and then looked, slowly, at the keyhole itself. At the inside of its rim. Smooth. The lock wanted a smooth-edged coin. And there, carved beside the keyhole, so small and so worn that a thousand hopeful thumbs must have polished it nearly away, was a picture.
 
-The {hero} weighed them two at a time until one clearly won, the fat copper one.
+A boat.
 
-"Now the lightest."
+"It's not asking for any coin," the {hero} said, and the idea arrived all at once, the way the last piece of a puzzle stops being a piece and becomes the picture. "They're all different, every one of them. Each one has its own name. And the box has been saying the name it wants this whole time."
 
-That was the pale slim one, light as a dry leaf.
+Smooth edge. Boat on the face. Small enough for the little keyhole. The {hero} went back through the pile with new eyes, reading instead of grabbing, and found it near the bottom: the smallest, palest coin of the lot, the one that had seemed hardly worth picking up that afternoon.
 
-"Good. You just sorted them by weight, and you didn't even need to be told the names yet. That's the secret people miss. They think you have to memorise money like a boring list. You don't. You read it, the way you'd read tracks in mud." {companion_name} tapped the copper coin. "Big. Heavy. This colour. Every time you see one like it, it's the same coin. Turn it over."
+It slid in without touching the sides. It turned all the way round, like it had been doing it for years.
 
-The {hero} turned it. On the back was a small stamped picture, a leaping fish.
+Click.
 
-"The picture's a clue too. So is the size, the colour, the edge, the little hole. Put the clues together and the coin tells you what it is." {companion_name} looked at the {hero} sideways. "Coins aren't a crowd of strangers. Each one has its own name."
+The lid rose on its own, slow as a drawbridge, and the song came out into the closing-down market, silvery and unhurried, and one by one the last stallholders stopped their packing to listen.
 
-The {hero} went quiet, turning that over. It changed things. A moment ago the pile had been a jumble, a lucky mess. Now it was starting to come apart into pieces that made sense, each with its own weight and face and edge.
+Inside the box there was no gold. There was a pressed flower, flat and pale with age, and a scrap of paper in faded ink: "For the one who learns to look."
 
-"So this one," the {hero} held up the coin with the hole, "is always this one. Because of the hole."
+{companion_name} read it twice and said nothing for a while. "{refrain}," they murmured at last, which was somehow an answer.
 
-"Because of the hole, and the size, and the rest. You've got it." {companion_name} sounded pleased. "Show me. Go along your line and tell me why each is what it is. Don't tell me the price. Tell me the clues."
+The song wound down the way a day does, slower and softer, each note a little further from the last. The {hero} stacked the coins by their names, smooth rims here and ridged rims there, the boat coin resting on top of the box it had opened.
 
-The {hero} started at the copper end. "Heavy. Big. Fish on the back." Moved down. "This one's silver and thin, with a bird." Down again. "Hole in the middle, ridged edge." On to the {object_motif}, set a little apart because it had been first out of the ground. "And this one, smooth all the way round, no picture I can find yet."
+Only the {object_motif} went back into the pocket unread, its own strange little picture still unnamed. Tomorrow's mystery, keeping itself warm.
 
-"Then that one keeps its secret till morning," said {companion_name}, "when the light's better."
-
-The {hero} smiled and slid the coins back into a tidy stack, biggest on the bottom, the {object_motif} on top like a lid.
-
-Above the market the sky had turned the deep blue that comes just before the lamps, and the last few stallholders were rolling down their shutters with a clatter that sounded far away.
-
-"You'll never look at a handful the same way again," said {companion_name}, standing and stretching the day out of their back. "That's the good thing about clues. Once you can read them, you can't un-read them."
-
-The {hero} closed both hands around the little stack, feeling the different weights press into the skin, the fat one, the thin one, the holed one, each unmistakable now, even with the eyes shut.
-
-Then the {hero} tucked the coins away deep and safe, and turned at last for home, ready for sleep.
+The market went dark and friendly around them, shutter by shutter, and the {hero} headed home slow and sleepy, with a pocket full of names.
 
 {refrain}.`,
-    scriptTemplate: `The market in {setting} was closing up for the day, and {child_name} was supposed to be heading home. But there, wedged in the gap between two old paving stones, something had caught the last of the light.
+    scriptTemplate: `The market in {setting} was folding up for the night, stall by stall, and {child_name} was counting a day's worth of found coins into one palm. Eleven of them, warm from the pocket. The best was the {object_motif}, discovered that morning in a gap between two paving stones, and {child_name} had big plans for the lot. Plans that lasted right up until {companion_name} set the box on the wall between them.
 
-{child_name} crouched and worked it loose. It was the {object_motif}, cool in the palm. And when {child_name} looked into the gap again, there were others, a whole scattered handful of coins that someone, somewhere, had dropped and never come back for.
+It was a small wooden box, older than it looked, with worn corners and a lid that did not open. No latch, no hinge you could see. What it had, dead centre, was a little round keyhole. A keyhole the exact shape of a coin.
 
-{child_name} scooped them up and hurried to the edge of the square, to the low wall where {companion_name} was resting after the long market day.
+"I bought it for one button and a favour, half my life ago," said {companion_name}. "The maker told me it plays the finest going-to-sleep song on this side of the sky, and that it opens for exactly one coin. One coin in all the world. I have tried coins from every market I ever walked through. It has said no to all of them."
 
-"Look what I found," {child_name} said, opening both hands. "Coins. Lots of them."
+{child_name} felt the pleasant crack of a challenge opening up. Eleven coins. Surely the box just hadn't met the right pocket yet.
 
-{companion_name} peered at the pile. "So you did. And what do you make of them?"
+The widest coin was too wide, and sat on the keyhole like a hat. The thickest went in a little way and stuck, and the box made a soft, unimpressed sound. Pfft. The coin with the ridged edge slid in beautifully, turned a quarter of the way, and stopped, its little teeth grinding on something inside.
 
-{child_name} started to say they were just coins, money was money, but the words stopped halfway. Because now, up close, the coins were doing something odd. They would not sit still in the mind as one single thing. One was fat and heavy and the colour of old copper. Another was slim and pale, hardly there at all. A third had a hole clean through its middle. The edges were different too: some smooth, some ridged like a tiny cog.
+"It nearly turned!" said {child_name}.
 
-"They're all different," {child_name} said slowly, and it came out almost like a question. "How can they be? They're all coins."
+"They always nearly turn," said {companion_name}, in the voice of someone who had been saying it for years.
 
-"Ah." {companion_name} shifted to make room on the wall. "Sit. That question is worth more than the whole handful."
+{child_name} sat back, frowning at the pile. "But money is money. A coin's a coin. If one fits, they should all..."
 
-{child_name} sat, spreading the coins along the top of the wall in a wobbly line.
+The sentence trailed off, because up close, in the last orange light, the coins had stopped looking like one thing. One was broad and heavy, the colour of old copper. One was slim and pale, hardly there at all. Some had smooth rims and some had ridged ones, dozens of tiny teeth all the way round. And every single face carried its own small picture: a bird, a leaf, a curl of waves, a tall tree, a boat.
 
-"Pick up the heaviest," said {companion_name}.
+{child_name} picked up the ridged coin that had almost turned, and then looked, slowly, at the keyhole itself. At the inside of its rim. Smooth. The lock wanted a smooth-edged coin. And there, carved beside the keyhole, so small and so worn that a thousand hopeful thumbs must have polished it nearly away, was a picture.
 
-{child_name} weighed them two at a time until one clearly won, the fat copper one.
+A boat.
 
-"Now the lightest."
+"It's not asking for any coin," {child_name} said, and the idea arrived all at once, the way the last piece of a puzzle stops being a piece and becomes the picture. "They're all different, every one of them. Each one has its own name. And the box has been saying the name it wants this whole time."
 
-That was the pale slim one, light as a dry leaf.
+Smooth edge. Boat on the face. Small enough for the little keyhole. {child_name} went back through the pile with new eyes, reading instead of grabbing, and found it near the bottom: the smallest, palest coin of the lot, the one that had seemed hardly worth picking up that afternoon.
 
-"Good. You just sorted them by weight, and you didn't even need to be told the names yet. That's the secret people miss. They think you have to memorise money like a boring list. You don't. You read it, the way you'd read tracks in mud." {companion_name} tapped the copper coin. "Big. Heavy. This colour. Every time you see one like it, it's the same coin. Turn it over."
+It slid in without touching the sides. It turned all the way round, like it had been doing it for years.
 
-{child_name} turned it. On the back was a small stamped picture, a leaping fish.
+Click.
 
-"The picture's a clue too. So is the size, the colour, the edge, the little hole. Put the clues together and the coin tells you what it is." {companion_name} looked at {child_name} sideways. "Coins aren't a crowd of strangers. Each one has its own name."
+The lid rose on its own, slow as a drawbridge, and the song came out into the closing-down market, silvery and unhurried, and one by one the last stallholders stopped their packing to listen.
 
-{child_name} went quiet, turning that over. It changed things. A moment ago the pile had been a jumble, a lucky mess. Now it was starting to come apart into pieces that made sense, each with its own weight and face and edge.
+Inside the box there was no gold. There was a pressed flower, flat and pale with age, and a scrap of paper in faded ink: "For the one who learns to look."
 
-"So this one," {child_name} held up the coin with the hole, "is always this one. Because of the hole."
+{companion_name} read it twice and said nothing for a while. "{refrain}," they murmured at last, which was somehow an answer.
 
-"Because of the hole, and the size, and the rest. You've got it." {companion_name} sounded pleased. "Show me. Go along your line and tell me why each is what it is. Don't tell me the price. Tell me the clues."
+The song wound down the way a day does, slower and softer, each note a little further from the last. {child_name} stacked the coins by their names, smooth rims here and ridged rims there, the boat coin resting on top of the box it had opened.
 
-{child_name} started at the copper end. "Heavy. Big. Fish on the back." Moved down. "This one's silver and thin, with a bird." Down again. "Hole in the middle, ridged edge." On to the {object_motif}, set a little apart because it had been first out of the ground. "And this one, smooth all the way round, no picture I can find yet."
+Only the {object_motif} went back into the pocket unread, its own strange little picture still unnamed. Tomorrow's mystery, keeping itself warm.
 
-"Then that one keeps its secret till morning," said {companion_name}, "when the light's better."
-
-{child_name} smiled and slid the coins back into a tidy stack, biggest on the bottom, the {object_motif} on top like a lid.
-
-Above the market the sky had turned the deep blue that comes just before the lamps, and the last few stallholders were rolling down their shutters with a clatter that sounded far away.
-
-"You'll never look at a handful the same way again," said {companion_name}, standing and stretching the day out of their back. "That's the good thing about clues. Once you can read them, you can't un-read them."
-
-{child_name} closed both hands around the little stack, feeling the different weights press into the skin, the fat one, the thin one, the holed one, each unmistakable now, even with the eyes shut.
-
-Then {child_name} tucked the coins away deep and safe, and turned at last for home, ready for sleep.
+The market went dark and friendly around them, shutter by shutter, and {child_name} headed home slow and sleepy, with a pocket full of names.
 
 {refrain}.`
   },
   '9-11': {
-    audioTemplate: `Tomorrow was market day in {setting}, and the {hero} had been given a job that felt, for the first time, like a real one: to have the family's coins counted and sorted before the stalls went up at dawn. So while everyone else drifted toward sleep, the {hero} stayed out under the last of the light with a small cloth bag and tipped it out onto the worn top of an upturned crate.
+    audioTemplate: `The box had lived on {companion_name}'s highest shelf for as long as the {hero} could remember, being mysterious and useless in equal measure. Tonight, with no warning at all, {companion_name} lifted it down, set it on a flat stone in {setting}, and said, "You're old enough. See what you make of it."
 
-The coins came out in a rush and lay there in a heap. Among them, catching the eye at once, was the {object_motif}, the one the {hero} had been given months ago and had never quite dared to spend. But it was the rest of the pile that stopped the {hero} short now.
+It was small and heavier than it looked, made of dark wood gone glossy with handling. No latch. No hinge worth the name. Just one round keyhole sunk dead centre in the lid — a keyhole, the {hero} realised with a small jolt of delight, shaped precisely like a coin.
 
-There were more kinds of coin than the {hero} had ever bothered to notice. Sitting close like this, forced to actually look, the {hero} felt something shift. All this time money had just been money, a thing you handed over, a thing that came back as change, a single idea. But it wasn't one thing at all. It was dozens of small, particular objects, and no two of them matched.
+"It plays a song," said {companion_name}. "The best going-to-sleep song ever made, or so the maker swore. And it opens for one coin in all the world. I've fed it coins from every market I ever passed through, and it has refused every single one. I stopped trying years ago."
 
-One was broad and heavy, the colour of old roofing, worn nearly smooth. One was so small the {hero} had to pinch it to be sure it hadn't stuck to another. One was pale and cold-looking; one had a warmer, honey tone; one had a square hole punched clean through the centre, which seemed, frankly, ridiculous. Some had milled edges, finely ridged; others were plain as pebbles.
+The {hero} looked at the day's pocketful — eleven coins, counting the {object_motif} found that morning — and privately gave the whole mystery about two minutes.
 
-The {hero} sat back, oddly unsettled. It was like discovering a room in your own house you had walked past a hundred times without opening the door.
+The widest coin sat on the keyhole like a lid on a jar. The thickest jammed a third of the way in, and the box produced a soft, long-suffering sound. Pfft. The ridged one was the cruellest: it slid in sweetly, turned a whole quarter, and stopped dead, teeth grinding on something inside that had clearly been designed by somebody who enjoyed this sort of thing.
 
-"That's the face of someone who's just seen something for the first time," said {companion_name}, easing down onto a nearby stool. "Even though it was always right there."
+"Nearly," said the {hero}.
 
-"They're all different," the {hero} said. "I never, I mean, I've held coins my whole life. Why did I never see it?"
+"They always nearly," said {companion_name}, with the calm of long defeat.
 
-"Because you never needed to. You handed them over and let someone else sort out the difference." {companion_name} reached into the pile and drew out the broad heavy one. "But tomorrow that's your job, so tonight you learn to read them. And they are readable, you know. People act as if money is a code you have to be taught. It isn't. It's more like faces. You don't memorise a friend's face as a list of rules, you just learn, after a while, to tell it apart from all the others."
+Two minutes stretched to ten. The {hero} ran out of coins, then out of theories, and was one breath away from declaring the box officially broken — a verdict that would have been very satisfying and completely wrong — when the last of the light fell across the little heap of failures.
 
-The {hero} liked that, though a doubtful part of the mind held out. "But there are so many."
+And the heap stopped being a heap.
 
-"So start with the plainest clue there is. Weight." {companion_name} dropped the broad coin into the {hero}'s palm, then the tiny pale one beside it. "Close your eyes. Which is heavier?"
+It hadn't changed. The {hero} had. Because now, actually looking, there was no such thing as "a coin" on that stone. There was a broad copper one, worn nearly smooth. A slim pale one, light as a dry leaf. There were rims ridged fine as combing and rims like polished glass, and every face carried its own stamped picture — bird, leaf, curling wave, tall tree, little boat — like a row of small strangers, each quietly holding up a name.
 
-It was almost insultingly obvious with the eyes shut, the broad one sat like a stone, the small one barely registered.
+The {hero} bent over the keyhole itself, properly this time. Its inner rim was smooth, so the ridged coin had never had a chance. It was narrow, so the copper one was out before it began. And beside it, worn faint by years of hopeful thumbs, was a carving the size of a grain of rice.
 
-"Now open them and add the next clue. Colour. Then size. Then the edge, run your thumb round it. Then last of all turn it over and look at the picture stamped on the back." {companion_name} watched the {hero} do it. "You don't need any single clue to be certain. You stack them. Heavy, and this colour, and milled at the edge, and a fish on the reverse, put those together and there's only one coin it can be. Every time."
+A boat.
 
-The {hero} turned the broad coin over. A leaping fish, just as {companion_name} had said, though the {hero} couldn't have known that a moment ago, it had simply been true, waiting to be found.
+"It's not refusing coins," the {hero} said slowly. "It's asking for one. They're not interchangeable at all. Each one has its own name, its own size, its own picture. The box has been saying the name of the one it wants the whole time. We just never read it."
 
-"So they're not really a jumble," the {hero} said, testing the idea aloud. "They just look like one until you know what to look at."
+The boat coin was in the discard heap, naturally. The smallest, palest, least promising coin of the day — the {hero} had filed it that afternoon under "barely worth bending down for." Smooth rim. Narrow. A boat stamped on its face, sails no bigger than an eyelash.
 
-"That's the whole trick of it." {companion_name} leaned back. "A jumble is only a jumble while it's got no order laid over it. Give it an order and it comes apart into things you can hold one at a time. Coins aren't a crowd. Each one has its own name, and its own set of clues that give the name away."
+It slid in without touching the sides and turned all the way round, smooth as a key in butter.
 
-Something about that settled the {hero}, the way the right word settles a restless feeling you couldn't quite describe before. The {hero} began, methodically now, to build columns along the top of the crate: the broad heavy coins in one, the pale small ones in another, the honey-coloured in a third, the absurd holed coin standing in a little category all its own. Weight, then colour, then size, then edge, then face, the {hero} ran each coin through the same five questions and let it fall into place.
+Click.
 
-It went faster than expected. By the fourth or fifth coin the {hero} was barely thinking, just reading, a glance, a heft in the palm, a thumb round the rim, and knowing. The doubt from earlier had quietly packed up and left.
+The lid rose by itself, unhurried, as if it had never been stuck a day in its life, and the song came out — silvery, patient, older than anyone listening — and {companion_name} sat down slowly, the way you do when a very old question finally answers itself.
 
-Only the {object_motif} sat apart, uncategorised, because the {hero} kept setting it aside. It didn't quite belong to a column. It was the first coin the {hero} had ever owned outright, and some part of the {hero} wanted to keep it that way, not sorted, not spent, just its own.
+Inside there was no treasure. There was a scrap of paper in careful, faded ink — "For the one who learns to look" — and beneath it a single coin the {hero} had never seen the like of. Darker than the copper. Stranger than the pale one. Stamped with a sign neither of them knew.
 
-"You've left one out," {companion_name} observed mildly.
+"What is it?" the {hero} asked. "What would it even be worth?"
 
-"On purpose," the {hero} admitted. "It's, I don't want to lose track of which one it is."
+"That," said {companion_name}, closing their eyes to listen, "is tomorrow's question."
 
-"Then you already understand the lesson better than most grown traders." {companion_name}'s voice was quiet with something like approval. "Half of them still think one coin's the same as any other. You've noticed they aren't. That noticing is worth more than the whole bag."
+The song spent itself the way evenings do, each note a little further from the last. The {hero} sorted the failures back into the pocket by name — the copper, the bird, the ridged-edge — and set the boat coin on top of the box it had opened, a small guard on a solved door.
 
-The {hero} finished the last column and looked at the ordered ranks with a satisfaction that was hard to explain, the plain physical pleasure of a mess made into sense. What had spilled out as chaos ten minutes ago now stood in neat, knowable groups, each one a name the {hero} could recite by touch.
+The {object_motif} went in last, its own odd little picture still unread. The {hero} was starting to suspect the world was full of things that had names and clues and quiet keyholes, if you only slowed down enough to look.
 
-Overhead the sky had deepened, and somewhere across {setting} a shutter banged and a voice called goodnight to another. The stalls were still just bare frames in the dark, but tomorrow they would fill, and the {hero} would be ready, able to take a stranger's coin, weigh it in a glance, and know it.
+"{refrain}," said {companion_name}, barely louder than the song had been.
 
-"Bag them by column," said {companion_name}, rising. "Heaviest at the bottom. You'll thank yourself at dawn when the light's grey and your hands are cold."
-
-The {hero} swept each group carefully back into the cloth bag, keeping the order, and last of all picked up the {object_motif}, turned it once in the fading light, and tucked it into a separate corner of the bag where it wouldn't get muddled with the rest.
-
-Then the {hero} pulled the drawstring tight, weighed the whole bag once in the hand, heavier than it had felt this morning, though nothing had been added but understanding, and headed in to sleep before the long day.
+The {hero} echoed it, half asleep already.
 
 {refrain}.`,
-    scriptTemplate: `Tomorrow was market day in {setting}, and {child_name} had been given a job that felt, for the first time, like a real one: to have the family's coins counted and sorted before the stalls went up at dawn. So while everyone else drifted toward sleep, {child_name} stayed out under the last of the light with a small cloth bag and tipped it out onto the worn top of an upturned crate.
+    scriptTemplate: `The box had lived on {companion_name}'s highest shelf for as long as {child_name} could remember, being mysterious and useless in equal measure. Tonight, with no warning at all, {companion_name} lifted it down, set it on a flat stone in {setting}, and said, "You're old enough. See what you make of it."
 
-The coins came out in a rush and lay there in a heap. Among them, catching the eye at once, was the {object_motif}, the one {child_name} had been given months ago and had never quite dared to spend. But it was the rest of the pile that stopped {child_name} short now.
+It was small and heavier than it looked, made of dark wood gone glossy with handling. No latch. No hinge worth the name. Just one round keyhole sunk dead centre in the lid — a keyhole, {child_name} realised with a small jolt of delight, shaped precisely like a coin.
 
-There were more kinds of coin than {child_name} had ever bothered to notice. Sitting close like this, forced to actually look, {child_name} felt something shift. All this time money had just been money, a thing you handed over, a thing that came back as change, a single idea. But it wasn't one thing at all. It was dozens of small, particular objects, and no two of them matched.
+"It plays a song," said {companion_name}. "The best going-to-sleep song ever made, or so the maker swore. And it opens for one coin in all the world. I've fed it coins from every market I ever passed through, and it has refused every single one. I stopped trying years ago."
 
-One was broad and heavy, the colour of old roofing, worn nearly smooth. One was so small {child_name} had to pinch it to be sure it hadn't stuck to another. One was pale and cold-looking; one had a warmer, honey tone; one had a square hole punched clean through the centre, which seemed, frankly, ridiculous. Some had milled edges, finely ridged; others were plain as pebbles.
+{child_name} looked at the day's pocketful — eleven coins, counting the {object_motif} found that morning — and privately gave the whole mystery about two minutes.
 
-{child_name} sat back, oddly unsettled. It was like discovering a room in your own house you had walked past a hundred times without opening the door.
+The widest coin sat on the keyhole like a lid on a jar. The thickest jammed a third of the way in, and the box produced a soft, long-suffering sound. Pfft. The ridged one was the cruellest: it slid in sweetly, turned a whole quarter, and stopped dead, teeth grinding on something inside that had clearly been designed by somebody who enjoyed this sort of thing.
 
-"That's the face of someone who's just seen something for the first time," said {companion_name}, easing down onto a nearby stool. "Even though it was always right there."
+"Nearly," said {child_name}.
 
-"They're all different," {child_name} said. "I never, I mean, I've held coins my whole life. Why did I never see it?"
+"They always nearly," said {companion_name}, with the calm of long defeat.
 
-"Because you never needed to. You handed them over and let someone else sort out the difference." {companion_name} reached into the pile and drew out the broad heavy one. "But tomorrow that's your job, so tonight you learn to read them. And they are readable, you know. People act as if money is a code you have to be taught. It isn't. It's more like faces. You don't memorise a friend's face as a list of rules, you just learn, after a while, to tell it apart from all the others."
+Two minutes stretched to ten. {child_name} ran out of coins, then out of theories, and was one breath away from declaring the box officially broken — a verdict that would have been very satisfying and completely wrong — when the last of the light fell across the little heap of failures.
 
-{child_name} liked that, though a doubtful part of the mind held out. "But there are so many."
+And the heap stopped being a heap.
 
-"So start with the plainest clue there is. Weight." {companion_name} dropped the broad coin into {child_name}'s palm, then the tiny pale one beside it. "Close your eyes. Which is heavier?"
+It hadn't changed. {child_name} had. Because now, actually looking, there was no such thing as "a coin" on that stone. There was a broad copper one, worn nearly smooth. A slim pale one, light as a dry leaf. There were rims ridged fine as combing and rims like polished glass, and every face carried its own stamped picture — bird, leaf, curling wave, tall tree, little boat — like a row of small strangers, each quietly holding up a name.
 
-It was almost insultingly obvious with the eyes shut, the broad one sat like a stone, the small one barely registered.
+{child_name} bent over the keyhole itself, properly this time. Its inner rim was smooth, so the ridged coin had never had a chance. It was narrow, so the copper one was out before it began. And beside it, worn faint by years of hopeful thumbs, was a carving the size of a grain of rice.
 
-"Now open them and add the next clue. Colour. Then size. Then the edge, run your thumb round it. Then last of all turn it over and look at the picture stamped on the back." {companion_name} watched {child_name} do it. "You don't need any single clue to be certain. You stack them. Heavy, and this colour, and milled at the edge, and a fish on the reverse, put those together and there's only one coin it can be. Every time."
+A boat.
 
-{child_name} turned the broad coin over. A leaping fish, just as {companion_name} had said, though {child_name} couldn't have known that a moment ago, it had simply been true, waiting to be found.
+"It's not refusing coins," {child_name} said slowly. "It's asking for one. They're not interchangeable at all. Each one has its own name, its own size, its own picture. The box has been saying the name of the one it wants the whole time. We just never read it."
 
-"So they're not really a jumble," {child_name} said, testing the idea aloud. "They just look like one until you know what to look at."
+The boat coin was in the discard heap, naturally. The smallest, palest, least promising coin of the day — {child_name} had filed it that afternoon under "barely worth bending down for." Smooth rim. Narrow. A boat stamped on its face, sails no bigger than an eyelash.
 
-"That's the whole trick of it." {companion_name} leaned back. "A jumble is only a jumble while it's got no order laid over it. Give it an order and it comes apart into things you can hold one at a time. Coins aren't a crowd. Each one has its own name, and its own set of clues that give the name away."
+It slid in without touching the sides and turned all the way round, smooth as a key in butter.
 
-Something about that settled {child_name}, the way the right word settles a restless feeling you couldn't quite describe before. {child_name} began, methodically now, to build columns along the top of the crate: the broad heavy coins in one, the pale small ones in another, the honey-coloured in a third, the absurd holed coin standing in a little category all its own. Weight, then colour, then size, then edge, then face, {child_name} ran each coin through the same five questions and let it fall into place.
+Click.
 
-It went faster than expected. By the fourth or fifth coin {child_name} was barely thinking, just reading, a glance, a heft in the palm, a thumb round the rim, and knowing. The doubt from earlier had quietly packed up and left.
+The lid rose by itself, unhurried, as if it had never been stuck a day in its life, and the song came out — silvery, patient, older than anyone listening — and {companion_name} sat down slowly, the way you do when a very old question finally answers itself.
 
-Only the {object_motif} sat apart, uncategorised, because {child_name} kept setting it aside. It didn't quite belong to a column. It was the first coin {child_name} had ever owned outright, and some part of {child_name} wanted to keep it that way, not sorted, not spent, just its own.
+Inside there was no treasure. There was a scrap of paper in careful, faded ink — "For the one who learns to look" — and beneath it a single coin {child_name} had never seen the like of. Darker than the copper. Stranger than the pale one. Stamped with a sign neither of them knew.
 
-"You've left one out," {companion_name} observed mildly.
+"What is it?" {child_name} asked. "What would it even be worth?"
 
-"On purpose," {child_name} admitted. "It's, I don't want to lose track of which one it is."
+"That," said {companion_name}, closing their eyes to listen, "is tomorrow's question."
 
-"Then you already understand the lesson better than most grown traders." {companion_name}'s voice was quiet with something like approval. "Half of them still think one coin's the same as any other. You've noticed they aren't. That noticing is worth more than the whole bag."
+The song spent itself the way evenings do, each note a little further from the last. {child_name} sorted the failures back into the pocket by name — the copper, the bird, the ridged-edge — and set the boat coin on top of the box it had opened, a small guard on a solved door.
 
-{child_name} finished the last column and looked at the ordered ranks with a satisfaction that was hard to explain, the plain physical pleasure of a mess made into sense. What had spilled out as chaos ten minutes ago now stood in neat, knowable groups, each one a name {child_name} could recite by touch.
+The {object_motif} went in last, its own odd little picture still unread. {child_name} was starting to suspect the world was full of things that had names and clues and quiet keyholes, if you only slowed down enough to look.
 
-Overhead the sky had deepened, and somewhere across {setting} a shutter banged and a voice called goodnight to another. The stalls were still just bare frames in the dark, but tomorrow they would fill, and {child_name} would be ready, able to take a stranger's coin, weigh it in a glance, and know it.
+"{refrain}," said {companion_name}, barely louder than the song had been.
 
-"Bag them by column," said {companion_name}, rising. "Heaviest at the bottom. You'll thank yourself at dawn when the light's grey and your hands are cold."
-
-{child_name} swept each group carefully back into the cloth bag, keeping the order, and last of all picked up the {object_motif}, turned it once in the fading light, and tucked it into a separate corner of the bag where it wouldn't get muddled with the rest.
-
-Then {child_name} pulled the drawstring tight, weighed the whole bag once in the hand, heavier than it had felt this morning, though nothing had been added but understanding, and headed in to sleep before the long day.
+{child_name} echoed it, half asleep already.
 
 {refrain}.`
   }
 },
-    audioTemplate: `The night was warm and the stars were out, and a small {hero} was exploring {setting} when something small caught the light.
+    audioTemplate: `The {hero} came home to {setting} with a pocketful of clinking. All afternoon there had been coins to find, under leaves, between stones, seven at least, and the first and best was the {object_motif}, polished on a sleeve until it winked.
 
-Three things lay in the sand. Each one was round, but they were not the same — one was tiny and brown, one was bigger and silver, one was somewhere in between.
+But {companion_name} was not looking at the coins. {companion_name} sat beside a small wooden box with a little round keyhole in its lid. A keyhole shaped exactly like a coin.
 
-The {hero} looked at them carefully. They were all coins, but they did not match.
+"This box plays the sweetest going-to-sleep song ever made," said {companion_name}. "But it has been shut since I was young. It opens for one coin in all the world, and I never learned which one. I have tried every coin I ever met."
 
-Just then, {companion_name} appeared, peering over with kind and curious eyes.
+The {hero} grinned. One coin? There were seven right here!
 
-"These are all coins," said {companion_name} gently, "but they are not the same coin. Each one has its own name. See how different they look? Their size, their colour, the picture on the face — those are clues to which coin it is."
+The biggest coin went first. Too wide. The shiniest went next; it spun on the lid and fell over, tap. The heaviest slid in halfway and stopped, and the box made a small polite sound, like a sneeze. Pfft.
 
-The {hero} picked each one up in turn and really looked. The tiny brown one. The bigger silver one with the ridged edge. The in-between one with the smooth side.
+"But a coin is a coin!" said the {hero}. "Money is money. Why won't any of them work?"
 
-"I never noticed before," said the {hero} quietly. "They all looked the same to me."
+"Hmm," said {companion_name}, who knew that some doors you have to find for yourself.
 
-"That is how it starts," said {companion_name}, smiling. "You notice. Then the rest becomes easy."
+So the {hero} laid all seven coins in a row under the rising moon, and for the first time ever, really looked.
 
-The {hero} held all three and looked at them once more as the stars turned slowly overhead.
+One coin was wide and brown, like warm bread. One was thin and pale as the moon. Some had smooth edges, and one had tiny bumps all the way around, like little teeth. And on every face there was a picture. A bird. A leaf. A tall tree. A boat.
+
+Now, here is the secret the {hero} almost missed. Lean close and look at the lid. Right beside the keyhole, carved small as a freckle. Can you see it too? A boat.
+
+The {hero}'s eyes went wide. "They're not all the same coin at all! Each one has its own name. And the box is asking for one of them by name!"
+
+The boat coin was the smallest, quietest coin in the row, the one the {hero} had nearly left in the mud. It slid into the keyhole like it was coming home. Click.
+
+The lid breathed open, and the song spilled out slow and silvery, note by note, like stars being set out one at a time.
+
+{companion_name} went very still. "There it is," they whispered. "{refrain}. My mother used to say that, right before this song."
+
+The song played itself slower and slower, the way songs do when they are ready to sleep. The {hero} said goodnight to the coins one by one, by their clues. The wide brown one. The bird one. The little boat one, the hero of the night.
+
+Only the {object_motif} kept its secret, a tiny picture no one could name yet. "Tomorrow," said {companion_name}. "Some names are worth the wait."
+
+The {hero} closed both eyes and let the last note land.
 
 {refrain}.`,
-    scriptTemplate: `The night was warm and the stars were out, and {child_name} the {hero} was exploring {setting} when something small caught the light.
+    scriptTemplate: `{child_name} came home to {setting} with a pocketful of clinking. All afternoon there had been coins to find, under leaves, between stones, seven at least, and the first and best was the {object_motif}, polished on a sleeve until it winked.
 
-Three things lay in the sand. Each one was round, but they were not the same — one was tiny and brown, one was bigger and silver, one was somewhere in between.
+But {companion_name} was not looking at the coins. {companion_name} sat beside a small wooden box with a little round keyhole in its lid. A keyhole shaped exactly like a coin.
 
-{child_name} looked at them carefully. They were all coins, but they did not match.
+"This box plays the sweetest going-to-sleep song ever made," said {companion_name}. "But it has been shut since I was young. It opens for one coin in all the world, and I never learned which one. I have tried every coin I ever met."
 
-Just then, {companion_name} appeared, peering over {child_name}'s shoulder with kind and curious eyes.
+{child_name} grinned. One coin? There were seven right here!
 
-"These are all coins," said {companion_name} gently, "but they are not the same coin. Each one has its own name. See how different they look? Their size, their colour, the picture on the face — those are clues to which coin it is."
+The biggest coin went first. Too wide. The shiniest went next; it spun on the lid and fell over, tap. The heaviest slid in halfway and stopped, and the box made a small polite sound, like a sneeze. Pfft.
 
-{child_name} picked each one up in turn and really looked. The tiny brown one. The bigger silver one with the ridged edge. The in-between one with the smooth side.
+"But a coin is a coin!" said {child_name}. "Money is money. Why won't any of them work?"
 
-"I never noticed before," said {child_name} quietly. "They all looked the same to me."
+"Hmm," said {companion_name}, who knew that some doors you have to find for yourself.
 
-"That is how it starts," said {companion_name}, smiling. "You notice. Then the rest becomes easy."
+So {child_name} laid all seven coins in a row under the rising moon, and for the first time ever, really looked.
 
-{child_name} held all three and looked at them once more as the stars turned slowly overhead.
+One coin was wide and brown, like warm bread. One was thin and pale as the moon. Some had smooth edges, and one had tiny bumps all the way around, like little teeth. And on every face there was a picture. A bird. A leaf. A tall tree. A boat.
+
+Now, here is the secret {child_name} almost missed. Lean close and look at the lid. Right beside the keyhole, carved small as a freckle. Can you see it too? A boat.
+
+{child_name}'s eyes went wide. "They're not all the same coin at all! Each one has its own name. And the box is asking for one of them by name!"
+
+The boat coin was the smallest, quietest coin in the row, the one {child_name} had nearly left in the mud. It slid into the keyhole like it was coming home. Click.
+
+The lid breathed open, and the song spilled out slow and silvery, note by note, like stars being set out one at a time.
+
+{companion_name} went very still. "There it is," they whispered. "{refrain}. My mother used to say that, right before this song."
+
+The song played itself slower and slower, the way songs do when they are ready to sleep. {child_name} said goodnight to the coins one by one, by their clues. The wide brown one. The bird one. The little boat one, the hero of the night.
+
+Only the {object_motif} kept its secret, a tiny picture no one could name yet. "Tomorrow," said {companion_name}. "Some names are worth the wait."
+
+{child_name} closed both eyes and let the last note land.
 
 {refrain}.`,
   },
