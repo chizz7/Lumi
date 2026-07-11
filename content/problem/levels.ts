@@ -193,9 +193,93 @@ Over {setting}, the light was turning slow and low. {child_name} sat with the {o
 {refrain}.`
   },
   '7-8': {
-    audioTemplate: `The trouble began just before bedtime, which is the worst time for trouble. The {hero} had been carrying the {object_motif} back across {setting} when it slipped, dropped, and landed in a tangle — caught somehow on a low branch, wound around twice, and pulled into a hard little snarl.
+    audioTemplate: `The {hero} woke to a quiet morning in {setting} with a growing weight in their chest. Three tasks sat waiting, all urgent, all demanding attention at once: the broken fence needed mending, the overgrown garden needed clearing, and the {object_motif} needed careful repair before it could be worn again.
 
-The {hero} stopped and stared. This was a problem, and the {hero} did not like problems that got in the way of bed. Bed was waiting. Warm blankets were waiting. All that stood in the way was this stupid, stubborn tangle. The quickest thing, surely, was to yank it free and be done.
+The {hero} looked from one to the other, trying to imagine how to hold all three in mind, and felt the beginning of that familiar rushing panic.
+
+"I'll start with the fence," the {hero} decided, and went to gather tools. For twenty minutes, the {hero} worked hard, patching boards, driving nails. Then a thought arrived: the garden patch would die if not cleared today. Halfway through a nail, the {hero} stopped, set down the hammer, and ran to the garden to pull weeds.
+
+Thirty minutes of pulling, uprooting, shaking soil from roots. Then the thought: the {object_motif}. The work wouldn't keep. The {hero} left the garden half-cleared, dropped the weeds, and retrieved the {object_motif} to begin stitching a torn seam.
+
+By midday, nothing was finished. The fence had nails sticking out of boards with no boards finished. The garden was weeds on one side and wild on the other. The {object_motif} had one seam started and one seam still broken. The {hero} sat in the middle of this chaos, chest tight, unable to focus because every unfinished thing was pulling at their attention.
+
+{companion_name} found the {hero} there and sat down quietly.
+
+"Three problems," {companion_name} said. "But a mind can only truly hold and solve one at a time. When you try all three together, each one pulls you away from the other two, and nothing gets finished."
+
+"So what do I do?" the {hero} asked, feeling helpless.
+
+"Work through one problem at a time," said {companion_name}. "Choose the one that matters most. Do it all the way through, completely, before you touch the next. One at a time is how big overwhelm becomes small capability."
+
+The {hero} felt something quiet land in their chest. One at a time. That was possible.
+
+"The fence first," the {hero} decided. "I'll finish every single board."
+
+So the {hero} went back to the fence and did not leave it. Nail after nail, board after board, each one checked and rechecked. The fence took two hours, but when the {hero} stood back, it was done. Completely done. The {hero} felt a small spark of calm.
+
+"Now the garden," said {companion_name}.
+
+The {hero} went to the wild space and cleared it with focus. Weeds pulled, soil turned, the patch shaped and ready. Done.
+
+"Now the last," {companion_name} said.
+
+The {hero} threaded a needle and stitched every seam, every weak place, every hole. The {object_motif} went from broken to whole. Three hours of work, but it was finished.
+
+Three things. All three done.
+
+The {hero} sat with the {object_motif} held carefully, looking at the mended fence and the cleared garden, feeling something settle in their shoulders. The panic had drained away, leaving only tiredness and a quiet, steady satisfaction.
+
+"Work through one problem at a time," the {hero} said slowly. "That's how it works."
+
+The evening came soft over {setting}, and the {hero} knew now: overwhelm doesn't get solved by trying to do everything. It gets solved by doing one thing, completely, and then moving on to the next.
+
+{refrain}.`,
+    scriptTemplate: `{child_name} woke to a quiet morning in {setting} with a growing weight in their chest. Three tasks sat waiting, all urgent, all demanding attention at once: the broken fence needed mending, the overgrown garden needed clearing, and the {object_motif} needed careful repair before it could be worn again.
+
+{child_name} looked from one to the other, trying to imagine how to hold all three in mind, and felt the beginning of that familiar rushing panic.
+
+"I'll start with the fence," {child_name} decided, and went to gather tools. For twenty minutes, {child_name} worked hard, patching boards, driving nails. Then a thought arrived: the garden patch would die if not cleared today. Halfway through a nail, {child_name} stopped, set down the hammer, and ran to the garden to pull weeds.
+
+Thirty minutes of pulling, uprooting, shaking soil from roots. Then the thought: the {object_motif}. The work wouldn't keep. {child_name} left the garden half-cleared, dropped the weeds, and retrieved the {object_motif} to begin stitching a torn seam.
+
+By midday, nothing was finished. The fence had nails sticking out of boards with no boards finished. The garden was weeds on one side and wild on the other. The {object_motif} had one seam started and one seam still broken. {child_name} sat in the middle of this chaos, chest tight, unable to focus because every unfinished thing was pulling at their attention.
+
+{companion_name} found {child_name} there and sat down quietly.
+
+"Three problems," {companion_name} said. "But a mind can only truly hold and solve one at a time. When you try all three together, each one pulls you away from the other two, and nothing gets finished."
+
+"So what do I do?" {child_name} asked, feeling helpless.
+
+"Work through one problem at a time," said {companion_name}. "Choose the one that matters most. Do it all the way through, completely, before you touch the next. One at a time is how big overwhelm becomes small capability."
+
+{child_name} felt something quiet land in their chest. One at a time. That was possible.
+
+"The fence first," {child_name} decided. "I'll finish every single board."
+
+So {child_name} went back to the fence and did not leave it. Nail after nail, board after board, each one checked and rechecked. The fence took two hours, but when {child_name} stood back, it was done. Completely done. {child_name} felt a small spark of calm.
+
+"Now the garden," said {companion_name}.
+
+{child_name} went to the wild space and cleared it with focus. Weeds pulled, soil turned, the patch shaped and ready. Done.
+
+"Now the last," {companion_name} said.
+
+{child_name} threaded a needle and stitched every seam, every weak place, every hole. The {object_motif} went from broken to whole. Three hours of work, but it was finished.
+
+Three things. All three done.
+
+{child_name} sat with the {object_motif} held carefully, looking at the mended fence and the cleared garden, feeling something settle in their shoulders. The panic had drained away, leaving only tiredness and a quiet, steady satisfaction.
+
+"Work through one problem at a time," {child_name} said slowly. "That's how it works."
+
+The evening came soft over {setting}, and {child_name} knew now: overwhelm doesn't get solved by trying to do everything. It gets solved by doing one thing, completely, and then moving on to the next.
+
+{refrain}.`
+  },
+  '9-11': {
+    audioTemplate: `The {hero} woke to a quiet morning in {setting} with a growing weight in their chest. Three tasks sat waiting, all urgent, all demanding attention at once: the broken fence needed mending, the overgrown garden needed clearing, and the {object_motif} needed careful repair before it could be worn again.
+
+The {hero} stood at the old stone {hero} stopped and stared. This was a problem, and the {hero} did not like problems that got in the way of bed. Bed was waiting. Warm blankets were waiting. All that stood in the way was this stupid, stubborn tangle. The quickest thing, surely, was to yank it free and be done.
 
 So the {hero} took hold and pulled. The tangle tightened. The {hero} pulled the other way, and it tightened again, biting down on itself until the loops went small and stubborn. A twig snapped off in the {hero}'s hand. Somewhere in the middle, the {object_motif} gave a strained little creak.
 
