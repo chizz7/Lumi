@@ -69,7 +69,7 @@ And psst — did you hear that whisper? It was {companion_name}, saying to you, 
 
 The tiny light went out into the dark. And something happened. The darkness was not so dark anymore. The tiny light made a circle of warm, and in that circle were shadows soft and kind.
 
-"Look," said {companion_name}. "{child_name}'s light is already bright enough."
+"Look," said {companion_name}. "Your light is already bright enough."
 
 {child_name} felt something warm inside. Not the light — something else. Something like a yes.
 
@@ -143,7 +143,7 @@ One of the other lights turned. "Your light," it said. "It fills the space I cou
 
 {child_name} felt the {object_motif} warm in both hands. The light had not grown. But everything had changed.
 
-"You did not have to wait to grow," said {companion_name}. "You were already the exact light the gathering needed."
+"You did not have to wait to grow," said {companion_name}. "Your light is already bright enough. You were already the exact light the gathering needed."
 
 {child_name} stayed in the circle. And discovered the strangest thing: it was not the size of the light that mattered. It was that the light was there at all. Small, steady, true.
 
@@ -352,7 +352,7 @@ It was said.
 
 And {companion_name} heard it clear as bells. {companion_name} smiled so wide.
 
-"You did it," said {companion_name}. "Your small voice was perfect."
+"You did it," said {companion_name}. "Your small voice is still your voice. Your small voice was perfect."
 
 The {hero} felt warm all through. Tomorrow there might be more words. Today, one word had been enough.
 
@@ -387,7 +387,7 @@ It was said.
 
 And {companion_name} heard it clear as bells. {companion_name} smiled so wide.
 
-"You did it," said {companion_name}. "{child_name}'s small voice was perfect."
+"You did it," said {companion_name}. "Your small voice is still your voice. Your small voice was perfect."
 
 {child_name} felt warm all through. Tomorrow there might be more words. Today, one word had been enough.
 
@@ -624,7 +624,7 @@ Later, when {setting} had folded into deep blue night, {companion_name} sat besi
 
 "It did not feel like nerve," said the {hero}. "It felt like being scared and talking at the same time."
 
-"That is what nerve is. Not the absence of scared. The talking anyway. Your small voice held the whole moment. That is power."
+"That is what nerve is. Not the absence of scared. The talking anyway. Your small voice is still your voice. Your small voice held the whole moment. That is power."
 
 The {hero} looked at the {object_motif} in the dark and understood. The voice did not have to be big. It had to be true. And it had to keep trying, even when it shook. That was enough. That was everything.
 
@@ -683,7 +683,7 @@ Later, when {setting} had folded into deep blue night, {companion_name} sat besi
 
 "It did not feel like nerve," said {child_name}. "It felt like being scared and talking at the same time."
 
-"That is what nerve is. Not the absence of scared. The talking anyway. Your small voice held the whole moment. That is power."
+"That is what nerve is. Not the absence of scared. The talking anyway. Your small voice is still your voice. Your small voice held the whole moment. That is power."
 
 {child_name} looked at the {object_motif} in the dark and understood. The voice did not have to be big. It had to be true. And it had to keep trying, even when it shook. That was enough. That was everything.
 
@@ -694,7 +694,7 @@ Later, when {setting} had folded into deep blue night, {companion_name} sat besi
 
 "My voice is too small to matter," they thought.
 
-But {companion_name} leaned close. "Psst — listen. Every brave voice started as a whisper. Quiet is not weak. Quiet is true."
+But {companion_name} leaned close. "Psst — listen. Every brave voice started as a whisper. Your small voice is still your voice. Quiet is not weak. Quiet is true."
 
 The {hero} opened their mouth and let the small voice out.
 
@@ -707,7 +707,7 @@ That was when everything changed.
 
 "My voice is too small to matter," they thought.
 
-But {companion_name} leaned close. "Psst — listen, {child_name}. Every brave voice started as a whisper. Quiet is not weak. Quiet is true."
+But {companion_name} leaned close. "Psst — listen, {child_name}. Every brave voice started as a whisper. Your small voice is still your voice. Quiet is not weak. Quiet is true."
 
 {child_name} opened their mouth and let the small voice out.
 
@@ -824,7 +824,7 @@ They sent word: "Come back and teach us. Teach us your way."
 
 And the {hero} did, and the village learned to weave and build both, and was richer for it.
 
-The {hero} understood finally: your path is not selfish. Your path is the gift the world was waiting for.
+The {hero} understood finally: your path is not selfish. Your path is the gift the world was waiting for. Your own way is the only way that works for you.
 
 {refrain}.`,
         scriptTemplate: `Every child in {setting} learned the same trade: weaving cloth on the same looms, the same patterns, the same colors that had been made for a hundred years.
@@ -861,7 +861,7 @@ They sent word: "Come back and teach us. Teach us your way."
 
 And {{child_name} did, and the village learned to weave and build both, and was richer for it.
 
-{{child_name} understood finally: your path is not selfish. Your path is the gift the world was waiting for.
+{{child_name} understood finally: your path is not selfish. Your path is the gift the world was waiting for. Your own way is the only way that works for you.
 
 {refrain}.`
       },
@@ -896,7 +896,7 @@ Years later, the {hero} came back to {setting} and the school was using the {her
 
 The teachers saw and understood: the path that looked wrong was the path that led somewhere new.
 
-The {hero}'s different way had become the way everyone wanted to go.
+The {hero}'s different way had become the way everyone wanted to go. Your own way is the only way that works for you.
 
 {refrain}.`,
         scriptTemplate: `The school in {setting} had one path that everyone walked: study, test, achieve, move forward. Straight lines all the way.
@@ -929,7 +929,7 @@ Years later, {{child_name} came back to {setting} and the school was using {{chi
 
 The teachers saw and understood: the path that looked wrong was the path that led somewhere new.
 
-{{child_name}'s different way had become the way everyone wanted to go.
+{{child_name}'s different way had become the way everyone wanted to go. Your own way is the only way that works for you.
 
 {refrain}.`
       },
@@ -962,7 +962,7 @@ But one day, the {hero} came back, and the children of {setting} heard music the
 
 And some of those children, watching the {hero} live the true life, found the courage to walk their own ways too.
 
-The {hero} understood it finally: your path is not just for you. Your path is permission for others to walk theirs.
+The {hero} understood it finally: your path is not just for you. Your path is permission for others to walk theirs. Your own way is the only way that works for you.
 
 {refrain}.`,
         scriptTemplate: `In {setting}, everyone had a future already planned: the family trade, the known path, the safe progression from one stage to the next.
@@ -993,7 +993,7 @@ But one day, {{child_name} came back, and the children of {setting} heard music 
 
 And some of those children, watching {{child_name} live the true life, found the courage to walk their own ways too.
 
-{{child_name} understood it finally: your path is not just for you. Your path is permission for others to walk theirs.
+{{child_name} understood it finally: your path is not just for you. Your path is permission for others to walk theirs. Your own way is the only way that works for you.
 
 {refrain}.`
       },
@@ -1004,7 +1004,7 @@ And some of those children, watching {{child_name} live the true life, found the
 
 "Different is the path your feet know," said {companion_name}. "And different is what the world is waiting for. Psst — follow your own way. The world does not need another copy of someone else. It needs you."
 
-The {hero} walked their own path. And discovered it led exactly where they needed to go.
+The {hero} walked their own path. And discovered it led exactly where they needed to go. Your own way is the only way that works for you.
 
 {refrain}.`,
     scriptTemplate: `In {setting}, {child_name} felt the pull of their own path, even though it was different.
@@ -1013,7 +1013,7 @@ The {hero} walked their own path. And discovered it led exactly where they neede
 
 "Different is the path your feet know, {child_name}," said {companion_name}. "And different is what the world is waiting for. Psst — follow your own way. The world does not need another copy of someone else. It needs you."
 
-{child_name} walked their own path. And discovered it led exactly where they needed to go.
+{child_name} walked their own path. And discovered it led exactly where they needed to go. Your own way is the only way that works for you.
 
 {refrain}.`,
   },
@@ -1132,7 +1132,7 @@ When it was done, the {hero} was breathing hard and the fear was still there, bu
 
 "No," said {companion_name}. "But you went anyway. And that is what brave actually is."
 
-The {hero} held the {object_motif} and understood. Fear is not the problem. Fear is just a feeling. Trying while you feel it — that is the brave part.
+The {hero} held the {object_motif} and understood. Fear is not the opposite of brave. Fear is not the problem. Fear is just a feeling. Trying while you feel it — that is the brave part.
 
 {refrain}.`,
         scriptTemplate: `{child_name} wanted to do the big thing in {setting}.
@@ -1173,7 +1173,7 @@ When it was done, {{child_name} was breathing hard and the fear was still there,
 
 "No," said {companion_name}. "But you went anyway. And that is what brave actually is."
 
-{{child_name} held the {object_motif} and understood. Fear is not the problem. Fear is just a feeling. Trying while you feel it — that is the brave part.
+{{child_name} held the {object_motif} and understood. Fear is not the opposite of brave. Fear is not the problem. Fear is just a feeling. Trying while you feel it — that is the brave part.
 
 {refrain}.`
       },
@@ -1282,7 +1282,7 @@ The {hero} thought about all the times they had not done brave things. Had waite
 
 "Not before. But after — after you do it, after you prove to yourself that you can walk through fear and come out the other side — then the fear becomes different. It becomes the fear of someone who knows they can do hard things. That is a much smaller fear."
 
-The {hero} held the {object_motif} and understood the trade: you could wait forever for courage to arrive before the fear leaves. Or you could notice that courage is not the absence of fear. Courage is the choice to move forward while the fear is still dancing.
+The {hero} held the {object_motif} and understood the trade: you could wait forever for courage to arrive before the fear leaves. Or you could notice that fear is not the opposite of brave. Courage is not the absence of fear. Courage is the choice to move forward while the fear is still dancing.
 
 The {hero} had chosen the dance. And the dance had made everything change.
 
@@ -1315,7 +1315,7 @@ And in the middle of doing it, with the fear at full volume, {{child_name} reali
 
 "Not before. But after — after you do it, after you prove to yourself that you can walk through fear and come out the other side — then the fear becomes different. It becomes the fear of someone who knows they can do hard things. That is a much smaller fear."
 
-{{child_name} held the {object_motif} and understood the trade: you could wait forever for courage to arrive before the fear leaves. Or you could notice that courage is not the absence of fear. Courage is the choice to move forward while the fear is still dancing.
+{{child_name} held the {object_motif} and understood the trade: you could wait forever for courage to arrive before the fear leaves. Or you could notice that fear is not the opposite of brave. Courage is not the absence of fear. Courage is the choice to move forward while the fear is still dancing.
 
 {{child_name} had chosen the dance. And the dance had made everything change.
 
@@ -1378,7 +1378,7 @@ And the {hero} discovered: trying is its own permission.
 
 The {hero} was not perfect. The {hero} was still little. But the {hero} tried anyway.
 
-And that was enough.
+And that was enough. I can try, and that is enough.
 
 That was everything.
 
@@ -1407,7 +1407,7 @@ And {{child_name} discovered: trying is its own permission.
 
 {{child_name} was not perfect. {{child_name} was still little. But {{child_name} tried anyway.
 
-And that was enough.
+And that was enough. I can try, and that is enough.
 
 That was everything.
 
@@ -1448,7 +1448,7 @@ And it was not perfect. The {hero} was new and unsure and made mistakes.
 
 But the {hero} was in.
 
-And that was the whole permission. Just the trying.
+And that was the whole permission. Just the trying. I can try, and that is enough.
 
 {refrain}.`,
         scriptTemplate: `For a long time, {{child_name} had watched something happening in {setting} and wanted so badly to join.
@@ -1485,7 +1485,7 @@ And it was not perfect. {{child_name} was new and unsure and made mistakes.
 
 But {{child_name} was in.
 
-And that was the whole permission. Just the trying.
+And that was the whole permission. Just the trying. I can try, and that is enough.
 
 {refrain}.`
       },
@@ -1520,7 +1520,7 @@ It was messy and uncertain and imperfect. But it was the {hero}'s.
 
 And years later, when the {hero} was older and steady, people asked: how did you have the courage? How did you know you could?
 
-And the {hero} would say: I did not know. I just tried anyway. I gave myself permission by doing it.
+And the {hero} would say: I did not know. I just tried anyway. I gave myself permission by doing it. I can try, and that is enough.
 
 {refrain}.`,
         scriptTemplate: `By the time {{child_name} reached the age of learning, most of the life had already been decided.
@@ -1553,7 +1553,7 @@ It was messy and uncertain and imperfect. But it was {{child_name}'s.
 
 And years later, when {{child_name} was older and steady, people asked: how did you have the courage? How did you know you could?
 
-And {{child_name} would say: I did not know. I just tried anyway. I gave myself permission by doing it.
+And {{child_name} would say: I did not know. I just tried anyway. I gave myself permission by doing it. I can try, and that is enough.
 
 {refrain}.`
       },
@@ -1652,7 +1652,7 @@ And {{child_name} would say: I did not know. I still do not know. I just decided
 
 {companion_name} smiled. "No one is going to give it. You have to give it to yourself."
 
-Psst — the {hero} realized: permission is not a gift. Permission is trying.
+Psst — the {hero} realized: permission is not a gift. Permission is trying. I can try, and that is enough.
 
 So they tried.
 
@@ -1665,7 +1665,7 @@ And that was enough. That was everything.
 
 {companion_name} smiled. "No one is going to give it, {child_name}. You have to give it to yourself."
 
-Psst — {{child_name} realized: permission is not a gift. Permission is trying.
+Psst — {{child_name} realized: permission is not a gift. Permission is trying. I can try, and that is enough.
 
 So they tried.
 
