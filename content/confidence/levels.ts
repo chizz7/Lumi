@@ -14,95 +14,67 @@ import type { Level } from '@/content/types'
 
 export const LEVELS: Level[] = [
   {
-    ordinal: 1, title: "You Don't Have to Be Ready",
+    ordinal: 1, title: "The Smallest Start",
     concept: 'It is okay to begin before you feel ready', callback: null, ageFloor: 3,
-    summary: 'A small hero waits to feel fully ready before trying — and the waiting never ends. Their companion shares that no one feels completely ready, and that beginning is allowed even while you still feel unsure.',
-    teachingNote: 'Removing the belief that you must feel ready first frees a child to start — and starting is where confidence is built.',
+    summary: 'The hero feels too small and unprepared to try something new. They watch others and wonder if they will ever be ready. Their companion reveals a gentle truth: the smallest beginning counts, and the size of the start does not matter—only that it is theirs.',
+    teachingNote: 'Children often wait for a readiness that never arrives. Celebrating the tiniest attempt—even a whisper, even a wobble—teaches them that trying itself is the readiness.',
     learningBeat: 'You do not have to be finished to begin',
     ageVariants: {
-  '3-4': { audioTemplate: `The {hero} lived by {setting}.
+  '3-4': { audioTemplate: `By {setting}, there was something new the {hero} wanted to try.
 
-Every day, the little ones took turns. One by one, they climbed up high. Then they called out, loud and glad. Splash and giggle. Up and down.
+{companion_name} sat with them. "Will you try?" asked {companion_name}.
 
-The {hero} watched from the side. The {hero} wanted a turn too. Oh, the {hero} wanted it so much.
+The {hero} held the {object_motif}. "I am not big enough. Not yet."
 
-But the {hero} waited. "Not yet," said the {hero}. "I am not ready. When I am ready, I will go."
+"Even tiny tries count," said {companion_name}. "Try whisper-small."
 
-The {hero} held the {object_motif} tight. The {hero} waited. And waited.
+So the {hero} tried the tiniest try. A soft sound went "psst." So quiet. So small.
 
-The sun climbed up. The turns went by, one by one. A little one hopped. Then another. Then another. Still the {hero} waited to feel ready.
+The {hero} looked down. "That was not a real try. It was too small."
 
-The {hero} thought, "Soon. Soon I will feel it. Soon I will be ready." But the ready feeling did not come. It did not come at all.
+But {companion_name} smiled. "Wait. I saw it. That was a try. That was yours."
 
-The sun began to dip. Soft and low over {setting}. Now there was one turn left. Just one turn.
+The {hero} blinked. Could something so little be big enough?
 
-{companion_name} came and sat close. {companion_name} was warm and kind and calm.
+"It was," whispered {companion_name}. "Look what happened. You do not have to be finished to begin."
 
-"You have waited all day," said {companion_name}. "But ready does not come first, little one. You do not have to be finished to begin."
+The {hero} felt warm inside. The {object_motif} felt warm too.
 
-The {hero} looked at the last turn. The {hero} felt wobbly inside.
+So the {hero} tried again. Normal-sized. Louder. Better.
 
-"I still feel wobbly," said the {hero}. "My tummy is all flippy."
+And it was good.
 
-"That is okay," said {companion_name}. "Wobbly can climb too. Flippy can hop too. You can go while you still feel unsure."
+{companion_name} and the {hero} sat as the sky turned soft gold over {setting}.
 
-So the {hero} took a big, slow breath. In and out. The {hero} stood up tall. Toes tingling, knees a little shaky, the {hero} climbed up high.
+The {hero} yawned. So sleepy now. So happy.
 
-And the {hero} called out, loud and glad!
+{refrain}.`, scriptTemplate: `By {setting}, there was something new {child_name} wanted to try.
 
-It was not perfect. It was a little wobbly. But it was a turn. It was the {hero}'s very own turn.
+{companion_name} sat with them. "Will you try?" asked {companion_name}.
 
-{companion_name} clapped and clapped.
+{child_name} held the {object_motif}. "I am not big enough. Not yet."
 
-The {hero} came down, cheeks pink and happy. The {hero} had begun before the ready feeling came. And it felt good. It felt so good.
+"Even tiny tries count, {child_name}," said {companion_name}. "Try whisper-small."
 
-The {hero} hugged the {object_motif} close.
+So {child_name} tried the tiniest try. A soft sound went "psst." So quiet. So small.
 
-"I did it," whispered the {hero}. "I began."
+{child_name} looked down. "That was not a real try. It was too small."
 
-{companion_name} smiled beside {setting}. The little ones waved goodnight. The evening went soft and quiet. Tomorrow there would be more turns, and more tomorrows after that. But this turn, the very first one, had already happened. And it could not un-happen.
+But {companion_name} smiled. "Wait. I saw it. That was a try. That was yours."
 
-{refrain}.`, scriptTemplate: `{child_name} lived by {setting}.
+{child_name} blinked. Could something so little be big enough?
 
-Every day, the little ones took turns. One by one, they climbed up high. Then they called out, loud and glad. Splash and giggle. Up and down.
+"It was," whispered {companion_name}. "Look what happened. You do not have to be finished to begin."
 
-{child_name} watched from the side. {child_name} wanted a turn too. Oh, {child_name} wanted it so much.
+{child_name} felt warm inside. The {object_motif} felt warm too.
 
-But {child_name} waited. "Not yet," said {child_name}. "I am not ready. When I am ready, I will go."
+So {child_name} tried again. Normal-sized. Louder. Better.
 
-{child_name} held the {object_motif} tight. {child_name} waited. And waited.
+And it was good.
 
-The sun climbed up. The turns went by, one by one. A little one hopped. Then another. Then another. Still {child_name} waited to feel ready.
+{companion_name} and {child_name} sat as the sky turned soft gold over {setting}.
 
-{child_name} thought, "Soon. Soon I will feel it. Soon I will be ready." But the ready feeling did not come. It did not come at all.
-
-The sun began to dip. Soft and low over {setting}. Now there was one turn left. Just one turn.
-
-{companion_name} came and sat close. {companion_name} was warm and kind and calm.
-
-"You have waited all day," said {companion_name}. "But ready does not come first, little one. You do not have to be finished to begin."
-
-{child_name} looked at the last turn. {child_name} felt wobbly inside.
-
-"I still feel wobbly," said {child_name}. "My tummy is all flippy."
-
-"That is okay," said {companion_name}. "Wobbly can climb too. Flippy can hop too. You can go while you still feel unsure."
-
-So {child_name} took a big, slow breath. In and out. {child_name} stood up tall. Toes tingling, knees a little shaky, {child_name} climbed up high.
-
-And {child_name} called out, loud and glad!
-
-It was not perfect. It was a little wobbly. But it was a turn. It was {child_name}'s very own turn.
-
-{companion_name} clapped and clapped.
-
-{child_name} came down, cheeks pink and happy. {child_name} had begun before the ready feeling came. And it felt good. It felt so good.
-
-{child_name} hugged the {object_motif} close.
-
-"I did it," whispered {child_name}. "I began."
-
-{companion_name} smiled beside {setting}. The little ones waved goodnight. The evening went soft and quiet. Tomorrow there would be more turns, and more tomorrows after that. But this turn, the very first one, had already happened. And it could not un-happen.
+{child_name} yawned. So sleepy now. So happy.
 
 {refrain}.` },
   '5-6': { audioTemplate: `By the edge of {setting}, there was a place where everyone tried the big thing. The older ones went first, then the middle ones, and at last the little ones. One after another, they stepped up, and everyone below cheered their name.

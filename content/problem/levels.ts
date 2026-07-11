@@ -14,85 +14,93 @@ import type { Level } from '@/content/types'
 
 export const LEVELS: Level[] = [
   {
-    ordinal: 1, title: 'Stop and Look',
-    concept: 'Pausing to look before reacting', callback: null, ageFloor: 3,
-    summary: 'A small hero meets a problem and wants to react at once. Their companion teaches the very first step of solving anything: stop, breathe, and look at it calmly before doing a single thing.',
-    teachingNote: 'The first skill of problem solving is the pause — a calm look almost always reveals more than a quick reaction.',
-    learningBeat: 'Every good answer begins with a pause',
+    ordinal: 1, title: 'One at a Time',
+    concept: 'Working through one problem at a time', callback: null, ageFloor: 3,
+    summary: 'The hero faces several tangled problems at once and feels overwhelmed. Their companion teaches the first and most important step: choose one problem, solve it completely, then move to the next. This is how big troubles become small.',
+    teachingNote: 'When a child learns to isolate one problem at a time, overwhelm transforms into capability. Completion builds confidence for the next thing.',
+    learningBeat: 'Work through one problem at a time',
     ageVariants: {
   '3-4': {
-    audioTemplate: `The {hero} lived in {setting}. The {hero} was happy in {setting}. The {hero} liked to run and hop and play.
+    audioTemplate: `The {hero} woke up in {setting} and saw a big, messy pile. Blocks lay here. A hole was there. The {object_motif} was dirty. The {hero} looked at it all and felt small.
 
-One day the {hero} found a knot. The knot was in the {object_motif}. The knot was tight and small.
+"I will fix it all!" said the {hero}. So the {hero} ran to the blocks. Pick up one. Pick up two. Then the {hero} saw the hole.
 
-The {hero} wanted the knot gone. Right now! So the {hero} began to pull. Pull, pull, pull! The {hero} pulled with two hands.
+"Oh! The hole first!" The {hero} ran to the hole. Dig, dig, dig. But then the {hero} looked back. The blocks still lay there.
 
-But the knot did not go away. The knot got tighter. It got smaller and harder. Oh no. The knot was hard as a little stone now.
+"No! The blocks!" Back to the blocks. But wait — the {object_motif} was still dirty. The {hero} picked it up. Then saw the hole again.
 
-The {hero} pulled again. Harder this time. The knot got worse. The {hero} felt cross. The {hero} felt stuck.
+The {hero} felt so cross. Nothing was done. Everything was half-done. The {hero} sat down and wanted to cry.
 
-Then {companion_name} came near. {companion_name} sat down close by and spoke in a soft, kind voice.
+Then {companion_name} came close. {companion_name} sat down too.
 
-"Stop for a moment," said {companion_name}. "Do not pull yet. Take one slow breath, and let us look first."
+"Three things," said {companion_name}. "But you want to do all three at once. That is too many. Work through one problem at a time."
 
-So the {hero} stopped. The {hero} took a big, slow breath. Breathe in... and breathe out. Big breaths help. Slow breaths help.
+The {hero} looked up. "One at a time?"
 
-Then they looked at the knot. They looked slowly. The {hero} looked at the top. The {hero} looked at the side. They looked all around it.
+"Yes," said {companion_name}. "Pick one thing. Do it all the way done. Then pick the next. One at a time is how big jobs get small."
 
-"Every good answer begins with a pause," said {companion_name}.
+The {hero} took a slow breath. The {hero} pointed at the blocks.
 
-And now the {hero} could see something new. There was a little loop. A soft, open loop, right at the side. The little loop was there all along.
+"This one first," said the {hero}.
 
-This time the {hero} did not pull. The {hero} gave the little loop a gentle push.
+So the {hero} picked up every single block. One. Two. Three. Four. Five. All of them. Done. The blocks were all clean and neat.
 
-The knot began to move. It began to slip. Slip, slip... and it came loose!
+The {hero} looked up. The {hero} smiled. One thing was finished!
 
-The {object_motif} was free again. The {hero} smiled a big smile. That felt so good. The {hero} was not cross now. The {hero} felt calm and glad.
+"Good work," said {companion_name}. "Now the next."
 
-"You stopped. You looked. Then you knew what to do," said {companion_name}.
+The {hero} went to the hole. Soft dirt. Pat, pat, pat. The hole was filled. Another thing done.
 
-The {hero} gave a big, sleepy yawn. The sky over {setting} went soft and gray and calm.
+Then the {hero} cleaned the {object_motif}. Rub, rub, rub. Clean and bright.
 
-The {hero} held the {object_motif} close and warm. Slow breath in. Slow breath out.
+All done. Everything done. The {hero} felt so good.
 
-Now it was time for bed. The {hero} felt warm and sleepy and calm. The moon came up soft and round over {setting}.
+The {hero} gave a big, happy yawn. The night was soft and still.
+
+"You worked through one problem at a time," said {companion_name}. "And now it is all done."
+
+The {hero} held the {object_motif} close. The moon rose soft and gold over {setting}.
 
 {refrain}.`,
-    scriptTemplate: `{child_name} lived in {setting}. {child_name} was happy in {setting}. {child_name} liked to run and hop and play.
+    scriptTemplate: `{child_name} woke up in {setting} and saw a big, messy pile. Blocks lay here. A hole was there. The {object_motif} was dirty. {child_name} looked at it all and felt small.
 
-One day {child_name} found a knot. The knot was in the {object_motif}. The knot was tight and small.
+"I will fix it all!" said {child_name}. So {child_name} ran to the blocks. Pick up one. Pick up two. Then {child_name} saw the hole.
 
-{child_name} wanted the knot gone. Right now! So {child_name} began to pull. Pull, pull, pull! {child_name} pulled with two hands.
+"Oh! The hole first!" {child_name} ran to the hole. Dig, dig, dig. But then {child_name} looked back. The blocks still lay there.
 
-But the knot did not go away. The knot got tighter. It got smaller and harder. Oh no. The knot was hard as a little stone now.
+"No! The blocks!" Back to the blocks. But wait — the {object_motif} was still dirty. {child_name} picked it up. Then saw the hole again.
 
-{child_name} pulled again. Harder this time. The knot got worse. {child_name} felt cross. {child_name} felt stuck.
+{child_name} felt so cross. Nothing was done. Everything was half-done. {child_name} sat down and wanted to cry.
 
-Then {companion_name} came near. {companion_name} sat down close by and spoke in a soft, kind voice.
+Then {companion_name} came close. {companion_name} sat down too.
 
-"Stop for a moment," said {companion_name}. "Do not pull yet. Take one slow breath, and let us look first."
+"Three things," said {companion_name}. "But you want to do all three at once. That is too many. Work through one problem at a time."
 
-So {child_name} stopped. {child_name} took a big, slow breath. Breathe in... and breathe out. Big breaths help. Slow breaths help.
+{child_name} looked up. "One at a time?"
 
-Then they looked at the knot. They looked slowly. {child_name} looked at the top. {child_name} looked at the side. They looked all around it.
+"Yes," said {companion_name}. "Pick one thing. Do it all the way done. Then pick the next. One at a time is how big jobs get small."
 
-"Every good answer begins with a pause," said {companion_name}.
+{child_name} took a slow breath. {child_name} pointed at the blocks.
 
-And now {child_name} could see something new. There was a little loop. A soft, open loop, right at the side. The little loop was there all along.
+"This one first," said {child_name}.
 
-This time {child_name} did not pull. {child_name} gave the little loop a gentle push.
+So {child_name} picked up every single block. One. Two. Three. Four. Five. All of them. Done. The blocks were all clean and neat.
 
-The knot began to move. It began to slip. Slip, slip... and it came loose!
+{child_name} looked up. {child_name} smiled. One thing was finished!
 
-The {object_motif} was free again. {child_name} smiled a big smile. That felt so good. {child_name} was not cross now. {child_name} felt calm and glad.
+"Good work," said {companion_name}. "Now the next."
 
-"You stopped. You looked. Then you knew what to do," said {companion_name}.
+{child_name} went to the hole. Soft dirt. Pat, pat, pat. The hole was filled. Another thing done.
 
-{child_name} gave a big, sleepy yawn. The sky over {setting} went soft and gray and calm.
+Then {child_name} cleaned the {object_motif}. Rub, rub, rub. Clean and bright.
 
-{child_name} held the {object_motif} close and warm. Slow breath in. Slow breath out.
+All done. Everything done. {child_name} felt so good.
 
-Now it was time for bed. {child_name} felt warm and sleepy and calm. The moon came up soft and round over {setting}.
+{child_name} gave a big, happy yawn. The night was soft and still.
+
+"You worked through one problem at a time," said {companion_name}. "And now it is all done."
+
+{child_name} held the {object_motif} close. The moon rose soft and gold over {setting}.
 
 {refrain}.`
   },
@@ -530,59 +538,47 @@ The den was safe now. All was well.
 {refrain}.`
   },
   '5-6': {
-    audioTemplate: `In {setting}, the {hero} had a snug little home tucked between the rocks. It was warm and dry, and the {hero} loved it more than anywhere.
+    audioTemplate: `The {hero} lived in {setting} and had a pile of small troubles, all waiting at once. Three tangled things sat by the door: the {object_motif} needed mending, the path had stones that needed sorting, and the corner room had not been swept in days.
 
-One morning, the {hero} woke to a strange feeling. Something cold was touching one paw. A puddle had spread across the floor, wide and shiny and wrong.
+The {hero} looked at all three and felt the weight of them — not heavy exactly, just... much. All at once.
 
-"Oh no," said the {hero}. "Water. In my home."
+"I will fix them all today," the {hero} decided, and dashed to the corner room. Sweep, sweep, sweep. But then the {hero} looked at the {object_motif} and remembered — that was urgent too. So the {hero} dropped the broom and ran to the mending.
 
-The {hero} did not like the puddle at all. So the {hero} fetched a little cup and began to scoop. Scoop, scoop, scoop. Slowly the water went down, until the floor was almost dry.
+Stitch, stitch, stitch — halfway through a seam, the {hero} glanced out and thought of the stones. Were they still scattered? Yes. The {hero} set down the needle and went to sort the stones. One pile for big. One for small.
 
-"There," said the {hero}, feeling clever. "All better." The {hero} set down the cup and looked around, pleased. The home felt right again — dry floor, cozy corner, everything in its place.
+Halfway through the sorting, the {hero} realized the room was still unsswept. Back to sweep again. Then back to stitch again. Then the mind wandered to the stones. The {hero} felt the knot tightening in their chest.
 
-But it was not all better. Before long, the puddle crept back. It spread across the floor again, just as wide as before.
+An hour had passed. Three things had been begun. Zero had been finished. The {hero} sat down in the middle of the mess and felt something between tired and cross.
 
-The {hero} scooped again, harder this time. Scoop, scoop, scoop. And again the water sank away. And again, a little while later, it returned.
+{companion_name} arrived and took in the scene — a half-swept room, an unfinished seam, and scattered stones everywhere.
 
-"Why won't you stay away?" the {hero} grumbled at the puddle. But a puddle cannot answer. It only sat there, cold and patient, waiting to come back the moment the {hero} looked away.
+"You have three problems," {companion_name} said gently. "But your mind is trying to solve all three at once. No wonder it is confused."
 
-This went on all morning. Scoop and wait. Puddle and scoop. The {hero}'s arms grew tired and the {hero}'s ears drooped. No matter how much water went into the cup, more always came back.
+The {hero} looked up. "What should I do?"
 
-The {hero} looked at the cup, then at the wet floor, and felt a small, tired frown. Cleaning the same mess again and again did not feel like solving anything at all.
+"Work through one problem at a time," said {companion_name}. "Pick one. Do it all the way through, start to finish. Then pick the next. Then the last. One at a time, big jobs become small."
 
-At last the {hero} sat down in the one dry corner, holding the {object_motif}, and let out a long, tired sigh.
+The {hero} felt something settle. One at a time. That felt possible.
 
-That was when {companion_name} peeked in. "You look worn out," they said. "What is going on?"
+The {hero} pointed to the room. "This one first."
 
-"The puddle keeps coming back," said the {hero}. "I scoop and scoop and scoop. But it never stays gone."
+So the {hero} swept the corner room. Carefully, thoroughly, every corner clean. The broom never left the hand. Sweep until done. The room gleamed.
 
-{companion_name} stepped inside and looked at the wet floor for a long moment. Then they sat down beside the {hero}.
+"Done," said {companion_name}. "Now the next."
 
-"You have been fighting the puddle all morning," they said gently. "But let's stop and look first. A puddle has to come from somewhere. So — what is really the problem here?"
+The {hero} picked up the {object_motif} and stitched the seam from beginning to end. Every stitch neat, the whole mending finished. The {object_motif} was whole again.
 
-The {hero} blinked. "The problem is the water on my floor."
+"One more," said {companion_name}.
 
-"That is what you can see," said {companion_name}. "But where does the water come in?"
+The {hero} sorted the stones without distraction. Each one placed in the right pile. All sorted, all organized. Finished.
 
-So the two of them grew still and watched. They did not scoop. They just looked, the way you look when you are calm. And soon the {hero} heard it. Drip. Drip. Drip.
+Three things. Three times done.
 
-"There," breathed {companion_name}. "Hear that? The puddle was only telling us something. Now we know where to look."
+The {hero} looked around at the clean room, the mended {object_motif}, the ordered stones, and felt something untangle inside.
 
-The {hero} followed the sound to the far wall, near the door, where a thin little crack ran down between two stones. Water was seeping through it, one slow drop at a time, sliding down to gather on the floor.
+"Work through one problem at a time," the {hero} said softly. "That is how it all gets done."
 
-"It's the crack," the {hero} whispered. "The puddle isn't the real trouble at all. The crack is. I kept cleaning up the water, but the water just kept coming in."
-
-{companion_name} nodded. "Now you see it. When you fix the first thing you notice, sometimes the trouble hides underneath. Find that, and you fix it once."
-
-The {hero} did not scoop this time. Instead, the {hero} gathered soft moss and pressed it deep into the crack, patting it firm. The dripping stopped. The wall went quiet.
-
-Then the {hero} wiped the floor one last time — and this time, the puddle did not come back. The floor stayed dry. The home stayed snug.
-
-The {hero} let out a breath, a real one, the tired-happy kind.
-
-Outside, {setting} was settling into evening. {companion_name} curled up nearby, and the {hero} held the {object_motif} in both paws, listening to the quiet where the dripping used to be.
-
-Soon the {hero}'s eyes grew heavy, and the warm, dry dark folded in like a blanket.
+Over {setting}, the light was turning slow and low. The {hero} sat with the {object_motif} close, and the tired feeling had changed to peaceful. Ready for sleep now, knowing the work was behind, not piling up ahead.
 
 {refrain}.`,
     scriptTemplate: `In {setting}, {child_name} had a snug little home tucked between the rocks. It was warm and dry, and {child_name} loved it more than anywhere.
