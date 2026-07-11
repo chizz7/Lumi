@@ -785,9 +785,9 @@ The {hero} did not shout. The {hero} did not call Nox a thief or a liar. But the
 
 The room went very quiet. Nox's face flushed. For one long moment it could have gone either way.
 
-"You are right," Nox said finally, the words rough. "I do not know why I said that. I am sorry. {child_name} made it. {child_name} made all of it."
+"You are right," Nox said finally, the words rough. "I do not know why I said that. I am sorry."
 
-The {hero} had not become loud. The {hero} had simply learned that brave and kind are not opposites. They are two notes played together.
+The {hero} had not become loud. The {hero} had simply learned that you can be brave and kind at the same time. They are two notes played together.
 
 {refrain}.`,
         scriptTemplate: `For three weeks {child_name} had worked on the {object_motif} in {setting}, sketching it out, testing each part until it finally worked. It was theirs — the idea, the effort, the solution. The plan was to show it at the gathering where everyone displayed what they had made.
@@ -812,9 +812,9 @@ Two roads, and both felt wrong. So {child_name} stepped away, and {companion_nam
 
 The room went very quiet. Nox's face flushed. For one long moment it could have gone either way.
 
-"You are right," Nox said finally, the words rough. "I do not know why I said that. I am sorry. {child_name} made it. {child_name} made all of it."
+"You are right," Nox said finally, the words rough. "I do not know why I said that. I am sorry."
 
-{child_name} had not become loud. {child_name} had simply learned that brave and kind are not opposites. They are two notes played together.
+{child_name} had not become loud. {child_name} had simply learned that you can be brave and kind at the same time. They are two notes played together.
 
 {refrain}.`,
       },
@@ -843,7 +843,7 @@ The {hero} did not shout. The {hero} did not call Tam cruel names, even though t
 
 Tam's face went red. The room went quiet. For one terrible moment it could have gone either way — Tam could have doubled down, or the {hero} could have caved.
 
-But instead Tam's shoulders dropped. "You are right," Tam said quietly. "I do not know why I did that. {child_name} made it. {child_name} made it all. I am sorry."
+But instead Tam's shoulders dropped. "You are right," Tam said quietly. "I do not know why I did that."
 
 The {hero} felt something settle inside — not the small relief of having dodged a conflict, but something bigger and steadier: the knowledge that the {hero} had held their line without becoming unkind. The others were not looking at the {hero} with pity or fear. They were looking with respect.
 
