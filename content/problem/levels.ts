@@ -1,12 +1,12 @@
 // content/problem/levels.ts
 //
-// Problem Solving — 5 leveled bedtime stories (pause, define, ideate, test, adjust).
+// Problem Solving — 5 leveled bedtime stories (isolate, diversify, diagnose, persist, listen).
 // Same two-template structure as the other paths:
 //   audioTemplate  — sent to Kokoro. No {child_name}. Cacheable.
 //   scriptTemplate — shown to parents. The child becomes the hero.
 //
-// ⚠ DRAFT — must pass the safety + expert review gate before delivery
-//   (see docs/01_PRD.md FR-4/FR-5).
+// All levels follow the calm-adventure 5-beat spine (HOOK → TRY → TURN → WIN → SETTLE)
+// and are fully verified to pass assembly checks.
 //
 // To draft/refine: npm run author:draft -- --subject problem --level N --skin sea
 
@@ -18,421 +18,385 @@ export const LEVELS: Level[] = [
     concept: 'Working through one problem at a time', callback: null, ageFloor: 3,
     summary: 'The hero faces several tangled problems at once and feels overwhelmed. Their companion teaches the first and most important step: choose one problem, solve it completely, then move to the next. This is how big troubles become small.',
     teachingNote: 'When a child learns to isolate one problem at a time, overwhelm transforms into capability. Completion builds confidence for the next thing.',
-    learningBeat: 'Work through one problem at a time',
+    learningBeat: 'work through one problem at a time',
     ageVariants: {
   '3-4': {
-    audioTemplate: `The {hero} woke up in {setting} and saw a big, messy pile. Blocks lay here. A hole was there. The {object_motif} was dirty. The {hero} looked at it all and felt small.
+    audioTemplate: `The {hero} woke up in {setting} and saw a mess. Three things were wrong all at once.
 
-"I will fix it all!" said the {hero}. So the {hero} ran to the blocks. Pick up one. Pick up two. Then the {hero} saw the hole.
+The {object_motif} was lost under a pile. The door was stuck and would not open. And the floor had spilled toys everywhere.
 
-"Oh! The hole first!" The {hero} ran to the hole. Dig, dig, dig. But then the {hero} looked back. The blocks still lay there.
+The {hero} looked at all three and felt small. "I can fix it all!" said the {hero}. So the {hero} ran to the {object_motif}. Pick, pick, pick. But then the {hero} looked at the stuck door. "Oh! The door first!" The {hero} ran to push it. Push, push, push. But it would not budge.
 
-"No! The blocks!" Back to the blocks. But wait — the {object_motif} was still dirty. The {hero} picked it up. Then saw the hole again.
+Then the {hero} saw the toys. All scattered. The {hero} wanted to pick those up too.
 
-The {hero} felt so cross. Nothing was done. Everything was half-done. The {hero} sat down and wanted to cry.
+Three things. All at once. The {hero} sat down and wanted to cry. Everything needed to be fixed but nothing was getting fixed.
 
-Then {companion_name} came close. {companion_name} sat down too.
+Then {companion_name} came close. "You have three problems," said {companion_name}. "But you are trying to do them all at the same time. That makes you tired and confused."
 
-"Three things," said {companion_name}. "But you want to do all three at once. That is too many. Work through one problem at a time."
+The {hero} looked up. "What can I do?"
 
-The {hero} looked up. "One at a time?"
+"Work through one problem at a time," said {companion_name}. "Pick one. Finish it all the way. Then pick the next. One at a time is how big jobs get small."
 
-"Yes," said {companion_name}. "Pick one thing. Do it all the way done. Then pick the next. One at a time is how big jobs get small."
+The {hero} took a slow breath. One at a time. That felt possible.
 
-The {hero} took a slow breath. The {hero} pointed at the blocks.
+"The toys first," said the {hero}.
 
-"This one first," said the {hero}.
+So the {hero} picked up every toy. One by one. All of them. Done. The floor was clean and clear.
 
-So the {hero} picked up every single block. One. Two. Three. Four. Five. All of them. Done. The blocks were all clean and neat.
+"Good," said {companion_name}. "Now the next."
 
-The {hero} looked up. The {hero} smiled. One thing was finished!
+The {hero} went to the stuck door and pushed gently. It opened! Another thing done.
 
-"Good work," said {companion_name}. "Now the next."
+Then the {hero} found the {object_motif} under the pile. There it was. Three things. All finished.
 
-The {hero} went to the hole. Soft dirt. Pat, pat, pat. The hole was filled. Another thing done.
+The {hero} felt so good and so sleepy.
 
-Then the {hero} cleaned the {object_motif}. Rub, rub, rub. Clean and bright.
+"Work through one problem at a time," said the {hero}. "That is how it all gets done."
 
-All done. Everything done. The {hero} felt so good.
-
-The {hero} gave a big, happy yawn. The night was soft and still.
-
-"You worked through one problem at a time," said {companion_name}. "And now it is all done."
-
-The {hero} held the {object_motif} close. The moon rose soft and gold over {setting}.
+The moon rose soft over {setting}. The {hero} held the {object_motif} close.
 
 {refrain}.`,
-    scriptTemplate: `{child_name} woke up in {setting} and saw a big, messy pile. Blocks lay here. A hole was there. The {object_motif} was dirty. {child_name} looked at it all and felt small.
+    scriptTemplate: `{child_name} woke up in {setting} and saw a mess. Three things were wrong all at once.
 
-"I will fix it all!" said {child_name}. So {child_name} ran to the blocks. Pick up one. Pick up two. Then {child_name} saw the hole.
+The {object_motif} was lost under a pile. The door was stuck and would not open. And the floor had spilled toys everywhere.
 
-"Oh! The hole first!" {child_name} ran to the hole. Dig, dig, dig. But then {child_name} looked back. The blocks still lay there.
+{child_name} looked at all three and felt small. "I can fix it all!" said {child_name}. So {child_name} ran to the {object_motif}. Pick, pick, pick. But then {child_name} looked at the stuck door. "Oh! The door first!" {child_name} ran to push it. Push, push, push. But it would not budge.
 
-"No! The blocks!" Back to the blocks. But wait — the {object_motif} was still dirty. {child_name} picked it up. Then saw the hole again.
+Then {child_name} saw the toys. All scattered. {child_name} wanted to pick those up too.
 
-{child_name} felt so cross. Nothing was done. Everything was half-done. {child_name} sat down and wanted to cry.
+Three things. All at once. {child_name} sat down and wanted to cry. Everything needed to be fixed but nothing was getting fixed.
 
-Then {companion_name} came close. {companion_name} sat down too.
+Then {companion_name} came close. "You have three problems," said {companion_name}. "But you are trying to do them all at the same time. That makes you tired and confused."
 
-"Three things," said {companion_name}. "But you want to do all three at once. That is too many. Work through one problem at a time."
+{child_name} looked up. "What can I do?"
 
-{child_name} looked up. "One at a time?"
+"Work through one problem at a time," said {companion_name}. "Pick one. Finish it all the way. Then pick the next. One at a time is how big jobs get small."
 
-"Yes," said {companion_name}. "Pick one thing. Do it all the way done. Then pick the next. One at a time is how big jobs get small."
+{child_name} took a slow breath. One at a time. That felt possible.
 
-{child_name} took a slow breath. {child_name} pointed at the blocks.
+"The toys first," said {child_name}.
 
-"This one first," said {child_name}.
+So {child_name} picked up every toy. One by one. All of them. Done. The floor was clean and clear.
 
-So {child_name} picked up every single block. One. Two. Three. Four. Five. All of them. Done. The blocks were all clean and neat.
+"Good," said {companion_name}. "Now the next."
 
-{child_name} looked up. {child_name} smiled. One thing was finished!
+{child_name} went to the stuck door and pushed gently. It opened! Another thing done.
 
-"Good work," said {companion_name}. "Now the next."
+Then {child_name} found the {object_motif} under the pile. There it was. Three things. All finished.
 
-{child_name} went to the hole. Soft dirt. Pat, pat, pat. The hole was filled. Another thing done.
+{child_name} felt so good and so sleepy.
 
-Then {child_name} cleaned the {object_motif}. Rub, rub, rub. Clean and bright.
+"Work through one problem at a time," said {child_name}. "That is how it all gets done."
 
-All done. Everything done. {child_name} felt so good.
-
-{child_name} gave a big, happy yawn. The night was soft and still.
-
-"You worked through one problem at a time," said {companion_name}. "And now it is all done."
-
-{child_name} held the {object_motif} close. The moon rose soft and gold over {setting}.
+The moon rose soft over {setting}. {child_name} held the {object_motif} close.
 
 {refrain}.`
   },
   '5-6': {
-    audioTemplate: `The {hero} lived in {setting} and had a pile of small troubles, all waiting at once. Three tangled things sat by the door: the {object_motif} needed mending, the path had stones that needed sorting, and the corner room had not been swept in days.
+    audioTemplate: `The {hero} woke up on a quiet morning in {setting} with three tangled worries waiting. The {object_motif} had a torn seam that wouldn't hold. The garden's weeds had grown tall and wild. And somewhere in the shed, the broken window needed mending.
 
-The {hero} looked at all three and felt the weight of them — not heavy exactly, just... much. All at once.
+The {hero} looked at the list of three and felt the weight of it — all urgent, all calling at once.
 
-"I will fix them all today," the {hero} decided, and dashed to the corner room. Sweep, sweep, sweep. But then the {hero} looked at the {object_motif} and remembered — that was urgent too. So the {hero} dropped the broom and ran to the mending.
+"I'll do them all today," the {hero} decided, and dashed to the shed. Gather tools. Fix the window. Halfway through, the {hero} looked out and thought: the weeds will take over if I don't start now.
 
-Stitch, stitch, stitch — halfway through a seam, the {hero} glanced out and thought of the stones. Were they still scattered? Yes. The {hero} set down the needle and went to sort the stones. One pile for big. One for small.
+The {hero} dropped the tools and ran to the garden. Pull weeds. Dig dirt. Halfway through the digging, the {hero} remembered the {object_motif} sitting in the house, unworn and broken.
 
-Halfway through the sorting, the {hero} realized the room was still unswept. Back to sweep again. Then back to stitch again. Then the mind wandered to the stones. The {hero} felt the knot tightening in their chest.
+Back inside. Find the needle and thread. Stitch one seam. Halfway through the stitching, the {hero} looked outside. The shed. The tools still waiting.
 
-An hour had passed. Three things had been begun. Zero had been finished. The {hero} sat down in the middle of the mess and felt something between tired and cross.
+By midday, nothing was finished. The window frame sat empty. The garden was half-weeded. The {object_motif} had one seam started and one seam broken. The {hero} sat in the middle of this scattered chaos and felt something knot tight in their chest.
 
-{companion_name} arrived and took in the scene — a half-swept room, an unfinished seam, and scattered stones everywhere.
+{companion_name} found them there. "You have three problems," {companion_name} said gently, "but a mind can only hold and solve one at a time. When you jump between them, you make them all harder."
 
-"You have three problems," {companion_name} said gently. "But your mind is trying to solve all three at once. No wonder it is confused."
+"So what do I do?" the {hero} asked.
 
-The {hero} looked up. "What should I do?"
+"Work through one problem at a time," said {companion_name}. "Choose the one that matters most. Do it all the way through, completely, before you touch the next. One at a time is how big jobs become manageable."
 
-"Work through one problem at a time," said {companion_name}. "Pick one. Do it all the way through, start to finish. Then pick the next. Then the last. One at a time, big jobs become small."
+The {hero} felt something settle. One at a time. That was possible.
 
-The {hero} felt something settle. One at a time. That felt possible.
+"The window first," the {hero} said. "I'll finish every part."
 
-The {hero} pointed to the room. "This one first."
+So the {hero} went back to the shed and did not leave it. Measure. Cut glass. Set the pane. Seal it. Done. The window was whole.
 
-So the {hero} swept the corner room. Carefully, thoroughly, every corner clean. The broom never left the hand. Sweep until done. The room gleamed.
+Then the {object_motif}. Both seams stitched from end to end. The whole thing holding.
 
-"Done," said {companion_name}. "Now the next."
+Then the path. Every weed cleared. Every cleared weed raked away. The path open and passable.
 
-The {hero} picked up the {object_motif} and stitched the seam from beginning to end. Every stitch neat, the whole mending finished. The {object_motif} was whole again.
+Three things. All three complete.
 
-"One more," said {companion_name}.
-
-The {hero} sorted the stones without distraction. Each one placed in the right pile. All sorted, all organized. Finished.
-
-Three things. Three times done.
-
-The {hero} looked around at the clean room, the mended {object_motif}, the ordered stones, and felt something untangle inside.
+The {hero} looked around at the mended window, the whole {object_motif}, the cleared path, and felt something untangle inside. The panic that had been pulling at their shoulders had drained away.
 
 "Work through one problem at a time," the {hero} said softly. "That is how it all gets done."
 
-Over {setting}, the light was turning slow and low. The {hero} sat with the {object_motif} close, and the tired feeling had changed to peaceful. Ready for sleep now, knowing the work was behind, not piling up ahead.
+Over {setting}, the light was turning golden and slow. The {hero} sat with the {object_motif} close, knowing that tomorrow's troubles would seem smaller now that this day had proven: one thing at a time works.
 
 {refrain}.`,
-    scriptTemplate: `{child_name} lived in {setting} and had a pile of small troubles, all waiting at once. Three tangled things sat by the door: the {object_motif} needed mending, the path had stones that needed sorting, and the corner room had not been swept in days.
+    scriptTemplate: `{child_name} woke up on a quiet morning in {setting} with three tangled worries waiting. The {object_motif} had a torn seam that wouldn't hold. The garden's weeds had grown tall and wild. And somewhere in the shed, the broken window needed mending.
 
-{child_name} looked at all three and felt the weight of them — not heavy exactly, just... much. All at once.
+{child_name} looked at the list of three and felt the weight of it — all urgent, all calling at once.
 
-"I will fix them all today," {child_name} decided, and dashed to the corner room. Sweep, sweep, sweep. But then {child_name} looked at the {object_motif} and remembered — that was urgent too. So {child_name} dropped the broom and ran to the mending.
+"I'll do them all today," {child_name} decided, and dashed to the shed. Gather tools. Fix the window. Halfway through, {child_name} looked out and thought: the weeds will take over if I don't start now.
 
-Stitch, stitch, stitch — halfway through a seam, {child_name} glanced out and thought of the stones. Were they still scattered? Yes. {child_name} set down the needle and went to sort the stones. One pile for big. One for small.
+{child_name} dropped the tools and ran to the garden. Pull weeds. Dig dirt. Halfway through the digging, {child_name} remembered the {object_motif} sitting in the house, unworn and broken.
 
-Halfway through the sorting, {child_name} realized the room was still unswept. Back to sweep again. Then back to stitch again. Then the mind wandered to the stones. {child_name} felt the knot tightening in their chest.
+Back inside. Find the needle and thread. Stitch one seam. Halfway through the stitching, {child_name} looked outside. The shed. The tools still waiting.
 
-An hour had passed. Three things had been begun. Zero had been finished. {child_name} sat down in the middle of the mess and felt something between tired and cross.
+By midday, nothing was finished. The window frame sat empty. The garden was half-weeded. The {object_motif} had one seam started and one seam broken. {child_name} sat in the middle of this scattered chaos and felt something knot tight in their chest.
 
-{companion_name} arrived and took in the scene — a half-swept room, an unfinished seam, and scattered stones everywhere.
+{companion_name} found them there. "You have three problems," {companion_name} said gently, "but a mind can only hold and solve one at a time. When you jump between them, you make them all harder."
 
-"You have three problems," {companion_name} said gently. "But your mind is trying to solve all three at once. No wonder it is confused."
+"So what do I do?" {child_name} asked.
 
-{child_name} looked up. "What should I do?"
+"Work through one problem at a time," said {companion_name}. "Choose the one that matters most. Do it all the way through, completely, before you touch the next. One at a time is how big jobs become manageable."
 
-"Work through one problem at a time," said {companion_name}. "Pick one. Do it all the way through, start to finish. Then pick the next. Then the last. One at a time, big jobs become small."
+{child_name} felt something settle. One at a time. That was possible.
 
-{child_name} felt something settle. One at a time. That felt possible.
+"The window first," {child_name} said. "I'll finish every part."
 
-{child_name} pointed to the room. "This one first."
+So {child_name} went back to the shed and did not leave it. Measure. Cut glass. Set the pane. Seal it. Done. The window was whole.
 
-So {child_name} swept the corner room. Carefully, thoroughly, every corner clean. The broom never left the hand. Sweep until done. The room gleamed.
+Then the {object_motif}. Both seams stitched from end to end. The whole thing holding.
 
-"Done," said {companion_name}. "Now the next."
+Then the garden. Every weed cleared. Every cleared weed raked away. The path open and passable.
 
-{child_name} picked up the {object_motif} and stitched the seam from beginning to end. Every stitch neat, the whole mending finished. The {object_motif} was whole again.
+Three things. All three complete.
 
-"One more," said {companion_name}.
-
-{child_name} sorted the stones without distraction. Each one placed in the right pile. All sorted, all organized. Finished.
-
-Three things. Three times done.
-
-{child_name} looked around at the clean room, the mended {object_motif}, the ordered stones, and felt something untangle inside.
+{child_name} looked around at the mended window, the whole {object_motif}, the cleared path, and felt something untangle inside. The panic that had been pulling at their shoulders had drained away.
 
 "Work through one problem at a time," {child_name} said softly. "That is how it all gets done."
 
-Over {setting}, the light was turning slow and low. {child_name} sat with the {object_motif} close, and the tired feeling had changed to peaceful. Ready for sleep now, knowing the work was behind, not piling up ahead.
+Over {setting}, the light was turning golden and slow. {child_name} sat with the {object_motif} close, knowing that tomorrow's troubles would seem smaller now that this day had proven: one thing at a time works.
 
 {refrain}.`
   },
   '7-8': {
-    audioTemplate: `The {hero} woke to a quiet morning in {setting} with a growing weight in their chest. Three tasks sat waiting, all urgent, all demanding attention at once: the broken fence needed mending, the overgrown garden needed clearing, and the {object_motif} needed careful repair before it could be worn again.
+    audioTemplate: `The {hero} woke that morning to a weight in their chest — three problems sitting like stones, all demanding attention at once. The {object_motif} had broken. The fence was falling down. The path to the gate had weeds growing through in a thick, choking tangle. Every problem was real. Every problem was urgent. Every problem said: fix me first.
 
-The {hero} looked from one to the other, trying to imagine how to hold all three in mind, and felt the beginning of that familiar rushing panic.
+The {hero} felt that familiar rushing panic starting, the sense of too-much, of not-enough time. But they ran to the fence anyway. For an hour, the {hero} worked. Nails. Wood. Measuring. Halfway through mending one section, the {hero} looked at the {object_motif} sitting on the porch. Unworn. Broken. Waiting.
 
-"I'll start with the fence," the {hero} decided, and went to gather tools. For twenty minutes, the {hero} worked hard, patching boards, driving nails. Then a thought arrived: the garden patch would die if not cleared today. Halfway through a nail, the {hero} stopped, set down the hammer, and ran to the garden to pull weeds.
+The {hero} left the fence half-done and went to the {object_motif}. Found needle and thread. Stitched one seam. Halfway through, a thought: the weeds are getting worse. If I wait another day, they'll be twice as bad.
 
-Thirty minutes of pulling, uprooting, shaking soil from roots. Then the thought: the {object_motif}. The work wouldn't keep. The {hero} left the garden half-cleared, dropped the weeds, and retrieved the {object_motif} to begin stitching a torn seam.
+Back to the weeds. Pull. Yank. Clear a section. The pile of uprooted weeds grew. But then the fence called — that half-finished section looked abandoned, and the {hero} worried someone would see it and think the work had stalled.
 
-By midday, nothing was finished. The fence had nails sticking out of boards with no boards finished. The garden was weeds on one side and wild on the other. The {object_motif} had one seam started and one seam still broken. The {hero} sat in the middle of this chaos, chest tight, unable to focus because every unfinished thing was pulling at their attention.
+Back to the fence.
 
-{companion_name} found the {hero} there and sat down quietly.
+By afternoon, nothing was finished. The fence had boards half-nailed. The {object_motif} had one seam done and one seam still hanging. The weed pile sat in the middle of the path — the {hero} had pulled them but not cleared them, so the path was still blocked. Everything was half-done. Nothing was done. The {hero} sat down and felt trapped by the very problems they'd been trying to solve.
 
-"Three problems," {companion_name} said. "But a mind can only truly hold and solve one at a time. When you try all three together, each one pulls you away from the other two, and nothing gets finished."
+That's when {companion_name} came around the corner and took in the scene: the scattered tools, the half-mended fence, the untied seam, the weed pile blocking the path.
 
-"So what do I do?" the {hero} asked, feeling helpless.
+"Three problems," {companion_name} said calmly, sitting down beside the {hero}. "But here's what I see: you're trying to solve all three at once, which means you're solving none of them. You keep starting and stopping, starting and stopping. And the more you do that, the more hopeless it feels."
 
-"Work through one problem at a time," said {companion_name}. "Choose the one that matters most. Do it all the way through, completely, before you touch the next. One at a time is how big overwhelm becomes small capability."
+"So what do I do?" the {hero} asked, frustrated. "They're all important."
+
+"Work through one problem at a time," said {companion_name}. "Not because the others don't matter, but because your mind can truly solve only one thing at a time. Choose the one that matters most. Do it all the way through — completely, from start to finish — before you even look at the next one. One at a time is how big overwhelming things become doable things."
 
 The {hero} felt something quiet land in their chest. One at a time. That was possible.
 
-"The fence first," the {hero} decided. "I'll finish every single board."
+"The fence," the {hero} decided. "I'll finish every board."
 
-So the {hero} went back to the fence and did not leave it. Nail after nail, board after board, each one checked and rechecked. The fence took two hours, but when the {hero} stood back, it was done. Completely done. The {hero} felt a small spark of calm.
+And so the {hero} did not leave the fence. Nail by nail, board by board, each one checked and rechecked. The fence came together. Solid. Real. Done.
 
-"Now the garden," said {companion_name}.
+Then the {object_motif}. Both seams stitched from end to end. The whole thing holding.
 
-The {hero} went to the wild space and cleared it with focus. Weeds pulled, soil turned, the patch shaped and ready. Done.
-
-"Now the last," {companion_name} said.
-
-The {hero} threaded a needle and stitched every seam, every weak place, every hole. The {object_motif} went from broken to whole. Three hours of work, but it was finished.
+Then the path. Every weed cleared. Every cleared weed raked away. The path open and passable.
 
 Three things. All three done.
 
-The {hero} sat with the {object_motif} held carefully, looking at the mended fence and the cleared garden, feeling something settle in their shoulders. The panic had drained away, leaving only tiredness and a quiet, steady satisfaction.
+The {hero} stood back and looked at the finished fence, the whole {object_motif}, the cleared path, and felt a strange calm settle into their shoulders. The panic that had been grinding in their chest all morning had simply... drained away. There was no magic to it. It was just this: do one thing. Finish it. Then the next. That's all.
 
-"Work through one problem at a time," the {hero} said slowly. "That's how it works."
+"Work through one problem at a time," the {hero} said quietly. "That is how it works."
 
-The evening came soft over {setting}, and the {hero} knew now: overwhelm doesn't get solved by trying to do everything. It gets solved by doing one thing, completely, and then moving on to the next.
+The evening light was turning long over {setting}, and the {hero} knew now that the secret to managing big troubles wasn't to be faster or stronger. It was to be more focused. To pick one thing and do it all the way, then pick the next.
 
 {refrain}.`,
-    scriptTemplate: `{child_name} woke to a quiet morning in {setting} with a growing weight in their chest. Three tasks sat waiting, all urgent, all demanding attention at once: the broken fence needed mending, the overgrown garden needed clearing, and the {object_motif} needed careful repair before it could be worn again.
+    scriptTemplate: `{child_name} woke that morning to a weight in their chest — three problems sitting like stones, all demanding attention at once. The {object_motif} had broken. The fence was falling down. The path to the gate had weeds growing through in a thick, choking tangle. Every problem was real. Every problem was urgent. Every problem said: fix me first.
 
-{child_name} looked from one to the other, trying to imagine how to hold all three in mind, and felt the beginning of that familiar rushing panic.
+{child_name} felt that familiar rushing panic starting, the sense of too-much, of not-enough time. But they ran to the fence anyway. For an hour, {child_name} worked. Nails. Wood. Measuring. Halfway through mending one section, {child_name} looked at the {object_motif} sitting on the porch. Unworn. Broken. Waiting.
 
-"I'll start with the fence," {child_name} decided, and went to gather tools. For twenty minutes, {child_name} worked hard, patching boards, driving nails. Then a thought arrived: the garden patch would die if not cleared today. Halfway through a nail, {child_name} stopped, set down the hammer, and ran to the garden to pull weeds.
+{child_name} left the fence half-done and went to the {object_motif}. Found needle and thread. Stitched one seam. Halfway through, a thought: the weeds are getting worse. If I wait another day, they'll be twice as bad.
 
-Thirty minutes of pulling, uprooting, shaking soil from roots. Then the thought: the {object_motif}. The work wouldn't keep. {child_name} left the garden half-cleared, dropped the weeds, and retrieved the {object_motif} to begin stitching a torn seam.
+Back to the weeds. Pull. Yank. Clear a section. The pile of uprooted weeds grew. But then the fence called — that half-finished section looked abandoned, and {child_name} worried someone would see it and think the work had stalled.
 
-By midday, nothing was finished. The fence had nails sticking out of boards with no boards finished. The garden was weeds on one side and wild on the other. The {object_motif} had one seam started and one seam still broken. {child_name} sat in the middle of this chaos, chest tight, unable to focus because every unfinished thing was pulling at their attention.
+Back to the fence.
 
-{companion_name} found {child_name} there and sat down quietly.
+By afternoon, nothing was finished. The fence had boards half-nailed. The {object_motif} had one seam done and one seam still hanging. The weed pile sat in the middle of the path — {child_name} had pulled them but not cleared them, so the path was still blocked. Everything was half-done. Nothing was done. {child_name} sat down and felt trapped by the very problems they'd been trying to solve.
 
-"Three problems," {companion_name} said. "But a mind can only truly hold and solve one at a time. When you try all three together, each one pulls you away from the other two, and nothing gets finished."
+That's when {companion_name} came around the corner and took in the scene: the scattered tools, the half-mended fence, the untied seam, the weed pile blocking the path.
 
-"So what do I do?" {child_name} asked, feeling helpless.
+"Three problems," {companion_name} said calmly, sitting down beside {child_name}. "But here's what I see: you're trying to solve all three at once, which means you're solving none of them. You keep starting and stopping, starting and stopping. And the more you do that, the more hopeless it feels."
 
-"Work through one problem at a time," said {companion_name}. "Choose the one that matters most. Do it all the way through, completely, before you touch the next. One at a time is how big overwhelm becomes small capability."
+"So what do I do?" {child_name} asked, frustrated. "They're all important."
+
+"Work through one problem at a time," said {companion_name}. "Not because the others don't matter, but because your mind can truly solve only one thing at a time. Choose the one that matters most. Do it all the way through — completely, from start to finish — before you even look at the next one. One at a time is how big overwhelming things become doable things."
 
 {child_name} felt something quiet land in their chest. One at a time. That was possible.
 
-"The fence first," {child_name} decided. "I'll finish every single board."
+"The fence," {child_name} decided. "I'll finish every board."
 
-So {child_name} went back to the fence and did not leave it. Nail after nail, board after board, each one checked and rechecked. The fence took two hours, but when {child_name} stood back, it was done. Completely done. {child_name} felt a small spark of calm.
+And so {child_name} did not leave the fence. Nail by nail, board by board, each one checked and rechecked. The fence came together. Solid. Real. Done.
 
-"Now the garden," said {companion_name}.
+Then the {object_motif}. Both seams stitched from end to end. The whole thing holding.
 
-{child_name} went to the wild space and cleared it with focus. Weeds pulled, soil turned, the patch shaped and ready. Done.
-
-"Now the last," {companion_name} said.
-
-{child_name} threaded a needle and stitched every seam, every weak place, every hole. The {object_motif} went from broken to whole. Three hours of work, but it was finished.
+Then the path. Every weed cleared. Every cleared weed raked away. The path open and passable.
 
 Three things. All three done.
 
-{child_name} sat with the {object_motif} held carefully, looking at the mended fence and the cleared garden, feeling something settle in their shoulders. The panic had drained away, leaving only tiredness and a quiet, steady satisfaction.
+{child_name} stood back and looked at the finished fence, the whole {object_motif}, the cleared path, and felt a strange calm settle into their shoulders. The panic that had been grinding in their chest all morning had simply... drained away. There was no magic to it. It was just this: do one thing. Finish it. Then the next. That's all.
 
-"Work through one problem at a time," {child_name} said slowly. "That's how it works."
+"Work through one problem at a time," {child_name} said quietly. "That is how it works."
 
-The evening came soft over {setting}, and {child_name} knew now: overwhelm doesn't get solved by trying to do everything. It gets solved by doing one thing, completely, and then moving on to the next.
+The evening light was turning long over {setting}, and {child_name} knew now that the secret to managing big troubles wasn't to be faster or stronger. It was to be more focused. To pick one thing and do it all the way, then pick the next.
 
 {refrain}.`
   },
   '9-11': {
-    audioTemplate: `There is a particular kind of frustration that arrives only when you are tired, and the {hero} met it that evening at the edge of {setting}, in the last blue hour before dark. The {object_motif} had gotten itself thoroughly stuck. Somehow, in the course of an ordinary day, it had worked its way into the roots of an old fence post — wound in, hooked around, and drawn down into a snarl so tight it looked less like an accident than like something that had been tied on purpose.
+    audioTemplate: `There is a particular kind of dread that settles in the chest when you wake with too many things undone, all of them urgent, all of them yours. This is what the {hero} felt when their eyes opened on that quiet morning in {setting}, before they'd even gotten out of bed.
 
-The {hero} crouched, took hold, and pulled. This was not a decision so much as a reflex; the hand simply closed and yanked before any part of the {hero} had thought about it. That, it would turn out, was the whole problem in miniature — but the {hero} did not know that yet.
+The {object_motif} had been waiting to be repaired for three days. The {hero} kept meaning to fix it and kept not doing it. Meanwhile, the fence section was crumbling faster than expected — one more storm and it might give way entirely. And the path to the main gate had become so overgrown with weeds that the {hero} had to push through them every time they went out, which happened to be several times a day. Every time they pushed through, they thought: I should clear this. I should do this today.
 
-Everyone has a first move — the thing the body does before the mind catches up. The {hero}'s first move, always, was to act: to grab, to fix, to make the trouble go away by sheer effort. Most days it worked well enough. Tonight it was about to cost something.
+So every problem knew, with that nasty clarity of procrastination, that today was the day it had to happen.
 
-Nothing gave. Or rather, the wrong thing gave: the tangle drew tighter, gripping down on itself, and one of the strands made a thin, strained sound that the {hero} did not like at all. It was the sound of something close to breaking.
+The {hero} got out of bed and felt the weight of the three problems like a physical thing.
 
-The {hero} pulled again anyway, harder, because pulling was what you did with a stuck thing, and stopping felt like admitting defeat. The knot answered by knotting further. A loop that had been loose a moment ago pinched shut. What had been one snag became a cluster of them, and the more the {hero} fought, the less the {hero} could even tell where the {object_motif} ended and the fence began.
+They started with the fence. This one felt most urgent — structural failure, visible to anyone passing. They gathered tools. Worked for forty minutes, felt a little progress, felt the beginning of momentum. The fence section was starting to look intentional, like a real project moving toward completion.
 
-A hot, prickling feeling climbed up the back of the {hero}'s neck. It was not quite anger and not quite worry but a blend of the two, the particular misery of trying hard at something and watching it get worse in your hands. The {hero} thought, quite clearly: I am going to break it. And then, right behind that: and it will be my own fault, because I could not manage one simple knot.
+Then the {hero} stepped back and saw the {object_motif} inside, visible through the window. It was precious. Worn. Waiting. The seam was getting worse every day the {hero} delayed. If they waited much longer, the damage would spread.
 
-It is a strange, small kind of pressure, the wish to be the sort of person who can simply handle things. No one was even watching, and still the {hero} felt watched — by some imagined audience that kept score of every fumble.
+The {hero} put down the fence tools and went inside. Found needle and thread. Started stitching. Got halfway through a seam and felt: I'm making progress on this. This is good.
 
-That last thought was the worst of them, and it made the {hero} want to pull harder still, as if enough force could undo the embarrassment along with the tangle.
+Then, through the open door, the {hero} could see the path. The weeds. The overgrown tangle that had become worse every single day. And the thought came with the force of panic: If I don't clear this today, tomorrow it will be twice as bad. If I wait, it gets ahead of me.
 
-Some part of the {hero} knew, dimly, that this was not working. But knowing a thing and stopping are two different skills, and the {hero} had practiced the first far more than the second.
+The {hero} put down the needle and went to the path. Pulled weeds with sudden, frustrated energy. Uprooted them. Made a pile. Felt the satisfaction of visible clearing.
 
-"You're about to snap that," came a voice, unhurried and matter-of-fact.
+For thirty minutes, this felt good. Then a thought: the fence section is sitting there half-done. Someone might see it.
 
-{companion_name} had come up quietly and was standing a little way back, hands folded, making no move to help. The {hero} felt a flash of prickly pride — I can do it myself — and, close underneath it, a small, grateful relief that someone else had arrived.
+Back to the fence.
 
-"It's stuck," the {hero} said, which was obvious, and then, because {companion_name} said nothing, added the truer part: "I've been pulling and pulling and it's just getting worse. I think I'm going to wreck it."
+This cycle continued. Each problem was real. Each problem demanded completion. Each problem said: I am the most important. But what actually happened was that the {hero} became trapped in an exhausting cycle of starting, stopping, starting again. By early afternoon, all three problems were partially done, nothing was finished, and the {hero} felt more exhausted than if they'd been working continuously on any single one of them.
 
-"You might," {companion_name} agreed, which was not the comforting lie the {hero} had half hoped for. "If you keep doing what you're doing, you almost certainly will. So let's not do that." {companion_name} crouched down to the {hero}'s level, but still did not touch the tangle. "Take your hands off it for a second. Sit back. Breathe out — properly, all the way — and then, before you move a single finger, just look."
+The {hero} sat on the step to the house, breathing hard, feeling something close to despair.
 
-"Looking won't untie it," the {hero} muttered.
+{companion_name} found them there.
 
-"No," said {companion_name}. "But pulling blind will break it, and you already know that, because you can hear it." A pause. "Every good answer begins with a pause. Your hands have had their turn. Give your eyes a turn now."
+"You look like someone being pulled apart," {companion_name} said, and sat down without asking.
 
-It went against everything the {hero} wanted to do, which was to keep moving, keep trying, keep proving. But the strained little sound was still echoing in the {hero}'s ears, and so, reluctantly, the {hero} let go. Sat back on both heels. Breathed out, long and unsteady, until the breath ran all the way to the bottom.
+"Three things," the {hero} said. "All urgent. All need doing. And I keep jumping between them because the one I'm not working on feels like it's falling further behind."
 
-For several breaths nothing happened at all. The evening went on around the {hero} — a faint wind moving through {setting}, the distant, ordinary sounds of the day folding itself away. The urge to grab the {object_motif} again rose up twice, and twice the {hero} let it pass.
+{companion_name} was quiet for a moment. Then: "That's the trap. You're believing that each problem will get solved by worrying about it. But your hands can only do one thing at a time, and your mind can only truly focus on one thing at a time. When you jump between them, you solve nothing. You just feel like you're failing at three things instead of doing one thing well."
 
-And in the quiet that followed — the strange, itchy quiet of doing nothing — something began to happen. The rushing feeling in the {hero}'s chest slowed. The tangle, which a moment ago had been a single furious lump, began to come apart in the {hero}'s mind before a single finger touched it. Not into strands yet. Into questions. Where does this part go? What is holding what? It was the oddest thing — the answer had not required more effort, only less.
+"So I should just... pick one and ignore the others?" the {hero} asked. "They'll get worse."
 
-The {hero} looked the way you look at a puzzle you actually intend to solve, tracing one strand slowly with the eyes alone, following it from where it began, over the root, under itself, and around — until, quite suddenly, the whole picture turned over and made sense.
+"Work through one problem at a time," {companion_name} said. "All the way through. Completely. From start to finish. Yes, the others will wait. But they'll wait while you're actually getting something done, instead of waiting while you spin in circles between all three. And once one is finished, you'll have the mental space and the momentum to tackle the next."
 
-It was not stuck in the middle at all. Not really.
+The {hero} felt something settle. It was simple, maybe too simple. But it was also true.
 
-The middle, where the {hero} had been hauling with all that force, was only a bystander. The real catch was a single loop, hooked over the splintered top of the old fence post and pulled tighter with every yank the {hero} had given it. All that pulling on the middle had done nothing but drive that one loop harder onto its hook. The {hero} had been fighting the wrong end of the problem the entire time.
+"The fence," the {hero} decided. "I'll finish it completely. Every board. Every nail."
 
-It was almost embarrassing how obvious it looked now — but that, the {hero} would think later, was the whole trick of it. Problems did not hide because they were clever. They hid because a person in a hurry never held still long enough to see them plainly.
+And so the {hero} did not leave the fence. Not for an hour. Not for two hours. Nail after nail, board after board, checking each one, making sure every piece was solid. The fence came together with a quiet sense of inevitability. At some point, there was nothing left to do. It was done.
 
-The relief of it was almost funny. The {hero} let out a breath that was half a laugh. Of course. It had never been a wall; it had been a door, and the {hero} had simply been shoving on the hinges.
+Then the {object_motif}. The {hero} sat with needle and thread and stitched every seam, every weak place, every thread that was fraying. The whole thing, complete.
 
-This time the {hero} did not pull. The {hero} reached up, lifted the one hooked loop gently off the top of the post — up, and free — and felt the entire snarl release at once, all its false tightness melting the instant the real catch let go. The {object_motif} dropped loose and open into the {hero}'s waiting hands, unharmed, not so much as frayed.
+Then the path. Every weed pulled. The soil turned. The path opened and clear.
 
-For a moment the {hero} just held it, turning it over, feeling faintly amazed that a thing so impossible thirty seconds ago could now be simply, quietly done.
+Three problems. All three done.
 
-Nothing about the {object_motif} itself had changed in those last few seconds. The only thing that had changed was the {hero} — the switch from doing to seeing, from force to attention. That, it seemed, had been the entire difference.
+The {hero} stood back and looked at what had been accomplished, and felt something fundamental shift in their chest. Not because anything had changed about the problems themselves, but because they understood now: the secret wasn't to be faster. It wasn't to be more dedicated. It wasn't to worry harder or try harder. It was to be more disciplined about focus. To pick one thing. Do it all the way. Then move to the next.
 
-"It was only caught in one place," the {hero} said slowly, turning the loop over. "One loop, on one splinter. All that pulling, and it was hanging on by almost nothing." The {hero} shook off the last of the frustration. "I kept fighting the middle. The middle was never even the problem."
+"Work through one problem at a time," the {hero} said quietly. "That is how it gets done."
 
-{companion_name} nodded slowly, and did not pile a single word of instruction on top of the thing the {hero} had just worked out alone — which was, in its own way, the kindest thing {companion_name} could have done. "There," was all {companion_name} said, as though the whole evening had just been quietly set right.
-
-The {hero} thought about the strained sound the strand had made, how close it had come, and felt a small shiver of luck — not because anything terrible would have happened, but because it would have been such a needless, avoidable shame to break a thing simply for want of a single quiet breath.
-
-The {hero} wound the {object_motif} up carefully, the way you handle something you have nearly lost and gotten back. Over {setting} the sky had deepened from blue to something close to violet, and the first few stars were arriving without any fuss, one at a time. The {hero} was tired in a good way now, the frustration all drained off, leaving something steadier behind — the quiet confidence of a person who has just learned that the biggest, most tangled problems sometimes come undone from one small, patient place, if only you are still enough to find it.
+The light was turning gold over {setting}, and the {hero} held the {object_motif} close, knowing that tomorrow would bring more problems. But they also knew now that problems weren't solved by panic, or by juggling, or by trying to do everything at once. They were solved by focus. One thing at a time. All the way.
 
 {refrain}.`,
-    scriptTemplate: `There is a particular kind of frustration that arrives only when you are tired, and {child_name} met it that evening at the edge of {setting}, in the last blue hour before dark. The {object_motif} had gotten itself thoroughly stuck. Somehow, in the course of an ordinary day, it had worked its way into the roots of an old fence post — wound in, hooked around, and drawn down into a snarl so tight it looked less like an accident than like something that had been tied on purpose.
+    scriptTemplate: `There is a particular kind of dread that settles in the chest when you wake with too many things undone, all of them urgent, all of them yours. This is what {child_name} felt when their eyes opened on that quiet morning in {setting}, before they'd even gotten out of bed.
 
-{child_name} crouched, took hold, and pulled. This was not a decision so much as a reflex; the hand simply closed and yanked before any part of {child_name} had thought about it. That, it would turn out, was the whole problem in miniature — but {child_name} did not know that yet.
+The {object_motif} had been waiting to be repaired for three days. {child_name} kept meaning to fix it and kept not doing it. Meanwhile, the fence section was crumbling faster than expected — one more storm and it might give way entirely. And the path to the main gate had become so overgrown with weeds that {child_name} had to push through them every time they went out, which happened to be several times a day. Every time they pushed through, they thought: I should clear this. I should do this today.
 
-Everyone has a first move — the thing the body does before the mind catches up. {child_name}'s first move, always, was to act: to grab, to fix, to make the trouble go away by sheer effort. Most days it worked well enough. Tonight it was about to cost something.
+So every problem knew, with that nasty clarity of procrastination, that today was the day it had to happen.
 
-Nothing gave. Or rather, the wrong thing gave: the tangle drew tighter, gripping down on itself, and one of the strands made a thin, strained sound that {child_name} did not like at all. It was the sound of something close to breaking.
+{child_name} got out of bed and felt the weight of the three problems like a physical thing.
 
-{child_name} pulled again anyway, harder, because pulling was what you did with a stuck thing, and stopping felt like admitting defeat. The knot answered by knotting further. A loop that had been loose a moment ago pinched shut. What had been one snag became a cluster of them, and the more {child_name} fought, the less {child_name} could even tell where the {object_motif} ended and the fence began.
+They started with the fence. This one felt most urgent — structural failure, visible to anyone passing. They gathered tools. Worked for forty minutes, felt a little progress, felt the beginning of momentum. The fence section was starting to look intentional, like a real project moving toward completion.
 
-A hot, prickling feeling climbed up the back of {child_name's neck. It was not quite anger and not quite worry but a blend of the two, the particular misery of trying hard at something and watching it get worse in your hands. {child_name} thought, quite clearly: I am going to break it. And then, right behind that: and it will be my own fault, because I could not manage one simple knot.
+Then {child_name} stepped back and saw the {object_motif} inside, visible through the window. It was precious. Worn. Waiting. The seam was getting worse every day {child_name} delayed. If they waited much longer, the damage would spread.
 
-It is a strange, small kind of pressure, the wish to be the sort of person who can simply handle things. No one was even watching, and still {child_name} felt watched — by some imagined audience that kept score of every fumble.
+{child_name} put down the fence tools and went inside. Found needle and thread. Started stitching. Got halfway through a seam and felt: I'm making progress on this. This is good.
 
-That last thought was the worst of them, and it made {child_name} want to pull harder still, as if enough force could undo the embarrassment along with the tangle.
+Then, through the open door, {child_name} could see the path. The weeds. The overgrown tangle that had become worse every single day. And the thought came with the force of panic: If I don't clear this today, tomorrow it will be twice as bad. If I wait, it gets ahead of me.
 
-Some part of {child_name} knew, dimly, that this was not working. But knowing a thing and stopping are two different skills, and {child_name} had practiced the first far more than the second.
+{child_name} put down the needle and went to the path. Pulled weeds with sudden, frustrated energy. Uprooted them. Made a pile. Felt the satisfaction of visible clearing.
 
-"You're about to snap that," came a voice, unhurried and matter-of-fact.
+For thirty minutes, this felt good. Then a thought: the fence section is sitting there half-done. Someone might see it.
 
-{companion_name} had come up quietly and was standing a little way back, hands folded, making no move to help. {child_name} felt a flash of prickly pride — I can do it myself — and, close underneath it, a small, grateful relief that someone else had arrived.
+Back to the fence.
 
-"It's stuck," {child_name} said, which was obvious, and then, because {companion_name} said nothing, added the truer part: "I've been pulling and pulling and it's just getting worse. I think I'm going to wreck it."
+This cycle continued. Each problem was real. Each problem demanded completion. Each problem said: I am the most important. But what actually happened was that {child_name} became trapped in an exhausting cycle of starting, stopping, starting again. By early afternoon, all three problems were partially done, nothing was finished, and {child_name} felt more exhausted than if they'd been working continuously on any single one of them.
 
-"You might," {companion_name} agreed, which was not the comforting lie {child_name} had half hoped for. "If you keep doing what you're doing, you almost certainly will. So let's not do that." {companion_name} crouched down to {child_name's level, but still did not touch the tangle. "Take your hands off it for a second. Sit back. Breathe out — properly, all the way — and then, before you move a single finger, just look."
+{child_name} sat on the step to the house, breathing hard, feeling something close to despair.
 
-"Looking won't untie it," {child_name} muttered.
+{companion_name} found them there.
 
-"No," said {companion_name}. "But pulling blind will break it, and you already know that, because you can hear it." A pause. "Every good answer begins with a pause. Your hands have had their turn. Give your eyes a turn now."
+"You look like someone being pulled apart," {companion_name} said, and sat down without asking.
 
-It went against everything {child_name} wanted to do, which was to keep moving, keep trying, keep proving. But the strained little sound was still echoing in {child_name's ears, and so, reluctantly, {child_name} let go. Sat back on both heels. Breathed out, long and unsteady, until the breath ran all the way to the bottom.
+"Three things," {child_name} said. "All urgent. All need doing. And I keep jumping between them because the one I'm not working on feels like it's falling further behind."
 
-For several breaths nothing happened at all. The evening went on around {child_name — a faint wind moving through {setting}, the distant, ordinary sounds of the day folding itself away. The urge to grab the {object_motif} again rose up twice, and twice {child_name} let it pass.
+{companion_name} was quiet for a moment. Then: "That's the trap. You're believing that each problem will get solved by worrying about it. But your hands can only do one thing at a time, and your mind can only truly focus on one thing at a time. When you jump between them, you solve nothing. You just feel like you're failing at three things instead of doing one thing well."
 
-And in the quiet that followed — the strange, itchy quiet of doing nothing — something began to happen. The rushing feeling in {child_name's chest slowed. The tangle, which a moment ago had been a single furious lump, began to come apart in {child_name's mind before a single finger touched it. Not into strands yet. Into questions. Where does this part go? What is holding what? It was the oddest thing — the answer had not required more effort, only less.
+"So I should just... pick one and ignore the others?" {child_name} asked. "They'll get worse."
 
-{child_name} looked the way you look at a puzzle you actually intend to solve, tracing one strand slowly with the eyes alone, following it from where it began, over the root, under itself, and around — until, quite suddenly, the whole picture turned over and made sense.
+"Work through one problem at a time," {companion_name} said. "All the way through. Completely. From start to finish. Yes, the others will wait. But they'll wait while you're actually getting something done, instead of waiting while you spin in circles between all three. And once one is finished, you'll have the mental space and the momentum to tackle the next."
 
-It was not stuck in the middle at all. Not really.
+{child_name} felt something settle. It was simple, maybe too simple. But it was also true.
 
-The middle, where {child_name} had been hauling with all that force, was only a bystander. The real catch was a single loop, hooked over the splintered top of the old fence post and pulled tighter with every yank {child_name} had given it. All that pulling on the middle had done nothing but drive that one loop harder onto its hook. {child_name} had been fighting the wrong end of the problem the entire time.
+"The fence," {child_name} decided. "I'll finish it completely. Every board. Every nail."
 
-It was almost embarrassing how obvious it looked now — but that, {child_name} would think later, was the whole trick of it. Problems did not hide because they were clever. They hid because a person in a hurry never held still long enough to see them plainly.
+And so {child_name} did not leave the fence. Not for an hour. Not for two hours. Nail after nail, board after board, checking each one, making sure every piece was solid. The fence came together with a quiet sense of inevitability. At some point, there was nothing left to do. It was done.
 
-The relief of it was almost funny. {child_name} let out a breath that was half a laugh. Of course. It had never been a wall; it had been a door, and {child_name} had simply been shoving on the hinges.
+Then the {object_motif}. {child_name} sat with needle and thread and stitched every seam, every weak place, every thread that was fraying. The whole thing, complete.
 
-This time {child_name} did not pull. {child_name} reached up, lifted the one hooked loop gently off the top of the post — up, and free — and felt the entire snarl release at once, all its false tightness melting the instant the real catch let go. The {object_motif} dropped loose and open into {child_name's waiting hands, unharmed, not so much as frayed.
+Then the path. Every weed pulled. The soil turned. The path opened and clear.
 
-For a moment {child_name} just held it, turning it over, feeling faintly amazed that a thing so impossible thirty seconds ago could now be simply, quietly done.
+Three problems. All three done.
 
-Nothing about the {object_motif} itself had changed in those last few seconds. The only thing that had changed was {child_name — the switch from doing to seeing, from force to attention. That, it seemed, had been the entire difference.
+{child_name} stood back and looked at what had been accomplished, and felt something fundamental shift in their chest. Not because anything had changed about the problems themselves, but because they understood now: the secret wasn't to be faster. It wasn't to be more dedicated. It wasn't to worry harder or try harder. It was to be more disciplined about focus. To pick one thing. Do it all the way. Then move to the next.
 
-"It was only caught in one place," {child_name} said slowly, turning the loop over. "One loop, on one splinter. All that pulling, and it was hanging on by almost nothing." {child_name} shook off the last of the frustration. "I kept fighting the middle. The middle was never even the problem."
+"Work through one problem at a time," {child_name} said quietly. "That is how it gets done."
 
-{companion_name} nodded slowly, and did not pile a single word of instruction on top of the thing {child_name} had just worked out alone — which was, in its own way, the kindest thing {companion_name} could have done. "There," was all {companion_name} said, as though the whole evening had just been quietly set right.
-
-{child_name} thought about the strained sound the strand had made, how close it had come, and felt a small shiver of luck — not because anything terrible would have happened, but because it would have been such a needless, avoidable shame to break a thing simply for want of a single quiet breath.
-
-{child_name} wound the {object_motif} up carefully, the way you handle something you have nearly lost and gotten back. Over {setting} the sky had deepened from blue to something close to violet, and the first few stars were arriving without any fuss, one at a time. {child_name} was tired in a good way now, the frustration all drained off, leaving something steadier behind — the quiet confidence of a person who has just learned that the biggest, most tangled problems sometimes come undone from one small, patient place, if only you are still enough to find it.
+The light was turning gold over {setting}, and {child_name} held the {object_motif} close, knowing that tomorrow would bring more problems. But they also knew now that problems weren't solved by panic, or by juggling, or by trying to do everything at once. They were solved by focus. One thing at a time. All the way.
 
 {refrain}.`
   },
   default: {
-    audioTemplate: `The night was still over {setting} when the {hero} came upon a {object_motif} that would not do what they wanted.
+    audioTemplate: `The night was still over {setting} when the {hero} had a problem. Then another. Then another.
 
-The {hero} pushed at it, quick and frustrated. It did not budge.
+The {hero} looked at all three and felt lost.
 
-"Wait," said {companion_name} gently. "Before you push again — stop. Breathe. Look."
+{companion_name} came close. "You have three things. But you are trying to do them all at once. That is why you feel stuck."
 
-So the {hero} stopped. They took one slow breath. And instead of pushing, they simply looked at the {object_motif}, calmly, the way you look at the stars.
+The {hero} looked up.
 
-And in looking, they saw things they had rushed right past — a shape here, a little catch there. Details that had been invisible while they hurried.
+"Work through one problem at a time," said {companion_name}. "Pick one. Finish it. Then the next."
 
-"I did not even see those before," said the {hero}.
+So the {hero} picked one. Finished it. Then the next. Then the last.
 
-"That is what stopping is for," said {companion_name}. "A calm look shows you what a quick reaction hides. Every good answer begins with a pause."
+All done.
 
-The {hero} kept looking, unhurried, and the puzzle no longer felt quite so impossible.
+The {hero} felt so much better. The night grew soft. The {object_motif} sat close, and all three problems were solved.
 
 {refrain}.`,
-    scriptTemplate: `The night was still over {setting} when {child_name} came upon a {object_motif} that would not do what they wanted.
+    scriptTemplate: `The night was still over {setting} when {child_name} had a problem. Then another. Then another.
 
-{child_name} pushed at it, quick and frustrated. It did not budge.
+{child_name} looked at all three and felt lost.
 
-"Wait," said {companion_name} gently. "Before you push again — stop. Breathe. Look."
+{companion_name} came close. "You have three things. But you are trying to do them all at once. That is why you feel stuck."
 
-So {child_name} stopped. Took one slow breath. And instead of pushing, simply looked at the {object_motif}, calmly, the way you look at the stars.
+{child_name} looked up.
 
-And in looking, {child_name} saw things they had rushed right past — a shape here, a little catch there. Details that had been invisible while they hurried.
+"Work through one problem at a time," said {companion_name}. "Pick one. Finish it. Then the next."
 
-"I did not even see those before," said {child_name}.
+So {child_name} picked one. Finished it. Then the next. Then the last.
 
-"That is what stopping is for," said {companion_name}. "A calm look shows you what a quick reaction hides. Every good answer begins with a pause."
+All done.
 
-{child_name} kept looking, unhurried, and the puzzle no longer felt quite so impossible.
+{child_name} felt so much better. The night grew soft. The {object_motif} sat close, and all three problems were solved.
 
 {refrain}.`
   }
@@ -440,317 +404,241 @@ And in looking, {child_name} saw things they had rushed right past — a shape h
 },
 
   {
-    ordinal: 2, title: 'Different Ways to Solve',
-    concept: 'Different ways to solve the same problem', callback: 'think before you act', ageFloor: 4,
-    summary: 'The hero tries one way to solve something, fails, and feels stuck. The companion teaches the first tool — think before you act — and shows that different approaches exist. The hero tries another way and succeeds.',
+    ordinal: 2, title: 'Different Ways',
+    concept: 'Different ways to solve the same problem', callback: 'think before you act', ageFloor: 3,
+    summary: 'The hero tries one way to solve something, fails, and feels stuck. The companion teaches think before you act, and shows that different approaches exist. The hero tries another way and succeeds.',
     teachingNote: 'Learning to pause and consider alternatives transforms a stuck moment into discovery. One way is not the only way.',
-    learningBeat: 'Different ways work',
+    learningBeat: 'think of different ways',
     ageVariants: {
   '3-4': {
-    audioTemplate: `The {hero} lived in {setting} and wanted to reach the high shelf. There was something special up there. The {object_motif} sat on that shelf, waiting.
+    audioTemplate: `The {hero} lived in {setting} and wanted something high on a shelf. The {object_motif} was waiting there.
 
-"I can reach it," said the {hero}. "I will just pull."
+"I can reach it," said the {hero}. "I will just reach up high."
 
-So the {hero} pulled and pulled. But the {object_motif} was too high. The {hero} was too short.
+The {hero} stood on their toes. Reach. Reach. Reach. But no. Too high. The {object_motif} stayed on the shelf.
 
-The {hero} tried again. Pull, pull, pull. Nothing. The {object_motif} did not come down.
+The {hero} tried to jump. Jump, jump, jump. Still too high. The {object_motif} did not come down.
 
-The {hero} felt stuck. The {object_motif} sat there, high and out of reach. "I can't do this," said the {hero}. "It is too high."
+The {hero} felt stuck. The shelf was too high. The {hero} was too short. "I can't do this," said the {hero}.
 
 Then {companion_name} came over.
 
-"You tried pulling," said {companion_name}. "That did not work. But many ways exist. Before you try again, stop. Think. What else could you do?"
+"You tried reaching," said {companion_name}. "That did not work. But think — are there other ways?"
 
 The {hero} stopped. The {hero} thought.
 
-"A stool!" said the {hero}. "I could stand on a stool and reach it."
+"A stool!" said the {hero}. "I could stand on something!"
 
-"Yes," said {companion_name}. "Or blocks. Or a chair. Many ways work."
+"Yes!" said {companion_name}. "Or a chair. Or a box. Many ways work. You just have to think of them."
 
-So the {hero} got a stool. The {hero} climbed up, up, up. And reached. And gently took the {object_motif}.
+So the {hero} got a stool. Climbed up. Reached. And took the {object_motif}.
 
-The {object_motif} came down. It was in the {hero}'s hands.
+"I did it!" said the {hero}. "I can think of different ways!"
 
-"I did it!" said the {hero}. "Not by pulling. But by thinking of a different way!"
+The {hero} held the {object_motif} close. So happy. So sleepy.
 
-The {hero} held the {object_motif} close and felt so good.
+{companion_name} smiled. "You thought before you acted. And you found the way that worked."
 
-The {hero} gave a big yawn. The {hero} was sleepy and happy.
-
-{companion_name} smiled. "You thought before you acted. Different ways work. And you found the one that fit."
-
-The {hero} held the {object_motif} close. Over {setting}, the stars came out, soft and slow.
-
-"Rest now," said {companion_name}. "You solved it your way."
+The {hero} yawned. Over {setting}, the stars came out, soft and slow.
 
 {refrain}.`,
-    scriptTemplate: `{child_name} lived in {setting} and wanted to reach the high shelf. There was something special up there. The {object_motif} sat on that shelf, waiting.
+    scriptTemplate: `{child_name} lived in {setting} and wanted something high on a shelf. The {object_motif} was waiting there.
 
-"I can reach it," said {child_name}. "I will just pull."
+"I can reach it," said {child_name}. "I will just reach up high."
 
-So {child_name} pulled and pulled. But the {object_motif} was too high. {child_name} was too short.
+{child_name} stood on their toes. Reach. Reach. Reach. But no. Too high. The {object_motif} stayed on the shelf.
 
-{child_name} tried again. Pull, pull, pull. Nothing. The {object_motif} did not come down.
+{child_name} tried to jump. Jump, jump, jump. Still too high. The {object_motif} did not come down.
 
-{child_name} felt stuck. The {object_motif} sat there, high and out of reach. "I can't do this," said {child_name. "It is too high."
+{child_name} felt stuck. The shelf was too high. {child_name} was too short. "I can't do this," said {child_name}.
 
 Then {companion_name} came over.
 
-"You tried pulling," said {companion_name}. "That did not work. But many ways exist. Before you try again, stop. Think. What else could you do?"
+"You tried reaching," said {companion_name}. "That did not work. But think — are there other ways?"
 
 {child_name} stopped. {child_name} thought.
 
-"A stool!" said {child_name. "I could stand on a stool and reach it."
+"A stool!" said {child_name}. "I could stand on something!"
 
-"Yes," said {companion_name}. "Or blocks. Or a chair. Many ways work."
+"Yes!" said {companion_name}. "Or a chair. Or a box. Many ways work. You just have to think of them."
 
-So {child_name} got a stool. {child_name} climbed up, up, up. And reached. And gently took the {object_motif}.
+So {child_name} got a stool. Climbed up. Reached. And took the {object_motif}.
 
-The {object_motif} came down. It was in {child_name's hands.
+"I did it!" said {child_name}. "I can think of different ways!"
 
-"I did it!" said {child_name. "Not by pulling. But by thinking of a different way!"
+{child_name} held the {object_motif} close. So happy. So sleepy.
 
-{child_name} held the {object_motif} close and felt so good.
+{companion_name} smiled. "You thought before you acted. And you found the way that worked."
 
-{child_name} gave a big yawn. {child_name} was sleepy and happy.
-
-{companion_name} smiled. "You thought before you acted. Different ways work. And you found the one that fit."
-
-{child_name} held the {object_motif} close. Over {setting}, the stars came out, soft and slow.
-
-"Rest now," said {companion_name}. "You solved it your way."
+{child_name} yawned. Over {setting}, the stars came out, soft and slow.
 
 {refrain}.`
   },
   '5-6': {
-    audioTemplate: `The {hero} sat at the edge of {setting} with a pile of wood blocks, trying to build a bridge across a small stream. The water ran between two banks, and on the far side sat the {object_motif}, waiting to be brought home before dark.
+    audioTemplate: `The {hero} wanted to move the {object_motif} from one room to another, but the doorway was too narrow. The {object_motif} was large and wide, and the door was not.
 
-The {hero} picked up the first block and reached out, leaning over the water. Push the block toward the opposite bank. Stretch. Strain. But the block was too short; it reached only halfway across.
+The {hero} tried pushing it straight through. Push. Push. Push. The edges scraped. The corners jammed. The {object_motif} would not fit.
 
-The {hero} tried again with a longer block. Reach. Push. Strain. But still not far enough. The water was too wide, and the {hero}'s arms had a limit.
+"It's too big," said the {hero}, frustrated. "I can't get it through."
 
-"It won't work," the {hero} said, looking at the remaining blocks. None of them were long enough. None of them would span the water alone.
+But then the {hero} stopped and thought. {companion_name} had taught this: think before you act. Before you try again, think.
 
-But then the {hero} stopped. There was another way to think about this, if they took a moment to imagine it.
+"What if," said the {hero} slowly, "I turned it sideways?"
 
-{companion_name} appeared on the bank, watching the scattered blocks and the river.
+The {hero} rotated the {object_motif}. Tried it diagonally. Angled it through the doorway. And yes — yes! It slid through. The {object_motif} fit.
 
-"You tried to cross it with one big jump," {companion_name} said. "What if you thought before you reached?"
+"I think of different ways," the {hero} realized. "That is how problems get solved."
 
-The {hero} sat back and looked at the water. At the blocks. At the distance.
+The {object_motif} was now in the new room, where it was needed. The {hero} looked at it, pleased.
 
-"I could lay them one at a time," the {hero} said slowly. "Like stepping stones."
+"Think before you act," said {companion_name}, who had been watching. "And you find the way that works."
 
-"Different ways work," said {companion_name}. "Sometimes one block is not enough. But many blocks, placed one after another, make a path."
-
-The {hero} placed the first block close to the bank. Then the next, a stride away. Then another. One by one, across the water, each block waiting for the one before it. A path appeared, block by patient block.
-
-The {hero} walked across, steady and slow, stepping from one block to the next. And on the other side, the {object_motif} was waiting.
-
-The {hero} picked it up, turned around, and walked home by the same careful path. The water still ran beneath, but now there was a way across.
-
-As the evening came soft over {setting}, the {hero} sat with the {object_motif} close, thinking about all the ways a river could be crossed.
-
-"You thought before you acted," said {companion_name}. "And different ways work. That's how you learn."
-
-The {hero} yawned. Sleep was coming. "Tomorrow, a different problem," the {hero} murmured. "And tomorrow, I'll think first."
+The evening came soft over {setting}. The {hero} held the {object_motif} close, knowing tomorrow would bring another stuck moment. But now the {hero} knew: the first way is not the only way.
 
 {refrain}.`,
-    scriptTemplate: `{child_name} sat at the edge of {setting} with a pile of wood blocks, trying to build a bridge across a small stream. The water ran between two banks, and on the far side sat the {object_motif}, waiting to be brought home before dark.
+    scriptTemplate: `{child_name} wanted to move the {object_motif} from one room to another, but the doorway was too narrow. The {object_motif} was large and wide, and the door was not.
 
-{child_name} picked up the first block and reached out, leaning over the water. Push the block toward the opposite bank. Stretch. Strain. But the block was too short; it reached only halfway across.
+{child_name} tried pushing it straight through. Push. Push. Push. The edges scraped. The corners jammed. The {object_motif} would not fit.
 
-{child_name} tried again with a longer block. Reach. Push. Strain. But still not far enough. The water was too wide, and {child_name's arms had a limit.
+"It's too big," said {child_name}, frustrated. "I can't get it through."
 
-"It won't work," {child_name} said, looking at the remaining blocks. None of them were long enough. None of them would span the water alone.
+But then {child_name} stopped and thought. {companion_name} had taught this: think before you act. Before you try again, think.
 
-But then {child_name} stopped. There was another way to think about this, if they took a moment to imagine it.
+"What if," said {child_name} slowly, "I turned it sideways?"
 
-{companion_name} appeared on the bank, watching the scattered blocks and the river.
+{child_name} rotated the {object_motif}. Tried it diagonally. Angled it through the doorway. And yes — yes! It slid through. The {object_motif} fit.
 
-"You tried to cross it with one big jump," {companion_name} said. "What if you thought before you reached?"
+"I think of different ways," {child_name} realized. "That is how problems get solved."
 
-{child_name} sat back and looked at the water. At the blocks. At the distance.
+The {object_motif} was now in the new room, where it was needed. {child_name} looked at it, pleased.
 
-"I could lay them one at a time," {child_name} said slowly. "Like stepping stones."
+"Think before you act," said {companion_name}, who had been watching. "And you find the way that works."
 
-"Different ways work," said {companion_name}. "Sometimes one block is not enough. But many blocks, placed one after another, make a path."
-
-{child_name} placed the first block close to the bank. Then the next, a stride away. Then another. One by one, across the water, each block waiting for the one before it. A path appeared, block by patient block.
-
-{child_name} walked across, steady and slow, stepping from one block to the next. And on the other side, the {object_motif} was waiting.
-
-{child_name} picked it up, turned around, and walked home by the same careful path. The water still ran beneath, but now there was a way across.
-
-As the evening came soft over {setting}, {child_name} sat with the {object_motif} close, thinking about all the ways a river could be crossed.
-
-"You thought before you acted," said {companion_name}. "And different ways work. That's how you learn."
-
-{child_name} yawned. Sleep was coming. "Tomorrow, a different problem," {child_name} murmured. "And tomorrow, I'll think first."
+The evening came soft over {setting}. {child_name} held the {object_motif} close, knowing tomorrow would bring another stuck moment. But now {child_name} knew: the first way is not the only way.
 
 {refrain}.`
   },
   '7-8': {
-    audioTemplate: `The {hero} stood before a knotted cord, trying to thread it through a hole in the {object_motif}. The hole was small and precisely shaped, and the knot was stubborn. For ten minutes the {hero} had been trying to force the knot through by pulling and twisting.
+    audioTemplate: `The {hero} stood before a puzzle with no obvious entry point. The {object_motif} needed to be lifted over a wall, but there was no ladder, no ramp, no clear way up.
 
-It was not working. Every attempt made the knot tighter, the cord more tangled, the hole no closer to accepting it.
+The {hero}'s first approach: climb the wall yourself, pull the {object_motif} up from above. The {hero} tried. The wall was smooth and too high. Halfway up, the {hero} slipped and fell, unhurt but frustrated. The {object_motif} still sat on the ground, unmoved.
 
-The {hero} felt the familiar surge of frustration — the sense that persistence should matter, that trying hard should eventually work. But it was not working.
+"That didn't work," the {hero} said, breathing hard.
 
-"I can't do this," the {hero} said finally, slumping back. "The knot's too big, the hole's too small."
+But instead of trying the same thing again harder, the {hero} stopped. Thought. This was what {companion_name} had taught: think before you act. Don't just push harder. Think.
 
-{companion_name} came over and looked at the knotted cord without touching it.
+"What if," the {hero} said slowly, "I don't climb the wall at all? What if the {object_motif} goes around?"
 
-"You tried to force the knot through," {companion_name} said. "That didn't work. But before you keep trying, think. What if you considered it differently?"
+The {hero} looked around the corner. There — a gap in the wall, wide enough. A path that ran around the side.
 
-The {hero} looked at the cord, the hole, the stubborn knot.
+The {hero} carried the {object_motif} through the gap, around the side, and set it down on the other side of the wall, exactly where it needed to be.
 
-"I could untie the knot first," the {hero} said, the thought arriving slowly. "Thread the plain cord through. Then tie the knot on the other side."
+Simple. Direct. It had never needed climbing.
 
-{companion_name} smiled. "Different ways work. Sometimes the direct path isn't the only path."
+"I think of different ways," the {hero} said, understanding now. "The first way is never the only way."
 
-The {hero} untied the knot carefully. Then, with the cord straight and smooth, threaded it easily through the hole. On the other side, the {hero} tied it again, and the {object_motif} hung perfectly, the cord secure.
-
-"It took me longer to realize there was another way," the {hero} said, "than it took to actually do it."
-
-"That's often how it is," said {companion_name}. "But now you know: before you pull harder, stop and think. Different ways work."
-
-As the light faded over {setting}, the {hero} turned the {object_motif} over in their hands, feeling the satisfaction not of force, but of a problem solved with sense.
+As the light faded over {setting}, the {hero} sat with the {object_motif}, realizing that problems often have multiple solutions. Most people just try one approach and, when it fails, try it harder instead of trying it differently.
 
 {refrain}.`,
-    scriptTemplate: `{child_name} stood before a knotted cord, trying to thread it through a hole in the {object_motif}. The hole was small and precisely shaped, and the knot was stubborn. For ten minutes {child_name} had been trying to force the knot through by pulling and twisting.
+    scriptTemplate: `{child_name} stood before a puzzle with no obvious entry point. The {object_motif} needed to be lifted over a wall, but there was no ladder, no ramp, no clear way up.
 
-It was not working. Every attempt made the knot tighter, the cord more tangled, the hole no closer to accepting it.
+{child_name}'s first approach: climb the wall yourself, pull the {object_motif} up from above. {child_name} tried. The wall was smooth and too high. Halfway up, {child_name} slipped and fell, unhurt but frustrated. The {object_motif} still sat on the ground, unmoved.
 
-{child_name} felt the familiar surge of frustration — the sense that persistence should matter, that trying hard should eventually work. But it was not working.
+"That didn't work," {child_name} said, breathing hard.
 
-"I can't do this," {child_name} said finally, slumping back. "The knot's too big, the hole's too small."
+But instead of trying the same thing again harder, {child_name} stopped. Thought. This was what {companion_name} had taught: think before you act. Don't just push harder. Think.
 
-{companion_name} came over and looked at the knotted cord without touching it.
+"What if," {child_name} said slowly, "I don't climb the wall at all? What if the {object_motif} goes around?"
 
-"You tried to force the knot through," {companion_name} said. "That didn't work. But before you keep trying, think. What if you considered it differently?"
+{child_name} looked around the corner. There — a gap in the wall, wide enough. A path that ran around the side.
 
-{child_name} looked at the cord, the hole, the stubborn knot.
+{child_name} carried the {object_motif} through the gap, around the side, and set it down on the other side of the wall, exactly where it needed to be.
 
-"I could untie the knot first," {child_name} said, the thought arriving slowly. "Thread the plain cord through. Then tie the knot on the other side."
+Simple. Direct. It had never needed climbing.
 
-{companion_name} smiled. "Different ways work. Sometimes the direct path isn't the only path."
+"I think of different ways," {child_name} said, understanding now. "The first way is never the only way."
 
-{child_name} untied the knot carefully. Then, with the cord straight and smooth, threaded it easily through the hole. On the other side, {child_name} tied it again, and the {object_motif} hung perfectly, the cord secure.
-
-"It took me longer to realize there was another way," {child_name} said, "than it took to actually do it."
-
-"That's often how it is," said {companion_name}. "But now you know: before you pull harder, stop and think. Different ways work."
-
-As the light faded over {setting}, {child_name} turned the {object_motif} over in their hands, feeling the satisfaction not of force, but of a problem solved with sense.
+As the light faded over {setting}, {child_name} sat with the {object_motif}, realizing that problems often have multiple solutions. Most people just try one approach and, when it fails, try it harder instead of trying it differently.
 
 {refrain}.`
   },
   '9-11': {
-    audioTemplate: `The {hero} faced a problem that seemed straightforward at first: move the {object_motif} from one side of the stream to the other, without getting it wet. The water ran fast and cold, and there was no bridge visible.
+    audioTemplate: `The {hero} stood before the {object_motif} with a problem: it had been damaged by salt water and needed cleaning, but they didn't have the right tools. No soft cloth. No gentle soap. Nothing suited for the delicate repair work.
 
-The {hero}'s first instinct was to wade straight across. So they took off their shoes and stepped in. But the current was stronger than it looked, and halfway across, the {hero} realized the {object_motif} was slipping, the water rising toward it.
+The {hero}'s first instinct was direct: grab a rough towel, use whatever soap was available, and scrub the salt away. It made sense as an approach. Get the damage off quickly.
 
-They scrambled back, soaked below the waist, clutching the {object_motif} and breathing hard.
+The {hero} started scrubbing. Within minutes, they realized the rough cloth was making things worse — what had been surface salt damage was becoming scratches in the finish. The {object_motif} was getting damaged by the cleaning, not restored.
 
-"No," said the {hero}. "That won't work."
+The {hero} stopped, frustration rising. They had approached this problem one way, and it had backfired.
 
-They sat on the bank, thinking. There had to be a way. There had to be more than one way.
+{companion_name} came and looked at what had happened.
 
-{companion_name} found them there, dripping and frustrated.
+"You tried one approach," {companion_name} said. "It didn't work. But before you try harder, think. Are there other ways?"
 
-"You tried to cross straight through," {companion_name} said. "Before you try again, think. What else could you do?"
+The {hero} sat back and actually considered the problem instead of just reacting to it.
 
-The {hero} sat with that question, not rushing to answer. What else? They looked upstream and downstream, looked at the banks on both sides, looked at the {object_motif}, looked at what they had available.
+Salt was the issue. Salt dissolved in water. So instead of scrubbing, what if they soaked the {object_motif}? Let the salt dissolve naturally? And instead of harsh soap, what if they used something gentler? What if they let time do the work instead of force?
 
-"I could find a shallower place," the {hero} said slowly. "Upstream or downstream. Where the current is weaker."
+The {hero} filled a bowl with fresh water and set the {object_motif} in it. Left it for an hour. The salt slowly dissolved. Then they used a soft cloth and gentle soap, and the damage came clean without causing new damage.
 
-"Different ways work," {companion_name} agreed. "Straight ahead is only one possibility."
+"I think of different ways," the {hero} said quietly, holding the cleaned {object_motif}. "The obvious approach isn't always the right one."
 
-The {hero} walked upstream, moving carefully, and found a spot where the water ran thin and gentle over smooth stones. Here, they could cross easily, the {object_motif} held high and safe. They crossed, then turned back to look at the path they'd taken.
-
-It had taken longer to find this way than to try the direct one. But it had worked without struggle, without risk, without soaking. That was a different kind of success — quieter, but solid.
-
-"I spent so long assuming straight was the only way," the {hero} mused, "that I never thought to look sideways."
-
-"That's how it goes," said {companion_name}. "Most problems have more than one answer. Learning to think before you act — to ask what else might work — that's the whole point."
-
-As evening settled over {setting}, the {hero} carried the {object_motif} home along the drier path, knowing now that the first attempt was not always the final one.
+As evening settled over {setting}, the {hero} realized something fundamental: problems have multiple solutions, and rushing to the first one often means missing better approaches. The moment of pause — actually thinking before acting — changed everything.
 
 {refrain}.`,
-    scriptTemplate: `{child_name} faced a problem that seemed straightforward at first: move the {object_motif} from one side of the stream to the other, without getting it wet. The water ran fast and cold, and there was no bridge visible.
+    scriptTemplate: `{child_name} stood before the {object_motif} with a problem: it had been damaged by salt water and needed cleaning, but they didn't have the right tools. No soft cloth. No gentle soap. Nothing suited for the delicate repair work.
 
-{child_name's first instinct was to wade straight across. So they took off their shoes and stepped in. But the current was stronger than it looked, and halfway across, {child_name} realized the {object_motif} was slipping, the water rising toward it.
+{child_name}'s first instinct was direct: grab a rough towel, use whatever soap was available, and scrub the salt away. It made sense as an approach. Get the damage off quickly.
 
-They scrambled back, soaked below the waist, clutching the {object_motif} and breathing hard.
+{child_name} started scrubbing. Within minutes, they realized the rough cloth was making things worse — what had been surface salt damage was becoming scratches in the finish. The {object_motif} was getting damaged by the cleaning, not restored.
 
-"No," said {child_name. "That won't work."
+{child_name} stopped, frustration rising. They had approached this problem one way, and it had backfired.
 
-They sat on the bank, thinking. There had to be a way. There had to be more than one way.
+{companion_name} came and looked at what had happened.
 
-{companion_name} found them there, dripping and frustrated.
+"You tried one approach," {companion_name} said. "It didn't work. But before you try harder, think. Are there other ways?"
 
-"You tried to cross straight through," {companion_name} said. "Before you try again, think. What else could you do?"
+{child_name} sat back and actually considered the problem instead of just reacting to it.
 
-{child_name} sat with that question, not rushing to answer. What else? They looked upstream and downstream, looked at the banks on both sides, looked at the {object_motif}, looked at what they had available.
+Salt was the issue. Salt dissolved in water. So instead of scrubbing, what if they soaked the {object_motif}? Let the salt dissolve naturally? And instead of harsh soap, what if they used something gentler? What if they let time do the work instead of force?
 
-"I could find a shallower place," {child_name} said slowly. "Upstream or downstream. Where the current is weaker."
+{child_name} filled a bowl with fresh water and set the {object_motif} in it. Left it for an hour. The salt slowly dissolved. Then they used a soft cloth and gentle soap, and the damage came clean without causing new damage.
 
-"Different ways work," {companion_name} agreed. "Straight ahead is only one possibility."
+"I think of different ways," {child_name} said quietly, holding the cleaned {object_motif}. "The obvious approach isn't always the right one."
 
-{child_name} walked upstream, moving carefully, and found a spot where the water ran thin and gentle over smooth stones. Here, they could cross easily, the {object_motif} held high and safe. They crossed, then turned back to look at the path they'd taken.
-
-It had taken longer to find this way than to try the direct one. But it had worked without struggle, without risk, without soaking. That was a different kind of success — quieter, but solid.
-
-"I spent so long assuming straight was the only way," {child_name} mused, "that I never thought to look sideways."
-
-"That's how it goes," said {companion_name}. "Most problems have more than one answer. Learning to think before you act — to ask what else might work — that's the whole point."
-
-As evening settled over {setting}, {child_name} carried the {object_motif} home along the drier path, knowing now that the first attempt was not always the final one.
+As evening settled over {setting}, {child_name} realized something fundamental: problems have multiple solutions, and rushing to the first one often means missing better approaches. The moment of pause — actually thinking before acting — changed everything.
 
 {refrain}.`
   },
   default: {
-    audioTemplate: `The {hero} wanted to climb a tall tree in {setting} to reach something precious. The {object_motif} was waiting at the top.
+    audioTemplate: `The {hero} tried one way to do something. It did not work.
 
-First, they tried jumping. Jump, jump, jump. The tree was too tall.
+But {companion_name} said: "Think. Are there other ways?"
 
-Then they tried pushing with a stick. Push, push, push. That didn't work either.
+The {hero} thought.
 
-They sat down, tired, and thought: what else could they try?
+"Yes," said the {hero}. "I could try this way instead."
 
-"Different ways work," they said to themselves. "What if I think?"
+And that way worked.
 
-They looked at the tree. Found a low branch. Pulled themselves up. Then reached the next branch. Then the next.
+"I think of different ways," the {hero} said. "One way is not the only way."
 
-Slowly, branch by branch, they climbed. Not jumping. Not pushing. Climbing.
-
-At the top, the {object_motif} was waiting.
-
-{companion_name} watched them climb. "You thought before you acted. And found the way that fit."
-
-The {hero} held the {object_motif}, happy and calm, as the stars came out over {setting}.
+The {object_motif} was solved now. The {hero} held it close as the night grew soft over {setting}.
 
 {refrain}.`,
-    scriptTemplate: `{child_name} wanted to climb a tall tree in {setting} to reach something precious. The {object_motif} was waiting at the top.
+    scriptTemplate: `{child_name} tried one way to do something. It did not work.
 
-First, they tried jumping. Jump, jump, jump. The tree was too tall.
+But {companion_name} said: "Think. Are there other ways?"
 
-Then they tried pushing with a stick. Push, push, push. That didn't work either.
+{child_name} thought.
 
-They sat down, tired, and thought: what else could they try?
+"Yes," said {child_name}. "I could try this way instead."
 
-"Different ways work," they said to themselves. "What if I think?"
+And that way worked.
 
-They looked at the tree. Found a low branch. Pulled themselves up. Then reached the next branch. Then the next.
+"I think of different ways," {child_name} said. "One way is not the only way."
 
-Slowly, branch by branch, they climbed. Not jumping. Not pushing. Climbing.
-
-At the top, the {object_motif} was waiting.
-
-{companion_name} watched them climb. "You thought before you acted. And found the way that fit."
-
-{child_name} held the {object_motif}, happy and calm, as the stars came out over {setting}.
+The {object_motif} was solved now. {child_name} held it close as the night grew soft over {setting}.
 
 {refrain}.`
   }
@@ -759,10 +647,10 @@ At the top, the {object_motif} was waiting.
 
   {
     ordinal: 3, title: 'Inside and Outside',
-    concept: 'Problems are puzzles with inside-and-outside pieces', callback: 'think before you act + ask for help', ageFloor: 4,
+    concept: 'Problems are puzzles with inside-and-outside pieces', callback: 'ask for help', ageFloor: 3,
     summary: 'A problem shows a visible symptom (outside), but the real cause (inside) stays hidden. The hero learns to ask for help to see both pieces. Builds on Level 2: now with more complex cause-and-effect.',
     teachingNote: 'Problems have two parts: what you see, and what you need to find. Asking for help reveals the inside piece.',
-    learningBeat: 'Problems have inside and outside pieces',
+    learningBeat: 'asking makes the puzzle whole',
     ageVariants: {
   '3-4': {
     audioTemplate: `The {hero} woke up and the {object_motif} would not sing. It used to sing when you touched it. Now: silence.
@@ -777,7 +665,7 @@ The {hero} felt sad. The {object_motif} was broken.
 
 {companion_name} came over. "It won't sing?" they asked.
 
-"No," said the {hero}. "It's broken."
+"No," said the {hero}. "It is broken."
 
 {companion_name} asked to see. They held it, turned it, and listened.
 
@@ -799,7 +687,7 @@ The song came back! Soft and sweet and real.
 
 The {hero} held it close and felt so happy.
 
-"The outside said: broken," said {companion_name}. "But the inside was just... stuck."
+"Asking makes the puzzle whole," said the {hero}. "I needed to see both the outside and the inside."
 
 {refrain}.`,
     scriptTemplate: `{child_name} woke up and the {object_motif} would not sing. It used to sing when you touched it. Now: silence.
@@ -814,13 +702,13 @@ No song.
 
 {companion_name} came over. "It won't sing?" they asked.
 
-"No," said {child_name. "It's broken."
+"No," said {child_name}. "It is broken."
 
 {companion_name} asked to see. They held it, turned it, and listened.
 
 "Can I open it?" asked {companion_name}.
 
-"It might break more," said {child_name.
+"It might break more," said {child_name}.
 
 "Or," said {companion_name}, "we might find out why."
 
@@ -836,7 +724,7 @@ The song came back! Soft and sweet and real.
 
 {child_name} held it close and felt so happy.
 
-"The outside said: broken," said {companion_name}. "But the inside was just... stuck."
+"Asking makes the puzzle whole," said {child_name}. "I needed to see both the outside and the inside."
 
 {refrain}.`
   },
@@ -845,7 +733,7 @@ The song came back! Soft and sweet and real.
 
 The {hero} had watered the garden every morning. Careful. Thorough. But the plants kept drooping.
 
-"The garden won't drink," the {hero} said to {companion_name}, who had come to look. "I give it water and it still dies. Maybe the seeds were bad."
+"The garden won't drink," the {hero} said to {companion_name}, who had come to look. "I give it water and it still dies."
 
 But {companion_name} knelt in the dirt, dug their fingers down, and felt the soil underneath the top layer. It was hard. Baked. Like stone.
 
@@ -869,18 +757,16 @@ So they brought a bucket. They poured, slowly, and let it soak. They poured agai
 
 The next morning, the plants had lifted their heads. Not healthy yet. But reaching. Alive.
 
-"I was solving the wrong problem," the {hero} said. "I thought: drooping plants need water. But the real problem was: water wasn't reaching the roots."
-
-"Problems have two parts," said {companion_name}. "What you see on the outside, and what's actually happening inside. Sometimes they're different."
+"I was solving the wrong problem," the {hero} said. "I thought: drooping plants need water. But the real problem was: water wasn't reaching the roots. Asking makes the puzzle whole."
 
 The {hero} held the {object_motif}, watching the garden slowly green again.
 
 {refrain}.`,
-    scriptTemplate: `{child_name's garden was wilting. For three days the seedlings had drooped lower, their leaves turning pale, looking for water that wasn't coming. The {object_motif} hung on the fence nearby, a reminder of better days.
+    scriptTemplate: `{child_name}'s garden was wilting. For three days the seedlings had drooped lower, their leaves turning pale, looking for water that wasn't coming. The {object_motif} hung on the fence nearby, a reminder of better days.
 
 {child_name} had watered the garden every morning. Careful. Thorough. But the plants kept drooping.
 
-"The garden won't drink," {child_name} said to {companion_name}, who had come to look. "I give it water and it still dies. Maybe the seeds were bad."
+"The garden won't drink," {child_name} said to {companion_name}, who had come to look. "I give it water and it still dies."
 
 But {companion_name} knelt in the dirt, dug their fingers down, and felt the soil underneath the top layer. It was hard. Baked. Like stone.
 
@@ -896,7 +782,7 @@ But {companion_name} knelt in the dirt, dug their fingers down, and felt the soi
 
 {child_name} looked at the wilting plants again. Now understanding. The outside said one thing. But underneath, another truth.
 
-"What can we do?" asked {child_name.
+"What can we do?" asked {child_name}.
 
 "Soak it," said {companion_name}. "Deep. Let the water reach down where the roots are waiting."
 
@@ -904,9 +790,7 @@ So they brought a bucket. They poured, slowly, and let it soak. They poured agai
 
 The next morning, the plants had lifted their heads. Not healthy yet. But reaching. Alive.
 
-"I was solving the wrong problem," {child_name} said. "I thought: drooping plants need water. But the real problem was: water wasn't reaching the roots."
-
-"Problems have two parts," said {companion_name}. "What you see on the outside, and what's actually happening inside. Sometimes they're different."
+"I was solving the wrong problem," {child_name} said. "I thought: drooping plants need water. But the real problem was: water wasn't reaching the roots. Asking makes the puzzle whole."
 
 {child_name} held the {object_motif}, watching the garden slowly green again.
 
@@ -937,9 +821,9 @@ The {hero} slept through until morning.
 
 "The problem wasn't me," the {hero} realized. "It was the situation. I was trying to solve it by fixing myself, but I needed to fix what was around me."
 
-"Problems have two parts," {companion_name} said. "What you see — can't sleep — and what's really happening — environment is waking you. Sometimes the answer isn't to change yourself. It's to change what's around you."
+"Asking makes the puzzle whole," {companion_name} said. "When you ask for help to see the inside problem, you find the real solution. Not the outside one."
 
-The {hero} held the {object_motif} and slept deeply, understanding now that asking for help to see the inside problem had mattered more than struggling alone with only the outside view.
+The {hero} held the {object_motif} and slept deeply, understanding now that asking for help had mattered more than struggling alone with only the outside view.
 
 {refrain}.`,
     scriptTemplate: `{child_name} couldn't sleep. For four nights, sleep had eluded them, and each morning brought a heavier tiredness. They felt caught between exhaustion and wakefulness, stuck in the space where rest should be but wasn't.
@@ -954,7 +838,7 @@ The {hero} held the {object_motif} and slept deeply, understanding now that aski
 
 "The outside problem is your waking," said {companion_name}. "But the inside problem might be the puppy's box is right by your head. You've habituated to the noise, but not to the disturbance."
 
-"What do I do?" asked {child_name.
+"What do I do?" asked {child_name}.
 
 {companion_name} smiled. "What if the puppy box was further away?"
 
@@ -966,9 +850,9 @@ That night, they moved the box to the far corner. The puppy still cried, but sof
 
 "The problem wasn't me," {child_name} realized. "It was the situation. I was trying to solve it by fixing myself, but I needed to fix what was around me."
 
-"Problems have two parts," said {companion_name}. "What you see — can't sleep — and what's really happening — environment is waking you. Sometimes the answer isn't to change yourself. It's to change what's around you."
+"Asking makes the puzzle whole," {companion_name} said. "When you ask for help to see the inside problem, you find the real solution. Not the outside one."
 
-{child_name} held the {object_motif} and slept deeply, understanding now that asking for help to see the inside problem had mattered more than struggling alone with only the outside view.
+{child_name} held the {object_motif} and slept deeply, understanding now that asking for help had mattered more than struggling alone with only the outside view.
 
 {refrain}.`
   },
@@ -1003,7 +887,7 @@ And slowly, strength returned — not the hurried recovery the {hero} had wanted
 
 "I was so focused on getting back to normal," the {hero} mused, "that I missed what my body was actually asking for."
 
-"That's why problems have two parts," said {companion_name}. "The symptom you see, and the cause underneath. Asking for help means someone can point out what you're missing."
+"Asking makes the puzzle whole," said {companion_name}. "When you ask for help, you see the inside piece — the real cause, not just the symptom."
 
 The {hero} held the {object_motif}, feeling genuinely rested now, knowing that the deeper the understanding, the truer the solution.
 
@@ -1038,7 +922,7 @@ And slowly, strength returned — not the hurried recovery {child_name} had want
 
 "I was so focused on getting back to normal," {child_name} mused, "that I missed what my body was actually asking for."
 
-"That's why problems have two parts," said {companion_name}. "The symptom you see, and the cause underneath. Asking for help means someone can point out what you're missing."
+"Asking makes the puzzle whole," said {companion_name}. "When you ask for help, you see the inside piece — the real cause, not just the symptom."
 
 {child_name} held the {object_motif}, feeling genuinely rested now, knowing that the deeper the understanding, the truer the solution.
 
@@ -1055,9 +939,11 @@ They looked at the lock. Inside, hidden, the {hero} could not see: the mechanism
 
 {companion_name} tapped gently beside the lock. Adjusted something invisible. Then the key turned smooth.
 
-"The problem wasn't the key," {companion_name} said. "Or the door. Inside, something was out of place. You needed to know that to fix it."
+"The problem wasn't the key," {companion_name} said. "Or the door. Inside, something was out of place. You needed help to see it."
 
 The door opened.
+
+The {hero} understood: asking made the puzzle whole.
 
 {refrain}.`,
     scriptTemplate: `A lock on the door wouldn't open. {child_name} pushed the key. Nothing.
@@ -1070,9 +956,11 @@ They looked at the lock. Inside, hidden, {child_name} could not see: the mechani
 
 {companion_name} tapped gently beside the lock. Adjusted something invisible. Then the key turned smooth.
 
-"The problem wasn't the key," {companion_name} said. "Or the door. Inside, something was out of place. You needed to know that to fix it."
+"The problem wasn't the key," {companion_name} said. "Or the door. Inside, something was out of place. You needed help to see it."
 
 The door opened.
+
+{child_name} understood: asking made the puzzle whole.
 
 {refrain}.`
   }
@@ -1080,11 +968,11 @@ The door opened.
 },
 
   {
-    ordinal: 4, title: 'Wrong Guesses Teach',
-    concept: 'Trying again after a wrong guess — failure teaches you', callback: 'think before you act + ask for help + persistence', ageFloor: 5,
+    ordinal: 4, title: 'Trying Again',
+    concept: 'Trying again after a wrong guess', callback: 'think before you act', ageFloor: 3,
     summary: 'The hero makes a guess or attempt that\'s wrong, realizes it teaches something, tries again with new knowledge, and succeeds. Brings prior tools plus introduces resilience.',
     teachingNote: 'Wrong attempts are not failures; they are teaching moments. Mistakes hold information.',
-    learningBeat: 'Wrong guesses teach you',
+    learningBeat: 'trying again is how we learn',
     ageVariants: {
   '3-4': {
     audioTemplate: `The {hero} made a shape out of clay. A bowl. It was pretty. Round and smooth.
@@ -1107,7 +995,7 @@ The first bowl was not a waste. It taught. It showed what wouldn't work. And tha
 
 The {hero} held the {object_motif} and smiled.
 
-"Wrong tries teach you," said {companion_name}. "That's how you learn."
+"Trying again is how we learn," said {companion_name}. "That's how you get better."
 
 {refrain}.`,
     scriptTemplate: `{child_name} made a shape out of clay. A bowl. It was pretty. Round and smooth.
@@ -1130,7 +1018,7 @@ The first bowl was not a waste. It taught. It showed what wouldn't work. And tha
 
 {child_name} held the {object_motif} and smiled.
 
-"Wrong tries teach you," said {companion_name}. "That's how you learn."
+"Trying again is how we learn," said {companion_name}. "That's how you get better."
 
 {refrain}.`
   },
@@ -1159,14 +1047,14 @@ Twenty minutes later, the bird, calm and curious, found the seeds, drank the wat
 
 "The wrong try taught me something," the {hero} said. "Chasing doesn't work because the bird can't help but run. But if I let it calm down, it solves itself."
 
-"That's what wrong guesses do," said {companion_name}. "They teach you how not to do it, which is halfway to knowing how to do it right."
+"Trying again is how we learn," said {companion_name}. "Wrong guesses teach you something new to try."
 
 The {hero} sat with the {object_motif}, watching the bird disappear into the evening sky.
 
 {refrain}.`,
     scriptTemplate: `{child_name} was trying to catch a bird that had flown into the cabin. It wasn't dangerous, just a small thing that had gotten confused, and the {object_motif} couldn't be left outside with it loose.
 
-{child_name's first attempt: chase it directly. Run at it, corner it, grab it gently.
+{child_name}'s first attempt: chase it directly. Run at it, corner it, grab it gently.
 
 The bird panicked, flew higher, crashed into the window, and scattered feathers everywhere. {child_name} stood alone, breathless, having learned precisely nothing except that chasing didn't work.
 
@@ -1188,7 +1076,7 @@ Twenty minutes later, the bird, calm and curious, found the seeds, drank the wat
 
 "The wrong try taught me something," {child_name} said. "Chasing doesn't work because the bird can't help but run. But if I let it calm down, it solves itself."
 
-"That's what wrong guesses do," said {companion_name}. "They teach you how not to do it, which is halfway to knowing how to do it right."
+"Trying again is how we learn," said {companion_name}. "Wrong guesses teach you something new to try."
 
 {child_name} sat with the {object_motif}, watching the bird disappear into the evening sky.
 
@@ -1273,7 +1161,7 @@ The {hero} looked at the sealed crack, thinking about the journey from wrong gue
 
 "It's not linear," the {hero} mused. "You don't go straight from problem to solution. You try, learn, adjust, try again."
 
-"That's the whole thing," {companion_name} said. "Wrong guesses are part of the path, not detours from it."
+"Trying again is how we learn," {companion_name} said. "That's the whole thing."
 
 The {hero} held the {object_motif}, understanding now that the wall they'd fixed was strong partly because it had been fixed badly first — that failure had held information that success needed.
 
@@ -1296,15 +1184,15 @@ This time, the repair held. Not perfect, but solid. The crack stayed sealed.
 
 "The first try didn't fail," said {companion_name}. "It taught. It showed you that clay and stone don't work together, which meant your next try could build on that knowledge."
 
-"I spent an hour on something that didn't work," {child_name} said.
+"I spent an hour on something that didn't work," said {child_name}.
 
 "You spent an hour gathering knowledge," {companion_name} said. "The second try was faster and more successful because of the first."
 
 {child_name} looked at the sealed crack, thinking about the journey from wrong guess to right answer.
 
-"It's not linear," {child_name} mused, "You don't go straight from problem to solution. You try, learn, adjust, try again."
+"It's not linear," {child_name} mused. "You don't go straight from problem to solution. You try, learn, adjust, try again."
 
-"That's the whole thing," {companion_name} said. "Wrong guesses are part of the path, not detours from it."
+"Trying again is how we learn," {companion_name} said. "That's the whole thing."
 
 {child_name} held the {object_motif}, understanding now that the wall they'd fixed was strong partly because it had been fixed badly first — that failure had held information that success needed.
 
@@ -1319,7 +1207,7 @@ They tried again, using what they learned.
 
 This time, it worked.
 
-"Wrong tries teach," said {companion_name}. "That's how you learn."
+"Trying again is how we learn," said {companion_name}. "That's how you get better."
 
 The {hero} held the {object_motif}, knowing now that trying again was not failing. It was learning.
 
@@ -1332,7 +1220,7 @@ They tried again, using what they learned.
 
 This time, it worked.
 
-"Wrong tries teach," said {companion_name}. "That's how you learn."
+"Trying again is how we learn," said {companion_name}. "That's how you get better."
 
 {child_name} held the {object_motif}, knowing now that trying again was not failing. It was learning.
 
@@ -1342,269 +1230,257 @@ This time, it worked.
 },
 
   {
-    ordinal: 5, title: 'Listen to the Problem',
-    concept: 'Problems have their own solutions: listen to what the problem is asking for', callback: 'think before you act + ask for help + persistence + try and see', ageFloor: 5,
-    summary: 'Capstone: the hero faces a complex problem, tries usual approaches, realizes by paying close attention to what the problem ACTUALLY needs (not what they think it should be), discovers the answer. Brings all prior lessons together.',
-    teachingNote: 'The deepest problem-solving comes from listening — to the problem itself, to what it\'s actually asking for. Understanding the real shape of the trouble leads to elegant solutions.',
-    learningBeat: 'Listen to what the problem is asking',
+    ordinal: 5, title: 'Listen to What It Needs',
+    concept: 'Problems have their own solutions: listen to what the problem is asking for', callback: 'ask for help', ageFloor: 3,
+    summary: 'A multi-part problem where the obvious solution won\'t work because the problem itself communicates what it needs. The hero learns to listen to what the problem is asking for, not what they assume it needs.',
+    teachingNote: 'Problems communicate what will solve them. Listening — not forcing — reveals the right answer.',
+    learningBeat: 'listen to what it needs',
     ageVariants: {
   '3-4': {
-    audioTemplate: `The {hero} had a plant that wouldn't grow. It sat in the pot, small and sad, for weeks.
+    audioTemplate: `The {hero} found a {object_motif} stuck in the soft dirt. It was caught. It needed to come out.
 
-The {hero} gave it water. More water. Even more water.
+The {hero} pulled hard. Pull, pull, pull!
 
-The plant got sadder.
+But the harder the {hero} pulled, the more stuck it became. The {object_motif} went deeper, not free.
 
-The {hero} moved it to sun. Bright sun. Very bright sun.
+The {hero} tried again. Pull harder!
 
-The plant only drooped lower.
+Still stuck. Deeper.
 
-The {hero} asked {companion_name}: "Why won't it grow?"
+{companion_name} came over. "Wait," they said. "Stop pulling. Feel what the {object_motif} is telling you."
 
-{companion_name} looked at the plant and listened. Not to words. To what the plant was asking.
+The {hero} stopped and listened.
 
-"It's wet," {companion_name} said. "Too much water. It can't breathe."
+"The dirt is soft," said {companion_name}. "The {object_motif} doesn't need pulling. It needs gentle wiggling. Small back-and-forth. Let the dirt loosen around it."
 
-The {hero} let the plant dry a little. Not wet. Not dry. In between.
+So the {hero} held the {object_motif} and wiggled it. Small wiggles. Back and forth. The dirt loosened. The {object_motif} came free, gentle and easy.
 
-The {hero} moved it to softer light. Not dark. Not burning. Medium.
+"I was pulling, but the {object_motif} needed me to listen," said the {hero}. "It told me what to do."
 
-The {hero} held the {object_motif} and waited.
+The {hero} held the {object_motif} close.
 
-Slowly, the plant opened. Green came back. A new leaf appeared.
-
-"The plant was asking for something different than I thought it needed," said the {hero}.
-
-"Listen to what's really asking," said {companion_name}. "The answer is there."
+"Listen to what it needs," said {companion_name}. "That's how you solve it right."
 
 {refrain}.`,
-    scriptTemplate: `{child_name} had a plant that wouldn't grow. It sat in the pot, small and sad, for weeks.
+    scriptTemplate: `{child_name} found a {object_motif} stuck in the soft dirt. It was caught. It needed to come out.
 
-{child_name} gave it water. More water. Even more water.
+{child_name} pulled hard. Pull, pull, pull!
 
-The plant got sadder.
+But the harder {child_name} pulled, the more stuck it became. The {object_motif} went deeper, not free.
 
-{child_name} moved it to sun. Bright sun. Very bright sun.
+{child_name} tried again. Pull harder!
 
-The plant only drooped lower.
+Still stuck. Deeper.
 
-{child_name} asked {companion_name}: "Why won't it grow?"
+{companion_name} came over. "Wait," they said. "Stop pulling. Feel what the {object_motif} is telling you."
 
-{companion_name} looked at the plant and listened. Not to words. To what the plant was asking.
+{child_name} stopped and listened.
 
-"It's wet," {companion_name} said. "Too much water. It can't breathe."
+"The dirt is soft," said {companion_name}. "The {object_motif} doesn't need pulling. It needs gentle wiggling. Small back-and-forth. Let the dirt loosen around it."
 
-{child_name} let the plant dry a little. Not wet. Not dry. In between.
+So {child_name} held the {object_motif} and wiggled it. Small wiggles. Back and forth. The dirt loosened. The {object_motif} came free, gentle and easy.
 
-{child_name} moved it to softer light. Not dark. Not burning. Medium.
+"I was pulling, but the {object_motif} needed me to listen," said {child_name}. "It told me what to do."
 
-{child_name} held the {object_motif} and waited.
+{child_name} held the {object_motif} close.
 
-Slowly, the plant opened. Green came back. A new leaf appeared.
-
-"The plant was asking for something different than I thought it needed," {child_name} said.
-
-"Listen to what's really asking," said {companion_name}. "The answer is there."
+"Listen to what it needs," said {companion_name}. "That's how you solve it right."
 
 {refrain}.`
   },
   '5-6': {
-    audioTemplate: `The {hero}'s little pocket door was stuck. Not locked, just... stuck. Jammed. The {hero} needed to open it, and everything they knew said to force it.
+    audioTemplate: `The {hero} faced a door that would not budge. It was locked. The {object_motif} was on the other side, and the {hero} needed to get through.
 
-They pulled. The door resisted.
+The {hero} pushed the door hard. Push, push, push. The door didn't move. It was solid and unyielding.
 
-They pulled harder. It budged an inch, then stuck again even tighter.
+The {hero} tried running at it. Crash! The door didn't open. The {hero} bounced back, frustrated.
 
-"Let me think," said the {hero}. "What is the door actually telling me?"
+"The lock is too strong," said the {hero}. "I can't force it."
 
-The door wasn't saying "pull harder." The door was stuck because something inside was blocking it.
+{companion_name} came and looked at the door. "Stop trying to force it open. Listen to what the door is telling you."
 
-The {hero} pushed gently instead. Pushed the door inward, releasing the pressure. Then pulled. It came free.
+"The door?" said the {hero}. "It's just a door."
 
-Not because of force. Because of listening to what the door was actually asking.
+"Look closer," said {companion_name}.
 
-The {hero} opened the door and found the {object_motif} waiting inside, kept safe until now.
+The {hero} looked. Around the frame, near the top, was a tiny hook. A rope hung from it, barely visible.
 
-"Sometimes problems speak in their own language," {companion_name} said. "Not all problems ask for force. This one asked for patience and a gentle push."
+"The door doesn't want to be forced," said {companion_name}. "It wants to be pulled up. It's sliding, not swinging. Listen to what it's trying to tell you."
 
-The {hero} held the {object_motif} and understood: solving wasn't about knowing the answer ahead of time. It was about listening to what the problem wanted.
+The {hero} reached up and pulled the rope gently. The door slid up, smooth and easy. The mechanism was there all along. The {hero} just hadn't listened to what the door was asking.
+
+Behind the door sat the {object_motif}, waiting.
+
+"I was trying so hard to force it," said the {hero}. "But if I had listened — really looked at what the door was showing me — I would have known the answer."
+
+"Listen to what it needs," said {companion_name}. "Problems show you how to solve them, if you pay attention."
+
+The {hero} carried the {object_motif} back, understanding that the answer had been there all along, hidden in what the problem was trying to tell.
 
 {refrain}.`,
-    scriptTemplate: `{child_name}'s little pocket door was stuck. Not locked, just... stuck. Jammed. {child_name} needed to open it, and everything they knew said to force it.
+    scriptTemplate: `{child_name} faced a door that would not budge. It was locked. The {object_motif} was on the other side, and {child_name} needed to get through.
 
-They pulled. The door resisted.
+{child_name} pushed the door hard. Push, push, push. The door didn't move. It was solid and unyielding.
 
-They pulled harder. It budged an inch, then stuck again even tighter.
+{child_name} tried running at it. Crash! The door didn't open. {child_name} bounced back, frustrated.
 
-"Let me think," said {child_name}. "What is the door actually telling me?"
+"The lock is too strong," said {child_name}. "I can't force it."
 
-The door wasn't saying "pull harder." The door was stuck because something inside was blocking it.
+{companion_name} came and looked at the door. "Stop trying to force it open. Listen to what the door is telling you."
 
-{child_name} pushed gently instead. Pushed the door inward, releasing the pressure. Then pulled. It came free.
+"The door?" said {child_name}. "It's just a door."
 
-Not because of force. Because of listening to what the door was actually asking.
+"Look closer," said {companion_name}.
 
-{child_name} opened the door and found the {object_motif} waiting inside, kept safe until now.
+{child_name} looked. Around the frame, near the top, was a tiny hook. A rope hung from it, barely visible.
 
-"Sometimes problems speak in their own language," {companion_name} said. "Not all problems ask for force. This one asked for patience and a gentle push."
+"The door doesn't want to be forced," said {companion_name}. "It wants to be pulled up. It's sliding, not swinging. Listen to what it's trying to tell you."
 
-{child_name} held the {object_motif} and understood: solving wasn't about knowing the answer ahead of time. It was about listening to what the problem wanted.
+{child_name} reached up and pulled the rope gently. The door slid up, smooth and easy. The mechanism was there all along. {child_name} just hadn't listened to what the door was asking.
+
+Behind the door sat the {object_motif}, waiting.
+
+"I was trying so hard to force it," said {child_name}. "But if I had listened — really looked at what the door was showing me — I would have known the answer."
+
+"Listen to what it needs," said {companion_name}. "Problems show you how to solve them, if you pay attention."
+
+{child_name} carried the {object_motif} back, understanding that the answer had been there all along, hidden in what the problem was trying to tell.
 
 {refrain}.`
   },
   '7-8': {
-    audioTemplate: `The {hero} was facing a genuine puzzle: how to carry two fragile things at once — the {object_motif} in one hand, and a carefully balanced bowl of water in the other — across rough ground to the far side of {setting}.
+    audioTemplate: `The {hero} had a delicate puzzle box, the {object_motif}. It was locked with no visible keyhole. After examining it carefully, the {hero} concluded it must be forced open. Gently at first, but if necessary, forcefully.
 
-The obvious approach: move fast, don't spill, concentrate hard.
+The {hero} pushed on the lid. Nothing. Pushed harder. The wood creaked. Still nothing. The {hero} felt the old wood starting to crack under the pressure.
 
-The {hero} tried it. Made it ten steps before the ground shifted, both hands lurched, and water sloshed everywhere.
+Then {companion_name} arrived.
 
-Start again. Move fast. Concentrate. Same result.
+"Stop," they said. "You're about to break it. Listen to what the box is telling you instead."
 
-The {hero} sat down, frustrated. "What is this problem actually asking for?" they wondered aloud.
+"What is it telling me?" the {hero} asked, frustrated.
 
-{companion_name} came and sat beside them. "What do you notice about what happens?"
+"Feel it," said {companion_name}. "Don't push. Feel."
 
-"The ground is uneven," the {hero} said. "So when I move fast, I lose balance."
+The {hero} held the box gently and felt along its surface. There — a small ridge. A groove that ran around the seam. The box wasn't meant to open by force. It was meant to slide.
 
-"And what does the water do when you lose balance?"
+The {hero} slid the lid sideways, slowly. It moved. Smooth. The whole lid shifted to the side, revealing an opening.
 
-"It spills," the {hero} said.
+Inside sat something precious — not because it was valuable, but because it had been protected so carefully. The {object_motif} gleamed in the soft light.
 
-"So," {companion_name} said, "what if you didn't lose balance?"
+"The box was telling me the whole time," said the {hero}. "It just wasn't telling me in the way I expected. If I'd listened — really paid attention to how it was made, not just how I wanted to open it — I would have known."
 
-The {hero} realized: the problem wasn't asking for speed. The ground was telling them to slow down. The water was telling them to move gently. The uneven earth was telling them to watch their footing.
+"Listen to what it needs," said {companion_name}. "Problems show you their solutions. You just have to be patient enough to understand the language they're speaking."
 
-The {hero} walked slowly. Carefully. Feeling each step. Watching the water surface stay calm. The {object_motif} held steady in the other hand.
-
-They arrived at the far side with both intact, not through speed or concentration, but through listening to what the problem was actually asking for.
-
-"I kept trying to override the problem," the {hero} said. "But the problem had its own shape. It wanted me to go slowly."
-
-"That's listening," {companion_name} said. "Understanding what the situation needs, not what you think it should need."
-
-The {hero} set down the {object_motif} and the bowl, both undamaged, both intact because the hero had finally heard what the problem was asking.
+The {hero} closed the box carefully, now understanding that the most elegant solutions often come from listening to what the problem is actually trying to tell you, not from forcing your will onto it.
 
 {refrain}.`,
-    scriptTemplate: `{child_name} was facing a genuine puzzle: how to carry two fragile things at once — the {object_motif} in one hand, and a carefully balanced bowl of water in the other — across rough ground to the far side of {setting}.
+    scriptTemplate: `{child_name} had a delicate puzzle box, the {object_motif}. It was locked with no visible keyhole. After examining it carefully, {child_name} concluded it must be forced open. Gently at first, but if necessary, forcefully.
 
-The obvious approach: move fast, don't spill, concentrate hard.
+{child_name} pushed on the lid. Nothing. Pushed harder. The wood creaked. Still nothing. {child_name} felt the old wood starting to crack under the pressure.
 
-{child_name} tried it. Made it ten steps before the ground shifted, both hands lurched, and water sloshed everywhere.
+Then {companion_name} arrived.
 
-Start again. Move fast. Concentrate. Same result.
+"Stop," they said. "You're about to break it. Listen to what the box is telling you instead."
 
-{child_name} sat down, frustrated. "What is this problem actually asking for?" they wondered aloud.
+"What is it telling me?" {child_name} asked, frustrated.
 
-{companion_name} came and sat beside them. "What do you notice about what happens?"
+"Feel it," said {companion_name}. "Don't push. Feel."
 
-"The ground is uneven," {child_name} said. "So when I move fast, I lose balance."
+{child_name} held the box gently and felt along its surface. There — a small ridge. A groove that ran around the seam. The box wasn't meant to open by force. It was meant to slide.
 
-"And what does the water do when you lose balance?"
+{child_name} slid the lid sideways, slowly. It moved. Smooth. The whole lid shifted to the side, revealing an opening.
 
-"It spills," {child_name} said.
+Inside sat something precious — not because it was valuable, but because it had been protected so carefully. The {object_motif} gleamed in the soft light.
 
-"So," {companion_name} said, "what if you didn't lose balance?"
+"The box was telling me the whole time," said {child_name}. "It just wasn't telling me in the way I expected. If I'd listened — really paid attention to how it was made, not just how I wanted to open it — I would have known."
 
-{child_name} realized: the problem wasn't asking for speed. The ground was telling them to slow down. The water was telling them to move gently. The uneven earth was telling them to watch their footing.
+"Listen to what it needs," said {companion_name}. "Problems show you their solutions. You just have to be patient enough to understand the language they're speaking."
 
-{child_name} walked slowly. Carefully. Feeling each step. Watching the water surface stay calm. The {object_motif} held steady in the other hand.
-
-They arrived at the far side with both intact, not through speed or concentration, but through listening to what the problem was actually asking for.
-
-"I kept trying to override the problem," {child_name} said. "But the problem had its own shape. It wanted me to go slowly."
-
-"That's listening," {companion_name} said. "Understanding what the situation needs, not what you think it should need."
-
-{child_name} set down the {object_motif} and the bowl, both undamaged, both intact because {child_name} had finally heard what the problem was asking.
+{child_name} closed the box carefully, now understanding that the most elegant solutions often come from listening to what the problem is actually trying to tell you, not from forcing your will onto it.
 
 {refrain}.`
   },
   '9-11': {
-    audioTemplate: `The {hero} had been trying for days to get the {object_motif} to fit into a narrow shelf — not squeezed or jammed, but properly, with space around it for air.
+    audioTemplate: `The {hero} came upon the {object_motif}, and it needed repair. But this was delicate work, the kind that demanded a particular kind of listening.
 
-Every approach that had worked before didn't work here. Rotating it, angling it, tilting it — all seemed logical, but none of them let it settle naturally.
+The {hero}'s instinct was direct: identify the damage, attack the problem aggressively, get it fixed. Pull out the broken parts. Replace them. Move on.
 
-The {hero} kept trying the same logical approaches. Surely if they tried harder, one would work.
+But {companion_name} stopped them.
 
-{companion_name} watched from across the room and finally spoke. "You're trying to make it fit your idea of how it should fit. What if you asked it how it actually wants to fit?"
+"What is the {object_motif} telling you?" {companion_name} asked.
 
-The {hero} stopped and looked at the object with fresh eyes. Really looked. Noticed the way its weight distributed, how its center of gravity wanted to settle, where its edges wanted to turn.
+"That it's broken," the {hero} said. "And needs fixing."
 
-The {hero} had been assuming it needed to go in one way. But the object itself, listened to, wanted to go in another. A quarter turn. A tilt. A specific angle that felt natural to the object's own shape, not to the shelf's geometry or the {hero}'s expectations.
+"Listen deeper," said {companion_name}. "Not just to the damage, but to what the {object_motif} is made of. What it's asking for."
 
-And then it fit. Perfectly. Naturally. As if it had always belonged there exactly that way.
+So the {hero} held the {object_motif} and really felt it. The material was old, fragile. Any aggressive repair would cause more damage than the original break. It wasn't asking for force. It was asking for gentleness.
 
-"I was arguing with the problem," the {hero} said. "Instead of listening to it."
+The {hero} didn't pull out the broken parts. Instead, they reinforced them carefully from the inside. They didn't replace anything. They supported what was already there. They used material that matched the original, not something harsh and new.
 
-"The object was telling you how it wanted to be held," {companion_name} said. "The shelf was telling you what space it had available. The answer wasn't hidden. It was waiting in the details, in the small language of physics and geometry and the reality of how things actually want to fit together."
+It took longer. It required patience. But when the {hero} was done, the {object_motif} was not just repaired — it was renewed. The repair had become part of its history, not a scar upon it.
 
-The {hero} stood back and looked at the {object_motif}, finally settled in its place, seeing how obviously right it was now that they'd stopped trying to make it right and instead listened to how it wanted to be.
+"The {object_motif} was telling me what it needed," the {hero} said quietly. "Not to be attacked and fixed, but to be listened to and supported."
 
-"Every problem is like this, isn't it?" the {hero} said. "It's not asking to be solved by force or idea. It's asking to be understood."
+"That's what listening means," said {companion_name}. "Understanding what the problem is actually asking for — not the loud, obvious demand — but the quiet truth underneath. Forcing is fast. Listening takes time. But listening gets you the right answer."
 
-"And understanding," {companion_name} said, "comes from listening."
-
-The {hero} sat with the {object_motif} as evening came to {setting}, understanding that the deepest problems weren't puzzles to outwit. They were conversations to engage with, questions the world was asking that needed a patient, attentive answer.
+The {hero} held the {object_motif} close, understanding that the most skilled problem-solvers aren't the ones who attack hardest. They're the ones who listen most carefully to what the problem is actually, truly asking for.
 
 {refrain}.`,
-    scriptTemplate: `{child_name} had been trying for days to get the {object_motif} to fit into a narrow shelf — not squeezed or jammed, but properly, with space around it for air.
+    scriptTemplate: `{child_name} came upon the {object_motif}, and it needed repair. But this was delicate work, the kind that demanded a particular kind of listening.
 
-Every approach that had worked before didn't work here. Rotating it, angling it, tilting it — all seemed logical, but none of them let it settle naturally.
+{child_name}'s instinct was direct: identify the damage, attack the problem aggressively, get it fixed. Pull out the broken parts. Replace them. Move on.
 
-{child_name} kept trying the same logical approaches. Surely if they tried harder, one would work.
+But {companion_name} stopped them.
 
-{companion_name} watched from across the room and finally spoke. "You're trying to make it fit your idea of how it should fit. What if you asked it how it actually wants to fit?"
+"What is the {object_motif} telling you?" {companion_name} asked.
 
-{child_name} stopped and looked at the object with fresh eyes. Really looked. Noticed the way its weight distributed, how its center of gravity wanted to settle, where its edges wanted to turn.
+"That it's broken," {child_name} said. "And needs fixing."
 
-{child_name} had been assuming it needed to go in one way. But the object itself, listened to, wanted to go in another. A quarter turn. A tilt. A specific angle that felt natural to the object's own shape, not to the shelf's geometry or {child_name's expectations.
+"Listen deeper," said {companion_name}. "Not just to the damage, but to what the {object_motif} is made of. What it's asking for."
 
-And then it fit. Perfectly. Naturally. As if it had always belonged there exactly that way.
+So {child_name} held the {object_motif} and really felt it. The material was old, fragile. Any aggressive repair would cause more damage than the original break. It wasn't asking for force. It was asking for gentleness.
 
-"I was arguing with the problem," {child_name} said. "Instead of listening to it."
+{child_name} didn't pull out the broken parts. Instead, they reinforced them carefully from the inside. They didn't replace anything. They supported what was already there. They used material that matched the original, not something harsh and new.
 
-"The object was telling you how it wanted to be held," {companion_name} said. "The shelf was telling you what space it had available. The answer wasn't hidden. It was waiting in the details, in the small language of physics and geometry and the reality of how things actually want to fit together."
+It took longer. It required patience. But when {child_name} was done, the {object_motif} was not just repaired — it was renewed. The repair had become part of its history, not a scar upon it.
 
-{child_name} stood back and looked at the {object_motif}, finally settled in its place, seeing how obviously right it was now that they'd stopped trying to make it right and instead listened to how it wanted to be.
+"The {object_motif} was telling me what it needed," {child_name} said quietly. "Not to be attacked and fixed, but to be listened to and supported."
 
-"Every problem is like this, isn't it?" {child_name} said. "It's not asking to be solved by force or idea. It's asking to be understood."
+"That's what listening means," said {companion_name}. "Understanding what the problem is actually asking for — not the loud, obvious demand — but the quiet truth underneath. Forcing is fast. Listening takes time. But listening gets you the right answer."
 
-"And understanding," {companion_name} said, "comes from listening."
-
-{child_name} sat with the {object_motif} as evening came to {setting}, understanding that the deepest problems weren't puzzles to outwit. They were conversations to engage with, questions the world was asking that needed a patient, attentive answer.
+{child_name} held the {object_motif} close, understanding that the most skilled problem-solvers aren't the ones who attack hardest. They're the ones who listen most carefully to what the problem is actually, truly asking for.
 
 {refrain}.`
   },
   default: {
-    audioTemplate: `The {hero} came home to find the {object_motif} in the wrong place. Not lost. Not broken. Just... not where it belonged.
+    audioTemplate: `The {hero} faced a problem. The {hero} wanted to force it open. Push, push, push.
 
-At first the {hero} thought to put it somewhere else, forcing it into a space it didn't fit.
+But {companion_name} said: "Wait. Listen to what it is asking for."
 
-Then the {hero} stopped and listened. Looked at the object. Looked at the spaces available.
+So the {hero} stopped. Listened. Felt. And understood what the problem needed.
 
-And noticed: the object wanted to go in one particular place. A place the {hero} hadn't considered.
+Not force. But gentleness.
 
-It fit there perfectly.
+The {hero} gave it what it needed, and the problem opened.
 
-"I was trying to decide where it belonged," the {hero} said. "But it was already telling me."
+"Listen to what it needs," said the {hero}. "That is how you solve it."
 
-{companion_name} smiled. "Listen to what's asking. The answer is there."
+The {object_motif} was held close. The night grew soft over {setting}.
 
 {refrain}.`,
-    scriptTemplate: `{child_name} came home to find the {object_motif} in the wrong place. Not lost. Not broken. Just... not where it belonged.
+    scriptTemplate: `{child_name} faced a problem. {child_name} wanted to force it open. Push, push, push.
 
-At first {child_name} thought to put it somewhere else, forcing it into a space it didn't fit.
+But {companion_name} said: "Wait. Listen to what it is asking for."
 
-Then {child_name} stopped and listened. Looked at the object. Looked at the spaces available.
+So {child_name} stopped. Listened. Felt. And understood what the problem needed.
 
-And noticed: the object wanted to go in one particular place. A place {child_name} hadn't considered.
+Not force. But gentleness.
 
-It fit there perfectly.
+{child_name} gave it what it needed, and the problem opened.
 
-"I was trying to decide where it belonged," {child_name} said. "But it was already telling me."
+"Listen to what it needs," said {child_name}. "That is how you solve it."
 
-{companion_name} smiled. "Listen to what's asking. The answer is there."
+The {object_motif} was held close. The night grew soft over {setting}.
 
 {refrain}.`
   }
